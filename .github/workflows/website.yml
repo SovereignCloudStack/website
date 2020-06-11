@@ -1,0 +1,22 @@
+---
+name: Website
+
+on: [push, pull_request]
+
+jobs:
+  website:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install node.js
+        uses: actions/setup-node@v1
+      - name: Install requirements
+        run: |
+          sudo apt-get install -y lftp
+          npm install -g html-minifier clean-css clean-css-cli
+      - name: Build
+        run: bash scripts/build.sh
+      - name: Push
+        run: lftp -u '${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }}' -e 'set sftp:auto-confirm yes; mirror -R --delete build ${{ secrets.FTP_PATH }}; exit;' '${{ secrets.FTP_URL }}'
+        if: github.ref == 'refs/heads/master'

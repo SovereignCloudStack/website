@@ -1,0 +1,99 @@
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'),
+       url('fonts/lato-v16-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/lato-v16-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  padding-top: 150px;
+}
+
+.navbar {
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+  background-color: white !important;
+  font-size: 16pt;
+}
+
+.logo-scs {
+  width: 10%;
+  height: auto;
+}
+
+.logo-gaia-x {
+  float: left;
+  width: 10%;
+  height: auto;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+a:hover {
+  color: rgb(80, 195, 165) !important;
+  /* color: rgb(15, 95, 225) !important; */
+  /* color: rgb(125, 125, 130) !important; */
+}
+
+a {
+  /* color: rgb(80, 195, 165) !important; */
+  /* color: rgb(15, 95, 225) !important; */
+  color: rgb(125, 125, 130) !important;
+}
+
+code {
+  color: rgba(121, 131, 140, 1.0) !important;
+}
+
+.footer a:hover {
+  color: rgb(220,159,63) !important;
+}
+
+.footer a {
+  color: rgb(160,41,42) !important;
+160/41/42
+}
+
+p.text-muted {
+  color: rgba(174, 179, 184, 1.0) !important;
+  font-size: 10pt;
+}
+
+h1 {
+  color: rgba(73, 83, 91, 1.0) !important;
+  font-weight: bold;
+  font-size: 20pt;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+h2 {
+  color: rgba(73, 83, 91, 1.0) !important;
+  font-weight: bold;
+  font-size: 16pt;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+h3 {
+  color: rgba(73, 83, 91, 1.0) !important;
+  font-weight: bold;
+  font-size: 14pt;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+ul {
+  padding: 0;
+  margin-left: 1.75em;
+}
+
+.list-unstyled {
+  padding: 0;
+  margin-left: 0.75em;
+}
