@@ -40,6 +40,13 @@ for filename in build/*.html; do
     $filename
 done
 
+#favicon
+convert source/images/SCS-Logo-832x832.png -define icon:auto-resize=64,48,32,16 build/favicon.ico
+convert source/images/SCS-Logo-832x832.png -resize 32x32 build/images/favicon-32x32.png
+convert source/images/SCS-Logo-832x832.png -resize 96x96 build/images/favicon-96x96.png
+convert source/images/SCS-Logo-832x832.png -resize 180x180 build/images/apple-icon-180x180.png
+
+
 # optimize css files
 
 for filename in build/css/*.css; do
