@@ -22,7 +22,12 @@ body {
 }
 
 .logo-scs {
-  width: 10%;
+  width: 12%;
+  height: auto;
+}
+
+.logo-scs-hor {
+  width: 20%;
   height: auto;
 }
 
