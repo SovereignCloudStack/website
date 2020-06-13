@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://scs.osism.de/sitemap.xml
+Sitemap: https://scs.community/sitemap.xml
