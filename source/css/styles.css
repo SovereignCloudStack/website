@@ -51,6 +51,14 @@ a {
   color: rgb(125, 125, 130) !important;
 }
 
+.navbar a {
+  color: rgb(15, 95, 225) !important;
+}
+
+.navbar a:hover {
+  color: rgb(80, 195, 165) !important;
+}
+
 code {
   color: rgba(121, 131, 140, 1.0) !important;
 }
