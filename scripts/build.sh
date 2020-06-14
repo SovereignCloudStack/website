@@ -4,6 +4,8 @@ set -x
 mkdir -p build/images build/css build/fonts
 
 cp source/*.html build
+cp source/*.html.en build
+cp source/*.html.de build
 cp source/*.xml build
 cp source/.htaccess build
 cp source/robots.txt build
@@ -27,7 +29,7 @@ done
 
 # optimize html files
 
-for filename in build/*.html; do
+for filename in build/*.html build/*.html.en build/*.html.de; do
   html-minifier \
     --collapse-whitespace \
     --remove-comments \

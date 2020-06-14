@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="robots" content="all">
 
-  <meta name="description" content="Beim Sovereign Cloud Stack (SCS) handelt es sich um eine Open-Source-Code Alternative zu proprietär verfügbarer Cloud-Technologie." />
+  <meta name="description" content="Sovereign Cloud Stack (SCS) is an alternative to propietary cloud technology built entirely with open source software" />
   <meta property="og:site_name" content="Sovereign Cloud Stack" />
-  <meta property="og:title" content="Beim Sovereign Cloud Stack (SCS) handelt es sich um eine Open-Source-Code Alternative zu proprietär verfügbarer Cloud-Technologie" />
+  <meta property="og:title" content="Sovereign Cloud Stack (SCS) is an alternative to propietary cloud technology built entirely with open source software" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scs.community" />
 
@@ -58,26 +58,27 @@
       <div class="col-12">
         <h1>Sovereign Cloud Stack</h1>
         <p class="lead">
-          Beim Sovereign Cloud Stack (SCS) handelt es sich um eine Open-Source-Code Alternative zu proprietär
-          verfügbarer Cloud-Technologie. Nur Open-Source garantiert Interoperabilität, Transparenz und
-          Unabhängigkeit von Rechten Dritter und damit von wirtschaftlicher oder politischer Einflussnahme.
+          Sovereign Cloud Stack (SCS) is cloud technology built entirely with Open Source
+	  Software -- as an alternative to propietary cloud technology.
+	  Only Open Source guarantees interoperability, transparency and
+	  independence from legal claims of third parties and thus from political interference.
         </p>
         <p class="lead">
-          Die Idee hinter SCS als Technologie ist folgende: durch Einsatz des modularen SCS-Software Stacks
-          können Cloud-Betreiber Infrastructure-as-a-Service und Container-as-a-Service bereitstellen,
-          unabhängig von anderen Anbietern.
+	  The idea behind SCS is as follows: By using the modular SCS Software stack, cloud providers
+	  can offer Infrastructure-as-a-Service and Container-as-a-Service without depending on
+	  other vendors.
         </p>
         <p class="lead">
-          Dabei setzt SCS bewährte und existierende Open-Source-Komponenten
-          ein, wie zum Beispiel Kubernetes und erweitert sie, wo erforderlich. Auch föderierte Cloud-Dienste
-          werden möglich, d.h. Unternehmen können verteilte Cloud-Dienste über verschiedene SCS-Betreiber
-          hinweg nutzen. Vom komplett autarken Betrieb bis zum Full-Service-Management haben europäische Firmen
-          damit 100%-ige Entscheidungsfreiheit und vermeiden Lock-ins.
+          SCS is using existing and proven Open Source components such as e.g. Kubernetes and does
+	  extend them where required. Federated cloud services are enabled this way, and users
+	  can leverage distributed cloud services from several SCS operators. European companies
+	  thus have options all the way from running it themselves or using one or several service
+	  providers and thus have 100% freedom of choice avoiding lock-in effects.
         </p>
         <p class="lead">
-          Das Ziel: Jeder kann die SCS-Software
-          nutzen, aus ihr Mehrwert ziehen und durch Weiterentwicklung des Open-Source-Codes wiederum den
-          Mehrwert von <a href="https://www.data-infrastructure.eu/">GAIA-X</a> vergrößern.
+	  Our target: Anyone can benefit from the SCS software stack by using it -- and by
+	  contributing to the open source code, one will increase the value of
+          <a href="https://www.data-infrastructure.eu/">GAIA-X</a>.
         </p>
       </div>
     </div>
@@ -86,7 +87,7 @@
   <div class="container" style="margin-bottom: 25px;">
     <div class="row">
       <div class="col-12">
-        <h2>Presse</h2>
+        <h2>Press (German)</h2>
         <p class="lead">
           <ul>
             <li>heise online: <a href="https://www.heise.de/news/Bundeswirtschaftsminister-Gaia-X-als-weltweiter-Goldstandard-fuer-Cloud-Dienste-4774826.html?seite=2">Bundeswirtschaftsminister: Gaia-X als weltweiter Goldstandard für Cloud-Dienste</a></li>
@@ -104,11 +105,12 @@
         <h2>GAIA-X &ndash; Federated Data Infrastructure</h2>
         <img src="images/logo-gaia-x.png" class="logo-gaia-x" alt="GAIA-X Logo" title="GAIA-X Logo" />
         <p class="lead">
-          Auf dem Digital-Gipfel 2019 in Dortmund wurde das
-          <a href="https://www.data-infrastructure.eu/">Projekt GAIA-X</a>
-          des Bundesministeriums für Wirtschaft und Energie (BMWi) vorgestellt. Ziel von <a href="https://www.data-infrastructure.eu/">GAIA-X</a> ist die Definition
-          und der Aufbau einer sicheren und vertrauenswürdigen Dateninfrastruktur für Europa. Eines der wesentliche Merkmale
-          der angestrebten Lösung ist der Einsatz offener Technologien.
+	  On the digital summit 2019 in Dortmund, the
+          <a href="https://www.data-infrastructure.eu/">GAIA-X project</a>
+	  was laucnhed by the german ministry of economic affairs and energy (BMWi). The goal 
+	  of <a href="https://www.data-infrastructure.eu/">GAIA-X</a> is the defintion and the
+	  setup of a secure and trustworthy data infrastructure for Europe. One of the defining
+	  properties of the targeted solution is the usage of open technologies.
         </p>
       </div>
     </div>
@@ -117,11 +119,12 @@
   <div class="container" style="margin-bottom: 25px;">
     <div class="row">
       <div class="col-12">
-	<h2>Software und Dokumentation</h2>
+	<h2>Software and Documentation</h2>
         <p class="lead">
-          Software wird in den <a href="https://github.com/SovereignCloudStack/">Repositories auf GitHub</a> bald verfügbar sein.
-	  Für die Infrastruktur und den IaaS Layer (OpenStack) setzen wir auf dem
-	  <a href="https://www.osism.de">Open Source Infrastructure Manager</a> auf.
+          Software will soon be available in the
+	  <a href="https://github.com/SovereignCloudStack/">repositories on GitHub</a>.
+	  For the infrastructure and IaaS Layer (OpenStack), we are building on top of 
+	  <a href="https://www.osism.de">Open Source Infrastructure Manager</a>.
 	</p>
       </div>
     </div>
@@ -140,13 +143,13 @@
     <div class="row">
       <div class="col-12">
         <p class="text-muted">
-          Impressum (Angaben gemäß § 5 TMG):<br/>
+          Imprint (Angaben gemäß § 5 TMG):<br/>
           Kurt Garloff, Grafenwerthstr. 8,  50937 Köln<br/>
           Mail: scs@garloff.de /  Phone: +49-221-292772-0<br/>
-          Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE296446025</br>
-          Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Kurt Garloff (Adresse wie oben)<br/>
-	  Sovereign Cloud Stack und SCS sind geschützte Marken der
-	   <a href="https://osb-alliance.de/">Open Source Busines Alliance</a>.<br/>
+          Tax-ID (§ 27 a Umsatzsteuergesetz): DE296446025</br>
+          Responsible for the content (§ 55 Abs. 2 RStV): Kurt Garloff (same address as above)<br/>
+	  Sovereign Cloud Stack and SCS are registered trade marks of the
+	   <a href="https://osb-alliance.de/">Open Source Business Alliance</a>.<br/>
         </p>
       </div>
     </div>
