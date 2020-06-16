@@ -49,6 +49,9 @@
         <div class="col">
           <a href="https://github.com/SovereignCloudStack/" title="GitHub"><i class="fa fa-github"></i></a>
         </div>
+	<div class="col">
+	  <a href="index.html.en" title="English"><i class="fa fa-language">en</i></a>
+        </div>
       </div>
     </div>
   </nav>
