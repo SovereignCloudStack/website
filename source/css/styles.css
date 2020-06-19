@@ -110,3 +110,35 @@ ul {
   padding: 0;
   margin-left: 0.75em;
 }
+
+blockquote {
+  color: rgba(73, 83, 91, 1.0) !important;
+  font-size: 1.2em;
+  margin: 50px auto;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid rgba(174, 179, 184, 0.8);
+  line-height: 1.6;
+  position: relative;
+  background: rgba(174, 179, 184, 0.1);
+}
+
+blockquote::before {
+  content: "\201C";
+  color: rgba(174, 179, 184, 0.8);
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+blockquote::after {
+  content: '';
+}
+
+blockquote span{
+  display: block;
+  color: #333333;
+  font-style: normal;
+  margin-top: 1em;
+  font-size: 0.3em;
+}
