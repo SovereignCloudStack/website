@@ -39,6 +39,12 @@ body {
   padding-bottom: 20px;
 }
 
+.logo-sprind {
+  float: left;
+  width: 20%;
+  height: auto;
+}
+
 a:hover {
   color: rgb(80, 195, 165) !important;
   /* color: rgb(15, 95, 225) !important; */
