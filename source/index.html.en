@@ -30,7 +30,7 @@
 <body>
   <nav class="navbar fixed-top">
     <a href="/" class="navbar-left" title="scs.community">
-      <img src="images/logo-scs-vert.png" class="logo-scs" alt="SCS Logo" title="SCS Logo" />
+      <img src="images/logo-scs-vert.png" class="logo-scs" alt="SCS logo" title="SCS logo" />
     </a>
     <div class="container">
       <div class="row">
@@ -126,7 +126,7 @@
     <div class="row">
       <div class="col-12">
         <h2>GAIA-X &ndash; Federated Data Infrastructure</h2>
-        <img src="images/logo-gaia-x.png" class="logo-gaia-x" alt="GAIA-X Logo" title="GAIA-X Logo" />
+        <img src="images/logo-gaia-x.png" class="logo-gaia-x" alt="GAIA-X logo" title="GAIA-X logo" />
         <p class="lead">
 	  On the digital summit 2019 in Dortmund, the
           <a href="https://www.data-infrastructure.eu/">GAIA-X project</a>
@@ -139,6 +139,34 @@
           A strong open infrastructure ecosystem is the foundation of digital sovereignty.
           <span>Quelle: &bdquo;GAIA-X: Technical Architecture (Release – June, 2020)&ldquo;</span>
         </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 25px;">
+    <div class="row">
+      <div class="col-12">
+        <h2>Federal Agency for Disruptive Innovations</h2>
+        <img src="images/logo-sprind.png" class="logo-sprind" alt="SPRIND logo" title="SPRIND logo" />
+        <p class="lead">
+          The Federal Agency for Disruptive Innovations - SPRIND - based in Leipzig closes a gap in the German
+          innovation landscape: It finds answers to the unsolved technological, ecological and social
+          challenges of our time and at the same time ensures that the added value of the resulting companies
+          and industries remains in Germany and Europe.
+        </p>
+        <p class="lead">
+          The team around director Rafael Laguna de la Vera provides comprehensive support for inventors:
+          SPRIND arranges financing, helps to find a founding team and creates connections to other experts
+          from science and industry. People with groundbreaking ideas, proven expertise and passion are
+          gathered at SPRIND.
+        </p>
+        <p class="lead">
+          One of the first projects supported by SPRIND is the "Sovereign Cloud Stack" project.
+        </p>
+        <p class="lead">
+          SPRIND is not only constantly looking for new, groundbreaking ideas, but is also expanding its
+          network of experts. Further information is available at <a href="https://sprind.org/en">sprind.org</a>.
+        </p>
       </div>
     </div>
   </div>
