@@ -12,7 +12,7 @@ cp source/robots.txt build
 # cp source/images/*.ico build
 cp source/css/* build/css
 cp source/images/*.png build/images
-# cp source/images/*.svg build/images
+cp source/images/*.svg build/images
 cp source/fonts/* build/fonts
 
 # optimize png files
