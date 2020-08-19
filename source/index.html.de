@@ -198,21 +198,21 @@
   <div class="container">
     <div class="row d-flex align-items-baseline">
       <div class="col-3">
-          <img src="images/companies/logo-b1-systems.svg" class="logo-b1-systems" alt="B1 Systems Logo" title="B1 Systems Logo" />
+          <img src="images/logo-b1-systems.svg" class="logo-b1-systems" alt="B1 Systems Logo" title="B1 Systems Logo" />
       </div>
       <div class="col-3">
-          <img src="images/companies/logo-betacloud-solutions.png" class="logo-betacloud-solutions" alt="Betacloud Solutions Logo" title="Betacloud Solutions Logo" />
+          <img src="images/logo-betacloud-solutions.png" class="logo-betacloud-solutions" alt="Betacloud Solutions Logo" title="Betacloud Solutions Logo" />
       </div>
       <div class="col-3">
-          <img src="images/companies/logo-citynetwork.png" class="logo-citynetwork" alt="Citynetwork Logo" title="Citynetwork Logo" />
+          <img src="images/logo-citynetwork.png" class="logo-citynetwork" alt="Citynetwork Logo" title="Citynetwork Logo" />
       </div>
       <div class="col-3">
-          <img src="images/companies/logo-dilossacon.png" class="logo-dilossacon" alt="Dilossacon Logo" title="Dilossacon Logo" />
+          <img src="images/logo-dilossacon.png" class="logo-dilossacon" alt="Dilossacon Logo" title="Dilossacon Logo" />
       </div>
     </div>
     <div class="row d-flex align-items-baseline">
       <div class="col-3">
-          <img src="images/companies/logo-gonicus.png" class="logo-gonicus" alt="GONICUS Logo" title="GONICUS Logo" />
+          <img src="images/logo-gonicus.png" class="logo-gonicus" alt="GONICUS Logo" title="GONICUS Logo" />
       </div>
       <div class="col-3">
           <img src="images/logo-sprind.png" class="logo-sprind-2" alt="SPRIND Logo" title="SPRIND Logo" />
@@ -221,26 +221,26 @@
           <img src="images/logo-osba.svg" class="logo-osba" alt="Logo" title="OSBA Logo" />
       </div>
       <div class="col-3">
-          <img src="images/companies/logo-opencore.png" class="logo-opencore" alt="Logo" title="OpenCore Logo" />
+          <img src="images/logo-opencore.png" class="logo-opencore" alt="Logo" title="OpenCore Logo" />
       </div>
     </div>
     <div class="row d-flex align-items-baseline">
       <div class="col-3">
-          <div class="container-logo-openstack-foundation"><img src="images/companies/logo-openstack-foundation.svg" class="logo-openstack-foundation" alt="OpenStack Foundation Logo" title="OpenStack Foundation Logo" /></div>
+          <div class="container-logo-openstack-foundation"><img src="images/logo-openstack-foundation.svg" class="logo-openstack-foundation" alt="OpenStack Foundation Logo" title="OpenStack Foundation Logo" /></div>
       </div>
       <div class="col-3">
-          <img src="images/companies/logo-open-xchange.svg" class="logo-open-xchange" alt="Open-Xchange Logo" title="Open-Xchange Logo" />
+          <img src="images/logo-open-xchange.svg" class="logo-open-xchange" alt="Open-Xchange Logo" title="Open-Xchange Logo" />
       </div>
       <div class="col-3">
-          <img src="images/companies/logo-ovhcloud.svg" class="logo-ovhcloud" alt="OVHcloud Logo" title="OVHcloud Logo" />
+          <img src="images/logo-ovhcloud.svg" class="logo-ovhcloud" alt="OVHcloud Logo" title="OVHcloud Logo" />
       </div>
       <div class="col-3">
-          <img src="images/companies/logo-plusserver.png" class="logo-plusserver" alt="PlusServer Logo" title="PlusServer Logo" />
+          <img src="images/logo-plusserver.png" class="logo-plusserver" alt="PlusServer Logo" title="PlusServer Logo" />
       </div>
     </div>
     <div class="row d-flex align-items-baseline">
       <div class="col-3">
-          <img src="images/companies/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention Logo" />
+          <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention Logo" />
       </div>
       <div class="col-3">
       </div>
