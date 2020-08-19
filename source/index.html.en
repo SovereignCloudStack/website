@@ -179,7 +179,7 @@
       <div class="col-12">
 	<h2>Software and Documentation</h2>
         <p class="lead">
-          Software will soon be available in the
+          Software and documentation is available in the
 	  <a href="https://github.com/SovereignCloudStack/">repositories on GitHub</a>.
 	  For the infrastructure and IaaS Layer (OpenStack), we are building on top of 
 	  <a href="https://www.osism.de">Open Source Infrastructure Manager</a>.
