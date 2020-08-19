@@ -228,19 +228,8 @@
     </div>
     <div class="row d-flex align-items-baseline">
       <div class="col-3">
-          <img src="images/companies/logo-gonicus.png" class="logo-gonicus" alt="GONICUS Logo" title="GONICUS Logo" />
-      </div>
-      <div class="col-3">
-          <img src="images/logo-sprind.png" class="logo-sprind-2" alt="SPRIND Logo" title="SPRIND Logo" />
-      </div>
-      <div class="col-3">
-          <img src="images/companies/logo-opencore.png" class="logo-opencore" alt="Logo" title="OpenCore Logo" />
-      </div>
-      <div class="col-3">
           <div class="container-logo-openstack-foundation"><img src="images/companies/logo-openstack-foundation.svg" class="logo-openstack-foundation" alt="OpenStack Foundation Logo" title="OpenStack Foundation Logo" /></div>
       </div>
-    </div>
-    <div class="row d-flex align-items-baseline">
       <div class="col-3">
           <img src="images/companies/logo-open-xchange.svg" class="logo-open-xchange" alt="Open-Xchange Logo" title="Open-Xchange Logo" />
       </div>
@@ -250,8 +239,16 @@
       <div class="col-3">
           <img src="images/companies/logo-plusserver.png" class="logo-plusserver" alt="PlusServer Logo" title="PlusServer Logo" />
       </div>
+    </div>
+    <div class="row d-flex align-items-baseline">
       <div class="col-3">
           <img src="images/companies/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention Logo" />
+      </div>
+      <div class="col-3">
+      </div>
+      <div class="col-3">
+      </div>
+      <div class="col-3">
       </div>
     </div>
   </div>
