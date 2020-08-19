@@ -200,6 +200,12 @@ blockquote span{
   display:inline-block;
 }
 
+.logo-osba {
+  width: auto;
+  height: 70px;
+  padding: 10px;
+}
+
 .logo-opencore {
   width: auto;
   height: 80px;
