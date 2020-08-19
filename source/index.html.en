@@ -231,13 +231,10 @@
           <img src="images/logo-gonicus.png" class="logo-gonicus" alt="GONICUS Logo" title="GONICUS Logo" />
       </div>
       <div class="col-3">
-          <img src="images/logo-sprind.png" class="logo-sprind-2" alt="SPRIND Logo" title="SPRIND Logo" />
+          <img src="images/logo-opencore.png" class="logo-opencore" alt="Logo" title="OpenCore Logo" />
       </div>
       <div class="col-3">
           <img src="images/logo-osba.svg" class="logo-osba" alt="Logo" title="OSBA Logo" />
-      </div>
-      <div class="col-3">
-          <img src="images/logo-opencore.png" class="logo-opencore" alt="Logo" title="OpenCore Logo" />
       </div>
     </div>
     <div class="row d-flex align-items-baseline">
@@ -252,6 +249,9 @@
       </div>
       <div class="col-3">
           <img src="images/logo-plusserver.png" class="logo-plusserver" alt="PlusServer Logo" title="PlusServer Logo" />
+      </div>
+      <div class="col-3">
+          <img src="images/logo-sprind.png" class="logo-sprind-2" alt="SPRIND Logo" title="SPRIND Logo" />
       </div>
     </div>
     <div class="row d-flex align-items-baseline">
