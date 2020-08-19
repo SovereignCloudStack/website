@@ -149,3 +149,83 @@ blockquote span{
   margin-top: 1em;
   font-size: 0.3em;
 }
+
+/* company logos */
+
+.logo-betacloud-solutions {
+  width: auto;
+  height: 60px;
+  padding: 10px;
+}
+
+.logo-b1-systems {
+  width: 70px;
+  height: auto;
+  padding: 10px;
+}
+
+.logo-citynetwork {
+  width: auto;
+  height: 50px;
+  padding: 10px;
+}
+
+.logo-dilossacon {
+  width: auto;
+  height: 40px;
+  padding: 10px;
+}
+
+.logo-gonicus {
+  width: auto;
+  height: 50px;
+  padding: 10px;
+}
+
+.logo-sprind-2 {
+  width: auto;
+  height: 70px;
+  padding: 10px;
+}
+
+.logo-openstack-foundation {
+  width: auto;
+  height: 50px;
+  padding: 10px;
+}
+
+.container-logo-openstack-foundation {
+  max-width: 80px;
+  overflow: hidden;
+  display:inline-block;
+}
+
+.logo-opencore {
+  width: auto;
+  height: 80px;
+  padding: 10px;
+}
+
+.logo-open-xchange {
+  width: auto;
+  height: 45px;
+  padding: 10px;
+}
+
+.logo-ovhcloud {
+  width: auto;
+  height: 45px;
+  padding: 10px;
+}
+
+.logo-plusserver {
+  width: auto;
+  height: 50px;
+  padding: 10px;
+}
+
+.logo-univention {
+  width: auto;
+  height: 55px;
+  padding: 10px;
+}
