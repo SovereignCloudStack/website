@@ -49,6 +49,9 @@
         <div class="col">
           <a href="https://github.com/SovereignCloudStack/" title="GitHub"><i class="fa fa-github"></i></a>
         </div>
+        <div class="col">
+          <a href="https://scs.community/docs/contributor/" title="Contributor Guide"><i class="fa fa-book"></i></a>
+        </div>
 	<div class="col">
 	  <a href="index.html.de" title="Deutsch"><i class="fa fa-language">de</i></a>
         </div>
@@ -93,7 +96,7 @@
         <h2>Press</h2>
         <p class="lead">
           <ul>
-            <li>SPRIN-D: <a href="https://www.sprind.org/en/projects/sovereign-cloud-stack/">European Supercloud: IT infrastructure for the 3rd millenium</a></li>
+            <li>SPRIND: <a href="https://www.sprind.org/en/projects/sovereign-cloud-stack/">European Supercloud: IT infrastructure for the 3rd millenium</a></li>
           </ul>
         </p>
       </div>
@@ -114,7 +117,7 @@
             <li>iX: <a href="https://www.heise.de/select/ix/2020/7/2013307364093404455">GAIA-X: Europas Weg zur digitalen Souveränität</a></li>
             <li>OSB Alliance: <a href="https://osb-alliance.de/news/plusserver-ist-gruendungsmitglied-von-gaia-x">plusserver ist Gründungsmitglied von GAIA-X</a></li>
             <li>plusserver: <a href="https://www.plusserver.com/ps-files/presse/pm-2020-06-04-GAIA-X.pdf">Für ein unabhängiges Europa in der Cloud: plusserver ist Gründungsmitglied von GAIA-X</a></li>
-            <li>SPRIN-D: <a href="https://www.sprind.org/de/laufende-projekte/sovereign-cloud-stack/">Eine europäische Superwolke: IT-Infrastruktur fürs 3. Jahrtausend</a></li>
+            <li>SPRIND: <a href="https://www.sprind.org/de/laufende-projekte/sovereign-cloud-stack/">Eine europäische Superwolke: IT-Infrastruktur fürs 3. Jahrtausend</a></li>
             <li>WDR 5 Profit: <a href="https://www1.wdr.de/mediathek/audio/wdr5/wdr5-profit/audio-exporteinbruch---budelmann-electronic----siemens----stadtgemuese--100.html">Podcast vom 09.07.2020</a></li>
           </ul>
         </p>
@@ -176,7 +179,7 @@
       <div class="col-12">
 	<h2>Software and Documentation</h2>
         <p class="lead">
-          Software will soon be available in the
+          Software and documentation is available in the
 	  <a href="https://github.com/SovereignCloudStack/">repositories on GitHub</a>.
 	  For the infrastructure and IaaS Layer (OpenStack), we are building on top of 
 	  <a href="https://www.osism.de">Open Source Infrastructure Manager</a>.
@@ -194,6 +197,72 @@
             <li><a href="https://scs.community/JD-Container-Architect-clean.html">Container Infrastructure Architect</a></li>
           </ul>
         </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 25px;">
+    <div class="row">
+      <div class="col-12">
+        <h2>Supporting companies</h2>
+        <p class="lead">
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row d-flex align-items-baseline">
+      <div class="col-md-3 col-sm-6">
+          <img src="images/logo-b1-systems.svg" class="logo-b1-systems" alt="B1 Systems Logo" title="B1 Systems Logo" />
+      </div>
+      <div class="col-md-3 col-sm-6">
+          <img src="images/logo-betacloud-solutions.png" class="logo-betacloud-solutions" alt="Betacloud Solutions Logo" title="Betacloud Solutions Logo" />
+      </div>
+      <div class="col-md-3 col-sm-6">
+          <img src="images/logo-citynetwork.png" class="logo-citynetwork" alt="Citynetwork Logo" title="Citynetwork Logo" />
+      </div>
+      <div class="col-md-3 col-sm-6">
+          <img src="images/logo-dilossacon.png" class="logo-dilossacon" alt="Dilossacon Logo" title="Dilossacon Logo" />
+      </div>
+    </div>
+    <div class="row d-flex align-items-baseline">
+      <div class="col-md-3 col-sm-6">
+          <img src="images/logo-gonicus.png" class="logo-gonicus" alt="GONICUS Logo" title="GONICUS Logo" />
+      </div>
+      <div class="col-md-3 col-sm-6">
+          <img src="images/logo-opencore.png" class="logo-opencore" alt="Logo" title="OpenCore Logo" />
+      </div>
+      <div class="col-md-3 col-sm-6">
+          <img src="images/logo-osba.svg" class="logo-osba" alt="Logo" title="OSBA Logo" />
+      </div>
+      <div class="col-md-3 col-sm-6">
+          <img src="images/logo-open-xchange.svg" class="logo-open-xchange" alt="Open-Xchange Logo" title="Open-Xchange Logo" />
+      </div>
+    </div>
+    <div class="row d-flex align-items-baseline">
+      <div class="col-md-3 col-sm-6">
+          <div class="container-logo-openstack-foundation"><img src="images/logo-openstack-foundation.svg" class="logo-openstack-foundation" alt="OpenStack Foundation Logo" title="OpenStack Foundation Logo" /></div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+          <img src="images/logo-ovhcloud.svg" class="logo-ovhcloud" alt="OVHcloud Logo" title="OVHcloud Logo" />
+      </div>
+      <div class="col-md-3 col-sm-6">
+          <img src="images/logo-plusserver.png" class="logo-plusserver" alt="PlusServer Logo" title="PlusServer Logo" />
+      </div>
+      <div class="col-md-3 col-sm-6">
+          <img src="images/logo-sprind.png" class="logo-sprind-2" alt="SPRIND Logo" title="SPRIND Logo" />
+      </div>
+    </div>
+    <div class="row d-flex align-items-baseline">
+      <div class="col-md-3 col-sm-6">
+          <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention Logo" />
+      </div>
+      <div class="col-md-3 col-sm-6">
+      </div>
+      <div class="col-md-3 col-sm-6">
+      </div>
+      <div class="col-md-3 col-sm-6">
       </div>
     </div>
   </div>
