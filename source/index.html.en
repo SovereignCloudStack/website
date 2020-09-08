@@ -70,7 +70,7 @@
 	  independence from legal claims of third parties and thus from political interference.
         </p>
         <p class="lead">
-	  The idea behind SCS is as follows: By using the modular SCS Software stack, cloud providers
+	  The idea behind SCS as technology: By using the modular SCS Software stack, cloud providers
 	  can offer Infrastructure-as-a-Service and Container-as-a-Service without depending on
 	  other vendors.
         </p>
@@ -109,6 +109,7 @@
         <h2>Press (German)</h2>
         <p class="lead">
           <ul>
+	    <li>nerdzoom: <a href="https://nerdzoom.de/nrdzm119-gaia-x-sovereign-cloud-stack/">NRDZM119: GAIA-X & Sovereign Cloud Stack</a></li>
             <li>cloudmag: <a href="https://www.cloud-mag.com/open-source-software-darum-ist-sie-ein-gewinn-fuer-unternehmen/">Open Source Software: Darum ist sie ein Gewinn für Unternehmen</a></li>
             <li>Der Tagesspiegel: <a href="https://background.tagesspiegel.de/digitalisierung/agentur-fuer-sprunginnovationen-das-sind-die-ersten-projekte">Agentur für Sprunginnovationen: Das sind die ersten Projekte</a></li>
             <li>Der Tagesspiegel: <a href="https://www.tagesspiegel.de/wirtschaft/deutschlands-chefinnovator-laguna-auf-der-suche-nach-daniela-duesentrieb/25990046.html">Auf der Suche nach Daniela Düsentrieb</a></li>
@@ -279,13 +280,13 @@
     </div>
     <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
-	  <a href="https://univention.de/">
-          <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention Logo" />
+	  <a href="https://open-telekom-cloud.com/">
+          <img src="images/logo-telekom-4cpde.svg" class="logo-telekom" alt="Telekom Logo" title="Deutsche Telekom Logo" />
 	  </a>
       </div>
       <div class="col-md-3 col-sm-6">
-	  <a href="https://open-telekom-cloud.com/">
-          <img src="images/logo-telekom-4cpde.svg" class="logo-telekom" alt="Telekom Logo" title="Deutsche Telekom Logo" />
+	  <a href="https://univention.de/">
+          <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention Logo" />
 	  </a>
       </div>
       <div class="col-md-3 col-sm-6">
