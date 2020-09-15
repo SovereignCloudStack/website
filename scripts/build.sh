@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
 set -x
 
-mkdir -p build/images build/css build/fonts
+mkdir -p build/images build/css build/fonts build/blog
 
 cp source/*.html build
 cp source/*.html.en build
 cp source/*.html.de build
+cp source/blog/*.html build/blog/
+cp source/blog/*.html.en build/blog/
+cp source/blog/*.html.de build/blog/
 cp source/*.xml build
 cp source/.htaccess build
 cp source/robots.txt build
 # cp source/images/*.ico build
 cp source/css/* build/css
 cp source/images/*.png build/images
+cp source/images/*.jpg build/images
 cp source/images/*.svg build/images
 cp source/fonts/* build/fonts
 
@@ -29,7 +33,7 @@ done
 
 # optimize html files
 
-for filename in build/*.html build/*.html.en build/*.html.de; do
+for filename in build/*.html build/*.html.en build/*.html.de build/blog/*.html build/blog/*.html.en build/blog/*.html.de; do
   html-minifier \
     --collapse-whitespace \
     --remove-comments \
