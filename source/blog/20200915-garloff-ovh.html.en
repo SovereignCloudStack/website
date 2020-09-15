@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="all">
+
+  <meta name="description" content="Sovereign Cloud Stack (SCS) blog 2020-09-15" />
+  <meta property="og:site_name" content="Sovereign Cloud Stack blog 2020-09-15" />
+  <meta property="og:title" content="Sovereign Cloud Stack (SCS) is an alternative to propietary cloud technology built entirely with open source software" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://scs.community" />
+
+  <link rel="canonical" href="https://scs.community/" />
+
+  <title>SCS Blog</title>
+
+  <link href="../css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous" />
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+
+</head>
+
+<body>
+  <nav class="navbar fixed-top">
+    <a href="/" class="navbar-left" title="scs.community">
+      <img src="../images/logo-scs-vert.png" class="logo-scs" alt="SCS logo" title="SCS logo" />
+    </a>
+    <img src="../images/kgarloff.jpg" title="Kurt Garloff" alt="[Kurt Garloff]" class="logo-pic" />
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="/" title="scs.community"><i class="fa fa-home"></i></a>
+        </div>
+        <div class="col">
+          <a href="mailto:scs@garloff.de" title="scs@garloff.de"><i class="fa fa-envelope"></i></a>
+        </div>
+        <div class="col">
+          <a href="tel:" title="+49-221-292772-0"><i class="fa fa-phone"></i></a>
+        </div>
+        <!-- <div class="col">
+          <a href="https://twitter.com/SovereignCloudStack" title="Twitter"><i class="fa fa-twitter"></i></a>
+        </div> -->
+        <div class="col">
+          <a href="https://github.com/SovereignCloudStack/" title="GitHub"><i class="fa fa-github"></i></a>
+        </div>
+        <div class="col">
+          <a href="https://scs.community/docs/contributor/" title="Contributor Guide"><i class="fa fa-book"></i></a>
+        </div>
+	<div class="col">
+	  <a href="20200915-garloff-ovh.html.de" title="Deutsch"><i class="fa fa-language">de</i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Kurt Garloff: Some comments on the OVH T-Systems deal</h1>
+	<p>2020-09-15</p>
+        <p class="lead">
+	 SCS is a collaboration of man companies from the industrial and ICT sector as well
+	 as public institutions in a GAIA-X working package, tackling the standardization
+	 and implementation of a common stack for a cloud- and container platform, providing
+	 an option for a sovereign underpinning for higher-level services in the GAIA-X project.
+	 It's relevant for our success that we are using jointly defined standards to overcome
+	 the currect fragmentation in the market (outside of hyperscalers) and create a
+	 well-established platform that allows customers and developers to freely combine
+	 service providers and also exchange them should the need arise.
+	</p>
+	<p class="lead">
+	 Two of our SCS partners, OVH and T-Systems, announced yesterday that they will
+	 collaborate closely even beyond the joint work in SCS and GAIA-X and the collaboration
+	 will cover hardware, data centers, operations and the software stack.
+	</p>
+	<p class="lead">
+	 I have been asked how that interacts with SCS and I have reached out to both partners
+	 to ensure there is no change in course how they work with us. And there is not.<br/>
+	 I really congratulate OVH and T-Systems on this deal!
+	 It's great to see them collaborate even beyond the scope of GAIA-X.
+	 It will help those two large providers to gain speed in implementing SCS
+	 and in establishing it in the market.
+	</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top: 30px;">
+    <div class="row">
+      <div class="col-12">
+        <p class="text-muted">
+          <i class="fa fa-envelope"></i> <a href="mailto:scs@garloff.de" title="scs@garloff.de">scs@garloff.de</a>
+          <i class="fa fa-phone"></i> <a href="tel:" title="+492212927720">+49-221-292772-0</a>
+          <i class="fa fa-lock"></i> <a href="http://www.garloff.de/DataProtection.html" title="Data Protection">Data Protection Statement</a>
+          <!-- <i class="fa fa-gavel"></i> <a href="impressum.html" title="Impressum">Impressum</a> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p class="text-muted">
+          Imprint (data according to § 5 TMG):<br/>
+          Kurt Garloff, Grafenwerthstr. 8,  50937 Köln<br/>
+          Mail: scs@garloff.de /  Phone: +49-221-292772-0<br/>
+          Tax-ID (§ 27 a Umsatzsteuergesetz): DE296446025</br>
+          Responsible for the content (§ 55 Abs. 2 RStV): Kurt Garloff (same address as above)<br/>
+	  Sovereign Cloud Stack and SCS and the SCS logo are registered trade marks of the
+	   <a href="https://osb-alliance.de/">Open Source Business Alliance</a>.<br/>
+	  Other trademarks are property of their respective owners.<br/>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
