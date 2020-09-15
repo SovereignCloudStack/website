@@ -21,6 +21,12 @@ body {
   font-size: 16pt;
 }
 
+.logo-pic {
+  width: auto;
+  height: 100px;
+  float: right;
+}
+
 .logo-scs {
   width: 12%;
   height: auto;
