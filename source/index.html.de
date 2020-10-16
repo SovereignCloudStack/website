@@ -95,18 +95,19 @@
         <h2>Presse</h2>
         <p class="lead">
           <ul>
-            <li>c't – magazin für computertechnik: <a href="https://www.heise.de/select/ct/2020/19/2021009232468241113">Unabhängig mit Open Source Freie Software für die digitale Souveränität</a></li>
-            <li>cloudmag: <a href="https://www.cloud-mag.com/open-source-software-darum-ist-sie-ein-gewinn-fuer-unternehmen/">Open Source Software: Darum ist sie ein Gewinn für Unternehmen</a></li>
-            <li>Der Tagesspiegel: <a href="https://background.tagesspiegel.de/digitalisierung/agentur-fuer-sprunginnovationen-das-sind-die-ersten-projekte">Agentur für Sprunginnovationen: Das sind die ersten Projekte</a></li>
-            <li>Der Tagesspiegel: <a href="https://www.tagesspiegel.de/wirtschaft/deutschlands-chefinnovator-laguna-auf-der-suche-nach-daniela-duesentrieb/25990046.html">Auf der Suche nach Daniela Düsentrieb</a></li>
-            <li>heise online: <a href="https://www.heise.de/news/Bundeswirtschaftsminister-Gaia-X-als-weltweiter-Goldstandard-fuer-Cloud-Dienste-4774826.html?seite=2">Bundeswirtschaftsminister: Gaia-X als weltweiter Goldstandard für Cloud-Dienste</a></li>
-            <li>heise online: <a href="https://www.heise.de/news/Sovereign-Cloud-Stack-Auf-dem-Weg-zur-freien-europaeischen-Cloud-4839395.html">Sovereign Cloud Stack: Auf dem Weg zur freien europäischen Cloud</a></li>
-            <li>iX: <a href="https://www.heise.de/select/ix/2020/7/2013307364093404455">GAIA-X: Europas Weg zur digitalen Souveränität</a></li>
-	    <li>nerdzoom: <a href="https://nerdzoom.de/nrdzm119-gaia-x-sovereign-cloud-stack/">NRDZM119: GAIA-X & Sovereign Cloud Stack</a></li>
-            <li>OSB Alliance: <a href="https://osb-alliance.de/news/plusserver-ist-gruendungsmitglied-von-gaia-x">plusserver ist Gründungsmitglied von GAIA-X</a></li>
-            <li>plusserver: <a href="https://www.plusserver.com/ps-files/presse/pm-2020-06-04-GAIA-X.pdf">Für ein unabhängiges Europa in der Cloud: plusserver ist Gründungsmitglied von GAIA-X</a></li>
-            <li>SPRIND: <a href="https://www.sprind.org/de/laufende-projekte/sovereign-cloud-stack/">Eine europäische Superwolke: IT-Infrastruktur fürs 3. Jahrtausend</a></li>
-            <li>WDR 5 Profit: <a href="https://www1.wdr.de/mediathek/audio/wdr5/wdr5-profit/audio-exporteinbruch---budelmann-electronic----siemens----stadtgemuese--100.html">Podcast vom 09.07.2020</a></li>
+	    <li>(2020-10-12) Inpact Media (Beilage Handelsblatt): <a href="https://www.inpactmedia.com/it/it-security-cloud-management/die-europa-cloud">IT-Security & Cloud Management: Die Europa-Cloud</a></li>
+            <li>(2020-09-07) nerdzoom: <a href="https://nerdzoom.de/nrdzm119-gaia-x-sovereign-cloud-stack/">NRDZM119: GAIA-X & Sovereign Cloud Stack</a></li>
+            <li>(2020-08-28) c't – magazin für computertechnik: <a href="https://www.heise.de/select/ct/2020/19/2021009232468241113">Unabhängig mit Open Source Freie Software für die digitale Souveränität</a></li>
+            <li>(2020-07-13) Der Tagesspiegel: <a href="https://www.tagesspiegel.de/wirtschaft/deutschlands-chefinnovator-laguna-auf-der-suche-nach-daniela-duesentrieb/25990046.html">Auf der Suche nach Daniela Düsentrieb</a></li>
+            <li>(2020-07-10) heise online: <a href="https://www.heise.de/news/Sovereign-Cloud-Stack-Auf-dem-Weg-zur-freien-europaeischen-Cloud-4839395.html">Sovereign Cloud Stack: Auf dem Weg zur freien europäischen Cloud</a></li>
+            <li>(2020-07-09) WDR 5 Profit: <a href="https://www1.wdr.de/mediathek/audio/wdr5/wdr5-profit/audio-exporteinbruch---budelmann-electronic----siemens----stadtgemuese--100.html">Podcast vom 09.07.2020</a></li>
+            <li>(2020-07-01) Der Tagesspiegel: <a href="https://background.tagesspiegel.de/digitalisierung/agentur-fuer-sprunginnovationen-das-sind-die-ersten-projekte">Agentur für Sprunginnovationen: Das sind die ersten Projekte</a></li>
+            <li>(2020-07-01) SPRIND: <a href="https://www.sprind.org/de/laufende-projekte/sovereign-cloud-stack/">Eine europäische Superwolke: IT-Infrastruktur fürs 3. Jahrtausend</a></li>
+            <li>(2020-06-25) cloudmag: <a href="https://www.cloud-mag.com/open-source-software-darum-ist-sie-ein-gewinn-fuer-unternehmen/">Open Source Software: Darum ist sie ein Gewinn für Unternehmen</a></li>
+            <li>(2020-06-25) iX: <a href="https://www.heise.de/select/ix/2020/7/2013307364093404455">GAIA-X: Europas Weg zur digitalen Souveränität</a></li>
+            <li>(2020-06-04) OSB Alliance: <a href="https://osb-alliance.de/news/plusserver-ist-gruendungsmitglied-von-gaia-x">plusserver ist Gründungsmitglied von GAIA-X</a></li>
+            <li>(2020-06-04) plusserver: <a href="https://www.plusserver.com/ps-files/presse/pm-2020-06-04-GAIA-X.pdf">Für ein unabhängiges Europa in der Cloud: plusserver ist Gründungsmitglied von GAIA-X</a></li>
+            <li>(2020-06-04) heise online: <a href="https://www.heise.de/news/Bundeswirtschaftsminister-Gaia-X-als-weltweiter-Goldstandard-fuer-Cloud-Dienste-4774826.html?seite=2">Bundeswirtschaftsminister: Gaia-X als weltweiter Goldstandard für Cloud-Dienste</a></li>
           </ul>
         </p>
       </div>
