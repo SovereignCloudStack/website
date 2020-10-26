@@ -117,13 +117,16 @@
   <div class="container" style="margin-bottom: 25px;">
     <div class="row">
       <div class="col-12">
-        <h2>Konferenzbeiträge</h2>
+        <h2>Conference contributions</h2>
         <p class="lead">
           <ul>
-	    <li>(2020-10-20) Marius Feldmann, Kurt Garloff: Digital Sovereignty - Why Open Infrastructure Matters</li>
-	    <li>(2020-10-20) Kurt Garloff, Christian Berendt: SCS: Large federated infrastructure for sovereignty
+	    <li>(2020-10-20) <A HRef="https://summit.openinfra.dev/a/event/24765">
+		Marius Feldmann, Kurt Garloff: Digital Sovereignty - Why Open Infrastructure Matters</A></li>
+	    <li>(2020-10-20) <A HRef="https://summit.openinfra.dev/a/event/24666">
+		Kurt Garloff, Christian Berendt: SCS: Large federated infrastructure for sovereignty</A>
 		    <A HRef="slides/20201010-OIF-1.pdf"> (Folien)</A></li>
-	    <li>(2020-10-21) Christian Berendt, Kurt Garloff: Back to the original missions: an open cloud operating system
+	    <li>(2020-10-21) <A HRef="https://summit.openinfra.dev/a/event/24658">
+		Christian Berendt, Kurt Garloff: Back to the original missions: an open cloud operating system</A>
 		    <A HRef="slides/20201010-OIF-2.pdf"> (Folien)</A></li>
           </ul>
         </p>
