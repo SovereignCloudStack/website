@@ -117,6 +117,23 @@
   <div class="container" style="margin-bottom: 25px;">
     <div class="row">
       <div class="col-12">
+        <h2>Konferenzbeiträge</h2>
+        <p class="lead">
+          <ul>
+	    <li>(2020-10-20) Marius Feldmann, Kurt Garloff: Digital Sovereignty - Why Open Infrastructure Matters</li>
+	    <li>(2020-10-20) Kurt Garloff, Christian Berendt: SCS: Large federated infrastructure for sovereignty
+		    <A HRef="slides/20201010-OIF-1.pdf"> (Folien)</A></li>
+	    <li>(2020-10-21) Christian Berendt, Kurt Garloff: Back to the original missions: an open cloud operating system
+		    <A HRef="slides/20201010-OIF-2.pdf"> (Folien)</A></li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 25px;">
+    <div class="row">
+      <div class="col-12">
         <h2>GAIA-X &ndash; Federated Data Infrastructure</h2>
         <img src="images/logo-gaia-x.png" class="logo-gaia-x" alt="GAIA-X Logo" title="GAIA-X Logo" />
         <p class="lead">

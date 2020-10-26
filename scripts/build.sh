@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -x
 
-mkdir -p build/images build/css build/fonts build/blog
+mkdir -p build/images build/css build/fonts build/blog build/slides
 
 cp source/*.html build
 cp source/*.html.en build
@@ -18,6 +18,7 @@ cp source/images/*.png build/images
 cp source/images/*.jpg build/images
 cp source/images/*.svg build/images
 cp source/fonts/* build/fonts
+cp source/slides/* build/slides
 
 # optimize png files
 
