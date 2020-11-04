@@ -235,7 +235,13 @@
   </div>
 
   <div class="container">
+
     <div class="row d-flex align-items-baseline">
+      <div class="col-md-3 col-sm-6">
+          <a href="https://23technologies.cloud/">
+          <img src="images/logo-23technologies.png" class="logo-23technologies" alt="23 Technologies Logo" title="23 Technologies Logo" />
+          </a>
+      </div>
       <div class="col-md-3 col-sm-6">
 	  <a href="https://b1-systems.de/">
           <img src="images/logo-b1-systems.svg" class="logo-b1-systems" alt="B1 Systems Logo" title="B1 Systems Logo" />
@@ -250,12 +256,13 @@
 	  <a href="https://citynetwork.eu/">
           <img src="images/logo-citynetwork.png" class="logo-citynetwork" alt="Citynetwork Logo" title="Citynetwork Logo" />
       </div>
+    </div>
+
+    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
 	  <a href="https://cloudandheat.com/">
           <img src="images/logo-candh.png" class="logo-cloudandheat" alt="Cloud&Heat Logo" title="Cloud&Heat Logo" />
       </div>
-    </div>
-    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
 	  <a href="https://dilossacon.de/">
           <img src="images/logo-dilossacon.png" class="logo-dilossacon" alt="Dilossacon Logo" title="Dilossacon Logo" />
@@ -271,13 +278,14 @@
           <img src="images/logo-opencore.png" class="logo-opencore" alt="Logo" title="OpenCore Logo" />
 	  </a>
       </div>
+    </div>
+
+    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
 	  <a href="https://osb-alliance.de/">
           <img src="images/logo-osba.svg" class="logo-osba" alt="Logo" title="OSBA Logo" />
 	  </a>
       </div>
-    </div>
-    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
 	  <a href="https://open-xchange.com/">
           <img src="images/logo-open-xchange.svg" class="logo-open-xchange" alt="Open-Xchange Logo" title="Open-Xchange Logo" />
@@ -293,13 +301,14 @@
           <img src="images/logo-ovhcloud.svg" class="logo-ovhcloud" alt="OVHcloud Logo" title="OVHcloud Logo" />
 	  </a>
       </div>
+    </div>
+
+    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
 	  <a href="https://plusserver.com/">
           <img src="images/logo-plusserver.png" class="logo-plusserver" alt="PlusServer Logo" title="PlusServer Logo" />
 	  </a>
       </div>
-    </div>
-    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
 	  <a href="https://sprind.org/">
           <img src="images/logo-sprind.png" class="logo-sprind-2" alt="SPRIND Logo" title="SPRIND Logo" />
@@ -315,9 +324,8 @@
           <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention Logo" />
 	  </a>
       </div>
-      <div class="col-md-3 col-sm-6">
-      </div>
     </div>
+
   </div>
 
   <div class="container" style="margin-top: 30px;">
