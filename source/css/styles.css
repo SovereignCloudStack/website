@@ -158,7 +158,7 @@ blockquote span{
 
 /* company logos */
 
-.logo-betacloud-solutions {
+.logo-23technologies {
   width: auto;
   height: 60px;
   padding: 10px;
@@ -167,6 +167,12 @@ blockquote span{
 .logo-b1-systems {
   width: 70px;
   height: auto;
+  padding: 10px;
+}
+
+.logo-betacloud-solutions {
+  width: auto;
+  height: 60px;
   padding: 10px;
 }
 
