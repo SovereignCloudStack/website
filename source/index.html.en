@@ -309,24 +309,37 @@
 
     <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
-	  <a href="https://plusserver.com/">
+          <a href="https://plusserver.com/">
           <img src="images/logo-plusserver.png" class="logo-plusserver" alt="PlusServer Logo" title="PlusServer Logo" />
-	  </a>
+          </a>
       </div>
       <div class="col-md-3 col-sm-6">
-	  <a href="https://sprind.org/">
+          <a href="https://sprind.org/">
           <img src="images/logo-sprind.png" class="logo-sprind-2" alt="SPRIND Logo" title="SPRIND Logo" />
-	  </a>
+          </a>
       </div>
       <div class="col-md-3 col-sm-6">
-	  <a href="https://open-telekom-cloud.com/">
+          <a href="https://stackhpc.com">
+          <img src="images/logo-stackhpc.png" class="logo-stackhpc" alt="StackHPC Logo" title="STackHPC Logo" />
+          </a>
+      </div>
+      <div class="col-md-3 col-sm-6">
+          <a href="https://open-telekom-cloud.com/">
           <img src="images/logo-telekom-4cpde.svg" class="logo-telekom" alt="Telekom Logo" title="Deutsche Telekom Logo" />
-	  </a>
+          </a>
+      </div>
+    </div>
+
+      <div class="col-md-3 col-sm-6">
+          <a href="https://univention.de/">
+          <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention Logo" />
+          </a>
       </div>
       <div class="col-md-3 col-sm-6">
-	  <a href="https://univention.de/">
-          <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention Logo" />
-	  </a>
+      </div>
+      <div class="col-md-3 col-sm-6">
+      </div>
+      <div class="col-md-3 col-sm-6">
       </div>
     </div>
 

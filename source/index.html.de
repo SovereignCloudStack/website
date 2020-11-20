@@ -316,14 +316,27 @@
 	  </a>
       </div>
       <div class="col-md-3 col-sm-6">
+	  <a href="https://stackhpc.com">
+          <img src="images/logo-stackhpc.png" class="logo-stackhpc" alt="StackHPC Logo" title="STackHPC Logo" />
+	  </a>
+      </div>
+      <div class="col-md-3 col-sm-6">
 	  <a href="https://open-telekom-cloud.com/">
           <img src="images/logo-telekom-4cpde.svg" class="logo-telekom" alt="Telekom Logo" title="Deutsche Telekom Logo" />
 	  </a>
       </div>
+    </div>
+
       <div class="col-md-3 col-sm-6">
 	  <a href="https://univention.de/">
           <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention Logo" />
 	  </a>
+      </div>
+      <div class="col-md-3 col-sm-6">
+      </div>
+      <div class="col-md-3 col-sm-6">
+      </div>
+      <div class="col-md-3 col-sm-6">
       </div>
     </div>
 

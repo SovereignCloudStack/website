@@ -212,6 +212,12 @@ blockquote span{
   padding: 10px;
 }
 
+.logo-stackhpc {
+  width: auto;
+  height: 60px;
+  padding: 10px;
+}
+
 .logo-telekom {
   width: auto;
   height: 60px;
