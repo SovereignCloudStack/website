@@ -234,13 +234,14 @@
     </div>
   </div>
 
+
   <div class="container">
 
     <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
-          <a href="https://23technologies.cloud/">
+	  <a href="https://23technologies.cloud/">
           <img src="images/logo-23technologies.png" class="logo-23technologies" alt="23 Technologies Logo" title="23 Technologies Logo" />
-          </a>
+	  </a>
       </div>
       <div class="col-md-3 col-sm-6">
 	  <a href="https://b1-systems.de/">
@@ -274,13 +275,18 @@
 	  </a>
       </div>
       <div class="col-md-3 col-sm-6">
-	  <a href="https://www.opencore.com/">
-          <img src="images/logo-opencore.png" class="logo-opencore" alt="Logo" title="OpenCore Logo" />
+	  <a href="https://www.memorysolution.de/">
+          <img src="images/logo-memorysolution.svg" class="logo-memorysolution" alt="Memorysolution Logo" title="Memorysolution Logo" />
 	  </a>
       </div>
     </div>
 
     <div class="row d-flex align-items-baseline">
+      <div class="col-md-3 col-sm-6">
+	  <a href="https://www.opencore.com/">
+          <img src="images/logo-opencore.png" class="logo-opencore" alt="Logo" title="OpenCore Logo" />
+	  </a>
+      </div>
       <div class="col-md-3 col-sm-6">
 	  <a href="https://osb-alliance.de/">
           <img src="images/logo-osba.svg" class="logo-osba" alt="Logo" title="OSBA Logo" />
@@ -296,14 +302,14 @@
           <div class="container-logo-openstack-foundation"><img src="images/logo-openstack-foundation.svg" class="logo-openstack-foundation" alt="OpenStack Foundation Logo" title="OpenStack Foundation Logo" /></div>
 	  </a>
       </div>
+    </div>
+
+    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
 	  <a href="https://ovhcloud.com/">
           <img src="images/logo-ovhcloud.svg" class="logo-ovhcloud" alt="OVHcloud Logo" title="OVHcloud Logo" />
 	  </a>
       </div>
-    </div>
-
-    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
 	  <a href="https://plusserver.com/">
           <img src="images/logo-plusserver.png" class="logo-plusserver" alt="PlusServer Logo" title="PlusServer Logo" />
@@ -319,10 +325,19 @@
           <img src="images/logo-telekom-4cpde.svg" class="logo-telekom" alt="Telekom Logo" title="Deutsche Telekom Logo" />
 	  </a>
       </div>
+    </div>
+
+    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
 	  <a href="https://univention.de/">
           <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention Logo" />
 	  </a>
+      </div>
+      <div class="col-md-3 col-sm-6">
+      </div>
+      <div class="col-md-3 col-sm-6">
+      </div>
+      <div class="col-md-3 col-sm-6">
       </div>
     </div>
 
