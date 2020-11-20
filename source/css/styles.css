@@ -206,6 +206,12 @@ blockquote span{
   padding: 10px;
 }
 
+.logo-memorysolution {
+  width: auto;
+  height: 70px;
+  padding: 10px;
+}
+
 .logo-openstack-foundation {
   width: auto;
   height: 50px;
