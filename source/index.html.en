@@ -93,10 +93,10 @@
   <div class="container" style="margin-bottom: 25px;">
     <div class="row">
       <div class="col-12">
-        <h2>Press</h2>
+        <h2>Press (English)</h2>
         <p class="lead">
           <ul>
-            <li>SPRIND: <a href="https://www.sprind.org/en/projects/sovereign-cloud-stack/">European Supercloud: IT infrastructure for the 3rd millenium</a></li>
+            <li>(2020-07-01) SPRIND: <a href="https://www.sprind.org/en/projects/sovereign-cloud-stack/">European Supercloud: IT infrastructure for the 3rd millenium</a></li>
           </ul>
         </p>
       </div>
@@ -136,14 +136,15 @@
         <p class="lead">
           <ul>
             <li>(2020-11-19) <a href="https://osb-alliance.de/veranstaltungen/open-source-day-2020-forum-fuer-digitale-souveraenitaet">
-                Kurt Garloff, Peter Ganten: Digitale Souveränität mit Sovereign Cloud Stack</a></li>
+                Kurt Garloff, Peter Ganten: Digitale Souveränität mit Sovereign Cloud Stack</a>
+		    <a href="slides/20201119-OSD.pdf"> (Slides)</a></li>
 	    <li>(2020-10-20) <a href="https://summit.openinfra.dev/a/event/24765">
 		Marius Feldmann, Kurt Garloff: Digital Sovereignty - Why Open Infrastructure Matters</a></li>
 	    <li>(2020-10-20) <a href="https://summit.openinfra.dev/a/event/24666">
 		Kurt Garloff, Christian Berendt: SCS: Large federated infrastructure for sovereignty</a>
 		    <a href="slides/20201010-OIF-1.pdf"> (Slides)</a></li>
 	    <li>(2020-10-21) <a href="https://summit.openinfra.dev/a/event/24658">
-		Christian Berendt, Kurt Garloff: Back to the original missions: an open cloud operating system</a>
+		Christian Berendt, Kurt Garloff: Back to the original mission: an open cloud operating system</a>
 		    <a href="slides/20201010-OIF-2.pdf"> (Slides)</a></li>
           </ul>
         </p>
