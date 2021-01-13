@@ -69,17 +69,22 @@
           Unabhängigkeit von Rechten Dritter und damit von wirtschaftlicher oder politischer Einflussnahme.
         </p>
         <p class="lead">
-          Die Idee hinter SCS als Technologie: Durch Einsatz des modularen SCS-Software Stacks
+          Durch Einsatz des modularen SCS-Software Stacks
           können Cloud-Betreiber Infrastructure-as-a-Service und Container-as-a-Service bereitstellen,
           unabhängig von anderen Anbietern.
         </p>
         <p class="lead">
-          Dabei setzt SCS bewährte und existierende Open-Source-Komponenten
-          ein, wie zum Beispiel Kubernetes und erweitert sie, wo erforderlich. Auch föderierte Cloud-Dienste
-          werden möglich, d.h. Unternehmen können verteilte Cloud-Dienste über verschiedene SCS-Betreiber
+          Dabei setzt SCS bewährte und existierende Open-Source-Komponenten ein, wie zum Beispiel Kubernetes,
+	  standardisiert die Nutzungsschnittstellen, und erweitert sie, wo erforderlich. Dies ermöglicht föderierte
+	  Cloud-Dienste, d.h. Unternehmen können verteilte Cloud-Dienste über verschiedene SCS-Betreiber
           hinweg nutzen. Vom komplett autarken Betrieb bis zum Full-Service-Management haben europäische Firmen
-          damit 100%-ige Entscheidungsfreiheit und vermeiden Lock-ins.
+          damit 100%-ige Entscheidungsfreiheit und vermeiden problematische Abhängigkeiten von Anbietern
+	  aus anderen Rechtsräumen.
         </p>
+        <p class="lead">
+          Durch das Weitergeben und Dokumentieren von bewährten Praktiken zum Betrieb solcher Cloudumgebungen
+	  wird die Schwierigkeit, Clouddienste mit hoher Qualität zu liefern deutlich reduziertt.
+	</p>
         <p class="lead">
           Das Ziel: Jeder kann die SCS-Software
           nutzen, aus ihr Mehrwert ziehen und durch Weiterentwicklung des Open-Source-Codes wiederum den
@@ -222,7 +227,7 @@
 	<h2>Stellenanzeigen</h2>
         <p class="lead">
           <ul>
-            <li><a href="https://scs.community/JD-Container-Architect-clean.html">Container Infrastructure Architect</a></li>
+            <li><a href="https://scs.community/JD-PO-Container.html">Product Owner Container Technologies</a></li>
           </ul>
 	</p>
       </div>
