@@ -257,9 +257,9 @@
 
     <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
-	  <a href="https://23technologies.cloud/">
+          <a href="https://23technologies.cloud/">
           <img src="images/logo-23technologies.png" class="logo-23technologies" alt="23 Technologies Logo" title="23 Technologies" />
-	  </a>
+          </a>
       </div>
       <div class="col-md-3 col-sm-6">
 	  <a href="https://b1-systems.de/">
@@ -293,8 +293,8 @@
 	  </a>
       </div>
       <div class="col-md-3 col-sm-6">
-	  <a href="https://www.opencore.com/">
-          <img src="images/logo-opencore.png" class="logo-opencore" alt="Logo" title="OpenCore" />
+	  <a href="https://gridscale.io/">
+          <img src="images/logo-gridscale.png" class="logo-gridscale" alt="Gridscale Logo" title="Gridscale" />
 	  </a>
       </div>
     </div>
@@ -324,33 +324,37 @@
 
     <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
-	  <a href="https://plusserver.com/">
+          <a href="https://plusserver.com/">
           <img src="images/logo-plusserver.png" class="logo-plusserver" alt="PlusServer Logo" title="PlusServer" />
-	  </a>
+          </a>
       </div>
       <div class="col-md-3 col-sm-6">
-	  <a href="https://sprind.org/">
+          <a href="https://sprind.org/">
           <img src="images/logo-sprind.png" class="logo-sprind-2" alt="SPRIND Logo" title="SPRIND" />
+          </a>
+      </div>
+      <div class="col-md-3 col-sm-6">
+	  <a href="https://www.opencore.com/">
+          <img src="images/logo-opencore.png" class="logo-opencore" alt="Stackable Logo" title="Stackable" />
 	  </a>
       </div>
       <div class="col-md-3 col-sm-6">
-	  <a href="https://www.stackhpc.com">
+          <a href="https://www.stackhpc.com">
           <img src="images/logo-stackhpc.png" class="logo-stackhpc" alt="StackHPC Logo" title="STackHPC" />
-	  </a>
-      </div>
-      <div class="col-md-3 col-sm-6">
-	  <a href="https://open-telekom-cloud.com/">
-          <img src="images/logo-telekom-4cpde.svg" class="logo-telekom" alt="Telekom Logo" title="Deutsche Telekom" />
-	  </a>
+          </a>
       </div>
     </div>
 
+    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
-	  <a href="https://univention.de/">
-          <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention" />
-	  </a>
+          <a href="https://open-telekom-cloud.com/">
+          <img src="images/logo-telekom-4cpde.svg" class="logo-telekom" alt="Telekom Logo" title="Deutsche Telekom" />
+          </a>
       </div>
       <div class="col-md-3 col-sm-6">
+          <a href="https://univention.de/">
+          <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention" />
+          </a>
       </div>
       <div class="col-md-3 col-sm-6">
       </div>

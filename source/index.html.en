@@ -296,8 +296,8 @@
 	  </a>
       </div>
       <div class="col-md-3 col-sm-6">
-	  <a href="https://www.opencore.com/">
-          <img src="images/logo-opencore.png" class="logo-opencore" alt="Logo" title="OpenCore" />
+	  <a href="https://gridscale.io/">
+          <img src="images/logo-gridscale.png" class="logo-gridscale" alt="Gridscale Logo" title="Gridscale" />
 	  </a>
       </div>
     </div>
@@ -337,23 +337,27 @@
           </a>
       </div>
       <div class="col-md-3 col-sm-6">
+	  <a href="https://www.opencore.com/">
+          <img src="images/logo-opencore.png" class="logo-opencore" alt="Stackable Logo" title="Stackable" />
+	  </a>
+      </div>
+      <div class="col-md-3 col-sm-6">
           <a href="https://www.stackhpc.com">
           <img src="images/logo-stackhpc.png" class="logo-stackhpc" alt="StackHPC Logo" title="STackHPC" />
           </a>
       </div>
+    </div>
+
+    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
           <a href="https://open-telekom-cloud.com/">
           <img src="images/logo-telekom-4cpde.svg" class="logo-telekom" alt="Telekom Logo" title="Deutsche Telekom" />
           </a>
       </div>
-    </div>
-
       <div class="col-md-3 col-sm-6">
           <a href="https://univention.de/">
           <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention" />
           </a>
-      </div>
-      <div class="col-md-3 col-sm-6">
       </div>
       <div class="col-md-3 col-sm-6">
       </div>

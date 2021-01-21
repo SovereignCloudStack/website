@@ -200,6 +200,12 @@ blockquote span{
   padding: 10px;
 }
 
+.logo-gridscale {
+  width: auto;
+  height: 60px;
+  padding: 10px;
+}
+
 .logo-sprind-2 {
   width: auto;
   height: 55px;
@@ -237,6 +243,12 @@ blockquote span{
 }
 
 .logo-opencore {
+  width: auto;
+  height: 80px;
+  padding: 10px;
+}
+
+.logo-stackable {
   width: auto;
   height: 80px;
   padding: 10px;
