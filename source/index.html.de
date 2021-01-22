@@ -139,19 +139,19 @@
         <h2>Konferenzbeiträge</h2>
         <p class="lead">
           <ul>
-            <li>(2020-11-19) <a href="https://www.youtube.com/watch?v=MkTMFRzP7jA">
-                Dr. Ronny Reinhardt, Pierre Gronlier: GAIA-X Demonstrator</a></li>
-            <li>(2020-11-19) <a href="https://osb-alliance.de/veranstaltungen/open-source-day-2020-forum-fuer-digitale-souveraenitaet">
+            <li>(2020-11-19) Open Source Day: <a href="https://osb-alliance.de/veranstaltungen/open-source-day-2020-forum-fuer-digitale-souveraenitaet">
                 Kurt Garloff, Peter Ganten: Digitale Souveränität mit Sovereign Cloud Stack</a>
-		    <a href="slides/20201119-OSD.pdf"> (Folien)</a></li>
-	    <li>(2020-10-20) <a href="https://summit.openinfra.dev/a/event/24765">
-		Marius Feldmann, Kurt Garloff: Digital Sovereignty - Why Open Infrastructure Matters</a></li>
-	    <li>(2020-10-20) <a href="https://summit.openinfra.dev/a/event/24666">
-		Kurt Garloff, Christian Berendt: SCS: Large federated infrastructure for sovereignty</a>
-		    <a href="slides/20201010-OIF-1.pdf"> (Folien)</a></li>
-	    <li>(2020-10-21) <a href="https://summit.openinfra.dev/a/event/24658">
+                 <a href="slides/20201119-OSD.pdf"> (Folien)</a> (deutsch)</li>
+            <li>(2020-11-19) GAIA-X Summit: <a href="https://www.youtube.com/watch?v=MkTMFRzP7jA">
+                Dr. Ronny Reinhardt, Pierre Gronlier: GAIA-X Demonstrator</a></li>
+            <li>(2020-10-21) Open Infra Summit: <a href="https://summit.openinfra.dev/a/event/24658">
 		Christian Berendt, Kurt Garloff: Back to the original mission: an open cloud operating system</a>
-		    <a href="slides/20201010-OIF-2.pdf"> (Folien)</a></li>
+                 <a href="slides/20201010-OIF-2.pdf"> (Folien)</a></li>
+            <li>(2020-10-20) Open Infra Summit: <a href="https://summit.openinfra.dev/a/event/24666">
+		Kurt Garloff, Christian Berendt: SCS: Large federated infrastructure for sovereignty</a>
+                 <a href="slides/20201010-OIF-1.pdf"> (Folien)</a></li>
+            <li>(2020-10-20) Open Infra Summit: <a href="https://summit.openinfra.dev/a/event/24765">
+		Marius Feldmann, Kurt Garloff: Digital Sovereignty - Why Open Infrastructure Matters</a></li>
           </ul>
         </p>
       </div>
