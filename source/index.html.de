@@ -75,16 +75,16 @@
         </p>
         <p class="lead">
           Dabei setzt SCS bewährte und existierende Open-Source-Komponenten ein, wie zum Beispiel Kubernetes,
-	  standardisiert die Nutzungsschnittstellen, und erweitert sie, wo erforderlich. Dies ermöglicht föderierte
-	  Cloud-Dienste, d.h. Unternehmen können verteilte Cloud-Dienste über verschiedene SCS-Betreiber
+	        standardisiert die Nutzungsschnittstellen, und erweitert sie, wo erforderlich. Dies ermöglicht föderierte
+	        Cloud-Dienste, d.h. Unternehmen können verteilte Cloud-Dienste über verschiedene SCS-Betreiber
           hinweg nutzen. Vom komplett autarken Betrieb bis zum Full-Service-Management haben europäische Firmen
           damit 100%-ige Entscheidungsfreiheit und vermeiden problematische Abhängigkeiten von Anbietern
-	  aus anderen Rechtsräumen.
+	        aus anderen Rechtsräumen.
         </p>
         <p class="lead">
           Durch das Weitergeben und Dokumentieren von bewährten Praktiken zum Betrieb solcher Cloudumgebungen
-	  wird die Schwierigkeit, Clouddienste mit hoher Qualität zu liefern deutlich reduziertt.
-	</p>
+	        wird die Schwierigkeit, Clouddienste mit hoher Qualität zu liefern deutlich reduziert.
+	      </p>
         <p class="lead">
           Das Ziel: Jeder kann die SCS-Software
           nutzen, aus ihr Mehrwert ziehen und durch Weiterentwicklung des Open-Source-Codes wiederum den
@@ -98,11 +98,9 @@
     <div class="row">
       <div class="col-12">
         <h2>Presse (englisch)</h2>
-        <p class="lead">
           <ul>
             <li>(2020-07-01) SPRIND: <a href="https://www.sprind.org/en/projects/sovereign-cloud-stack/">European Supercloud: IT infrastructure for the 3rd millenium</a></li>
           </ul>
-        </p>
       </div>
     </div>
   </div>
@@ -111,10 +109,9 @@
     <div class="row">
       <div class="col-12">
         <h2>Presse (deutsch)</h2>
-        <p class="lead">
           <ul>
             <li>(2020-11-19) iX: <a href="https://www.heise.de/select/ix/2020/12/2019813170969193194">Wolken-Verbund: Mit Sovereign Cloud Stack zu mehr digitaler Souveränität</a></li>
-	    <li>(2020-10-12) Inpact Media (Beilage Handelsblatt): <a href="https://www.inpactmedia.com/it/it-security-cloud-management/die-europa-cloud">IT-Security & Cloud Management: Die Europa-Cloud</a></li>
+            <li>(2020-10-12) Inpact Media (Beilage Handelsblatt): <a href="https://www.inpactmedia.com/it/it-security-cloud-management/die-europa-cloud">IT-Security & Cloud Management: Die Europa-Cloud</a></li>
             <li>(2020-09-07) nerdzoom: <a href="https://nerdzoom.de/nrdzm119-gaia-x-sovereign-cloud-stack/">NRDZM119: GAIA-X & Sovereign Cloud Stack</a></li>
             <li>(2020-08-28) c't – magazin für computertechnik: <a href="https://www.heise.de/select/ct/2020/19/2021009232468241113">Unabhängig mit Open Source Freie Software für die digitale Souveränität</a></li>
             <li>(2020-07-13) Der Tagesspiegel: <a href="https://www.tagesspiegel.de/wirtschaft/deutschlands-chefinnovator-laguna-auf-der-suche-nach-daniela-duesentrieb/25990046.html">Auf der Suche nach Daniela Düsentrieb</a></li>
@@ -128,7 +125,6 @@
             <li>(2020-06-04) plusserver: <a href="https://www.plusserver.com/ps-files/presse/pm-2020-06-04-GAIA-X.pdf">Für ein unabhängiges Europa in der Cloud: plusserver ist Gründungsmitglied von GAIA-X</a></li>
             <li>(2020-06-04) heise online: <a href="https://www.heise.de/news/Bundeswirtschaftsminister-Gaia-X-als-weltweiter-Goldstandard-fuer-Cloud-Dienste-4774826.html?seite=2">Bundeswirtschaftsminister: Gaia-X als weltweiter Goldstandard für Cloud-Dienste</a></li>
           </ul>
-        </p>
       </div>
     </div>
   </div>
@@ -137,7 +133,6 @@
     <div class="row">
       <div class="col-12">
         <h2>Konferenzbeiträge</h2>
-        <p class="lead">
           <ul>
             <li>(2021-02-17) <a href="https://www.talque.com/app#/app/ngx/org/6iq6yI5LPSxaIRA6cmnq/sessions">GAIA-X Technical Deep Dive</a>:
 		Kurt Garloff: Sovereign Cloud Stack (<a href="https://gaia-x.live/s/moydfcQciqASGGR">Folien</a>)</li>
@@ -149,15 +144,14 @@
             <li>(2020-11-19) GAIA-X Summit: <a href="https://www.youtube.com/watch?v=MkTMFRzP7jA">
                 Dr. Ronny Reinhardt, Pierre Gronlier: GAIA-X Demonstrator</a></li>
             <li>(2020-10-21) Open Infra Summit: <a href="https://summit.openinfra.dev/a/event/24658">
-		Christian Berendt, Kurt Garloff: Back to the original mission: an open cloud operating system</a>
+		            Christian Berendt, Kurt Garloff: Back to the original mission: an open cloud operating system</a>
                  <a href="slides/20201010-OIF-2.pdf"> (Folien)</a></li>
             <li>(2020-10-20) Open Infra Summit: <a href="https://summit.openinfra.dev/a/event/24666">
-		Kurt Garloff, Christian Berendt: SCS: Large federated infrastructure for sovereignty</a>
+		            Kurt Garloff, Christian Berendt: SCS: Large federated infrastructure for sovereignty</a>
                  <a href="slides/20201010-OIF-1.pdf"> (Folien)</a></li>
             <li>(2020-10-20) Open Infra Summit: <a href="https://summit.openinfra.dev/a/event/24765">
-		Marius Feldmann, Kurt Garloff: Digital Sovereignty - Why Open Infrastructure Matters</a></li>
+		            Marius Feldmann, Kurt Garloff: Digital Sovereignty - Why Open Infrastructure Matters</a></li>
           </ul>
-        </p>
       </div>
     </div>
   </div>
@@ -229,7 +223,6 @@
     <div class="row">
       <div class="col-12">
 	<h2>Stellenanzeigen</h2>
-        <p class="lead">
           <ul>
 	          <li>CTO / Chief Product Owner / SCS Project Lead (Feb 21, Home Office / Berlin) &#x2714;</li>
 	          <li>COO / SCS Project Lead (Jun 21, Berlin / Home Office) &#x2714;</li>
@@ -240,11 +233,12 @@
 	          <li><a href="JD-Community-Manager.html">Community Manager</a> (Aug 21, Home Office / Berlin)</li>
 	          <li><a href="JD-MA-Dok.html">Mitabeiter / Projekt Management/Dokumentation</a> (März 21, Berlin / Home Office)</li>
           </ul>
-	  Bitte richten Sie Fragen und Bewerbungen an <A HRef="mailto:garloff@osb-alliance.com">Kurt Garloff</A>.
-	  Hinweis: Wir sind offen für Bewerber/innen (d/w/m) aus ganz Europa, haben allerdings nicht die Möglichkeit
-	  in Ländern außerhalb Deutschlands Filialen zu eröffnen um dafür einen rechtlichen Rahmen zu schaffen,
-	  falls es nötig wäre.
-	</p>
+          <p class="lead">
+	           Bitte richten Sie Fragen und Bewerbungen an <A HRef="mailto:garloff@osb-alliance.com">Kurt Garloff</A>.
+	           Hinweis: Wir sind offen für Bewerber/innen (d/w/m) aus ganz Europa, haben allerdings nicht die Möglichkeit
+	           in Ländern außerhalb Deutschlands Filialen zu eröffnen um dafür einen rechtlichen Rahmen zu schaffen,
+	           falls es nötig wäre.
+	        </p>
       </div>
     </div>
   </div>

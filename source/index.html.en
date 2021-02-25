@@ -65,31 +65,31 @@
         <h1>Sovereign Cloud Stack</h1>
         <p class="lead">
           Sovereign Cloud Stack (SCS) is cloud technology built entirely with Open Source
-	  Software -- as an alternative to propietary cloud technology.
-	  Only Open Source guarantees interoperability, transparency and
-	  independence from legal claims of third parties and thus from political interference.
+	        Software -- as an alternative to propietary cloud technology.
+	        Only Open Source guarantees interoperability, transparency and
+	        independence from legal claims of third parties and thus from political interference.
         </p>
         <p class="lead">
-	  By using the modular SCS Software stack, cloud providers
-	  can offer Infrastructure-as-a-Service and Container-as-a-Service without depending on
-	  other vendors.
+	        By using the modular SCS Software stack, cloud providers
+	        can offer Infrastructure-as-a-Service and Container-as-a-Service without depending on
+	        other vendors.
         </p>
         <p class="lead">
           SCS is using and standardizing existing and proven Open Source components such as e.g.
-	  Kubernetes and does
-	  extend them where required. Federated cloud services are enabled this way, and users
-	  can leverage distributed cloud services from several SCS operators. European companies
-	  thus have options all the way from running it themselves or using one or several service
-	  providers and thus have 100% freedom of choice avoiding lock-in effects and dependencies
-	  from providers from foreign jurisdictions.
+	        Kubernetes and does
+	        extend them where required. Federated cloud services are enabled this way, and users
+	        can leverage distributed cloud services from several SCS operators. European companies
+	        thus have options all the way from running it themselves or using one or several service
+	        providers and thus have 100% freedom of choice avoiding lock-in effects and dependencies
+	        from providers from foreign jurisdictions.
         </p>
         <p class="lead">
           By sharing and documenting best practices for operating such cloud stacks, the difficulty
-	  to provide high quality cloud services internally or publicly is vastly reduced.
-	</p>
+	        to provide high quality cloud services internally or publicly is vastly reduced.
+	      </p>
         <p class="lead">
-	  Our target: Anyone can benefit from the SCS software stack by using it -- and by
-	  contributing to the open source code, one will increase the value of
+	        Our target: Anyone can benefit from the SCS software stack by using it -- and by
+	        contributing to the open source code, one will increase the value of
           <a href="https://www.data-infrastructure.eu/">GAIA-X</a>.
         </p>
       </div>
@@ -100,11 +100,9 @@
     <div class="row">
       <div class="col-12">
         <h2>Press (English)</h2>
-        <p class="lead">
           <ul>
             <li>(2020-07-01) SPRIND: <a href="https://www.sprind.org/en/projects/sovereign-cloud-stack/">European Supercloud: IT infrastructure for the 3rd millenium</a></li>
           </ul>
-        </p>
       </div>
     </div>
   </div>
@@ -113,7 +111,6 @@
     <div class="row">
       <div class="col-12">
         <h2>Press (German)</h2>
-        <p class="lead">
           <ul>
             <li>(2020-11-19) iX: <a href="https://www.heise.de/select/ix/2020/12/2019813170969193194">Wolken-Verbund: Mit Sovereign Cloud Stack zu mehr digitaler Souveränität</a></li>
 	    <li>(2020-10-12) Inpact Media (Beilage Handelsblatt): <a href="https://www.inpactmedia.com/it/it-security-cloud-management/die-europa-cloud">IT-Security & Cloud Management: Die Europa-Cloud</a></li>
@@ -130,7 +127,6 @@
             <li>(2020-06-04) plusserver: <a href="https://www.plusserver.com/ps-files/presse/pm-2020-06-04-GAIA-X.pdf">Für ein unabhängiges Europa in der Cloud: plusserver ist Gründungsmitglied von GAIA-X</a></li>
             <li>(2020-06-04) heise online: <a href="https://www.heise.de/news/Bundeswirtschaftsminister-Gaia-X-als-weltweiter-Goldstandard-fuer-Cloud-Dienste-4774826.html?seite=2">Bundeswirtschaftsminister: Gaia-X als weltweiter Goldstandard für Cloud-Dienste</a></li>
           </ul>
-        </p>
       </div>
     </div>
   </div>
@@ -139,7 +135,6 @@
     <div class="row">
       <div class="col-12">
         <h2>Conference contributions</h2>
-        <p class="lead">
           <ul>
             <li>(2021-02-17) <a href="https://www.talque.com/app#/app/ngx/org/6iq6yI5LPSxaIRA6cmnq/sessions">GAIA-X Technical Deep Dive</a>:
 		Kurt Garloff: Sovereign Cloud Stack (<a href="https://gaia-x.live/s/moydfcQciqASGGR">Slides</a>)</li>
@@ -159,7 +154,6 @@
             <li>(2020-10-20) Open Infra Summit: <a href="https://summit.openinfra.dev/a/event/24765">
                 Marius Feldmann, Kurt Garloff: Digital Sovereignty - Why Open Infrastructure Matters</a></li>
           </ul>
-        </p>
       </div>
     </div>
   </div>
@@ -170,12 +164,12 @@
         <h2>GAIA-X &ndash; Federated Data Infrastructure</h2>
         <img src="images/logo-gaia-x.png" class="logo-gaia-x" alt="GAIA-X logo" title="GAIA-X" />
         <p class="lead">
-	  On the digital summit 2019 in Dortmund, the
+	        On the digital summit 2019 in Dortmund, the
           <a href="https://www.data-infrastructure.eu/">GAIA-X project</a>
-	  was launched by the german ministry of economic affairs and energy (BMWi). The goal 
-	  of <a href="https://www.data-infrastructure.eu/">GAIA-X</a> is the defintion and the
-	  setup of a secure and trustworthy data infrastructure for Europe. One of the defining
-	  properties of the targeted solution is the usage of open technologies.
+	        was launched by the german ministry of economic affairs and energy (BMWi). The goal
+	        of <a href="https://www.data-infrastructure.eu/">GAIA-X</a> is the defintion and the
+	        setup of a secure and trustworthy data infrastructure for Europe. One of the defining
+	        properties of the targeted solution is the usage of open technologies.
         </p>
         <blockquote style="margin-top: 50px">
           A strong open infrastructure ecosystem is the foundation of digital sovereignty.
@@ -216,13 +210,13 @@
   <div class="container" style="margin-bottom: 25px;">
     <div class="row">
       <div class="col-12">
-	<h2>Software and Documentation</h2>
+	      <h2>Software and Documentation</h2>
         <p class="lead">
           Software and documentation is available in the
-	  <a href="https://github.com/SovereignCloudStack/">repositories on GitHub</a>.
-	  For the infrastructure and IaaS Layer (OpenStack), we are building on top of 
-	  <a href="https://www.osism.de">Open Source Infrastructure Manager</a>.
-	</p>
+	        <a href="https://github.com/SovereignCloudStack/">repositories on GitHub</a>.
+	        For the infrastructure and IaaS Layer (OpenStack), we are building on top of
+	        <a href="https://www.osism.de">Open Source Infrastructure Manager</a>.
+	      </p>
       </div>
     </div>
   </div>
@@ -231,7 +225,7 @@
     <div class="row">
       <div class="col-12">
         <h2>Job openings</h2>
-        <p class="lead">
+
           <ul>
 	          <li>CTO / Chief Product Owner / SCS Project Lead (Feb 21, Home Office / Berlin) &#x2714;</li>
 	          <li>COO / SCS Project Lead (Jun 21, Berlin / Home Office) &#x2714;</li>
@@ -242,10 +236,11 @@
 	          <li><a href="JD-Community-Manager.html">Community Manager</a> (Aug 21, Home Office / Berlin)</li>
 	          <li><a href="JD-MA-Dok.html">Staff / Project Management/Documentation</a> (Mar 21, Berlin / Home Office)</li>
           </ul>
-	  Please contact <A HRef="mailto:garloff@osb-alliance.com">Kurt Garloff</A> with questions and applications.<br/>
-	  Note: We are open to european hires, but do not have the ability to open local branches to accommodate
-	  possible legal requirements in countries outside of Germany.
-        </p>
+          <p class="lead">
+	          Please contact <A HRef="mailto:garloff@osb-alliance.com">Kurt Garloff</A> with questions and applications.<br/>
+	          Note: We are open to european hires, but do not have the ability to open local branches to accommodate
+	          possible legal requirements in countries outside of Germany.
+          </p>
       </div>
     </div>
   </div>
