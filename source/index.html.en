@@ -312,6 +312,11 @@
 
     <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
+	  <a href="https://openinfra.dev/">
+          <img src="images/OIF-logo-h31.svg" class="logo-openinfra-foundation" alt="Open Infrastructure Foundation Logo" title="Open Infrastructure Foundation" />
+	  </a>
+      </div>
+      <div class="col-md-3 col-sm-6">
 	  <a href="https://osb-alliance.de/">
           <img src="images/logo-osba.svg" class="logo-osba" alt="Logo" title="OSBA" />
 	  </a>
@@ -319,11 +324,6 @@
       <div class="col-md-3 col-sm-6">
 	  <a href="https://open-xchange.com/">
           <img src="images/logo-open-xchange.svg" class="logo-open-xchange" alt="Open-Xchange Logo" title="Open-Xchange" />
-	  </a>
-      </div>
-      <div class="col-md-3 col-sm-6">
-	  <a href="https://osf.dev/">
-          <div class="container-logo-openstack-foundation"><img src="images/logo-openstack-foundation.svg" class="logo-openstack-foundation" alt="OpenStack Foundation Logo" title="OpenStack Foundation" /></div>
 	  </a>
       </div>
       <div class="col-md-3 col-sm-6">

@@ -212,9 +212,9 @@ blockquote span{
   padding: 10px;
 }
 
-.logo-openstack-foundation {
+.logo-openinfra-foundation {
   width: auto;
-  height: 50px;
+  height: 60px;
   padding: 10px;
 }
 
@@ -230,8 +230,8 @@ blockquote span{
   padding: 10px;
 }
 
-.container-logo-openstack-foundation {
-  max-width: 80px;
+.container-logo-openinfra-foundation {
+  max-width: 90px;
   overflow: hidden;
   display:inline-block;
 }
