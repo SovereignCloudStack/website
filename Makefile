@@ -2,7 +2,7 @@
 
 html: build
 
-build: scripts/build.sh source/* source/css/* source/fonts/* source/images/* source/blog/*
+build: scripts/build.sh source/* source/css/* source/fonts/* source/images/* source/blog/* source/slides/*
 	mkdir -p build
 	touch build
 	./scripts/build.sh
