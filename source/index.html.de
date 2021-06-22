@@ -38,7 +38,7 @@
           <a href="/" title="scs.community"><i class="fa fa-home"></i></a>
         </div>
         <div class="col">
-          <a href="mailto:scs@garloff.de" title="scs@garloff.de"><i class="fa fa-envelope"></i></a>
+          <a href="mailto:project@scs.sovereignit.de" title="project[at]scs.sovereignit.de"><i class="fa fa-envelope"></i></a>
         </div>
         <div class="col">
           <a href="tel:" title="+49-221-292772-0"><i class="fa fa-phone"></i></a>
@@ -238,11 +238,11 @@
 		  <li><del>CTO / Chief Product Owner / SCS Project Lead (Mar 21, Home Office / Berlin)</del> &#x2714;</li>
 		  <li><del>COO / SCS Project Lead (Mai 21, Berlin / Home Office)</del> &#x2714;</li>
 		  <li><del>Alliances / Chief of staff (Mar 21, Berlin / Home Office)</del> &#x2714;</li>
-	          <li><a href="JD-PO-Container2.html">Product Owner Container Technologies</a> (Jul 21, Home Office / Berlin)</li>
-	          <li><a href="JD-Knowledge-Management2.html">Knowledge Management Engineer</a> (Jul 21, Home Office / Berlin)</li>
-	          <li><a href="JD-PO-Infra2.html">Product Owner IaaS and Operations</a> (Aug 21, Home Office / Berlin)</li>
+	          <li><a href="JD-PO-Container3.html">Product Owner Container Technologies</a> (Jul 21, Home Office / Berlin)</li>
+	          <li><a href="JD-Knowledge-Management3.html">Knowledge Management Engineer</a> (Jul 21, Home Office / Berlin)</li>
+	          <li><a href="JD-PO-Infra3.html">Product Owner IaaS and Operations</a> (Aug 21, Home Office / Berlin)</li>
 		  <li><del><a href="JD-Community-Manager2.html">Community Manager</a> (Jul 21, Home Office / Berlin)</del> &#x2714;</li>
-	          <li><a href="JD-MA-Dok2.html">Mitabeiter / Projekt Management/Dokumentation</a> (Jul 21, Berlin / Home Office)</li>
+	          <li><a href="JD-MA-Dok3.html">Mitabeiter / Projekt Management/Dokumentation</a> (Jul 21, Berlin / Home Office)</li>
           </ul>
           <p class="lead">
 	           Bitte richten Sie Fragen und Bewerbungen an <A HRef="mailto:garloff@osb-alliance.com"> Kurt Garloff</A>.
@@ -377,22 +377,25 @@
     <div class="row">
       <div class="col-12">
         <p class="text-muted">
-          <i class="fa fa-envelope"></i> <a href="mailto:scs@garloff.de" title="scs@garloff.de">scs@garloff.de</a>
-          <i class="fa fa-phone"></i> <a href="tel:" title="+492212927720">+49-221-292772-0</a>
-          <i class="fa fa-lock"></i> <a href="http://www.garloff.de/Datenschutz.html" title="Datenschutz">Datenschutz</a>
+          <i class="fa fa-envelope"></i> <a href="mailto:project@scs.sovereignit.de" title="project[at]scs.sovereignit.de">project[at]scs.sovereignit.de</a>
+          <i class="fa fa-phone"></i> <a href="tel:+49-711-90715-390" title="OSB Alliance">+49-711-90715-390</a>
+          <i class="fa fa-lock"></i> <a href="http://www.garloff.de/Datenschutz.html" title="Datenschutz">Datenschutzerkl&auml;rung</a>
           <!-- <i class="fa fa-gavel"></i> <a href="impressum.html" title="Impressum">Impressum</a> -->
       </div>
     </div>
     <div class="row">
       <div class="col-12">
         <p class="text-muted">
-          Impressum (Angaben gemäß § 5 TMG):<br/>
-          Kurt Garloff, Grafenwerthstr. 8,  50937 Köln<br/>
-          Mail: scs@garloff.de /  Phone: +49-221-292772-0<br/>
-          Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE296446025</br>
-          Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Kurt Garloff (Adresse wie oben)<br/>
-	  Sovereign Cloud Stack und SCS sowie das SCS Logo sind geschützte Marken der
-	   <a href="https://osb-alliance.de/">Open Source Business Alliance e.V.</a>.<br/>
+          Impressum (Angaben gem&auml;&szlig; &sect;5 TMG):<br/>
+	  Open Source Business Alliance - Bundesverband f&uuml;r digitale
+	  Souver&auml;nit&auml;t e.V.<br/>
+	  Breitscheidstr. 4, 70174 Stuttgart, Germany<br/>
+	  VR 7217, AG Stuttgart, Vorsitz: Peter H. Ganten<br/>
+          Mail: info[at]osb-alliance[dot]com /  Tel: +49-711-90715-390<br/>
+	  Verantwortlich f&uuml;r den Inhalt nach &sect;55 Abs. 2 RStV): Kurt Garloff</p>
+	<p class="text-lead">
+	  Sovereign Cloud Stack, SCS und das Logo sind gesch&uuml;tzte Marken der
+	  <a href="https://osb-alliance.com/">Open Source Business Alliance e.V.</a>.<br/>
 	  Sonstige Marken sind Eigentum ihrer jeweiligen Besitzer.<br/>
         </p>
       </div>
