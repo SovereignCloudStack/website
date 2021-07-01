@@ -295,6 +295,11 @@
           <img src="images/logo-candh.png" class="logo-cloudandheat" alt="Cloud&Heat Logo" title="Cloud&Heat" />
       </div>
       <div class="col-md-3 col-sm-6">
+	  <a href="https://dataport.de/">
+          <img src="images/logo-dataport.png" class="logo-dataport" alt="Dataport Logo" title="Dataport" />
+	  </a>
+      </div>
+      <div class="col-md-3 col-sm-6">
 	  <a href="https://dilossacon.de/">
           <img src="images/logo-dilossacon.png" class="logo-dilossacon" alt="Dilossacon Logo" title="Dilossacon" />
 	  </a>
@@ -304,14 +309,14 @@
           <img src="images/logo-gonicus.png" class="logo-gonicus" alt="GONICUS Logo" title="GONICUS" />
 	  </a>
       </div>
+    </div>
+
+    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
 	  <a href="https://gridscale.io/">
           <img src="images/logo-gridscale.png" class="logo-gridscale" alt="Gridscale Logo" title="Gridscale" />
 	  </a>
       </div>
-    </div>
-
-    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
 	  <a href="https://openinfra.dev/">
           <img src="images/OIF-logo-h31.svg" class="logo-openinfra-foundation" alt="Open Infrastructure Foundation Logo" title="Open Infrastructure Foundation" />
@@ -327,14 +332,14 @@
           <img src="images/logo-open-xchange.svg" class="logo-open-xchange" alt="Open-Xchange Logo" title="Open-Xchange" />
 	  </a>
       </div>
+    </div>
+
+    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
 	  <a href="https://ovhcloud.com/">
           <img src="images/logo-ovhcloud.svg" class="logo-ovhcloud" alt="OVHcloud Logo" title="OVHcloud" />
 	  </a>
       </div>
-    </div>
-
-    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
           <a href="https://plusserver.com/">
           <img src="images/logo-plusserver.png" class="logo-plusserver" alt="PlusServer Logo" title="PlusServer" />
@@ -350,14 +355,14 @@
           <img src="images/logo-stackable.png" class="logo-stackable" alt="Stackable Logo" title="Stackable" />
 	  </a>
       </div>
+    </div>
+
+    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
           <a href="https://www.stackhpc.com">
           <img src="images/logo-stackhpc.png" class="logo-stackhpc" alt="StackHPC Logo" title="STackHPC" />
           </a>
       </div>
-    </div>
-
-    <div class="row d-flex align-items-baseline">
       <div class="col-md-3 col-sm-6">
           <a href="https://open-telekom-cloud.com/">
           <img src="images/logo-telekom-4cpde.svg" class="logo-telekom" alt="Telekom Logo" title="Deutsche Telekom" />
@@ -367,8 +372,6 @@
           <a href="https://univention.de/">
           <img src="images/logo-univention.png" class="logo-univention" alt="Univention Logo" title="Univention" />
           </a>
-      </div>
-      <div class="col-md-3 col-sm-6">
       </div>
       <div class="col-md-3 col-sm-6">
       </div>
