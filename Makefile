@@ -10,7 +10,7 @@ html: $(TARGETS) .dep
 include .dep
 
 build/%.html: source/%.html
-	@mkdir -p build
+	@PTH="$@"; mkdir -p $${PTH%/*}
 	html-minifier \
 	    --collapse-whitespace --use-short-doctype \
 	    --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
@@ -18,7 +18,7 @@ build/%.html: source/%.html
 	    --output $@ $<
 
 build/%.html.de: source/%.html.de
-	@mkdir -p build
+	@PTH="$@"; mkdir -p $${PTH%/*}
 	html-minifier \
 	    --collapse-whitespace --use-short-doctype \
 	    --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
@@ -26,39 +26,71 @@ build/%.html.de: source/%.html.de
 	    --output $@ $<
 
 build/%.html.en: source/%.html.en
-	@mkdir -p build
+	@PTH="$@"; mkdir -p $${PTH%/*}
 	html-minifier \
 	    --collapse-whitespace --use-short-doctype \
 	    --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
 	    --minify-css true --minify-js true \
 	    --output $@ $<
 
-build/%: source/%
-	@mkdir -p build
-	cp -p $< $@
+build/%.html.de: source/%.de.md source/header_de.html source/footer_de.html Makefile
+	@PTH="$@"; mkdir -p $${PTH%/*}
+	cat source/header_de.html > $@
+	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
+	markdown_py $< >>$@
+	sed -i 's/<p>/<p class="lead">/g' $@
+	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
+	cat source/footer_de.html >> $@
+	DOC="$@"; DOC="$${DOC%.de}"; sed -i "s@index.html.en@$${DOC#build/}.en@" $@
+	html-minifier \
+	    --collapse-whitespace --use-short-doctype \
+	    --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
+	    --minify-css true --minify-js true \
+	    --output $@ $@
 
-build/blog/%: source/blog/%
-	@mkdir -p build/blog
-	cp -p $< $@
+build/%.html.en: source/%.en.md source/header_en.html source/footer_en.html Makefile
+	@PTH="$@"; mkdir -p $${PTH%/*}
+	cat source/header_en.html > $@
+	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
+	markdown_py $< >>$@
+	sed -i 's/<p>/<p class="lead">/g' $@
+	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
+	cat source/footer_en.html >> $@
+	DOC="$@"; DOC="$${DOC%.en}"; sed -i "s@index.html.de@$${DOC#build/}.de@" $@
+	html-minifier \
+	    --collapse-whitespace --use-short-doctype \
+	    --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
+	    --minify-css true --minify-js true \
+	    --output $@ $@
 
-build/slides/%: source/slides/%
-	@mkdir -p build/slides
-	cp -p $< $@
+build/%.html: source/%.md source/header_en.html source/footer_en.html Makefile
+	@PTH="$@"; mkdir -p $${PTH%/*}
+	cat source/header_en.html > $@
+	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
+	markdown_py $< >>$@
+	sed -i 's/<p>/<p class="lead">/g' $@
+	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
+	cat source/footer_en.html >> $@
+	html-minifier \
+	    --collapse-whitespace --use-short-doctype \
+	    --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
+	    --minify-css true --minify-js true \
+	    --output $@ $@
 
 build/css/%.css: source/css/%.css
 	@mkdir -p build/css
 	#cp -p $< $@
 	cleancss -o $@ $<
 
-build/fonts/%: source/fonts/%
-	@mkdir -p build/fonts
-	cp -p $< $@
-
 build/images/%.png: source/images/%.png
 	@mkdir -p build/images
 	cp -p $< $@
 	mogrify -depth 24 -define png:compression-filter=2 -define png:compression-level=9 \
 		-define png:compression-strategy=1 -resize 75% $@
+
+build/%: source/%
+	@PTH="$@"; mkdir -p $${PTH%/*}
+	cp -p $< $@
 
 IMGSRC=source/images/SCS-Logo-832x832.png
 
