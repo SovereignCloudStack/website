@@ -11,7 +11,17 @@ for name in $NAMES; do
 	echo -n "${name}: $SRC"
 	HREFS=$(grep -i 'href=' $SRC | grep -v '\(http\|mailto\|tel\)' | grep -vi 'href="/"' | grep -v '^ *<!--' | sed 's/^.*[hH][rR][Ee][fF]="\([^"]*\)".*$/\1/g')
 	IMGS=$(grep -i 'src=' $SRC | grep -v http | sed 's/^.*[sS][rR][cC]="\([^"]*\)".*$/\1/g')
-	for i in $HREFS $IMGS; do 
+	# Determine relative path of target file
+	RNM=${name#build/}; RPTH=${RNM%/*}; if test "$RPTH" = "$RNM"; then RPTH=""; fi
+	for i in $HREFS $IMGS; do
+		# Fix relative paths
+		if test -n "$RPTH"; then
+			if [[ "$i" == /* ]]; then let nothing=0
+			# FIXME: This only works for one level of subdirectories
+			#elif [[ "$i" == ../* ]]; then i="${i#..}"
+			else i="$RPTH/$i";
+			fi
+		fi
 		echo -n " build/$i"
 		if [[ "$i" == *.html ]] || [[ "$i" == *.html.de ]] || [[ "$i" == *.html.en ]]; then
 			declare -i fnd=0
