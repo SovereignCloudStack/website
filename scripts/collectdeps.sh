@@ -23,9 +23,11 @@ for name in $NAMES; do
 	echo -n "${name}: $SRC"
 	HREFS=$(grep -i 'href=' $SRC | grep -v '\(http\|mailto\|tel\)' | grep -vi 'href="/"' | grep -v '^ *<!--' | sed 's/^.*[hH][rR][Ee][fF]="\([^"]*\)".*$/\1/g')
 	IMGS=$(grep -i 'src=' $SRC | grep -v http | sed 's/^.*[sS][rR][cC]="\([^"]*\)".*$/\1/g')
+	FONTS=$(grep -i 'url(' $SRC | grep -v http | sed "s/^.*url('\([^']*\)').*\$/\1/")
 	# Determine relative path of target file
 	RNM=${name#build/}; RPTH=${RNM%/*}; if test "$RPTH" = "$RNM"; then RPTH=""; fi
-	for i in $HREFS $IMGS; do
+	RPTH="${RPTH/\/css/}"; RPTH="${RPTH/css/}"
+	for i in $HREFS $IMGS $FONTS; do
 		# Fix relative paths
 		if test -n "$RPTH"; then
 			if [[ "$i" == /* ]]; then let nothing=0
@@ -35,7 +37,7 @@ for name in $NAMES; do
 			fi
 		fi
 		echo -n " build/$i"
-		if [[ "$i" == *.html ]] || [[ "$i" == *.html.de ]] || [[ "$i" == *.html.en ]]; then
+		if [[ "$i" == *.html ]] || [[ "$i" == *.html.de ]] || [[ "$i" == *.html.en ]] || [[ "$i" == *.css ]]; then
 			declare -i fnd=0
 			for n in $COLLECTEDNM; do if [ "build/$i" = "$n" ]; then let fnd+=1; fi; done
 			if [ $fnd == 0 ]; then NEWNM="${NEWNM} build/$i"; fi
