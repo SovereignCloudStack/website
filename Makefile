@@ -1,4 +1,8 @@
 # Makefile for the website
+# Author: Kurt Garloff <scs@garloff.de>
+# Copyright: 7/2020 - 3/2021 KG IT Consulting
+# Copyright: 4/2021 - 7/2021 OSB Alliance e.V.
+# SPDX-License-Identifier: CC-BY-SA-4.0
 
 TARGETS = build/index.html.de build/index.html.en build/.htaccess build/robots.txt build/sitemap.xml build/blog/20200915-garloff-ovh.html.de build/blog/20200915-garloff-ovh.html.en
 
@@ -64,6 +68,9 @@ build/%.html.en: source/%.html.en
 	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
 	cat source/footer_en.html >> $@
 	# FIXME: Add dependency update here to include deps
+
+
+# TODO: Add rst -> html conversion as well
 
 build/css/%.css: source/css/%.css
 	@mkdir -p build/css
