@@ -33,22 +33,18 @@ build/%.html.en: source/%.html.en
 	    --minify-css true --minify-js true \
 	    --output $@ $<
 
-build/%.html.de: source/%.de.md source/header_de.html source/footer_de.html Makefile
-	@PTH="$@"; mkdir -p $${PTH%/*}
+%.html.de: %.de.md source/header_de.html source/footer_de.html Makefile
+	#@PTH="$@"; mkdir -p $${PTH%/*}
 	cat source/header_de.html > $@
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
 	markdown_py $< >>$@
 	sed -i 's/<p>/<p class="lead">/g' $@
 	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
 	cat source/footer_de.html >> $@
-	DOC="$@"; DOC="$${DOC%.de}"; sed -i "s@index.html.en@$${DOC#build/}.en@" $@
-	html-minifier \
-	    --collapse-whitespace --use-short-doctype \
-	    --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
-	    --minify-css true --minify-js true \
-	    --output $@ $@
+	DOC="$@"; DOC="$${DOC%.de}"; sed -i "s@index.html.en@$${DOC#source/}.en@" $@
+	# FIXME: Add dependency update here to include deps
 
-build/%.html.en: source/%.en.md source/header_en.html source/footer_en.html Makefile
+%.html.en: %.en.md source/header_en.html source/footer_en.html Makefile
 	@PTH="$@"; mkdir -p $${PTH%/*}
 	cat source/header_en.html > $@
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
@@ -56,14 +52,10 @@ build/%.html.en: source/%.en.md source/header_en.html source/footer_en.html Make
 	sed -i 's/<p>/<p class="lead">/g' $@
 	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
 	cat source/footer_en.html >> $@
-	DOC="$@"; DOC="$${DOC%.en}"; sed -i "s@index.html.de@$${DOC#build/}.de@" $@
-	html-minifier \
-	    --collapse-whitespace --use-short-doctype \
-	    --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
-	    --minify-css true --minify-js true \
-	    --output $@ $@
+	DOC="$@"; DOC="$${DOC%.en}"; sed -i "s@index.html.de@$${DOC#source/}.de@" $@
+	# FIXME: Add dependency update here to include deps
 
-build/%.html: source/%.md source/header_en.html source/footer_en.html Makefile
+%.html: %.md source/header_en.html source/footer_en.html Makefile
 	@PTH="$@"; mkdir -p $${PTH%/*}
 	cat source/header_en.html > $@
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
@@ -71,11 +63,7 @@ build/%.html: source/%.md source/header_en.html source/footer_en.html Makefile
 	sed -i 's/<p>/<p class="lead">/g' $@
 	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
 	cat source/footer_en.html >> $@
-	html-minifier \
-	    --collapse-whitespace --use-short-doctype \
-	    --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
-	    --minify-css true --minify-js true \
-	    --output $@ $@
+	# FIXME: Add dependency update here to include deps
 
 build/css/%.css: source/css/%.css
 	@mkdir -p build/css
