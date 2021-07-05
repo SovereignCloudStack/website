@@ -1,4 +1,16 @@
 #!/bin/bash
+# Simple script to grep through HTML
+# tracking down dependencies from the same site
+# and recursively genrating a dependency file for make
+#
+# Limitations: We don't really parse HTML ...
+# - Don't put more than one href or img src into one line
+# - Use http[s] linke if you want deps to be considered external
+# - Hardcode source -> build transfer of files
+#
+# Author: Kurt Garloff <garloff@osb-alliance.com>
+# Copyright: 7/21, OSB Alliance e.V.
+# SPDX-License-Identifier: CC-BY-SA-4.0
 
 declare -i ERR=0
 NAMES="$@"
