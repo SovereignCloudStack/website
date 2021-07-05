@@ -37,7 +37,7 @@ build/%.html.en: source/%.html.en
 	#@PTH="$@"; mkdir -p $${PTH%/*}
 	cat source/header_de.html > $@
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
-	markdown_py $< >>$@
+	markdown_py -x toc -x meta -x tables $< >>$@
 	sed -i 's/<p>/<p class="lead">/g' $@
 	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
 	cat source/footer_de.html >> $@
@@ -48,7 +48,7 @@ build/%.html.en: source/%.html.en
 	@PTH="$@"; mkdir -p $${PTH%/*}
 	cat source/header_en.html > $@
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
-	markdown_py $< >>$@
+	markdown_py -x toc -x meta -x tables $< >>$@
 	sed -i 's/<p>/<p class="lead">/g' $@
 	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
 	cat source/footer_en.html >> $@
@@ -59,7 +59,7 @@ build/%.html.en: source/%.html.en
 	@PTH="$@"; mkdir -p $${PTH%/*}
 	cat source/header_en.html > $@
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
-	markdown_py $< >>$@
+	markdown_py -x toc -x meta -x tables $< >>$@
 	sed -i 's/<p>/<p class="lead">/g' $@
 	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
 	cat source/footer_en.html >> $@
