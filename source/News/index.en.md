@@ -2,7 +2,7 @@
 
 Here you find an overview over news from the project
 
-## Own releases
+## Own announcements
 
 ## Blog
 
