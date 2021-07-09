@@ -34,6 +34,11 @@ def testsrc(nm):
     global errs
     rnm = re.sub(r'build', 'source', nm)
     if not os.access(rnm, os.R_OK):
+        # Fallback: HTML -> MD
+        if re.search(r'.html', rnm):
+            newrnm = re.sub(r'.html(.[ed][ne]){0,1}', r'\1.md', rnm)
+            if os.access(newrnm, os.R_OK):
+                return newrnm
         print("ERROR: %s not readable" % rnm, file=sys.stderr)
         errs += 1
         return None
@@ -51,11 +56,14 @@ def dep(nm, srch, comm):
     rnm = testsrc(nm)
     if not rnm:
         return []
-    re.sub(r'build', 'source', nm)
-    imgsrc = re.compile(r'[sS][rR][cC]="([^"]*)"')
-    linkref = re.compile(r'[hH][rR][eE][fF]="([^"]*)"')
-    comment = re.compile(r'<!--.*-->')
+    if rnm.endswith(".md"):
+        comm = None
+        adddep(thisdep, "source/", "header_%s.html" % lang[1:])
+        adddep(thisdep, "source/", "footer_%s.html" % lang[1:])
+        srch = (re.compile(r'^\[[^\]]*\]: *([^ \n]*)'),
+                re.compile(r'\[[^\]]*\]\(([^ \)]*)'),)
     for ln in open(rnm):
+        #ln = ln.rstrip('\n')
         if comm:
             ln = comm.sub('', ln)
         for s in srch:
