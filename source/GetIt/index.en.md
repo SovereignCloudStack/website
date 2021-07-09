@@ -23,6 +23,12 @@ and contribute to it, we refer you to our
 [github Docs](https://github.com/SovereignCloudStack/Docs/)
 repository.
 
+## SCS and OSISM
+
+For the base layers, we heavily build on top of the
+[Open Source Infrastructure and Service Manager](https://osism.tech/) (OSISM)
+project.
+
 ## Contributing
 
 We have created a 
