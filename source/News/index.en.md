@@ -1,18 +1,18 @@
-# Neuigkeiten aus dem SCS Projekt
+# News from the SCS Project
 
-Hier gibt es einen Überblick über Neuigkeiten
+Here you find an overview over news from the project
 
-## Eigene Meldungen
+## Own releases
 
 ## Blog
 
-* (2020-09-15) Kurt Garloff: [Gedanken zur OVH T-Systems Zusammenarbeit](/blog/20200915-garloff-ovh.html.de)
+* (2020-09-15) Kurt Garloff: [Comments on the OVH T-Systems deal](/blog/20200915-garloff-ovh.html.en)
 
-## Presse über SCS (EN)
+## Press on SCS (EN)
 
 * (2020-07-01) SPRIND: [European Supercloud: IT infrastructure for the 3rd millenium](https://www.sprind.org/en/projects/sovereign-cloud-stack/)
 
-## Presse über SCS (DE)
+## Press on SCS (DE)
 
 * (2021-05-19) Tagesspiegel Background: [Gaia-X: Wo die Entwicklung des Projekts steht](/slides/Gaia-X-Projekt-Tagesspiegel-Background-20210519.pdf) (Oliver Vo&szlig;)
 * (2021-03-25) Acatech: [Digitale Souveränität - Status quo und Handlungsfelder](https://www.acatech.de/publikation/digitale-souveraenitaet-status-quo-und-handlungsfelder/)
@@ -34,25 +34,25 @@ Hier gibt es einen Überblick über Neuigkeiten
 * (2020-06-04) plusserver: [Für ein unabhängiges Europa in der Cloud: plusserver ist Gründungsmitglied von GAIA-X](https://www.plusserver.com/ps-files/presse/pm-2020-06-04-GAIA-X.pdf)
 * (2020-06-04) heise online: [Bundeswirtschaftsminister: Gaia-X als weltweiter Goldstandard für Cloud-Dienste](https://www.heise.de/news/Bundeswirtschaftsminister-Gaia-X-als-weltweiter-Goldstandard-fuer-Cloud-Dienste-4774826.html?seite=2)
 
-## Konferenzbeiträge (englisch)
+## Conference Contributions (EN)
 
-* (2021-07-08) [Open Infra Live: The Role of Open Source in Digital Sovereignty](https://www.youtube.com/watch?v=JPfo6wXM0BY) (Podium mit Johan Christenson, Linda Siwe, Pierre Gronlier, Kurt Garloff)
+* (2021-07-08) [Open Infra Live: The Role of Open Source in Digital Sovereignty](https://www.youtube.com/watch?v=JPfo6wXM0BY) (Panel mit Johan Christenson, Linda Siwe, Pierre Gronlier, Kurt Garloff)
 * (2021-03-17) [Dutch Cloud Infrastructure Coalition:](https://www.dhpa.nl/nederlandse-cloud-infrastructuur-coalitie-cic-eerste-stap-naar-slagvaardig-digitaal-nederland/)
-     Sovereign Cloud Stack: Open Source Cloud &amp; Container Stack for GAIA-X[(Folien)](/slides/20210317-CIC-SCS.pdf)
+     Sovereign Cloud Stack: Open Source Cloud &amp; Container Stack for GAIA-X[(Slides)](/slides/20210317-CIC-SCS.pdf)
 * (2021-03-12) [KI Innovationswettbewerb GAIA-X Kontakgruppe](https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Kuenstliche_Intelligenz/ki.html):
-    Sovereign Cloud Stack: An open source stack for clouds and container infrastructure ([Folien](/slides/20210312-VDI-KI-Innovation-SCS.pdf))
+    Sovereign Cloud Stack: An open source stack for clouds and container infrastructure ([Slides](/slides/20210312-VDI-KI-Innovation-SCS.pdf))
 * (2021-02-17) [GAIA-X Technical Deep Dive](https://www.talque.com/app#/app/ngx/org/6iq6yI5LPSxaIRA6cmnq/sessions):
    [Kurt Garloff: Sovereign Cloud Stack](https://www.talque.com/app#/app/ngx/org/6iq6yI5LPSxaIRA6cmnq/session/cqi0846PBWkulx4fpQM6)
-  ([Folien](/slides/20210217-GX-SCS.pdf))
+  ([Slides](/slides/20210217-GX-SCS.pdf))
 * (2021-01-28) [Univention Summit](https://www.univention-summit.de/):
-  [Adriana Groh, Kurt Garloff: Wer ist SCS -- und wenn ja, wie viele?](https://www.youtube.com/watch?v=7bVXedVeEXA) (deutsch)
+  [Adriana Groh, Kurt Garloff: Wer ist SCS -- und wenn ja, wie viele?](https://www.youtube.com/watch?v=7bVXedVeEXA) (German)
 * (2020-11-19) Open Source Day: 
   [Kurt Garloff, Peter Ganten: Digitale Souveränität mit Sovereign Cloud Stack](https://osb-alliance.de/veranstaltungen/open-source-day-2020-forum-fuer-digitale-souveraenitaet)
-   [ (Folien)](/slides/20201119-OSD.pdf) (deutsch)
+   [ (Slides)](/slides/20201119-OSD.pdf) (German)
 * (2020-11-19) GAIA-X Summit: [Dr. Ronny Reinhardt, Pierre Gronlier: GAIA-X Demonstrator](https://www.youtube.com/watch?v=MkTMFRzP7jA)
 * (2020-10-21) Open Infra Summit: [Christian Berendt, Kurt Garloff: Back to the original mission: an open cloud operating system](https://summit.openinfra.dev/a/event/24658)
-  [ (Folien)](/slides/20201010-OIF-2.pdf)
+  [ (Slides)](/slides/20201010-OIF-2.pdf)
 * (2020-10-20) Open Infra Summit: [Kurt Garloff, Christian Berendt: SCS: Large federated infrastructure for sovereignty](https://summit.openinfra.dev/a/event/24666)
-  [ (Folien)](/slides/20201010-OIF-1.pdf)
+  [ (Slides)](/slides/20201010-OIF-1.pdf)
 * (2020-10-20) Open Infra Summit: [Marius Feldmann, Kurt Garloff: Digital Sovereignty - Why Open Infrastructure Matters](https://summit.openinfra.dev/a/event/24765)
 
