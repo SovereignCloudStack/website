@@ -61,6 +61,7 @@ In this role, you will
 * are used to very open and transparent communication
 
 We offer
+
 * working in an open and inspiring environment, interacting with highly-skilled and 
 	driven individuals from the project, the partners and the relevant open-source communities
 * contributing to a project that will make a difference by being instrumental for

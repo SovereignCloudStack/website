@@ -4,7 +4,7 @@ für ihr vom [Bundesministerium für Wirtschaft und Energie](https://bmwi.de/) (
 # Mitarbeiter:in (d/w/m) Dokumentation/Projektmanagement
 (Vollzeit oder Teilzeit; Berlin-Zentrum oder Homeoffice)
 
-Wir streben an, diese Position vorbehaltlich der Finanzierungsbewilligung
+Wir streben an, diese Position
 zum nächstmöglichen Zeitpunkt zu besetzen.
 
 Die OSB Alliance  Bundesverband für digitale Souveränität e.V. vertritt

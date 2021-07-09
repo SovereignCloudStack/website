@@ -1,4 +1,3 @@
-<!doctype html>
 For its [Sovereign Cloud Stack (SCS)](https://scs.community/)
 project funded by the [German Federal Ministry for Economic Affairs 
 and Energy (BMWi)](https://bmwi.de/), the
