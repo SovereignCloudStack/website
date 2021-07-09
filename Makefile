@@ -4,12 +4,15 @@
 # Copyright: 4/2021 - 7/2021 OSB Alliance e.V.
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
+#SOURCES = $(wildcard source/*.html) $(wildcard source/*.html.en) $(wildcard source/*.html.de)
+#TARGETS = $(subst source,build,$(SOURCES)) build/.htaccess build/robots.txt build/sitemap.xml build/blog/20200915-garloff-ovh.html.de build/blog/20200915-garloff-ovh.html.en
+
 TARGETS = build/index.html.de build/index.html.en build/.htaccess build/robots.txt build/sitemap.xml build/blog/20200915-garloff-ovh.html.de build/blog/20200915-garloff-ovh.html.en
 
 html: $(TARGETS) .dep
 
-.dep: scripts/collectdeps.sh source/*
-	./scripts/collectdeps.sh $(TARGETS) >$@
+.dep: scripts/collectdeps.py source/*
+	./$< $(TARGETS) >$@
 
 include .dep
 
