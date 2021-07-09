@@ -4,70 +4,74 @@
 # Copyright: 4/2021 - 7/2021 OSB Alliance e.V.
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
+#SOURCES = $(wildcard source/*.html) $(wildcard source/*.html.en) $(wildcard source/*.html.de)
+#TARGETS = $(subst source,build,$(SOURCES)) build/.htaccess build/robots.txt build/sitemap.xml build/blog/20200915-garloff-ovh.html.de build/blog/20200915-garloff-ovh.html.en
+
 TARGETS = build/index.html.de build/index.html.en build/.htaccess build/robots.txt build/sitemap.xml build/blog/20200915-garloff-ovh.html.de build/blog/20200915-garloff-ovh.html.en
 
 html: $(TARGETS) .dep
 
-.dep: scripts/collectdeps.sh source/*
-	./scripts/collectdeps.sh $(TARGETS) >$@
+.dep: scripts/collectdeps.py source/* source/css/styles.css Makefile
+	./$< $(TARGETS) build/test.html.de build/test.html.en >$@
 
 include .dep
 
+HTML_MINI_ARGS = --collapse-whitespace --use-short-doctype \
+            --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
+            --minify-css true --minify-js true
+
 build/%.html: source/%.html
 	@PTH="$@"; mkdir -p $${PTH%/*}
-	html-minifier \
-	    --collapse-whitespace --use-short-doctype \
-	    --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
-	    --minify-css true --minify-js true \
-	    --output $@ $<
+	html-minifier $(HTML_MINI_ARGS) --output $@ $<
 
 build/%.html.de: source/%.html.de
 	@PTH="$@"; mkdir -p $${PTH%/*}
-	html-minifier \
-	    --collapse-whitespace --use-short-doctype \
-	    --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
-	    --minify-css true --minify-js true \
-	    --output $@ $<
+	html-minifier $(HTML_MINI_ARGS) --output $@ $<
 
 build/%.html.en: source/%.html.en
 	@PTH="$@"; mkdir -p $${PTH%/*}
-	html-minifier \
-	    --collapse-whitespace --use-short-doctype \
-	    --remove-comments --remove-redundant-attributes --remove-script-type-attributes \
-	    --minify-css true --minify-js true \
-	    --output $@ $<
+	html-minifier $(HTML_MINI_ARGS) --output $@ $<
 
-%.html.de: %.de.md source/header_de.html source/footer_de.html Makefile
-	#@PTH="$@"; mkdir -p $${PTH%/*}
+build/%.html: tmp/%.html
+	@PTH="$@"; mkdir -p $${PTH%/*}
+	html-minifier $(HTML_MINI_ARGS) --output $@ $<
+
+build/%.html.de: tmp/%.html.de
+	@PTH="$@"; mkdir -p $${PTH%/*}
+	html-minifier $(HTML_MINI_ARGS) --output $@ $<
+
+build/%.html.en: tmp/%.html.en
+	@PTH="$@"; mkdir -p $${PTH%/*}
+	html-minifier $(HTML_MINI_ARGS) --output $@ $<
+
+tmp/%.html.de: source/%.de.md source/header_de.html source/footer_de.html Makefile
+	@PTH="$@"; mkdir -p $${PTH%/*}
 	cat source/header_de.html > $@
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
 	markdown_py -x toc -x meta -x tables $< >>$@
 	sed -i 's/<p>/<p class="lead">/g' $@
-	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
+	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s#<title>Sovereign Cloud Stack#<title>SCS: $${TITLE}#" $@
 	cat source/footer_de.html >> $@
-	DOC="$@"; DOC="$${DOC%.de}"; sed -i "s@index.html.en@$${DOC#source/}.en@" $@
-	# FIXME: Add dependency update here to include deps
+	DOC="$@"; DOC="$${DOC%.de}"; sed -i "s@index.html.en@$${DOC#tmp/}.en@" $@
 
-%.html.en: %.en.md source/header_en.html source/footer_en.html Makefile
+tmp/%.html.en: source/%.en.md source/header_en.html source/footer_en.html Makefile
 	@PTH="$@"; mkdir -p $${PTH%/*}
 	cat source/header_en.html > $@
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
 	markdown_py -x toc -x meta -x tables $< >>$@
 	sed -i 's/<p>/<p class="lead">/g' $@
-	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
+	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s#<title>Sovereign Cloud Stack#<title>SCS: $${TITLE}#" $@
 	cat source/footer_en.html >> $@
-	DOC="$@"; DOC="$${DOC%.en}"; sed -i "s@index.html.de@$${DOC#source/}.de@" $@
-	# FIXME: Add dependency update here to include deps
+	DOC="$@"; DOC="$${DOC%.en}"; sed -i "s@index.html.de@$${DOC#tmp/}.de@" $@
 
-%.html: %.md source/header_en.html source/footer_en.html Makefile
+tmp/%.html: source/%.md source/header_en.html source/footer_en.html Makefile
 	@PTH="$@"; mkdir -p $${PTH%/*}
 	cat source/header_en.html > $@
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
 	markdown_py -x toc -x meta -x tables $< >>$@
 	sed -i 's/<p>/<p class="lead">/g' $@
-	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s/<title>Sovereign Cloud Stack/<title>SCS: $${TITLE}/" $@
+	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s#<title>Sovereign Cloud Stack#<title>SCS: $${TITLE}#" $@
 	cat source/footer_en.html >> $@
-	# FIXME: Add dependency update here to include deps
 
 
 # TODO: Add rst -> html conversion as well
