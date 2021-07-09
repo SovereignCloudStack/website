@@ -52,6 +52,9 @@
         <div class="col">
           <a href="https://scs.community/docs/contributor/" title="Contributor Guide"><i class="fa fa-book"></i></a>
         </div>
+        <div class="col">
+          <a href="Jobs/jobs.html.en" title="Jobs"><i class="fa fa-institution"></i></a>
+        </div>
 	<div class="col">
 	  <a href="index.html.de" title="Deutsch"><i class="fa fa-language">de</i></a>
         </div>
@@ -238,21 +241,9 @@
     <div class="row">
       <div class="col-12">
         <h2>Job openings</h2>
-          <ul>
-          <ul>
-		  <li><del>CTO / Chief Product Owner / SCS Project Lead (Mar 21, Home Office / Berlin)</del> &#x2714;</li>
-		  <li><del>COO / SCS Project Lead (Mai 21, Berlin / Home Office)</del> &#x2714;</li>
-		  <li><del>Alliances / Chief of staff (Mar 21, Berlin / Home Office)</del> &#x2714;</li>
-	          <li><a href="JD-PO-Container3.html">Product Owner Container Technologies</a> (Jul 21, Home Office / Berlin)</li>
-	          <li><a href="JD-Knowledge-Management3.html">Knowledge Management Engineer</a> (Jul 21, Home Office / Berlin)</li>
-	          <li><a href="JD-PO-Infra3.html">Product Owner IaaS and Operations</a> (Aug 21, Home Office / Berlin)</li>
-		  <li><del><a href="JD-Community-Manager2.html">Community Manager</a> (Jul 21, Home Office / Berlin)</del> &#x2714;</li>
-	          <li><a href="JD-MA-Dok3.html">Staff / Project Management/Dokumentation</a> (Jul 21, Berlin / Home Office)</li>
-          </ul>
           <p class="lead">
-	          Please contact <A HRef="mailto:garloff@osb-alliance.com"> Kurt Garloff</A> with questions and applications.<br/>
-	          Note: We are open to european hires, but do not have the ability to open local branches to accommodate
-	          possible legal requirements in countries outside of Germany.
+	    We're looking for a number of people that want to work on this project.
+	    Please check out our <a href="Jobs/jobs.html.en">Jobs page</a>.
           </p>
       </div>
     </div>
