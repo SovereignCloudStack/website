@@ -16,7 +16,7 @@ Cloud Stack are looking for employees as well.
 
 * [Product Owner Container Technologies](JD-PO-Container3.html) (Jul 21, Home Office / Berlin)
 
-* [Knowledge Management Enginee](JD-Knowledge-Management3.html) (Jul 21, Home Office / Berlin)
+* [Knowledge Management Engineer](JD-Knowledge-Management3.html) (Jul 21, Home Office / Berlin)
 
 * [Product Owner IaaS and Operations](JD-PO-Infra3.html) (Aug 21, Home Office / Berlin)
 
