@@ -52,7 +52,7 @@ tmp/%.html.de: source/%.de.md source/header_de.html source/footer_de.html Makefi
 	sed -i 's/<p>/<p class="lead">/g' $@
 	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s#<title>Sovereign Cloud Stack#<title>SCS: $${TITLE}#" $@
 	cat source/footer_de.html >> $@
-	DOC="$@"; DOC="$${DOC%.de}"; sed -i "s@index.html.en@$${DOC#tmp/}.en@" $@
+	DOC="$@"; DOC="$${DOC%.de}"; sed -i "s@index.html.en@$${DOC#*/}.en@" $@
 
 tmp/%.html.en: source/%.en.md source/header_en.html source/footer_en.html Makefile
 	@PTH="$@"; mkdir -p $${PTH%/*}
@@ -62,11 +62,11 @@ tmp/%.html.en: source/%.en.md source/header_en.html source/footer_en.html Makefi
 	sed -i 's/<p>/<p class="lead">/g' $@
 	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s#<title>Sovereign Cloud Stack#<title>SCS: $${TITLE}#" $@
 	cat source/footer_en.html >> $@
-	DOC="$@"; DOC="$${DOC%.en}"; sed -i "s@index.html.de@$${DOC#tmp/}.de@" $@
+	DOC="$@"; DOC="$${DOC%.en}"; sed -i "s@index.html.de@$${DOC##*/}.de@" $@
 
 tmp/%.html: source/%.md source/header_en.html source/footer_en.html Makefile
 	@PTH="$@"; mkdir -p $${PTH%/*}
-	cat source/header_en.html > $@
+	cat source/header.html > $@
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
 	markdown_py -x toc -x meta -x tables $< >>$@
 	sed -i 's/<p>/<p class="lead">/g' $@
