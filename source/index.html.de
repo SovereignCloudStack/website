@@ -53,6 +53,9 @@
           <a href="https://scs.community/docs/contributor/" title="Contributor Guide"><i class="fa fa-book"></i></a>
         </div>
         <div class="col">
+          <a href="/GetIt/index.html.de" title="SCS nutzen"><i class="fa fa-download"></i></a>
+        </div>
+        <div class="col">
           <a href="/News/index.html.de" title="News"><i class="fa fa-newspaper-o"></i></a>
         </div>
         <div class="col">
@@ -168,9 +171,8 @@
       <div class="col-12">
 	<h2>Software und Dokumentation</h2>
         <p class="lead">
-          Software und Dokumentation ist in den <a href="https://github.com/SovereignCloudStack/">Repositories auf GitHub</a> verfügbar.
-	  Für die Infrastruktur und den IaaS Layer (OpenStack) setzen wir auf dem
-	  <a href="https://www.osism.de">Open Source Infrastructure Manager</a> auf.
+	  Hinweise, wie man am besten SCS bekommen kann, finden sich auf unserer
+          <a href="GetIt/index.html.de">Sovereign Cloud Stack nutzen Seite</a>.
 	</p>
       </div>
     </div>
