@@ -53,6 +53,9 @@
           <a href="https://scs.community/docs/contributor/" title="Contributor Guide"><i class="fa fa-book"></i></a>
         </div>
         <div class="col">
+          <a href="/GetIt/index.html.en" title="Get It"><i class="fa fa-download"></i></a>
+        </div>
+        <div class="col">
           <a href="/News/index.html.en" title="News"><i class="fa fa-newspaper-o"></i></a>
         </div>
         <div class="col">
@@ -166,13 +169,10 @@
   <div class="container" style="margin-bottom: 25px;">
     <div class="row">
       <div class="col-12">
-	      <h2>Software and Documentation</h2>
+      <h2>Software and Documentation</h2>
         <p class="lead">
-          Software and documentation is available in the
-	        <a href="https://github.com/SovereignCloudStack/">repositories on GitHub</a>.
-	        For the infrastructure and IaaS Layer (OpenStack), we are building on top of
-	        <a href="https://www.osism.de">Open Source Infrastructure Manager</a>.
-	      </p>
+	  Please check our <a href="GetIt/index.html.en">Get It</a> page.
+        </p>
       </div>
     </div>
   </div>
