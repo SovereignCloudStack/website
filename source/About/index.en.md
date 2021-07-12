@@ -203,6 +203,20 @@ optional from an SCS standardization point of view. If it is exposed,
 we however have standards to cover it, so we can deliver compatibility
 at this layer as well.
 
+![SCS Ecosystem Acatech](/images/Ecosys-SCS-Acatech.png)
+
+This picture shows an ecosystem with four clouds, two of them using
+SCS standards. The container layer can be managed across both of them.
+For cross-cloud container management across other technologies,
+software like Gardener can be used -- we do validate that it functions
+well on SCS.
+
+The picture has been created while working with 
+[Acatech](https://www.acatech.de/) on the
+[whitepaper on digital sovereignty](https://www.acatech.de/publikation/digitale-souveraenitaet-status-quo-und-handlungsfelder/).
+The first edition contains an older version of
+the picture though.
+
 ## Get SCS and join us
 
 See the [Get SCS page](/GetIt/).
