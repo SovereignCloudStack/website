@@ -114,9 +114,33 @@
       <div class="col-12">
         <h2>Neuigkeiten</h2>
          <p class="lead">
-	  Die Neueste Informationen aus dem Sovereign Cloud Stack Projekt (Blog,
+	  Die neuesten Informationen aus dem Sovereign Cloud Stack Projekt (Blog,
 	  Ankündigungen, Artikel über das Projekt, Konferenzbeiträge usw.) finden
 	  sich auch unserer <a href="News/index.html.de">Neuigkeiten Seite</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 25px;">
+    <div class="row">
+      <div class="col-12">
+	<h2>Software und Dokumentation</h2>
+        <p class="lead">
+	  Hinweise, wie man am besten SCS bekommen kann, finden sich auf unserer
+          <a href="GetIt/index.html.de">Sovereign Cloud Stack nutzen Seite</a>.
+	</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 25px;">
+    <div class="row">
+      <div class="col-12">
+	<h2>Stellenanzeigen</h2>
+          <p class="lead">
+	   Wir besetzen diverse Stellen bei der OSBA, bitte schauen Sie
+	   auf der <a href="Jobs/index.html.de">Jobs Seite</a>.
+	  </p>
       </div>
     </div>
   </div>
@@ -148,7 +172,8 @@
         <h2>Bundesagentur für Sprunginnovationen</h2>
         <img src="images/logo-sprind.png" class="logo-sprind" alt="SPRIND Logo" title="SPRIND" />
         <p class="lead">
-          Die Bundesagentur für Sprunginnovationen – SPRIND – mit Sitz in Leipzig schließt eine Lücke
+	Die <a href="https://sprind.org/de">Bundesagentur für Sprunginnovationen – SPRIND</a>
+          – mit Sitz in Leipzig schließt eine Lücke
           in der deutschen Innovationslandschaft: Sie findet Antworten auf die ungelösten technologischen,
           ökologischen und sozialen Herausforderungen unserer Zeit und stellt gleichzeitig sicher, dass
           die Wertschöpfung der daraus entstehenden Unternehmen und Industrien in Deutschland und Europa
@@ -162,39 +187,13 @@
         </p>
         <p class="lead">
           Zu den ersten Projekten, die SPRIND unterstützt, gehört das Projekt "Sovereign Cloud Stack".
-        </p>
-        <p class="lead">
-          SPRIND sucht nicht nur laufend nach neuen, bahnbrechenden Ideen, sondern baut auch ihr
-          Expert*innennetzwerk weiter aus. Weitere Informationen gibt es auf <a href="https://sprind.org/de/">sprind.org</a>.
+	  Das Projekt erhielt 2020 einen Untersuchungsauftrag ("Machbarkeitsstudie"), die die Umsetzbarkeit
+	  und Erfolgsaussichten von Sovereign Cloud Stack bewertete. Mit positivem Ergebnis!
         </p>
       </div>
     </div>
   </div>
 
-
-  <div class="container" style="margin-bottom: 25px;">
-    <div class="row">
-      <div class="col-12">
-	<h2>Software und Dokumentation</h2>
-        <p class="lead">
-	  Hinweise, wie man am besten SCS bekommen kann, finden sich auf unserer
-          <a href="GetIt/index.html.de">Sovereign Cloud Stack nutzen Seite</a>.
-	</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="container" style="margin-bottom: 25px;">
-    <div class="row">
-      <div class="col-12">
-	<h2>Stellenanzeigen</h2>
-          <p class="lead">
-	   Wir besetzen diverse Stellen bei der OSBA, bitte schauen Sie
-	   auf der <a href="Jobs/index.html.de">Jobs Seite</a>.
-	  </p>
-      </div>
-    </div>
-  </div>
 
   <div class="container" style="margin-bottom: 25px;">
     <div class="row">
