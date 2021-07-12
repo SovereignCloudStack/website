@@ -39,7 +39,7 @@ open development process with open design discussions and decisions by
 an open community. This ensures that the software really can be used
 and influenced by the recipients, thus ensuring the freedom of its consumers.
 
-The transparency into the code and the development proces is an important
+The transparency of the code and the development process is an important
 ingredient to ensure that the code can be trusted.
 
 ### Sustainability
@@ -59,7 +59,7 @@ power saving technologies are important topics in SCS.
 Our vision replaces centralized infrastructure control with a network
 of providers that collaborate. The highly compatible SCS clouds, good
 network connections plus federatable identity and access management
-does bring us a significant step closer to create a large global
+brings us a significant step closer to create a large global
 virtual cloud without a central controlling entity.
 
 ## Advantages ...
@@ -78,12 +78,13 @@ a much larger set of applications DevOps teams and applications that
 work on the cloud. The addressable market thus grows significantly.
 
 Moving from only adhering to standards towards using some or all of
-the SCS modules also saves a lot of duplicated work in curating,
-integrating, automating, testing, documenting, ... the software and
+the SCS modules from the reference implementation also saves a lot
+of duplicated work in curating, configuring,
+integrating, automating, testing, documenting the software and
 building up the operational processes, monitoring, updating, ...
 for running it.
 
-Last not least, the operational work can more easily be share with
+Last not least, the operational work can more easily be shared with
 others or even outsourced. And skilled personell is more likely to
 be available.
 
@@ -93,7 +94,7 @@ Using modern IT infrastructure with full automation for
 infrastructure deployment and lifecycle management
 (= Infrastructure as Code) provides a huge boost to the
 productivity of software DevOps teams. Europe urgently needs
-this boost to avoid falling (further) back in the global
+this boost to avoid falling (further) behind in the global
 competition, where more and more traditional industries are
 disrupted by digital innovation.
 
@@ -119,7 +120,7 @@ IaC infrastructure without these downsides.
 
 From a geopolitical angle, ensuring that a growing part of the
 value creation of the increasingly digital value chains can remain
-in Europe is reducing the strategic risk the increasing the captured
+in Europe is reducing the strategic risks and is increasing the captured
 value.
 
 ## Deployment models
@@ -128,8 +129,7 @@ Standard SCS is optimized for small (half a rack) to large (hundreds
 of servers per region) clouds in the data center or the near edge.
 
 The deployment can be done as a private cloud by a skilled IT
-department or as a public clouds by a CSP. We try to network
-both.
+department or as a public cloud by a CSP. We have both in our network.
 
 We are working on planning optimized far-edge scenarios in a
 followup project ("SCS-2").
@@ -143,8 +143,8 @@ infrastructure.
 
 SCS thus intends to make it a lot easier to provide sovereign
 infrastructure. As such it has been included in the Gaia-X effort.
-Historically, it was a subworking group in the architecture
-working group in workstream 2 -- it is today an (Open) Work
+Historically, it was a sub working group in the software and
+architecture working group in workstream 2 -- it is today an (Open) Work
 Package connected to the Provider Working Group of the Technical
 Committee of the Gaia-X AISBL.
 
@@ -153,7 +153,7 @@ Federation Services / Open Source Software Working Group,
 the Infrastructure sub working group, the Architecture of
 Standards work package, the product and service board, the
 minimal viable gaia piloting group, the self-descriptions
-work package and the cross-cloud service orchestration group.
+work package and the cross-environment service orchestration group.
 
 There is a close link with the Gaia-X Federation Services
 ([gxfs](https://gxfs.de/)) effort. There is a shared vision of
@@ -198,12 +198,12 @@ The core OpenStack services are mainly used to be a strong multitenant
 foundation for managing many k8s clusters -- the real service here
 is K8s aaS -- we are offering the k8s cluster API as interface to
 manage k8s clusters; providers can of course use it internally as
-well to created managed services. Exposing the OpenStack layer is
+well to create managed services. Exposing the OpenStack layer is
 optional from an SCS standardization point of view. If it is exposed,
 we however have standards to cover it, so we can deliver compatibility
 at this layer as well. Note that the technology choices that are not
 part of the mandatory standard (S) may not necessarily be final.
-The SCS Platform Services are not part of the base SCS project;
+The SCS Platform Services are not part of the base SCS project ("SCS-1");
 however we have plans prepared to extend SCS into this
 space "SCS-3".
 
@@ -223,4 +223,4 @@ the picture though.
 
 ## Get SCS and join us
 
-See the [Get SCS page](/GetIt/).
+See the [Get SCS page](/GetIt/index.html.en).
