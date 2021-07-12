@@ -47,6 +47,9 @@
           <a href="https://twitter.com/SovereignCloudStack" title="Twitter"><i class="fa fa-twitter"></i></a>
         </div> -->
         <div class="col">
+          <a href="/About/index.html.en" title="About SCS"><i class="fa fa-info"></i></a>
+        </div>
+        <div class="col">
           <a href="https://github.com/SovereignCloudStack/" title="GitHub"><i class="fa fa-github"></i></a>
         </div>
         <div class="col">
@@ -101,6 +104,9 @@
 	        contributing to the open source code, one will increase the value of
           <a href="https://gaia-x.eu/">Gaia-X</a>.
         </p>
+        <p class="lead">
+	  <a href="/About/index.html.en">Read more about Sovereign Cloud Stack ...</a>
+	</p>
       </div>
     </div>
   </div>
