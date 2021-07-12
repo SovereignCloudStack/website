@@ -177,7 +177,31 @@ lots for this go through an open tender process.
 
 ## Technological Vision
 
-The 
+Automating the life cycle management of all components is key: Basic
+infrastructure services such as the database, message queue, ..., the
+operational stack (monitoring, patching, logging, metering, ...),
+the identity management stack (LDAP, keycloak, ...),
+the base virtualization layer (KVM, ceph, OVN), the VM layer
+(OpenStack core services) and the kubernetes tooling are all covered
+by this. We use a containerized deployment driven by ansible.
+The containers at the base layer however are managed using classical
+docker/podman -- we explicitly control placement etc. here and do
+not see the highly dynamic capabilities of kubernetes at this layer
+as an advantage. This is of course different in higher layers that
+change much more often depending on the customer needs.
+
+![SCS architecture blocks](/images/201001-SCS-2.jpg)
+
+The picture shows the architectural structure of SCS.
+
+The core OpenStack services are mainly used to be a strong multitenant
+foundation for managing many k8s clusters -- the real service here
+is K8s aaS -- we are offering the k8s cluster API as interface to
+manage k8s clusters; providers can of course use it internally as
+well to created managed services. Exposing the OpenStack layer is
+optional from an SCS standardization point of view. If it is exposed,
+we however have standards to cover it, so we can deliver compatibility
+at this layer as well.
 
 ## Get SCS and join us
 
