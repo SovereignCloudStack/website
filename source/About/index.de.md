@@ -13,217 +13,237 @@ Risiken von Kontrollverlust über Technologie und Daten mit sich zu bringen.
 
 ### Zertifizierbare Standards
 
-We aim to define well-defined standards, that are precise enough so that
-software implemented and tested on one SCS implementation will work without
-additional effort on other SCS based infrastructure. The standards are
-a collection of upstream standards enhanced with specific choices that
-are not specified upstream. We are working on providing conformance tests
-so that changes can be validated w.r.t. their impact on compliance.
+Wir zielen darauf ab, Standards zu definieren, die präzise genug festgelegt
+sind, dass Software, die für eine SCS Implementierung gebaut und getestet
+wurde, ohne zusätzlichen Aufwand auf anderen SCS-basierten Infrastruktur
+funktioniert. Unsere Standards sind eine Sammlung von Upstream Standards,
+ggf. um spezielle Details angereichert, wo die Upstream Spezifikationen
+Lücken aufweisen. Wir arbeiten an Conformance Tests, so dass Änderungen im
+Hinblick auf ihre Standardkonformität bewertet werden können.
 
-Certifiable standards are the prerequisite to create a vivid ecosystem
-on top of SCS.
+Zertifizierbare Standards sind eine Voraussetzung, um ein lebendiges
+Ökosysten oberhalb von SCS etablieren zu können.
 
-We also work on (optional) standards with operational topics; transparency
-with respect to monitoring and root cause analyses in case of issues are
-immediate customer benefits; for operators, it helps to share knowledge
-on the Ops piece of DevOps for efficiency and for helping with recruiting
-personell.
+Wir arbeiten auch an (optionalen) Standards zu betrieblichen Themen.
+Transparenz über Monitoring und Wurzel-des-Übels Analysens (Root-Cause-Analysis)
+bei Zwischenfällen nützen unmittelbar dem Kunden. Betreibern hilft
+es, insbesondere beim betrieblichen Teil von DevOps am gemeinsam aufgebauten
+Wissen teilhaben zu können und macht Betrieb effizienter; auch bei der Suche
+nach geeignetem Personal helfen gemeinsame Standards.
 
-Quality and Security tests are also part of the testing, so conformance with
-e.g. security standards can also be continuously assured.
+Qualitäts- und Sicherheitstests sind Teil der Standardtestprozeduren.
+Die Einhaltung von z.B. Sicherheitsstandards kann so auch kontinuierlich
+sichergestellt werden.
 
 ### Offenheit und Transparenz
 
-All software is fully open source -- we don't believe in open core models.
-It's not just the software license: The software is developed in an
-open development process with open design discussions and decisions by
-an open community. This ensures that the software really can be used
-and influenced by the recipients, thus ensuring the freedom of its consumers.
+Die gesamte Software is vollständig open source -- wir halten nichts von
+open core Modellen. Es geht aber nicht nur um die Software Lizenz: SCS
+wird in einem offenen Entwicklungsprozess erstellt, mit offenen Entwurfsprozessen
+und -entscheidungen durch eine offene Gemeinschaft. Das stellt sicher, dass
+die Software auch wirklich von den Nutzern genutzt und beeinflusst werden
+kann. Somit wird die Freiheit der Nutzer sichergestellt.
 
-The transparency into the code and the development proces is an important
-ingredient to ensure that the code can be trusted.
+Die Transparenz des Codes und des Entwicklungsprozesses ist eine wichtige
+Eigenschaft, um sicherzistellen, dass dem Code vertraut werden kann.
 
 ### Nachhaltigkeit
 
-The IT world is fast-paced. New technologies replace older ones very quickly.
-With Sovereign Cloud Stack, we aim to have fairly stable software infrastructure
-at the base layer, while accommodating rapid change at higher layers.
-Having a fairly sustainable base layer in place avoids the need for
-operators to contantly rebuild the base layers.
+Die IT Welt ist schnelllebig. Neue Technologien ersetzen alte sehr schnell.
+Mit dem Sovereign Cloud Stack haben wir an der Basis relativ stabile
+Softwareinfrastruktur, während wir die schnellen Wechsel auf den Schichten
+darüber erleichtern. Eine relativ langlebige Basisschicht vermeidet die
+Notwendigkeit, dass Betreiber ständig diese neu bauen müssen.
 
-This also creates the space to work on sustainability with respect to
-energy consumption: Automating energy-aware placement decisions and using
-power saving technologies are important topics in SCS.
+Das schafft auch den Raum, an Nachhaltigkeit bzgl. des Energiebedarfs
+zu arbeiten. Die Automatisierung von verbrauchsoptimierten
+Platzierungsentscheidungen und die Nutzung von Stromsparmechanismen
+sind in SCS wichtige Themen.
 
 ### Föderierung
 
-Our vision replaces centralized infrastructure control with a network
-of providers that collaborate. The highly compatible SCS clouds, good
-network connections plus federatable identity and access management
-does bring us a significant step closer to create a large global
-virtual cloud without a central controlling entity.
+In unserer Vision wird die zentralisierte Kontrolle über Infrastruktur
+durch ein Netzwerk kollaborierender Anbieter ersetzt. The hochgradig
+zueinander kompatiblen SCS Clouds, gute Netzwerkverbindungen sowie
+eine föderierbare Identitäts- und Zugriffsverwaltung bringen uns einer
+großen globalen virtuellen Cloud näher, ohne dass es einer zentralen
+Kontrollinstanz bedürfte.
 
 ## Vorteile ...
 
-### ... für DevOps teams (PaaS/SaaSi Entwicklung/Betrieb)
+### ... für DevOps teams (PaaS/SaaS Entwicklung/Betrieb)
 
-Having a well-defined environment that can be operated as small
-private cloud or as large public clouds alike avoids duplicated
-implementation and validation work. Targeting SCS is thus rather
-efficient.
+Eine wohl-definierte Umgebung, welche sowohl als kleine private
+Umgebung oder ebenso als große öffentliche Clouds zur Verfügung steht
+vermeidet doppelte Arbeit bei Implemetierung und Validierung.
+SCS ist somit eine attraktive ZIelplattform.
 
 ### ... für Public Cloud Anbieter
 
-Adhereing to SCS standards and being part of the SCS ecosystem creates
-a much larger set of applications DevOps teams and applications that
-work on the cloud. The addressable market thus grows significantly.
+Durch die Erfüllung von SCS Standards und der Teilnahme im SCS Ökosystem
+ist eine viel größere Menge and Anwendungen und DevOps Team verfügbar,
+welche auf dieser Plattform arbeiten. Der adressierbare Markt wächst
+somit deutlich.
 
-Moving from only adhering to standards towards using some or all of
-the SCS modules also saves a lot of duplicated work in curating,
-integrating, automating, testing, documenting, ... the software and
-building up the operational processes, monitoring, updating, ...
-for running it.
+Der Schritt von bloßer Standardkonformität hin zur Nutzung von einigen
+oder auch allen SCS Modulen der Referenzimplementierung erspart eine
+Menge doppelter Arbeit -- bei der Auswahl, der Integration, der
+Automatisierung, der Konfiguration, dem Testen, dem Dokumentieren der
+Software und beim Aufbau der Betriebsprozesse, der Überwachung,
+dem Update, ... um diese Umgebung in Betrieb zu halten.
 
-Last not least, the operational work can more easily be share with
-others or even outsourced. And skilled personell is more likely to
-be available.
+Nicht zuletzt kann der Betrieb so auch einfacher mit anderen
+gemeinsam verrichtet werden oder gar komplett outgesourct werden.
+Qualifiziertes Personal ist in jedem Falle eher erhältlich.
 
 ### ... für die Gesellschaft
 
-Using modern IT infrastructure with full automation for
-infrastructure deployment and lifecycle management
-(= Infrastructure as Code) provides a huge boost to the
-productivity of software DevOps teams. Europe urgently needs
-this boost to avoid falling (further) back in the global
-competition, where more and more traditional industries are
-disrupted by digital innovation.
+Die Nutzung moderner IT Infrastruktur mit voller Automatisierung
+zur Installation und der Verwaltung des gesamten Lebenszyklus
+(=Infrastructure as Code, IaC) liefert einen enormen Fortschritt
+bei der Produktivität von DevOps Teams. Europa braucht solche
+Fortschritte dringend, um zu vermeiden, (weiter) zurückzufallen
+im globalen Wettbewerb, in dem zunehmend traditionelle Industrie
+durch digitale Innovation disruptiert wird.
 
-Unfortunately, just relying on the hyperscalers comes with
-many disadvantages:
+Sich dabei einfach auf die Hyperscaler zu verlassen bringt
+leider viele Nachteile mit sich:
 
-* It does not always fit the use scenario where you might
-  need decentral IT infrastructure (edge).
+* Diese passen gar nicht immer zum Nutzungsszenario; insbesondere
+  wenn dezentrale IT Infrastruktur (edge) vonnöten ist.
 
-* It creates legal challenges with respect to data privacy
-  (and sometimes also security) compliance.
+* Sie bringt rechtliche Probleme mit sich, in Hinblick auf
+  die Regeln des Datenschutzes (und manchmal auch der Sicherheit).
 
-* It creates a strategic dependency on one or a small
-  set of very large companies.
+* Sie führt zu strategischen Abhängigkeit von einem oder einer
+  kleiner Zahl von großen Unternehmen,
 
-* It creates economic dependencies.
+* Sie führt zu ökonomischen Abhängigeiten.
 
-All of these are inhibitors to adopting hyperscaler clouds.
+All diese Probleme sind Hemmnisse bei der Umstellung auf die
+Nutzung der Clouds der Hyperscaler.
 
-Having the choice to use local SCS cloud providers or even creating
-and operating your own SCS cloud gives you the advantages of modern
-IaC infrastructure without these downsides.
+Die Auswahl zwischen lokalen SCS Cloudanbietern oder gar der
+Implementation einer eigenen privaten Cloud (gleicher Technologie)
+zu haben ermöglicht es, die Vorteile moderner IaC Infrastruktur
+zu nutzen ohne obige Nachteile in Kauf nehmen zu müssen.
 
-From a geopolitical angle, ensuring that a growing part of the
-value creation of the increasingly digital value chains can remain
-in Europe is reducing the strategic risk the increasing the captured
-value.
+Aus geopolitischer Sicht ist zu beobachten, dass ein zunehmender
+Teil der Wertschöpfung in den zunehmend digitalisierten
+Wertschöpfungsketten stattfindet -- zu unterstützen, dass ein
+wachsender Teil davon in Europa stattfinden kann verringert
+die strategischen Risiken und sorgt für einen höheren Wertbeitrag
+Europas.
 
 ## Deployment Modelle
 
-Standard SCS is optimized for small (half a rack) to large (hundreds
-of servers per region) clouds in the data center or the near edge.
+Standardmäßig ist SCS für kleine (ein halber Schrank Hardware) bis
+große Clouds (Hunderte von Servern je Region) optimiert -- vom
+Rechenzentrum bis hin zu Near Edge Szenarien.
 
-The deployment can be done as a private cloud by a skilled IT
-department or as a public clouds by a CSP. We try to network
-both.
+Die Cloud kann als Private Cloud durch eine gut ausgebildete
+IT Abteilung bereitgestellt werden oder auch als Public Cloud
+durch einen Cloud Provider. Wir vernetzen beide Gruppen.
 
-We are working on planning optimized far-edge scenarios in a
-followup project ("SCS-2").
+We haben arbeiten an Plänen für optimierte Szenarien für
+far-edge Clouds in einem Folgeprojekt ("SCS-2").
 
 ## Sovereign Cloud Stack und Gaia-X
 
-Digital sovereignty is a key goal of [Gaia-X](https://gaia-x.eu/).
-We believe that many scenarios that require sovereignty at the
-data level can not be achieved well without control over the
-infrastructure.
+Digitale Souveräntiät ist ein Kernziel von [Gaia-X](https://gaia-x.eu/).
+Wir sind der Ansicht, dass viele Szenarien, welche den souveränen
+Umgang mit Daten benötigen, dies nicht gut erreichen können ohne
+Kontrolle über die Infrastruktur zu haben.
 
-SCS thus intends to make it a lot easier to provide sovereign
-infrastructure. As such it has been included in the Gaia-X effort.
-Historically, it was a subworking group in the architecture
-working group in workstream 2 -- it is today an (Open) Work
-Package connected to the Provider Working Group of the Technical
-Committee of the Gaia-X AISBL.
+SCS möchte es (potentiellen) Anbietern von Infrastruktur sehr viel
+einfacher machen, souveräne Angebot zu machen. Daher ist SCS Teil
+des Gaia-X Projekts geworden. Ursprünglich war SCS als Unterarbeitsgruppe
+in der AG Software und Architektur im Workstream 2 -- heutzutage ist
+SCS als (Offenes) Arbeitspaket verfasst, welche an die Provider
+Arbeitsgruppe des Technical Committees der Gaia-X AISBL andockt.
 
-SCS members support many efforts in Gaia-X, such as the
-Federation Services / Open Source Software Working Group,
-the Infrastructure sub working group, the Architecture of
-Standards work package, the product and service board, the
-minimal viable gaia piloting group, the self-descriptions
-work package and the cross-cloud service orchestration group.
+SCS Mitarbeitende unterstützen viele Projekte in Gaia-X, wie
+z.B. die Federation Services / Open Source Software Arbeitsgruppe,
+die Infrastruktur Unterarbeitsgruppe, das Architecture of Standards
+Arbeitspaket, das Product & Service Board, die Minimal Viable
+Gaia Pilotierungsgruppe, das Selbstbeschreibungsarbeitspaket,
+und die Cross-Environment Service Orchestration Gruppe.
 
-There is a close link with the Gaia-X Federation Services
-([gxfs](https://gxfs.de/)) effort. There is a shared vision of
-providing SCS with GXFS on top as a platform for sovereign data
-services. SCS partners support GXFS with infrastructure to validate
-the gxfs implementation.
+Es gibt eine enge Verbindung mit den Arbeiten zu den
+Gaia-X Federation Services ([GXFS](https://gxfs.de/)).
+Es gibt die gemeinsame Vorstellung, SCS Infrastruktur mit den GXFS
+darauf als Plattform für souveräne Datendienste zu liefern.
+SCS Partner unterstützen GXFS mti Infrastruktur für Entwicklungs-
+und Testzwecke.
 
 ## Projekt und Finanzierung
 
-The SCS project was initiated by volunteers. With the funding,
-the project is now hosted by the [OSB alliance](https://osb-alliance.de/)
-which has hired a small central team to drive and coordinate the
-projects.
+Das SCS Projekt wurde von Freiwilligen initiiert.
+Mit der nun gewährten Förderung wird das Projekt von der
+[OSB Alliance](https://osb-alliance.de/) beherbergt.
+Sie hat ein kleines wachsendes zentrales Team eingestellt, um 
+das Projekt zu steuern und zu koordinieren.
 
-There is a growing community of volunteers around the central team
-that contributes to the SCS project.
+Um das zentrale Team hat sich eine wachsende Community von Freiwilligen
+gebildet, welche am Projekt mitarbeitet.
 
-With the funding in place, FOSS development that does not necessarily
-benefit individual companies enough can also be funded. The work packages /
-lots for this go through an open tender process.
+Mit der verfügbaren Förderung kann nun auch freie Softwareentwicklung
+bezahlt werden, die einzelen Unternehmen nicht genugt Nutzen bringt,
+um aus Eigenantrieb stattzufinden. The Arbeitspakete / Lose dafür werden
+öffentlich ausgeschrieben.
 
 ## Technologische Vision
 
-Automating the life cycle management of all components is key: Basic
-infrastructure services such as the database, message queue, ..., the
-operational stack (monitoring, patching, logging, metering, ...),
-the identity management stack (LDAP, keycloak, ...),
-the base virtualization layer (KVM, ceph, OVN), the VM layer
-(OpenStack core services) and the kubernetes tooling are all covered
-by this. We use a containerized deployment driven by ansible.
-The containers at the base layer however are managed using classical
-docker/podman -- we explicitly control placement etc. here and do
-not see the highly dynamic capabilities of kubernetes at this layer
-as an advantage. This is of course different in higher layers that
-change much more often depending on the customer needs.
+Die Automatisierung der Verwaltung des Lebenszyklus aller Komponenten
+ist der Schlüssel: Grundlegende Infrastrukturdienste wir Datenbank,
+Message Dienst, ..., die Betriebswerkzeuge (Monitoring, Logging, Patching,
+Nutzungserfassung, ...), Nutzerverwaltung (LDAP, keycloak, ...),
+die grundlegende Virtualisierung (KVM, ceph, OVN), die IaaS Schicht
+(Kerndienste von OpenStack) und die Werkzeuge rund um Kubernetes werden
+hier alle abgedeckt. Die Dienste werden durch ansible als Container
+augebracht. Auf dieser Schicht werden docker/podman Container benutzt.
+Hierdurch wird die Platzierung ... explizit
+festgelegt -- wir sehen die von k8s erzeugte hohe Dynamik auf dieser
+Schicht nicht als Vorteil. Dies ist auf höheren Schichten natürlich
+anders, in Abhängigkeit der Nutzerbedürfnisse.
 
 ![SCS architecture blocks](/images/201001-SCS-4a.png)
 
-The picture shows the architectural structure and components of SCS.
+Das Bild zeigt die Architektur und einige Komponenten von SCS.
 
-The core OpenStack services are mainly used to be a strong multitenant
-foundation for managing many k8s clusters -- the real service here
-is K8s aaS -- we are offering the k8s cluster API as interface to
-manage k8s clusters; providers can of course use it internally as
-well to created managed services. Exposing the OpenStack layer is
-optional from an SCS standardization point of view. If it is exposed,
-we however have standards to cover it, so we can deliver compatibility
-at this layer as well. Note that the technology choices that are not
-part of the mandatory standard (S) may not necessarily be final.
-The SCS Platform Services are not part of the base SCS project;
-however we have plans prepared to extend SCS into this
-space "SCS-3".
+Die Kerndienste von OpenStack dienen hauptsächlich als starke
+mandantenfähige Basis, um viele k8s Cluster zu verwalten.
+Der Hauptdienst für Nutzer ist K8s as a Service -- dafür stellt
+SCS die k8s cluster API bereit. Anbieter können die Schnittstellen
+natürlich auch nutzen, um den Endkunden einen Managed Service anzubieten.
+Aus SCS Standardisierungssicht ist es optional, die OpenStack Schnittstellen
+nach aussen sichtbar zu machen; wenn es getan wird, gibt es von SCS Seite
+dafür aber auch Standards, so dass auch auf dieser Ebene eine
+Standardkonformität und Kompatibilität erreicht werden kann.
+
+Es sollte zur Kenntnis genommen werden, dass die Technologiewahl
+jenseits der mit (S) gekennzeichneten vorgeschriebenen Standards
+an einigen Stellen noch vorläufig sein kann. Die Plattformdienste
+werden als Teil des grundlegenden SCS ("SCS-1") Projekts noch
+nicht standardisiert. Dies ist Teil eines weitergehenden Plans ("SCS-3")
+welcher sich in Arbeit befindet.
 
 ![SCS Ecosystem Acatech](/images/Ecosys-SCS-Acatech.png)
 
-This picture shows an ecosystem with four clouds, two of them using
-SCS standards. The container layer can be managed across both of them.
-For cross-cloud container management across other technologies,
-software like Gardener can be used -- we do validate that it functions
-well on SCS.
+Diese Zeichnung zeigt ein IT Ökosystem mit vier Cloudanbietern;
+zwei davon nutzen SCS Standards. Die Containerschicht kann über diese
+beiden Anbieter hinweg verwaltet werden.
+Für die Verwaltung auch über Hyperscaler oder andere inkompatible
+Angebote hinweg kann dann Software wie Gardener zum Einsatz gebracht
+werden. Diese wird auch auf SCS ständig validiert.
 
-The picture has been created while working with 
-[Acatech](https://www.acatech.de/) on the
-[whitepaper on digital sovereignty](https://www.acatech.de/publikation/digitale-souveraenitaet-status-quo-und-handlungsfelder/).
-The first edition contains an older version of
-the picture though.
+Das Bild wurde anläßlich der Arbeit mit
+[Acatech](https://www.acatech.de/) beim Erstellen der
+[Publikation zu digitaler Souveränität](https://www.acatech.de/publikation/digitale-souveraenitaet-status-quo-und-handlungsfelder/).
+gezeichnet. Die erste Ausgabe enthält noch eine ältere Version des Bildes.
 
 ## SCS nutzen und mitmachen
 
-See the [Get SCS page](/GetIt/).
+Siehe Seite [SCS nutzen](/GetIt/index.html.de).
 
 
