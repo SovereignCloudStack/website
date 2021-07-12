@@ -54,6 +54,15 @@ body {
   margin-top: 10px;
 }
 
+.logo-bmwi {
+  float: left;
+  width: 20%;
+  height: auto;
+  min-width: 160px;
+  padding: 10px;
+  margin-top: 1px;
+}
+
 a:hover {
   color: rgb(80, 195, 165) !important;
   /* color: rgb(15, 95, 225) !important; */
@@ -291,3 +300,9 @@ blockquote span{
 
 img[alt="SCS architecture blocks"] { width:100%; }
 img[alt="SCS Ecosystem Acatech"] { width:100%; }
+img[alt=Peter_Ganten] { width:10%; }
+img[alt=Thomas_Jarzombek] { width:10%; }
+img[alt=Kurt_Garloff] { width:10%; }
+img[alt=Rafael_Laguna] { width:10%; }
+img[alt=Alexander_Wallner] { width:10%; }
+img[alt=Marius_Feldmann] { width:10%; }

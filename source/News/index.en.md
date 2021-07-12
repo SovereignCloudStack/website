@@ -4,6 +4,8 @@ Here you find an overview over news from the project
 
 ## Own announcements
 
+* (2021-07-13) OSB Alliance/BMWi: [OSB Alliance develops Sovereign Cloud Stack for the Gaia-X project](/News/pr-20210713.html.en)
+
 ## Blog
 
 * (2020-09-15) Kurt Garloff: [Comments on the OVH T-Systems deal](/blog/20200915-garloff-ovh.html.en)
