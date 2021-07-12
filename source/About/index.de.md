@@ -11,7 +11,7 @@ Risiken von Kontrollverlust über Technologie und Daten mit sich zu bringen.
 
 ## Ziele
 
-### iZertifizierbare Standards
+### Zertifizierbare Standards
 
 We aim to define well-defined standards, that are precise enough so that
 software implemented and tested on one SCS implementation will work without
@@ -191,9 +191,9 @@ not see the highly dynamic capabilities of kubernetes at this layer
 as an advantage. This is of course different in higher layers that
 change much more often depending on the customer needs.
 
-![SCS architecture blocks](/images/201001-SCS-2.jpg)
+![SCS architecture blocks](/images/201001-SCS-4a.png)
 
-The picture shows the architectural structure of SCS.
+The picture shows the architectural structure and components of SCS.
 
 The core OpenStack services are mainly used to be a strong multitenant
 foundation for managing many k8s clusters -- the real service here
@@ -202,7 +202,11 @@ manage k8s clusters; providers can of course use it internally as
 well to created managed services. Exposing the OpenStack layer is
 optional from an SCS standardization point of view. If it is exposed,
 we however have standards to cover it, so we can deliver compatibility
-at this layer as well.
+at this layer as well. Note that the technology choices that are not
+part of the mandatory standard (S) may not necessarily be final.
+The SCS Platform Services are not part of the base SCS project;
+however we have plans prepared to extend SCS into this
+space "SCS-3".
 
 ![SCS Ecosystem Acatech](/images/Ecosys-SCS-Acatech.png)
 
