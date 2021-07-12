@@ -181,4 +181,4 @@ The
 
 ## Get SCS and join us
 
-See the [/GetIt](Get SCS page).
+See the [Get SCS page](/GetIt/).
