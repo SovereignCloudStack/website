@@ -286,3 +286,7 @@ blockquote span{
   height: 55px;
   padding: 10px;
 }
+
+/* Markdown image */
+
+img[alt="SCS architecture blocks"] { width:100%; }
