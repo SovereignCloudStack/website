@@ -3,10 +3,10 @@
 Sovereign Cloud Stack (SCS) ist ein Netzwerk existierender und angehender
 Anbieter von standardisierter souveräner Cloud und Container Infrastruktur
 mit dem Ziel, gemeinsam die Definition, Implementation und den Betrieb
-einer vollständig offenen, föderierten und komptiblen Plattform voranzubringen.
+einer vollständig offenen, föderierten und kompatiblen Plattform voranzubringen.
 Durch die Zusammenarbeit unterstützt die Plattform ein gesundes Ökosystem
 für Entwicklungs/Betriebsteams (DevOps Teams) von Software und stärkt
-somit den Fortschritt bei er Digitalisierung in Europa, ohne dabei größere
+somit den Fortschritt bei der Digitalisierung in Europa, ohne dabei größere
 Risiken von Kontrollverlust über Technologie und Daten mit sich zu bringen.
 
 ## Ziele
@@ -17,15 +17,15 @@ Wir zielen darauf ab, Standards zu definieren, die präzise genug festgelegt
 sind, dass Software, die für eine SCS Implementierung gebaut und getestet
 wurde, ohne zusätzlichen Aufwand auf anderen SCS-basierten Infrastruktur
 funktioniert. Unsere Standards sind eine Sammlung von Upstream Standards,
-ggf. um spezielle Details angereichert, wo die Upstream Spezifikationen
+ggf. um spezielle Details angereichert, dort wo die Upstream Spezifikationen
 Lücken aufweisen. Wir arbeiten an Conformance Tests, so dass Änderungen im
 Hinblick auf ihre Standardkonformität bewertet werden können.
 
 Zertifizierbare Standards sind eine Voraussetzung, um ein lebendiges
-Ökosysten oberhalb von SCS etablieren zu können.
+Ökosystem oberhalb von SCS etablieren zu können.
 
 Wir arbeiten auch an (optionalen) Standards zu betrieblichen Themen.
-Transparenz über Monitoring und Wurzel-des-Übels Analysens (Root-Cause-Analysis)
+Transparenz über Monitoring und Wurzel-des-Übels Analysen (Root-Cause-Analysis)
 bei Zwischenfällen nützen unmittelbar dem Kunden. Betreibern hilft
 es, insbesondere beim betrieblichen Teil von DevOps am gemeinsam aufgebauten
 Wissen teilhaben zu können und macht Betrieb effizienter; auch bei der Suche
@@ -37,15 +37,15 @@ sichergestellt werden.
 
 ### Offenheit und Transparenz
 
-Die gesamte Software is vollständig open source -- wir halten nichts von
+Die gesamte Software ist vollständig open source -- wir halten nichts von
 open core Modellen. Es geht aber nicht nur um die Software Lizenz: SCS
-wird in einem offenen Entwicklungsprozess erstellt, mit offenen Entwurfsprozessen
-und -entscheidungen durch eine offene Gemeinschaft. Das stellt sicher, dass
-die Software auch wirklich von den Nutzern genutzt und beeinflusst werden
-kann. Somit wird die Freiheit der Nutzer sichergestellt.
+wird in einem offenen Entwicklungsprozess erstellt, mit offenen 
+Entwurfsprozessen und -entscheidungen durch eine offene Gemeinschaft. 
+Das stellt sicher, dass die Software auch wirklich von den Nutzern genutzt 
+und beeinflusst werden kann. Somit wird die Freiheit der Nutzer sichergestellt.
 
 Die Transparenz des Codes und des Entwicklungsprozesses ist eine wichtige
-Eigenschaft, um sicherzistellen, dass dem Code vertraut werden kann.
+Eigenschaft, um sicherzustellen, dass dem Code vertraut werden kann.
 
 ### Nachhaltigkeit
 
@@ -63,7 +63,7 @@ sind in SCS wichtige Themen.
 ### Föderierung
 
 In unserer Vision wird die zentralisierte Kontrolle über Infrastruktur
-durch ein Netzwerk kollaborierender Anbieter ersetzt. The hochgradig
+durch ein Netzwerk kollaborierender Anbieter ersetzt. Die hochgradig
 zueinander kompatiblen SCS Clouds, gute Netzwerkverbindungen sowie
 eine föderierbare Identitäts- und Zugriffsverwaltung bringen uns einer
 großen globalen virtuellen Cloud näher, ohne dass es einer zentralen
@@ -74,14 +74,14 @@ Kontrollinstanz bedürfte.
 ### ... für DevOps teams (PaaS/SaaS Entwicklung/Betrieb)
 
 Eine wohl-definierte Umgebung, welche sowohl als kleine private
-Umgebung oder ebenso als große öffentliche Clouds zur Verfügung steht
-vermeidet doppelte Arbeit bei Implemetierung und Validierung.
-SCS ist somit eine attraktive ZIelplattform.
+Umgebung oder ebenso als große öffentliche Cloud zur Verfügung steht
+vermeidet doppelte Arbeit bei Implementierung und Validierung.
+SCS ist somit eine attraktive Zielplattform.
 
 ### ... für Public Cloud Anbieter
 
 Durch die Erfüllung von SCS Standards und der Teilnahme im SCS Ökosystem
-ist eine viel größere Menge and Anwendungen und DevOps Team verfügbar,
+ist eine viel größere Menge an Anwendungen und DevOps Team verfügbar,
 welche auf dieser Plattform arbeiten. Der adressierbare Markt wächst
 somit deutlich.
 
@@ -113,7 +113,7 @@ leider viele Nachteile mit sich:
   wenn dezentrale IT Infrastruktur (edge) vonnöten ist.
 
 * Sie bringt rechtliche Probleme mit sich, in Hinblick auf
-  die Regeln des Datenschutzes (und manchmal auch der Sicherheit).
+  die Verordnungen des Datenschutzes (und manchmal auch der Sicherheit).
 
 * Sie führt zu strategischen Abhängigkeit von einem oder einer
   kleiner Zahl von großen Unternehmen,
@@ -158,7 +158,7 @@ Kontrolle über die Infrastruktur zu haben.
 SCS möchte es (potentiellen) Anbietern von Infrastruktur sehr viel
 einfacher machen, souveräne Angebot zu machen. Daher ist SCS Teil
 des Gaia-X Projekts geworden. Ursprünglich war SCS als Unterarbeitsgruppe
-in der AG Software und Architektur im Workstream 2 -- heutzutage ist
+in der AG Software und Architektur im Workstream 2 -- mittlerweile ist
 SCS als (Offenes) Arbeitspaket verfasst, welche an die Provider
 Arbeitsgruppe des Technical Committees der Gaia-X AISBL andockt.
 
@@ -166,14 +166,14 @@ SCS Mitarbeitende unterstützen viele Projekte in Gaia-X, wie
 z.B. die Federation Services / Open Source Software Arbeitsgruppe,
 die Infrastruktur Unterarbeitsgruppe, das Architecture of Standards
 Arbeitspaket, das Product & Service Board, die Minimal Viable
-Gaia Pilotierungsgruppe, das Selbstbeschreibungsarbeitspaket,
+Gaia-X Pilotierungsgruppe, das Selbstbeschreibungsarbeitspaket,
 und die Cross-Environment Service Orchestration Gruppe.
 
 Es gibt eine enge Verbindung mit den Arbeiten zu den
 Gaia-X Federation Services ([GXFS](https://gxfs.de/)).
 Es gibt die gemeinsame Vorstellung, SCS Infrastruktur mit den GXFS
 darauf als Plattform für souveräne Datendienste zu liefern.
-SCS Partner unterstützen GXFS mti Infrastruktur für Entwicklungs-
+SCS Partner unterstützen GXFS mit Infrastruktur für Entwicklungs-
 und Testzwecke.
 
 ## Projekt und Finanzierung
@@ -188,20 +188,20 @@ Um das zentrale Team hat sich eine wachsende Community von Freiwilligen
 gebildet, welche am Projekt mitarbeitet.
 
 Mit der verfügbaren Förderung kann nun auch freie Softwareentwicklung
-bezahlt werden, die einzelen Unternehmen nicht genugt Nutzen bringt,
-um aus Eigenantrieb stattzufinden. The Arbeitspakete / Lose dafür werden
+bezahlt werden, die einzelnen Unternehmen nicht genügend Nutzen bringt,
+um aus Eigenantrieb stattzufinden. Die Arbeitspakete / Lose dafür werden
 öffentlich ausgeschrieben.
 
 ## Technologische Vision
 
 Die Automatisierung der Verwaltung des Lebenszyklus aller Komponenten
-ist der Schlüssel: Grundlegende Infrastrukturdienste wir Datenbank,
+ist der Schlüssel: Grundlegende Infrastrukturdienste wie Datenbank,
 Message Dienst, ..., die Betriebswerkzeuge (Monitoring, Logging, Patching,
-Nutzungserfassung, ...), Nutzerverwaltung (LDAP, keycloak, ...),
+Nutzungserfassung, ...), Nutzerverwaltung (LDAP, Keycloak, ...),
 die grundlegende Virtualisierung (KVM, ceph, OVN), die IaaS Schicht
 (Kerndienste von OpenStack) und die Werkzeuge rund um Kubernetes werden
-hier alle abgedeckt. Die Dienste werden durch ansible als Container
-augebracht. Auf dieser Schicht werden docker/podman Container benutzt.
+hier alle abgedeckt. Die Dienste werden durch Ansible als Container
+augebracht. Auf dieser Schicht werden Docker/Podman Container benutzt.
 Hierdurch wird die Platzierung ... explizit
 festgelegt -- wir sehen die von k8s erzeugte hohe Dynamik auf dieser
 Schicht nicht als Vorteil. Dies ist auf höheren Schichten natürlich
@@ -214,10 +214,10 @@ Das Bild zeigt die Architektur und einige Komponenten von SCS.
 Die Kerndienste von OpenStack dienen hauptsächlich als starke
 mandantenfähige Basis, um viele k8s Cluster zu verwalten.
 Der Hauptdienst für Nutzer ist K8s as a Service -- dafür stellt
-SCS die k8s cluster API bereit. Anbieter können die Schnittstellen
+SCS die k8s Cluster API bereit. Anbieter können die Schnittstellen
 natürlich auch nutzen, um den Endkunden einen Managed Service anzubieten.
 Aus SCS Standardisierungssicht ist es optional, die OpenStack Schnittstellen
-nach aussen sichtbar zu machen; wenn es getan wird, gibt es von SCS Seite
+nach außen sichtbar zu machen; wenn es getan wird, gibt es von SCS Seite
 dafür aber auch Standards, so dass auch auf dieser Ebene eine
 Standardkonformität und Kompatibilität erreicht werden kann.
 
@@ -237,7 +237,7 @@ Für die Verwaltung auch über Hyperscaler oder andere inkompatible
 Angebote hinweg kann dann Software wie Gardener zum Einsatz gebracht
 werden. Diese wird auch auf SCS ständig validiert.
 
-Das Bild wurde anläßlich der Arbeit mit
+Das Bild wurde anlässlich der Arbeit mit
 [Acatech](https://www.acatech.de/) beim Erstellen der
 [Publikation zu digitaler Souveränität](https://www.acatech.de/publikation/digitale-souveraenitaet-status-quo-und-handlungsfelder/).
 gezeichnet. Die erste Ausgabe enthält noch eine ältere Version des Bildes.
