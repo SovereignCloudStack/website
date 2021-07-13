@@ -12,6 +12,9 @@
 import yaml
 import os, sys
 
+# logos per row
+lpr = 4
+
 def usage():
     print("Usage: gen-logos.py in.yaml > out.html")
     sys.exit(1)
@@ -24,26 +27,27 @@ def main(argv):
     ctr = 0
     for key in logos.keys():
         logo = logos[key]
-        if ctr%4 == 0:
+        if ctr%lpr == 0:
             print(' <div class="row d-flex align-items-baseline">')
         print('  <div class="col-md-3 col-sm-6">')
-        print('   <a href="%s">' % logo["link"])
+        print('   <a href="%s">' % logo['link'])
+        prop = ''
         if 'height' in logo:
-            print('   <img src="images/%s" alt="%s Logo" title="%s" height=%s />' \
-                % (logo["filename"], key, key, logo["height"]))
-        else:
-            print('   <img src="images/%s" alt="%s Logo" title="%s" width=%s />' \
-                % (logo["filename"], key, key, logo["width"]))
+            prop += ' height="%s"' % logo['height']
+        if 'width' in logo:
+            prop += ' width="%s"' % logo['width']
+        print('   <img src="/images/%s" alt="%s Logo" title="%s"%s />' \
+                % (logo["filename"], key, key, prop))
         print('  </div>')
-        if ctr%4 == 3:
-            print(' </div>')
         ctr += 1
-    while ctr%4:
+        if ctr%lpr == 0:
+            print(' </div>')
+    while ctr%lpr:
         print('  <div class="col-md-3 col-sm-6">')
         print('  </div>')
-        if ctr%4 == 3:
-            print(' </div>')
         ctr += 1
+        if ctr%lpr == 0:
+            print(' </div>')
 
 if __name__ == "__main__":
     main(sys.argv)

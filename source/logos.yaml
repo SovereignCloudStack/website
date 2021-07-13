@@ -2,27 +2,27 @@ Logos:
   23technologies:
     filename: logo-23technologies.png
     link: https://23technologies.cloud/
-    height: 60px
+    height: 60
   b1systems:
     filename: logo-b1-systems.svg
     link: https://b1-systems.de/
-    width: 70px
+    width: 70
   betacloud:
     filename: logo-betacloud-solutions.png
     link: https://betacloud-solutions.de/
-    height: 60px
+    height: 60
   bmwi:
     filename: bmwi_logo_de.svg
     link: https://www.bmwi.de/
-    height: 60px
+    height: 60
   citynetwork:
     filename: logo-citynetwork.png
     link: https://citynetwork.eu/
-    height: 50px
+    height: 50
   cloudandheat:
     filename: logo-candh.png
     link: https://cloudandheat.com/
-    height: 70px
+    height: 70
 
 
 
