@@ -33,7 +33,7 @@ def adddep(thisdep, mypath, nm):
 def testsrc(nm):
     global errs
     rnm = re.sub(r'build', 'source', nm)
-    if nm.startswith("tmp/"):
+    if nm.startswith("tmp/images"):
         rnm = re.sub(r'tmp', 'source', nm)
     if not os.access(rnm, os.R_OK):
         # Fallback: HTML -> MD

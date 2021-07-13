@@ -14,7 +14,7 @@ Logos:
   bmwi:
     filename: bmwi_logo_de.svg
     link: https://www.bmwi.de/
-    height: 60
+    height: 80
   citynetwork:
     filename: logo-citynetwork.png
     link: https://citynetwork.eu/
@@ -23,6 +23,23 @@ Logos:
     filename: logo-candh.png
     link: https://cloudandheat.com/
     height: 70
+  dataport:
+    filename: logo-dataport.png
+    link: https://dataport.de/
+    height: 68
+  dilossacon:
+    filename: logo-dilossacon.png
+    link: https://dilossacon.de/
+    height: 40
+  gonicus:
+    filename: logo-gonicus.png
+    link: https://gonicus.de/
+    height: 50
+  gridscale:
+    filename: logo-gridscale.png
+    link: https://gridscale.io/
+    height: 60
+ 
 
 
 
