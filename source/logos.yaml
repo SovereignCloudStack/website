@@ -1,0 +1,91 @@
+# List of logos for the footer of SCS page
+# No need to keep them sorted; script will
+# sort the keys (case-insensitive) alphabetically
+Logos:
+  23Technologies:
+    filename: logo-23technologies.png
+    link: https://23technologies.cloud/
+    height: 60
+  B1Systems:
+    filename: logo-b1-systems.svg
+    link: https://b1-systems.de/
+    width: 70
+  Betacloud:
+    filename: logo-betacloud-solutions.png
+    link: https://betacloud-solutions.de/
+    height: 60
+  BMWi:
+    filename: bmwi_logo_de.svg
+    link: https://www.bmwi.de/
+    height: 80
+  CityNetwork:
+    filename: logo-citynetwork.png
+    link: https://citynetwork.eu/
+    height: 50
+  CloudAndHeat:
+    filename: logo-candh.png
+    link: https://cloudandheat.com/
+    height: 70
+  Dataport:
+    filename: logo-dataport.png
+    link: https://dataport.de/
+    height: 67
+  Dilossacon:
+    filename: logo-dilossacon.png
+    link: https://dilossacon.de/
+    height: 40
+  Gonicus:
+    filename: logo-gonicus.png
+    link: https://gonicus.de/
+    height: 50
+  Gridscale:
+    filename: logo-gridscale.png
+    link: https://gridscale.io/
+    height: 60
+  OpenInfra:
+    filename: OIF-logo-h31.svg
+    link: https://openinfra.org/
+    height: 67
+  OpenSourceBizAlliance:
+    filename: logo-osba.svg
+    link: https://osb-alliance.com/
+    height: 70
+  OpenXChange:
+    filename: logo-open-xchange.svg
+    link: https://open-xchange.com/
+    height: 45
+  OVHCloud:
+    filename: logo-ovhcloud.svg
+    link: https://ovhcloud.com/
+    height: 45
+  PlusServer:
+    filename: logo-plusserver.png
+    link: https://plusserver.com/
+    height: 50
+  SPRIND:
+    filename: logo-sprind.png
+    link: https://sprind.org/
+    height: 46
+  Stackable:
+    filename: logo-stackable.png
+    link: https://www.stackable.de/
+    height: 50
+  StackHPC:
+    filename: logo-stackhpc.png
+    link: https://www.stackhpc.com/
+    height: 60
+  TSystems:
+    filename: logo-telekom-4cpde.svg
+    link: https://open-telekom-cloud.com/
+    height: 60
+  Univention:
+    filename: logo-univention.png
+    link: https://univention.de/
+    height: 55
+
+
+   
+
+
+
+

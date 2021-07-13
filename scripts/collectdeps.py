@@ -33,6 +33,8 @@ def adddep(thisdep, mypath, nm):
 def testsrc(nm):
     global errs
     rnm = re.sub(r'build', 'source', nm)
+    if nm.startswith("tmp/images"):
+        rnm = re.sub(r'tmp', 'source', nm)
     if not os.access(rnm, os.R_OK):
         # Fallback: HTML -> MD
         if re.search(r'.html', rnm):
@@ -45,7 +47,7 @@ def testsrc(nm):
     return rnm
  
 
-def dep(nm, srch, comm):
+def dep(nm, srch, comm, include=None):
     global newdeps, errs
     newdeps = []
     thisdep = []
@@ -64,6 +66,10 @@ def dep(nm, srch, comm):
                 re.compile(r'\[[^\]]*\]\(([^ \)]*)'),)
     for ln in open(rnm):
         #ln = ln.rstrip('\n')
+        if include:
+            m = include.search(ln)
+            if m:
+                adddep(thisdep, "", m.group(1))
         if comm:
             ln = comm.sub('', ln)
         for s in srch:
@@ -76,7 +82,7 @@ def dep(nm, srch, comm):
 def htmldep(nm):
     return dep(nm,
             (re.compile(r'[sS][rR][cC]="([^"]*)"'), re.compile(r'[hH][rR][eE][fF]="([^"]*)"'),),
-            re.compile(r'<!--.*-->'))
+             re.compile(r'<!--.*-->'), re.compile(r'<!--include: (.*)-->'))
 
 def cssdep(nm):
     return dep(nm,
