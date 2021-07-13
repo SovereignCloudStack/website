@@ -25,18 +25,25 @@ def main(argv):
     ylist = yaml.safe_load(open(argv[1]))
     logos = ylist["Logos"]
     ctr = 0
-    for key in logos.keys():
+    keys = list(logos.keys())
+    keys.sort(key=str.lower)
+    for key in keys:
+    #for key in logos.keys():
         logo = logos[key]
         if ctr%lpr == 0:
             print(' <div class="row d-flex align-items-baseline">')
         print('  <div class="col-md-3 col-sm-6">')
         print('   <a href="%s">' % logo['link'])
-        prop = ''
+        prop = 'style="padding:10px'
         if 'height' in logo:
-            prop += ' height="%s"' % logo['height']
+            prop += ';height:%spx' % logo['height']
+        else:
+            prop += ';height:auto'
         if 'width' in logo:
-            prop += ' width="%s"' % logo['width']
-        print('   <img src="/images/%s" alt="%s Logo" title="%s"%s />' \
+            prop += ';width:%spx' % logo['width']
+        else:
+            prop += ';width:auto'
+        print('   <img src="/images/%s" alt="%s Logo" title="%s" %s" />' \
                 % (logo["filename"], key, key, prop))
         print('  </div>')
         ctr += 1
