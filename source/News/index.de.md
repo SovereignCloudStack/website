@@ -4,6 +4,8 @@ Hier gibt es einen Überblick über Neuigkeiten
 
 ## Eigene Meldungen
 
+* (2021-07-13) OSB Alliance/BMWi: [OSB Alliance entwickelt Sovereign Cloud Stack für das Gaia-X Projekt](/News/pr-20210713.html.de)
+
 ## Blog
 
 * (2020-09-15) Kurt Garloff: [Gedanken zur OVH T-Systems Zusammenarbeit](/blog/20200915-garloff-ovh.html.de)

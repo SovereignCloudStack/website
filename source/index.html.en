@@ -169,6 +169,47 @@
   <div class="container" style="margin-bottom: 25px;">
     <div class="row">
       <div class="col-12">
+        <h2>Federal ministry for economy and energy</h2>
+        <img src="images/BMWi_Fz_2017_WebSVG_de.svg" class="logo-bmwi" alt="BMWi Logo" title="BMWi" />
+        <p class="lead">
+	  After providing funding for the Gaia-X Federation Services
+	  (<a href="https://gxfs.de/">GXFS</a>), the
+	  <a href="https://bmwi.de">Federal ministry for economy and energy</a> (BMWi, Germany)
+	  is now supporting the Sovereign Cloud Stack project with 14.9M€.</p>
+        <p class="lead">
+	Quoting<i>Thomas Jarzombek (Member of the German Parliament), BMWi
+		representative for the digital economy and start-ups</i>:
+	<blockquote>
+	 "With the Sovereign Cloud Stack, the GAIA-X project is increasingly
+	 being filled with life. As a contribution to European digital
+	 sovereignty, the technical foundation, the Cloud Stack, is to be
+	 implemented as an open source project in order to enable switching
+	 providers in the future. It will make it easier for medium-sized
+	 companies, but also for public administrations, to use the advantages
+	 of GAIA-X in specific projects. The Sovereign Cloud Stack will be
+	 closely linked to the core components of GAIA-X, the so-called
+	 Federation Services, the creation of which is also funded by the BMWi
+	 and is well advanced. Together with other funding measures such as the
+	 GAIA-X funding competition or for future investments in the vehicle
+	 industry (KoPa35c), the BMWi is lending considerable momentum to the
+	 implementation of GAIA-X."
+	</blockquote>
+        </p>
+        <p class="lead">
+	  The complete <a href="News/pr-20210713.html.en">press release</a>
+	  can also be found on our <a href="News/index.html.en">News page</a>.
+	  An FAQ (in German) is available at the
+	  <a href="https://osb-alliance.de/sovereign-cloud-stack-scs">OSB
+	  Alliance</a>. The <a href="https://osb-alliance.de/">OSB Alliance</a>is
+	  hiring a <a href="Jobs/index.html.en">growing team</a> for the project.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 25px;">
+    <div class="row">
+      <div class="col-12">
         <h2>Federal Agency for Disruptive Innovations</h2>
         <img src="images/logo-sprind.png" class="logo-sprind" alt="SPRIND logo" title="SPRIND" />
         <p class="lead">

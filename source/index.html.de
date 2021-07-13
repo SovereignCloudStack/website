@@ -169,6 +169,45 @@
   <div class="container" style="margin-bottom: 25px;">
     <div class="row">
       <div class="col-12">
+        <h2>Bundesministerium für Wirtschaft und Energie</h2>
+        <img src="images/BMWi_Fz_2017_WebSVG_de.svg" class="logo-bmwi" alt="BMWi Logo" title="BMWi" />
+        <p class="lead">
+	  Das <a href="https://bmwi.de">Bundesministerium für Wirtschaft und Energie</a>
+	  fördert nun nach den Gaia-X Federation Services (<a href="https://gxfs.de/">GXFS</a>)
+	  auch das Sovereign Cloud Stack Projekt mit 14,9 Millionen Euro.</p>
+        <p class="lead">
+	Dazu <i>Thomas Jarzombek (MdB), Beauftragter des BMWi für die Digitale Wirtschaft und Start-Ups</i>:
+	<blockquote>
+	 "Mit dem Sovereign Cloud Stack füllt sich das Projekt GAIA-X immer mehr
+	 mit Leben. Als Beitrag zu einer europäischen digitalen Souveränität
+	 soll der technische Unterbau, der Cloud Stack, als Open-Source-Projekt
+	 umgesetzt werden. Damit setzt das BMWi an dieser Stelle auf Wettbewerb,
+	 um zukünftig auch den Wechsel zwischen Anbietern zu ermöglichen. Es
+	 wird mittelständischen Unternehmen, aber auch der öffentlichen
+	 Verwaltung erleichtern, die Vorteile von GAIA-X in konkreten Projekten
+	 zu nutzen. Der Sovereign Cloud Stack wird dabei eng mit den
+	 Kernkomponenten von GAIA-X, den so genannten Federation Services
+	 verbunden, deren Erstellung ebenfalls vom BMWi gefördert wird und weit
+	 fortgeschritten ist. Zusammen mit weiteren Fördermaßnahmen wie dem
+	 GAIA-X-Förderwettbewerb oder für Zukunftsinvestitionen in die
+	 Fahrzeugindustrie (KoPa35c) verleiht das BMWi der Umsetzung von GAIA-X
+	 erheblichen Schwung."
+	</blockquote>
+        </p>
+        <p class="lead">
+	  Die <a href="News/pr-20210713.html.de">ganze Pressemeldung</a>
+	  findet sich auf unserer <a href="News/index.html.de">News Seite</a>
+	  sowie eine FAQ bei der <a href="https://osb-alliance.de/sovereign-cloud-stack-scs">OSB
+	  Alliance</a>. Die <a href="https://osb-alliance.de/">OSB Alliance</a> baut dafür
+          ein <a href="Jobs/index.html.de">wachsendes Team</a> auf.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 25px;">
+    <div class="row">
+      <div class="col-12">
         <h2>Bundesagentur für Sprunginnovationen</h2>
         <img src="images/logo-sprind.png" class="logo-sprind" alt="SPRIND Logo" title="SPRIND" />
         <p class="lead">
