@@ -26,7 +26,7 @@ We also work on (optional) standards with operational topics; transparency
 with respect to monitoring and root cause analyses in case of issues are
 immediate customer benefits; for operators, it helps to share knowledge
 on the Ops piece of DevOps for efficiency and for helping with recruiting
-personell.
+staff.
 
 Quality and Security tests are also part of the testing, so conformance with
 e.g. security standards can also be continuously assured.
@@ -48,7 +48,7 @@ The IT world is fast-paced. New technologies replace older ones very quickly.
 With Sovereign Cloud Stack, we aim to have fairly stable software infrastructure
 at the base layer, while accommodating rapid change at higher layers.
 Having a fairly sustainable base layer in place avoids the need for
-operators to contantly rebuild the base layers.
+operators to constantly rebuild the base layers.
 
 This also creates the space to work on sustainability with respect to
 energy consumption: Automating energy-aware placement decisions and using
@@ -58,7 +58,7 @@ power saving technologies are important topics in SCS.
 
 Our vision replaces centralized infrastructure control with a network
 of providers that collaborate. The highly compatible SCS clouds, good
-network connections plus federatable identity and access management
+network connections plus federable identity and access management
 brings us a significant step closer to create a large global
 virtual cloud without a central controlling entity.
 
@@ -73,7 +73,7 @@ efficient.
 
 ### ... for Public Cloud Operators
 
-Adhereing to SCS standards and being part of the SCS ecosystem creates
+Adhering to SCS standards and being part of the SCS ecosystem creates
 a much larger set of applications DevOps teams and applications that
 work on the cloud. The addressable market thus grows significantly.
 
@@ -85,13 +85,13 @@ building up the operational processes, monitoring, updating, ...
 for running it.
 
 Last not least, the operational work can more easily be shared with
-others or even outsourced. And skilled personell is more likely to
+others or even outsourced. And skilled staff is more likely to
 be available.
 
 ### ... for the society
 
 Using modern IT infrastructure with full automation for
-infrastructure deployment and lifecycle management
+infrastructure deployment and life cycle management
 (= Infrastructure as Code) provides a huge boost to the
 productivity of software DevOps teams. Europe urgently needs
 this boost to avoid falling (further) behind in the global
@@ -102,7 +102,7 @@ Unfortunately, just relying on the hyperscalers comes with
 many disadvantages:
 
 * It does not always fit the use scenario where you might
-  need decentral IT infrastructure (edge).
+  need decentralized IT infrastructure (edge).
 
 * It creates legal challenges with respect to data privacy
   (and sometimes also security) compliance.
@@ -182,11 +182,11 @@ infrastructure services such as the database, message queue, ..., the
 operational stack (monitoring, patching, logging, metering, ...),
 the identity management stack (LDAP, keycloak, ...),
 the base virtualization layer (KVM, ceph, OVN), the VM layer
-(OpenStack core services) and the kubernetes tooling are all covered
-by this. We use a containerized deployment driven by ansible.
+(OpenStack core services) and the Kubernetes tooling are all covered
+by this. We use a containerized deployment driven by Ansible.
 The containers at the base layer however are managed using classical
-docker/podman -- we explicitly control placement etc. here and do
-not see the highly dynamic capabilities of kubernetes at this layer
+Docker/Podman -- we explicitly control placement etc. here and do
+not see the highly dynamic capabilities of Kubernetes at this layer
 as an advantage. This is of course different in higher layers that
 change much more often depending on the customer needs.
 
@@ -196,7 +196,7 @@ The picture shows the architectural structure and components of SCS.
 
 The core OpenStack services are mainly used to be a strong multitenant
 foundation for managing many k8s clusters -- the real service here
-is K8s aaS -- we are offering the k8s cluster API as interface to
+is k8s aaS -- we are offering the k8s cluster API as interface to
 manage k8s clusters; providers can of course use it internally as
 well to create managed services. Exposing the OpenStack layer is
 optional from an SCS standardization point of view. If it is exposed,
