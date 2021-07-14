@@ -23,19 +23,19 @@ body {
 
 .logo-pic {
   width: auto;
-  height: 80px;
+  height: 75px;
   float: left;
 }
 
 .logo-pic2 {
   width: auto;
-  height: 100px;
+  height: 90px;
   float: center;
 }
 
 .logo-pic3 {
   width: auto;
-  height: 70px;
+  height: 65px;
   float: right;
 }
 
