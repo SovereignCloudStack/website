@@ -33,7 +33,7 @@ def main(argv):
         if ctr%lpr == 0:
             print(' <div class="row d-flex align-items-baseline">')
         print('  <div class="col-md-3 col-sm-6">')
-        print('   <a href="%s">' % logo['link'])
+        print('   <a href="%s" target="_blank">' % logo['link'])
         prop = 'style="padding:10px'
         if 'height' in logo:
             prop += ';height:%spx' % logo['height']
@@ -43,8 +43,9 @@ def main(argv):
             prop += ';width:%spx' % logo['width']
         else:
             prop += ';width:auto'
-        print('   <img src="/images/%s" alt="%s Logo" title="%s" %s" />' \
+        print('    <img src="/images/%s" alt="%s Logo" title="%s" %s" />' \
                 % (logo["filename"], key, key, prop))
+        print('   </a>')
         print('  </div>')
         ctr += 1
         if ctr%lpr == 0:
