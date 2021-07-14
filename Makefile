@@ -50,6 +50,7 @@ tmp/%.html.de: source/%.de.md source/header_de.html source/footer_de.html Makefi
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
 	markdown_py -x toc -x meta -x tables $< >>$@
 	sed -i 's/<p>/<p class="lead">/g' $@
+	sed -i 's@\(<a href="https[^"]*"\)@\1 target="_blank"@g' $@
 	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s#<title>Sovereign Cloud Stack#<title>SCS: $${TITLE}#" $@
 	./scripts/include.py source/footer_de.html >> $@
 	DOC="$@"; DOC="$${DOC%.de}"; sed -i "s@index.html.en@$${DOC##*/}.en@" $@
@@ -60,6 +61,7 @@ tmp/%.html.en: source/%.en.md source/header_en.html source/footer_en.html Makefi
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
 	markdown_py -x toc -x meta -x tables $< >>$@
 	sed -i 's/<p>/<p class="lead">/g' $@
+	sed -i 's@\(<a href="https[^"]*"\)@\1 target="_blank"@g' $@
 	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s#<title>Sovereign Cloud Stack#<title>SCS: $${TITLE}#" $@
 	./scripts/include.py source/footer_en.html >> $@
 	DOC="$@"; DOC="$${DOC%.en}"; sed -i "s@index.html.de@$${DOC##*/}.de@" $@
@@ -70,6 +72,7 @@ tmp/%.html: source/%.md source/header_en.html source/footer_en.html Makefile
 	#MultiMarkdown-6-mmd $<; IN="$<"; cat $${IN%.md}.html >> $@; rm $${IN%.md}.html
 	markdown_py -x toc -x meta -x tables $< >>$@
 	sed -i 's/<p>/<p class="lead">/g' $@
+	sed -i 's@\(<a href="https[^"]*"\)@\1 target="_blank"@g' $@
 	#if grep '<!--include: ' $@ >/dev/null; then mv $@ $@.tmp; ./scripts/include.py $@.tmp > $@; rm $@.tmp; fi
 	TITLE=$$(grep '^#' $< | head -n1 | sed 's/^#*//'); sed -i "s#<title>Sovereign Cloud Stack#<title>SCS: $${TITLE}#" $@
 	./scripts/include.py source/footer_en.html >> $@
