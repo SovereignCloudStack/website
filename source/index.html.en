@@ -20,7 +20,7 @@
   <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" /-->
   <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous" /-->
   <!--link rel="stylesheet" href="css/bootstrap.min.css"/-->
-  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
   <link rel="stylesheet" href="css/fork-awesome.min.css"/>
 
   <link rel="shortcut icon" href="favicon.ico">
@@ -111,7 +111,7 @@
         <p class="lead">
 	        Our target: Anyone can benefit from the SCS software stack by using it -- and by
 	        contributing to the open source code, one will increase the value of
-          <a href="https://gaia-x.eu/">Gaia-X</a>.
+          <a href="https://gaia-x.eu/" target="_blank">Gaia-X</a>.
         </p>
         <p class="lead">
 	  <a href="/About/index.html.en">Read more about Sovereign Cloud Stack ...</a>

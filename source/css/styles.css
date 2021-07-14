@@ -24,13 +24,13 @@ body {
 .logo-pic {
   width: auto;
   height: 80px;
-  float: right;
+  float: left;
 }
 
 .logo-pic2 {
   width: auto;
   height: 100px;
-  float: right;
+  float: center;
 }
 
 .logo-pic3 {
