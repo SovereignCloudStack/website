@@ -19,7 +19,8 @@
   <link href="css/styles.css" rel="stylesheet">
   <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" /-->
   <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous" /-->
-  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <!--link rel="stylesheet" href="css/bootstrap.min.css"/-->
+  <link rel="stylesheet" href="css/bootstrap.css"/>
   <link rel="stylesheet" href="css/fork-awesome.min.css"/>
 
   <link rel="shortcut icon" href="favicon.ico">
@@ -32,42 +33,48 @@
 <body>
   <nav class="navbar fixed-top">
     <a href="/" class="navbar-left" title="scs.community">
-      <img src="images/logo-scs-vert.png" class="logo-scs" alt="SCS Logo" title="Sovereign Cloud Stack" />
+      <img src="/images/logo-scs-vert.png" class="logo-pic" alt="SCS Logo" title="Sovereign Cloud Stack" />
     </a>
-    <div class="container">
+    <a href="https://bmwi.de/" class="navbar-left" title="BMWi" target="_blank">
+      <img src="/images/BMWi_Fz_2017_WebSVG_de.svg" class="logo-pic2" alt="BMWi Logo" title="BMWi" />
+    </a>
+    <a href="https://osb-alliance.com/" class="navbar-left" title="OSB Alliance" target="_blank">
+      <img src="/images/logo-osba.svg" class="logo-pic3" alt="OSBA Logo" title="OSB Alliance" />
+    </a>
+    <div class="container" style="text-align:center">
       <div class="row">
         <div class="col">
-          <a href="/" title="scs.community"><i class="fa fa-home"></i></a>
+	  <a href="/index.html.de" title="scs.community"><i class="fa fa-home" style="font-size:18pt"></i><br/>Home</a>
         </div>
         <div class="col">
-          <a href="mailto:project@scs.sovereignit.de" title="project[at]scs.sovereignit.de"><i class="fa fa-envelope"></i></a>
+	  <a href="mailto:project@scs.sovereignit.de" title="project[at]scs.sovereignit.de"><i class="fa fa-envelope" style="font-size:18pt"></i><br/>eMail</a>
         </div>
-        <div class="col">
+        <!--div class="col">
           <a href="tel:" title="+49-221-292772-0"><i class="fa fa-phone"></i></a>
-        </div>
+        </div-->
         <!-- <div class="col">
           <a href="https://twitter.com/SovereignCloudStack" title="Twitter"><i class="fa fa-twitter"></i></a>
         </div> -->
         <div class="col">
-          <a href="/About/index.html.de" title="Über SCS"><i class="fa fa-info"></i></a>
+	  <a href="/About/index.html.de" title="Über SCS"><i class="fa fa-info" style="font-size:18pt"></i><br/>Über</a>
         </div>
         <div class="col">
-          <a href="https://github.com/SovereignCloudStack/" title="GitHub"><i class="fa fa-github"></i></a>
+	  <a href="https://github.com/SovereignCloudStack/" title="GitHub" target="_blank"><i class="fa fa-github" style="font-size:18pt"></i><br/>GitHub</a>
         </div>
         <div class="col">
-          <a href="https://scs.community/docs/contributor/" title="Contributor Guide"><i class="fa fa-book"></i></a>
+	  <a href="https://scs.community/docs/contributor/" title="Contributor Guide" target="_blank"><i class="fa fa-book" style="font-size:18pt"></i><br/>Mitmachen</a>
         </div>
         <div class="col">
-          <a href="/GetIt/index.html.de" title="SCS nutzen"><i class="fa fa-download"></i></a>
+	  <a href="/GetIt/index.html.de" title="SCS nutzen"><i class="fa fa-download" style="font-size:18pt"></i><br/>Download</a>
         </div>
         <div class="col">
-          <a href="/News/index.html.de" title="News"><i class="fa fa-newspaper-o"></i></a>
+	  <a href="/News/index.html.de" title="News"><i class="fa fa-newspaper-o" style="font-size:18pt"></i><br/>News</a>
         </div>
         <div class="col">
-          <a href="/Jobs/index.html.de" title="Jobs"><i class="fa fa-institution"></i></a>
+	  <a href="/Jobs/index.html.de" title="Jobs"><i class="fa fa-institution" style="font-size:18pt"></i><br/>Jobs</a>
         </div>
 	<div class="col">
-	  <a href="index.html.en" title="English"><i class="fa fa-language">en</i></a>
+	  <a href="index.html.en" title="English"><i class="fa fa-language" style="font-size:18pt"></i><br/>en</a>
         </div>
       </div>
     </div>
@@ -154,9 +161,9 @@
         <img src="images/gaiax-new-logo-blue.png" class="logo-gaia-x" alt="GAIA-X Logo" title="GAIA-X" />
         <p class="lead">
           Auf dem Digital-Gipfel 2019 in Dortmund wurde das
-          <a href="https://www.data-infrastructure.eu/">Projekt GAIA-X</a>
+          <a href="https://www.data-infrastructure.eu/" target="_blank">Projekt GAIA-X</a>
           des Bundesministeriums für Wirtschaft und Energie (BMWi) vorgestellt.
-	  Ziel von <a href="https://gaia-x.eu/">Gaia-X</a> ist die Definition
+	  Ziel von <a href="https://gaia-x.eu/" target="_blank">Gaia-X</a> ist die Definition
           und der Aufbau einer sicheren und vertrauenswürdigen Dateninfrastruktur für Europa. Eines der wesentliche Merkmale
           der angestrebten Lösung ist der Einsatz offener Technologien.
         </p>
@@ -174,8 +181,8 @@
         <h2>Bundesministerium für Wirtschaft und Energie</h2>
         <img src="images/BMWi_Fz_2017_WebSVG_de.svg" class="logo-bmwi" alt="BMWi Logo" title="BMWi" />
         <p class="lead">
-	  Das <a href="https://bmwi.de">Bundesministerium für Wirtschaft und Energie</a>
-	  fördert nun nach den Gaia-X Federation Services (<a href="https://gxfs.de/">GXFS</a>)
+	  Das <a href="https://bmwi.de" target="_blank">Bundesministerium für Wirtschaft und Energie</a>
+	  fördert nun nach den Gaia-X Federation Services (<a href="https://gxfs.de/" target="_blank">GXFS</a>)
 	  auch das Sovereign Cloud Stack Projekt mit 14,9 Millionen Euro.</p>
         <p class="lead">
 	Dazu <i>Thomas Jarzombek (MdB), Beauftragter des BMWi für die Digitale Wirtschaft und Start-Ups</i>:
@@ -199,8 +206,8 @@
         <p class="lead">
 	  Die <a href="News/pr-20210713.html.de">ganze Pressemeldung</a>
 	  findet sich auf unserer <a href="News/index.html.de">News Seite</a>
-	  sowie eine FAQ bei der <a href="https://osb-alliance.de/sovereign-cloud-stack-scs">OSB
-	  Alliance</a>. Die <a href="https://osb-alliance.de/">OSB Alliance</a> baut dafür
+	  sowie eine FAQ bei der <a href="https://osb-alliance.de/sovereign-cloud-stack-scs" target="_blank">OSB
+	  Alliance</a>. Die <a href="https://osb-alliance.de/" target="_blank">OSB Alliance</a> baut dafür
           ein <a href="Jobs/index.html.de">wachsendes Team</a> auf.
         </p>
       </div>
@@ -213,7 +220,7 @@
         <h2>Bundesagentur für Sprunginnovationen</h2>
         <img src="images/logo-sprind.png" class="logo-sprind" alt="SPRIND Logo" title="SPRIND" />
         <p class="lead">
-	Die <a href="https://sprind.org/de">Bundesagentur für Sprunginnovationen – SPRIND</a>
+	Die <a href="https://sprind.org/de" target="_blank">Bundesagentur für Sprunginnovationen – SPRIND</a>
           – mit Sitz in Leipzig schließt eine Lücke
           in der deutschen Innovationslandschaft: Sie findet Antworten auf die ungelösten technologischen,
           ökologischen und sozialen Herausforderungen unserer Zeit und stellt gleichzeitig sicher, dass
@@ -247,14 +254,14 @@
   <div class="container">
   <!--include: tmp/logos.html-->
   </div>
-
+  <hr/>
   <div class="container" style="margin-top: 30px;">
     <div class="row">
       <div class="col-12">
-        <p class="text-muted">
+        <p class="text-lead">
           <i class="fa fa-envelope"></i> <a href="mailto:project@scs.sovereignit.de" title="project[at]scs.sovereignit.de">project[at]scs.sovereignit.de</a>
           <i class="fa fa-phone"></i> <a href="tel:+49-711-90715-390" title="OSB Alliance">+49-711-90715-390</a>
-          <i class="fa fa-lock"></i> <a href="http://www.garloff.de/Datenschutz.html" title="Datenschutz">Datenschutzerkl&auml;rung</a>
+          <i class="fa fa-lock"></i> <a href="http://www.garloff.de/Datenschutz.html" title="Datenschutz" target="_blank">Datenschutzerkl&auml;rung</a>
           <!-- <i class="fa fa-gavel"></i> <a href="impressum.html" title="Impressum">Impressum</a> -->
       </div>
     </div>
@@ -270,7 +277,7 @@
 	  Verantwortlich f&uuml;r den Inhalt nach &sect;55 Abs. 2 RStV): Kurt Garloff</p>
 	<p class="text-lead">
 	  Sovereign Cloud Stack, SCS und das Logo sind gesch&uuml;tzte Marken der
-	  <a href="https://osb-alliance.com/">Open Source Business Alliance e.V.</a>.<br/>
+	  <a href="https://osb-alliance.com/" target="_blank">Open Source Business Alliance e.V.</a>.<br/>
 	  Sonstige Marken sind Eigentum ihrer jeweiligen Besitzer.<br/>
         </p>
       </div>
