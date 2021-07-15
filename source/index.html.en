@@ -84,6 +84,7 @@
     <div class="row">
       <div class="col-12">
         <h1>Sovereign Cloud Stack</h1>
+        <img src="/images/logo-scs-hor.png" class="logo-scs-hor" alt="SCS Logo" title="Sovereign Cloud Stack" />
         <p class="lead">
           Sovereign Cloud Stack (SCS) is cloud technology built entirely with Open Source
 	        Software -- as an alternative to propietary cloud technology.

@@ -39,6 +39,13 @@ body {
   float: right;
 }
 
+.logo-scs-hor {
+  height: auto;
+  width: 25%;
+  min-width: 150px;
+  float: right;
+}
+
 .logo-gaia-x {
   float: left;
   width: 17%;
