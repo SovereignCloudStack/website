@@ -34,7 +34,6 @@
     <a href="/" class="navbar-left" title="scs.community">
       <img src="/images/logo-scs-vert.png" class="logo-pic" alt="SCS Logo" title="Sovereign Cloud Stack" />
     </a>
-    <img src="../images/kgarloff.jpg" title="Kurt Garloff" alt="[Kurt Garloff]" class="logo-pic" />
     <a href="https://bmwi.de/" class="navbar-left" title="BMWi" target="_blank">
       <img src="/images/BMWi_Fz_2017_WebSVG_de.svg" class="logo-pic2" alt="BMWi Logo" title="BMWi" />
     </a>
@@ -83,7 +82,9 @@
   <div class="container py-3">
     <div class="row">
       <div class="col-12">
-        <h1>Kurt Garloff: Some comments on the OVH T-Systems deal</h1>
+        <h1>
+         <img src="../images/kgarloff.jpg" title="Kurt Garloff" alt="[Kurt Garloff]" class="logo-pic" />
+ 	  Kurt Garloff: Some comments on the OVH T-Systems deal</h1>
 	<p>2020-09-15</p>
         <p class="lead">
 	 SCS is a collaboration of many companies from the industrial and ICT sector as well
@@ -111,14 +112,14 @@
       </div>
     </div>
   </div>
-
+  <hr/>
   <div class="container" style="margin-top: 30px;">
     <div class="row">
       <div class="col-12">
-        <p class="text-muted">
+        <p class="text-lead">
           <i class="fa fa-envelope"></i> <a href="mailto:scs@garloff.de" title="scs@garloff.de">scs@garloff.de</a>
           <i class="fa fa-phone"></i> <a href="tel:" title="+492212927720">+49-221-292772-0</a>
-          <i class="fa fa-lock"></i> <a href="http://www.garloff.de/DataProtection.html" title="Data Protection">Data Protection Statement</a>
+          <i class="fa fa-lock"></i> <a href="http://www.garloff.de/DataProtection.html" title="Data Protection" target="_blank">Data Protection Statement</a>
           <!-- <i class="fa fa-gavel"></i> <a href="impressum.html" title="Impressum">Impressum</a> -->
       </div>
     </div>
@@ -129,9 +130,10 @@
           Kurt Garloff, Grafenwerthstr. 8,  50937 Köln<br/>
           Mail: scs@garloff.de /  Phone: +49-221-292772-0<br/>
           Tax-ID (§ 27 a Umsatzsteuergesetz): DE296446025</br>
-          Responsible for the content (§ 55 Abs. 2 RStV): Kurt Garloff (same address as above)<br/>
+	  Responsible for the content (§ 55 Abs. 2 RStV): Kurt Garloff (same address as above)</p>
+        <p class="text-lead">
 	  Sovereign Cloud Stack and SCS and the SCS logo are registered trade marks of the
-	   <a href="https://osb-alliance.de/">Open Source Business Alliance</a>.<br/>
+	   <a href="https://osb-alliance.de/" target="_blank">Open Source Business Alliance</a>.<br/>
 	  Other trademarks are property of their respective owners.<br/>
         </p>
       </div>
