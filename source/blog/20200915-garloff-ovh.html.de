@@ -16,9 +16,11 @@
 
   <title>SCS Blog</title>
 
-  <link href="../css/styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous" />
+  <link href="/css/styles.css" rel="stylesheet">
+  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" /-->
+  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous" /-->
+  <link rel="stylesheet" href="/css/bootstrap.css"/>
+  <link rel="stylesheet" href="/css/fork-awesome.min.css"/>
 
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
@@ -28,39 +30,57 @@
 </head>
 
 <body>
-  <nav class="navbar fixed-top">
+  <nav class="navbar fixed-top py-1">
     <a href="/" class="navbar-left" title="scs.community">
-      <img src="../images/logo-scs-vert.png" class="logo-scs" alt="SCS logo" title="SCS logo" />
+      <img src="/images/logo-scs-vert.png" class="logo-pic" alt="SCS Logo" title="Sovereign Cloud Stack" />
     </a>
     <img src="../images/kgarloff.jpg" title="Kurt Garloff" alt="[Kurt Garloff]" class="logo-pic" />
-    <div class="container">
+    <a href="https://bmwi.de/" class="navbar-left" title="BMWi" target="_blank">
+      <img src="/images/BMWi_Fz_2017_WebSVG_de.svg" class="logo-pic2" alt="BMWi Logo" title="BMWi" />
+    </a>
+    <a href="https://osb-alliance.com/" class="navbar-left" title="OSB Alliance" target="_blank">
+      <img src="/images/logo-osba.svg" class="logo-pic3" alt="OSBA Logo" title="OSB Alliance" />
+    </a>
+    <div class="container" style="text-align:center">
       <div class="row">
         <div class="col">
-          <a href="/" title="scs.community"><i class="fa fa-home"></i></a>
+	  <a href="/index.html.de" title="scs.community"><i class="fa fa-home" style="font-size:18pt"></i><br/>Home</a>
         </div>
         <div class="col">
-          <a href="mailto:scs@garloff.de" title="scs@garloff.de"><i class="fa fa-envelope"></i></a>
+	  <a href="mailto:project@scs.sovereignit.de" title="project[at]scs.sovereignit.de"><i class="fa fa-envelope" style="font-size:18pt"></i><br/>eMail</a>
         </div>
-        <div class="col">
+        <!--div class="col">
           <a href="tel:" title="+49-221-292772-0"><i class="fa fa-phone"></i></a>
-        </div>
+        </div-->
         <!-- <div class="col">
           <a href="https://twitter.com/SovereignCloudStack" title="Twitter"><i class="fa fa-twitter"></i></a>
         </div> -->
         <div class="col">
-          <a href="https://github.com/SovereignCloudStack/" title="GitHub"><i class="fa fa-github"></i></a>
+	  <a href="/About/index.html.de" title="Über SCS"><i class="fa fa-info" style="font-size:18pt"></i><br/>Über</a>
         </div>
         <div class="col">
-          <a href="https://scs.community/docs/contributor/" title="Contributor Guide"><i class="fa fa-book"></i></a>
+	  <a href="https://github.com/SovereignCloudStack/" title="GitHub" target="_blank"><i class="fa fa-github" style="font-size:18pt"></i><br/>GitHub</a>
+        </div>
+        <div class="col">
+	  <a href="https://scs.community/docs/contributor/" title="Contributor Guide" target="_blank"><i class="fa fa-book" style="font-size:18pt"></i><br/>Mitmachen</a>
+        </div>
+        <div class="col">
+	  <a href="/GetIt/index.html.de" title="SCS nutzen"><i class="fa fa-download" style="font-size:18pt"></i><br/>Download</a>
+        </div>
+        <div class="col">
+	  <a href="/News/index.html.de" title="News"><i class="fa fa-newspaper-o" style="font-size:18pt"></i><br/>News</a>
+        </div>
+        <div class="col">
+	  <a href="/Jobs/index.html.de" title="Jobs"><i class="fa fa-institution" style="font-size:18pt"></i><br/>Jobs</a>
         </div>
 	<div class="col">
-	  <a href="20200915-garloff-ovh.html.en" title="English"><i class="fa fa-language">en</i></a>
+	  <a href="20201019-garloff-ovh.html.en" title="English"><i class="fa fa-language" style="font-size:18pt"></i><br/>en</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container py-3">
     <div class="row">
       <div class="col-12">
         <h1>Kurt Garloff: Ein paar Gedanken zur OVH T-Systems Zusammenarbeit</h1>
