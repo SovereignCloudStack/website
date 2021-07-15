@@ -4,6 +4,7 @@ Here you find an overview over news from the project
 
 ## Own announcements
 
+* (2021-07-15) SCS: [SCS Release 0 done](/News/release0.html.en)
 * (2021-07-13) OSB Alliance/BMWi: [OSB Alliance develops Sovereign Cloud Stack for the Gaia-X project](/News/pr-20210713.html.en)
 
 ## Blog

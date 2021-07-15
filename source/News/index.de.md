@@ -4,6 +4,7 @@ Hier gibt es einen Überblick über Neuigkeiten
 
 ## Eigene Meldungen
 
+* (2021-07-15) SCS: [SCS Release 0 freigegeben](/News/release0.html.de)
 * (2021-07-13) OSB Alliance/BMWi: [OSB Alliance entwickelt Sovereign Cloud Stack für das Gaia-X Projekt](/News/pr-20210713.html.de)
 
 ## Blog

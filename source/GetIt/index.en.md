@@ -23,6 +23,8 @@ and contribute to it, we refer you to our
 [github Docs](https://github.com/SovereignCloudStack/Docs/)
 repository.
 
+On Jul 15, 2021 we have published [Release 0](/News/release0.html.en).
+
 ## SCS and OSISM
 
 For the base layers, we heavily build on top of the
