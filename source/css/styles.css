@@ -146,6 +146,8 @@ ul {
 }
 
 blockquote {
+  float: right;
+  width: 100%;
   font-family: 'Montserrat', sans-serif !important;
   color: rgba(73, 83, 91, 1.0) !important;
   font-size: 1.2em;
