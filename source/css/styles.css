@@ -180,6 +180,11 @@ blockquote span{
   font-size: 0.5em;
 }
 
+@media only screen and (min-width: 992px) {
+  .quote-gaia-x { width: 83%; }
+  .quote-bmwi { width: 80%; }
+}
+
 /* Markdown image */
 
 img[alt="SCS architecture blocks"] { width:100%; }

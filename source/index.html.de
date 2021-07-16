@@ -167,7 +167,7 @@
           und der Aufbau einer sicheren und vertrauenswürdigen Dateninfrastruktur für Europa. Eines der wesentliche Merkmale
           der angestrebten Lösung ist der Einsatz offener Technologien.
         </p>
-        <blockquote style="margin-top: 50px">
+        <blockquote class="quote-gaia-x">
           Ein starkes offenes Infrastruktur-Ökosystem ist die Grundlage der digitalen Souveränität.
           <span>Quelle: &bdquo;GAIA-X: Technical Architecture (Release – June, 2020)&ldquo;</span>
         </blockquote>
@@ -185,8 +185,16 @@
 	  fördert nun nach den Gaia-X Federation Services (<a href="https://gxfs.de/" target="_blank">GXFS</a>)
 	  auch das Sovereign Cloud Stack Projekt mit 14,9 Millionen Euro.</p>
         <p class="lead">
+    Die <a href="News/pr-20210713.html.de">ganze Pressemeldung</a>
+    findet sich auf unserer <a href="News/index.html.de">News Seite</a>
+    sowie eine FAQ bei der <a href="https://osb-alliance.de/sovereign-cloud-stack-scs" target="_blank">OSB
+    Alliance</a>. Die <a href="https://osb-alliance.de/" target="_blank">OSB Alliance</a> baut dafür
+          ein <a href="Jobs/index.html.de">wachsendes Team</a> auf.
+        </p>
+        <p class="lead">
 	Dazu <i>Thomas Jarzombek (MdB), Beauftragter des BMWi für die Digitale Wirtschaft und Start-Ups</i>:
-	<blockquote>
+        </p>
+	<blockquote class="quote-bmwi">
 	 "Mit dem Sovereign Cloud Stack füllt sich das Projekt GAIA-X immer mehr
 	 mit Leben. Als Beitrag zu einer europäischen digitalen Souveränität
 	 soll der technische Unterbau, der Cloud Stack, als Open-Source-Projekt
@@ -202,14 +210,6 @@
 	 Fahrzeugindustrie (KoPa35c) verleiht das BMWi der Umsetzung von GAIA-X
 	 erheblichen Schwung."
 	</blockquote>
-        </p>
-        <p class="lead">
-	  Die <a href="News/pr-20210713.html.de">ganze Pressemeldung</a>
-	  findet sich auf unserer <a href="News/index.html.de">News Seite</a>
-	  sowie eine FAQ bei der <a href="https://osb-alliance.de/sovereign-cloud-stack-scs" target="_blank">OSB
-	  Alliance</a>. Die <a href="https://osb-alliance.de/" target="_blank">OSB Alliance</a> baut dafür
-          ein <a href="Jobs/index.html.de">wachsendes Team</a> auf.
-        </p>
       </div>
     </div>
   </div>

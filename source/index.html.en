@@ -168,7 +168,7 @@
 	        setup of a secure and trustworthy data infrastructure for Europe. One of the defining
 	        properties of the targeted solution is the usage of open technologies.
         </p>
-        <blockquote style="margin-top: 50px">
+        <blockquote class="quote-gaia-x">
           A strong open infrastructure ecosystem is the foundation of digital sovereignty.
           <span>Quelle: &bdquo;GAIA-X: Technical Architecture (Release – June, 2020)&ldquo;</span>
         </blockquote>
@@ -187,9 +187,18 @@
 	  <a href="https://bmwi.de" target="_blank">Federal ministry for economy and energy</a> (BMWi, Germany)
 	  is now supporting the Sovereign Cloud Stack project with 14.9M€.</p>
         <p class="lead">
+    The complete <a href="News/pr-20210713.html.en">press release</a>
+    can also be found on our <a href="News/index.html.en">News page</a>.
+    An FAQ (in German) is available at the
+    <a href="https://osb-alliance.de/sovereign-cloud-stack-scs" target="_blank">OSB
+    Alliance</a>. The <a href="https://osb-alliance.de/" target="_blank">OSB Alliance</a>is
+    hiring a <a href="Jobs/index.html.en">growing team</a> for the project.
+        </p>    
+        <p class="lead">
 	Quoting<i>Thomas Jarzombek (Member of the German Parliament), BMWi
 		representative for the digital economy and start-ups</i>:
-	<blockquote>
+        </p>
+	<blockquote class="quote-bmwi">
 	 "With the Sovereign Cloud Stack, the GAIA-X project is increasingly
 	 being filled with life. As a contribution to European digital
 	 sovereignty, the technical foundation, the Cloud Stack, is to be
@@ -204,15 +213,6 @@
 	 industry (KoPa35c), the BMWi is lending considerable momentum to the
 	 implementation of GAIA-X."
 	</blockquote>
-        </p>
-        <p class="lead">
-	  The complete <a href="News/pr-20210713.html.en">press release</a>
-	  can also be found on our <a href="News/index.html.en">News page</a>.
-	  An FAQ (in German) is available at the
-	  <a href="https://osb-alliance.de/sovereign-cloud-stack-scs" target="_blank">OSB
-	  Alliance</a>. The <a href="https://osb-alliance.de/" target="_blank">OSB Alliance</a>is
-	  hiring a <a href="Jobs/index.html.en">growing team</a> for the project.
-        </p>
       </div>
     </div>
   </div>
