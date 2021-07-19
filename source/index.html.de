@@ -261,7 +261,7 @@
         <p class="text-lead">
           <i class="fa fa-envelope"></i> <a href="mailto:project@scs.sovereignit.de" title="project[at]scs.sovereignit.de">project[at]scs.sovereignit.de</a>
           <i class="fa fa-phone"></i> <a href="tel:+49-711-90715-390" title="OSB Alliance">+49-711-90715-390</a>
-          <i class="fa fa-lock"></i> <a href="http://www.garloff.de/Datenschutz.html" title="Datenschutz" target="_blank">Datenschutzerkl&auml;rung</a>
+          <i class="fa fa-lock"></i> <a href="/DataProtection.html.de" title="Datenschutz">Datenschutzerkl&auml;rung</a>
           <!-- <i class="fa fa-gavel"></i> <a href="impressum.html" title="Impressum">Impressum</a> -->
       </div>
     </div>
