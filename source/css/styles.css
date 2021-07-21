@@ -185,7 +185,13 @@ blockquote span{
   .quote-bmwi { width: 80%; }
 }
 
-/* Markdown image */
+table { border: 2px solid black; }
+th, td { border: 1px solid rgba(15, 95, 225, 1.0); padding: 2px; }
+th { background-color: rgba(80, 195, 165, 0.5); padding: 3px; }
+tr:nth-child(even) { background-color: rgba(125, 125, 130, 0.1); }
+tr:hover { background-color: rgba(125,125,130,0.5); }
+
+/* Markdown images */
 
 img[alt="SCS architecture blocks"] { width:100%; }
 img[alt="SCS Ecosystem Acatech"] { width:100%; }
