@@ -13,6 +13,7 @@ Hier gibt es einen Überblick über Neuigkeiten
 
 ## Presse über SCS (EN)
 
+* (2021-07-23) dotmagazine: [SCS – “Stacking Sovereignity” for Gaia-X applications](https://www.dotmagazine.online/issues/making-work-work/new-hope-from-space/scs-for-gaia-x)
 * (2020-07-01) SPRIND: [European Supercloud: IT infrastructure for the 3rd millenium](https://www.sprind.org/en/projects/sovereign-cloud-stack/)
 
 ## Presse über SCS (DE)
