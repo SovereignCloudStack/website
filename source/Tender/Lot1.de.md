@@ -1,0 +1,16 @@
+## Vergabepaket 1
+
+Gegenstand der Ausschreibung ist eine Rahmenvereinbarung mit einem Unternehmen über Programmier- und sonstige Dienstleistungen für Betriebswerkzeuge, Testabdeckungen durch Continuous Integration/Continuous Delivery/Continuous Deployment (CI/CD) für Infrastruktur und Infrastructure as a Service (IaaS), BareMetal als Dienst, Lifecycle Management.
+
+### Betriebswerkzeuge
+
+Das Arbeitspaket rund um die Betriebsaufgaben ist ein Hauptarbeitsfeld von SCS. Hier werden Werkzeuge zur Betriebsautomatisierung ausgesucht, standardisiert, konfiguriert, dokumentiert und verfügbar gemacht. Hierbei handelt es sich um ein Rahmenwerk zur automatischen Ausführung von Tests beim Betreiber (CI/CD), Überwachung der Betriebsparameter (Monitoring), das Sammeln von Nutzungsdaten (betreiberseitig für das Kapazitätsmanagement und die Rechnungslegung aber auch für den Kunden), die Möglichkeit dynamisch die Arbeitslast in der Cloud umzuverteilen und die Betriebswerkzeuge hochverfügbar zu machen.
+
+### Testabdeckung durch CI/CD für Infrastruktur und IaaS
+Damit die Betreiber tatsächlich mit vernachlässigbarem Risiko ständig (täglich) Updates einspielen können, müssen nicht nur die Betriebswerkzeuge die Updates automatisch einspielen können, sondern diese müssen auch hervorragend getestet sein. Dazu bedarf es neben dem CI/CD Rahmenwerk (voriges Arbeitspaket) auch einer Vielzahl von Tests, um alle Komponenten und auch eine Vielzahl von Szenarien abzudecken. Hier müssen Updates und Rollbacks durchgeführt und durchgetestet werden. Eine wichtige Kategorie sind auch Sicherheitstests; diese stellen die Sicherheitseigenschaften kontinuierlich sicher und sind somit automatisch ein permanentes Abnahmekriterium.
+
+### BareMetal als Dienst
+Die Installation von produktiven Umgebungen erfolgt in aller Regel direkt auf Hardware (Bare Metal). Die Prozesse darum sind weniger einfach zu automatisieren – dennoch gibt es auch hier einiges, was getan werden sollte. Die Hardware wird erfasst (inventarisiert) und eine Betriebssysteminstallation durchgeführt, so dass man die Maschinen in einen Zustand bekommt, in dem mit normalen Softwarewerkzeugen automatisiert werden kann. Die so verfügbar gemachten Maschinen können auch nicht-virtualisiert für spezielle Aufgaben reserviert werden, sei es für die Infrastruktur des Betreibers oder auch für den Kunden als Bare-Metal- Dienst über Standardschnittstellen.
+
+### Lifecycle Management
+Die Upstream Software Projekte stehen nicht still, sondern liefern neben ständigen Fehlerkorrekturen und Verbesserungen auch immer neue Leistungsmerkmale. Diese müssen für die Integration in SCS aufgeplant werden und ggf. muss die Rückwärtskompatibilität hergestellt werden. Die Fähigkeit zur ständigen Erneuerung (s.o.) macht es technisch möglich, solche neuen Fähigkeiten kurzfristig in den Markt zu bekommen – aber hier muss neben der technischen Integration auch die Kommunikation mit den Nutzern und die Standardisierung und ggf. auch irgendwann ein Abkündigungsprozess stattfinden. Neben neuen Merkmalen wird es auch ständige Umbauarbeiten und vor allem Ausbauarbeiten an der Infrastruktur geben, weil die Clouds mit den Kundenbedürfnissen wachsen können müssen.

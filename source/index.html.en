@@ -73,6 +73,9 @@
         <div class="col">
 	  <a href="/Jobs/index.html.en" title="Jobs"><i class="fa fa-institution" style="font-size:18pt"></i><br/>Jobs</a>
         </div>
+        <div class="col">
+    <a href="/Tender/index.html.en" title="Tenders"><i class="fa fa-gavel" style="font-size:18pt"></i><br/>Tenders</a>
+        </div>
 	<div class="col">
 	  <a href="index.html.de" title="Deutsch"><i class="fa fa-language" style="font-size:18pt"></i><br/>de</a>
         </div>
@@ -129,6 +132,16 @@
 	  The latest information of our project (announcements, blog, articles
 	  on us, conference contributions, ...) can be found on our
 	  <a href="News/index.html.en">news page</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 25px;">
+    <div class="row">
+      <div class="col-12">
+        <h2>Public tenders</h2>
+         <p class="lead">
+    The currently ongoing and upcoming tenders of the Sovereign Cloud Stack project can be found <a href="Tender/index.html.en">here</a>.</p>
       </div>
     </div>
   </div>
