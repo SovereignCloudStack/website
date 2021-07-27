@@ -18,6 +18,7 @@ Hier gibt es einen Überblick über Neuigkeiten
 
 ## Presse über SCS (DE)
 
+* (2021-07-26) Süddeutsche Zeitung: [Wie Europa die Abhängigkeit von den US-Techkonzernen verringern will](https://www.sueddeutsche.de/wirtschaft/cloud-eu-gaia-x-open-source-1.5363726)
 * (2021-05-19) Tagesspiegel Background: [Gaia-X: Wo die Entwicklung des Projekts steht](/slides/Gaia-X-Projekt-Tagesspiegel-Background-20210519.pdf) (Oliver Vo&szlig;)
 * (2021-03-25) Acatech: [Digitale Souveränität - Status quo und Handlungsfelder](https://www.acatech.de/publikation/digitale-souveraenitaet-status-quo-und-handlungsfelder/)
 * (2021-03-17) iX 4/21: [Die Europa Cloud kommt](https://www.heise.de/select/ix/2021/4/2101412031450103753)
