@@ -10,7 +10,7 @@ and the development of this network. A community of employees from participating
 around this team, who are working in particular on the goals that are important for their own environments.
 
 Important building blocks will be awarded to companies through open tenders, which will be continously published on this page. 
-Please note that any questions regarding the public tenders must be mandatorily be posted via the linked contracting portal.
+Please note that any questions regarding the public tenders must mandatorily be posted via the linked contracting portal.
 Please refrain from addressing the project team directly.
 
 | #  | #VH81 | Name | Description | Start date | Link to contracting portal |
