@@ -72,6 +72,9 @@
         <div class="col">
 	  <a href="/Jobs/index.html.de" title="Jobs"><i class="fa fa-institution" style="font-size:18pt"></i><br/>Jobs</a>
         </div>
+        <div class="col">
+    <a href="/Tender/index.html.de" title="Ausschreibung"><i class="fa fa-gavel" style="font-size:18pt"></i><br/>Ausschreibung</a>
+        </div>
 	<div class="col">
 	  <a href="index.html.en" title="English"><i class="fa fa-language" style="font-size:18pt"></i><br/>en</a>
         </div>
@@ -126,6 +129,16 @@
 	  Die neuesten Informationen aus dem Sovereign Cloud Stack Projekt (Blog,
 	  Ankündigungen, Artikel über das Projekt, Konferenzbeiträge usw.) finden
 	  sich auch unserer <a href="News/index.html.de">Neuigkeiten Seite</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-bottom: 25px;">
+    <div class="row">
+      <div class="col-12">
+        <h2>Öffentliche Ausschreibungen</h2>
+         <p class="lead">
+    Eine Übersicht der laufenden und kommenden Ausschreibungen im Rahmen des Sovereign Cloud Stack Projektes finden Sie <a href="Tender/index.html.de">hier</a>.</p>
       </div>
     </div>
   </div>

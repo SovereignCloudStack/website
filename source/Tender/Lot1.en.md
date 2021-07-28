@@ -1,0 +1,13 @@
+## Lot 1
+
+### OpsTooling
+The work package around Operational Tooling is a focus area for SCS. Tool for automation operational tasks are selected, standardized, configured, documented and provided here. This includes a framework for automatic continuous testing at the provider (CI/CD), monitoring of operational parameters, the collection of usage data (to have capacity management and billing input for the provider, but also access for the client), the ability to dynamically optimize the work load in the cloud and the work to make operational tooling highly available.
+
+### CI tests Infra/IaaS
+We don’t only need full automation for deploying updates to allow an operator to really deploy constant (daily) updates with negligilbe risk, but also an excellent test coverage of the to be installed updates. Besides the CI/CD Framework (see previous section), a large amount of tests is needed to cover all components and a multitude of scenarios. Both updates and rollback need to be validated. An important subset of these tests needs to focus on security aspects; this way, security properties are continuously validated and can be assured (and accepted) on a permanent basis.
+
+### Metal as a Service
+The installation of productive environments is normally done on bare metal (hardware). Unfortunately, the processes around this are less easy to automate – however, there are things to be done here. The hardware is inventorized and an operating system installation performed, so that the machines are being put into a defined state where normal software automation tools can start doing their work. This thus provisioned machines can also be put aside for specific (non-virtualized) tasks if needed, e. g. for infrastructure needs of the provider or possibly as bare metal systems for the customer, managable via standard interfaces.
+
+### Life Cycle management
+The upstream development never stops – beyond a constant stream of bug fixes and improvements, there are also new features and functions. The integrations of these needs to be planned for SCS and backwards compatibility needs to be ensured. The ability for constant renewal technically allows for delivering such features into the market with short lead times – however a proper communications with users and the standardization efforts need to be considered. Later on features might need to be deprecated and deprecation be announced. Behind the scenes, there is also a lot of renovation work to allow the cloud infrastructure to grow with the customer needs.

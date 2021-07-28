@@ -185,9 +185,14 @@ blockquote span{
   .quote-bmwi { width: 80%; }
 }
 
-table { border: 2px solid black; }
-th, td { border: 1px solid rgba(15, 95, 225, 1.0); padding: 2px; }
-th { background-color: rgba(80, 195, 165, 0.5); padding: 3px; }
+table { 
+  width: 100%;
+  border: 2px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+th, td { border: 1px solid rgba(15, 95, 225, 1.0); padding: 15px; }
+th { background-color: rgba(80, 195, 165, 0.5); padding: 15px; }
 tr:nth-child(even) { background-color: rgba(125, 125, 130, 0.1); }
 tr:hover { background-color: rgba(125,125,130,0.5); }
 
