@@ -13,7 +13,7 @@ Wichtige Bausteine sollen über offene Ausschreibungen an Unternehmen vergeben w
 Rückfragen zu den Ausschreibungen zwingend über das verlinkte Vergabeportal stattfinden müssen. Bitte sehen Sie davon ab, das Projektteam direkt anzusprechen.
 
 | #Lfd | #VH81 | Name | Beschreibung | Start | Link zum Vergabeportal |
-|:---:|:---:|:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|:---:|:---:|
 | 1  | 1  | Betriebswerkzeuge, Testabdeckung durch CI/CD für Infrastruktur und IaaS, BareMetal als Dienst, Lifecycle Management | [Vergabepaket 1](Lot1.html.de) | tba | tba |
 | 2  | 2  | Wissensmanagement für Betriebsprozesse, Herstellung von Transparenz bei den Cloudanbietern | Vergabepaket 2 | tba | tba |
 | 3  | 3  | Speichertechnologie | Vergabepaket 3 | tba | tba |
