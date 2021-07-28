@@ -15,10 +15,10 @@ Rückfragen zu den Ausschreibungen zwingend über das verlinkte Vergabeportal st
 | #Lfd | #VH81 | Name | Beschreibung | Start | Link zum Vergabeportal |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | 1  | 1  | Betriebswerkzeuge, Testabdeckung durch CI/CD für Infrastruktur und IaaS, BareMetal als Dienst, Lifecycle Management | [Vergabepaket 1](Lot1.html.de) | tba | tba |
-| 2  | 2  | Wissensmanagement für Betriebsprozesse, Herstellung von Transparenz bei den Cloudanbietern | Vergabepaket 2 | tba | tba |
-| 3  | 3  | Speichertechnologie | Vergabepaket 3 | tba | tba |
-| 4  | 4  | Netzwerktechnologie | Vergabepaket 4 | tba | tba |
-| 5  | 5  | Integration von Kubernetes als Dienst (KaaS) | Vergabepaket 5 | tba | tba |
+| 2  | 2  | Wissensmanagement für Betriebsprozesse, Herstellung von Transparenz bei den Cloudanbietern | [Vergabepaket 2](Lot2.html.de) | tba | tba |
+| 3  | 3  | Speichertechnologie | [Vergabepaket 3](Lot3.html.de) | tba | tba |
+| 4  | 4  | Netzwerktechnologie | [Vergabepaket 4](Lot4.html.de) | tba | tba |
+| 5  | 5  | Integration von Kubernetes als Dienst (KaaS) | [Vergabepaket 5](Lot5.html.de) | tba | tba |
 | 6  | 6a | Container Netzwerk und Container Speicher Integration | Vergabepaket 6a | tba | tba |
 | 7  | 6b | Container Meshing und Proxy | Vergabepaket 6b | tba | tba |
 | 8  | 6c | Container Registry / Scanning | Vergabepaket 6c | tba | tba |

@@ -16,10 +16,10 @@ Please refrain from addressing the project team directly.
 | #  | #VH81 | Name | Description | Start date | Link to contracting portal |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | 1  | 1  | OpsTooling, CI Tests Infra/IaaS, Metal as a Service, Life Cycle Management | [Lot 1](Lot1.html.en) | tba | tba |
-| 2  | 2  | Ops Best Practice Knowledge Base, CSP Transparency | Lot 2 | tba | tba |
-| 3  | 3  | Storage Technology | Lot 3 | tba | tba |
-| 4  | 4  | Networking | Lot4 | tba | tba |
-| 5  | 5  | K8s aaS Integration | Lot 5 | tba | tba |
+| 2  | 2  | Ops Best Practice Knowledge Base, CSP Transparency | [Lot 2](Lot2.html.en) | tba | tba |
+| 3  | 3  | Storage Technology | [Lot 3](Lot3.html.en) | tba | tba |
+| 4  | 4  | Networking | [Lot 4](Lot4.html.en) | tba | tba |
+| 5  | 5  | K8s aaS Integration | [Lot 5](Lot5.html.en) | tba | tba |
 | 6  | 6a | Container Network and Storage Integration | Lot 6a | tba | tba |
 | 7  | 6b | Container Meshing and Proxy | Lot 6b | tba | tba |
 | 8  | 6c | Container Registry / Scanning | Lot 6c | tba | tba |
