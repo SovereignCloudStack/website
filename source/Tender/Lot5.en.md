@@ -1,0 +1,4 @@
+## Lot 5
+
+### K8s aaS integration
+The Kubernetes (k8s) Container Layer lacks a unified cluster management. The APIs that enable users/developers/operators to create, change, enlage/downsize and destroy again k8s clusters are not standardized in a vendor-neutral manner. There is the k8s cluster API, but unfortunately, only VMware seems to deliver a complete implementation; Microsoft is working on it. Open Software projects like SAP Gardener and kubermatic have contributed to earlier versions and partially provided them. To allow SCS to succeed with the standardization, agreement amongst a number of projects needs to be established to jointly enhance the APIs to become a broadly accepted standard. With these APIs and these projects, the automated deployment of k8s clusters can be implemented. The results needs continuous testing for standards compliance and correct function.
