@@ -18,6 +18,7 @@ Here you find an overview over news from the project
 
 ## Press on SCS (DE)
 
+* (2021-07-26) CloudComputing-Insider: [OSB Alliance entwickelt Unterbau für Gaia-X](https://www.cloudcomputing-insider.de/osb-alliance-entwickelt-unterbau-fuer-gaia-x-a-1038904/)
 * (2021-07-26) Süddeutsche Zeitung: [Wie Europa die Abhängigkeit von den US-Techkonzernen verringern will](https://www.sueddeutsche.de/wirtschaft/cloud-eu-gaia-x-open-source-1.5363726)
 * (2021-05-19) Tagesspiegel Background: [Gaia-X: Wo die Entwicklung des Projekts steht](/slides/Gaia-X-Projekt-Tagesspiegel-Background-20210519.pdf) (Oliver Vo&szlig;)
 * (2021-03-25) Acatech: [Digitale Souveränität - Status quo und Handlungsfelder](https://www.acatech.de/publikation/digitale-souveraenitaet-status-quo-und-handlungsfelder/)
