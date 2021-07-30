@@ -191,6 +191,7 @@ table {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+thead { text-align: center; }
 th, td { border: 1px solid rgba(15, 95, 225, 1.0); padding: 15px; }
 th { background-color: rgba(80, 195, 165, 0.5); padding: 15px; }
 tr:nth-child(even) { background-color: rgba(125, 125, 130, 0.1); }
