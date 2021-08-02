@@ -10,12 +10,13 @@ and the development of this network. A community of employees from participating
 around this team, who are working in particular on the goals that are important for their own environments.
 
 Important building blocks will be awarded to companies through open tenders, which will be continously published on this page. 
+The subject of the tenders are usually framework agreements on programming and other services.
 Please note that any questions regarding the public tenders must mandatorily be posted via the linked contracting portal.
 Please refrain from addressing the project team directly.
 
 | #  | #VH81 | Name | Description | Start date | Closing date | Link to contracting portal |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 1  | 1  | OpsTooling, CI Tests Infra/IaaS, Metal as a Service, Life Cycle Management | [Lot 1](Lot1.html.en) | 2021-07-30 | 2021-08-20T10:00+02:00 | [SCS-VP01](https://www.dtvp.de/Satellite/notice/CXP4YV7RM7T) |
+| 1  | 1  | OpsTooling, CI Tests Infra/IaaS, Metal as a Service, Life Cycle Management | [Lot 1](Lot1.html.en) | 2021-07-30 | 2021-08-20 T10:00+02:00 | [SCS-VP01](https://www.dtvp.de/Satellite/notice/CXP4YV7RM7T) |
 | 2  | 2  | Ops Best Practice Knowledge Base, CSP Transparency | [Lot 2](Lot2.html.en) | tba | tba | tba |
 | 3  | 3  | Storage Technology | [Lot 3](Lot3.html.en) | tba | tba | tba |
 | 4  | 4  | Networking | [Lot 4](Lot4.html.en) | tba | tba | tba |

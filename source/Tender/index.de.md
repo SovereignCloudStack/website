@@ -9,12 +9,14 @@ Die Open Source Business Alliance baut dazu ein weiter wachsendes Team auf, welc
 steuert und koordiniert. Um dieses Team ist bereits jetzt eine Community aus Mitarbeiterinnen und Mitarbeitern beteiligter und interessierter Firmen entstanden, 
 welche insbesondere an den Zielen mitarbeiten, die für ihre eigenen Umgebungen wichtig sind.
 
-Wichtige Bausteine sollen über offene Ausschreibungen an Unternehmen vergeben werden, welche hier regelmäßig veröffentlich werden. Bitte beachten Sie, dass 
+Wichtige Bausteine sollen über offene Ausschreibungen an Unternehmen vergeben werden, welche hier regelmäßig veröffentlich werden. 
+Gegenstand der Ausschreibungen sind in der Regel Rahmenvereinbarungen über Programmier- und sonstige Dienstleistungen. 
+Bitte beachten Sie, dass 
 Rückfragen zu den Ausschreibungen zwingend über das verlinkte Vergabeportal stattfinden müssen. Bitte sehen Sie davon ab, das Projektteam direkt anzusprechen.
 
 | #Lfd | #VH81 | Name | Beschreibung | Start | Abgabefrist | Link zum Vergabeportal |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 1  | 1  | Betriebswerkzeuge, Testabdeckung durch CI/CD für Infrastruktur und IaaS, BareMetal als Dienst, Lifecycle Management | [Vergabepaket 1](Lot1.html.de) | 2021-07-30 | 2021-08-20T10:00+02:00 | [SCS-VP01](https://www.dtvp.de/Satellite/notice/CXP4YV7RM7T) |
+| 1  | 1  | Betriebswerkzeuge, Testabdeckung durch CI/CD für Infrastruktur und IaaS, BareMetal als Dienst, Lifecycle Management | [Vergabepaket 1](Lot1.html.de) | 2021-07-30 | 2021-08-20 T10:00+02:00 | [SCS-VP01](https://www.dtvp.de/Satellite/notice/CXP4YV7RM7T) |
 | 2  | 2  | Wissensmanagement für Betriebsprozesse, Herstellung von Transparenz bei den Cloudanbietern | [Vergabepaket 2](Lot2.html.de) | tba | tba | tba |
 | 3  | 3  | Speichertechnologie | [Vergabepaket 3](Lot3.html.de) | tba | tba | tba |
 | 4  | 4  | Netzwerktechnologie | [Vergabepaket 4](Lot4.html.de) | tba | tba | tba |
