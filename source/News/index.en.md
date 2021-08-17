@@ -40,6 +40,15 @@ Here you find an overview over news from the project
 * (2020-06-04) plusserver: [Für ein unabhängiges Europa in der Cloud: plusserver ist Gründungsmitglied von GAIA-X](https://www.plusserver.com/ps-files/presse/pm-2020-06-04-GAIA-X.pdf)
 * (2020-06-04) heise online: [Bundeswirtschaftsminister: Gaia-X als weltweiter Goldstandard für Cloud-Dienste](https://www.heise.de/news/Bundeswirtschaftsminister-Gaia-X-als-weltweiter-Goldstandard-fuer-Cloud-Dienste-4774826.html?seite=2)
 
+## Conference Contributions (DE)
+
+* (2021-08-17) [OSB Alliance: Sovereign Cloud Stack: Blick in den Maschinenraum](https://osb-alliance.de/veranstaltungen/sovereign-cloud-stack-blick-in-den-maschinenraum) (Kurt Garloff, Christian Berendt) ([Slides](/slides/20210817-SCS-OSBA.pdf))
+* (2021-01-28) [Univention Summit](https://www.univention-summit.de/):
+  [Adriana Groh, Kurt Garloff: Wer ist SCS -- und wenn ja, wie viele?](https://www.youtube.com/watch?v=7bVXedVeEXA)
+* (2020-11-19) Open Source Day:
+  [Kurt Garloff, Peter Ganten: Digitale Souveränität mit Sovereign Cloud Stack](https://osb-alliance.de/veranstaltungen/open-source-day-2020-forum-fuer-digitale-souveraenitaet)
+   [ (Slides)](/slides/20201119-OSD.pdf)
+
 ## Conference Contributions (EN)
 
 * (2021-07-08) [Open Infra Live: The Role of Open Source in Digital Sovereignty](https://www.youtube.com/watch?v=JPfo6wXM0BY) (Panel mit Johan Christenson, Linda Siwe, Pierre Gronlier, Kurt Garloff)
@@ -50,11 +59,6 @@ Here you find an overview over news from the project
 * (2021-02-17) [GAIA-X Technical Deep Dive](https://www.talque.com/app#/app/ngx/org/6iq6yI5LPSxaIRA6cmnq/sessions):
    [Kurt Garloff: Sovereign Cloud Stack](https://www.talque.com/app#/app/ngx/org/6iq6yI5LPSxaIRA6cmnq/session/cqi0846PBWkulx4fpQM6)
   ([Slides](/slides/20210217-GX-SCS.pdf))
-* (2021-01-28) [Univention Summit](https://www.univention-summit.de/):
-  [Adriana Groh, Kurt Garloff: Wer ist SCS -- und wenn ja, wie viele?](https://www.youtube.com/watch?v=7bVXedVeEXA) (German)
-* (2020-11-19) Open Source Day: 
-  [Kurt Garloff, Peter Ganten: Digitale Souveränität mit Sovereign Cloud Stack](https://osb-alliance.de/veranstaltungen/open-source-day-2020-forum-fuer-digitale-souveraenitaet)
-   [ (Slides)](/slides/20201119-OSD.pdf) (German)
 * (2020-11-19) GAIA-X Summit: [Dr. Ronny Reinhardt, Pierre Gronlier: GAIA-X Demonstrator](https://www.youtube.com/watch?v=MkTMFRzP7jA)
 * (2020-10-21) Open Infra Summit: [Christian Berendt, Kurt Garloff: Back to the original mission: an open cloud operating system](https://summit.openinfra.dev/a/event/24658)
   [ (Slides)](/slides/20201010-OIF-2.pdf)
