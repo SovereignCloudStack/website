@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-    - main
+    - master
   workflow_dispatch:
 
 jobs:
@@ -10,24 +10,31 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [aries]
+        # Multiple deploy targets can be added here. Define the corresponding secrets in the repository settings.
+        include:
+          - target: OTC
+            host: OTC_DEPLOY_HOST
+            port: OTC_DEPLOY_PORT
+            path: OTC_DEPLOY_PATH
+            user: OTC_DEPLOY_USER
+            key: OTC_DEPLOY_KEY
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       # Use GitHub Actions' cache to shorten build times and decrease load on servers
-    - uses: actions/cache@v1
+    - uses: actions/cache@v2
       with:
         path: vendor/bundle
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gems-
     - uses: lemonarc/jekyll-action@1.0.0
-    - name: rsync deployments
-      uses: burnett01/rsync-deployments@4.1
+    - uses: burnett01/rsync-deployments@5.1
       with:
         switches: -avzr --delete
         path: _site/
-        remote_path: /scs
-        remote_host: ${{ matrix.target }}.uberspace.de
-        remote_user: itrich
-        remote_key: ${{ secrets.DEPLOY_KEY }}
+        remote_host: ${{ secrets[matrix.host] }}
+        remote_port: ${{ secrets[matrix.port] }}
+        remote_path: ${{ secrets[matrix.path] }}
+        remote_user: ${{ secrets[matrix.user] }}
+        remote_key: ${{ secrets[matrix.key] }}
