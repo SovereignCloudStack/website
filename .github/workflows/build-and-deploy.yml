@@ -1,0 +1,33 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [aries]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      # Use GitHub Actions' cache to shorten build times and decrease load on servers
+    - uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+    - uses: lemonarc/jekyll-action@1.0.0
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avzr --delete
+        path: _site/
+        remote_path: /scs
+        remote_host: ${{ matrix.target }}.uberspace.de
+        remote_user: itrich
+        remote_key: ${{ secrets.DEPLOY_KEY }}

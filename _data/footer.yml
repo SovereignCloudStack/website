@@ -1,0 +1,13 @@
+legal:
+  - title: footer.imprint
+    link: /imprint/
+  - title: footer.dataprotection
+    link: /dataprotection/
+contact:
+  - title: "+49-711-90715-390"
+    icon: "fa-phone"
+    link: "tel:+49-711-90715-390"
+  - title: "project[at]scs.sovereignit.de"
+    icon: "fa-envelope"
+    link: "mailto:project@scs.sovereignit.de"
+  

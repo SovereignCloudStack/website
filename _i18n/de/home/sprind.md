@@ -1,0 +1,5 @@
+Die [Bundesagentur für Sprunginnovationen](https://www.sprind.org/de) – SPRIND – mit Sitz in Leipzig schließt eine Lücke in der deutschen Innovationslandschaft: Sie findet Antworten auf die ungelösten technologischen, ökologischen und sozialen Herausforderungen unserer Zeit und stellt gleichzeitig sicher, dass die Wertschöpfung der daraus entstehenden Unternehmen und Industrien in Deutschland und Europa bleibt.
+
+Das Team um Direktor Rafael Laguna de la Vera unterstützt Erfinder\*innen umfassend: SPRIND stellt die Finanzierung auf die Beine, hilft dabei, ein Gründungsteam zu finden und schafft Verbindungen zu weiteren Expert\*innen aus Wissenschaft und Wirtschaft. Menschen mit richtungsweisenden Ideen, nachgewiesener Fachexpertise und Leidenschaft versammeln sich bei SPRIND.
+
+Zu den ersten Projekten, die SPRIND unterstützt, gehört das Projekt "Sovereign Cloud Stack". Das Projekt erhielt 2020 einen Untersuchungsauftrag ("Machbarkeitsstudie"), die die Umsetzbarkeit und Erfolgsaussichten von Sovereign Cloud Stack bewertete. Mit positivem Ergebnis!

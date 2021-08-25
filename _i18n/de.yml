@@ -1,0 +1,54 @@
+global:
+  english: "Englisch"
+  german: "Deutsch"
+  about: "Sovereign Cloud Stack (SCS) ist eine Open-Source-Code Alternative zu proprietär verfügbarer Cloud-Technologie."
+nav:
+  home: "Home"
+  about: "Über SCS"
+  use: "SCS nutzen"
+  news: "SCS in den Medien"
+  jobs: "Offene Stellen"
+  tenders: "Öffentliche Ausschreibungen"
+footer:
+  trademark: "Sovereign Cloud Stack, SCS und das Logo sind geschützte Marken der Open Source Business Alliance e.V. — Sonstige Marken sind Eigentum ihrer jeweiligen Besitzer."
+  imprint: "Impressum"
+  dataprotection: "Datenschutzerklärung"
+home:
+  partner: "Partner"
+  supporter: "Unterstützende Unternehmen und Organisationen"
+quotes:
+  gaiax: "Gaia-X — Federated Data Infrastructure"
+  bmwi: "Bundesministerium für Wirtschaft und Energie"
+  sprind: "Bundesagentur für Sprunginnovationen"
+tiles:
+  news:
+    title: "Neuigkeiten"
+    body: "Die neuesten Informationen aus dem Sovereign Cloud Stack Projekt (Blog, Ankündigungen, Presseartikel über das Projekt, Konferenzbeiträge usw.) finden Sie hier."
+    action: "Weiterlesen &raquo;"
+  documentation:
+    title: "Community beitreten"
+    body: "Hinweise und Anleitungen, wie man den Sovereign Cloud Stack nutzen kann, finden Sie hier."
+    action: "SCS nutzen &raquo;"
+  jobs:
+    title: "Offene Stellen"
+    body: "Die Open Source Business Alliance baut ein kleines Team auf, welches zentral die Steuerung und Koordination des Sovereign Cloud Stack Projektes übernimmt."
+    action: "Mitgestalten &raquo;"
+news:
+  announcments: "Eigene Ankündigungen"
+  blog: "Community-Blog"
+  press:
+    de: "Presse zu SCS (Deutsch)"
+    en: "Presse zu SCS (Englisch)"
+  conference: 
+    de: "Konferenzbeiträge (Deutsch)"
+    en: "Konferenzbeiträge (Englisch)"
+    slides: "Folien"
+tenders:
+  title:
+    lot1: "Vergabepaket 1"
+    lot2: "Vergabepaket 2"
+    lot3: "Vergabepaket 3"
+    lot4: "Vergabepaket 4"
+    lot5: "Vergabepaket 5"
+    lot8: "Vergabepaket 8"
+    lot10: "Vergabepaket 10"

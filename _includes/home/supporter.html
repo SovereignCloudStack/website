@@ -1,0 +1,11 @@
+<div class="row align-items-center">
+	<h2 class="mb-5">{% t home.supporter %}</h2>
+	{% assign sorted = site.data.supporter | sort_natural: 'name' %}
+	{% for support in sorted %}
+	<div class="col-lg-3 col-sm-4 col-6 mb-5">
+	<a href="{{ support.link }}" title="{{ support.name }}" target="_blank">
+		<img class="mx-auto d-block" src="{{ support.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" alt="{{ support.name }}" style="max-height: 60px; max-width: 150px;">
+	</a>
+	</div>
+	{% endfor %}
+</div>

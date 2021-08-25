@@ -1,0 +1,39 @@
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img src="{{ "/assets/images/SCS_short.svg" | prepend: site.baseurl_root }}" alt="Sovereign Cloud Stack" class="img-fluid mb-2">
+        </a>
+        <p class="small my-1">{% t footer.trademark %}</p>
+        <ul class="list-inline mt-2 mb-1">
+          {% for item in site.data.footer.contact %}
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa {{ item.icon }} me-1"></i> <a class="text-light text-decoration-none" href="{{ item.link }}" title="{{ item.title }}">{{ item.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          {% for item in site.data.social %}
+          <li class="list-inline-item me-2">
+            <a target="_blank" href="{{ item.link }}">
+              <i class="text-light fa {{item.icon}} fa-lg"></i>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          {% for item in site.data.footer.legal %}
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="{% t item.title %}" href="{{ site.baseurl }}{{ item.link }}">{% t item.title %}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
