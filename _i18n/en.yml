@@ -18,12 +18,12 @@ home:
   supporter: "Supporting companies and organizations"
 quotes:
   gaiax: "Gaia-X — Federated Data Infrastructure"
-  bmwi: "Federal Ministry for Economy and Energy"
+  bmwi: "German Federal Ministry for Economic Affairs and Energy"
   sprind: "Federal Agency for Disruptive Innovations"
 tiles:
   news:
-    title: "News"
-    body: "The latest information of our project (announcements, blog, press review, conference contributions, ...) can be found on our news page."
+    title: "News & media coverage"
+    body: "The latest information of our project (announcements, blog, media coverage, conference contributions, ...) can be found on our news page."
     action: "Read more &raquo;"
   documentation:
     title: "Join the community"
@@ -33,6 +33,10 @@ tiles:
     title: "Open Positions"
     body: "The Open Source Business Alliance is building up a small team, which centrally leads and coordinates the Sovereign Cloud Stack project."
     action: "Join us &raquo;"
+  tenders:
+    title: "Tenders"
+    body: "Important building blocks will be awarded to companies through open tenders, which will be continously published on this page."
+    action: "Apply &raquo;"
 news:
   announcments: "Own Announcements"
   blog: "Community Blog"

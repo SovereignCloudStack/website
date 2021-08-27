@@ -33,6 +33,10 @@ tiles:
     title: "Offene Stellen"
     body: "Die Open Source Business Alliance baut ein kleines Team auf, welches zentral die Steuerung und Koordination des Sovereign Cloud Stack Projektes übernimmt."
     action: "Mitgestalten &raquo;"
+  tenders:
+    title: "Ausschreibungen"
+    body: "Wichtige Bausteine sollen über offene Ausschreibungen an Unternehmen vergeben werden, welche hier regelmäßig veröffentlich werden."
+    action: "Bewerben &raquo;"
 news:
   announcments: "Eigene Ankündigungen"
   blog: "Community-Blog"

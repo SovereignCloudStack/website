@@ -13,3 +13,8 @@
   action: tiles.jobs.action
   link: /jobs/
   color: "blue"
+- title: tiles.tenders.title
+  body: tiles.tenders.body
+  action: tiles.tenders.action
+  link: /tenders/
+  color: "blue"
