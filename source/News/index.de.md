@@ -6,7 +6,7 @@ Hier gibt es einen Überblick über Neuigkeiten
 
 * (2021-07-15) SCS: [SCS Release 0 freigegeben](/News/release0.html.de)
 * (2021-07-13) OSB Alliance/BMWi: [OSB Alliance entwickelt Sovereign Cloud Stack für das Gaia-X Projekt](/News/pr-20210713.html.de)
-* (2021-08-30) SCS: [Infrastructure für den Gaia-X Hackathon 1](/slides/20210830-20210830-GX-Hackathon-Infra.pdf)
+* (2021-08-30) SCS: [Infrastructure für den Gaia-X Hackathon 1](/slides/20210830-GX-Hackathon-Infra.pdf)
 
 ## Blog
 
