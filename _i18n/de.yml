@@ -56,3 +56,16 @@ tenders:
     lot5: "Vergabepaket 5"
     lot8: "Vergabepaket 8"
     lot10: "Vergabepaket 10"
+jobs:
+  po-container:
+    title: "SCS Product Owner Container Technologies (d/w/m)"
+    short_description: "Werde Teil eines kleinen zentralen Teams bei der Open Source Business Alliance und koordiniere die Implementierung und Validierung (CI/CD) von Open Source Container Technologien."
+  po-infra:
+    title: "SCS Product Owner IaaS and Operations (d/w/m)"
+    short_description: "Werde Teil eines kleinen zentralen Teams bei der Open Source Business Alliance und koordiniere die Implementierung und Validierung (CI/CD) von Open Source IaaS und Operations Technologien."
+  knowledge-management:
+    title: "Knowledge Management Engineer (d/w/m)"
+    short_description: "Werde Teil eines kleinen zentralen Teams bei der Open Source Business Alliance und entwickle eigene Prozesse, um das im Projekt gesammelte Wissen für Cloud-Provider, Entwickler:inenn und Kunden leicht konsumierbar zu gestalten."
+  ma-dok:
+    title: "Mitarbeiter:in (d/w/m) Dokumentation/Projektmanagement"
+    short_description: "Werde Teil eines kleinen zentralen Teams bei der Open Source Business Alliance und unterstütze uns dabei die zentrale Entwicklungsarbeit zu orchestrieren sowie die Dokumentation der Vergabeverfahren aufzubauen."  

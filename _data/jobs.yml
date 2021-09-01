@@ -1,0 +1,24 @@
+- title: jobs.po-container.title
+  image: "po-container.jpg"
+  short_description: jobs.po-container.short_description
+  location: "Home Office / Berlin"
+  url: "/jobs/po-container/"
+  is_open: true
+- title: jobs.po-infra.title
+  image: "po-infra.jpg"
+  short_description: jobs.po-infra.short_description
+  location: "Home Office / Berlin"
+  url: "/jobs/po-infra/"
+  is_open: true
+- title: jobs.knowledge-management.title
+  image: "knowledge-management.jpg"
+  short_description: jobs.knowledge-management.short_description
+  location: "Home Office / Berlin"
+  url: "/jobs/knowledge-management/"
+  is_open: true
+- title: jobs.ma-dok.title
+  image: "ma-dok.jpg"
+  short_description: jobs.ma-dok.short_description
+  location: "Berlin / Home Office"
+  url: "/jobs/ma-dok/"
+  is_open: true

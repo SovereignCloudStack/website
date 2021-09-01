@@ -7,5 +7,3 @@ redirect_from:
    - /Jobs/index.html.de
    - /Jobs/index.html.en
 ---
-
-{% tf jobs/jobs.md %}
