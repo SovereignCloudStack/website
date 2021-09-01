@@ -1,0 +1,125 @@
+$scs-mint: #50c3a5;
+$scs-blue: #0f5fe1;
+$scs-gray: #7d7d82;
+$table-border: 1px solid rgba($secondary, 0.4);
+$table-hover: rgba($scs-mint, 0.1);
+$text-color: $gray-800;
+
+body {
+    color: $text-color;
+}
+
+.list-group-item-action:hover, .list-group-item-action:focus{
+    background-color: $table-hover;
+}
+
+.list-group-item{
+    border: $table-border;
+}
+
+.list-group-item.active{
+    background: $scs-mint;
+    color: $text-color;
+    border: $table-border;
+}
+
+.card-top-border{
+	min-height: 5px;
+	&.blue{ background-color: $scs-blue; }
+	&.mint{ background-color: $scs-mint; }
+}
+
+.btn-primary{
+	background-color: $scs-gray;
+	border-color: $scs-gray;
+    &:hover{
+         background-color: $scs-blue;
+         border-color: $scs-blue;
+    }
+}
+
+.bg-dark{
+    background-color: $scs-gray !important;
+}
+
+.bg-primary{
+    background-color: $scs-mint !important;
+}
+
+.navbar {
+  padding: 0.5rem 1rem;
+}
+
+a {
+    color: $scs-mint;
+}
+
+a:hover, a:focus {
+    color: $scs-blue;
+}
+
+h1 {
+  font-weight: bold;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+h2 {
+  font-weight: bold;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+h3 {
+  font-weight: bold;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+.blockquote-footer {
+    font-size: .8em;
+    margin-top: -0.8em;
+}
+
+blockquote,
+.blockquote {
+  width: 100%;
+  color: $secondary;
+  font-size: unset;
+  margin: auto;
+  padding: 0.4em 50px 0.6em 50px;
+  border-left: 5px solid $scs-mint;
+  position: relative;
+  background: $light;
+}
+
+blockquote::before,
+.blockquote::before {
+  content: "\201C";
+  color: $scs-mint;
+  font-size: 4em;
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  left: 10px;
+  top: -15px;
+}
+
+table { 
+  width: 100%;
+}
+
+th, td { 
+    border: $table-border;
+    padding: 15px;
+}
+
+th {
+    background-color: $scs-mint;
+    padding: 15px;
+}
+
+tr:nth-child(even) { background-color: rgba($scs-gray, 0.1); }
+
+tr:hover, tr:focus { 
+    background-color: $table-hover;
+}

@@ -1,0 +1,71 @@
+global:
+  english: "English"
+  german: "German"
+  about: "Sovereign Cloud Stack (SCS) is cloud technology built entirely with Open Source Software — as an alternative to propietary cloud technology."
+nav:
+  home: "Home"
+  about: "About SCS"
+  use: "Use SCS"
+  news: "SCS in the media"
+  jobs: "Open positions"
+  tenders: "Public tenders"
+footer:
+  trademark: "Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners."
+  imprint: "Imprint"
+  dataprotection: "Data Protection Statement"
+home:
+  partner: "Partner"
+  supporter: "Supporting companies and organizations"
+quotes:
+  gaiax: "Gaia-X — Federated Data Infrastructure"
+  bmwi: "German Federal Ministry for Economic Affairs and Energy"
+  sprind: "Federal Agency for Disruptive Innovations"
+tiles:
+  news:
+    title: "News & media coverage"
+    body: "The latest information of our project (announcements, blog, media coverage, conference contributions, ...) can be found on our news page."
+    action: "Read more &raquo;"
+  documentation:
+    title: "Join the community"
+    body: "Information and documentation on how to use the Sovereign Cloud Stack can be found here."
+    action: "Use SCS &raquo;"
+  jobs:
+    title: "Open Positions"
+    body: "The Open Source Business Alliance is building up a small team, which centrally leads and coordinates the Sovereign Cloud Stack project."
+    action: "Join us &raquo;"
+  tenders:
+    title: "Tenders"
+    body: "Important building blocks will be awarded to companies through open tenders, which will be continously published on this page."
+    action: "Apply &raquo;"
+news:
+  announcments: "Own Announcements"
+  blog: "Community Blog"
+  press:
+    de: "Press on SCS (German)"
+    en: "Press on SCS (English)"
+  conference: 
+    de: "Conference Contributions (German)"
+    en: "Conference Contributions (English)"
+    slides: "Slides"
+tenders:
+  title:
+    lot1: "Lot 1"
+    lot2: "Lot 2"
+    lot3: "Lot 3"
+    lot4: "Lot 4"
+    lot5: "Lot 5"
+    lot8: "Lot 8"
+    lot10: "Lot 10"
+jobs:
+  po-container:
+    title: "Product Owner Container Technologies (d/f/m)"
+    short_description: "Be part of a small central team at the Open Source Business Alliance and orchestrate the efforts to define, implement and validate (CI/CD) a stack of open source container technology."
+  po-infra:
+    title: "Product Owner IaaS and Operations (d/f/m)"
+    short_description: "Be part of a small central team at the Open Source Business Alliance and orchestrate the efforts to define, implement and validate (CI/CD) a stack of open source IaaS and Operations technology."
+  knowledge-management:
+    title: "Knowledge Management Engineer (d/f/m)"
+    short_description: "Be part of a small central team at the Open Source Business Alliance and structure the processes to document collected experience, validate it and make it available in ways that are easy to consume for cloud operators, developers and users."
+  ma-dok:
+    title: "Staff / Project Management and Documentation (d/f/m)"
+    short_description: "Be part of a small central team at the Open Source Business Alliance and support the project lead in orchestrating the development work and the documenting the tender processes."  

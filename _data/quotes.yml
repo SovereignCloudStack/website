@@ -1,0 +1,11 @@
+- title: quotes.gaiax
+  logo: "logo-gaiax.svg"
+  translation: "home/gaiax.md"
+
+- title: quotes.bmwi
+  logo: "logo-bmwi-funded.svg"
+  translation: "home/bmwi.md"
+
+- title: quotes.sprind
+  logo: "logo-sprind.png"
+  translation: "home/sprind.md"

@@ -1,0 +1,8 @@
+Das Bundesministerium für Wirtschaft und Energie fördert nun nach den Gaia-X Federation Services ([GXFS](https://gxfs.de/)) auch das Sovereign Cloud Stack Projekt mit 14,9 Millionen Euro.
+
+<blockquote class="blockquote mb-3">
+	<p>Mit dem Sovereign Cloud Stack füllt sich das Projekt GAIA-X immer mehr mit Leben. Als Beitrag zu einer europäischen digitalen Souveränität soll der technische Unterbau, der Cloud Stack, als Open-Source-Projekt umgesetzt werden. Damit setzt das BMWi an dieser Stelle auf Wettbewerb, um zukünftig auch den Wechsel zwischen Anbietern zu ermöglichen. Es wird mittelständischen Unternehmen, aber auch der öffentlichen Verwaltung erleichtern, die Vorteile von GAIA-X in konkreten Projekten zu nutzen. Der Sovereign Cloud Stack wird dabei eng mit den Kernkomponenten von GAIA-X, den so genannten Federation Services verbunden, deren Erstellung ebenfalls vom BMWi gefördert wird und weit fortgeschritten ist. Zusammen mit weiteren Fördermaßnahmen wie dem GAIA-X-Förderwettbewerb oder für Zukunftsinvestitionen in die Fahrzeugindustrie (KoPa35c) verleiht das BMWi der Umsetzung von GAIA-X erheblichen Schwung.</p>
+	<footer class="blockquote-footer">Thomas Jarzombek (MdB), Beauftragter des BMWi für die Digitale Wirtschaft und Start-Ups</footer>
+</blockquote>
+
+Die ganze Pressemeldung findet sich auf unserer News Seite sowie eine FAQ bei der [OSB Alliance](https://osb-alliance.de/sovereign-cloud-stack-scs). Die OSB Alliance baut dafür ein wachsendes Team auf.

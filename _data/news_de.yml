@@ -1,0 +1,99 @@
+- date: "2021-07-26"
+  publisher: "Süddeutsche Zeitung"
+  title: "Wie Europa die Abhängigkeit von US-Techkonzernen verringern will"
+  link: "https://www.sueddeutsche.de/wirtschaft/cloud-eu-gaia-x-open-source-1.5363726"
+
+- date: "2021-07-26"
+  publisher: "CloudComputing-Insider" 
+  title: "OSB Alliance entwickelt Unterbau für Gaia-X"
+  link: "https://www.cloudcomputing-insider.de/osb-alliance-entwickelt-unterbau-fuer-gaia-x-a-1038904/"
+
+- date: "2021-05-19" 
+  publisher: "Tagesspiegel Background" 
+  title: "Gaia-X: Wo die Entwicklung des Projekts steht – Oliver Vo&szlig;"
+  link: "/assets/slides/Gaia-X-Projekt-Tagesspiegel-Background-20210519.pdf" 
+
+- date:  "2021-03-25"
+  publisher: "Acatech" 
+  title: "Digitale Souveränität - Status quo und Handlungsfelder"
+  link: "https://www.acatech.de/publikation/digitale-souveraenitaet-status-quo-und-handlungsfelder/"
+
+- date:  "2021-03-17"
+  publisher: "iX 4/21"
+  title: "Die Europa Cloud kommt"
+  link: "https://www.heise.de/select/ix/2021/4/2101412031450103753" 
+
+- date:  "2021-03-08"
+  publisher: "CloudComputing-Insider"
+  title: "Mehr digitale Souveränität mit GAIA-X?"
+  link: "https://www.cloudcomputing-insider.de/mehr-digitale-souveraenitaet-mit-gaia-x-d-43964/"
+
+- date:  "2020-11-19"
+  publisher: "iX 12/20" 
+  title: "Wolken-Verbund: Mit Sovereign Cloud Stack zu mehr digitaler Souveränität"
+  link: "https://www.heise.de/select/ix/2020/12/2019813170969193194" 
+
+- date:  "2020-10-12"
+  publisher: "Inpact Media (Beilage Handelsblatt)"
+  title: "IT-Security & Cloud Management: Die Europa-Cloud"
+  link: "https://www.inpactmedia.com/it/it-security-cloud-management/die-europa-cloud"
+
+- date:  "2020-09-07"
+  publisher: "nerdzoom" 
+  title: "NRDZM119: GAIA-X & Sovereign Cloud Stack"
+  link: "https://nerdzoom.de/nrdzm119-gaia-x-sovereign-cloud-stack/"
+
+- date:  "2020-08-28"
+  publisher: "c't – magazin für computertechnik"
+  title: "Unabhängig mit Open Source Freie Software für die digitale Souveränität"
+  link: "https://www.heise.de/select/ct/2020/19/2021009232468241113"
+
+- date:  "2020-07-13"
+  publisher: "Der Tagesspiegel"
+  title: "Auf der Suche nach Daniela Düsentrieb"
+  link: "https://www.tagesspiegel.de/wirtschaft/deutschlands-chefinnovator-laguna-auf-der-suche-nach-daniela-duesentrieb/25990046.html"
+
+- date:  "2020-07-10"
+  publisher: "heise online"
+  title: "Sovereign Cloud Stack: Auf dem Weg zur freien europäischen Cloud"
+  link: "https://www.heise.de/news/Sovereign-Cloud-Stack-Auf-dem-Weg-zur-freien-europaeischen-Cloud-4839395.html"
+
+- date:  "2020-07-09"
+  publisher: "WDR 5 Profit"
+  title: "Podcast vom 09.07.2020"
+  link: "https://www1.wdr.de/mediathek/audio/wdr5/wdr5-profit/audio-exporteinbruch---budelmann-electronic----siemens----stadtgemuese--100.html"
+
+- date:  "2020-07-01"
+  publisher: "Der Tagesspiegel"
+  title: "Agentur für Sprunginnovationen: Das sind die ersten Projekte"
+  link: "https://background.tagesspiegel.de/digitalisierung/agentur-fuer-sprunginnovationen-das-sind-die-ersten-projekte"
+
+- date:  "2020-07-01"
+  publisher: "SPRIND" 
+  title: "Eine europäische Superwolke: IT-Infrastruktur fürs 3. Jahrtausend"
+  link: "https://www.sprind.org/de/laufende-projekte/sovereign-cloud-stack/"
+
+- date:  "2020-06-25"
+  publisher: "cloudmag"
+  title: "Open Source Software: Darum ist sie ein Gewinn für Unternehmen"
+  link: "https://www.cloud-mag.com/open-source-software-darum-ist-sie-ein-gewinn-fuer-unternehmen/"
+
+- date:  "2020-06-25"
+  publisher: "iX 07/20"
+  title: "GAIA-X: Europas Weg zur digitalen Souveränität"
+  link: "https://www.heise.de/select/ix/2020/7/2013307364093404455"
+
+- date:  "2020-06-04"
+  publisher: "OSB Alliance"
+  title: "plusserver ist Gründungsmitglied von GAIA-X"
+  link: "https://osb-alliance.de/news/plusserver-ist-gruendungsmitglied-von-gaia-x"
+
+- date:  "2020-06-04"
+  publisher: "plusserver"
+  title: "Für ein unabhängiges Europa in der Cloud: plusserver ist Gründungsmitglied von GAIA-X"
+  link: "https://www.plusserver.com/ps-files/presse/pm-2020-06-04-GAIA-X.pdf"
+
+- date:  "2020-06-04"
+  publisher: "heise online"
+  title: "Bundeswirtschaftsminister: Gaia-X als weltweiter Goldstandard für Cloud-Dienste"
+  link: "https://www.heise.de/news/Bundeswirtschaftsminister-Gaia-X-als-weltweiter-Goldstandard-fuer-Cloud-Dienste-4774826.html?seite=2"

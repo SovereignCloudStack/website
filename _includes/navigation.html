@@ -1,0 +1,47 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container">
+    <button
+      class="navbar-toggler me-auto"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        {% for item in site.data.menu %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}{{ item.link }}">
+            {% t item.title %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <ul class="navbar-nav flex-row">
+        {% for item in site.data.social %}
+        <li class="nav-item my-auto mx-2 mx-lg-0">
+          <a class="nav-link" target="_blank" href="{{ item.link }}">
+            <i class="fa {{item.icon}} fa-lg"></i>
+          </a>
+        </li>
+        {% endfor %}
+        <li class="nav-item my-auto ms-4 ms-lg-2">
+          <a class="nav-link fw-bold {% if site.lang == "en" %} text-decoration-underline {% endif %} " href="{{ site.baseurl_root }}{{ page.url }}">EN</a>
+        </li>
+        <li class="nav-item my-auto mx-2 mx-lg-0">
+          <span class="nav-link px-0">/</span>
+        </li>
+        <li clas="nav-item my-auto">
+          <a class="nav-link fw-bold  {% if site.lang == "de" %} text-decoration-underline {% endif %}" href="{{ site.baseurl_root }}/de{{ page.url }}">DE</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
