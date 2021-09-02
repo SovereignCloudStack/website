@@ -3,7 +3,8 @@ layout: default
 ---
 <h2 class="mb-3"><small><i class="fa fa-bullhorn me-1"></i> {% t news.announcments %}</small></h2>
 <div class="list-group mb-4">
-{% for post in site.posts %}
+{% assign sorted = site.posts | sort: 'date' | reverse %}
+{% for post in sorted %}
 {% if post.path contains '/announcements/' %}
 	<a href="{{ site.baseurl }}{{post.url}}" class="list-group-item list-group-item-action flex-column align-items-start">
 	<div class="d-flex flex-row">
@@ -27,7 +28,8 @@ layout: default
 
 <h2 class="mb-3"><small><i class="fa fa-community me-1"></i> {% t news.blog %}</small></h2>
 <div class="list-group mb-4">
-{% for post in site.posts %}
+{% assign sorted = site.posts | sort: 'date' | reverse %}
+{% for post in sorted %}
 {% if post.path contains '/blog/' %}
 	<a href="{{ site.baseurl }}{{post.url}}" class="list-group-item list-group-item-action flex-column align-items-start">
 	<div class="d-flex flex-row">
@@ -53,7 +55,8 @@ layout: default
 	<div class="col-lg-6">
 		<h2 class="mb-3"><small><i class="fa fa-newspaper-o me-1"></i> {% t news.press.en %}</small></h2>
 		<div class="list-group mb-4">
-		{% for item in site.data.news_en %}
+		{% assign sorted = site.data.news_en | sort: 'date' | reverse %}
+		{% for item in sorted %}
 		<a href="{{item.link}}" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">
 		<div class="d-flex w-100 justify-content-between">
 		<h5 class="mb-1" style="font-size:.875em">{{item.publisher}}</h5>
@@ -67,7 +70,8 @@ layout: default
 	<div class="col-lg-6">
 		<h2 class="mb-3"><small><i class="fa fa-newspaper-o me-1"></i> {% t news.press.de %}</small></h2>
 		<div class="list-group mb-4">
-		{% for item in site.data.news_de %}
+		{% assign sorted = site.data.news_de | sort: 'date' | reverse %}
+		{% for item in sorted %}
 		<a href="{{item.link}}" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">
 		<div class="d-flex w-100 justify-content-between">
 		<h5 class="mb-1" style="font-size:.875em">{{item.publisher}}</h5>
@@ -84,7 +88,8 @@ layout: default
 	<div class="col-lg-6">
 		<h2 class="mb-3"><small><i class="fa fa-comment-o me-1"></i> {% t news.conference.en %}</small></h2>
 		<div class="list-group mb-4">
-		{% for item in site.data.conferences_en %}
+		{% assign sorted = site.data.conferences_en | sort: 'date' | reverse %}
+		{% for item in sorted %}
 		<div class="list-group-item list-group-item-action flex-column align-items-start">
 			<div class="d-flex w-100 justify-content-between">
 				<div class="d-flex w-75 flex-column justify-content-start position-relative">
@@ -108,7 +113,8 @@ layout: default
 	<div class="col-lg-6">
 		<h2 class="mb-3"><small><i class="fa fa-comment-o me-1"></i> {% t news.conference.de %}</small></h2>
 		<div class="list-group mb-4">
-		{% for item in site.data.conferences_de %}
+		{% assign sorted = site.data.conferences_de | sort: 'date' | reverse %}
+		{% for item in sorted %}
 		<div class="list-group-item list-group-item-action flex-column align-items-start">
 			<div class="d-flex w-100 justify-content-between">
 				<div class="d-flex w-75 flex-column justify-content-start position-relative">
