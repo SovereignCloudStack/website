@@ -110,8 +110,8 @@
   image: "logo-telekom.svg"
   link: "https://open-telekom-cloud.com/"
   location:
-    latitude: 56.162100
-    longitude: 15.583340 
+    latitude: 50.08176
+    longitude: 8.63564
 - name: "Univention GmbH"
   image: "logo-univention.png"
   link: "https://www.univention.de/"
