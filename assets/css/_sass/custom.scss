@@ -38,6 +38,15 @@ body {
     }
 }
 
+.btn-secondary{
+    background-color: $scs-mint;
+    border-color: $scs-mint;
+    &:hover{
+         background-color: $scs-blue;
+         border-color: $scs-blue;
+    }
+}
+
 .bg-dark{
     background-color: $scs-gray !important;
 }

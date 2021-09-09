@@ -57,6 +57,7 @@ tenders:
     lot8: "Vergabepaket 8"
     lot10: "Vergabepaket 10"
 jobs:
+  apply: "Jetzt bewerben"
   po-container:
     title: "SCS Product Owner Container Technologies (d/w/m)"
     short_description: "Werde Teil eines kleinen zentralen Teams bei der Open Source Business Alliance und koordiniere die Implementierung und Validierung (CI/CD) von Open Source Container Technologien."

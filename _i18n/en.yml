@@ -57,6 +57,7 @@ tenders:
     lot8: "Lot 8"
     lot10: "Lot 10"
 jobs:
+  apply: "Apply now"
   po-container:
     title: "Product Owner Container Technologies (d/f/m)"
     short_description: "Be part of a small central team at the Open Source Business Alliance and orchestrate the efforts to define, implement and validate (CI/CD) a stack of open source container technology."
