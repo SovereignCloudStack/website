@@ -1,111 +1,116 @@
-For its [Sovereign Cloud Stack (SCS)](https://scs.community/)
-project funded by the [German Federal Ministry for Economic Affairs 
-and Energy (BMWi)](https://bmwi.de/), the
-[Open Source Business Alliance -
+Die [Open Source Business Alliance -
 Bundesverband für digitale Souveränität
-e.V. (OSB Alliance)](https://osb-alliance.de/) is looking for a
-# Knowledge Management Engineer (d/f/m)
-(Home office or Berlin city centre)
+e.V. (OSB Alliance)](https://osb-alliance.de/) sucht für ihr vom [German Federal Ministry for Economic Affairs 
+and Energy (BMWi)](https://bmwi.de/) gefördertes Projekt [Sovereign Cloud Stack (SCS)](https://scs.community/) einen
+# Knowledge Management Engineer (d/w/m)
+(Homeoffice oder Berlin-Zentrum)
 
-We aim to fill this position as soon as possible.
+Wir streben an, diese Position zum nächstmöglichen Zeitpunkt zu besetzen.
 
-The OSB Alliance - Bundesverband für digitale
-Souveränität e.V. represents over 170 member companies in the
-Open Source economy, which together generate more than 1.7 billion &euro;
-annually in Germany. Together with scientific institutions and user
-organisations, the association works to anchor the central importance
-of open source software and open standards for a digitally sovereign
-society in public awareness. The OSB Alliance sees open source and open
-standards as a compelling basis for digital sovereignty, flexibility
-and security in the digital transformation and thus as the answer to
-one of the greatest challenges of our time.
+Die OSB Alliance – Bundesverband für digitale Souveränität e.V. vertritt rund
+170 Mitgliedsunternehmen der Open-Source-Wirtschaft, die in Deutschland
+gemeinsam jährlich mehr als 1,7 Milliarden Euro erwirtschaften. Zusammen mit
+wissenschaftlichen Einrichtungen und Anwenderorganisationen setzt sich der
+Verband dafür ein, die zentrale Bedeutung von Open-Source-Software und
+offenen Standards für eine digital souveräne Gesellschaft im öffentlichen
+Bewusstsein zu verankern. Die OSB Alliance betrachtet Open Source und offene
+Standards als zwingende Grundlagen für digitale Souveränität, Flexibilität und
+Sicherheit im digitalen Wandel und damit als die Antwort auf eine der größten
+Herausforderungen unserer Zeit.  
 
-With the Sovereign Cloud Stack (SCS) project, the OSB Alliance is contributing
-to the realisation of the goals of the German government's Digital Strategy
-2025 and the European Gaia-X project by developing a next-generation open cloud
-infrastructure.
+Mit dem Projekt Sovereign Cloud Stack (SCS) trägt die OSB Alliance zur
+Verwirklichung der Ziele der Digitalen Strategie 2025 der Bundesregierung und
+des europäischen Vorhabens Gaia-X bei, indem es eine offene Cloud-Infrastruktur
+der nächsten Generation entwickelt. 
 
-The project is driven by a small team in the OSB Alliance with multi-year
-funding from the Federal Ministry for Economic Affairs and Energy (BMWi). The
-advertised position is part of this central team. In addition to this team,
-there are numerous developers from different companies and institutions in
-Europe who contribute to the project - some of them are funded by the project,
-others because their employers are interested in making this project
-successful.
+Das Projekt wird von einem kleinen Team in der OSB Alliance mit mehrjähriger 
+Förderung durch das Bundesministerium für Wirtschaft und Energie (BMWi) 
+vorangetrieben. Die ausgeschriebene Position gehört zu diesem zentralen Team. 
+Zusätzlich zu diesem Team gibt es zahlreiche Entwickler:innen aus verschiedenen 
+Unternehmen und Institutionen Europas, die zu dem Projekt beitragen - einige 
+von ihnen werden durch das Projekt finanziert, andere, weil ihre 
+Arbeitgeber:innen daran interessiert sind, dieses Projekt erfolgreich zu 
+machen.  
 
-The SCS project aims to define and implement a complete, modular, secure,
-open-source software stack. It covers software-defined storage and networking,
-operations tooling for automated deployment, logging, monitoring, alerting,
-trending, identity and authorisation management, an Infrastructure-as-a-Service
-layer, as well as a Container(Platform)-as-a-Service layer. It allows users
-(development teams) to create and control their own kubernetes cluster through
-standardised APIs and delivers standard building blocks that can be used to
-construct and manage container applications. This stack fulfills high security
-standards and comes with tooling and documentation that reduce the need for
-specialised expertise to run complex cloud and container infrastructures. SCS
-can be used by both cloud service providers and internal IT teams and can be
-deployed as a whole or by just cherry-picking needed components from it. The
-resulting infrastructure can be subjected to a certification process that
-ensures strict compatibility with other SCS-based platforms, thus building a
-network of federatable, compatible clouds.
+Das Projekt SCS zielt darauf ab, einen vollständigen, modularen, sicheren und
+quelloffenen Software-Stack zu definieren und zu implementieren. Der Stack 
+umfasst Software-definierten Speicher und Netzwerktechnologie, 
+Betriebswerkzeuge für automatisierte Bereitstellung, Protokollierung,
+Überwachung, Alarmierung, Trendanalyse, Identitäts- und Berechtigungsmanagement,
+eine Infrastructure-as-a-Service-Schicht sowie eine
+Container(Platform)-as-a-Service-Schicht. Er ermöglicht es Anwendern 
+(Entwicklungsteams), ihren eigenen Kubernetes-Cluster über standardisierte APIs
+zu erstellen und zu steuern und liefert Standardbausteine, die für den Aufbau 
+und die Verwaltung von Container-Anwendungen verwendet werden können. Dieser 
+Stack erfüllt hohe Sicherheitsstandards und wird mit Werkzeugen und 
+Dokumentation geliefert, die den Bedarf an spezialisiertem Fachwissen für den 
+Betrieb komplexer Cloud- und Container-Infrastrukturen reduzieren.  
 
-The SCS project contributes to the European Gaia-X effort by serving as a
-reference for development work and enhancing it with an implementation that
-node-providers can leverage as a whole or in parts to deliver federated
-sovereign infrastructure, underpinning a sovereign data ecosystem.
+SCS kann sowohl von Cloud-Service-Providern als auch von internen IT-Teams genutzt werden und kann als Ganzes oder je nach spezifischem Bedarf in 
+Teilkomponenten eingesetzt werden. Die resultierenden Infrastrukturkomponenten 
+können einem Zertifizierungsprozess unterzogen werden, der die strikte 
+Kompatibilität mit anderen SCS-basierten Plattformen sicherstellt und so ein
+Netzwerk föderierbarer, kompatibler Clouds etabliert. Das SCS-Projekt trägt zu 
+dem europäischen Gaia-X-Vorhaben bei, indem es als Referenz für die
+Entwicklungsarbeit dient und Implementierungen bietet, die Node-Provider als 
+Ganzes oder in Teilen nutzen können, um eine föderierte, souveräne 
+Infrastruktur zu schaffen, die die Basis für ein Ökosystem für souveräne Daten 
+bildet.  
 
-In this role, you will
+In dieser Rolle werden Sie  
 
-* be part of the OSB Alliance team that leads and organizes the
-  efforts to define, implement, validate (CI/CD), document and
-  disseminate the SCS open source software stack
-* orchestrate a cross-cultural and cross-company team of engineers that
-  contribute to the effort
-* interact closely with upstream communities and downstream providers
-* create relationships, structure and technology to captience, including
-  situations when operational issues happen
-* design processes to encourage contributions to our knowledge base,
-  collecting input also from people not involved in the SCS on a daily
-  basis.
-* structure the processes to document collected experience, validate it
-  and make it available in ways that are easy to consume for cloud
-  operators, developers and users.
+* Teil eines kleinen zentralen Teams sein, das die Bemühungen zur Definition,
+Implementierung und Validierung (CI/CD), zur Dokumentation und Verbreitung des 
+SCS Open Source Software Stacks leitet und organisiert,
+* ein kultur- und unternehmensübergreifendes Team von Ingenieur:innen 
+orchestrieren, die zu diesem Vorhaben beitragen,
+* mit Upstream Communities und Providern eng interagieren,
+* Beziehungen knüpfen und pflegen sowie Strukturen, Prozesse und Techniken 
+entwickeln, um das Wissen zu erfassen, zu dokumentieren und verfügbar zu 
+machen, welches bei der Entwicklung und Nutzung von SCS entsteht,
+* dazu beitragen, eine Kultur zu schaffen, die den Austausch solchen Wissens 
+ermöglicht, auch in Situationen, in denen betriebliche Probleme auftreten,
+* Prozesse entwickeln, die möglichst umfassende Beiträge zu unserer Wissensbasis
+befördern, auch von Personen, die nicht täglich mit SCS involviert sind,
+* Prozesse und Strukturen entwickeln, um das gesammelte Wissen zu 
+dokumentieren, zu validieren und so verfügbar zu machen, dass es für 
+Cloud-Betreiber, -Entwickler und -Nutzer einfach zu verwenden ist.
 
-We expect that you
+Wir erwarten, dass Sie  
 
-* have a good overview over open source system software technology
-* have hands-on experience with structuring technical documentation and
-  knowledge management systems
-* know how to work with knowledgable individuals to efficiently collect
-  and document information and experience from them
-* have been in roles where you had responsibility for designing
-  documentation or publications and ideally had leadership roles
-  for teams that were tasked with such responsibilities
-* have worked with open source communities with diverse background
-* understand agile development methodologies
-* are willing and able to present processes and technology
+* einen guten Überblick über Open Source Systemsoftware-Technologien haben,
+* praktische Erfahrung mit der Strukturierung technischer Dokumentation und von
+Wissensmanagementsystemen haben,
+* es verstehen, mit fachkundigen Personen zusammenzuarbeiten, um deren 
+Informationen, Erfahrungen und Wissen effizient zu sammeln und zu dokumentieren,
+* bereits in Positionen waren, in denen Sie die Verantwortung für die 
+Gestaltung von Dokumentationen oder Publikationen hatten und idealerweise 
+Führungsaufgaben hatten für Teams, die mit solchen Aufgaben betraut waren,
+* mit Open Source Communities mit unterschiedlichem Hintergrund 
+zusammengearbeitet haben,
+* mit agilen Entwicklungsmethoden vertraut sind,
+* bereit und in der Lage sind, Prozesse und Techniken zu präsentieren.
 
-We offer
+Wir bieten  
 
-* working in an open and inspiring environment, in a team of highly
-  motivated experts, with top-level industry partners, relevant open
-  source communities and scientists
-* contributing to a project that will make a difference for Digital
-  Sovereignty by being instrumental for a vivid ecosystem of federated
-  infrastructure providers in Europe and beyond
-* being a key part of a new project
-* working on cutting-edge open source infrastructure technology
-* a lot of flexibility in how you organise your work and contribute to
-  the internationally distributed team. This is an 80% position;
-  we try to be flexible with different part-time needs.
-* getting visibility by presenting the project to stakeholders and to the
-  public on technology conferences
-* an adequate compensation package.
+* Arbeit in einem offenen und inspirierenden Umfeld, in einem Team von 
+hochmotivierten Expert:innen, mit hochkarätigen Industriepartnern, relevanten 
+Open Source Communities und Wissenschaftler:innen,
+* die Möglichkeit, zu einem Projekt beizutragen, das maßgeblich für digitale 
+Souveränität und für ein lebendiges Ökosystem von föderierten 
+Infrastrukturanbietern in Europa und darüber hinaus sein will,
+* eine Schlüsselrolle in diesem Projekt von herausgehobener Bedeutung einnehmen 
+zu können,
+* an hochmoderner Open-Source-Infrastrukturtechnologie arbeiten zu können,
+* viel Flexibilität, wie Sie Ihre Arbeit organisieren und zu dem international 
+verteilten Team beitragen. Es handelt sich um eine 80% Teilzeittätigkeit; wir 
+versuchen flexibel auf abweichende Bedürfnisse einzugehen.
+* Sichtbarkeit durch die Präsentation des Projekts vor Stakeholdern und der 
+Öffentlichkeit auf Technologiekonferenzen,
+* eine angemessene Vergütung.
 
-Get in touch with Kurt Garloff, Dirk Loßack or Manuela Urban via
-[project[at]scs.sovereignit.de](mailto:project@scs.sovereignit.de)
-if you are interested and would like to know further details. We are
-looking forward to receive applications with application letter, CV and
-other relevant material from you!
-
-
+Setzen Sie sich mit Kurt Garloff, Dirk Loßack oder Manuela Urban via 
+[project[at]scs.sovereignit.de](mailto:project@scs.sovereignit.de) in 
+Verbindung, wenn Sie interessiert sind und weitere Details erfahren möchten. 
+Wir freuen uns auf Ihre Bewerbung mit Anschreiben, Lebenslauf und weiteren 
+relevanten Unterlagen!
