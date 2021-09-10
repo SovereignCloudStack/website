@@ -32,4 +32,3 @@ plugins:
   - jekyll-multiple-languages-plugin
   #- jekyll-redirect-from   # redirect from /Jobs/ to /jobs/ leads to a redirection loop on Windows platforms due to case-insensitive filesystem
   - jekyll-seo-tag
-  - jekyll-leaflet

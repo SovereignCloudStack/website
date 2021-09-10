@@ -32,4 +32,3 @@ plugins:
   - jekyll-multiple-languages-plugin
   - jekyll-redirect-from
   - jekyll-seo-tag
-  - jekyll-leaflet
