@@ -1,66 +1,146 @@
 - name: "23 Technologies GmbH"
   image: "logo-23technologies.png"
+  avatar: "avatar-23technologies.jpg"
   link: "https://23technologies.cloud"
+  location:
+    latitude: 48.790080
+    longitude: 9.209990
 - name: "B1 Systems GmbH"
   image: "logo-b1-systems.svg"
+  avatar: "avatar-b1-systems.jpg"
   link: "https://b1-systems.de"
+  location:
+    latitude: 48.744440
+    longitude: 11.602960
 - name: "Betacloud Solutions"
   image: "logo-betacloud-solutions.png"
   link: "https://betacloud-solutions.de"
 - name: "Bundesministerium für Wirtschaft und Energie"
   image: "logo-bmwi.svg"
+  avatar: "avatar-bmwi.jpg"
   link: "https://www.bmwi.de"
+  location:
+    latitude: 52.530880
+    longitude: 13.373400    
 - name: "City Network"
   image: "logo-citynetwork.png"
+  avatar: "avatar-citynetwork.png"
   link: "https://citynetwork.eu/"
+  location:
+    latitude: 56.162100
+    longitude: 15.583340      
 - name: "Cloud & Heat"
   image: "logo-candh.png"
+  avatar: "avatar-candh.jpg"
   link: "https://www.cloudandheat.com/"
+  location:
+    latitude: 51.08052
+    longitude: 13.76233   
 - name: "Dataport"
   image: "logo-dataport.png"
+  avatar: "avatar-dataport.png"
   link: "https://www.dataport.de/"
+  location:
+    latitude: 54.40305
+    longitude: 10.12974 
 - name: "Dilossacon"
   image: "logo-dilossacon.png"
+  avatar: "avatar-dilossacon.png"
   link: "https://dilossacon.de/"
+  location:
+    latitude: 54.78202
+    longitude: 9.74633 
 - name: "GONICUS"
   image: "logo-gonicus.png"
+  avatar: "avatar-gonicus.jpg"
   link: "https://www.gonicus.de/"
+  location:
+    latitude: 51.45483
+    longitude: 7.96856
 - name: "gridscale GmbH"
   image: "logo-gridscale.png"
+  avatar: "avatar-gridscale.jpg"
   link: "https://gridscale.io/"
+  location:
+    latitude: 50.94750
+    longitude: 6.90560
 - name: "Open Infrastructure Foundation"
   image: "logo-oif.svg"
+  avatar: "avatar-oif.png"
   link: "https://openinfra.dev/"
+  location:
+    latitude: 30.26942
+    longitude: -97.73969 
 - name: "Open Source Business Alliance e.V."
   image: "logo-osba.svg"
+  avatar: "avatar-osba.jpg"
   link: "https://osb-alliance.com"
-- name: "Open-Xchange AG "
+  location:
+    latitude: 48.77961
+    longitude: 9.16812 
+- name: "Open-Xchange AG"
   image: "logo-open-xchange.png"
+  avatar: "avatar-open-xchange.jpg"
   link: "https://www.open-xchange.com/"
+  location:
+    latitude: 51.51673
+    longitude: 7.46502
 - name: "OVHcloud"
   image: "logo-ovhcloud.svg"
+  avatar: "avatar-ovhcloud.jpg"
   link: "https://www.ovhcloud.com/"
+  location:
+    latitude: 48.88945
+    longitude: 2.31341 
 - name: "PlusServer GmbH"
   image: "logo-plusserver.png"
+  avatar: "avatar-plusserver.jpg"
   link: "https://www.plusserver.com/"
+  location:
+    latitude: 50.94087
+    longitude: 6.94036
 - name: "Bundesagentur für Sprunginnovationen"
   image: "logo-sprind.png"
+  avatar: "avatar-sprind.jpg"
   link: "https://www.sprind.org/"
+  location:
+    latitude: 51.34104
+    longitude: 12.37416
 - name: "Stackable GmbH"
   image: "logo-stackable.png"
+  avatar: "avatar-stackable.jpg"
   link: "https://www.stackable.de/"
+  location:
+    latitude: 53.59546
+    longitude: 9.73133
 - name: "StackHPC Ltd"
   image: "logo-stackhpc.png"
+  avatar: "avatar-stackhpc.jpg"
   link: "https://www.stackhpc.com/"
+  location:
+    latitude: 51.47556
+    longitude: -2.58270
 - name: "Open Telekom Cloud"
   image: "logo-telekom.svg"
+  avatar: "avatar-telekom.jpg"
   link: "https://open-telekom-cloud.com/"
+  location:
+    latitude: 50.08176
+    longitude: 8.63564
 - name: "Univention GmbH"
   image: "logo-univention.png"
+  avatar: "avatar-univention.jpg"
   link: "https://www.univention.de/"
+  location:
+    latitude: 53.10584
+    longitude: 8.86312
 - name: "BADEN CLOUD"
   image: "logo-badencloud.png"
   link: "https://www.badencloud.de/"
 - name: "LEITWERK AG"
   image: "logo-leitwerk.svg"
+  avatar: "avatar-leitwerk.jpg"
   link: "https://www.leitwerk.de/"
+  location:
+    latitude: 48.55080
+    longitude: 7.97115 
