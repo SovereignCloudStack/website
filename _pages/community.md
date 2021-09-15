@@ -1,5 +1,5 @@
 ---
-title: nav.title.community
+title: nav.community
 layout: default
 permalink: /community/
 ---
