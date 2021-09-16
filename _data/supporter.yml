@@ -12,9 +12,13 @@
   location:
     latitude: 48.744440
     longitude: 11.602960
-- name: "Betacloud Solutions"
-  image: "logo-betacloud-solutions.png"
-  link: "https://betacloud-solutions.de"
+- name: "OSISM"
+  image: "logo-osism.png"
+  avatar: "avatar-osism.png"
+  link: "https://osism.tech"
+  location:
+    latitude: 48.790080
+    longitude: 9.209990
 - name: "Bundesministerium für Wirtschaft und Energie"
   image: "logo-bmwi.svg"
   avatar: "avatar-bmwi.jpg"
