@@ -138,9 +138,6 @@
   location:
     latitude: 53.10584
     longitude: 8.86312
-- name: "BADEN CLOUD"
-  image: "logo-badencloud.png"
-  link: "https://www.badencloud.de/"
 - name: "LEITWERK AG"
   image: "logo-leitwerk.svg"
   avatar: "avatar-leitwerk.jpg"

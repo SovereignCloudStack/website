@@ -1,10 +1,21 @@
 <div class="row align-items-center">
+	<h2 class="mb-5">{% t home.provider %}</h2>
+	{% assign sorted = site.data.provider | sort_natural: 'name' %}
+	{% for provider in sorted %}
+	<div class="col-sm-6 col-12 mb-5">
+	<a href="{{ provider.link }}" title="{{ provider.name }}" target="_blank">
+		<img class="mx-auto d-block" src="{{ provider.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" alt="{{ provider.name }}" style="max-height: 150px; max-width: 300px;">
+	</a>
+	</div>
+	{% endfor %}
+</div>
+<div class="row align-items-center">
 	<h2 class="mb-5">{% t home.supporter %}</h2>
 	{% assign sorted = site.data.supporter | sort_natural: 'name' %}
-	{% for support in sorted %}
+	{% for supporter in sorted %}
 	<div class="col-lg-3 col-sm-4 col-6 mb-5">
-	<a href="{{ support.link }}" title="{{ support.name }}" target="_blank">
-		<img class="mx-auto d-block" src="{{ support.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" alt="{{ support.name }}" style="max-height: 60px; max-width: 150px;">
+	<a href="{{ supporter.link }}" title="{{ supporter.name }}" target="_blank">
+		<img class="mx-auto d-block" src="{{ supporter.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" alt="{{ supporter.name }}" style="max-height: 60px; max-width: 150px;">
 	</a>
 	</div>
 	{% endfor %}
