@@ -34,8 +34,8 @@
   avatar: "avatar-candh.jpg"
   link: "https://www.cloudandheat.com/"
   location:
-    latitude: 51.08052
-    longitude: 13.76233   
+    latitude: 51.08017
+    longitude: 13.76214   
 - name: "Dataport"
   image: "logo-dataport.png"
   avatar: "avatar-dataport.png"
