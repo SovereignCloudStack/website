@@ -30,6 +30,8 @@ repository.
 
 Am 15.7.2021 haben wir [Release 0]({{ site.baseurl }}/2021/07/15/release0.html) freigegeben.
 
+Am 29.9.2021 haben wir [Release 1](https://github.com/SovereignCloudStack/Docs/Release-Notes/Release1.md) freigegeben.
+
 ## SCS und OSISM
 
 Für die grundlegenden Schichten bauen wir auf dem
