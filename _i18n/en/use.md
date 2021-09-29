@@ -23,9 +23,9 @@ and contribute to it, we refer you to our
 [Github Docs](https://github.com/SovereignCloudStack/Docs/)
 repository.
 
-On Jul 15, 2021 we have published [Release 0]({{ site.baseurl }}/2021/07/15/release0.html).
+On Jul 15, 2021 we have published [Release 0]({{ site.baseurl }}/2021/07/15/release0).
 
-On Sep 29, 2021 we have published [Release 1](https://github.com/SovereignCloudStack/Docs/Release-Notes/Release1.md).
+On Sep 29, 2021 we have published [Release 1](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release1.md).
 
 ## SCS and OSISM
 
