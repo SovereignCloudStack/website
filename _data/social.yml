@@ -10,3 +10,6 @@
 - title: Matrix
   icon: fa-matrix-org
   link: https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org
+- title: Mailing list
+  icon: fa-envelope-square
+  link: https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/
