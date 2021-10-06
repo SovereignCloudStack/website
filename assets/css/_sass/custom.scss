@@ -59,6 +59,10 @@ body {
   padding: 0.5rem 1rem;
 }
 
+.dropdown-menu[data-bs-popper] {
+  left: unset;
+}
+
 a {
     color: $scs-mint;
 }

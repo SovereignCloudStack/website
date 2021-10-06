@@ -1,14 +1,14 @@
 - title: nav.home
   link: /
 
-- title: nav.about
-  link: /about/
-
-- title: nav.use
-  link: /use/
-
-- title: nav.community
-  link: /community/
+- title: nav.discover
+  dropdown:
+    - title: nav.about
+      link: /about/
+    - title: nav.use
+      link: /use/
+    - title: nav.community
+      link: /community/
 
 - title: nav.news
   link: /news/

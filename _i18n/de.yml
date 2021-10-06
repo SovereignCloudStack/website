@@ -4,12 +4,13 @@ global:
   about: "Sovereign Cloud Stack (SCS) ist eine Open-Source-Code Alternative zu proprietär verfügbarer Cloud-Technologie."
 nav:
   home: "Home"
+  discover: "SCS entdecken"
   about: "Über SCS"
   use: "SCS nutzen"
   community: "Unsere Community"
-  news: "SCS in den Medien"
+  news: "Neuigkeiten"
   jobs: "Offene Stellen"
-  tenders: "Öffentliche Ausschreibungen"
+  tenders: "Ausschreibungen"
 footer:
   trademark: "Sovereign Cloud Stack, SCS und das Logo sind geschützte Marken der Open Source Business Alliance e.V. — Sonstige Marken sind Eigentum ihrer jeweiligen Besitzer."
   imprint: "Impressum"
