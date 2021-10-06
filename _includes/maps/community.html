@@ -48,9 +48,11 @@
                 className: 'custom-div-icon',
                 html: "<div style='background-color:#50c3a5;' class='marker-pin'></div><img class='marker-pin-icon' src='{{ supporter.avatar | prepend: '/assets/images/' | prepend: site.baseurl_root }}' alt='{{ supporter.name }}'>",
                 iconSize: [40, 56],
-                iconAnchor: [20, 56]
+                iconAnchor: [20, 56],
+                popupAnchor: [-7, -30]
             });
             var marker = L.marker([{{supporter.location.latitude}}, {{supporter.location.longitude}}], { icon: icon });
+            marker.bindPopup("<a href='{{supporter.link}}' target='_blank'><b>{{supporter.name}}</b></a>")
             markerClusters.addLayer(marker);
         {% endif %}
     {% endfor %}
