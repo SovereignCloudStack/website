@@ -3,5 +3,5 @@ Das Bündnis hat sich zum Ziel gesetzt, ein virtuelles, nachhaltiges und als Ein
 
 <blockquote class="blockquote mb-3">
 	<p>Das IPCEI-CIS ist eine große Chance für Europa, auf echte digitale Souveränität hinzuarbeiten. Mit GREEN-CIS zeigen wir eine Vision und einen Plan auf, um diese Unabhängigkeit nachhaltig zu erreichen und dabei gleichzeitig die höchsten Standards in Bezug auf Sicherheit, Interoperabilität und Dienstqualität zu gewährleisten. Die Zusammenarbeit zwischen Projektpartnern mit unterschiedlichen Kompetenzen ist unerlässlich, um das ehrgeizige Ziel zu erreichen.</p>
-Übersetzt mit www.DeepL.com/Translator (kostenlose Version)	<footer class="blockquote-footer">Dr. María Vaquero, Innovation Managerin bei der Cloud&Heat Technologies GmbH</footer>
+	<footer class="blockquote-footer">Dr. María Vaquero, Innovation Managerin bei der Cloud&Heat Technologies GmbH</footer>
 </blockquote>
