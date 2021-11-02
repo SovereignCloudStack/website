@@ -5,7 +5,7 @@ and Energy (BMWi)](https://bmwi.de/), the
 Bundesverband für digitale Souveränität
 e.V. (OSB Alliance)](https://osb-alliance.de/) is looking for a
 # SCS Product Owner Container Technologies (d/f/m)
-(Home office or Berlin city centre)
+(Remote or Berlin city centre)
 
 We aim to fill this position as soon as possible.
 
@@ -56,7 +56,7 @@ sovereign infrastructure, underpinning a sovereign data ecosystem.
 
 In this role, you will
 
-* be part of a small central team that orchestrates the efforts to define, 
+* be part of a small central (remotely working) team that orchestrates the efforts to define,
 	implement and validate (CI/CD) a stack of open source software
 * orchestrate a cross-cultural and cross-company team of engineers that contribute to the effort
 * have the role to work with stakeholders to understand the requirements, see how they can fit
@@ -101,8 +101,8 @@ We offer
 * being a key part of a new project
 * working on cutting-edge open source infrastructure technology
 * a lot of flexibility in how you organise your work and contribute to
- the internationally distributed team. This is a full time position;
- we try to be flexible with part-time needs.
+	the internationally distributed team. This is a full time position;
+	we try to be flexible with part-time needs.
 * getting visibility by presenting the project to stakeholders and to the public 
 	on technology conferences
 * an adequate compensation package

@@ -3,7 +3,7 @@ Bundesverband für digitale Souveränität
 e.V. (OSB Alliance)](https://osb-alliance.de/) sucht für ihr vom [German Federal Ministry for Economic Affairs 
 and Energy (BMWi)](https://bmwi.de/) gefördertes Projekt [Sovereign Cloud Stack (SCS)](https://scs.community/) einen
 # Product Owner IaaS and Operations (d/w/m)
-(Homeoffice oder Berlin-Zentrum)
+(Remote oder Berlin-Zentrum)
 
 Wir streben an, diese Position zum nächstmöglichen Zeitpunkt zu besetzen.
 
@@ -46,7 +46,8 @@ Stack erfüllt hohe Sicherheitsstandards und wird mit Werkzeugen und
 Dokumentation geliefert, die den Bedarf an spezialisiertem Fachwissen für den 
 Betrieb komplexer Cloud- und Container-Infrastrukturen reduzieren.  
 
-SCS kann sowohl von Cloud-Service-Providern als auch von internen IT-Teams genutzt werden und kann als Ganzes oder je nach spezifischem Bedarf in 
+SCS kann sowohl von Cloud-Service-Providern als auch von internen IT-Teams genutzt
+werden und kann als Ganzes oder je nach spezifischem Bedarf in
 Teilkomponenten eingesetzt werden. Die resultierenden Infrastrukturkomponenten 
 können einem Zertifizierungsprozess unterzogen werden, der die strikte 
 Kompatibilität mit anderen SCS-basierten Plattformen sicherstellt und so ein
@@ -59,9 +60,9 @@ bildet.
 
 In dieser Rolle werden Sie  
 
-* Teil eines kleinen zentralen Teams sein, das die Bemühungen zur Definition,
-Implementierung und Validierung (CI/CD) eines Stacks von Open-Source-Software
-orchestriert,
+* Teil eines kleinen zentralen (remote arbeitenden) Teams sein, das die Bemühungen
+zur Definition, Implementierung und Validierung (CI/CD) eines Stacks von
+Open-Source-Software orchestriert,
 * ein kultur- und unternehmensübergreifendes Team von Ingenieur:innen 
 orchestrieren, die zu diesem Vorhaben beitragen,
 * die Aufgabe haben, mit Stakeholdern zusammenzuarbeiten, um die Anforderungen 

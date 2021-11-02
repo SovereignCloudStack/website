@@ -2,7 +2,7 @@ Die [OSB Alliance - Bundesverband für digitale Souveränität e.V.](https://osb
 für ihr vom [Bundesministerium für Wirtschaft und Energie](https://bmwi.de/) (BMWi) gefördertes Projekt
 [Sovereign Cloud Stack](https://scs.community/) (SCS) einen
 # Mitarbeiter:in (d/w/m) Dokumentation/Projektmanagement
-(Vollzeit oder Teilzeit; Berlin-Zentrum oder Homeoffice)
+(Vollzeit oder Teilzeit; Berlin-Zentrum oder Remote)
 
 Wir streben an, diese Position
 zum nächstmöglichen Zeitpunkt zu besetzen.
@@ -11,7 +11,7 @@ Die OSB Alliance  Bundesverband für digitale Souveränität e.V. vertritt
 über 170 Mitglieds­unternehmen der Open-Source-Wirtschaft, die in
 Deutschland gemeinsam jährlich mehr als 1,7 Milliarden Euro
 erwirtschaften. Zusammen mit wissenschaftlichen Einrichtungen und
-Anwender­organisationen setzt sich der Verband dafür ein, die zentrale
+Anwenderorganisationen setzt sich der Verband dafür ein, die zentrale
 Bedeutung von Open-Source-Software und offenen Standards für eine
 digital souveräne Gesellschaft im öffentlichen Bewusstsein zu
 verankern. Die OSB Alliance betrachtet Open Source und offene Standards
@@ -25,8 +25,8 @@ Bundesregierung und des europäischen Vorhabens Gaia-X bei, dem Aufbau
 eines europäischen digitalen Ökosystems der nächsten Generation, dass
 die digitale Souveränität Europas sichern soll.
 
-Das Projekt wird von einem kleinen Team in der OSB Alliance mit
-mehrjähriger Förderung durch das Bundesministerium für Wirtschaft und
+Das Projekt wird von einem kleinen remote arbeitenden Team in der OSB Alliance
+mit mehrjähriger Förderung durch das Bundesministerium für Wirtschaft und
 Energie (BMWi) vorangetrieben. Die ausgeschriebene Position gehört zu
 diesem zentralen Team. Zusätzlich zu diesem Team gibt es zahlreiche
 Entwickler:innen aus verschiedenen Unternehmen und Institutionen
@@ -36,26 +36,26 @@ interessiert sind, dieses Projekt erfolgreich zu machen.
 
 Mit dem Projekt wird aus modernster, Open-Source-basierter Software und
 betrieblichem Know­how die erste kollaborative Cloud-Infrastruktur
-entwickelt. Im Einzelnen wird es einen voll­ständigen, modularen,
+entwickelt. Im Einzelnen wird es einen vollständigen, modularen,
 sicheren und quelloffenen Software-Stack definieren und
-imple­mentieren. Der Stack umfasst Software-definierten Speicher und
+implementieren. Der Stack umfasst Software-definierten Speicher und
 Netzwerktechnologie, Betriebswerkzeuge für automatisierte
-Bereitstellung, Proto­kollierung, Überwachung, Alarmierung,
-Trendanalyse, Identitäts- und Berechtigungs­management, eine
+Bereitstellung, Protokollierung, Überwachung, Alarmierung,
+Trendanalyse, Identitäts- und Berechtigungsmanagement, eine
 Infrastructure-as-a-Service-Schicht sowie eine
 Container(Platform)-as-a-Service-Schicht. Er ermöglicht es Anwendern
 (Entwicklungsteams), ihren eigenen Kubernetes-Cluster über
-standardi­sierte APIs zu erstellen und zu steuern und liefert
+standardisierte APIs zu erstellen und zu steuern und liefert
 Standardbausteine, die für den Aufbau und die Verwaltung von
 Container-Anwendungen verwendet werden können. Dieser Stack erfüllt
-hohe Sicherheitsstandards und wird mit Werk­zeugen und Dokumentation
+hohe Sicherheitsstandards und wird mit Werkzeugen und Dokumentation
 geliefert, die den Bedarf an spezialisiertem Fachwissen für den Betrieb
-komplexer Cloud- und Container-Infra­strukturen reduzieren. SCS kann
+komplexer Cloud- und Container-Infrastrukturen reduzieren. SCS kann
 sowohl von Cloud-Service-Providern als auch von internen IT-Teams
 genutzt werden und kann als Ganzes oder je nach spezifischem Bedarf in
 Teilkomponenten eingesetzt werden. Die resultierenden
-Infrastruktur­komponenten können einem Zertifizierungs­prozess
-unterzogen werden, der die strikte Kompa­tibilität mit anderen
+Infrastrukturkomponenten können einem Zertifizierungsprozess
+unterzogen werden, der die strikte Kompatibilität mit anderen
 SCS-basierten Plattformen sicherstellt und so ein Netzwerk
 föderierbarer, kompatibler Clouds etabliert.
 
@@ -63,11 +63,11 @@ In Ihrer Tätigkeit werden Sie das zentrale Projektteam darin
 unterstützen, die Entwicklungsarbeit der vielen Beteiligten zu
 orchestrieren. Insbesondere werden Sie in der Dokumentation diverser
 Vergabeverfahren (Spezifikation, Ausschreibung, Entscheidung,
-Auftragsvergabe) die Projekt­leitung und Gremien unterstützen sowie die
+Auftragsvergabe) die Projektleitung und Gremien unterstützen sowie die
 Fortschritte der Projektarbeit dokumentieren und an der Knowledge
 Database mitarbeiten. Ferner unterstützen Sie die Projektleitung bei
-der Kommu­nikation mit und der Betreuung der Community. Dazu gehören
-beispielsweise auch die Vorber­eitung, Organisation, Begleitung und
+der Kommunikation mit und der Betreuung der Community. Dazu gehören
+beispielsweise auch die Vorbereitung, Organisation, Begleitung und
 Dokumentation diverser Meetings und Veranstaltungen.
 
 Wir begrüßen es, wenn Sie praktische Erfahrung in agiler Projektarbeit
@@ -78,12 +78,12 @@ Cloud-Technologien o.ä. haben, ggf. mit
 Open-Source-Software wie LibreOffice und Enwticklungswerkzeugen und 
 -Plattformen wie Git, GitHub und
 den damit verbundenen Arbeitsabläufen vertraut oder bereit sind, sich
-darin einzu­arbeiten. Die Meetings finden z.T. auch in englischer
+darin einzuarbeiten. Die Meetings finden z.T. auch in englischer
 Sprache statt, wofür entsprechende Kenntnisse in Wort und Schrift
 notwendig sind. Als formale Qualifikation haben Sie eine Ausbildung
 oder ein Fachhochschulstudium erfolgreich absolviert. Ihr Arbeitsort
-kann Berlin (Zentrum) oder auch das Homeoffice sein. Wir erwarten die
-Bereitschaft, gelegentlich innerhalb Deutschlands und selten auch
+kann Berlin (Zentrum) oder auch das Remote/Homeoffice sein. Wir erwarten
+die Bereitschaft, gelegentlich innerhalb Deutschlands und selten auch
 innerhalb Europas zu reisen.
 
 Wir bieten Ihnen eine vielseitige, zukunftsorientierte Arbeit in einer
@@ -91,7 +91,7 @@ offenen und inspirierenden Umgebung, in der Sie mit vielfältig
 qualifizierten und engagierten Kolleg:innen aus dem Projekt, den
 Partnern und den relevanten Open Source Communities international
 zusammenarbeiten. Mit Ihrer Arbeit leisten Sie einen Beitrag zu einem
-innovativen, gemeinwohlorientierten und zukunfts­weisenden Projekt, das
+innovativen, gemeinwohlorientierten und zukunftsweisenden Projekt, das
 die europäischen Werte in der digitalen Transformation sichern will.
 Die Vergütung orientiert sich entsprechend Ihrer Qualifikation und
 Erfahrung an TVöD Bund (bis Entgeltgruppe 9).
