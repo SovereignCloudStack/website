@@ -64,13 +64,13 @@ jobs:
   apply: "Apply now"
   po-container:
     title: "Product Owner Container Technologies (d/f/m)"
-    short_description: "Be part of a small central team at the Open Source Business Alliance and orchestrate the efforts to define, implement and validate (CI/CD) a stack of open source container technology."
+    short_description: "Be part of a small central remote team at the Open Source Business Alliance and orchestrate the efforts to define, implement and validate (CI/CD) a stack of open source container technology."
   po-infra:
     title: "Product Owner IaaS and Operations (d/f/m)"
-    short_description: "Be part of a small central team at the Open Source Business Alliance and orchestrate the efforts to define, implement and validate (CI/CD) a stack of open source IaaS and Operations technology."
+    short_description: "Be part of a small central remote team at the Open Source Business Alliance and orchestrate the efforts to define, implement and validate (CI/CD) a stack of open source IaaS and Operations technology."
   knowledge-management:
     title: "Knowledge Management Engineer (d/f/m)"
-    short_description: "Be part of a small central team at the Open Source Business Alliance and structure the processes to document collected experience, validate it and make it available in ways that are easy to consume for cloud operators, developers and users."
+    short_description: "Be part of a small central remote team at the Open Source Business Alliance and structure the processes to document collected experience, validate it and make it available in ways that are easy to consume for cloud operators, developers and users."
   ma-dok:
     title: "Staff / Project Management and Documentation (d/f/m)"
-    short_description: "Be part of a small central team at the Open Source Business Alliance and support the project lead in orchestrating the development work and the documenting the tender processes."  
+    short_description: "Be part of a small central remote team at the Open Source Business Alliance and support the project lead in orchestrating the development work and the documenting the tender processes."
