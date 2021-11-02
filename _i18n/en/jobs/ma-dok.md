@@ -2,14 +2,14 @@ Die [OSB Alliance - Bundesverband für digitale Souveränität e.V.](https://osb
 für ihr vom [Bundesministerium für Wirtschaft und Energie](https://bmwi.de/) (BMWi) gefördertes Projekt
 [Sovereign Cloud Stack](https://scs.community/) (SCS) einen
 # Mitarbeiter:in (d/w/m) Dokumentation/Projektmanagement
-(Vollzeit oder Teilzeit; Berlin-Zentrum oder Homeoffice)
+(Vollzeit oder Teilzeit; Berlin-Zentrum oder Remote)
 
 Wir streben an, diese Position
 zum nächstmöglichen Zeitpunkt zu besetzen.
 
-Die OSB Alliance  Bundesverband für digitale Souveränität e.V. vertritt
-über 170 Mitgliedsunternehmen der Open-Source-Wirtschaft, die in
-Deutschland gemeinsam jährlich mehr als 1,7 Milliarden Euro
+Die OSB Alliance  Bundesverband für digitale Souveränität e.V. vertritt
+über 170 Mitglieds­unternehmen der Open-Source-Wirtschaft, die in
+Deutschland gemeinsam jährlich mehr als 1,7 Milliarden Euro
 erwirtschaften. Zusammen mit wissenschaftlichen Einrichtungen und
 Anwenderorganisationen setzt sich der Verband dafür ein, die zentrale
 Bedeutung von Open-Source-Software und offenen Standards für eine
@@ -25,8 +25,8 @@ Bundesregierung und des europäischen Vorhabens Gaia-X bei, dem Aufbau
 eines europäischen digitalen Ökosystems der nächsten Generation, dass
 die digitale Souveränität Europas sichern soll.
 
-Das Projekt wird von einem kleinen Team in der OSB Alliance mit
-mehrjähriger Förderung durch das Bundesministerium für Wirtschaft und
+Das Projekt wird von einem kleinen remote arbeitenden Team in der OSB Alliance
+mit mehrjähriger Förderung durch das Bundesministerium für Wirtschaft und
 Energie (BMWi) vorangetrieben. Die ausgeschriebene Position gehört zu
 diesem zentralen Team. Zusätzlich zu diesem Team gibt es zahlreiche
 Entwickler:innen aus verschiedenen Unternehmen und Institutionen
@@ -35,7 +35,7 @@ das Projekt finanziert, andere, weil ihre Arbeitgeber:innen daran
 interessiert sind, dieses Projekt erfolgreich zu machen.
 
 Mit dem Projekt wird aus modernster, Open-Source-basierter Software und
-betrieblichem Knowhow die erste kollaborative Cloud-Infrastruktur
+betrieblichem Know­how die erste kollaborative Cloud-Infrastruktur
 entwickelt. Im Einzelnen wird es einen vollständigen, modularen,
 sicheren und quelloffenen Software-Stack definieren und
 implementieren. Der Stack umfasst Software-definierten Speicher und
@@ -82,8 +82,8 @@ darin einzuarbeiten. Die Meetings finden z.T. auch in englischer
 Sprache statt, wofür entsprechende Kenntnisse in Wort und Schrift
 notwendig sind. Als formale Qualifikation haben Sie eine Ausbildung
 oder ein Fachhochschulstudium erfolgreich absolviert. Ihr Arbeitsort
-kann Berlin (Zentrum) oder auch das Homeoffice sein. Wir erwarten die
-Bereitschaft, gelegentlich innerhalb Deutschlands und selten auch
+kann Berlin (Zentrum) oder auch das Remote/Homeoffice sein. Wir erwarten
+die Bereitschaft, gelegentlich innerhalb Deutschlands und selten auch
 innerhalb Europas zu reisen.
 
 Wir bieten Ihnen eine vielseitige, zukunftsorientierte Arbeit in einer

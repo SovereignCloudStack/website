@@ -5,7 +5,7 @@ and Energy (BMWi)](https://bmwi.de/), the
 Bundesverband für digitale Souveränität
 e.V. (OSB Alliance)](https://osb-alliance.de/) is looking for a
 # Knowledge Management Engineer (d/f/m)
-(Home office or Berlin city centre)
+(Remote or Berlin city centre)
 
 We aim to fill this position as soon as possible.
 
@@ -56,7 +56,7 @@ sovereign infrastructure, underpinning a sovereign data ecosystem.
 
 In this role, you will
 
-* be part of the OSB Alliance team that leads and organizes the
+* be part of the (fully remote) OSB Alliance team that leads and organizes the
   efforts to define, implement, validate (CI/CD), document and
   disseminate the SCS open source software stack
 * orchestrate a cross-cultural and cross-company team of engineers that
