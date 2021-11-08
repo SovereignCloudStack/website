@@ -47,6 +47,42 @@ body {
     }
 }
 
+.btn-twitter, {
+    color: white;
+    background-color: #1DA1F2 !important;
+    border-color: #1DA1F2;
+    &:hover{
+      color: rgba(white, 0.9);
+    }
+}
+
+.btn-linkedin, {
+    color: white;
+    background-color: #2867B2 !important;
+    border-color: #2867B2;
+    &:hover{
+      color: rgba(white, 0.9);
+    }
+}
+
+.btn-github, {
+    color: white;
+    background-color: #333 !important;
+    border-color: #333;
+    &:hover{
+      color: rgba(white, 0.9);
+    }
+}
+
+.btn-matrix, {
+    color: white;
+    background-color: #0dbd8b !important;
+    border-color: #0dbd8b;
+    &:hover{
+      color: rgba(white, 0.9);
+    }
+}
+
 .bg-dark{
     background-color: $scs-gray !important;
 }
@@ -69,6 +105,31 @@ a {
 
 a:hover, a:focus {
     color: $scs-blue;
+}
+
+.link-unstyled {
+  &,
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus,
+  &:active:hover {
+    font-style: inherit;
+    color: inherit;
+    background-color: transparent;
+    font-size: inherit;
+    text-decoration: none;
+    font-variant: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    border-radius: inherit;
+    border: inherit;
+    outline: inherit;
+    box-shadow: inherit;
+    padding: inherit;
+    vertical-align: inherit;
+  }
 }
 
 h1 {
@@ -117,11 +178,11 @@ blockquote::before,
   top: -15px;
 }
 
-table { 
+table {
   width: 100%;
 }
 
-th, td { 
+th, td {
     border: $table-border;
     padding: 15px;
 }
@@ -133,6 +194,6 @@ th {
 
 tr:nth-child(even) { background-color: rgba($scs-gray, 0.1); }
 
-tr:hover, tr:focus { 
+tr:hover, tr:focus {
     background-color: $table-hover;
 }

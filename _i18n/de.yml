@@ -47,7 +47,7 @@ news:
   press:
     de: "Presse zu SCS (Deutsch)"
     en: "Presse zu SCS (Englisch)"
-  conference: 
+  conference:
     de: "Konferenzbeiträge (Deutsch)"
     en: "Konferenzbeiträge (Englisch)"
     slides: "Folien"
@@ -74,3 +74,5 @@ jobs:
   ma-dok:
     title: "Mitarbeiter:in (d/w/m) Dokumentation/Projektmanagement"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und unterstütze uns dabei die zentrale Entwicklungsarbeit zu orchestrieren sowie die Dokumentation der Vergabeverfahren aufzubauen."
+employees:
+  addcontact: "Kontakt hinzufügen"
