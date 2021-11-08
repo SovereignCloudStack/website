@@ -1,3 +1,20 @@
+{% for employee in site.data.employees %}
+{% if employee.lastname == page.lastname %}
 BEGIN:VCARD
-VERSION:3.0
+VERSION:4.0
+PROFILE:VCARD
+FN:{{employee.firstname}} {{employee.lastname}}
+N:{{employee.lastname}};{{employee.firstname}}
+ORG:{{employee.company}};
+TITLE:{{employee.title}}
+TEL;TYPE=work,pref:{{employee.phone}}
+EMAIL;TYPE=work,pref:{{employee.mail}}
+ADR;TYPE=work,pref:;;{{employee.street}};{{employee.city}};{{employee.state}};{{employee.zip}};{{employee.country}}
+URL;TYPE=work:https://scs.community
+SOURCE:https://scs.community/{{employee.lastname | downcase}}.vcf
+REV:{{ site.time | date: '%Y-%m-%dT%H:%M:%SZ' }}
+TZ:{{employee.timezone}}
+KIND:individual
 END:VCARD
+{% endif %}
+{% endfor %}
