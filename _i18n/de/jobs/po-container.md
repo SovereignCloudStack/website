@@ -60,7 +60,7 @@ bildet.
 
 In dieser Rolle werden Sie  
 
-* Teil eines kleinen zentralen (remote arebitenden) Teams sein, das die Bemühungen
+* Teil eines kleinen zentralen (remote arbeitenden) Teams sein, das die Bemühungen
 zur Definition, Implementierung und Validierung (CI/CD) eines Stacks von
 Open-Source-Software orchestriert,
 * ein kultur- und unternehmensübergreifendes Team von Ingenieur:innen 
