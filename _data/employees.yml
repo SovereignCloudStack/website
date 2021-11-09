@@ -1,5 +1,6 @@
 - lastname: Itrich
   firstname: Eduard
+  safe_url: itrich
   title: Community Manager Sovereign Cloud Stack
   company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
   companylink: https://osb-alliance.com
@@ -18,6 +19,7 @@
   timezone: Europe/Berlin
 - lastname: Urban
   firstname: Manuela
+  safe_url: urban
   academic: Dr.
   title: COO Sovereign Cloud Stack
   company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
@@ -34,6 +36,7 @@
   timezone: Europe/Berlin
 - lastname: Garloff
   firstname: Kurt
+  safe_url: garloff
   title: CTO Sovereign Cloud Stack
   company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
   companylink: https://osb-alliance.com
@@ -50,6 +53,7 @@
   timezone: Europe/Berlin
 - lastname: Loßack
   firstname: Dirk
+  safe_url: lossack
   title: Leiter der Stabsstelle Sovereign Cloud Stack
   company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
   companylink: https://osb-alliance.com

@@ -11,7 +11,7 @@ TEL;TYPE=work,pref:{{employee.phone}}
 EMAIL;TYPE=work,pref:{{employee.mail}}
 ADR;TYPE=work,pref:;;{{employee.street}};{{employee.city}};{{employee.state}};{{employee.zip}};{{employee.country}}
 URL;TYPE=work:https://scs.community
-SOURCE:https://scs.community/{{employee.lastname | downcase}}.vcf
+SOURCE:https://scs.community/{{employee.safe_url}}.vcf
 REV:{% last_modified_at %Y-%m-%dT%H:%M:%SZ %}
 TZ:{{employee.timezone}}
 KIND:individual
