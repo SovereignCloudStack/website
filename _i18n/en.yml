@@ -47,7 +47,7 @@ news:
   press:
     de: "Press on SCS (German)"
     en: "Press on SCS (English)"
-  conference: 
+  conference:
     de: "Conference Contributions (German)"
     en: "Conference Contributions (English)"
     slides: "Slides"
@@ -74,3 +74,5 @@ jobs:
   ma-dok:
     title: "Staff / Project Management and Documentation (d/f/m)"
     short_description: "Be part of a small central remote team at the Open Source Business Alliance and support the project lead in orchestrating the development work and the documenting the tender processes."
+employees:
+  addcontact: "Add contact"

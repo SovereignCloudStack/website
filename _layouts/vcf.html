@@ -1,0 +1,21 @@
+{% for employee in site.data.employees %}
+{% if employee.lastname == page.lastname %}
+BEGIN:VCARD
+VERSION:4.0
+PROFILE:VCARD
+FN:{% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}
+N:{{employee.lastname}};{{employee.firstname}};;{{employee.academic}};
+ORG:{{employee.company}};
+TITLE:{{employee.title}}
+TEL;TYPE=work,pref:{{employee.phone}}
+EMAIL;TYPE=work,pref:{{employee.mail}}
+ADR;TYPE=work,pref:;;{{employee.street}};{{employee.city}};{{employee.state}};{{employee.zip}};{{employee.country}}
+URL;TYPE=work:https://scs.community
+SOURCE:https://scs.community/{{employee.safe_url}}.vcf
+REV:{% last_modified_at %Y-%m-%dT%H:%M:%SZ %}
+TZ:{{employee.timezone}}
+KIND:individual
+PHOTO;ENCODING=BASE64;TYPE=JPEG:{{ employee.avatar | base64 }}
+END:VCARD
+{% endif %}
+{% endfor %}
