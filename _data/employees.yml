@@ -16,3 +16,49 @@
   zip: 70174
   country: Germany
   timezone: Europe/Berlin
+- lastname: Urban
+  firstname: Manuela
+  academic: Dr.
+  title: COO Sovereign Cloud Stack
+  company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
+  companylink: https://osb-alliance.com
+  avatar: assets/images/employees/Urban.jpg
+  linkedin: https://www.linkedin.com/in/manuela-b-urban/
+  matrix: https://matrix.to/#/@manuela.urban:matrix.org
+  mail: urban@osb-alliance.com
+  street: Breitscheidstraße 4
+  city: Stuttgart
+  state: Baden-Württemberg
+  zip: 70174
+  country: Germany
+  timezone: Europe/Berlin
+- lastname: Garloff
+  firstname: Kurt
+  title: CTO Sovereign Cloud Stack
+  company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
+  companylink: https://osb-alliance.com
+  avatar: assets/images/employees/Garloff.jpg
+  linkedin: https://www.linkedin.com/in/kurt-garloff/
+  github: https://github.com/garloff
+  matrix: https://matrix.to/#/@garloff:matrix.org
+  mail: garloff@osb-alliance.com
+  street: Breitscheidstraße 4
+  city: Stuttgart
+  state: Baden-Württemberg
+  zip: 70174
+  country: Germany
+  timezone: Europe/Berlin
+- lastname: Loßack
+  firstname: Dirk
+  title: Leiter der Stabsstelle Sovereign Cloud Stack
+  company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
+  companylink: https://osb-alliance.com
+  avatar: assets/images/employees/Lossack.jpg
+  linkedin: https://www.linkedin.com/in/dirk-lo%C3%9Fack-45b359143/
+  mail: lossack@osb-alliance.com
+  street: Breitscheidstraße 4
+  city: Stuttgart
+  state: Baden-Württemberg
+  zip: 70174
+  country: Germany
+  timezone: Europe/Berlin

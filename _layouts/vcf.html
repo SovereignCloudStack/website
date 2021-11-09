@@ -3,8 +3,8 @@
 BEGIN:VCARD
 VERSION:4.0
 PROFILE:VCARD
-FN:{{employee.firstname}} {{employee.lastname}}
-N:{{employee.lastname}};{{employee.firstname}}
+FN:{% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}
+N:{{employee.lastname}};{{employee.firstname}};;{{employee.academic}};
 ORG:{{employee.company}};
 TITLE:{{employee.title}}
 TEL;TYPE=work,pref:{{employee.phone}}
