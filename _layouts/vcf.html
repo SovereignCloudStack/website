@@ -1,7 +1,7 @@
 {% for employee in site.data.employees %}
 {% if employee.lastname == page.lastname %}
 BEGIN:VCARD
-VERSION:4.0
+VERSION:3.0
 PROFILE:VCARD
 FN:{% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}
 N:{{employee.lastname}};{{employee.firstname}};;{{employee.academic}};
