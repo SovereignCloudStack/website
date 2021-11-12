@@ -26,7 +26,7 @@ Please refrain from addressing the project team directly.
 | 12 | 9a | Infra Scanning / Isolation / Policy Management | Lot 9a | tba | tba | tba |
 | 13 | 9b | Supply Chain Security | Lot 9b | tba | tba | tba |
 | 14 | 9c | Penetration Testing | Lot 9c | tba | tba | tba |
-| 15 | 10 | SCS certification | [Lot 10](lot10/) | tba | tba | tba |
+| 15 | 10 | SCS certification | [Lot 10](lot10/) | 2021-11-12 | 2021-12-07 T10:00+01:00 | [&raquo; SCS-VP10](https://www.dtvp.de/Satellite/notice/CXP4YV7RFHA) |
 | 16 | 11 | Server Hardware Installation | Lot 11 | tba | tba | tba |
 
 </div>
