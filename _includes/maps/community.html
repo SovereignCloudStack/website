@@ -74,11 +74,27 @@
             employees.addLayer(marker);
         {% endif %}
     {% endfor %}
+    var community = L.featureGroup.subGroup(markerClusters);
+    {%- for member in site.data.community -%}
+        {% if member.location.latitude and member.location.longitude %}
+            icon = L.divIcon({
+                className: 'custom-div-icon',
+                html: "<div style='background-color:#0f5fe1;' class='marker-pin'></div><img class='marker-pin-icon' src='{{ member.avatar | prepend: '/' | prepend: site.baseurl_root }}' alt='{% if member.academic %}{{member.academic}} {% endif %}{{member.firstname}} {{member.lastname}}'>",
+                iconSize: [40, 56],
+                iconAnchor: [20, 56],
+                popupAnchor: [-7, -30]
+            });
+            var marker = L.marker([{{employee.location.latitude}}, {{employee.location.longitude}}], { icon: icon });
+            marker.bindPopup("<a href='{{member.safe_url | prepend: '/' | prepend: site.baseurl_root}}' target='_blank'><b>{% if member.academic %}{{member.academic}} {% endif %}{{member.firstname}} {{member.lastname}}</b></a><br />{{member.company}}")
+            community.addLayer(marker);
+        {% endif %}
+    {% endfor %}
     markerClusters.addTo(communitymap);
-    employees.addTo(communitymap);
     supporter.addTo(communitymap);
-    control.addOverlay(employees, 'Employees');
-    control.addOverlay(community, 'Community');
+    employees.addTo(communitymap);
+    community.addTo(communitymap);
+    control.addOverlay(employees, 'Project Management');
+    control.addOverlay(community, 'SCS Community Member');
     control.addOverlay(supporter, 'Supporting organizations');
     control.addTo(communitymap);
 </script>
