@@ -76,3 +76,7 @@ jobs:
     short_description: "Be part of a small central remote team at the Open Source Business Alliance and support the project lead in orchestrating the development work and the documenting the tender processes."
 employees:
   addcontact: "Add contact"
+map:
+  employees: "Project Management"
+  community: "SCS Community"
+  supporter: "Supporting organisations"

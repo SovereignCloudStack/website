@@ -76,3 +76,7 @@ jobs:
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und unterstütze uns dabei die zentrale Entwicklungsarbeit zu orchestrieren sowie die Dokumentation der Vergabeverfahren aufzubauen."
 employees:
   addcontact: "Kontakt hinzufügen"
+map:
+  employees: "Projektmanagement"
+  community: "SCS Community"
+  supporter: "Unterstützende Unternehmen"
