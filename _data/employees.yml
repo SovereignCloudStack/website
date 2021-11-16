@@ -17,6 +17,9 @@
   zip: 70174
   country: Germany
   timezone: Europe/Berlin
+  location:
+    latitude: 48.476770269952006
+    longitude: 7.945566185981085
 - lastname: Urban
   firstname: Manuela
   safe_url: urban
@@ -34,6 +37,9 @@
   zip: 70174
   country: Germany
   timezone: Europe/Berlin
+  location:
+    latitude: 52.50294662175767
+    longitude: 13.33126514255246
 - lastname: Garloff
   firstname: Kurt
   safe_url: garloff
@@ -52,6 +58,9 @@
   zip: 70174
   country: Germany
   timezone: Europe/Berlin
+  location:
+    latitude: 50.929017997918656
+    longitude: 6.927687301827232
 - lastname: Loßack
   firstname: Dirk
   safe_url: lossack
@@ -68,3 +77,6 @@
   zip: 70174
   country: Germany
   timezone: Europe/Berlin
+  location:
+    latitude: 52.31145986462968
+    longitude: 12.929470516011428
