@@ -93,8 +93,8 @@
     supporter.addTo(communitymap);
     employees.addTo(communitymap);
     community.addTo(communitymap);
-    control.addOverlay(employees, 'Project Management');
-    control.addOverlay(community, 'SCS Community Member');
-    control.addOverlay(supporter, 'Supporting organizations');
+    control.addOverlay(employees, '{% t map.employees %}');
+    control.addOverlay(community, '{% t map.community %}');
+    control.addOverlay(supporter, '{% t map.supporter %}');
     control.addTo(communitymap);
 </script>
