@@ -1,7 +1,7 @@
 global:
   english: "Englisch"
   german: "Deutsch"
-  about: "Sovereign Cloud Stack (SCS) ist eine Open-Source-Code Alternative zu proprietär verfügbarer Cloud-Technologie."
+  about: "Sovereign Cloud Stack (SCS) ist eine offene, föderierbare und modulare Cloud- und Containerplattform auf Basis von Open-Source-Software."
 nav:
   home: "Home"
   discover: "SCS entdecken"

@@ -1,7 +1,7 @@
 global:
   english: "English"
   german: "German"
-  about: "Sovereign Cloud Stack (SCS) is cloud technology built entirely with Open Source Software — as an alternative to propietary cloud technology."
+  about: "Sovereign Cloud Stack (SCS) is federated cloud technology built entirely with Open Source Software — putting users and providers in control."
 nav:
   home: "Home"
   discover: "Discover SCS"
