@@ -1,8 +1,12 @@
-Englisch
+---
+layout: post
+title:  "SCS: We continue to work on Gaia-X for more digital sovereignty"
+author: "Kurt Garloff"
+avatar: "/assets/images/kgarloff.jpg"
+image: "/assets/images/blog/rowing.jpg"
+---
 
-# SCS: We continue to work on Gaia-X for more digital sovereignty
-
-Kurt Garloff, 2021-11-26
+<img src="{{ "/assets/images/blog/rowing.jpg" | prepend: site.baseurl_root }}" style="width:100%; max-height: 450px; object-fit: cover;}">
 
 ## Context
 
@@ -151,4 +155,3 @@ Unfortunately, this important aspect of digital sovereignty has not yet been
 taken into account in the description of the Gaia-X labels - we expect that
 further development will take place here and are also working towards this as
 part of our cooperation in the Gaia-X working groups and open work packages.
-

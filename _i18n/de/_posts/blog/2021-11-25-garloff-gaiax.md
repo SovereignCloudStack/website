@@ -1,6 +1,12 @@
-# SCS: Wir arbeiten weiter an Gaia-X für digitale Souveränität
+---
+layout: post
+title:  "SCS: Wir arbeiten weiter an Gaia-X für digitale Souveränität"
+author: "Kurt Garloff"
+avatar: "/assets/images/kgarloff.jpg"
+image: "/assets/images/blog/rowing.jpg"
+---
 
-Kurt Garloff, 2021-11-26
+<img src="{{ "/assets/images/blog/rowing.jpg" | prepend: site.baseurl_root }}" style="width:100%; max-height: 450px; object-fit: cover;}">
 
 ## Kontext
 
