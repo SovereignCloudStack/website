@@ -117,6 +117,15 @@ und Gruppierungen rund um Gaia-X. Viele davon arbeiten im Arbeitspaket "Minimal
 Viable Gaia" zusammen und nehmen am zweiten Gaia-X Hackathon am 2.+3. Dezember teil
 -- da wird dann tatsächlich Technologie entwickelt und getestet.
 
+<figure class="figure mx-auto d-block my-4" style="width:40%">
+  <a href="https://www.gaia-x.eu/news/events/gaia-x-hackathon-2" target="_blank">
+    <img src="{{ "/assets/images/blog/gx-hackathon-2.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
+  </a>
+  <figcaption class="figure-caption">
+    Beim Gaia-X Hackathon #2 erwartet dich unter anderem ein eigener Track zur geführten Installation von SCS auf echter Hardware.
+  </figcaption>
+</figure>
+
 Leider wurde all das auf dem Gaia-X Summit wenig sichtbar -- die Vorstellung
 der Highlights aus dem Hackathon dort hat leider wegen der
 Terminabfolge nicht gepasst.
