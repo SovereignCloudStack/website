@@ -40,8 +40,8 @@ OSBA) ist seit Sommer 2021 Gaia-X Mitglied, hat aber bereits seit Anfang
 2020 über persönliches Engagement und über OSBA Mitglieder wie PlusServer den
 Gründungsprozess des Gaia-X Projekts begleitet.
 
-Die OSB Alliance koordiniert mit dem Projekt Sovereign Cloud Stack (SCS) ein
-signifikantes Projekt, welches mit Mitteln des BMWi(https://bmwi.de/) gefördert wird und
+Die OSB Alliance koordiniert mit dem Projekt [Sovereign Cloud Stack](https://scs.community/) (SCS) ein
+signifikantes Projekt, welches mit Mitteln des [BMWi](https://bmwi.de/) gefördert wird und
 Technologie liefert, die es Infrastrukturbetreibern sehr viel einfacher macht,
 Gaia-X konforme, souveräne Infrastruktur bereitzustellen. Als solches ist sie
 mit ihrer Community und ihren Mitarbeitern an einigen Gaia-X Arbeitsgruppen beteiligt
@@ -101,7 +101,7 @@ Implementierungen.
 
 Doch die Realität in Gaia-X ist besser als sie zunächst aussieht. Es gibt einige
 Gruppen, die an der Umsetzung von Gaia-X Konzepten arbeiten. Es gibt die großen
-vom BMWi geförderten Projekte wie z.B. GXFS(https://gxfs.de/):
+vom BMWi geförderten Projekte wie z.B. [GXFS](https://gxfs.de/):
 Dort soll aufgrund detaillierter Spezifikationen Code zu den Themen
 Compliance, Data Sovereignty Services, Identity & Trust, Federated Catalogue
 und dem Portal entwickelt werden. Das Sovereign Cloud Stack Projekt (SCS,

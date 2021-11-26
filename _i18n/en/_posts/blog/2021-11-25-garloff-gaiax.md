@@ -36,8 +36,8 @@ The [Open Source Business Alliance](https://osb-alliance.com) (OSB Alliance, OSB
 already accompanied the founding process of the Gaia-X project through personal
 commitment and OSBA members such as PlusServer since the beginning of 2020.
 
-With the Sovereign Cloud Stack project, the OSB Alliance is leading a significant project
-funded by the BMWi(https://bmwi.de/) (German Ministry for Economic
+With the [Sovereign Cloud Stack](https://scs.community/) project, the OSB Alliance is leading a significant project
+funded by the [BMWi](https://bmwi.de/) (German Ministry for Economic
 Affairs and Energy) and provides technology that makes it much easier for
 infrastructure operators to provide Gaia-X-compliant, sovereign infrastructure.
 As such, it is involved in some Gaia-X working groups with its community and its
@@ -96,7 +96,7 @@ with fully open implementations.
 
 But the reality in Gaia-X is better than it appears at first glance. There are some groups
 working on the implementation of Gaia-X concepts. There are the major projects
-funded by the BMWi such as e.g. GXFS(https://gxfs.de/):
+funded by the BMWi such as e.g. [GXFS](https://gxfs.de/):
 There, based on detailed specifications, code on the topics
 of compliance, data sovereignty services, identity & trust, federated catalog
 and the portal is to be developed. The Sovereign Cloud Stack Project (SCS,
