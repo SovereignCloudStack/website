@@ -1,6 +1,6 @@
 Englisch
 
-# Statement of the OSB Alliance on the Gaia-X Summit 11/21 and the press reports
+# SCS: We continue to work on Gaia-X for more digital sovereignty
 
 Kurt Garloff, 2021-11-26
 
@@ -23,7 +23,7 @@ politics, a club of large corporations, an initiative embraced by the
 hyperscalers, as a dish with too many cooks, ... was bound to fail, now has
 proven to really fail.
 
-The OSB Alliance (OSBA) continues to believe in Gaia-X's goals. While some
+We, as SCS project, continue to believe in Gaia-X's goals. While some
 shortcomings exist, we have no reason to dismiss Gaia-X as a helpful initiative.
 
 ## Cooperation between OSB Alliance and Gaia-X

@@ -1,4 +1,4 @@
-# Stellungnahme der OSB Alliance zum Gaia-X Summit 11/21 und den Presseberichten
+# SCS: Wir arbeiten weiter an Gaia-X für digitale Souveränität
 
 Kurt Garloff, 2021-11-26
 
@@ -22,7 +22,7 @@ Politik angestoßene Initiative, als Veranstaltung der Großkonzerne, als von de
 Hyperscalern durchsetzte Initiative, als ein Gericht mit zuvielen Köchen zum
 Scheitern verurteilt sei.
 
-Die OSB Alliance glaubt weiterhin an die Ziele von Gaia-X. Während es sicherlich
+Wir glauben als SCS Projekt weiterhin an die Ziele von Gaia-X. Während es sicherlich
 gerechtfertigte Kritik gibt, haben wir keinen Grund, Gaia-X nicht weiterhin als
 hilfreiche Initiative zu betrachten.
 
