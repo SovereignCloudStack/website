@@ -113,6 +113,15 @@ of them come together in the work package "Minimal Viable Gaia" and take part
 in the second Gaia-X Hackathon on the 2nd + 3rd. December - technology is
 actually developed and tested there.
 
+<figure class="figure mx-auto d-block my-4" style="width:40%">
+  <a href="https://www.gaia-x.eu/news/events/gaia-x-hackathon-2" target="_blank">
+    <img src="{{ "/assets/images/blog/gx-hackathon-2.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
+  </a>
+  <figcaption class="figure-caption">
+    Join the Gaia-X Hackathon #2 in which you will among other workshops have the chance to attend a guided SCS deployment.
+  </figcaption>
+</figure>
+
 Unfortunately, little of this was visible at the Gaia-X Summit - the presentation
 of the highlights from the hackathon there didn't work out
 because of the ordering of the events on the schedule.
