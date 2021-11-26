@@ -93,11 +93,13 @@ immer einfach, aber es geht voran.
 
 Alle Theorie bleibt Theorie, wenn sie niemand in die Praxis umsetzt. Tatsächlich
 wird in den Arbeitsgruppen und Komitees der Gaia-X Organisation viel über Konzepte und
-Standards diskutiert und es wird bislang noch wenig Umsetzung sichtbar. Das ist natürlich
-riskant. Nach unserer Erfahrung entstehen gute, praktikable und akzeptierte
-Standards fast immer in engem Austausch und einem iterativen Prozess mit der
-Umsetzung - und offene Standards logischerweise parallel mit vollständig offenen
-Implementierungen.
+Standards diskutiert und es wird bislang noch wenig Umsetzung sichtbar.
+Nach unserer Erfahrung entstehen gute, praktikable und breit akzeptierte
+Standards vor allem im engen Austausch und einem iterativen Prozess zwischen
+den Beteiligten in Theorie und Praxis. Damit entsteht dann auch ganz nebenbei eine
+Sichtbarkeit und eine Auseinandersetzung mit den Zielen von Gaia-X. Für die benötigten
+offenen Standards müssen dann auch vollständig offene Referenzimplementierungen
+geschaffen werden.
 
 Doch die Realität in Gaia-X ist besser als sie zunächst aussieht. Es gibt einige
 Gruppen, die an der Umsetzung von Gaia-X Konzepten arbeiten. Es gibt die großen

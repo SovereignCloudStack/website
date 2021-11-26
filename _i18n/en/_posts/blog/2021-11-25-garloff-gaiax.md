@@ -88,11 +88,12 @@ forward.
 
 All theory remains theory if nobody puts it into practice. In fact, there is a
 lot of discussion about concepts and standards in the working groups and
-committees of the Gaia-X entity and thus far little implementation is visible yet. That is of
-course risky. In our experience, good, practicable and accepted standards are
-almost always created in close exchange and an iterative process with an
-implementation. And, of course, open standards are best developed in parallel
-with fully open implementations.
+committees of the Gaia-X entity and thus far little implementation is visible yet.
+In our experience, good, practicable and accepted standards are
+almost always created in close exchange and in an iterative process between
+theory and practice. A desired side effect is the creation of visibility and
+the attention to the goals of Gaia-X. For the needed open standards, a fully open
+(reference) implementation will need to be created.
 
 But the reality in Gaia-X is better than it appears at first glance. There are some groups
 working on the implementation of Gaia-X concepts. There are the major projects
