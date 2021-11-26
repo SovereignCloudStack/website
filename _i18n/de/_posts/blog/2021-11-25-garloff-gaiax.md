@@ -1,32 +1,36 @@
 # Stellungnahme der OSB Alliance zum Gaia-X Summit 11/21 und den Presseberichten
 
-Kurt Garloff, 2021-11-24
+Kurt Garloff, 2021-11-26
 
 ## Kontext
 
-Am 18. und 19.11.2021 fand der zweite Gaia-X Summit statt, in dem die Konzepte
-aufgezeigt wurden, wie Gaia-X es ermöglicht, dass regelbasierte föderierte
-Datenökosysteme entstehen und eine gut funktionierende, vertrauenswürdige Basis
-für datenbasierte Innovation darstellen.
+Am 18. und 19. November 2021 fand der zweite Gaia-X Summit statt. Dort wurden
+Konzepte aufgezeigt mit denen es Gaia-X ermöglicht, regelbasierte föderierte
+Datenökosysteme entstehen zu lassen, die eine gut funktionierende, vertrauenswürdige
+Basis für datenbasierte Innovation darstellen.
 
 Der Summit wurde überschattet vom sichtbaren Ausstieg von Scaleway aus Gaia-X.
 Scaleway äußerte sich enttäuscht über den langsamen Fortschritt und ist der
-Ansicht, dass die breite Einbindung der Hyperscaler ein Grund dafür ist und die
-Gefahr besteht, dass diese dazu führt, dass sich das Projekt in die falsche
-Richtung entwickelt und am Ende wenig für die digitale Souveränität erreicht
-wird.
+Ansicht, dass die breite Einbindung der Hyperscaler ein Grund dafür ist. Laut
+Scaleway bestünde die Gefahr, dass diese dazu führt, dass sich das Projekt in
+die falsche Richtung entwickelt und am Ende wenig für die digitale Souveränität
+erreicht wird.
 
-Dies wurde vereinzelt in der Presse aufgegriffen und als Beweis dafür
-angesehen, dass der schon länger gehegte Verdacht, dass Gaia-X als aus der
+Dies wurde vereinzelt in der Presse aufgegriffen und als Beleg für den schon
+länger gehegten Verdacht angesehen, dass Gaia-X als aus der
 Politik angestoßene Initiative, als Veranstaltung der Großkonzerne, als von den
 Hyperscalern durchsetzte Initiative, als ein Gericht mit zuvielen Köchen zum
-Scheitern verurteilt sei, jetzt bewiesen wurde.
+Scheitern verurteilt sei.
+
+Die OSB Alliance glaubt weiterhin an die Ziele von Gaia-X. Während es sicherlich
+gerechtfertigte Kritik gibt, haben wir keinen Grund, Gaia-X nicht weiterhin als
+hilfreiche Initiative zu betrachten.
 
 ## Zusammenarbeit OSB Alliance und Gaia-X
 
 Die OSB Alliance (OSBA) ist seit Sommer 2021 Gaia-X Mitglied, hat aber bereits
-zuvor über persönliches Engagement und über OSBA Mitglieder wie PlusServer den
-Gründungsprozess des Gaia-X Projekts begleitet.
+zuvor seit Anfang 2020 über persönliches Engagement und über OSBA Mitglieder wie
+PlusServer den Gründungsprozess des Gaia-X Projekts begleitet.
 
 Die OSB Alliance leitet mit dem Projekt Sovereign Cloud Stack (SCS) ein
 signifikantes Projekt, welches mit Mitteln des BMWi gefördert wird und
@@ -34,8 +38,7 @@ Technologie liefert, die es Infrastrukturbetreibern sehr viel einfacher macht,
 Gaia-X konforme, souveräne Infrastruktur bereitzustellen. Als solches ist sie
 mit ihrer Community und ihren Mitarbeitern an einigen Arbeitsgruppen beteiligt
 und gestaltet die Arbeit z.B. in der Provider Arbeitsgruppe von Gaia-X
-signifikant mit. Hier ist auch das SCS Projekt als offenes Arbeitspaket
-verankert.
+mit. Hier ist auch das SCS Projekt als offenes Arbeitspaket verankert.
 
 ## Erwartungen und Gaia-X Realität
 
@@ -61,7 +64,7 @@ abgebildet, welche vom Föderierer in einem Katalog vorgehalten werden.
 Selbstbeschreibungen werden in der entsprechenden Gaia-X Arbeitsgruppen
 definiert, vom Diensteanbieter ausgefüllt und ggf. von Zertifizierern
 (Conformance Assessment Bodies) überprüft und bestätigt. Eine Open Source
-Implementierung eine verteilten Katalogs entsteht u.a. im GXFS Projekt -- ein
+Implementierung eines verteilten Katalogs entsteht u.a. im GXFS Projekt -- ein
 weiteres vom BMWi gefördertes Projekt zur Stärkung von Gaia-X.
 
 Der Weg zu diesen Standards ist kein einfacher. Viele Mitwirkende müssen sich
@@ -84,7 +87,7 @@ wird in den Arbeitsgruppen und Komitees der Gaia-X AISBL viel über Konzepte und
 Standards diskutiert und es wird wenig Umsetzung sichtbar. Das ist natürlich
 riskant. Nach unserer Erfahrung entstehen gute, praktikable und akzeptierte
 Standards fast immer in engem Austausch und einem iterativen Prozess mit der
-Umsetzung. Und offene Standards logischerweise parallel mit vollständig offenen
+Umsetzung - und offene Standards logischerweise parallel mit vollständig offenen
 Implementierungen.
 
 Die Realität in Gaia-X ist besser als sie zunächst aussieht. Es gibt einige
@@ -94,7 +97,7 @@ https://gxfs.de/), wo aufgrund detaillierter Spezifikationen Code zu den Themen
 Compliance, Data Sovereignty Services, Identity & Trust, Federated Catalogue
 und dem Portal entwickelt werden soll. Das Sovereign Cloud Stack Projekt (SCS,
 https://scs.community/) hat bereits im September 2021 eine Release 1
-veröffentlicht und kommt auch schon produktiv bei Cloudanbietern zum Einsatz.
+veröffentlicht und kommt bereits produktiv bei Cloudanbietern zum Einsatz.
 SCS wird von einer offenen Community in einem offenen Prozess als vollständig
 freie Software entwickelt. Auch GXFS steht unter einer OSS Lizenz.
 
@@ -102,7 +105,7 @@ Daneben gibt es Förderprojekte aus dem BMWi Förderwerttbewerb, ein
 französisches Projekt zur Ergänzung der Federation Services, den Eclipse Data
 Connector, die Arbeit in Catena-X und zahlreiche Initiativen von Unternehmen
 und Gruppierungen rund um Gaia-X. Viele davon arbeiten im Arbeitspaket "Minimal
-Viable Gaia" mit und nehmen am zweiten Gaia-X Hackathon am 2.+3. Dezember teil
+Viable Gaia" zusammen und nehmen am zweiten Gaia-X Hackathon am 2.+3. Dezember teil
 -- da wird dann tatsächlich Technologie entwickelt und getestet.
 
 Leider wurde all das auf dem Gaia-X Summit wenig sichtbar -- die Vorstellung
