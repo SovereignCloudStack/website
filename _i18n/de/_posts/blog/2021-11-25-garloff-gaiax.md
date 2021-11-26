@@ -6,6 +6,8 @@ avatar: "/assets/images/kgarloff.jpg"
 image: "/assets/images/blog/rowing.jpg"
 ---
 
+_(Von Dr. Manuela Urban, Felix Kronlage-Dammers, Kurt Garloff)_
+
 <img src="{{ "/assets/images/blog/rowing.jpg" | prepend: site.baseurl_root }}" style="width:100%; max-height: 450px; object-fit: cover;}">
 
 ## Kontext

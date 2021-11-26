@@ -6,6 +6,8 @@ avatar: "/assets/images/kgarloff.jpg"
 image: "/assets/images/blog/rowing.jpg"
 ---
 
+_(By Dr. Manuela Urban, Felix Kronlage-Dammers, Kurt Garloff)_
+
 <img src="{{ "/assets/images/blog/rowing.jpg" | prepend: site.baseurl_root }}" style="width:100%; max-height: 450px; object-fit: cover;}">
 
 ## Context
@@ -150,8 +152,8 @@ excluded with a high degree of certainty - this can only be guaranteed with
 platforms that are completely under the operational control of European
 companies.
 
-This means that the area of data protection is well mapped by Gaia-X Labels and
-it makes sense to link it to proven standards in this area.
+This means that the area of data protection is well reflected by Gaia-X Labels and
+it makes sense to link them to proven standards in this area.
 
 However, digital sovereignty goes far beyond data protection.
 
