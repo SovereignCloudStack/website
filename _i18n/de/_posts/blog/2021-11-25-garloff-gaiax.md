@@ -11,16 +11,16 @@ image: "/assets/images/blog/rowing.jpg"
 ## Kontext
 
 Am 18. und 19. November 2021 fand der zweite [Gaia-X](https://gaia-x.eu/)
-Summit statt. Dort wurden Konzepte aufgezeigt mit denen es Gaia-X ermöglicht,
+Summit statt. Dort wurden Konzepte aufgezeigt, mit denen es Gaia-X ermöglicht,
 regelbasierte föderierte Datenökosysteme entstehen zu lassen, die eine gut
 funktionierende, vertrauenswürdige Basis für datenbasierte Innovation
 darstellen.
 
-Der Summit wurde überschattet vom [sichtbaren Ausstieg von Scaleway aus Gaia-X](https://www.theregister.com/2021/11/19/scaleway_gaia_x/).
+Der Summit wurde ein wenig überschattet vom [sichtbaren Ausstieg von Scaleway aus Gaia-X](https://www.theregister.com/2021/11/19/scaleway_gaia_x/).
 Scaleway äußerte sich enttäuscht über den langsamen Fortschritt und ist der
 Ansicht, dass die breite Einbindung der Hyperscaler ein Grund dafür ist. Laut
-Scaleway bestünde die Gefahr, dass diese dazu führt, dass sich das Projekt in
-die falsche Richtung entwickelt und am Ende wenig für die digitale Souveränität
+Scaleway bestünde die Gefahr, dass die die Hyperscaler das Projekt in die
+falsche Richtung drängen und am Ende wenig für die digitale Souveränität
 erreicht wird.
 
 Dies wurde vereinzelt in der Presse aufgegriffen und als Beleg für den schon
@@ -31,12 +31,12 @@ Scheitern verurteilt sei.
 
 Wir glauben als [SCS Projekt](https://scs.sommunity/) weiterhin an die Ziele
 von Gaia-X. Während es sicherlich gerechtfertigte Kritik gibt, haben wir keinen
-Grund, Gaia-X nicht weiterhin als hilfreiche Initiative zu betrachten.
+Grund, Gaia-X nicht weiterhin als wichtige und nützlich Initiative zu betrachten.
 
 ## Zusammenarbeit OSB Alliance und Gaia-X
 
 Die [Open Source Business Alliance](https://osb-alliance.com) (OSB Alliance,
-OSBA) ist seit Sommer 2021 Gaia-X Mitglied, hat aber bereits zuvor seit Anfang
+OSBA) ist seit Sommer 2021 Gaia-X Mitglied, hat aber bereits seit Anfang
 2020 über persönliches Engagement und über OSBA Mitglieder wie PlusServer den
 Gründungsprozess des Gaia-X Projekts begleitet.
 
@@ -51,7 +51,7 @@ mit. Hier ist auch das SCS Projekt als offenes Arbeitspaket verankert.
 ## Erwartungen und Gaia-X Realität
 
 Die Erwartungen an Gaia-X sind hoch und sehr unterschiedlich. Teilweise
-unrealistisch hoch, wozu sicher auch Äußerungen aus der Politik wie "Moonshot"
+unrealistisch hoch, wozu sicher auch Äußerungen wie "Moonshot"
 beigetragen haben. Vielfach wurden Ziele in Gaia-X hineinprojiziert, die gar
 nicht der Realität entsprechen, wie z.B. die Hoffnung, dass durch einen
 staatlichen Eingriff mit Hilfe von Gaia-X ein europäischer Hyperscaler
@@ -91,9 +91,9 @@ immer einfach, aber es geht voran.
 
 ## Gaia-X ist nicht nur Theorie
 
-Alle Theorie bleibt Theorie, wenn sie keiner in die Praxis umsetzt. Tatsächlich
+Alle Theorie bleibt Theorie, wenn sie niemand in die Praxis umsetzt. Tatsächlich
 wird in den Arbeitsgruppen und Komitees der Gaia-X AISBL viel über Konzepte und
-Standards diskutiert und es wird wenig Umsetzung sichtbar. Das ist natürlich
+Standards diskutiert und es wird bislang noch wenig Umsetzung sichtbar. Das ist natürlich
 riskant. Nach unserer Erfahrung entstehen gute, praktikable und akzeptierte
 Standards fast immer in engem Austausch und einem iterativen Prozess mit der
 Umsetzung - und offene Standards logischerweise parallel mit vollständig offenen
@@ -156,7 +156,7 @@ Implementierung zu geben. Dies ist mit proprietären Technologiestacks kaum
 darstellbar; dies kann nur mit einem vollständiger Offenheit erreicht werden. Genau
 daran arbeiten wir im Sovereign Cloud Stack Projekt und sehen in der
 Kombination mit weiteren freien Technologien aus dem Gaia-X Umfeld (und zukünftig
-IPCEI-CIS) wie GXFS auch eine attraktive Kombination für Unternehmen, die für
+dem angestrebten IPCEI-CIS) wie GXFS auch eine attraktive Kombination für Unternehmen, die für
 den Eigenbedarf oder für Dritte föderierbare, interoperable und vollständig
 souveräne Dienste anbieten möchten.
 
@@ -165,3 +165,6 @@ Gaia-X Labels bislang leider nicht berücksichtigt -- wir erwarten, dass hier
 eine Weiterentwicklung stattfinden wird und wirken darauf auch im Rahmen
 unserer Mitarbeit an den Gaia-X Arbeitsgruppen und offenen Arbeitspaketen hin.
 
+Gaia-X ist eine große Aufgabe und ein Gemeinschaftswerk. Das braucht die
+Unterstützung vieler und langen Atem. Aber genau darin wird es seine Stärke
+entfalten.

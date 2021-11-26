@@ -15,7 +15,7 @@ concepts were introduced of how Gaia-X enables rule-based federated data
 ecosystems to emerge and represent a well-functioning, trustworthy basis for
 data-based innovation.
 
-The summit was overshadowed by [Scaleway's visible exit from Gaia-X](https://www.theregister.com/2021/11/19/scaleway_gaia_x/).
+The summit was a bit overshadowed by [Scaleway's visible exit from Gaia-X](https://www.theregister.com/2021/11/19/scaleway_gaia_x/).
 Scaleway expressed disappointment with the slow progress and believes that the broad
 involvement of the hyperscalers is the reason for this and that there is a risk
 for the project to develop in the wrong direction and that in the end,
@@ -27,7 +27,8 @@ politics, as a club of large corporations, as an initiative embraced by the
 hyperscalers, as a dish with too many cooks was thus bound to fail.
 
 We, as [SCS project](https://scs.community), continue to believe in Gaia-X's goals. While some
-shortcomings exist, we have no reason to dismiss Gaia-X as a helpful initiative.
+shortcomings exist, we have no reason to dismiss Gaia-X as an important and
+useful initiative.
 
 ## Cooperation between OSB Alliance and Gaia-X
 
@@ -46,7 +47,7 @@ The SCS project is also anchored here as an open work package.
 ## Expectations and Gaia-X reality
 
 The expectations of Gaia-X are high and very varied. In some cases
-unrealistically high, to which statements from politics such as "Moonshot" have
+unrealistically high, to which statements such as "Moonshot" have
 certainly contributed. In many cases, goals were projected onto Gaia-X that did
 not correspond to reality at all, such as the hope that a European hyperscaler
 would be created through government intervention with the help of Gaia-X to
@@ -87,7 +88,7 @@ forward.
 
 All theory remains theory if nobody puts it into practice. In fact, there is a
 lot of discussion about concepts and standards in the working groups and
-committees of the Gaia-X AISBL and little implementation is visible. That is of
+committees of the Gaia-X AISBL and thus far little implementation is visible yet. That is of
 course risky. In our experience, good, practicable and accepted standards are
 almost always created in close exchange and an iterative process with an
 implementation. And, of course, open standards are best developed in parallel
@@ -149,7 +150,7 @@ give users control over the technology and its implementation. This can hardly
 be achieved with proprietary technology stacks, but requires complete
 openness. This is exactly what we are working on in the Sovereign
 Cloud Stack project and see the combination with other free technologies from the
-Gaia-X environment (and in the future IPCEI-CIS) such as GXFS as an attractive
+Gaia-X environment (and in the future the planned IPCEI-CIS) such as GXFS as an attractive
 combination for companies to provide federated, interoperable and completely
 sovereign services for their own use or for third parties.
 
@@ -158,3 +159,5 @@ taken into account in the description of the Gaia-X labels - we expect that
 further development will take place here and are also working towards this as
 part of our cooperation in the Gaia-X working groups and open work packages.
 
+Gaia-X is a large project that is collaboratively built. It requires support
+from many parties and a long term perspective. But that is also its strength.
