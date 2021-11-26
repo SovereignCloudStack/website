@@ -92,7 +92,7 @@ immer einfach, aber es geht voran.
 ## Gaia-X ist nicht nur Theorie
 
 Alle Theorie bleibt Theorie, wenn sie niemand in die Praxis umsetzt. Tatsächlich
-wird in den Arbeitsgruppen und Komitees der Gaia-X AISBL viel über Konzepte und
+wird in den Arbeitsgruppen und Komitees der Gaia-X Organisation viel über Konzepte und
 Standards diskutiert und es wird bislang noch wenig Umsetzung sichtbar. Das ist natürlich
 riskant. Nach unserer Erfahrung entstehen gute, praktikable und akzeptierte
 Standards fast immer in engem Austausch und einem iterativen Prozess mit der

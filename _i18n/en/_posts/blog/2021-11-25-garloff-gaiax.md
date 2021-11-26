@@ -88,7 +88,7 @@ forward.
 
 All theory remains theory if nobody puts it into practice. In fact, there is a
 lot of discussion about concepts and standards in the working groups and
-committees of the Gaia-X AISBL and thus far little implementation is visible yet. That is of
+committees of the Gaia-X entity and thus far little implementation is visible yet. That is of
 course risky. In our experience, good, practicable and accepted standards are
 almost always created in close exchange and an iterative process with an
 implementation. And, of course, open standards are best developed in parallel
