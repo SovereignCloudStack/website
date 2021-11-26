@@ -4,12 +4,13 @@ Kurt Garloff, 2021-11-26
 
 ## Kontext
 
-Am 18. und 19. November 2021 fand der zweite Gaia-X Summit statt. Dort wurden
-Konzepte aufgezeigt mit denen es Gaia-X ermöglicht, regelbasierte föderierte
-Datenökosysteme entstehen zu lassen, die eine gut funktionierende, vertrauenswürdige
-Basis für datenbasierte Innovation darstellen.
+Am 18. und 19. November 2021 fand der zweite [Gaia-X](https://gaia-x.eu/)
+Summit statt. Dort wurden Konzepte aufgezeigt mit denen es Gaia-X ermöglicht,
+regelbasierte föderierte Datenökosysteme entstehen zu lassen, die eine gut
+funktionierende, vertrauenswürdige Basis für datenbasierte Innovation
+darstellen.
 
-Der Summit wurde überschattet vom sichtbaren Ausstieg von Scaleway aus Gaia-X.
+Der Summit wurde überschattet vom [sichtbaren Ausstieg von Scaleway aus Gaia-X](https://www.theregister.com/2021/11/19/scaleway_gaia_x/).
 Scaleway äußerte sich enttäuscht über den langsamen Fortschritt und ist der
 Ansicht, dass die breite Einbindung der Hyperscaler ein Grund dafür ist. Laut
 Scaleway bestünde die Gefahr, dass diese dazu führt, dass sich das Projekt in
@@ -22,22 +23,23 @@ Politik angestoßene Initiative, als Veranstaltung der Großkonzerne, als von de
 Hyperscalern durchsetzte Initiative, als ein Gericht mit zuvielen Köchen zum
 Scheitern verurteilt sei.
 
-Wir glauben als SCS Projekt weiterhin an die Ziele von Gaia-X. Während es sicherlich
-gerechtfertigte Kritik gibt, haben wir keinen Grund, Gaia-X nicht weiterhin als
-hilfreiche Initiative zu betrachten.
+Wir glauben als [SCS Projekt](https://scs.sommunity/) weiterhin an die Ziele
+von Gaia-X. Während es sicherlich gerechtfertigte Kritik gibt, haben wir keinen
+Grund, Gaia-X nicht weiterhin als hilfreiche Initiative zu betrachten.
 
 ## Zusammenarbeit OSB Alliance und Gaia-X
 
-Die OSB Alliance (OSBA) ist seit Sommer 2021 Gaia-X Mitglied, hat aber bereits
-zuvor seit Anfang 2020 über persönliches Engagement und über OSBA Mitglieder wie
-PlusServer den Gründungsprozess des Gaia-X Projekts begleitet.
+Die [Open Source Business Alliance](https://osb-alliance.com) (OSB Alliance,
+OSBA) ist seit Sommer 2021 Gaia-X Mitglied, hat aber bereits zuvor seit Anfang
+2020 über persönliches Engagement und über OSBA Mitglieder wie PlusServer den
+Gründungsprozess des Gaia-X Projekts begleitet.
 
-Die OSB Alliance leitet mit dem Projekt Sovereign Cloud Stack (SCS) ein
+Die OSB Alliance koordiniert mit dem Projekt Sovereign Cloud Stack (SCS) ein
 signifikantes Projekt, welches mit Mitteln des BMWi gefördert wird und
 Technologie liefert, die es Infrastrukturbetreibern sehr viel einfacher macht,
 Gaia-X konforme, souveräne Infrastruktur bereitzustellen. Als solches ist sie
-mit ihrer Community und ihren Mitarbeitern an einigen Arbeitsgruppen beteiligt
-und gestaltet die Arbeit z.B. in der Provider Arbeitsgruppe von Gaia-X
+mit ihrer Community und ihren Mitarbeitern an einigen Gaia-X Arbeitsgruppen beteiligt
+und gestaltet die Arbeit z.B. in der Provider Arbeitsgruppe
 mit. Hier ist auch das SCS Projekt als offenes Arbeitspaket verankert.
 
 ## Erwartungen und Gaia-X Realität
@@ -47,20 +49,20 @@ unrealistisch hoch, wozu sicher auch Äußerungen aus der Politik wie "Moonshot"
 beigetragen haben. Vielfach wurden Ziele in Gaia-X hineinprojiziert, die gar
 nicht der Realität entsprechen, wie z.B. die Hoffnung, dass durch einen
 staatlichen Eingriff mit Hilfe von Gaia-X ein europäischer Hyperscaler
-entstünde, welcher den bedenklichen Einfluß der amerikanischen Plattformen
+erschaffen würde, welcher den bedenklichen Einfluß der amerikanischen Plattformen
 zurückdränge.
 
 Der Ansatz von Gaia-X ist ein anderer: Es sollen verifizierbare Standards
 geschaffen werden, mit deren Hilfe Transparenz hergestellt wird, die es
 erlaubt, dass Dienste von verschiedenen Anbietern automatisiert kombiniert
-werden. Die Transparenz soll nicht nur technische Kompatibilität sichern und
+werden. Die Nachvollziehbarkeit soll nicht nur technische Kompatibilität sichern und
 entsprechende Schnittstellen charakterisieren, sondern insbesondere auch
-Aspekte wie Kontrolle, Sicherheit und Datenschutz beinhalten. Diese ermöglichen
+Aspekte wie Kontrolle, Sicherheit und Datenschutz beinhalten. Dies ermöglicht
 somit Nutzern eine bewusste Entscheidung, welche Kombination von Angeboten
 ihren Anforderungen entspricht. Die Transparenz über europäische
 Datenschutzbestimmungen erlaubt somit auch gesetzeskonformen Einsatz. Die
-Transparenz wird über zertifizierbare und überprüfbare Selbstbeschreibungen
-abgebildet, welche vom Föderierer in einem Katalog vorgehalten werden.
+Nachvollziehbarkeit wird über zertifizierbare und überprüfbare Selbstbeschreibungen
+gewährleistet, welche vom Föderierer in einem Katalog vorgehalten werden.
 Selbstbeschreibungen werden in der entsprechenden Gaia-X Arbeitsgruppen
 definiert, vom Diensteanbieter ausgefüllt und ggf. von Zertifizierern
 (Conformance Assessment Bodies) überprüft und bestätigt. Eine Open Source
