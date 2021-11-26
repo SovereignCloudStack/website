@@ -110,8 +110,8 @@ veröffentlicht und kommt schon produktiv bei Cloudanbietern zum Einsatz.
 SCS wird von einer offenen Community in einem offenen Prozess als vollständig
 freie Software entwickelt. Auch GXFS steht unter einer OSS Lizenz.
 
-Daneben gibt es Förderprojekte aus dem BMWi Förderwerttbewerb, ein
-französisches Projekt zur Ergänzung der Federation Services, den Eclipse Data
+Daneben gibt es ein französisches Projekt zur Ergänzung der Federation
+Services, Förderprojekte aus dem BMWi Förderwettbewerb, den Eclipse Data
 Connector, die Arbeit in Catena-X und zahlreiche Initiativen von Unternehmen
 und Gruppierungen rund um Gaia-X. Viele davon arbeiten im Arbeitspaket "Minimal
 Viable Gaia" zusammen und nehmen am zweiten Gaia-X Hackathon am 2.+3. Dezember teil
@@ -138,7 +138,7 @@ dennoch ein Mehrwert -- nicht für alle IT Dienste und Daten sind hohe Ansprüch
 an Datenschutz und Souveränität notwendig. Auf dieser Stufe können auch
 amerikanische Hyperscaler einen wertvollen Beitrag leisten.
 
-Die drei in Gaia-X skizzierten Stufen basic, substantial, high lehnen sich an
+Die drei in Gaia-X skizzierten Stufen _basic_, _substantial_, _high_ lehnen sich an
 die entsprechenden Stufen der ENISA im European Cybersecurity Scheme for Cloud
 Services an. Bei der höchsten Stufe wäre ein Zugriff von außerhalb Europas mit
 hoher Sicherheit ausgeschlossen -- dies ist nur mit Plattformen zu

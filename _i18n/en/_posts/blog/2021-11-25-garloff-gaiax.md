@@ -12,7 +12,7 @@ image: "/assets/images/blog/rowing.jpg"
 
 The second [Gaia-X](https://gaia-x.eu/) Summit took place on November 18 and 19, 2021, in which
 concepts were introduced of how Gaia-X enables rule-based federated data
-ecosystems to emerge and represent a well-functioning, trustworthy basis for
+ecosystems to emerge and to create a well-functioning, trustworthy basis for
 data-based innovation.
 
 The summit was a bit overshadowed by [Scaleway's visible exit from Gaia-X](https://www.theregister.com/2021/11/19/scaleway_gaia_x/).
@@ -105,8 +105,8 @@ being used in production by cloud providers. SCS is being developed as
 completely free software by an open community in an open process. GXFS is also
 under an OSS license.
 
-There are also funding projects from the BMWi funding competition, a French
-project to supplement Federation Services, the Eclipse Data Connector, work in
+There are also the French project to supplement the Federation Services,
+projects from the BMWi funding competition, the Eclipse Data Connector, work in
 Catena-X and numerous initiatives by companies and groups around Gaia-X. Many
 of them come together in the work package "Minimal Viable Gaia" and take part
 in the second Gaia-X Hackathon on the 2nd + 3rd. December - technology is
@@ -130,10 +130,10 @@ It makes sense to have different levels of conformity. This also includes and
 makes transparent offers that do not meet high standards in the area of
 data protection. Interoperability and transparency are still an
 added value - not all IT services and data have high data protection and
-sovereignty requirements. American hyperscalers can also make a valuable
+sovereignty requirements. US-American hyperscalers can also make a valuable
 contribution at this level.
 
-The three levels of basic, substantial and high outlined in Gaia-X are based on
+The three levels of _basic_, _substantial_ and _high_ outlined in Gaia-X are based on
 the corresponding levels of ENISA in the European Cybersecurity Scheme for
 Cloud Services. At the highest level, access from outside Europe would be
 excluded with a high degree of certainty - this can only be guaranteed with
