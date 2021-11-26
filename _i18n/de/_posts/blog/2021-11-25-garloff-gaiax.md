@@ -41,7 +41,7 @@ OSBA) ist seit Sommer 2021 Gaia-X Mitglied, hat aber bereits zuvor seit Anfang
 Gründungsprozess des Gaia-X Projekts begleitet.
 
 Die OSB Alliance koordiniert mit dem Projekt Sovereign Cloud Stack (SCS) ein
-signifikantes Projekt, welches mit Mitteln des BMWi gefördert wird und
+signifikantes Projekt, welches mit Mitteln des BMWi(https://bmwi.de/) gefördert wird und
 Technologie liefert, die es Infrastrukturbetreibern sehr viel einfacher macht,
 Gaia-X konforme, souveräne Infrastruktur bereitzustellen. Als solches ist sie
 mit ihrer Community und ihren Mitarbeitern an einigen Gaia-X Arbeitsgruppen beteiligt
@@ -65,22 +65,23 @@ werden. Die Nachvollziehbarkeit soll nicht nur technische Kompatibilität sicher
 entsprechende Schnittstellen charakterisieren, sondern insbesondere auch
 Aspekte wie Kontrolle, Sicherheit und Datenschutz beinhalten. Dies ermöglicht
 somit Nutzern eine bewusste Entscheidung, welche Kombination von Angeboten
-ihren Anforderungen entspricht. Die Transparenz über europäische
+ihren Anforderungen entspricht. Die Transparenz über die Einhaltung europäischer
 Datenschutzbestimmungen erlaubt somit auch gesetzeskonformen Einsatz. Die
 Nachvollziehbarkeit wird über zertifizierbare und überprüfbare Selbstbeschreibungen
 gewährleistet, welche vom Föderierer in einem Katalog vorgehalten werden.
 Selbstbeschreibungen werden in der entsprechenden Gaia-X Arbeitsgruppen
 definiert, vom Diensteanbieter ausgefüllt und ggf. von Zertifizierern
 (Conformance Assessment Bodies) überprüft und bestätigt. Eine Open Source
-Implementierung eines verteilten Katalogs entsteht u.a. im GXFS Projekt -- ein
+Implementierung eines verteilten Katalogs entsteht u.a. im
+[Gaia-X Federation Services](https://gxfs.de/) (GXFS) Projekt -- ein
 weiteres vom BMWi gefördertes Projekt zur Stärkung von Gaia-X.
 
 Der Weg zu diesen Standards ist kein einfacher. Viele Mitwirkende müssen sich
 einigen, damit die Qualität stimmt und auch die Akzeptanz gegeben ist. Das mag
 manchmal frustrierend sein, liegt aber in der Natur der Sache. Ein dominantes
 Unternehmen mit einer integrierten Architektur kann schneller voranschreiten
-als ein Ökosystem, auf dem auf verschiedenen Ebenen mehrere Akteure sich auf
-ein gemeinsame interoperable Schnittstellen einigen müssen. Mit einem Top-Down
+als ein Ökosystem, in dem sich auf verschiedenen Ebenen mehrere Akteure auf
+gemeinsame, interoperable Schnittstellen einigen müssen. Mit einem Top-Down
 Vorgehen trifft man schneller Entscheidungen als mit breiter Beteiligung.
 Besser sind sie dadurch nicht -- langfristig ist der mühsame Weg der
 leistungsfähigere. Wichtig ist, dass bei den Entscheidungen die Fachkompetenz
@@ -98,14 +99,14 @@ Standards fast immer in engem Austausch und einem iterativen Prozess mit der
 Umsetzung - und offene Standards logischerweise parallel mit vollständig offenen
 Implementierungen.
 
-Die Realität in Gaia-X ist besser als sie zunächst aussieht. Es gibt einige
+Doch die Realität in Gaia-X ist besser als sie zunächst aussieht. Es gibt einige
 Gruppen, die an der Umsetzung von Gaia-X Konzepten arbeiten. Es gibt die großen
-vom BMWi geförderten Projekte wie die Gaia-X Federation Services (GXFS,
-https://gxfs.de/), wo aufgrund detaillierter Spezifikationen Code zu den Themen
+vom BMWi geförderten Projekte wie z.B. GXFS(https://gxfs.de/):
+Dort soll aufgrund detaillierter Spezifikationen Code zu den Themen
 Compliance, Data Sovereignty Services, Identity & Trust, Federated Catalogue
-und dem Portal entwickelt werden soll. Das Sovereign Cloud Stack Projekt (SCS,
+und dem Portal entwickelt werden. Das Sovereign Cloud Stack Projekt (SCS,
 https://scs.community/) hat bereits im September 2021 eine Release 1
-veröffentlicht und kommt bereits produktiv bei Cloudanbietern zum Einsatz.
+veröffentlicht und kommt schon produktiv bei Cloudanbietern zum Einsatz.
 SCS wird von einer offenen Community in einem offenen Prozess als vollständig
 freie Software entwickelt. Auch GXFS steht unter einer OSS Lizenz.
 
@@ -117,7 +118,7 @@ Viable Gaia" zusammen und nehmen am zweiten Gaia-X Hackathon am 2.+3. Dezember t
 -- da wird dann tatsächlich Technologie entwickelt und getestet.
 
 Leider wurde all das auf dem Gaia-X Summit wenig sichtbar -- die Vorstellung
-der Highlights aus dem Hackathon auf dem Summit hat leider wegen der
+der Highlights aus dem Hackathon dort hat leider wegen der
 Terminabfolge nicht gepasst.
 
 ## Labels jenseits von Datenschutz
@@ -147,19 +148,20 @@ Unternehmen stehen.
 Damit wird der Bereich Datenschutz durch Gaia-X Labels gut abgebildet und
 sinnvollerweise mit bewährten Standards in diesem Bereich verknüpft.
 
-Digitale Souveränität geht aber weit über Datenschutz hinaus.
+Digitale Souveränität geht jedoch weit über Datenschutz hinaus.
 
-Innovations- und Gestaltungsmöglichkeit der digitalen Plattformen bedarf der
+Für Innovations- und Gestaltungsmöglichkeit der digitalen Plattformen bedarf es der
 Möglichkeit, Nutzern auch Kontrolle über die Technologie und ihrer
 Implementierung zu geben. Dies ist mit proprietären Technologiestacks kaum
-darstellbar, sondern bedarf eines vollständig offenen Technologiestacks. Genau
-daran arbeiten wir ja im Sovereign Cloud Stack Projekt und sehen in der
-Kombination mit weiteren freien Technologien im Gaia-X Umfeld (und zukünftig
+darstellbar; dies kann nur mit einem vollständiger Offenheit erreicht werden. Genau
+daran arbeiten wir im Sovereign Cloud Stack Projekt und sehen in der
+Kombination mit weiteren freien Technologien aus dem Gaia-X Umfeld (und zukünftig
 IPCEI-CIS) wie GXFS auch eine attraktive Kombination für Unternehmen, die für
 den Eigenbedarf oder für Dritte föderierbare, interoperable und vollständig
 souveräne Dienste anbieten möchten.
 
 Dieser wichtige Aspekt der digitalen Souveränität ist in der Beschreibung der
 Gaia-X Labels bislang leider nicht berücksichtigt -- wir erwarten, dass hier
-eine Weiterentwicklung stattfinden wird und wirken darauf hin auch im Rahmen
-unserer Mitarbeit an den Gaia-X Arbeitsgruppen und offenen Arbeitspaketen ein.
+eine Weiterentwicklung stattfinden wird und wirken darauf auch im Rahmen
+unserer Mitarbeit an den Gaia-X Arbeitsgruppen und offenen Arbeitspaketen hin.
+
