@@ -6,7 +6,7 @@ avatar: "/assets/images/kgarloff.jpg"
 image: "/assets/images/blog/rowing.jpg"
 ---
 
-_(Von Dr. Manuela Urban, Felix Kronlage-Dammers, Jonas Schäfers, Kurt Garloff)_
+_(Von Dr. Manuela Urban, Felix Kronlage-Dammers, Jonas Schäfer, Kurt Garloff)_
 
 <img src="{{ "/assets/images/blog/rowing.jpg" | prepend: site.baseurl_root }}" style="width:100%; max-height: 450px; object-fit: cover;}">
 
@@ -121,7 +121,7 @@ und Gruppierungen rund um Gaia-X. Viele davon arbeiten im Arbeitspaket "Minimal
 Viable Gaia" zusammen und nehmen am zweiten Gaia-X Hackathon am 2.+3. Dezember teil
 -- da wird dann tatsächlich Technologie entwickelt und getestet.
 
-<figure class="figure mx-auto d-block my-4" style="width:40%">
+<figure class="figure mx-auto d-block my-4 col-md-7">
   <a href="https://www.gaia-x.eu/news/events/gaia-x-hackathon-2" target="_blank">
     <img src="{{ "/assets/images/blog/gx-hackathon-2.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
   </a>

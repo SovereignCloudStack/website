@@ -115,7 +115,7 @@ of them come together in the work package "Minimal Viable Gaia" and take part
 in the second Gaia-X Hackathon on the 2nd + 3rd. December - technology is
 actually developed and tested there.
 
-<figure class="figure mx-auto d-block my-4" style="width:40%">
+<figure class="figure mx-auto d-block my-4 col-md-7">
   <a href="https://www.gaia-x.eu/news/events/gaia-x-hackathon-2" target="_blank">
     <img src="{{ "/assets/images/blog/gx-hackathon-2.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
   </a>
