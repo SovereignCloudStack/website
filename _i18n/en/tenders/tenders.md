@@ -20,7 +20,7 @@ Please refrain from addressing the project team directly.
 | 6  | 6a | Container Network and Storage Integration | Lot 6a | tba | tba | tba |
 | 7  | 6b | Container Meshing and Proxy | Lot 6b | tba | tba | tba |
 | 8  | 6c | Container Registry / Scanning | Lot 6c | tba | tba | tba |
-| 9  | 6d | Container Monitoring / IaC / CI / Deployment Automation | Lot 6d | tba | tba | tba |
+| 9  | 6d | Container Monitoring / IaC / CI / Deployment Automation | [Lot 6d](lot6d) | tba | tba | tba |
 | 10 | 6e | Container Tracing & Audit | Lot 6e | tba | tba | tba |
 | 11 | 8  | User Management & Federation | [Lot 8](lot8/) | tba | tba | tba |
 | 12 | 9a | Infra Scanning / Isolation / Policy Management | Lot 9a | tba | tba | tba |
