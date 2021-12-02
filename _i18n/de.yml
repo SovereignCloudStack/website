@@ -58,6 +58,7 @@ tenders:
     lot3: "Vergabepaket 3"
     lot4: "Vergabepaket 4"
     lot5: "Vergabepaket 5"
+    lot6d: "Vergabepaket 6d"
     lot8: "Vergabepaket 8"
     lot10: "Vergabepaket 10"
 jobs:
