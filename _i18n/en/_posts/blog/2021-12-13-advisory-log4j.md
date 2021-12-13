@@ -68,7 +68,7 @@ log4j is available, we recommend applying the following change:
    startup paramters:
 
       ```
-      es_java_opts: "-Dlog4j2.formatMsgNoLookups=true {% if es_heap_size %}-Xms{{ es_heap_size }} -Xmx{{ es_heap_size }}{%endif%}“
+      es_java_opts: "-Dlog4j2.formatMsgNoLookups=true {% if es_heap_size %}-Xms{{ es_heap_size }} -Xmx{{ es_heap_size }}{%endif%}"
       ```
 
 2. Roll out the changes:
