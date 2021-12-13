@@ -68,12 +68,18 @@ log4j is available, we recommend applying the following change:
    startup paramters:
 
       ```
-      es_java_opts: "-Dlog4j2.formatMsgNoLookups=true {% if es_heap_size %}-Xms{{ es_heap_size }} -Xmx{{ es_heap_size }}{%endif%}"
+      es_java_opts: "-Dlog4j2.formatMsgNoLookups=true \{% if es_heap_size %\}-Xms{{ es_heap_size }} -Xmx{{ es_heap_size }}\{%endif%\}"
       ```
 
 2. Roll out the changes:
-    * If you are *not* using Celery: `osism-manager configuration`
-    * If you are using Celery: `osism apply configuration`
+    * If you are *not* using Celery: 
+     ```
+     osism-manager configuration
+     ```
+    * If you are using Celery:
+     ```
+     osism apply configuration
+     ```
 
 3. (Re)deploy Elasticsearch:
     * If you are *not* using Celery:
