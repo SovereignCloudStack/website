@@ -14,8 +14,10 @@ was reported and assigned [CVE-2021-44228](https://www.lunasec.io/docs/blog/log4
 with a CVSS score of 10, which is the highest
 possible score and thus means that this is a very critical vulnerability.
 In short, log4j interprets strings that are being submitted to it
-causing lookups (e.g. via LDAP). If attackers can cause log4j to log
-attacker controlled strings, this can be used to gain access to the
+causing lookups via the JNDI interface (intended e.g. to do LDAP name resolution).
+If attackers can cause log4j to log attacker controlled strings, these can be used
+to trigger these lookups and cause arbitrary java code to be loaded and
+executed. This can be used to gain access to the
 application that uses log4j and the container/VM that the application
 is running in. As log4j is so popular, many Java applications are
 affected. At this point in time, all log4j versions prior to
@@ -37,7 +39,7 @@ Neither [keycloak](https://github.com/keycloak/keycloak/discussions/9078)
 nor nexus are affected by the log4j vulnerability.
 
 However, Elasticsearch does use log4j. Elasticsearch is rolled out in a
-container on the manager node by default in SCS deployments to allow for
+container on the SCS compute nodes by default in SCS deployments to allow for
 log analysis.
 
 ## Potential impact
@@ -47,14 +49,14 @@ only operators have access to it. An issue that can be abused by operators
 is not a serious threat to SCS environments, as in all practical setups,
 the operators have more privileges to affect the environment than they
 could gain by exploiting vulnerabilities in Elasticsearch. This might only
-be different in environment with very large operational teams and a very
+be different in environments with very large operational teams and a very
 fine-grained operational access role model.
 
 However, we can at this point not exclude the possibility that a name
 controlled by the user (such as the name from a resource at OpenStack
 or Kubernetes level) gets logged and later on processed by ElasticSearch
 and logged again via log4j. If so, a user could cause undesired actions
-within the ElasticSearch container on the manager node. If a potential
+within the ElasticSearch container. If a potential
 attacker could in addition find another exploit to escape the container
 confinement, he could take over the SCS deployment.
 
@@ -89,17 +91,32 @@ log4j is available, we recommend applying the following change:
      ```
     * If you are using Celery:
      ```
-     osism apply elastic search
+     osism apply elasticsearch
      ```
 
 This causes log4j to no longer interpret the input in ways that lookups
-can be triggered and thus reliably avoids the vulnerability.
+can be triggered and thus reliably avoids the vulnerability. Please note that
+this setting `log4j2.formatMsgNoLookups` is only available in 
+log4j2 >= 2.10.0, which is fortunately the case in the Elasticsearch container.
 
-When a new Elasticsearch container built with the fixed log4j becomes available,
-we'll issue a new advisory that describes the deployment of the new container.
+When a new Elasticsearch container built with the fixed log4j (2.15 or better 2.16+)
+becomes available, we'll issue a new advisory that describes the deployment of the
+new container.
 
-## Security Contact
+## Sovereign Cloud Stack Security Contact
 
 Please contact the SCS project management team at 
 [project at scs dot sovereignit dot de ](mailto:project@scs.sovereignit.de)
-to ask securty questions or report security issues.
+to ask security questions or report security issues.
+
+## Version history
+
+* Minor update on 2021-12-14, 15:45 CET:
+    - Remove wrong space in `osism apply elasticsearch`
+    - Elsasticsearch is deployed on the compute hosts in typical setups, not the manager node.
+    - Mention that lookups are done via JNDI to better connect to other descriptions.
+    - Mention that the java parameter is only available on log4j2 >= 2.10, which covers the SCS Elasticsearch.
+    - Mention fixed version be better 2.16+.
+
+* Initial release on 2021-12-13, 18:30 CET.
+
