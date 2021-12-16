@@ -29,5 +29,5 @@ kontaktieren Sie bitte:
 Kurt Garloff<br/>
 [garloff [at] osb [minus] alliance [dot] com](mailto:garloff@osb-alliance.com)<br/>
 Open Source Business Alliance e.V.<br/>
-Breitscheidstr. 4, 70174 Stuttgart, Germany
+Pariser Platz 6a, 10117 Berlin, Germany
 
