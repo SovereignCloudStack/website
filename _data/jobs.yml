@@ -9,7 +9,7 @@
   short_description: jobs.po-infra.short_description
   location: "Remote / Berlin"
   url: "/jobs/po-infra/"
-  is_open: true
+  is_open: false
 - title: jobs.knowledge-management.title
   image: "knowledge-management.jpg"
   short_description: jobs.knowledge-management.short_description
