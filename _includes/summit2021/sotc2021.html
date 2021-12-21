@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="{{ "/assets/vendor/apexcharts/apexcharts.css" | prepend: site.baseurl_root }}" />
+<script src="{{ "/assets/vendor/apexcharts/apexcharts.js" | prepend: site.baseurl_root }}"></script>
+
+<div id="chart-monday" style="min-height: 365px;"></div>
+<div id="chart-thursday" style="min-height: 365px;"></div>
+<div id="chart-community" style="min-height: 365px;"></div>
+
+<script>
+  var options = {
+    chart: {
+      type: 'boxPlot',
+      height: 350
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true
+      },
+      boxPlot: {
+        colors: {
+          upper: '#0d6efd',
+          lower: '#50c3a5'
+        }
+      }
+    },
+    yaxis: {
+      min: 0,
+      max: 10
+    },
+    xaxis: {
+      crosshairs: {
+        show: false
+      }
+    },
+    tooltip:{
+      x: {
+        show: false
+      }
+    },
+    subtitle: {
+      text: 'On a scale from 1 (worst) to 10 (best), how would you rate...'
+    }
+  }
+
+  options.title = {text: 'Monday Team Meetings'};
+  options.series = [
+    {
+      data: [
+        {
+          x: ['...the overall', 'effectiveness?'],
+          y: [4, 4.5, 7, 7.5, 8]
+        },
+        {
+          x: ['... your', 'comfortableness?'],
+          y: [4, 7, 8, 9.5, 10]
+        },
+        {
+          x: ['... the contribution', 'opportunities?'],
+          y: [7, 7.5, 9, 10, 10]
+        },
+        {
+          x: ['... the benefit for', 'you and your work?'],
+          y: [3, 4, 7, 8, 8]
+        },
+        {
+          x: ['... the overall', 'team vision?'],
+          y: [6, 7, 7.5, 9.75, 10]
+        }
+      ]
+    }
+  ];
+  var chart = new ApexCharts(document.querySelector("#chart-monday"), options);
+  chart.render();
+
+  options.title = {text: 'Thursday Overall Meeting'};
+  options.series = [
+    {
+      data: [
+        {
+          x: ['...the overall', 'effectiveness?'],
+          y: [5, 6, 7, 7.25, 8]
+        },
+        {
+          x: ['... your', 'comfortableness?'],
+          y: [7, 7.75, 9, 10, 10]
+        },
+        {
+          x: ['... the contribution', 'opportunities?'],
+          y: [8, 9, 9, 10, 10]
+        },
+        {
+          x: ['... the benefit for', 'you and your work?'],
+          y: [3, 4.75, 7, 8, 8]
+        }
+      ]
+    }
+  ];
+  var chart = new ApexCharts(document.querySelector("#chart-thursday"), options);
+  chart.render();
+
+  options.title = {text: 'Sovereign Cloud Stack Community'};
+  options.series = [
+    {
+      data: [
+        {
+          x: ['... the healthiness', 'of the community?'],
+          y: [4, 6, 6, 8.5, 10]
+        },
+        {
+          x: ['... the general mood', 'in the community?'],
+          y: [4, 6, 7, 8, 8]
+        },
+        {
+          x: ['... the collaboration', 'infrastructure and tools?'],
+          y: [6, 7, 7, 8, 10]
+        },
+        {
+          x: ['... the progress', 'of the project?'],
+          y: [3, 4, 6, 7, 7]
+        },
+        {
+          x: ['... the overall visibility', 'of the project?'],
+          y: [3, 4, 6, 7.75, 8]
+        }
+      ]
+    }
+  ];
+  var chart = new ApexCharts(document.querySelector("#chart-community"), options);
+  chart.render();
+</script>

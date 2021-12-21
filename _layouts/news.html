@@ -90,7 +90,7 @@ layout: default
 		<div class="list-group mb-4">
 		{% assign sorted = site.data.conferences_en | sort: 'date' | reverse %}
 		{% for item in sorted %}
-		<div class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="list-group-item list-group-item-action align-items-start">
 			<div class="d-flex w-100 justify-content-between">
 				<div class="d-flex w-75 flex-column justify-content-start position-relative">
 					<h5 style="font-size:.875em">{{item.event}}</h5>

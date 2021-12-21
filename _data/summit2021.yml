@@ -1,0 +1,30 @@
+- title: Collaboration over Comptetition
+  speakers: Felix Kronlage-Dammers
+  url: slides/summit2021/collaboration_over_competition.pdf
+  icon: fa-file-pdf-o
+- title: "The Sovereign Cloud Stack: From Idea to Realisation"
+  speakers: "Kurt Garloff, Dr. Manuela Urban"
+  url: slides/summit2021/history.pdf
+  icon: fa-file-pdf-o
+- title: Travel Guide Sovereign Cloud Stack
+  speakers: Eduard Itrich
+  url: slides/summit2021/travelguide.pdf
+  icon: fa-file-pdf-o
+- title: Outlook and review of public tenders
+  speakers: Dirk Loßack
+  url: slides/summit2021/tenders.pdf
+  icon: fa-file-pdf-o
+- title: Planing SCS for 2022
+  speakers: SCS Product Board
+  url: slides/summit2021/planning2022.pdf
+  icon: fa-file-pdf-o
+- title: Goals for 2022
+  url: images/summit2021/scrumblr-goals-2022.png
+  icon: fa-file-image-o
+- title: Results of the first retrospective
+  speakers: Dirk Loßack
+  url: slides/summit2021/retrospectiove.pdf
+  icon: fa-file-pdf-o
+- title: Organizing the Development
+  url: images/summit2021/scrumblr-organizing.png
+  icon: fa-file-image-o
