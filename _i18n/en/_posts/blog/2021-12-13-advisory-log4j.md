@@ -99,9 +99,29 @@ can be triggered and thus reliably avoids the vulnerability. Please note that
 this setting `log4j2.formatMsgNoLookups` is only available in 
 log4j2 >= 2.10.0, which is fortunately the case in the Elasticsearch container.
 
-When a new Elasticsearch container built with the fixed log4j (2.15 or better 2.16+)
+When a new Elasticsearch container built with the fixed log4j (2.16 or better 2.17+)
 becomes available, we'll issue a new advisory that describes the deployment of the
 new container.
+
+## Update 2021-12-21: Fix still valid
+
+Meanwhile, two more security issues around log4j have been reported: 
+[CVE-2021-45046](https://www.whitesourcesoftware.com/resources/blog/log4j-vulnerability-cve-2021-45046/)
+and [CVE-2021-45105](https://www.whitesourcesoftware.com/resources/blog/log4j-vulnerability-cve-2021-45105/). ]
+The former is a context lookup vulnerability (as a variation to the JNDI
+lookup vulnerability) while the latter is a Denial of Service attack by
+causing an infinite recursion on the context lookup.
+
+We have checked that the recommended setting `log4j2.formatMsgNoLookups=true`
+is still fully mitigating the issues in our environment.
+
+The `es_java_opts` setting has been configured in the upstream
+[OSISM/ansible_defaults](https://github.com/osism/ansible-defaults)
+repository meanwhile (commit c84f87a6106dd53d08447ac7d5a24b2677da38f0),
+so fresh deployments of SCS testbeds or production environments get
+the mitigation automatically. You can validate this by logging in to
+one of your compute nodes and checking the jvm parameters in the process
+list (elastic search container).
 
 ## Sovereign Cloud Stack Security Contact
 
@@ -110,6 +130,11 @@ Please contact the SCS project management team at
 to ask security questions or report security issues.
 
 ## Version history
+
+* Minor update on 2021-12-21, 17:45 CET:
+    - Information on new CVEs and workaround still being effective.
+    - Update recommended log4j version to 2.17+.
+    - Mention the implementation and validation in testbed.
 
 * Minor update on 2021-12-14, 15:45 CET:
     - Remove wrong space in `osism apply elasticsearch`
