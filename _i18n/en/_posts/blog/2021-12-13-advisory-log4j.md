@@ -107,12 +107,12 @@ new container.
 
 Meanwhile, two more security issues around log4j have been reported: 
 [CVE-2021-45046](https://www.whitesourcesoftware.com/resources/blog/log4j-vulnerability-cve-2021-45046/)
-and [CVE-2021-45105](https://www.whitesourcesoftware.com/resources/blog/log4j-vulnerability-cve-2021-45105/). ]
+and [CVE-2021-45105](https://www.whitesourcesoftware.com/resources/blog/log4j-vulnerability-cve-2021-45105/).
 The former is a context lookup vulnerability (as a variation to the JNDI
 lookup vulnerability) while the latter is a Denial of Service attack by
 causing an infinite recursion on the context lookup.
 
-We have checked that the recommended setting `log4j2.formatMsgNoLookups=true`
+The recommended setting `log4j2.formatMsgNoLookups=true`
 is still fully mitigating the issues in our environment.
 
 The `es_java_opts` setting has been configured in the upstream
@@ -121,7 +121,8 @@ repository meanwhile (commit c84f87a6106dd53d08447ac7d5a24b2677da38f0),
 so fresh deployments of SCS testbeds or production environments get
 the mitigation automatically. You can validate this by logging in to
 one of your compute nodes and checking the jvm parameters in the process
-list (elastic search container).
+list (elastic search container). You should find `-Dlog4j2.formatMsgNoLookups=true`
+in the parameter list.
 
 ## Sovereign Cloud Stack Security Contact
 
