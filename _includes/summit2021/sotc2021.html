@@ -4,6 +4,7 @@
 <div id="chart-monday" style="min-height: 365px;"></div>
 <div id="chart-thursday" style="min-height: 365px;"></div>
 <div id="chart-community" style="min-height: 365px;"></div>
+<div id="chart-activity" style="min-height: 365px;"></div>
 
 <script>
   var options = {
@@ -22,6 +23,13 @@
         }
       }
     },
+    grid: {
+      xaxis: {
+        lines: {
+          show: true
+        }
+      }
+    },
     yaxis: {
       min: 0,
       max: 10
@@ -35,13 +43,11 @@
       x: {
         show: false
       }
-    },
-    subtitle: {
-      text: 'On a scale from 1 (worst) to 10 (best), how would you rate...'
     }
   }
 
   options.title = {text: 'Monday Team Meetings'};
+  options.subtitle = {text: 'On a scale from 1 (worst) to 10 (best), how would you rate...'};
   options.series = [
     {
       data: [
@@ -72,6 +78,7 @@
   chart.render();
 
   options.title = {text: 'Thursday Overall Meeting'};
+  options.subtitle = {text: 'On a scale from 1 (worst) to 10 (best), how would you rate...'};
   options.series = [
     {
       data: [
@@ -98,6 +105,7 @@
   chart.render();
 
   options.title = {text: 'Sovereign Cloud Stack Community'};
+  options.subtitle = {text: 'On a scale from 1 (worst) to 10 (best), how would you rate...'};
   options.series = [
     {
       data: [
@@ -125,5 +133,96 @@
     }
   ];
   var chart = new ApexCharts(document.querySelector("#chart-community"), options);
+  chart.render();
+
+  var options = {
+    series: [
+    {
+      data: [
+        {
+          x: 'Issues',
+          y: 8
+        },
+        {
+          x: 'Documentation',
+          y: 8
+        },
+        {
+          x: 'Code',
+          y: 6
+        },
+        {
+          x: 'Administrative tasks',
+          y: 6
+        },
+        {
+          x: 'Upstream Code',
+          y: 5
+        },
+        {
+          x: 'Upstream Issues',
+          y: 4
+        },
+        {
+          x: 'PR Reviews',
+          y: 3
+        },
+        {
+          x: 'Public Reations',
+          y: 3
+        },
+        {
+          x: 'Leading',
+          y: 3
+        },
+        {
+          x: 'Upstream PR Reviews',
+          y: 2
+        },
+        {
+          x: 'Upstream Documentation',
+          y: 2
+        },
+        {
+          x: "Nothing",
+          y: 1
+        }
+      ]
+    }
+  ],
+    legend: {
+      show: false
+  },
+  chart: {
+    height: 350,
+    type: 'treemap'
+  },
+  title: {
+    text: 'What have you been able to contribute to the project during this year?',
+    align: 'left'
+  },
+  colors: [
+    '#3B93A5',
+    '#F7B844',
+    '#ADD8C7',
+    '#EC3C65',
+    '#CDD7B6',
+    '#C1F666',
+    '#D43F97',
+    '#1E5D8C',
+    '#421243',
+    '#7F94B0',
+    '#EF6537',
+    '#C0ADDB'
+  ],
+  plotOptions: {
+    treemap: {
+      distributed: true,
+      enableShades: false
+    }
+  }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart-activity"), options);
   chart.render();
 </script>
