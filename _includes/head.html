@@ -12,11 +12,15 @@
     {% assign title = site.title %}
   {% endif %}
 
-  {% seo title=false%}
+  {% seo title=false %}
 
   <title>{{ title }}</title>
   <meta property="og:title" content="{{title}}">
-
+  <meta property="og:image" content="{{page.image}}"/>
+  <meta property="og:description" content="{{page.description}}"/>
+  <meta property="og:url" content="{{ site.baseurl }}{% if page.url %}{{ page.url }}{% endif %}"/>
+  <meta property="og:locale" content="{% t site.lang %}"/>
+  
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl_root }}" />
   <!-- Favicon -->
@@ -28,4 +32,3 @@
   <meta name="msapplication-TileColor" content="#50c3a5">
   <meta name="theme-color" content="#ffffff">
 </head>
-
