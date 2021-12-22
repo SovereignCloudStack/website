@@ -19,7 +19,6 @@ exclude:
 
 twitter:
   username: scs_osballiance
-  card: summary
 
 social:
   name: Sovereign Cloud Stack
@@ -27,6 +26,12 @@ social:
     - https://twitter.com/scs_osballiance
     - https://www.linkedin.com/showcase/sovereigncloudstack
     - https://github.com/SovereignCloudStack
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/default-card.jpg
 
 plugins:
   - jekyll-multiple-languages-plugin

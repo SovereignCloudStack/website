@@ -1,5 +1,5 @@
 ---
-title: footer.imprint
+title_slug: footer.imprint
 layout: default
 permalink: /imprint/
 redirect_from:

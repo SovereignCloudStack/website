@@ -1,5 +1,5 @@
 ---
-title: nav.jobs
+title_slug: nav.jobs
 layout: jobs
 permalink: /jobs/
 redirect_from:
