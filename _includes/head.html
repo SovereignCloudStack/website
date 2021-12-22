@@ -5,9 +5,11 @@
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
 
-  {% capture translated_title %}{% t page.title %}{% endcapture %}
+  {% capture translated_title %}{% t page.title_slug %}{% endcapture %}
   {% if translated_title != "" %}
     {% assign title = translated_title | append: " | " | append: site.title %}
+  {% else if page.title != "" %}
+    {% assign title = page.title | append: " | " | append: site.title %}
   {% else %}
     {% assign title = site.title %}
   {% endif %}
@@ -16,11 +18,7 @@
 
   <title>{{ title }}</title>
   <meta property="og:title" content="{{title}}">
-  <meta property="og:image" content="{{page.image}}"/>
-  <meta property="og:description" content="{{page.description}}"/>
-  <meta property="og:url" content="{{ site.baseurl }}{% if page.url %}{{ page.url }}{% endif %}"/>
-  <meta property="og:locale" content="{% t site.lang %}"/>
-  
+
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl_root }}" />
   <!-- Favicon -->

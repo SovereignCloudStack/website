@@ -1,5 +1,5 @@
 ---
-title: tenders.title.lot4
+title_slug: tenders.title.lot4
 layout: default
 permalink: /tenders/lot4/
 redirect_from:

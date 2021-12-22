@@ -1,5 +1,5 @@
 ---
-title: nav.tenders
+title_slug: nav.tenders
 layout: default
 permalink: /tenders/
 redirect_from:

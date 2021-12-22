@@ -1,5 +1,5 @@
 ---
-title: footer.dataprotection
+title_slug: footer.dataprotection
 layout: default
 permalink: /dataprotection/
 redirect_from:

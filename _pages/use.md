@@ -1,5 +1,5 @@
 ---
-title: nav.use
+title_slug: nav.use
 layout: default
 permalink: /use/
 redirect_from:

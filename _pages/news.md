@@ -1,5 +1,5 @@
 ---
-title: nav.news
+title_slug: nav.news
 layout: news
 permalink: /news/
 redirect_from:

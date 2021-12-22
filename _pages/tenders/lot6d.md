@@ -1,5 +1,5 @@
 ---
-title: tenders.title.lot6d
+title_slug: tenders.title.lot6d
 layout: default
 permalink: /tenders/lot6d/
 ---

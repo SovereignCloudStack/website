@@ -1,5 +1,5 @@
 ---
-title: nav.about
+title_slug: nav.about
 layout: default
 permalink: /about/
 redirect_from:
