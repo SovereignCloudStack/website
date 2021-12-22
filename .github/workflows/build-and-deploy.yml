@@ -29,6 +29,8 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-new-gems-
     - uses: lemonarc/jekyll-action@1.0.0
+      env:
+        JEKYLL_ENV: development
     - uses: burnett01/rsync-deployments@5.1
       with:
         switches: -avzr --delete --exclude=/docs/
