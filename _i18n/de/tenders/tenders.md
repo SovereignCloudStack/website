@@ -3,9 +3,9 @@ Sovereign Cloud Stack (SCS) ist ein Netzwerk existierender und angehender Anbiet
 
 Die Open Source Business Alliance baut dazu ein weiter wachsendes Team auf, welches die Standardisierung, die Softwareintegration und den Aufbau des Netzwerks steuert und koordiniert. Um dieses Team ist bereits jetzt eine Community aus Mitarbeiterinnen und Mitarbeitern beteiligter und interessierter Firmen entstanden, welche insbesondere an den Zielen mitarbeiten, die für ihre eigenen Umgebungen wichtig sind.
 
-Wichtige Bausteine sollen über offene Ausschreibungen an Unternehmen vergeben werden, welche hier regelmäßig veröffentlich werden. 
-Gegenstand der Ausschreibungen sind in der Regel Rahmenvereinbarungen über Programmier- und sonstige Dienstleistungen. 
-Bitte beachten Sie, dass 
+Wichtige Bausteine sollen über offene Ausschreibungen an Unternehmen vergeben werden, welche hier regelmäßig veröffentlich werden.
+Gegenstand der Ausschreibungen sind in der Regel Rahmenvereinbarungen über Programmier- und sonstige Dienstleistungen.
+Bitte beachten Sie, dass
 Rückfragen zu den Ausschreibungen zwingend über das verlinkte Vergabeportal stattfinden müssen. Bitte sehen Sie davon ab, das Projektteam direkt anzusprechen.
 
 <div class="table-responsive" markdown="1">
@@ -20,13 +20,13 @@ Rückfragen zu den Ausschreibungen zwingend über das verlinkte Vergabeportal st
 | 6  | 6a | Container Netzwerk und Container Speicher Integration | Vergabepaket 6a | tba | tba | tba |
 | 7  | 6b | Container Meshing und Proxy | Vergabepaket 6b | tba | tba | tba |
 | 8  | 6c | Container Registry / Scanning | Vergabepaket 6c | tba | tba | tba |
-| 9  | 6d | Container Monitoring / IaC / CI / Installationsautomatisierung | [Vergabepaket 6d](lot6d/) | tba | tba | tba |
+| 9  | 6d | Container Monitoring / IaC / CI / Installationsautomatisierung | [Vergabepaket 6d](lot6d/) | 2021-12-22 | 2022-01-19 T12:00+01:00 | [&raquo; SCS-VP06d](https://www.dtvp.de/Satellite/notice/CXP4YV7RK55) |
 | 10 | 6e | Container Tracing & Audit | Vergabepaket 6e | tba | tba | tba |
 | 11 | 8  | Nutzermanagement und Föderierung | [Vergabepaket 8](lot8/) | tba | tba | tba |
 | 12 | 9a | Infra Scanning / Isolierung / Policymanagement | Vergabepaket 9a | tba | tba | tba |
 | 13 | 9b | Lieferkettenabsicherung | Vergabepaket 9b | tba | tba | tba |
 | 14 | 9c | Penetration Testing | Vergabepaket 9c | tba | tba | tba |
-| 15 | 10 | SCS Zertifizierung | [Vergabepaket 10](lot10/) | 2021-11-12 | 2021-12-07 T10:00+01:00 | [&raquo; SCS-VP10](https://www.dtvp.de/Satellite/notice/CXP4YV7RFHA) |
+| 15 | 10 | SCS Zertifizierung | [Vergabepaket 10](lot10/) | 2021-11-12 | 2021-12-07 | ~~SCS-VP10~~ |
 | 16 | 11 | Aufbau Serverhardware | Vergabepaket 11 | tba | tba | tba |
 
 </div>

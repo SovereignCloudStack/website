@@ -3,7 +3,7 @@ Sovereign Cloud Stack (SCS) is a network of existing and future providers of sta
 
 The Open Source Business Alliance is building a growing team that will manage and coordinate standardisation, software integration and the development of this network. A community of employees from participating and interested companies has already been formed around this team, who are working in particular on the goals that are important for their own environments.
 
-Important building blocks will be awarded to companies through open tenders, which will be continously published on this page. 
+Important building blocks will be awarded to companies through open tenders, which will be continously published on this page.
 The subject of the tenders are usually framework agreements on programming and other services.
 Please note that any questions regarding the public tenders must mandatorily be posted via the linked contracting portal.
 Please refrain from addressing the project team directly.
@@ -20,13 +20,13 @@ Please refrain from addressing the project team directly.
 | 6  | 6a | Container Network and Storage Integration | Lot 6a | tba | tba | tba |
 | 7  | 6b | Container Meshing and Proxy | Lot 6b | tba | tba | tba |
 | 8  | 6c | Container Registry / Scanning | Lot 6c | tba | tba | tba |
-| 9  | 6d | Container Monitoring / IaC / CI / Deployment Automation | [Lot 6d](lot6d) | tba | tba | tba |
+| 9  | 6d | Container Monitoring / IaC / CI / Deployment Automation | [Lot 6d](lot6d) | 2021-12-22 | 2022-01-19 T12:00+01:00 | [&raquo; SCS-VP06d](https://www.dtvp.de/Satellite/notice/CXP4YV7RK55) |
 | 10 | 6e | Container Tracing & Audit | Lot 6e | tba | tba | tba |
 | 11 | 8  | User Management & Federation | [Lot 8](lot8/) | tba | tba | tba |
 | 12 | 9a | Infra Scanning / Isolation / Policy Management | Lot 9a | tba | tba | tba |
 | 13 | 9b | Supply Chain Security | Lot 9b | tba | tba | tba |
 | 14 | 9c | Penetration Testing | Lot 9c | tba | tba | tba |
-| 15 | 10 | SCS certification | [Lot 10](lot10/) | 2021-11-12 | 2021-12-07 T10:00+01:00 | [&raquo; SCS-VP10](https://www.dtvp.de/Satellite/notice/CXP4YV7RFHA) |
+| 15 | 10 | SCS certification | [Lot 10](lot10/) | 2021-11-12 | 2021-12-07 | ~~SCS-VP10~~ |
 | 16 | 11 | Server Hardware Installation | Lot 11 | tba | tba | tba |
 
 </div>
