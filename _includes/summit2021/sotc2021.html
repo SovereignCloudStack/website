@@ -1,0 +1,228 @@
+<link rel="stylesheet" href="{{ "/assets/vendor/apexcharts/apexcharts.css" | prepend: site.baseurl_root }}" />
+<script src="{{ "/assets/vendor/apexcharts/apexcharts.js" | prepend: site.baseurl_root }}"></script>
+
+<div id="chart-monday" style="min-height: 365px;"></div>
+<div id="chart-thursday" style="min-height: 365px;"></div>
+<div id="chart-community" style="min-height: 365px;"></div>
+<div id="chart-activity" style="min-height: 365px;"></div>
+
+<script>
+  var options = {
+    chart: {
+      type: 'boxPlot',
+      height: 350
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true
+      },
+      boxPlot: {
+        colors: {
+          upper: '#0d6efd',
+          lower: '#50c3a5'
+        }
+      }
+    },
+    grid: {
+      xaxis: {
+        lines: {
+          show: true
+        }
+      }
+    },
+    yaxis: {
+      min: 0,
+      max: 10
+    },
+    xaxis: {
+      crosshairs: {
+        show: false
+      }
+    },
+    tooltip:{
+      x: {
+        show: false
+      }
+    }
+  }
+
+  options.title = {text: 'Monday Team Meetings'};
+  options.subtitle = {text: 'On a scale from 1 (worst) to 10 (best), how would you rate...'};
+  options.series = [
+    {
+      data: [
+        {
+          x: ['...the overall', 'effectiveness?'],
+          y: [4, 4.5, 7, 7.5, 8]
+        },
+        {
+          x: ['... your', 'comfortableness?'],
+          y: [4, 7, 8, 9.5, 10]
+        },
+        {
+          x: ['... the contribution', 'opportunities?'],
+          y: [7, 7.5, 9, 10, 10]
+        },
+        {
+          x: ['... the benefit for', 'you and your work?'],
+          y: [3, 4, 7, 8, 8]
+        },
+        {
+          x: ['... the overall', 'team vision?'],
+          y: [6, 7, 7.5, 9.75, 10]
+        }
+      ]
+    }
+  ];
+  var chart = new ApexCharts(document.querySelector("#chart-monday"), options);
+  chart.render();
+
+  options.title = {text: 'Thursday Overall Meeting'};
+  options.subtitle = {text: 'On a scale from 1 (worst) to 10 (best), how would you rate...'};
+  options.series = [
+    {
+      data: [
+        {
+          x: ['...the overall', 'effectiveness?'],
+          y: [5, 6, 7, 7.25, 8]
+        },
+        {
+          x: ['... your', 'comfortableness?'],
+          y: [7, 7.75, 9, 10, 10]
+        },
+        {
+          x: ['... the contribution', 'opportunities?'],
+          y: [8, 9, 9, 10, 10]
+        },
+        {
+          x: ['... the benefit for', 'you and your work?'],
+          y: [3, 4.75, 7, 8, 8]
+        }
+      ]
+    }
+  ];
+  var chart = new ApexCharts(document.querySelector("#chart-thursday"), options);
+  chart.render();
+
+  options.title = {text: 'Sovereign Cloud Stack Community'};
+  options.subtitle = {text: 'On a scale from 1 (worst) to 10 (best), how would you rate...'};
+  options.series = [
+    {
+      data: [
+        {
+          x: ['... the healthiness', 'of the community?'],
+          y: [4, 6, 6, 8.5, 10]
+        },
+        {
+          x: ['... the general mood', 'in the community?'],
+          y: [4, 6, 7, 8, 8]
+        },
+        {
+          x: ['... the collaboration', 'infrastructure and tools?'],
+          y: [6, 7, 7, 8, 10]
+        },
+        {
+          x: ['... the progress', 'of the project?'],
+          y: [3, 4, 6, 7, 7]
+        },
+        {
+          x: ['... the overall visibility', 'of the project?'],
+          y: [3, 4, 6, 7.75, 8]
+        }
+      ]
+    }
+  ];
+  var chart = new ApexCharts(document.querySelector("#chart-community"), options);
+  chart.render();
+
+  var options = {
+    series: [
+    {
+      data: [
+        {
+          x: 'Issues',
+          y: 8
+        },
+        {
+          x: 'Documentation',
+          y: 8
+        },
+        {
+          x: 'Code',
+          y: 6
+        },
+        {
+          x: 'Administrative tasks',
+          y: 6
+        },
+        {
+          x: 'Upstream Code',
+          y: 5
+        },
+        {
+          x: 'Upstream Issues',
+          y: 4
+        },
+        {
+          x: 'PR Reviews',
+          y: 3
+        },
+        {
+          x: 'Public Reations',
+          y: 3
+        },
+        {
+          x: 'Leading',
+          y: 3
+        },
+        {
+          x: 'Upstream PR Reviews',
+          y: 2
+        },
+        {
+          x: 'Upstream Documentation',
+          y: 2
+        },
+        {
+          x: "Nothing",
+          y: 1
+        }
+      ]
+    }
+  ],
+    legend: {
+      show: false
+  },
+  chart: {
+    height: 350,
+    type: 'treemap'
+  },
+  title: {
+    text: 'What have you been able to contribute to the project during this year?',
+    align: 'left'
+  },
+  colors: [
+    '#3B93A5',
+    '#F7B844',
+    '#ADD8C7',
+    '#EC3C65',
+    '#CDD7B6',
+    '#C1F666',
+    '#D43F97',
+    '#1E5D8C',
+    '#421243',
+    '#7F94B0',
+    '#EF6537',
+    '#C0ADDB'
+  ],
+  plotOptions: {
+    treemap: {
+      distributed: true,
+      enableShades: false
+    }
+  }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart-activity"), options);
+  chart.render();
+</script>
