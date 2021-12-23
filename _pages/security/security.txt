@@ -1,7 +1,5 @@
 ---
 permalink: /.well-known/security.txt
-redirect_from:
-   - /security.txt
 ---
 Contact: mailto:security@scs.community
 Expires: 2024-12-23T11:00:00.000Z
