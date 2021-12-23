@@ -1,15 +1,18 @@
 - title: Twitter
-  icon: fa-twitter
+  icon: fa-twitter fa-lg
   link: https://twitter.com/scs_osballiance
 - title: LinkedIn
-  icon: fa-linkedin-square
+  icon: fa-linkedin-square fa-lg
   link: https://www.linkedin.com/showcase/sovereigncloudstack
 - title: GitHub
-  icon: fa-github
+  icon: fa-github fa-lg
   link: https://github.com/SovereignCloudStack
 - title: Matrix
-  icon: fa-matrix-org
+  icon: fa-matrix-org fa-lg
   link: https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org
 - title: Mailing list
-  icon: fa-envelope-square
+  icon: fa-bullhorn
   link: https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/
+- title: Feed
+  icon: fa-rss
+  link: /feed.xml

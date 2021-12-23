@@ -36,8 +36,14 @@ defaults:
     values:
       image: /assets/images/default-card.jpg
 
+feed:
+  categories:
+    - security
+    - release
+
 plugins:
   - jekyll-multiple-languages-plugin
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-last-modified-at
+  - jekyll-feed
