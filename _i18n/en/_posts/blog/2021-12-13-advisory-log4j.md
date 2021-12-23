@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Sovereign Cloud Stack Security Advisory log4j"
+category: security
 author: "Kurt Garloff"
 avatar: "/assets/images/kgarloff.jpg"
 ---
@@ -75,7 +76,7 @@ log4j is available, we recommend applying the following change:
       ```
 
 2. Roll out the changes:
-    * If you are *not* using Celery: 
+    * If you are *not* using Celery:
      ```
      osism-manager configuration
      ```
@@ -96,7 +97,7 @@ log4j is available, we recommend applying the following change:
 
 This causes log4j to no longer interpret the input in ways that lookups
 can be triggered and thus reliably avoids the vulnerability. Please note that
-this setting `log4j2.formatMsgNoLookups` is only available in 
+this setting `log4j2.formatMsgNoLookups` is only available in
 log4j2 >= 2.10.0, which is fortunately the case in the Elasticsearch container.
 
 When a new Elasticsearch container built with the fixed log4j (2.16 or better 2.17+)
@@ -105,7 +106,7 @@ new container.
 
 ## Update 2021-12-21: Fix still valid
 
-Meanwhile, two more security issues around log4j have been reported: 
+Meanwhile, two more security issues around log4j have been reported:
 [CVE-2021-45046](https://www.whitesourcesoftware.com/resources/blog/log4j-vulnerability-cve-2021-45046/)
 and [CVE-2021-45105](https://www.whitesourcesoftware.com/resources/blog/log4j-vulnerability-cve-2021-45105/).
 The former is a context lookup vulnerability (as a variation to the JNDI
@@ -126,7 +127,7 @@ in the parameter list.
 
 ## Sovereign Cloud Stack Security Contact
 
-Please contact the SCS project management team at 
+Please contact the SCS project management team at
 [project at scs dot sovereignit dot de ](mailto:project@scs.sovereignit.de)
 to ask security questions or report security issues.
 
@@ -145,4 +146,3 @@ to ask security questions or report security issues.
     - Mention fixed version be better 2.16+.
 
 * Initial release on 2021-12-13, 18:30 CET.
-

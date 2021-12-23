@@ -13,3 +13,6 @@
 - title: Mailing list
   icon: fa-bullhorn
   link: https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/
+- title: Feed
+  icon: fa-rss
+  link: /feed.xml
