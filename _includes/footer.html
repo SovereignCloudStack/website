@@ -19,9 +19,12 @@
         <ul class="list-inline text-lg-end mt-1 mb-1">
           {% for item in site.data.social %}
           <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
             <a target="_blank" href="{{ item.link }}">
-              <i class="text-light fa {{item.icon}} fa-lg"></i>
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa {{item.icon}} fa-stack-1x"></i>
             </a>
+            </span>
           </li>
           {% endfor %}
         </ul>
