@@ -75,6 +75,9 @@ jobs:
   ma-dok:
     title: "Staff / Project Management and Documentation (d/f/m)"
     short_description: "Be part of a small central remote team at the Open Source Business Alliance and support the project lead in orchestrating the development work and the documenting the tender processes."
+  monitoring-engineer:
+    title: "Cloud Monitoring & Test Engineer (d/w/m)"
+    short_description: "This job advertisement will be published within the next days. The position will become available in March 2022."
 employees:
   addcontact: "Add contact"
 map:

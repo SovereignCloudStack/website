@@ -75,6 +75,9 @@ jobs:
   ma-dok:
     title: "Mitarbeiter:in (d/w/m) Dokumentation/Projektmanagement"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und unterstütze uns dabei die zentrale Entwicklungsarbeit zu orchestrieren sowie die Dokumentation der Vergabeverfahren aufzubauen."
+  monitoring-engineer:
+    title: "Cloud Monitoring & Test Engineer (d/w/m)"
+    short_description: "Diese Stellenanzeige werden wir in den kommenden Tagen veröffentlichen. Die Stelle wird ab März 2022 frei."
 employees:
   addcontact: "Kontakt hinzufügen"
 map:

@@ -22,3 +22,8 @@
   location: "Berlin / Remote"
   url: "/jobs/ma-dok/"
   is_open: false
+- title: jobs.monitoring-engineer.title
+  short_description: jobs.monitoring-engineer.short_description
+  image: "monitoring-engineer.jpg"
+  location: "Remote / Berlin"
+  is_open: true
