@@ -25,35 +25,35 @@
   link: "https://www.bmwi.de"
   location:
     latitude: 52.530880
-    longitude: 13.373400    
+    longitude: 13.373400
 - name: "City Network"
   image: "logo-citynetwork.png"
   avatar: "avatar-citynetwork.png"
   link: "https://citynetwork.eu/"
   location:
     latitude: 56.162100
-    longitude: 15.583340      
+    longitude: 15.583340
 - name: "Cloud & Heat"
   image: "logo-candh.png"
   avatar: "avatar-candh.jpg"
   link: "https://www.cloudandheat.com/"
   location:
     latitude: 51.08017
-    longitude: 13.76214   
+    longitude: 13.76214
 - name: "Dataport"
   image: "logo-dataport.png"
   avatar: "avatar-dataport.png"
   link: "https://www.dataport.de/"
   location:
     latitude: 54.40305
-    longitude: 10.12974 
+    longitude: 10.12974
 - name: "Dilossacon"
   image: "logo-dilossacon.png"
   avatar: "avatar-dilossacon.png"
   link: "https://dilossacon.de/"
   location:
     latitude: 54.78202
-    longitude: 9.74633 
+    longitude: 9.74633
 - name: "GONICUS"
   image: "logo-gonicus.png"
   avatar: "avatar-gonicus.jpg"
@@ -74,14 +74,14 @@
   link: "https://openinfra.dev/"
   location:
     latitude: 30.26942
-    longitude: -97.73969 
+    longitude: -97.73969
 - name: "Open Source Business Alliance e.V."
   image: "logo-osba.svg"
   avatar: "avatar-osba.jpg"
   link: "https://osb-alliance.com"
   location:
-    latitude: 48.77961
-    longitude: 9.16812 
+    latitude: 52.51689628427343
+    longitude: 13.377832143343065
 - name: "Open-Xchange AG"
   image: "logo-open-xchange.png"
   avatar: "avatar-open-xchange.jpg"
@@ -95,7 +95,7 @@
   link: "https://www.ovhcloud.com/"
   location:
     latitude: 48.88945
-    longitude: 2.31341 
+    longitude: 2.31341
 - name: "PlusServer GmbH"
   image: "logo-plusserver.png"
   avatar: "avatar-plusserver.jpg"
@@ -144,4 +144,4 @@
   link: "https://www.leitwerk.de/"
   location:
     latitude: 48.55080
-    longitude: 7.97115 
+    longitude: 7.97115
