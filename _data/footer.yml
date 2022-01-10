@@ -4,10 +4,9 @@ legal:
   - title: footer.dataprotection
     link: /dataprotection/
 contact:
-  - title: "+49-711-90715-390"
+  - title: "+49-30-300149-3377"
     icon: "fa-phone"
-    link: "tel:+49-711-90715-390"
+    link: "tel:+49-30-300149-3377"
   - title: "project[at]scs.sovereignit.de"
     icon: "fa-envelope"
     link: "mailto:project@scs.sovereignit.de"
-  
