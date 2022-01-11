@@ -84,7 +84,7 @@ In this role, you will
 * are connected to the relevant open source communities
 * are used to work in the open, exposing your work in progress to a broad 
 	 community, accepting criticism and willing to work on defining and refining 
-	 the chosen approach in interaction with the community, building (lazy) consensus</li>
+	 the chosen approach in interaction with the community, building (lazy) consensus
 * are familiar with open source development tools and platforms such as Git,
 	 GitHub and the related workflows
 * are experienced in using deployment automation and configuration management tooling
