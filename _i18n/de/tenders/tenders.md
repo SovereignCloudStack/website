@@ -27,6 +27,7 @@ Rückfragen zu den Ausschreibungen zwingend über das verlinkte Vergabeportal st
 | 13 | 9b | Lieferkettenabsicherung | Vergabepaket 9b | tba | tba | tba |
 | 14 | 9c | Penetration Testing | Vergabepaket 9c | tba | tba | tba |
 | 15 | 10 | SCS Zertifizierung | [Vergabepaket 10](lot10/) | 2021-11-12 | 2021-12-07 | ~~SCS-VP10~~ |
+| — | — | SCS Zertifizierung | [Vergabepaket 10](lot10/) | 2022-01-12 | 2022-01-27 T10:00+01:00| [&raquo; SCS-VP10-2](https://www.dtvp.de/Satellite/notice/CXP4YV7RSDR) |
 | 16 | 11 | Aufbau Serverhardware | Vergabepaket 11 | tba | tba | tba |
 
 </div>
