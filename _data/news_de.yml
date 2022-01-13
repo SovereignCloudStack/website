@@ -1,3 +1,18 @@
+- date: "2022-01-11"
+  publisher: "CloudComputing-Insider"
+  title: "Was ist Sovereign Cloud Stack (SCS)?"
+  link: "https://www.cloudcomputing-insider.de/was-ist-sovereign-cloud-stack-scs-a-1084346/"
+
+- date: "2021-10-01"
+  publisher: "gnulinux.ch"
+  title: "GLN015 - KDE Plasma, das Fediverse und GAIA-X"
+  link: "https://gnulinux.ch/gln015-podcast"
+
+- date: "2021-09-06"
+  publisher: "golem.de"
+  title: "Der Sovereign Cloud Stack als offenes Herz von Gaia-X"
+  link: "https://www.golem.de/news/gaia-x-hat-die-gross-angekuendigte-cloud-initiative-eine-zukunft-2109-159284-4.html"
+
 - date: "2021-07-26"
   publisher: "Süddeutsche Zeitung"
   title: "Wie Europa die Abhängigkeit von US-Techkonzernen verringern will"
@@ -97,13 +112,4 @@
   publisher: "heise online"
   title: "Bundeswirtschaftsminister: Gaia-X als weltweiter Goldstandard für Cloud-Dienste"
   link: "https://www.heise.de/news/Bundeswirtschaftsminister-Gaia-X-als-weltweiter-Goldstandard-fuer-Cloud-Dienste-4774826.html?seite=2"
-  
-- date: "2021-09-06"
-  publisher: "golem.de"
-  title: "Der Sovereign Cloud Stack als offenes Herz von Gaia-X"
-  link: "https://www.golem.de/news/gaia-x-hat-die-gross-angekuendigte-cloud-initiative-eine-zukunft-2109-159284-4.html"
 
-- date: "2021-10-01"
-  publisher: "gnulinux.ch"
-  title: "GLN015 - KDE Plasma, das Fediverse und GAIA-X"
-  link: "https://gnulinux.ch/gln015-podcast"
