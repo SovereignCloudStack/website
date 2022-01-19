@@ -20,7 +20,7 @@ Please refrain from addressing the project team directly.
 | 6  | 6a | Container Network and Storage Integration | Lot 6a | tba | tba | tba |
 | 7  | 6b | Container Meshing and Proxy | Lot 6b | tba | tba | tba |
 | 8  | 6c | Container Registry / Scanning | Lot 6c | tba | tba | tba |
-| 9  | 6d | Container Monitoring / IaC / CI / Deployment Automation | [Lot 6d](lot6d) | 2021-12-22 | 2022-01-19 T12:00+01:00 | [&raquo; SCS-VP06d](https://www.dtvp.de/Satellite/notice/CXP4YV7RK55) |
+| 9  | 6d | Container Monitoring / IaC / CI / Deployment Automation | [Lot 6d](lot6d) | 2021-12-22 | 2022-01-19 | ~~SCS-VP06d~~ |
 | 10 | 6e | Container Tracing & Audit | Lot 6e | tba | tba | tba |
 | 11 | 8  | User Management & Federation | [Lot 8](lot8/) | tba | tba | tba |
 | 12 | 9a | Infra Scanning / Isolation / Policy Management | Lot 9a | tba | tba | tba |
