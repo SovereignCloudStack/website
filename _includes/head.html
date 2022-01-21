@@ -4,11 +4,13 @@
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
-
-  {% capture translated_title %}{% t page.title_slug %}{% endcapture %}
-  {% if translated_title != "" %}
-    {% assign title = translated_title | append: " | " | append: site.title %}
-  {% elsif page.title %}
+  
+  {% if page.title_slug %}
+    {% capture translated_title %}{% t page.title_slug %}{% endcapture %}
+    {% if translated_title != "" %}
+      {% assign title = translated_title | append: " | " | append: site.title %}
+    {% endif %}
+  {% elsif page.title and page.url != "/" %}
     {% assign title = page.title | append: " | " | append: site.title %}
   {% else %}
     {% assign title = site.title %}
