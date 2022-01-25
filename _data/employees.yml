@@ -10,7 +10,7 @@
   github: https://github.com/itrich
   matrix: https://matrix.to/#/@itrich:matrix.org
   mail: itrich@osb-alliance.com
-  phone: +49-157-37596375
+  phone: +49-30-206539-204
   street: Pariser Platz 6a
   city: Berlin
   state: Berlin
@@ -31,6 +31,7 @@
   linkedin: https://www.linkedin.com/in/manuela-b-urban/
   matrix: https://matrix.to/#/@manuela.urban:matrix.org
   mail: urban@osb-alliance.com
+  phone: +49-30-206539-202
   street: Pariser Platz 6a
   city: Berlin
   state: Berlin
@@ -51,7 +52,7 @@
   github: https://github.com/garloff
   matrix: https://matrix.to/#/@garloff:matrix.org
   mail: garloff@osb-alliance.com
-  phone: +49-221-29277292
+  phone: +49-30-206539-201
   street: Pariser Platz 6a
   city: Berlin
   state: Berlin
@@ -59,8 +60,8 @@
   country: Germany
   timezone: Europe/Berlin
   location:
-    latitude: 50.929017997918656
-    longitude: 6.927687301827232
+    latitude: 50.920
+    longitude: 6.929
 - lastname: Loßack
   firstname: Dirk
   safe_url: lossack
@@ -70,7 +71,7 @@
   avatar: assets/images/employees/Lossack.jpg
   linkedin: https://www.linkedin.com/in/dirk-lo%C3%9Fack-45b359143/
   mail: lossack@osb-alliance.com
-  phone: +49-1525-4281206
+  phone: +49-30-206539-203
   street: Pariser Platz 6a
   city: Berlin
   state: Berlin
