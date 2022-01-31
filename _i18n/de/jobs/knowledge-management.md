@@ -112,7 +112,7 @@ versuchen flexibel auf abweichende Bedürfnisse einzugehen.
 * eine angemessene Vergütung.
 
 Setzen Sie sich mit Kurt Garloff, Dirk Loßack oder Manuela Urban via 
-[project[at]scs.sovereignit.de](mailto:project@scs.sovereignit.de) in 
+[project[at]scs.sovereignit.de](mailto:jobs-scs@osb-alliance.com) in 
 Verbindung, wenn Sie interessiert sind und weitere Details erfahren möchten. 
 Wir freuen uns auf Ihre Bewerbung mit Anschreiben, Lebenslauf und weiteren 
 relevanten Unterlagen!
