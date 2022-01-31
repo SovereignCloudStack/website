@@ -65,6 +65,9 @@ tenders:
     lot10: "Lot 10"
 jobs:
   apply: "Apply now"
+  community-manager:
+    title: "Community Manager (d/f/m)"
+    short_description: "Be part of a small central remote team at the Open Source Business Alliance and empower an active community of cloud operators, developers and users."
   po-container:
     title: "Product Owner Container Technologies (d/f/m)"
     short_description: "Be part of a small central remote team at the Open Source Business Alliance and orchestrate the efforts to define, implement and validate (CI/CD) a stack of open source container technology."

@@ -16,6 +16,12 @@
   location: "Remote / Berlin"
   url: "/jobs/knowledge-management/"
   is_open: true
+- title: jobs.community-manager.title
+  image: ""
+  short_description: jobs.community-manager.short_description
+  location: "Remote / Berlin"
+  url: "/jobs/community-manager/"
+  is_open: false
 - title: jobs.ma-dok.title
   image: "ma-dok.jpg"
   short_description: jobs.ma-dok.short_description

@@ -65,6 +65,9 @@ tenders:
     lot10: "Vergabepaket 10"
 jobs:
   apply: "Jetzt bewerben"
+  community-manager:
+    title: "Community Manager (d/w/m)"
+    short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und gestalte eine aktive Community aus Cloud-Provider, Entwickler:innen und Kunden."
   po-container:
     title: "SCS Product Owner Container Technologies (d/w/m)"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und koordiniere die Implementierung und Validierung (CI/CD) von Open Source Container Technologien."
