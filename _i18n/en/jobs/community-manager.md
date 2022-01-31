@@ -73,7 +73,7 @@ We offer
 * an adequate compensation package
 
 Get in touch with Kurt Garloff, Dirk Loßack or Manuela Urban via
-[project[at]scs.sovereignit.de](mailto:jobs-scs@osb-alliance.com)
+[jobs-scs[at]osb-alliance.com](mailto:jobs-scs@osb-alliance.com)
 if you are interested and would like to know further details. We are
 looking forward to receive applications with application letter, CV and
 other relevant material from you!
