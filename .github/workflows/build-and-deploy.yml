@@ -45,7 +45,7 @@ jobs:
     - uses: burnett01/rsync-deployments@5.1
       with:
         switches: -avzr --delete --exclude=/docs/
-        path: _site/
+        path: build/
         remote_host: ${{ secrets[matrix.host] }}
         remote_port: ${{ secrets[matrix.port] }}
         remote_path: ${{ secrets[matrix.path] }}
