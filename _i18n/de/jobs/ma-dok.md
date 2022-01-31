@@ -98,6 +98,6 @@ Erfahrung an TVöD Bund (bis Entgeltgruppe 9).
 
 Wenn Sie Interesse haben oder weitere Informationen wünschen, wenden Sie sich bitte an
 Sie sich bitte an Dirk Loßack, Kurt Garloff oder Manuela Urban via
-[project[at]scs.sovereignit.de](mailto:jobs-scs@osb-alliance.com). 
+[jobs[minus]scs[at]osb[minus]alliance[dot]com](mailto:jobs-scs@osb-alliance.com). 
 Wir freuen uns über eine aussagekräftige Bewerbung mit entsprechenden Unterlagen! 
 
