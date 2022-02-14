@@ -24,17 +24,11 @@ unseres Online-Angebots im Sinne des Art. 6 Abs. 1 lit. f. DSGVO den Dienst
 „Matomo“, welcher von der InnoCraft Ltd. (150 Willis St, 6011 Wellington,
 New Zealand, NZBN 6106769) angeboten wird. Das ist ein Open-Source-Tool zur Web-Analyse.
 Wir haben Matomo so konfiguriert, dass keine Cookies genutzt werden. Ihre IP-Adresse
-wird umgehend anonymisiert; damit bleiben Sie als Nutzer anonym. Sie können die
-Verwendung von Matomo jederzeit durch eine entsprechende Einstellung Ihrer Browser-Software
-(sog. "Do not Track") verhindern.
-
-Wenn Sie mit der Speicherung und Auswertung dieser Daten aus Ihrem Besuch nicht
-einverstanden sind, dann können Sie alternativ der Speicherung und Nutzung
-nachfolgend per Mausklick widersprechen. In Ihrem Browser wird dann ein sog.
-Deaktivierungs-Cookie gespeichert. Das führt dazu, dass Matomo keinerlei
-Sitzungsdaten erhebt (Hinweis: Wenn Sie Ihre Cookies löschen, führt das dazu,
-dass auch das Deaktivierungs-Cookie gelöscht wird und beim nächsten Besuch von
-Ihnen gegebenenfalls erneut aktiviert werden muss).
+wird umgehend anonymisiert; damit bleiben Sie als Nutzer anonym. Wenn Sie mit der
+Speicherung und Auswertung dieser Daten aus Ihrem Besuch nicht einverstanden sind,
+dann können Sie alternativ der Speicherung und Nutzung nachfolgend per Mausklick
+widersprechen. Alternativ können Sie in Ihrem Browser die allgemeine Einstellung
+"Do Not Track" aktivieren, die von unserer Matomo-Installation respektiert wird.
 
 Werden Einzelseiten unserer Webseite aufgerufen, so werden folgende Daten gespeichert:
 
@@ -55,10 +49,13 @@ https://matomo.org/matomo-cloud-privacy-policy/
 
 ### Opt-Out
 
-<iframe
-        style="border: 0; width: 100%;"
-        src="https://sovereigncloudstack.matomo.cloud/index.php?module=CoreAdminHome&action=optOut&language=de&backgroundColor=&fontColor=343a40&fontSize=1rem&fontFamily=Sans"
-        ></iframe>
+<p class="matomo-optout" lang="de">
+    <span class="js" style="display:none;">
+        <input type="checkbox" name="matomo-optout" id="matomo-optout-de" checked>
+        <label for="matomo-optout-en"></label>
+    </span>
+    <span class="nojs">Anscheinend haben Sie JavaScript in Ihrem Browser deaktiviert. Diese Funktion ist nur verfügbar, wenn JavaScript aktiviert ist. Wenn Sie nicht möchten, dass Ihre Daten erfasst werden, können Sie in Ihrem Browser alternativ die allgemeine Einstellung "Do Not Track" aktivieren, die von unserer Matomo-Installation respektiert wird.</span>
+</p>
 
 ## Verantwortlicher für den Datenschutz
 
