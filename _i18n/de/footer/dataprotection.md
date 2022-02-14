@@ -24,19 +24,17 @@ unseres Online-Angebots im Sinne des Art. 6 Abs. 1 lit. f. DSGVO den Dienst
 „Matomo“, welcher von der InnoCraft Ltd. (150 Willis St, 6011 Wellington,
 New Zealand, NZBN 6106769) angeboten wird. Das ist ein Open-Source-Tool zur Web-Analyse.
 Wir haben Matomo so konfiguriert, dass keine Cookies genutzt werden. Ihre IP-Adresse
-wird umgehend anonymisiert; damit bleiben Sie als Nutzer anonym.
-
-Sie können die Verwendung von Matomo jederzeit durch eine entsprechende Einstellung
-Ihrer Browser-Software (sog. "Do not Track") verhindern. Wir haben Matomo so 
-konfiguriert, dass wir Ihre Entscheidung respektieren.
+wird umgehend anonymisiert; damit bleiben Sie als Nutzer anonym. Sie können die
+Verwendung von Matomo jederzeit durch eine entsprechende Einstellung Ihrer Browser-Software
+(sog. "Do not Track") verhindern.
 
 Wenn Sie mit der Speicherung und Auswertung dieser Daten aus Ihrem Besuch nicht
-einverstanden sind, dann können Sie der Speicherung und Nutzung nachfolgend per
-Mausklick widersprechen. In Ihrem Browser wird dann ein sog. Deaktivierungs-Cookie
-gespeichert. Das führt dazu, dass Matomo keinerlei Sitzungsdaten erhebt
-(Hinweis: Wenn Sie Ihre Cookies löschen, führt das dazu, dass auch das
-Deaktivierungs-Cookie gelöscht wird und beim nächsten Besuch von Ihnen
-gegebenenfalls erneut aktiviert werden muss).
+einverstanden sind, dann können Sie alternativ der Speicherung und Nutzung
+nachfolgend per Mausklick widersprechen. In Ihrem Browser wird dann ein sog.
+Deaktivierungs-Cookie gespeichert. Das führt dazu, dass Matomo keinerlei
+Sitzungsdaten erhebt (Hinweis: Wenn Sie Ihre Cookies löschen, führt das dazu,
+dass auch das Deaktivierungs-Cookie gelöscht wird und beim nächsten Besuch von
+Ihnen gegebenenfalls erneut aktiviert werden muss).
 
 Werden Einzelseiten unserer Webseite aufgerufen, so werden folgende Daten gespeichert:
 
