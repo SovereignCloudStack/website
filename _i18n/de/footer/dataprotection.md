@@ -3,23 +3,64 @@
 Diese Webseiten dienen der Information über das Sovereign Cloud Stack
 Projekt der [Open Source Business Alliance e.V.](https://osb-alliance.de/).
 
-Wir erheben keine Daten über die Benutzung dieser Webpräsenz und speichern
-keine Daten. Wir nutzen keine Cookies.
-
-Wenn wir via EMail kontaktiert werden, so werden dies Mails gespeichert und
+Wenn wir via E-Mail kontaktiert werden, so werden dies Mails gespeichert und
 wir antworten auf die Anfragen. Wir geben keine Daten weiter, es sei denn
 dies wird vom Konversationspartner ausdrücklich gewünscht.
 
 Der Webserver speichert Logdateien. Diese dienen dazu, Probleme zu analysieren.
 Die Logdateien enthalten Informationen, wann welche Seiten von welcher IP
 Adresse abgerufen wurden. Die Logdateien werden für eine Woche gespeichert
-und dann gelöscht. Mit ihnen wird keine Webanalytik betrieben.
+und dann gelöscht.
 
 Die Logdateien werden nicht weitergegeben. In der ersten Woche können wir
 sie aber analysieren, falls wir technische Probleme lösen müssen. In
 Ausnahmefällen können wir entsprechend ausgedünnte Kopien der Daten länger
 aufbewahren, sollten sich die Probleme einer Lösung länger widersetzen.
 Diese Kopien werden gelöscht, sobald die Probleme gelöst sind.
+
+## Matomo Analytics
+Wir nutzen aufgrund unserer berechtigten Interessen zur Optimierung und Analyse
+unseres Online-Angebots im Sinne des Art. 6 Abs. 1 lit. f. DSGVO den Dienst
+„Matomo“, welcher von der InnoCraft Ltd. (150 Willis St, 6011 Wellington,
+New Zealand, NZBN 6106769) angeboten wird. Das ist ein Open-Source-Tool zur Web-Analyse.
+Wir haben Matomo so konfiguriert, dass keine Cookies genutzt werden. Ihre IP-Adresse
+wird umgehend anonymisiert; damit bleiben Sie als Nutzer anonym.
+
+Sie können die Verwendung von Matomo jederzeit durch eine entsprechende Einstellung
+Ihrer Browser-Software (sog. "Do not Track") verhindern. Wir haben Matomo so 
+konfiguriert, dass wir Ihre Entscheidung respektieren.
+
+Wenn Sie mit der Speicherung und Auswertung dieser Daten aus Ihrem Besuch nicht
+einverstanden sind, dann können Sie der Speicherung und Nutzung nachfolgend per
+Mausklick widersprechen. In Ihrem Browser wird dann ein sog. Deaktivierungs-Cookie
+gespeichert. Das führt dazu, dass Matomo keinerlei Sitzungsdaten erhebt
+(Hinweis: Wenn Sie Ihre Cookies löschen, führt das dazu, dass auch das
+Deaktivierungs-Cookie gelöscht wird und beim nächsten Besuch von Ihnen
+gegebenenfalls erneut aktiviert werden muss).
+
+Werden Einzelseiten unserer Webseite aufgerufen, so werden folgende Daten gespeichert:
+
+(1) 2 Bytes der IP-Adresse des aufrufenden Systems des Nutzers  
+(2) Die aufgerufene Webseite  
+(3) Die Webseite, von der der Nutzer auf die aufgerufene Webseite gelangt ist (Referrer)  
+(4) Die Unterseiten, die von der aufgerufenen Webseite aus aufgerufen werden  
+(5) Die Verweildauer auf der Webseite  
+(6) Die Häufigkeit des Aufrufs der Webseite  
+
+Im Rahmen der Vereinbarung zur Auftragsdatenvereinbarung, welche wir als
+Websitebetreiber mit Matomo geschlossen haben, erstellt diese mithilfe der
+gesammelten Informationen eine Auswertung der Websitenutzung und der Websiteaktivität
+und erbringt mit der Internetnutzung verbundene Dienstleistungen.
+
+Hier finden Sie weitere Informationen zur Datennutzung durch die Matomo Cloud:
+https://matomo.org/matomo-cloud-privacy-policy/
+
+### Opt-Out
+
+<iframe
+        style="border: 0; width: 100%;"
+        src="https://sovereigncloudstack.matomo.cloud/index.php?module=CoreAdminHome&action=optOut&language=de&backgroundColor=&fontColor=343a40&fontSize=1rem&fontFamily=Sans"
+        ></iframe>
 
 ## Verantwortlicher für den Datenschutz
 
