@@ -32,10 +32,8 @@ it is a container based setup. From Victoria to Wallaby it has to switched form 
 In the [Changelog](https://www.rabbitmq.com/changelog.html) of rabbitmq we found some traces.
 
 In the very early 3.9 (3.9.9) Rabbitmq releases was some issues:
-
 We suspect this [issue](https://github.com/rabbitmq/osiris/issues/53) being the culprit, 
 which shows some issues with split brain situations in Container based setups.
 And finaly we assume it is fixed in rabbitmq 3.9.13
 
-
-We have filed an issue against the osism testbed in order to see, when the [Bug]((https://github.com/osism/testbed/issues/978)) is fixed.
+We have filed an issue against the osism testbed in order to see, when the [Bug](https://github.com/osism/testbed/issues/978) is fixed.
