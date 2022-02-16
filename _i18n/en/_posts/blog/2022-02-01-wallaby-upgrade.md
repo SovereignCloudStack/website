@@ -3,7 +3,7 @@
 layout: post
 title:  "Sovereign Cloud Stack Community Plusserver Environment"
 avatar: "/assets/images/avatar-plusopen.png"
-image: "image: "/assets/images/blog/wallaby.jpg"
+image: "/assets/images/blog/wallaby.jpg"
 author: "Mathias Fechner"
 ---
 
