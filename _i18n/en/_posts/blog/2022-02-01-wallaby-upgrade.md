@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "Sovereign Cloud Stack Community Plusserver Environment"
@@ -40,5 +39,3 @@ And finaly we assume it is fixed in rabbitmq 3.9.13
 
 
 We have filed an issue against the osism testbed in order to see, when the [Bug]((https://github.com/osism/testbed/issues/978)) is fixed.
-
-###
