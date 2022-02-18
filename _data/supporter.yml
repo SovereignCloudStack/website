@@ -19,10 +19,10 @@
   location:
     latitude: 48.790080
     longitude: 9.209990
-- name: "Bundesministerium für Wirtschaft und Energie"
-  image: "logo-bmwi.svg"
-  avatar: "avatar-bmwi.jpg"
-  link: "https://www.bmwi.de"
+- name: "Bundesministerium für Wirtschaft und Klimaschutz"
+  image: "logo-bmwk-de.svg"
+  avatar: "avatar-bmwk.jpg"
+  link: "https://www.bmwk.de"
   location:
     latitude: 52.530880
     longitude: 13.373400
