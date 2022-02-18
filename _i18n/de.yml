@@ -69,10 +69,10 @@ jobs:
     title: "Community Manager (d/w/m)"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und gestalte eine aktive Community aus Cloud-Provider, Entwickler:innen und Kunden."
   po-container:
-    title: "SCS Product Owner Container Technologies (d/w/m)"
+    title: "Product Owner Container Technologies (d/w/m)"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und koordiniere die Implementierung und Validierung (CI/CD) von Open Source Container Technologien."
   po-infra:
-    title: "SCS Product Owner IaaS and Operations (d/w/m)"
+    title: "Product Owner IaaS and Operations (d/w/m)"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und koordiniere die Implementierung und Validierung (CI/CD) von Open Source IaaS und Operations Technologien."
   knowledge-management:
     title: "Knowledge Management Engineer (d/w/m)"
@@ -80,6 +80,15 @@ jobs:
   ma-dok:
     title: "Mitarbeiter:in (d/w/m) Dokumentation/Projektmanagement"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und unterstütze uns dabei die zentrale Entwicklungsarbeit zu orchestrieren sowie die Dokumentation der Vergabeverfahren aufzubauen."
+  monitoring-engineer:
+    title: "Cloud Monitoring & Test Engineer (d/w/m)"
+    short_description: "Diese Stellenanzeige wird demnächst veröffentlicht. Du möchtest nicht warten? Kontaktiere uns, wir freuen uns darauf dich kennenzulernen!"
+  po-standards:
+    title: "Product Owner Standards and Federation (d/w/m)"
+    short_description: "Diese Stellenanzeige wird demnächst veröffentlicht. Du möchtest nicht warten? Kontaktiere uns, wir freuen uns darauf dich kennenzulernen!"
+  unknown:
+    title: "Nichts passendes dabei?"
+    short_description: "Wir suchen nach motivierten Menschen statt Lückenfüllern. Du hast Lust am Projekt mitzuwirken, kannst dich aber mit keiner der hier ausgeschriebenen Stellen identifizieren? Kontaktiere uns, wir freuen uns darauf dich kennenzulernen!"
 employees:
   addcontact: "Kontakt hinzufügen"
 map:

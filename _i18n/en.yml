@@ -80,6 +80,15 @@ jobs:
   ma-dok:
     title: "Staff / Project Management and Documentation (d/f/m)"
     short_description: "Be part of a small central remote team at the Open Source Business Alliance and support the project lead in orchestrating the development work and the documenting the tender processes."
+  monitoring-engineer:
+    title: "Cloud Monitoring & Test Engineer (d/f/m)"
+    short_description: "This job advertisement will be published soon. You don't want to wait? Contact us, we are looking forward to meeting you!"
+  po-standards:
+    title: "Product Owner Standards and Federation (d/f/m)"
+    short_description: "This job advertisement will be published soon. You don't want to wait? Contact us, we are looking forward to meeting you!"
+  unknown:
+    title: "Nothing suitable in the list?"
+    short_description: "We're looking for motivated people rather than gap fillers. You would like to join our team, but can't identify with any of the open positions advertised here? You don't want to wait? Contact us, we are looking forward to meeting you!"
 employees:
   addcontact: "Add contact"
 map:
