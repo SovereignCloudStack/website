@@ -17,7 +17,7 @@ Rückfragen zu den Ausschreibungen zwingend über das verlinkte Vergabeportal st
 | 3  | 3  | Speichertechnologie | [Vergabepaket 3](lot3/) | tba | tba | tba |
 | 4  | 4  | Netzwerktechnologie | [Vergabepaket 4](lot4/) | tba | tba | tba |
 | 5  | 5  | Integration von Kubernetes als Dienst (KaaS) | [Vergabepaket 5](lot5/) | tba | tba | tba |
-| 6  | 6a | Container Netzwerk und Container Speicher Integration | Vergabepaket 6a | tba | tba | tba |
+| 6  | 6a | Container Netzwerk und Container Speicher Integration | [Vergabepaket 6a](lot6a) | tba | tba | tba |
 | 7  | 6b | Container Meshing und Proxy | Vergabepaket 6b | tba | tba | tba |
 | 8  | 6c | Container Registry / Scanning | Vergabepaket 6c | tba | tba | tba |
 | 9  | 6d | Container Monitoring / IaC / CI / Installationsautomatisierung | [Vergabepaket 6d](lot6d/) | 2021-12-22 | 2022-01-19 | ~~SCS-VP06d~~ |

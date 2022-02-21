@@ -17,7 +17,7 @@ Please refrain from addressing the project team directly.
 | 3  | 3  | Storage Technology | [Lot 3](lot3/) | tba | tba | tba |
 | 4  | 4  | Networking | [Lot 4](lot4/) | tba | tba | tba |
 | 5  | 5  | K8s aaS Integration | [Lot 5](lot5/) | tba | tba | tba |
-| 6  | 6a | Container Network and Storage Integration | Lot 6a | tba | tba | tba |
+| 6  | 6a | Container Network and Storage Integration | [Lot 6a](lot6a) | tba | tba | tba |
 | 7  | 6b | Container Meshing and Proxy | Lot 6b | tba | tba | tba |
 | 8  | 6c | Container Registry / Scanning | Lot 6c | tba | tba | tba |
 | 9  | 6d | Container Monitoring / IaC / CI / Deployment Automation | [Lot 6d](lot6d) | 2021-12-22 | 2022-01-19 | ~~SCS-VP06d~~ |
