@@ -39,9 +39,9 @@ Werden Einzelseiten unserer Webseite aufgerufen, so werden folgende Daten gespei
 (5) Die Verweildauer auf der Webseite  
 (6) Die Häufigkeit des Aufrufs der Webseite
 
-Die Software läuft dabei ausschließlich auf von uns administrierten Servern. 
-Eine  Speicherung der personenbezogenen Daten der Nutzer findet nur dort statt.
-Eine Weitergabe der Daten an Dritte erfolgt nicht.
+Die Software läuft dabei ausschließlich auf Servern, welche durch Mitarbeitende 
+des SCS Projektes administriert werden. Eine Speicherung obiger Daten findet nur
+auf diesen statt und eine Weitergabe an Dritte erfolgt nicht.
 
 ### Opt-Out
 
