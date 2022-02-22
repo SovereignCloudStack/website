@@ -21,8 +21,8 @@ Diese Kopien werden gelöscht, sobald die Probleme gelöst sind.
 ## Matomo Analytics
 Wir nutzen aufgrund unserer berechtigten Interessen zur Optimierung und Analyse
 unseres Online-Angebots im Sinne des Art. 6 Abs. 1 lit. f. DSGVO den Dienst
-„Matomo“, welcher von der InnoCraft Ltd. (150 Willis St, 6011 Wellington,
-New Zealand, NZBN 6106769) angeboten wird. Das ist ein Open-Source-Tool zur Web-Analyse.
+„Matomo“. Das ist ein Open-Source-Tool zur Web-Analyse.
+
 Wir haben Matomo so konfiguriert, dass keine Cookies genutzt werden. Ihre IP-Adresse
 wird umgehend anonymisiert; damit bleiben Sie als Nutzer anonym. Wenn Sie mit der
 Speicherung und Auswertung dieser Daten aus Ihrem Besuch nicht einverstanden sind,
@@ -37,15 +37,11 @@ Werden Einzelseiten unserer Webseite aufgerufen, so werden folgende Daten gespei
 (3) Die Webseite, von der der Nutzer auf die aufgerufene Webseite gelangt ist (Referrer)  
 (4) Die Unterseiten, die von der aufgerufenen Webseite aus aufgerufen werden  
 (5) Die Verweildauer auf der Webseite  
-(6) Die Häufigkeit des Aufrufs der Webseite  
+(6) Die Häufigkeit des Aufrufs der Webseite
 
-Im Rahmen der Vereinbarung zur Auftragsdatenvereinbarung, welche wir als
-Websitebetreiber mit Matomo geschlossen haben, erstellt diese mithilfe der
-gesammelten Informationen eine Auswertung der Websitenutzung und der Websiteaktivität
-und erbringt mit der Internetnutzung verbundene Dienstleistungen.
-
-Hier finden Sie weitere Informationen zur Datennutzung durch die Matomo Cloud:
-https://matomo.org/matomo-cloud-privacy-policy/
+Die Software läuft dabei ausschließlich auf von uns administrierten Servern. 
+Eine  Speicherung der personenbezogenen Daten der Nutzer findet nur dort statt.
+Eine Weitergabe der Daten an Dritte erfolgt nicht.
 
 ### Opt-Out
 
