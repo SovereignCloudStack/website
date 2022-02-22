@@ -26,7 +26,7 @@ unseres Online-Angebots im Sinne des Art. 6 Abs. 1 lit. f. DSGVO den Dienst
 Wir haben Matomo so konfiguriert, dass keine Cookies genutzt werden. Ihre IP-Adresse
 wird umgehend anonymisiert; damit bleiben Sie als Nutzer anonym. Wenn Sie mit der
 Speicherung und Auswertung dieser Daten aus Ihrem Besuch nicht einverstanden sind,
-dann können Sie alternativ der Speicherung und Nutzung nachfolgend per Mausklick
+dann können Sie der Speicherung und Nutzung nachfolgend per Mausklick
 widersprechen. Alternativ können Sie in Ihrem Browser die allgemeine Einstellung
 "Do Not Track" aktivieren, die von unserer Matomo-Installation respektiert wird.
 
