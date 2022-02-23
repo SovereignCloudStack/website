@@ -28,7 +28,7 @@ wird umgehend anonymisiert; damit bleiben Sie als Nutzer anonym. Wenn Sie mit de
 Speicherung und Auswertung dieser Daten aus Ihrem Besuch nicht einverstanden sind,
 dann können Sie der Speicherung und Nutzung nachfolgend per Mausklick
 widersprechen. Alternativ können Sie in Ihrem Browser die allgemeine Einstellung
-"Do Not Track" aktivieren, die von unserer Matomo-Installation respektiert wird.
+_Do-Not-Track_ aktivieren, die von unserer Matomo-Installation respektiert wird.
 
 Werden Einzelseiten unserer Webseite aufgerufen, so werden folgende Daten gespeichert:
 
@@ -50,7 +50,7 @@ auf diesen statt und eine Weitergabe an Dritte erfolgt nicht.
         <input type="checkbox" name="matomo-optout" id="matomo-optout-de" checked>
         <label for="matomo-optout-de"></label>
     </span>
-    <span class="nojs">Anscheinend haben Sie JavaScript in Ihrem Browser deaktiviert. Diese Funktion ist nur verfügbar, wenn JavaScript aktiviert ist. Wenn Sie nicht möchten, dass Ihre Daten erfasst werden, können Sie in Ihrem Browser alternativ die allgemeine Einstellung "Do Not Track" aktivieren, die von unserer Matomo-Installation respektiert wird.</span>
+    <span class="nojs">Anscheinend haben Sie JavaScript in Ihrem Browser deaktiviert. Diese Funktion ist nur verfügbar, wenn JavaScript aktiviert ist. Wenn Sie nicht möchten, dass Ihre Daten erfasst werden, können Sie in Ihrem Browser alternativ die allgemeine Einstellung <em>Do-Not-Track</em> aktivieren, die von unserer Matomo-Installation respektiert wird.</span>
 </p>
 
 ## Verantwortlicher für den Datenschutz

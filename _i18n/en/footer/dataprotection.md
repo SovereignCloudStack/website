@@ -25,7 +25,7 @@ for web analysis.
 We have configured Matomo so that it does not set any cookies. Your IP address 
 will be anonymized immediately. Thus, you also remain anonymous as a user. If you
 do not want your visits of our website to be analyzed, you can opt-out of storage
-and usage of this data below. Alternatively, you can activate the Do-Not-Track
+and usage of this data below. Alternatively, you can activate the _Do-Not-Track_
 setting of your browser, which is honored by our Matomo installation.
 
 By accessing our website, the following data will be stored:
@@ -48,7 +48,7 @@ collected with third parties.
         <input type="checkbox" name="matomo-optout" id="matomo-optout-en" checked>
         <label for="matomo-optout-en"></label>
     </span>
-    <span class="nojs">It appears you have deactivated JavaScript in your browser. This feature is only available with JavaScript turned on. If you don’t want your data to be collected, you can still turn on the general "Do Not Track" setting in your browser which is being respected by our Matomo installation.</span>
+    <span class="nojs">It appears you have deactivated JavaScript in your browser. This feature is only available with JavaScript turned on. If you don’t want your data to be collected, you can still turn on the general <em>Do-Not-Track</em> setting in your browser which is being respected by our Matomo installation.</span>
 </p>
 
 ## Responsible for Data Protection for this site
