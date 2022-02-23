@@ -48,7 +48,7 @@ auf diesen statt und eine Weitergabe an Dritte erfolgt nicht.
 <p class="matomo-optout" lang="de">
     <span class="js" style="display:none;">
         <input type="checkbox" name="matomo-optout" id="matomo-optout-de" checked>
-        <label for="matomo-optout-en"></label>
+        <label for="matomo-optout-de"></label>
     </span>
     <span class="nojs">Anscheinend haben Sie JavaScript in Ihrem Browser deaktiviert. Diese Funktion ist nur verfügbar, wenn JavaScript aktiviert ist. Wenn Sie nicht möchten, dass Ihre Daten erfasst werden, können Sie in Ihrem Browser alternativ die allgemeine Einstellung "Do Not Track" aktivieren, die von unserer Matomo-Installation respektiert wird.</span>
 </p>
