@@ -32,12 +32,12 @@ _Do-Not-Track_ aktivieren, die von unserer Matomo-Installation respektiert wird.
 
 Werden Einzelseiten unserer Webseite aufgerufen, so werden folgende Daten gespeichert:
 
-(1) 2 Bytes der IP-Adresse des aufrufenden Systems des Nutzers  
-(2) Die aufgerufene Webseite  
-(3) Die Webseite, von der der Nutzer auf die aufgerufene Webseite gelangt ist (Referrer)  
-(4) Die Unterseiten, die von der aufgerufenen Webseite aus aufgerufen werden  
-(5) Die Verweildauer auf der Webseite  
-(6) Die Häufigkeit des Aufrufs der Webseite
+- 2 Bytes der IP-Adresse des aufrufenden Systems des Nutzers  
+- Die aufgerufene Webseite  
+- Die Webseite, von der der Nutzer auf die aufgerufene Webseite gelangt ist (Referrer)  
+- Die Unterseiten, die von der aufgerufenen Webseite aus aufgerufen werden  
+- Die Verweildauer auf der Webseite  
+- Die Häufigkeit des Aufrufs der Webseite
 
 Die Software läuft dabei ausschließlich auf Servern, welche durch Mitarbeitende 
 des SCS Projektes administriert werden. Eine Speicherung obiger Daten findet nur

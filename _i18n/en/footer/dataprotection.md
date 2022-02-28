@@ -30,12 +30,12 @@ setting of your browser, which is honored by our Matomo installation.
 
 By accessing our website, the following data will be stored:
 
-(1) 2 bytes of the user's IP address  
-(2) The accessed pages of our website
-(3) The website from which the user has been referred to our website  
-(4) The websites that are accessed from our website
-(5) The total time spent on our website 
-(6) The frequency with which our website is accessed
+- 2 bytes of the user's IP address  
+- The accessed pages of our website  
+- The website from which the user has been referred to our website  
+- The websites that are accessed from our website  
+- The total time spent on our website  
+- The frequency with which our website is accessed
 
 The data collected by the Matomo is processed and stored exclusively on servers
 maintained by employees of the SCS project. We will not share any of the data 
