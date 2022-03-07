@@ -1,6 +1,9 @@
 - title: Twitter
   icon: fa-twitter fa-lg
   link: https://twitter.com/scs_osballiance
+- title: Mastodon
+  icon: fa-mastodon fa-lg
+  link: https://fosstodon.org/web/@sovereigncloudstack#
 - title: LinkedIn
   icon: fa-linkedin-square fa-lg
   link: https://www.linkedin.com/showcase/sovereigncloudstack
