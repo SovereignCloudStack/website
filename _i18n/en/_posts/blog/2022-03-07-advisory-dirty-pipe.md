@@ -30,7 +30,8 @@ The SCS images used in the IaaS reference implementation (which are mostly
 comprised of [OSISM](https://osism.tech) which itself is based on kolla-ansible)
 are using Ubuntu 20.04 LTS. To the best of our knowledge, the 5.4.xxx kernels
 used there are NOT affected by the issue. The exploit code fails. We are waiting
-to get an official announcement from Canonical.
+to get an [official announcement](https://ubuntu.com/security/CVE-2022-0847)
+from Canonical.
 
 The management host deployed by the automation for our cluster management is
 also using an Ubuntu 20.04 LTS image by default -- it is thus not affected.
