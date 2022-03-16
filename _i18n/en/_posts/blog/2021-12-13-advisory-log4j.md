@@ -2,12 +2,15 @@
 layout: post
 title:  "Sovereign Cloud Stack Security Advisory log4j"
 category: security
-author: "Kurt Garloff"
-avatar: "/assets/images/kgarloff.jpg"
+author:
+  - "Christian Berendt"
+  - "Kurt Garloff"
+  - "Felix Kronlage-Dammers"
+avatar: 
+  - "/assets/images/berendt.jpg"
+  - "/assets/images/kgarloff.jpg"
+  - "/assets/images/kronlage.jpg"
 ---
-
-_(By Christian Berendt, Kurt Garloff, Felix Kronlage-Dammers)_
-
 ## The vulnerability
 
 On Fri, 2021-12-10, a design issue in the very popular Java library log4j

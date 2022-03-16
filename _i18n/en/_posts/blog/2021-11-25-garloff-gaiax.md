@@ -1,13 +1,18 @@
 ---
 layout: post
 title:  "SCS: We continue to work on Gaia-X for more digital sovereignty"
-author: "Kurt Garloff"
-avatar: "/assets/images/kgarloff.jpg"
+author:
+  - "Dr. Manuela Urban"
+  - "Felix Kronlage-Dammers"
+  - "Jonas Schäfer"
+  - "Kurt Garloff"
+avatar: 
+  - "/assets/images/urban.jpg"
+  - "/assets/images/kronlage.jpg"
+  - "/assets/images/jonas.jpg"
+  - "/assets/images/kgarloff.jpg"
 image: "/assets/images/blog/rowing.jpg"
 ---
-
-_(By Dr. Manuela Urban, Felix Kronlage-Dammers, Jonas Schäfer, Kurt Garloff)_
-
 <img src="{{ "/assets/images/blog/rowing.jpg" | prepend: site.baseurl_root }}" style="width:100%; max-height: 450px; object-fit: cover;}">
 
 ## Context
