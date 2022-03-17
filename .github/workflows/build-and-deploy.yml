@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-    - master
+    - main
   workflow_dispatch:
 
 jobs:
@@ -42,7 +42,7 @@ jobs:
         cname: ''                  # Default is to not use a cname
         actor: ''                  # Default is the GITHUB_ACTOR
         pre_build_commands: ''     # Installing additional dependencies (Arch Linux)
-    - uses: burnett01/rsync-deployments@5.1
+    - uses: burnett01/rsync-deployments@5.2
       with:
         switches: -avzr --delete --exclude=/docs/
         path: build/
