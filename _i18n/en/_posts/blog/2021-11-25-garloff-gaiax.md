@@ -8,8 +8,8 @@ author:
   - "Kurt Garloff"
 avatar: 
   - "/assets/images/urban.jpg"
-  - "/assets/images/kronlage.jpg"
-  - "/assets/images/jonas.jpg"
+  - "/assets/images/fkr.jpg"
+  - "/assets/images/JS.png"
   - "/assets/images/kgarloff.jpg"
 image: "/assets/images/blog/rowing.jpg"
 ---
