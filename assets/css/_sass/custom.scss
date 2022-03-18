@@ -164,19 +164,31 @@ h3 {
 
 .blockquote-footer {
     font-size: .8em;
-    margin-top: -0.8em;
 }
 
 blockquote,
 .blockquote {
-  width: 100%;
   color: $secondary;
   font-size: unset;
-  margin: auto;
+  margin-bottom: 1em;
+  margin-left: 2em;
   padding: 0.4em 50px 0.6em 50px;
   border-left: 5px solid $scs-mint;
   position: relative;
   background: $light;
+  
+  p {
+    margin-bottom: 0em;
+    text-align: justify;
+  }
+  
+  cite {
+    font-size: .8em;
+  }
+  
+  cite::before {
+    content: "— "
+  }
 }
 
 blockquote::before,
@@ -184,10 +196,13 @@ blockquote::before,
   content: "\201C";
   color: $scs-mint;
   font-size: 4em;
-  font-family: 'Montserrat', sans-serif;
   position: absolute;
   left: 10px;
   top: -15px;
+}
+
+.footnotes {
+  font-size: 0.8em;
 }
 
 table {
