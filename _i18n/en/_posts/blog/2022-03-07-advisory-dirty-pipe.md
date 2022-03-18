@@ -2,12 +2,16 @@
 layout: post
 title:  "Sovereign Cloud Stack Security Advisory dirty pipe"
 category: security
-author: "Kurt Garloff"
-avatar: "/assets/images/kgarloff.jpg"
+author:
+  - "Christian Berendt"
+  - "Kurt Garloff"
+  - "Felix Kronlage-Dammers"
+avatar:
+  - "/assets/images/CB.png"
+  - "/assets/images/kgarloff.jpg"
+  - "/assets/images/fkr.jpg"
 image: "/assets/images/blog/pipe.jpg"
 ---
-
-_(By Christian Berendt, Kurt Garloff, Felix Kronlage-Dammers)_
 
 ## The vulnerability
 

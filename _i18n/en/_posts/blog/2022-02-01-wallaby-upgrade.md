@@ -3,11 +3,11 @@ layout: post
 title:  "Sovereign Cloud Stack Community Plusserver Environment"
 avatar: "/assets/images/avatar-plusopen.png"
 image: "/assets/images/blog/wallaby.jpg"
-author: "Mathias Fechner"
+author: 
+  - "Mathias Fechner"
+  - "Toens Bueker"
+  - "Markus Lindenblatt"
 ---
-
-_(By Markus Lindenblatt, Toens Bueker, Mathias Fechner)_
-
 ### One Wallaby Update Experience
 
 Since more then one year Plusserver has provided the SCS Community Environment which is based on osism OpenStack Distrubution.
