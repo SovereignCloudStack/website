@@ -8,7 +8,7 @@ author:
 avatar:
   - "/assets/images/eitrich.jpg"
   - "/assets/images/kgarloff.jpg"
-  - "/assets/images/kronlage.jpg"
+  - "/assets/images/fkr.jpg"
 image: "/assets/images/blog/sea.jpg"
 ---
 _(This text has initially been published in [The Cloud Report, issue 01/2022](https://the-report.cloud/downloads). We thank you for this opportunity!)_
