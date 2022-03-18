@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-03-18-digital-sovereignty-whitepaper.md
