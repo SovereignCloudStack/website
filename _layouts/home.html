@@ -1,6 +1,36 @@
 ---
 layout: default
 ---
+<script>
+	function getBestSuitableSupportedLang(lang, locale, supported) {
+		// The first language in the array is the default langauge
+	  var supported_lang = supported[0];
+	  if (supported.includes(lang + "-" + locale)) {
+	    supported_lang = lang + "-" + locale;
+	  } else if (supported.includes(lang)) {
+	    supported_lang = lang;
+	  }
+	  return supported_lang;
+	}
+	
+	var [lang, locale] = (((navigator.userLanguage || navigator.language).replace('-', '_')).toLowerCase()).split('_');
+	supported_languages = [];
+	{% for lang in site.languages %}
+		supported_languages.push("{{lang}}");
+	{% endfor %}
+	
+	var suitable_lang = getBestSuitableSupportedLang(lang, locale, supported_languages);
+	var current_lang = "{{site.lang}}";
+	
+	var hostname = window.location.hostname;
+	var referrer = document.referrer;
+	var landingPage = !referrer || referrer.indexOf(hostname) == -1;
+	
+	if (landingPage && (current_lang !== suitable_lang)) {
+  	window.location = '/' + suitable_lang + '/';
+	}
+</script>
+
 <div class="row mb-5">
 	{% tf home/why-scs.md %}
 </div>
