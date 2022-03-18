@@ -1,58 +1,55 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
-  <div class="container">
-    <button
-      class="navbar-toggler me-auto"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        {% for item in site.data.menu %}
-        <li class="nav-item">
-          {% if item.dropdown %}
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {% t item.title %}
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          {% for item in site.data.menu %}
+          <li class="nav-item">
+            {% if item.dropdown %}
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {% t item.title %}
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {% for nested in item.dropdown %}
+                    <li><a class="dropdown-item" href="{{ site.baseurl }}{{ nested.link }}">{% t nested.title %}</a></li>
+                  {% endfor %}
+              </ul>
+            {% else %}
+              <a class="nav-link" href="{{ site.baseurl }}{{ item.link }}">
+                {% t item.title %}
+              </a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          {% for item in site.data.social %}
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" href="{{ item.link }}">
+              <i class="fa {{item.icon}}"></i>
             </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {% for nested in item.dropdown %}
-                  <li><a class="dropdown-item" href="{{ site.baseurl }}{{ nested.link }}">{% t nested.title %}</a></li>
-                {% endfor %}
-            </ul>
-          {% else %}
-            <a class="nav-link" href="{{ site.baseurl }}{{ item.link }}">
-              {% t item.title %}
-            </a>
-          {% endif %}
-        </li>
-        {% endfor %}
-      </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        {% include language_switcher.html %}
+      </div>
     </div>
-    <div>
-      <ul class="navbar-nav flex-row">
-        {% for item in site.data.social %}
-        <li class="nav-item my-auto mx-2 mx-lg-0">
-          <a class="nav-link" target="_blank" href="{{ item.link }}">
-            <i class="fa {{item.icon}}"></i>
-          </a>
-        </li>
-        {% endfor %}
-        <li class="nav-item my-auto ms-4 ms-lg-2">
-          <a class="nav-link fw-bold {% if site.lang == "en" %} text-decoration-underline {% endif %} " href="{{ site.baseurl_root }}{{ page.url }}">EN</a>
-        </li>
-        <li class="nav-item my-auto mx-2 mx-lg-0">
-          <span class="nav-link px-0">/</span>
-        </li>
-        <li clas="nav-item my-auto">
-          <a class="nav-link fw-bold  {% if site.lang == "de" %} text-decoration-underline {% endif %}" href="{{ site.baseurl_root }}/de{{ page.url }}">DE</a>
-        </li>
-      </ul>
+    <div class="d-lg-none">
+      {% include language_switcher.html %}
     </div>
   </div>
 </nav>
