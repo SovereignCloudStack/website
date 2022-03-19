@@ -1,4 +1,4 @@
-## Wieso noch ein Cloud Stack?
+## Was ist Sovereign Cloud Stack?
 {: .mb-3 }
 
 Nur Open-Source garantiert digitale Souveränität durch Interoperabilität, Transparenz und Unabhängigkeit von Ansprüchen Dritter und damit von wirtschaftlicher oder politischer Einflussnahme.
