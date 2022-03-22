@@ -1,0 +1,34 @@
+<div class="row mb-5">
+  {% assign sorted = site.posts | sort: 'date' | reverse %}
+  <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="1"></button>
+      <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1" aria-label="2"></button>
+      <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2" aria-label="3"></button>
+    </div>
+    <div class="carousel-inner">
+      {% for post in sorted limit: 3%}
+      {% if forloop.index == 1 %}
+      <div class="carousel-item active">
+      {% else %}
+      <div class="carousel-item">
+      {% endif %}
+        <div class="carousel-caption d-none d-md-block">
+          <h3>{{post.title}}</h3>
+          <p>{{post.author | join: ", "}}</p>
+        </div>
+        
+        <a href="{{post.url}}" class="stretched-link"><img src="{% if post.image %}{{post.image}}{% else %}{{site.defaults.image}}{% endif %}" class="d-block w-100" alt="{{post.title}}"></a>
+      </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">{% t home.news.prev %}</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">{% t home.news.next %}</span>
+    </button>
+  </div>
+</div>

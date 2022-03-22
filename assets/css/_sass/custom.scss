@@ -228,3 +228,9 @@ tr:hover, tr:focus {
 .leaflet-popup-content-wrapper {
     text-align: center !important;
 }
+
+.carousel-item img {
+    width: 100%;
+    height: 350px !important;
+    object-fit: cover;
+}
