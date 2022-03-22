@@ -239,3 +239,13 @@ tr:hover, tr:focus {
     height: 350px !important;
     object-fit: cover;
 }
+
+.carousel-caption {
+    background-color: rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+
+.carousel-caption p {
+    text-align: center;
+}
