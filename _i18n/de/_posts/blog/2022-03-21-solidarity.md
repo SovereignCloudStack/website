@@ -5,7 +5,7 @@ author:
   - "Dr. Manuela Urban"
 avatar: 
   - "/assets/images/urban.jpg"
-image: "/assets/images/blog/sunflower.jpg"
+image: "/assets/images/blog/sunflowers.jpg"
 ---
 <img src="{{ "/assets/images/blog/sunflowers.jpg" | prepend: site.baseurl_root }}" style="width:100%; max-height: 350px; object-fit: cover;}">
 
