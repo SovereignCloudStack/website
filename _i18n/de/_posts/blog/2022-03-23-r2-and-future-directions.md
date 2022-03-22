@@ -10,7 +10,7 @@ avatar:
 
 ## Welcome Release 2
 
-Today we're releasing the R2 of the reference implementation of the Sovereign
+Today we're [releasing the R2](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release2.md) of the reference implementation of the Sovereign
 Cloud Stack. Our release announcement covers the many aspects of this release
 in detail. These range from our work on integrating the Kubernetes Cluster API,
 many improvements that focus on the operator experience up to items that help
@@ -38,13 +38,13 @@ be improved.
 
 In R2 we started to lay the groundwork for the federation. Within the R3 cycle
 we want to to document and validate (and probably enhance) the user federation
-capabilities which we have implemented with keycloak and OpenID Connect federation.
+capabilities which we have implemented with [keycloak](https://www.keycloak.org) and OpenID Connect federation.
 
 ## Help to increase velocity...
 
 One of the goals of SCS is to help operators gain more velocity with their
 cloud infrastructure. However this relies on intensive testing and excellent
-quality assurance. As part of this effort we have started to use zuul as CI
+quality assurance. As part of this effort we have started to use [zuul](https://zuul-ci.org) as CI
 framework and intend to make significant progress in connecting all the
 existing tests to it.
 
@@ -56,9 +56,9 @@ conformance testing, allowing providers that differ significantly from our
 reference implementation to still adjust their platforms for full
 compatibility. With the work that is happening in the Special Interest
 Group (SIG) Monitoring we want to make sure operators have an in-depth
-view into their stack. This will range from reworking the OpenStack
-Health Monitor to build upon existing components such as tempest and
-rally as well as making sure logs are aggregated and can be analyzed.
+view into their stack. This will range from reworking the [OpenStack
+Health Monitor](https://github.com/SovereignCloudStack/openstack-health-monitor) to build upon existing components such as [tempest](https://opendev.org/openstack/tempest/) and
+[rally](https://opendev.org/openstack/rally) as well as making sure logs are aggregated and can be analyzed.
 
 ## Metering and Billing
 
@@ -69,7 +69,7 @@ the items that will be followed upon in the next few months.
 
 ## Encrypt all the things
 
-The scs community started to work on a disk encryption feature based on tang. We've
+The scs community started to work on a disk encryption feature based on [tang](https://github.com/latchset/tang). We've
 seen first previews of it and a lightning talk covered this first preview. For R3
 we intend to complete the disk encryption feature.
 
