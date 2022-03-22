@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Future directions - the road towards R3"
-category: foo
+category: tech
 author:
   - "Felix Kronlage-Dammers"
 avatar:
