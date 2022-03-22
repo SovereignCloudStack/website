@@ -1,6 +1,6 @@
 <div class="row mb-5">
   {% assign sorted = site.posts | sort: 'date' | reverse %}
-  <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div id="newsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="1"></button>
       <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1" aria-label="2"></button>
@@ -13,11 +13,10 @@
       {% else %}
       <div class="carousel-item">
       {% endif %}
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption">
           <h3>{{post.title}}</h3>
           <p>{{post.author | join: ", "}}</p>
         </div>
-        
         <a href="{{post.url}}" class="stretched-link"><img src="{% if post.image %}{{post.image}}{% else %}{{site.defaults.image}}{% endif %}" class="d-block w-100" alt="{{post.title}}"></a>
       </div>
       {% endfor %}
