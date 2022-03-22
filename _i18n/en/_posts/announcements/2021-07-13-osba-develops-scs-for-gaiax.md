@@ -152,3 +152,13 @@ public procurement and in research and business promotion. After all, open
 source and open standards are essential foundations for digital sovereignty,
 innovative capacity and security in the digital transformation and thus the
 answer to one of the greatest challenges of our time.
+
+Press contact: Lisa Reisch [presse at osb minus alliance dot de](mailto:presse@osb-alliance.com )
+
+OSB Alliance e.V.  
+Breitscheidstr. 4  
+70174 Stuttgart  
+Tel.: +49 (711) 90715-390  
+
+E-Mail: [info at osb minus alliance dot com](mailto:info@osb-alliance.com)  
+Internet: [www.osb-alliance.com](https://osb-alliance.com/)

@@ -159,3 +159,13 @@ der Forschungs- und Wirtschaftsförderung zu etablieren. Denn Open Source und
 offene Standards sind zwingende Grundlagen für digitale Souveränität,
 Innovationsfähigkeit und Sicherheit im digitalen Wandel und damit die Antwort
 auf eine der größten Herausforderungen unserer Zeit.
+
+Pressekontakt: Lisa Reisch [presse at osb-alliance dot com](mailto:presse@osb-alliance.com)
+
+OSB Alliance e.V.  
+Breitscheidstr. 4  
+70174 Stuttgart  
+Tel.: +49 (711) 90715-390  
+
+E-Mail: [info at osb minus alliance dot com](mailto:info@osb-alliance.com)  
+Internet: [osb minus alliance dot com](https://osb-alliance.com)
