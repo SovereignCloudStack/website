@@ -9,6 +9,11 @@ body {
     color: $text-color;
 }
 
+p {
+    text-align: justify;
+    hyphens: auto;
+}
+
 .text-blue {
   color: $scs-blue;
 }
