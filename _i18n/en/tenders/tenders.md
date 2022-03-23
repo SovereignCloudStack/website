@@ -22,7 +22,7 @@ Please refrain from addressing the project team directly.
 | 8  | 6c | Container Registry / Scanning | Lot 6c | tba | tba | tba |
 | 9  | 6d | Container Monitoring / IaC / CI / Deployment Automation | [Lot 6d](lot6d) | 2021-12-22 | 2022-01-19 | ~~SCS-VP06d~~ |
 | 10 | 6e | Container Tracing & Audit | Lot 6e | tba | tba | tba |
-| 11 | 8  | User Management & Federation | [Lot 8](lot8/) | 2022-02-28 | 2022-03-22 T12:00+01:00 | [&raquo; SCS-VP08](https://www.dtvp.de/Satellite/notice/CXP4YV7RXZZ/) |
+| 11 | 8  | User Management & Federation | [Lot 8](lot8/) | 2022-02-28 | 2022-03-22 | ~~SCS-VP08~~ |
 | 12 | 9a | Infra Scanning / Isolation / Policy Management | Lot 9a | tba | tba | tba |
 | 13 | 9b | Supply Chain Security | Lot 9b | tba | tba | tba |
 | 14 | 9c | Penetration Testing | Lot 9c | tba | tba | tba |

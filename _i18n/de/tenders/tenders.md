@@ -22,7 +22,7 @@ Rückfragen zu den Ausschreibungen zwingend über das verlinkte Vergabeportal st
 | 8  | 6c | Container Registry / Scanning | Vergabepaket 6c | tba | tba | tba |
 | 9  | 6d | Container Monitoring / IaC / CI / Installationsautomatisierung | [Vergabepaket 6d](lot6d/) | 2021-12-22 | 2022-01-19 | ~~SCS-VP06d~~ |
 | 10 | 6e | Container Tracing & Audit | Vergabepaket 6e | tba | tba | tba |
-| 11 | 8  | Nutzermanagement und Föderierung | [Vergabepaket 8](lot8/) | 2022-02-28 | 2022-03-22 T12:00+01:00 | [&raquo; SCS-VP08](https://www.dtvp.de/Satellite/notice/CXP4YV7RXZZ/) |
+| 11 | 8  | Nutzermanagement und Föderierung | [Vergabepaket 8](lot8/) | 2022-02-28 | 2022-03-22 | ~~SCS-VP08~~ |
 | 12 | 9a | Infra Scanning / Isolierung / Policymanagement | Vergabepaket 9a | tba | tba | tba |
 | 13 | 9b | Lieferkettenabsicherung | Vergabepaket 9b | tba | tba | tba |
 | 14 | 9c | Penetration Testing | Vergabepaket 9c | tba | tba | tba |
