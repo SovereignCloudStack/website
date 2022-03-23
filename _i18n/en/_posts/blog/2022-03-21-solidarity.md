@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Solidarität mit der Ukraine - Щодо війни в Україні"
+title:  "Solidarity with Ukraine - Щодо війни в Україні"
 author:
   - "Dr. Manuela Urban"
 avatar: 
