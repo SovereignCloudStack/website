@@ -1,0 +1,22 @@
+---
+title: Mail Signatures
+permalink: /signatures
+---
+# E-Mail Signatures
+{% for employee in site.data.employees %}
+<!-- Begin Signature -->
+<a href="https://scs.community/{{employee.lastname}}">{% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}</a>
+<a href="mailto:{{employee.mail}}">&lt;{{employee.mail}}&gt;</a><br />
+Phone: {{employee.phone}},
+Matrix: <a href="{{employee.matrix}}">@{{employee.matrix | split: '@' | last }}</a><br />
+{{employee.title}}<br />
+<br /><img src="{{ "/assets/images/scs-signature.png" | prepend: site.baseurl_root }}" /><br /><br />
+<small>
+<a href="https://osb-alliance.com/">OSB Alliance - Bundesverband für digitale Souveränität e.V.</a><br />
+Pariser Platz 6a, 10117 Berlin, Germany<br />
+VR7217 (AG Stuttgart) - Chairman of the Board: Peter H. Ganten<br />
+Sovereign Cloud Stack & SCS-Logo are protected trademarks of the OSB Alliance.</small>
+<!-- End Signature -->
+<br /><br />
+<hr>
+{% endfor %}
