@@ -38,13 +38,13 @@ were waiting to get kicked off.</p>
 <cite>Kurt Garloff, Co-Leader / CTO Sovereign Cloud Stack, Open Source Business Alliance – Bundesverband für digitale Souveränität e.V.</cite>
 </blockquote>
 
-"Unfortunately, the overall impression is that the positive statements on
+Unfortunately, the overall impression is that the positive statements on
 digitalisation and the strategy regarding digital sovereignty are
 insufficiently followed by deeds. The consequences are unfortunately bitter:
 some of the tender plants that appear suitable for advancing digitalisation in
 public administration and shaping this in a sovereign manner with the help of
 open source approaches would thus unfortunately wither before they could grow.
-This is neither good for digitalisation nor for sovereignty."
+This is neither good for digitalisation nor for sovereignty.
 
 The Open Source Business Alliance - Bundesverband für digitale Souveränität
 e.V. has also published an [open letter](https://osb-alliance.de/featured/offener-brief-digitale-souveraenitaet-im-bundeshaushalt-2022-beruecksichtigen)

@@ -26,8 +26,8 @@ Aus unserer Sicht wird Gaia-X dadurch aber nicht insgesamt in Frage gestellt ode
 Fortschritte für digitale Souveränität zu erreichen, aufgegeben.
 
 <blockquote>
-<p markdown="1">Sehr bedauerlich ist aus unserer Sicht aber auch die fehlende Finanzierung für den [Sovereign
-Tech Fund](https://sovereigntechfund.de/) und für das [Zentrum für Digitale Souveränität](https://www.cio.bund.de/Web/DE/Innovative-Vorhaben/ZenDiS/zendis_node.html),
+<p markdown="1">Sehr bedauerlich ist aus unserer Sicht aber auch die fehlende Finanzierung für den [SovereignvTech Fund](https://sovereigntechfund.de/)
+und für das [Zentrum für Digitale Souveränität](https://www.cio.bund.de/Web/DE/Innovative-Vorhaben/ZenDiS/zendis_node.html),
 welches wichtige Beiträge sind, Open Source und seine Nutzbarmachung in der öffentlichen Verwaltung zu stärken und
 somit die digitale Souveränität ganz praktisch voranzubringen. Beide Initiativen
 sind schon fertig untersucht und vorbereitet und stehen in den Startlöchern.</p>
@@ -45,5 +45,3 @@ Souveränität gut.
 Die Open Source Business Alliance – Bundesverband für digitale Souveränität e.V. 
 hat dazu auch einen [offenen Brief](https://osb-alliance.de/featured/offener-brief-digitale-souveraenitaet-im-bundeshaushalt-2022-beruecksichtigen)
 veröffentlicht.
-
-
