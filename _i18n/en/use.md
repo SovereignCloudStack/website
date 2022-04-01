@@ -72,9 +72,9 @@ First is that SCS is modular. You might adopt just some pieces of
 our container stack. Or maybe the Ops stack. Or IaaS. Or ceph.
 Or maybe everything but ceph ...
 
-Second would be the adoption level.
+Second, we see two different levels of adoption.
 
-### On the adoption level there are two possibilities:
+### Adoption levels
 
 First level would be that you want to make your platform compliant with SCS
 standards for this module. This ensures you are compatible to a growing

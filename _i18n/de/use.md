@@ -14,7 +14,7 @@ Communities -- wenn wir diese verbessern, ergänzen, Dinge
 ändern, dann suchen wir den Kontakt mit ihnen, so dass wir
 unsere Änderungen wieder zurückgeben und einfließen lassen können.
 
-Wir nutzen [github](https://github.com/SovereignCloudStack/) um
+Wir nutzen [github/SovereignCloudStack](https://github.com/SovereignCloudStack/) um
 den von unse genutzten Code zu verwalten -- unser eigener Code
 besteht hauptsächlich aus der Automatisierung und der
 Integration der die genutzten Upstream Projekte in einer
@@ -25,7 +25,7 @@ von kontinuierlichen Integrationstests (CI).
 Um den SCS Code zu installieren, um in zu studieren, zu testen,
 zu verändern und auch zu ihm beitragen zu können verweisen wir
 auf unser
-[github Docs](https://github.com/SovereignCloudStack/Docs/)
+[github SCS Docs](https://github.com/SovereignCloudStack/Docs/)
 repository.
 
 Am 15.7.2021 haben wir [Release 0]({{ site.baseurl }}/2021/07/15/release0) freigegeben.
