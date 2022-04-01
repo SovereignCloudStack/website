@@ -12,7 +12,7 @@ source communities. Most of our source code comes from these
 communities -- when we improve, amend, change things, we seek the
 contact with these communities to contribute our changes back.
 
-We use [Github](https://github.com/SovereignCloudStack/) to
+We use [Github/SovereignCloudStack](https://github.com/SovereignCloudStack/) to
 manage the code we are using -- our own code mainly
 consists of the automation and integration that glues the used
 upstream projects together in a consistent and manageable way.
@@ -20,12 +20,14 @@ Add documentation and CI tests to the mix.
 
 To install your own SCS code, so you can study, test, change it
 and contribute to it, we refer you to our
-[Github Docs](https://github.com/SovereignCloudStack/Docs/)
+[Github SCS Docs](https://github.com/SovereignCloudStack/Docs/)
 repository.
 
 On Jul 15, 2021 we have published [Release 0]({{ site.baseurl }}/2021/07/15/release0).
 
 On Sep 29, 2021 we have published [Release 1](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release1.md).
+
+On Mar 23, 2022 we have published [Release 2](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release2.md).
 
 ## SCS and OSISM
 
@@ -50,6 +52,10 @@ free to raise issues on github or better open PRs. Don't forget
 to use DCO (Sign-off) to ensure we can use your contribution in
 a legally safe way.
 
+We are an open and welcoming community.
+Expectations towards the behavior of community members are
+expressed in our [Code of Conduct](https://github.com/SovereignCloudStack/Docs/blob/main/CODE-OF-CONDUCT.md).
+
 ## Adopting SCS
 
 There are different steps you can take to support and adopt SCS.
@@ -65,6 +71,8 @@ and what adoption level.
 First is that SCS is modular. You might adopt just some pieces of
 our container stack. Or maybe the Ops stack. Or IaaS. Or ceph.
 Or maybe everything but ceph ...
+
+Second would be the adoption level.
 
 ### On the adoption level there are two possibilities:
 

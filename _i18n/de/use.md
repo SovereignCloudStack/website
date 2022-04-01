@@ -32,6 +32,8 @@ Am 15.7.2021 haben wir [Release 0]({{ site.baseurl }}/2021/07/15/release0) freig
 
 Am 29.9.2021 haben wir [Release 1](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release1.md) freigegeben.
 
+Am 23.3.2022 haben wir [Release 3](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release2.md) freigegeben.
+
 ## SCS und OSISM
 
 Für die grundlegenden Schichten bauen wir auf dem
@@ -55,9 +57,14 @@ Wir freuen uns auch über gelegentliche Beiträge -- das kann
 Bei letzterem sollte an den DCO (Signed-off-by:) gedacht werden,
 damit wir den Beitrag auch in rechtlich sicherer Weise nutzen
 
-## SCS umsetzen
+Wir sind eine offene Community, die Neuankömmlinge willkommen heisst.
+Unsere Erwartungen an das Verhalten der Beitragenden haben wir in einem
+[Verhaltenskodex](https://github.com/SovereignCloudStack/Docs/blob/main/CODE-OF-CONDUCT.md)
+zum Ausdruck gebracht.
 
-Man kann verschiedene Schritte machen, um SCS zu unterstützen und umszusetzen.
+## SCS einsetzen
+
+Man kann verschiedene Schritte machen, um SCS zu unterstützen und einzusetzen.
 
 Zunächst einmal freuen wir uns über Beiträge an SCS und den relevanten
 upstream Open Source Projekten. Wenn wir uns gemeinsam für Themen
@@ -71,7 +78,9 @@ Erstens ist SCS modular. Man kann z.B. einfach nur Teile des Container
 Stacks einsetzen. Oder vielleicht den ganzen Stack an Betriebswerkzeugen.
 Oder den IaaS Teil. Oder ceph. Oder alles außer ceph ...
 
-### Bei dem Niveau der Umsetzung sehen wir zwei Möglichkeiten.
+Zweitens gibt es zwei verschiedene Stufen der Umsetzung.
+
+### Stufen der Umsetzung
 
 Die erste Stufe wäre, die Plattform (oder genauer das Modul) mit den
 SCS Standards kompatibel zu machen. Das stellt sicher, dass man mit
