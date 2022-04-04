@@ -2,13 +2,16 @@
 title: Mail Signatures
 permalink: /signatures
 ---
+<head>
+<meta charset="UTF-8">
+</head>
 # E-Mail Signatures
 {% for employee in site.data.employees %}
 <!-- Begin Signature -->
 <a href="https://scs.community/{{employee.lastname}}">{% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}</a>
 <a href="mailto:{{employee.mail}}">&lt;{{employee.mail}}&gt;</a><br />
-Phone: {{employee.phone}},
-Matrix: <a href="{{employee.matrix}}">@{{employee.matrix | split: '@' | last }}</a><br />
+Phone: <a href="tel:{{employee.phone}}">{{employee.phone}}</a>
+{%- if employee.matrix %}, Matrix: <a href="{{employee.matrix}}">@{{employee.matrix | split: '@' | last }}</a>{% endif %}<br />
 {{employee.title}}<br />
 <br /><img src="{{ "/assets/images/scs-signature.png" | prepend: site.baseurl_root }}" /><br /><br />
 <small>
