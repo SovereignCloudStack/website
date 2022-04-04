@@ -14,7 +14,7 @@ Communities -- wenn wir diese verbessern, ergänzen, Dinge
 ändern, dann suchen wir den Kontakt mit ihnen, so dass wir
 unsere Änderungen wieder zurückgeben und einfließen lassen können.
 
-Wir nutzen [github](https://github.com/SovereignCloudStack/) um
+Wir nutzen [github/SovereignCloudStack](https://github.com/SovereignCloudStack/) um
 den von unse genutzten Code zu verwalten -- unser eigener Code
 besteht hauptsächlich aus der Automatisierung und der
 Integration der die genutzten Upstream Projekte in einer
@@ -22,15 +22,17 @@ konsistenten und gut zu verwaltenden Art verbindet.
 Dazu kommmen von Dokumentaiton und natürlich eine Menge
 von kontinuierlichen Integrationstests (CI).
 
-Um den SCS Code zu installieren, um in zu studieren, zu testen,
-zu verändern und auch zu ihm beitragen zu können verweisen wir
+Um den SCS Code zu installieren, um ihn zu studieren, zu testen,
+zu verändern und auch um zu ihm beitragen zu können verweisen wir
 auf unser
-[github Docs](https://github.com/SovereignCloudStack/Docs/)
+[github SCS Docs](https://github.com/SovereignCloudStack/Docs/)
 repository.
 
 Am 15.7.2021 haben wir [Release 0]({{ site.baseurl }}/2021/07/15/release0) freigegeben.
 
 Am 29.9.2021 haben wir [Release 1](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release1.md) freigegeben.
+
+Am 23.3.2022 haben wir [Release 2](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release2.md) freigegeben.
 
 ## SCS und OSISM
 
@@ -55,9 +57,14 @@ Wir freuen uns auch über gelegentliche Beiträge -- das kann
 Bei letzterem sollte an den DCO (Signed-off-by:) gedacht werden,
 damit wir den Beitrag auch in rechtlich sicherer Weise nutzen
 
-## SCS umsetzen
+Wir sind eine offene Community, die Neuankömmlinge willkommen heisst.
+Unsere Erwartungen an das Verhalten der Beitragenden haben wir in einem
+[Verhaltenskodex](https://github.com/SovereignCloudStack/Docs/blob/main/CODE-OF-CONDUCT.md)
+zum Ausdruck gebracht.
 
-Man kann verschiedene Schritte machen, um SCS zu unterstützen und umszusetzen.
+## SCS einsetzen
+
+Man kann verschiedene Schritte machen, um SCS zu unterstützen und einzusetzen.
 
 Zunächst einmal freuen wir uns über Beiträge an SCS und den relevanten
 upstream Open Source Projekten. Wenn wir uns gemeinsam für Themen
@@ -67,11 +74,13 @@ so finden wir das ausgezeichnet.
 Bei der Umsetzung von SCS kann man in zwei Richtungen denken:
 Welche Module von SCS und welches Niveau der Umsetzung.
 
-Erstens ist SCS modular. Man kann z.B. einfach nur Teile des Container
+Zum einen ist SCS modular. Man kann z.B. einfach nur Teile des Container
 Stacks einsetzen. Oder vielleicht den ganzen Stack an Betriebswerkzeugen.
 Oder den IaaS Teil. Oder ceph. Oder alles außer ceph ...
 
-### Bei dem Niveau der Umsetzung sehen wir zwei Möglichkeiten.
+Desweiteren gibt es zwei verschiedene Stufen der Umsetzung.
+
+### Stufen der Umsetzung
 
 Die erste Stufe wäre, die Plattform (oder genauer das Modul) mit den
 SCS Standards kompatibel zu machen. Das stellt sicher, dass man mit
