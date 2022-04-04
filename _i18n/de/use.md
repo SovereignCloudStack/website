@@ -74,11 +74,11 @@ so finden wir das ausgezeichnet.
 Bei der Umsetzung von SCS kann man in zwei Richtungen denken:
 Welche Module von SCS und welches Niveau der Umsetzung.
 
-Erstens ist SCS modular. Man kann z.B. einfach nur Teile des Container
+Zum einen ist SCS modular. Man kann z.B. einfach nur Teile des Container
 Stacks einsetzen. Oder vielleicht den ganzen Stack an Betriebswerkzeugen.
 Oder den IaaS Teil. Oder ceph. Oder alles außer ceph ...
 
-Zweitens gibt es zwei verschiedene Stufen der Umsetzung.
+Desweiteren gibt es zwei verschiedene Stufen der Umsetzung.
 
 ### Stufen der Umsetzung
 
