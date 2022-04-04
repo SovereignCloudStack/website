@@ -22,8 +22,8 @@ konsistenten und gut zu verwaltenden Art verbindet.
 Dazu kommmen von Dokumentaiton und natürlich eine Menge
 von kontinuierlichen Integrationstests (CI).
 
-Um den SCS Code zu installieren, um in zu studieren, zu testen,
-zu verändern und auch zu ihm beitragen zu können verweisen wir
+Um den SCS Code zu installieren, um ihn zu studieren, zu testen,
+zu verändern und auch um zu ihm beitragen zu können verweisen wir
 auf unser
 [github SCS Docs](https://github.com/SovereignCloudStack/Docs/)
 repository.
