@@ -4,6 +4,7 @@ permalink: /signatures
 ---
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="none" />
 </head>
 # E-Mail Signatures
 {% for employee in site.data.employees %}
