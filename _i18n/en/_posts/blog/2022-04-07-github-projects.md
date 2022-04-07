@@ -16,17 +16,17 @@ with [Wekan](https://wekan.github.io/), but now it's time to say goodbye and bre
 
 It's not your fault, Wekan – but we need to lower the bar informing about or contributing to SCS. 
 A repeated criticism during the past team's retrospectives was the fragmentation of
-the tools we use within our community. You're all absolutely right and we urgently
+the tools we use within our community. You're all absolutely right and we urgently have
 to fix this.
 
-For this reason, we decided to move to GitHub's new projects experience and bundle our developing
+For this reason, we decided to give GitHub's new projects experience a try and bundle our developing
 efforts on one single platform. This provides our contributors and guests with a
 single point of entry and at the same time enhances the transparency and accessibility
 of our project.
 
 ## GitHub Projects
 
-The new projects experience is still considered as beta, but proves to be quite
+The new projects experience is still considered beta, but proves to be quite
 stable in our tests. Check out the [documentation](https://docs.github.com/en/issues/trying-out-the-new-projects-experience)
 for further information on how to use this new feature.
 
@@ -36,12 +36,12 @@ for further information on how to use this new feature.
   </a>
 </figure>
 
-Our release planing board can be found on the [top organization level](https://github.com/SovereignCloudStack)
-and reached via the ["Projects" tab](https://github.com/orgs/SovereignCloudStack/projects?type=beta).
+Our release planning board can be found on the [top organization level](https://github.com/SovereignCloudStack)
+and can be reached via the ["Projects" tab](https://github.com/orgs/SovereignCloudStack/projects?type=beta).
 The ["Sovereign Cloud Stack R3" project](https://github.com/orgs/SovereignCloudStack/projects/6)
 is publicly available and can be modified by every [member of our Sovereign Cloud Stack organization](https://github.com/orgs/SovereignCloudStack/people).
 
-## Raising `issues` from the dead
+## Reactivating the `issues` repository
 
 Technically, every item in a GitHub project is an issue in one of the organization's repositories.
 Should an user story not be directly assignable to one of our code repositories, we decided to
@@ -66,7 +66,7 @@ you think that we've missed an important item in these lists.
   </a>
 </figure>
 
-## Tl;dr
+## tl;dr
 
 Please consider the following steps while creating a new user story for R3:
 
