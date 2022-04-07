@@ -13,7 +13,7 @@ Community,
 we've had a great time planning [our third release](https://scs.community/release/2022/03/22/release2/)
 with [Wekan](https://wekan.github.io/), but now it's time to say goodbye and break apart. 💔
 
-It's not your fault, Wekan – but we need to lower the bar to inform about or contribute to SCS. 
+It's not your fault, Wekan – but we need to lower the bar informing about or contributing to SCS. 
 A repeated criticism during the past team's retrospectives was the fragmentation of
 the tools we use within our community. You're all absolutely right and we urgently
 to fix this.
