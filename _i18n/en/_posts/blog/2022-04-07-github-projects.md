@@ -6,6 +6,7 @@ author:
   - "Eduard Itrich"
 avatar:
   - "/assets/images/eitrich.jpg"
+image: "/assets/images/blog/github.jpg"
 ---
 
 Community,
