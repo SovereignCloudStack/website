@@ -77,4 +77,9 @@ Please consider the following steps while creating a new user story for R3:
 * Add the `v4.0.0` Milestone.
 
 Have a look at our [first user story for R3](https://github.com/SovereignCloudStack/issues/issues/16)
-and feel free to use it as a blueprint for all of your great ideas. Thank you!
+and feel free to use it as a blueprint for all of your great ideas. We'll be using the
+team meetings during the next weeks to have a look at the unfinished user stories
+in our [Wekan](https://ms.scs.sovereignit.de/wekan) and move them *manually* to GitHub.
+We have consciously decided against an automatic transfer, in order to use this opportunity
+to check the old user stories again and to refine them if necessary. We are looking
+forward to the upcoming sessions with you!
