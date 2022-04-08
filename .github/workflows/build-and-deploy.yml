@@ -44,7 +44,7 @@ jobs:
         pre_build_commands: ''     # Installing additional dependencies (Arch Linux)
     - uses: burnett01/rsync-deployments@5.2
       with:
-        switches: -avzr --delete --exclude=/docs/
+        switches: -avzr --delete --exclude=/docs/ --exclude=/antrag-bmwi
         path: build/
         remote_host: ${{ secrets[matrix.host] }}
         remote_port: ${{ secrets[matrix.port] }}
