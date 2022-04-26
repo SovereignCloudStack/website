@@ -11,7 +11,13 @@ layout: default
           <div class="card h-100">
             <img src="{{ job.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" class="card-img-top img-fluid" style="max-height: 30vh; object-fit: cover; object-position: center;">
             <div class="card-body">
-              <a href="{{ site.baseurl }}{{job.url}}" class="text-decoration-none text-body stretched-link"> <h5 class="card-title">{% t job.title %}</h5></a>
+              <a href="
+              {%- if job.url -%}
+              {{ site.baseurl }}{{job.url}}
+              {%- else -%}
+              mailto:jobs-scs@osb-alliance.com
+              {%- endif -%}
+              " class="text-decoration-none text-body stretched-link"> <h5 class="card-title">{% t job.title %}</h5></a>
               <p class="card-text">{% t job.short_description %}</p>
             </div>
             <div class="card-footer">
