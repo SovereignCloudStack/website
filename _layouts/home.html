@@ -26,7 +26,10 @@ layout: default
 	var referrer = document.referrer;
 	var landingPage = !referrer || referrer.indexOf(hostname) == -1;
 	
-	if (landingPage && (current_lang !== suitable_lang)) {
+	if (landingPage
+		&& (current_lang !== suitable_lang)
+		&& suitable_lang != "en")	// Don't redirect back to /en/ and keep provided language
+	{
   	window.location = '/' + suitable_lang + '/';
 	}
 </script>
