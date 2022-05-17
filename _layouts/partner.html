@@ -1,0 +1,49 @@
+---
+layout: default
+---
+{% for partner in site.data.partner %}
+{% if partner.permalink == page.permalink %}
+<div class="container-fluid my-5">
+  <div class="row gy-5">
+    <div class="col-lg-6 d-flex flex-column align-items-center text-center">
+      <div style="max-width: 200px; max-height: 200px;" class="overflow-hidden">
+        <img src="{{ partner.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" class="img-fluid">
+      </div>
+      <div class="row mt-4 w-75 text-muted">
+        <p>{{partner.description}}</p>
+      </div>
+      <div class="row mt-2">
+        {% if partner.web %}
+        <div class="col">
+          <a class="btn btn-web" href="{{partner.web}}"><i class="fa fa-globe fa-lg"></i></a>
+        </div>
+        {% endif %}
+        {% if partner.twitter %}
+        <div class="col">
+          <a class="btn btn-twitter" href="{{partner.twitter}}"><i class="fa fa-twitter fa-lg"></i></a>
+        </div>
+        {% endif %}
+        {% if partner.linkedin %}
+        <div class="col">
+          <a class="btn btn-linkedin" href="{{partner.linkedin}}"><i class="fa fa-linkedin fa-lg"></i></a>
+        </div>
+        {% endif %}
+        {% if partner.github %}
+        <div class="col">
+          <a class="btn btn-github" href="{{partner.github}}"><i class="fa fa-github fa-lg"></i></a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-lg-6 align-items-center px-5">
+      {% for offering in partner.offerings %}
+      <div class="row mt-2">
+          <span class="h5 badge rounded-pill bg-primary">{{offering[0] | capitalize}}</span>
+          <p class="text-muted">{{offering[1]}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endfor %}
