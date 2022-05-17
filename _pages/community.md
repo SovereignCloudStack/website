@@ -3,7 +3,7 @@ title_slug: nav.community
 layout: default
 permalink: /community/
 ---
-# Our partners
+# Our service partners
 {% include ecosystem.html %}
 
 # Our network
