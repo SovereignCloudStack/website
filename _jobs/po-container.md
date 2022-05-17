@@ -1,9 +1,15 @@
 ---
-title: SCS Product Owner Container Technologies
+title_slug: jobs.po-container.title
 layout: default
 permalink: /jobs/po-container/
 redirect_from:
    - /Jobs/JD-PO-Container3.html
+
+image: "po-container.jpg"
+short_description: jobs.po-container.short_description
+location: "Remote / Berlin"
+published: true
+open: true
 ---
 
 {% tf jobs/po-container.md %}
