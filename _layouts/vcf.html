@@ -1,5 +1,4 @@
-{% for employee in site.data.employees %}
-{% if employee.lastname == page.lastname %}
+{% assign employee = page %}
 BEGIN:VCARD
 VERSION:3.0
 PROFILE:VCARD
@@ -17,5 +16,3 @@ TZ:{{employee.timezone}}
 KIND:individual
 PHOTO;ENCODING=BASE64;TYPE=JPEG:{{ employee.avatar | base64 }}
 END:VCARD
-{% endif %}
-{% endfor %}
