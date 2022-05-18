@@ -7,17 +7,9 @@ avatar:
   - "/assets/images/jkemper.jpeg"
 ---
 
-<figure class="figure mx-auto d-block" style="width:70%">
-  <a href="{{ "/assets/images/blog/cee2022-ganten.png" | prepend: site.baseurl_root }}">
-    <img src="{{ "/assets/images/blog/cee2022-ganten.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
-  </a>
-</figure>
 
-<figure class="figure mx-auto d-block" style="width:70%">
-  <a href="{{ "/assets/images/blog/cee2022-garloff.png" | prepend: site.baseurl_root }}">
-    <img src="{{ "/assets/images/blog/cee2022-garloff.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
-  </a>
-</figure>
+
+
 
 Many members of SCS team and community gathered at [Cloud Expo Europe](https://www.cloudexpoeurope.de) in Frankfurt. As my company, Syself, joined the community only a few months ago, we have not seen anybody in person before. For us, the CEE was not only about listening to interesting talks and meeting new people. 
 
@@ -36,6 +28,25 @@ At [Syself](https://syself.com), we focus on modern, European cloud infrastructu
 The CEE showed us that we are not at all alone. There are a lot of companies and projects that aim for European IT infrastructure where end users are truly sovereign. It is great that many of them are collaborating in projects like SCS or GAIA-X. 
 
 [Alexander Wallner](https://www.cloudexpoeurope.de/konferenzprogramm-2022/multi-cloud-needs-a-german-foothold-data-sovereignty-is-business-critical) and Christian Berendt ([here](https://www.cloudexpoeurope.de/konferenzprogramm-2022/session-delivered-by-b1-systems) and [here](https://www.cloudexpoeurope.de/konferenzprogramm-2022/session-delivered-by-b1-systems-1)) from Plusserver and OSISM - the two companies who run the SCS-based commercial cloud services Pluscloud Open and Betacloud - indicated in their talks the importance of SCS in the European cloud world. They stressed the importance of open-source, of active collaboration between cloud providers, and modern IT infrastructure.
+
+<div class="row my-2">
+  <div class="col-sm-6 col-12">
+    <figure class="figure mx-auto d-block">
+      <a href="{{ "/assets/images/blog/cee2022-ganten.jpeg" | prepend: site.baseurl_root }}">
+        <img src="{{ "/assets/images/blog/cee2022-ganten.jpeg" | prepend: site.baseurl_root }}" class="figure-img w-100">
+      </a>
+      <figcaption class="figure-caption text-end">Kurt Garloff, CTO Sovereign Cloud Stack</figcaption>
+    </figure>
+  </div>
+  <div class="col-sm-6 col-12">
+    <figure class="figure mx-auto d-block">
+      <a href="{{ "/assets/images/blog/cee2022-garloff.jpeg" | prepend: site.baseurl_root }}">
+        <img src="{{ "/assets/images/blog/cee2022-garloff.jpeg" | prepend: site.baseurl_root }}" class="figure-img w-100">
+      </a>
+      <figcaption class="figure-caption text-end">Peter Ganten, Chairman of The Board - Open Source Business Alliance e.V.</figcaption>
+    </figure>
+  </div>
+</div>
 
 The talks of [Kurt Garloff](/assets/slides/20220511-SCS-CEE.pdf) and [Peter Ganten](/assets/slides/20220512-OSBA-CEE.pdf) from the OSBA and SCS were inspiring to me. They formulated many thoughts I had in my head already and put them down in a structured manner on their slides. 
 
