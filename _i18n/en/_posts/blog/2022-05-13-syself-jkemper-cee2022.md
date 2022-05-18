@@ -5,11 +5,8 @@ author:
   - "Janis Kemper"
 avatar:
   - "/assets/images/jkemper.jpeg"
+image: "/assets/images/blog/cee2022-ganten.jpeg"
 ---
-
-
-
-
 
 Many members of SCS team and community gathered at [Cloud Expo Europe](https://www.cloudexpoeurope.de) in Frankfurt. As my company, Syself, joined the community only a few months ago, we have not seen anybody in person before. For us, the CEE was not only about listening to interesting talks and meeting new people. 
 
