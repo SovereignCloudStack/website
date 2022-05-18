@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-05-13-syself-jkemper-cee2022.md
