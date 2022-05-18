@@ -41,6 +41,10 @@ feed:
     - security
     - release
 
+collections:
+  employees:
+    output: true
+
 plugins:
   - jekyll-multiple-languages-plugin
   - jekyll-redirect-from
