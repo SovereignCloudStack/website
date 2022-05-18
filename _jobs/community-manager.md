@@ -1,9 +1,13 @@
 ---
-title: SCS Community Manager
+title_slug: jobs.community-manager.title
 layout: default
 permalink: /jobs/community-manager/
 redirect_from:
    - /Jobs/JD-Community-Manager2.html
+   
+short_description: jobs.community-manager.short_description
+location: "Remote / Berlin"
+published: false
 ---
 
 {% tf jobs/community-manager.md %}

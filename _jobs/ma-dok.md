@@ -1,9 +1,14 @@
 ---
-title: Mitarbeiter:in Dokumentation/Projektmanagement
+title_slug: jobs.ma-dok.title
 layout: default
 permalink: /jobs/ma-dok/
 redirect_from:
    - /Jobs/JD-MA-Dok3.html
+   
+image: "ma-dok.jpg"
+short_description: jobs.ma-dok.short_description
+location: "Berlin / Remote"
+published: false
 ---
 
 {% tf jobs/ma-dok.md %}

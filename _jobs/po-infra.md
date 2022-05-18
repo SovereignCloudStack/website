@@ -1,9 +1,14 @@
 ---
-title: SCS Product Owner IaaS and Operations
+title_slug: jobs.po-infra.title
 layout: default
 permalink: /jobs/po-infra/
 redirect_from:
    - /Jobs/JD-PO-Infra3.html
+
+image: "po-infra.jpg"
+short_description: jobs.po-infra.short_description
+location: "Remote / Berlin"
+published: false
 ---
 
 {% tf jobs/po-infra.md %}

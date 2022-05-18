@@ -1,9 +1,14 @@
 ---
-title: SCS Knowledge Management Engineer
+title_slug: jobs.knowledge-management.title
 layout: default
 permalink: /jobs/knowledge-management/
 redirect_from:
    - /Jobs/JD-Knowledge-Management3.html
+   
+image: "knowledge-management.jpg"
+short_description: jobs.knowledge-management.short_description
+location: "Remote / Berlin"
+published: true
 ---
 
 {% tf jobs/knowledge-management.md %}

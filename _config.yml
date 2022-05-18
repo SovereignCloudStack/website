@@ -42,6 +42,8 @@ feed:
     - release
 
 collections:
+  jobs:
+    output: true
   employees:
     output: true
 
