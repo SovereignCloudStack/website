@@ -9,7 +9,6 @@ image: "po-container.jpg"
 short_description: jobs.po-container.short_description
 location: "Remote / Berlin"
 published: true
-open: true
 ---
 
 {% tf jobs/po-container.md %}

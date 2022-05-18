@@ -12,13 +12,12 @@ redirect_from:
     <h1>{% t page.title_slug %}</h1>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-4">
       {% for job in site.jobs %}
-        {% if job.open %}
         <div class="col">
           <div class="card h-100">
             <img src="{{ job.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" class="card-img-top img-fluid" style="max-height: 30vh; object-fit: cover; object-position: center;">
             <div class="card-body">
               <a href="
-              {%- if job.url -%}
+              {%- if job.permalink -%}
               {{ site.baseurl }}{{job.url}}
               {%- else -%}
               mailto:jobs-scs@osb-alliance.com
@@ -30,8 +29,7 @@ redirect_from:
               <small class="text-muted">{{job.location}}</small>
             </div>
           </div>
-        </div>          
-        {% endif %}
+        </div>
       {% endfor %}
     </div>
   </div>

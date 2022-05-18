@@ -9,7 +9,6 @@ image: "po-infra.jpg"
 short_description: jobs.po-infra.short_description
 location: "Remote / Berlin"
 published: false
-open: false
 ---
 
 {% tf jobs/po-infra.md %}

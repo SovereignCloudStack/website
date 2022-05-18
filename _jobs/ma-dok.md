@@ -9,7 +9,6 @@ image: "ma-dok.jpg"
 short_description: jobs.ma-dok.short_description
 location: "Berlin / Remote"
 published: false
-open: false
 ---
 
 {% tf jobs/ma-dok.md %}

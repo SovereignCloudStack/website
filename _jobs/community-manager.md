@@ -8,7 +8,6 @@ redirect_from:
 short_description: jobs.community-manager.short_description
 location: "Remote / Berlin"
 published: false
-open: false
 ---
 
 {% tf jobs/community-manager.md %}

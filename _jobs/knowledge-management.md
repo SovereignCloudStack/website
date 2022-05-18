@@ -9,7 +9,6 @@ image: "knowledge-management.jpg"
 short_description: jobs.knowledge-management.short_description
 location: "Remote / Berlin"
 published: true
-open: true
 ---
 
 {% tf jobs/knowledge-management.md %}
