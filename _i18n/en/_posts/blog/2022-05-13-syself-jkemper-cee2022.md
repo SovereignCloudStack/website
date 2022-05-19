@@ -51,6 +51,6 @@ Among others, they pointed out the different dimensions of a sovereign cloud and
 
 ## Sovereign Clouds Are Not Only a Theoretic Concept
 
-The collaboration of SCS with Eco, the association of the German Internet industry, was another major topic. 
+The collaboration of SCS with [Eco](https://international.eco.de), the association of the German Internet industry, was another major topic.
 
 Kurt Garloff mentioned in his speech that the cluster infrastructure for the testing and staging environments of the Gaia-X Federation Services will be on SCS infrastructure. The CEE provided room for meetings where the details of this project were discussed.
