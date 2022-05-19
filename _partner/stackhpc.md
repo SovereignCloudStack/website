@@ -3,6 +3,7 @@ title: "StackHPC Ltd."
 layout: partner
 image: "logo-stackhpc.png"
 web: "https://www.stackhpc.com/"
+contact: "https://www.stackhpc.com/pages/contact.html"
 twitter: "https://twitter.com/stackhpc/"
 linkedin: "https://www.linkedin.com/company/stackhpc-ltd/"
 github: "https://github.com/stackhpc"

@@ -17,6 +17,11 @@ layout: default
           <a class="btn btn-web" href="{{partner.web}}"><i class="fa fa-globe fa-lg"></i></a>
         </div>
         {% endif %}
+        {% if partner.contact %}
+        <div class="col">
+          <a class="btn btn-mail" href="{{partner.contact}}"><i class="fa fa-envelope-o fa-lg"></i></a>
+        </div>
+        {% endif %}
         {% if partner.twitter %}
         <div class="col">
           <a class="btn btn-twitter" href="{{partner.twitter}}"><i class="fa fa-twitter fa-lg"></i></a>
