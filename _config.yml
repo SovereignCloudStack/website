@@ -44,6 +44,7 @@ feed:
 collections:
   jobs:
     output: true
+    permalink: /:collection/:name
   employees:
     output: true
   partner:
