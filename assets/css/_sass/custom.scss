@@ -73,6 +73,15 @@ p {
     }
 }
 
+.btn-mail, {
+    color: white;
+    background-color: #7CB342 !important;
+    border-color: #7CB342;
+    &:hover{
+      color: rgba(white, 0.9);
+    }
+}
+
 .btn-twitter, {
     color: white;
     background-color: #1DA1F2 !important;
