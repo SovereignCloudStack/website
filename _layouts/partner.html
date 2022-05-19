@@ -39,9 +39,9 @@ layout: default
         {% endif %}
       </div>
     </div>
-    <div class="col-lg-6 align-items-center px-5">
+    <div class="col-lg-6 d-flex flex-column align-items-center text-center">
       {% for offering in partner.offerings %}
-      <div class="row mt-2">
+      <div class="row mt-2 w-75">
           <span class="h5 badge rounded-pill bg-primary">{{offering[0] | capitalize}}</span>
           <p class="text-muted">{{offering[1]}}</p>
       </div>
