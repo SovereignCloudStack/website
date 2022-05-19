@@ -46,7 +46,10 @@ collections:
     output: true
   employees:
     output: true
-
+  partner:
+    output: true
+    permalink: /:collection/:name
+    
 plugins:
   - jekyll-multiple-languages-plugin
   - jekyll-redirect-from
