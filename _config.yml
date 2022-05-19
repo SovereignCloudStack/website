@@ -48,7 +48,7 @@ collections:
   employees:
     output: true
     permalink: /:name
-  partner:
+  partners:
     output: true
     permalink: /:collection/:name
     
