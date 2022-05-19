@@ -64,6 +64,15 @@ p {
     }
 }
 
+.btn-web, {
+    color: white;
+    background-color: #92B4EC !important;
+    border-color: #92B4EC;
+    &:hover{
+      color: rgba(white, 0.9);
+    }
+}
+
 .btn-twitter, {
     color: white;
     background-color: #1DA1F2 !important;
