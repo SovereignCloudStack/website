@@ -124,6 +124,13 @@
   location:
     latitude: 51.47556
     longitude: -2.58270
+- name: "Syself GmbH"
+  image: "logo-syself.svg"
+  avatar: "avatar-syself.jpeg"
+  link: "https://syself.com/"
+  location:
+    latitude: 50.793639
+    longitude: 7.104775
 - name: "Open Telekom Cloud"
   image: "logo-telekom.svg"
   avatar: "avatar-telekom.jpg"
