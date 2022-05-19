@@ -1,8 +1,7 @@
 ---
 layout: default
 ---
-{% for partner in site.data.partner %}
-{% if partner.permalink == page.permalink %}
+{% assign partner = page %}
 <div class="container-fluid my-5">
   <div class="row gy-5">
     <div class="col-lg-6 d-flex flex-column align-items-center text-center">
@@ -45,5 +44,3 @@ layout: default
     </div>
   </div>
 </div>
-{% endif %}
-{% endfor %}
