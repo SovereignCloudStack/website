@@ -51,6 +51,10 @@ collections:
   partners:
     output: true
     permalink: /:collection/:name
+  tenders:
+    output: true
+    sort_by: number
+    permalink: /:collection/:name
     
 plugins:
   - jekyll-multiple-languages-plugin

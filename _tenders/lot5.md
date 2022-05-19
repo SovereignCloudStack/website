@@ -1,10 +1,13 @@
 ---
 title_slug: tenders.title.lot5
 layout: default
-permalink: /tenders/lot5/
 redirect_from:
    - /Tender/Lot5.html.de
    - /Tender/Lot5.html.en
+   
+number: 5
+number_vh81: 5
+state: undefined # undefined, defined, open or closed
 ---
 
 {% tf tenders/lot5.md %}

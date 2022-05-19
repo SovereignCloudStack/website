@@ -7,27 +7,3 @@ Important building blocks will be awarded to companies through open tenders, whi
 The subject of the tenders are usually framework agreements on programming and other services.
 Please note that any questions regarding the public tenders must mandatorily be posted via the linked contracting portal.
 Please refrain from addressing the project team directly.
-
-<div class="table-responsive" markdown="1">
-
-| #  | #VH81 | Name | Description | Start date | Closing date | Link to contracting portal |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 1  | 1  | OpsTooling, CI Tests Infra/IaaS, Metal as a Service, Life Cycle Management | [Lot 1](lot1/) | 2021-07-30 | 2021-08-20 | ~~SCS-VP01~~ |
-| 2  | 2  | Ops Best Practice Knowledge Base, CSP Transparency | [Lot 2](lot2/) | tba | tba | tba |
-| 3  | 3  | Storage Technology | [Lot 3](lot3/) | tba | tba | tba |
-| 4  | 4  | Networking | [Lot 4](lot4/) | tba | tba | tba |
-| 5  | 5  | K8s aaS Integration | [Lot 5](lot5/) | tba | tba | tba |
-| 6  | 6a | Container Network and Storage Integration | [Lot 6a](lot6a) | tba | tba | tba |
-| 7  | 6b | Container Meshing and Proxy | Lot 6b | tba | tba | tba |
-| 8  | 6c | Container Registry / Scanning | Lot 6c | tba | tba | tba |
-| 9  | 6d | Container Monitoring / IaC / CI / Deployment Automation | [Lot 6d](lot6d) | 2021-12-22 | 2022-01-19 | ~~SCS-VP06d~~ |
-| 10 | 6e | Container Tracing & Audit | Lot 6e | tba | tba | tba |
-| 11 | 8  | User Management & Federation | [Lot 8](lot8/) | 2022-02-28 | 2022-03-22 | ~~SCS-VP08~~ |
-| 12 | 9a | Infra Scanning / Isolation / Policy Management | Lot 9a | tba | tba | tba |
-| 13 | 9b | Supply Chain Security | Lot 9b | tba | tba | tba |
-| 14 | 9c | Penetration Testing | Lot 9c | tba | tba | tba |
-| 15 | 10 | SCS certification | [Lot 10](lot10/) | 2021-11-12 | 2021-12-07 | ~~SCS-VP10~~ |
-| — | — | SCS certification | [Lot 10](lot10/) | 2022-01-12 | 2022-01-27 | ~~SCS-VP10-2~~ |
-| 16 | 11 | Server Hardware Installation | Lot 11 | tba | tba | tba |
-
-</div>
