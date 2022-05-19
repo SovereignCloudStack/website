@@ -1,7 +1,6 @@
 ---
 title_slug: jobs.ma-dok.title
 layout: default
-permalink: /jobs/ma-dok/
 redirect_from:
    - /Jobs/JD-MA-Dok3.html
    

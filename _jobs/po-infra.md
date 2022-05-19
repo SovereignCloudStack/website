@@ -1,7 +1,6 @@
 ---
 title_slug: jobs.po-infra.title
 layout: default
-permalink: /jobs/po-infra/
 redirect_from:
    - /Jobs/JD-PO-Infra3.html
 

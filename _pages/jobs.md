@@ -14,16 +14,17 @@ redirect_from:
       {% for job in site.jobs %}
         <div class="col">
           <div class="card h-100">
-            <img src="{{ job.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" class="card-img-top img-fluid" style="max-height: 30vh; object-fit: cover; object-position: center;">
+            <img src="{{ job.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" class="card-img-top img-fluid" style="width: 100%; max-height: 20vh; object-fit: cover; object-position: center;">
             <div class="card-body">
               <a href="
-              {%- if job.permalink -%}
-              {{ site.baseurl }}{{job.url}}
-              {%- else -%}
+              {%- capture content_length -%}{{job.content | strip}}{%- endcapture -%}
+              {%- if content_length == blank -%}
               mailto:jobs-scs@osb-alliance.com
+              {%- else -%}
+              {{ site.baseurl }}{{job.url}}
               {%- endif -%}
               " class="text-decoration-none text-body stretched-link"> <h5 class="card-title">{% t job.title_slug %}</h5></a>
-              <p class="card-text">{% t job.short_description %}</p>
+              <p class="card-text">{% t job.short_description %}{{job.content | strip | size}}</p>
             </div>
             <div class="card-footer">
               <small class="text-muted">{{job.location}}</small>
