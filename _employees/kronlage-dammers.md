@@ -1,7 +1,6 @@
 ---
 title: Felix Kronlage-Dammers
 layout: employee
-permalink: /kronlage-dammers
 
 lastname: Kronlage-Dammers
 firstname: Felix

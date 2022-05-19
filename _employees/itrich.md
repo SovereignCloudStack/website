@@ -1,7 +1,6 @@
 ---
 title: Eduard Itrich
 layout: employee
-permalink: /itrich
 
 lastname: Itrich
 firstname: Eduard

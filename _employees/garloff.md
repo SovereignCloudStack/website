@@ -1,7 +1,6 @@
 ---
 title: Kurt Garloff
 layout: employee
-permalink: /garloff
 
 lastname: Garloff
 firstname: Kurt

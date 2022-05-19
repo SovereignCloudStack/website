@@ -1,7 +1,6 @@
 ---
 title: Dirk Loßack
 layout: employee
-permalink: /lossack
 
 lastname: Loßack
 firstname: Dirk

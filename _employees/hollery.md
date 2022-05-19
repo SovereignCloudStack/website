@@ -1,7 +1,6 @@
 ---
 title: Bianca Hollery
 layout: employee
-permalink: /hollery
 
 lastname: Hollery-Pfister
 firstname: Bianca

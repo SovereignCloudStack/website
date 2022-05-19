@@ -1,7 +1,6 @@
 ---
 title: Dr. Manuela Urban
 layout: employee
-permalink: /urban
 
 lastname: Urban
 firstname: Manuela
