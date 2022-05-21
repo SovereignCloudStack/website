@@ -1,0 +1,64 @@
+title: Sovereign Cloud Stack
+tagline: Sovereign Cloud Stack (SCS) is federated cloud technology built entirely with Open Source Software — putting users and providers in control.
+description: Sovereign Cloud Stack (SCS) is a network of existing and future providers of standardized sovereign cloud and container infrastructure to join forces in defining, implementing and operating a fully open, federated, compatible platform. By joining forces, the platform can support a healthy ecosystem for service and application developers and strengthen the digitalization efforts in Europe without creating large risks to lose control over the technology and the data.
+
+url: https://scs.community
+
+permalink: pretty
+
+languages: ["en", "de"]
+exclude_from_localizations: ["assets"]
+
+sass:
+  sass_dir: /assets/css/_sass
+  style: compressed
+
+include:
+  - _pages
+
+exclude:
+  - .sass-cache
+
+twitter:
+  username: scs_osballiance
+
+social:
+  name: Sovereign Cloud Stack
+  links:
+    - https://twitter.com/scs_osballiance
+    - https://www.linkedin.com/showcase/sovereigncloudstack
+    - https://github.com/SovereignCloudStack
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/default-card.jpg
+
+feed:
+  categories:
+    - security
+    - release
+
+collections:
+  jobs:
+    output: true
+    permalink: /:collection/:name
+  employees:
+    output: true
+    permalink: /:name
+  partners:
+    output: true
+    permalink: /:collection/:name
+  tenders:
+    output: true
+    sort_by: number
+    permalink: /:collection/:name
+    
+plugins:
+  - jekyll-multiple-languages-plugin
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-last-modified-at
+  - jekyll-feed
+  - jekyll-scholar
