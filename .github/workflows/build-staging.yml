@@ -27,20 +27,3 @@ jobs:
         keep_history: true
         target_path: ${{github.ref_name}}
         jekyll_build_options: --baseurl /website/${{github.ref_name}} --config _config.staging.yml
-  lighthouse:
-    name: "Lighthouse v9 performance checks"
-    needs: build-and-deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: lewagon/wait-on-check-action@v1.0.0
-        id: wait
-        with:
-          ref: ${{ github.ref }}
-          running-workflow-name: 'pages build and deployment'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 20
-      - uses: treosh/lighthouse-ci-action@v9
-        with:
-          urls: https://sovereigncloudstack.github.io/website/${{github.ref_name}}
-          uploadArtifacts: true # save results as an action artifacts
-          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
