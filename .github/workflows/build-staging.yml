@@ -1,9 +1,7 @@
 name: Build staging website
-on:
-  push
-
+on: [push]
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -22,4 +20,4 @@ jobs:
         target_branch: staging
         keep_history: true
         target_path: ${{github.ref_name}}
-        jekyll_build_options: --baseurl /website/${{github.ref_name}}
+        jekyll_build_options: --baseurl /website/${{github.ref_name}} --config _config.staging.yml
