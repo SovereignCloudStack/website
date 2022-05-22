@@ -36,7 +36,7 @@ jobs:
         id: wait
         with:
           ref: ${{ github.ref }}
-          check-name: 'pages build and deployment'
+          running-workflow-name: 'pages build and deployment'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 20
       - uses: treosh/lighthouse-ci-action@v9
