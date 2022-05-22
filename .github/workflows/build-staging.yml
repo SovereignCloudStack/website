@@ -1,13 +1,18 @@
 name: Build staging website
+description: 'Build website and push output to staging area (currently hosted on GitHub Pages).'
 on: [push]
 jobs:
   build-and-deploy:
+    name: "Build and deploy to GitHub Pages"
     runs-on: ubuntu-latest
     steps:
+    # Set postBuffer of git to maximum as lower values may cause trobule while pushing
     - run: git config --global http.postBuffer 524288000
     - uses: actions/checkout@v2
+      id: checkout
     # Use GitHub Actions' cache to shorten build times and decrease load on servers
     - uses: actions/cache@v2
+      id: cache
       with:
         path: vendor/bundle
         key: ${{ runner.os }}-gems-v2-${{ hashFiles('**/Gemfile') }}
@@ -15,6 +20,7 @@ jobs:
           ${{ runner.os }}-gems-v2-
     # Use GitHub Deploy Action to build and deploy to Github
     - uses:  helaili/jekyll-action@v2
+      id: build
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         jekyll_env: development
@@ -22,3 +28,20 @@ jobs:
         keep_history: true
         target_path: ${{github.ref_name}}
         jekyll_build_options: --baseurl /website/${{github.ref_name}} --config _config.staging.yml
+  lighthouse:
+    name: "Lighthouse v9 performance checks"
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lewagon/wait-on-check-action@v1.0.0
+        id: wait
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'pages build and deployment'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 20
+      - uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: https://sovereigncloudstack.github.io/website/${{github.ref_name}}
+          uploadArtifacts: true # save results as an action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
