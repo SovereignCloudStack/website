@@ -1,0 +1,16 @@
+name: Run checks on staging website
+on:
+  workflow_run:
+    workflows: [pages build and deployment]
+    types:
+      - completed
+jobs:
+  lighthouse:
+    name: "Lighthouse v9 performance checks"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: https://sovereigncloudstack.github.io/website/${{github.ref_name}}
+          uploadArtifacts: true # save results as an action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
