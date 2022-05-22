@@ -1,5 +1,4 @@
 name: Build staging website
-description: 'Build website and push output to staging area (currently hosted on GitHub Pages).'
 on: [push]
 jobs:
   build-and-deploy:
