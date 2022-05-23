@@ -40,7 +40,7 @@ expected from modern IT infrastructure.
 
 ### Statements:
 
-<img class="img-fluid pe-3" width="150px" src="/assets/images/Peter_Ganten-200x200.webp" alt="Peter Ganten" style="vertical-align: text-bottom;">
+<img class="img-fluid pe-3" width="150px" src="{{ "/assets/images/Peter_Ganten-200x200.webp" | prepend: site.baseurl_root }}" alt="Peter Ganten" style="vertical-align: text-bottom;">
 *Peter Ganten, Chairman of the OSB Alliance and Managing Director of Univention:*
 
 > At the heart of the first wave of digitalisation were centralised platforms
@@ -55,7 +55,7 @@ expected from modern IT infrastructure.
 > innovation and does not have problems like the Cloud Act.
 
 <br />
-<img class="img-fluid pe-3" width="150px" src="/assets/images/Thomas-Jarzombek-200x200.webp" alt="Thomas Jarzombek" style="vertical-align: text-bottom;">
+<img class="img-fluid pe-3" width="150px" src="{{ "/assets/images/Thomas-Jarzombek-200x200.webp" | prepend: site.baseurl_root }}" alt="Thomas Jarzombek" style="vertical-align: text-bottom;">
 *Thomas Jarzombek (Member of the Bundestag), BMWi representative for the digital economy and start-ups:*
 
 > With the Sovereign Cloud Stack, the GAIA-X project is increasingly being
@@ -71,7 +71,7 @@ expected from modern IT infrastructure.
 > BMWi is lending considerable momentum to the implementation of GAIA-X.
 
 <br />
-<img class="img-fluid pe-3" width="150px" src="/assets/images/Kurt_Garloff-200x200.webp" alt="Kurt Garloff" style="vertical-align: text-bottom;">
+<img class="img-fluid pe-3" width="150px" src="{{ "/assets/images/Kurt_Garloff-200x200.webp" | prepend: site.baseurl_root }}" alt="Kurt Garloff" style="vertical-align: text-bottom;">
 *Kurt Garloff, Project Lead SCS:*
 
 > We actually have all the building blocks for a powerful cloud and container
@@ -92,7 +92,7 @@ expected from modern IT infrastructure.
 > SCS clouds and public SCS offerings.
 
 <br />
-<img class="img-fluid pe-3" width="150px" src="/assets/images/Rafael_Laguna-200x200.webp" alt="Rafael Laguna de la Vera" style="vertical-align: text-bottom;">
+<img class="img-fluid pe-3" width="150px" src="{{ "/assets/images/Rafael_Laguna-200x200.webp" | prepend: site.baseurl_root }}" alt="Rafael Laguna de la Vera" style="vertical-align: text-bottom;">
 *Rafael Laguna de la Vera, Director of the German Federal Agency for Disruptive
 Innovation (SPRIND):*
 
@@ -105,7 +105,7 @@ Innovation (SPRIND):*
 > solutions also have a chance.
 
 <br />
-<img class="img-fluid pe-3" width="150px" src="/assets/images/Alexander-Wallner-200x200.webp" alt="Alexander Wallner" style="vertical-align: text-bottom;">
+<img class="img-fluid pe-3" width="150px" src="{{ "/assets/images/Alexander-Wallner-200x200.webp" | prepend: site.baseurl_root }}" alt="Alexander Wallner" style="vertical-align: text-bottom;">
 *Alexander Wallner, CEO, plusserver:*
 
 > With the Sovereign Cloud Stack, we are bundling the strengths of many open
@@ -118,7 +118,7 @@ Innovation (SPRIND):*
 > European cloud market.
 
 <br />
-<img class="img-fluid pe-3" width="150px" src="/assets/images/Marius_Feldmann-200x200.webp" alt="Marius Feldmann" style="vertical-align: text-bottom;">
+<img class="img-fluid pe-3" width="150px" src="{{ "/assets/images/Marius_Feldmann-200x200.webp" | prepend: site.baseurl_root }}" alt="Marius Feldmann" style="vertical-align: text-bottom;">
 *Marius Feldmann, COO, Cloud&Heat Technologies GmbH:*
 
 > Sovereign Cloud Stack delivers a significant contribution to avoid European

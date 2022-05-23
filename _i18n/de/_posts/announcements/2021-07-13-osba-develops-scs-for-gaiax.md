@@ -42,7 +42,7 @@ letztlich Produktivität ermöglicht.
 
 ### Statements:
 
-<img class="img-fluid pe-3" width="150px" src="/assets/images/Peter_Ganten-200x200.webp" alt="Peter Ganten" style="vertical-align: text-bottom;">
+<img class="img-fluid pe-3" width="150px" src="{{ "/assets/images/Peter_Ganten-200x200.webp" | prepend: site.baseurl_root }}" alt="Peter Ganten" style="vertical-align: text-bottom;">
 *Peter Ganten, Vorstandsvorsitzender der OSB Alliance und Geschäftsführer von Univention:*
 
 > Im Mittelpunkt der ersten Welle der Digitalisierung standen zentralistische
@@ -57,7 +57,7 @@ letztlich Produktivität ermöglicht.
 > Probleme wie den CLOUD Act nicht hat.
 
 <br />
-<img class="img-fluid pe-3" width="150px" src="/assets/images/Thomas-Jarzombek-200x200.webp" alt="Thomas Jarzombek" style="vertical-align: text-bottom;">
+<img class="img-fluid pe-3" width="150px" src="{{"/assets/images/Thomas-Jarzombek-200x200.webp" | prepend: site.baseurl_root }}" alt="Thomas Jarzombek" style="vertical-align: text-bottom;">
 *Thomas Jarzombek (MdB), Beauftragter des BMWi für die Digitale Wirtschaft und Start-Ups:*
 
 > Mit dem Sovereign Cloud Stack füllt sich das Projekt GAIA-X immer
@@ -74,7 +74,7 @@ letztlich Produktivität ermöglicht.
 > (KoPa35c) verleiht das BMWi der Umsetzung von GAIA-X erheblichen Schwung.
 
 <br />
-<img class="img-fluid pe-3" width="150px" src="/assets/images/Kurt_Garloff-200x200.webp" alt="Kurt Garloff" style="vertical-align: text-bottom;">
+<img class="img-fluid pe-3" width="150px" src="{{ "/assets/images/Kurt_Garloff-200x200.webp" | prepend: site.baseurl_root }}" alt="Kurt Garloff" style="vertical-align: text-bottom;">
 *Kurt Garloff, Projektleiter SCS:*
 
 > Wir haben alle Bausteine für einen
@@ -96,7 +96,7 @@ letztlich Produktivität ermöglicht.
 > betriebener SCS Clouds und öffentlicher SCS Angebote setzen.
 
 <br />
-<img class="img-fluid pe-3" width="150px" src="/assets/images/Rafael_Laguna-200x200.webp" alt="Rafael Laguna de la Vera" style="vertical-align: text-bottom;">
+<img class="img-fluid pe-3" width="150px" src="{{ "/assets/images/Rafael_Laguna-200x200.webp" | prepend: site.baseurl_root }}" alt="Rafael Laguna de la Vera" style="vertical-align: text-bottom;">
 *Rafael Laguna de la Vera, Direktor der Bundesagentur für Sprunginnovationen
 SPRIND:*
 
@@ -109,7 +109,7 @@ SPRIND:*
 > kleinere Anbieter mit innovativen Lösungen eine Chance haben
 
 <br />
-<img class="img-fluid pe-3" width="150px" src="/assets/images/Alexander-Wallner-200x200.webp" alt="Alexander Wallner" style="vertical-align: text-bottom;">
+<img class="img-fluid pe-3" width="150px" src="{{ "/assets/images/Alexander-Wallner-200x200.webp" | prepend: site.baseurl_root }}" alt="Alexander Wallner" style="vertical-align: text-bottom;">
 *Alexander Wallner, CEO, plusserver:*
 > Mit dem Sovereign Cloud Stack bündeln wir
 > die Kräfte vieler Open-Source Projekte, um einen leistungsfähigen und
@@ -122,7 +122,7 @@ SPRIND:*
 > fördern wir den Wettbewerb im europäischen Cloud-Markt.
 
 <br />
-<img class="img-fluid pe-3" width="150px" src="/assets/images/Marius_Feldmann-200x200.webp" alt="Marius Feldmann" style="vertical-align: text-bottom;">
+<img class="img-fluid pe-3" width="150px" src="{{ "/assets/images/Marius_Feldmann-200x200.webp" | prepend: site.baseurl_root }}" alt="Marius Feldmann" style="vertical-align: text-bottom;">
 *Marius Feldmann, COO, Cloud&Heat Technologies GmbH:*
 
 > Der Sovereign Cloud Stack

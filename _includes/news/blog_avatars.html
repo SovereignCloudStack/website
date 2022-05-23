@@ -10,8 +10,8 @@
       <circle cx="40" cy="40" r="40" fill="white"/>
       <rect x="0" y="0" width="40" height="80" fill="black" stroke="black" stroke-width="2"/>
     </mask>
-    <image x="-20" y="0" height="80" width="80" xlink:href="{{post.avatar[0]}}" mask="url(#cut-two-1)"></image>
-    <image x="20" y="0" height="80" width="80" xlink:href="{{post.avatar[1]}}" mask="url(#cut-two-2)"></image>  
+    <image x="-20" y="0" height="80" width="80" xlink:href="{{post.avatar[0] | prepend: site.baseurl_root}}" mask="url(#cut-two-1)"></image>
+    <image x="20" y="0" height="80" width="80" xlink:href="{{post.avatar[1] | prepend: site.baseurl_root}}" mask="url(#cut-two-2)"></image>  
   </svg>
 {% elsif post.avatar.first and post.avatar.size == 3 %}
   <svg>
@@ -27,9 +27,9 @@
       <circle cx="40" cy="40" r="40" fill="white"/>
       <polygon points="0,0 80,0 80,60 40,40 0,60" fill="black" stroke="black" stroke-width="2"/>
     </mask>
-    <image x="-10" y="-5" height="65" width="65" xlink:href="{{post.avatar[0]}}" mask="url(#cut-three-1)"></image>
-    <image x="30" y="-5" height="65" width="65" xlink:href="{{post.avatar[1]}}" mask="url(#cut-three-2)"></image>
-    <image x="5" y="30" height="70" width="70" xlink:href="{{post.avatar[2]}}" mask="url(#cut-three-3)"></image>
+    <image x="-10" y="-5" height="65" width="65" xlink:href="{{post.avatar[0] | prepend: site.baseurl_root}}" mask="url(#cut-three-1)"></image>
+    <image x="30" y="-5" height="65" width="65" xlink:href="{{post.avatar[1] | prepend: site.baseurl_root}}" mask="url(#cut-three-2)"></image>
+    <image x="5" y="30" height="70" width="70" xlink:href="{{post.avatar[2] | prepend: site.baseurl_root}}" mask="url(#cut-three-3)"></image>
   </svg>
 {% elsif post.avatar.first and post.avatar.size == 4 %}
   <svg>
@@ -49,17 +49,17 @@
       <circle cx="40" cy="40" r="40" fill="white"/>
       <polygon points="0,0 80,0 80,80 40,80 40,40 0,40" fill="black" stroke="black" stroke-width="2"/>
     </mask>
-    <image x="0" y="0" height="40" width="40" xlink:href="{{post.avatar[0]}}" mask="url(#cut-four-1)"></image>
-    <image x="40" y="0" height="40" width="40" xlink:href="{{post.avatar[1]}}" mask="url(#cut-four-2)"></image>
-    <image x="40" y="40" height="40" width="40" xlink:href="{{post.avatar[2]}}" mask="url(#cut-four-3)"></image>
-    <image x="0" y="40" height="40" width="40" xlink:href="{{post.avatar[3]}}" mask="url(#cut-four-4)"></image>
+    <image x="0" y="0" height="40" width="40" xlink:href="{{post.avatar[0] | prepend: site.baseurl_root}}" mask="url(#cut-four-1)"></image>
+    <image x="40" y="0" height="40" width="40" xlink:href="{{post.avatar[1] | prepend: site.baseurl_root}}" mask="url(#cut-four-2)"></image>
+    <image x="40" y="40" height="40" width="40" xlink:href="{{post.avatar[2] | prepend: site.baseurl_root}}" mask="url(#cut-four-3)"></image>
+    <image x="0" y="40" height="40" width="40" xlink:href="{{post.avatar[3] | prepend: site.baseurl_root}}" mask="url(#cut-four-4)"></image>
   </svg>    
 {% else %}
   <svg height="80" width="80">
     <mask id="cut">
       <circle cx="40" cy="40" r="40" fill="white"/>
     </mask>
-    <image x="0" y="0" height="80" width="80" xlink:href="{{post.avatar}}" mask="url(#cut)"></image>
+    <image x="0" y="0" height="80" width="80" xlink:href="{{post.avatar | prepend: site.baseurl_root}}" mask="url(#cut)"></image>
   </svg>
 {% endif %}
 </div>
