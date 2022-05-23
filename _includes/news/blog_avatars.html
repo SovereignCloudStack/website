@@ -59,7 +59,7 @@
     <mask id="cut">
       <circle cx="40" cy="40" r="40" fill="white"/>
     </mask>
-    <image x="0" y="0" height="80" width="80" xlink:href="{{post.avatar | prepend: site.baseurl_root}}" mask="url(#cut)"></image>
+    <image x="0" y="0" height="80" width="80" xlink:href="{{post.avatar[0] | prepend: site.baseurl_root}}" mask="url(#cut)"></image>
   </svg>
 {% endif %}
 </div>
