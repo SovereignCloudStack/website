@@ -36,7 +36,7 @@ jobs:
         jekyll_env: production
         target_branch: production
         keep_history: true
-        jekyll_build_options: --baseurl / --config _config.prod.yml -d _site
+        jekyll_build_options: --baseurl "" --config _config.prod.yml -d _site
     - uses: burnett01/rsync-deployments@5.2
       with:
         switches: -avzr --delete --exclude=/docs/ --exclude=/antrag-bmwi
