@@ -24,7 +24,7 @@ redirect_from:
               {{ site.baseurl }}{{job.url}}
               {%- endif -%}
               " class="text-decoration-none text-body stretched-link"> <h5 class="card-title">{% t job.title_slug %}</h5></a>
-              <p class="card-text">{% t job.short_description %}{{job.content | strip | size}}</p>
+              <p class="card-text">{% t job.short_description %}</p>
             </div>
             <div class="card-footer">
               <small class="text-muted">{{job.location}}</small>
