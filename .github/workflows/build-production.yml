@@ -29,7 +29,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gems-v2-
     # Use GitHub Deploy Action to build and deploy to Github
-    - uses:  helaili/jekyll-action@v2
+    - uses: helaili/jekyll-action@v2
       id: build
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -40,7 +40,7 @@ jobs:
     - uses: burnett01/rsync-deployments@5.2
       with:
         switches: -avzr --delete --exclude=/docs/ --exclude=/antrag-bmwi
-        path: jekyll_build/
+        path: ../jekyll_build/
         remote_host: ${{ secrets[matrix.host] }}
         remote_port: ${{ secrets[matrix.port] }}
         remote_path: ${{ secrets[matrix.path] }}
