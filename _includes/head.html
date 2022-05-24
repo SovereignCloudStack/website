@@ -21,6 +21,7 @@
   <title>{{ title }}</title>
   <meta property="og:title" content="{{title}}">
 
+{% if jekyll.environment == "production" %}
   <!-- Matomo -->
   <script>
     if (typeof(Storage) !== 'undefined') {
@@ -46,6 +47,7 @@
     }
   </script>
   <!-- End Matomo Code -->
+{% endif %}
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl_root }}" />

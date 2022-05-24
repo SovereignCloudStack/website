@@ -1,0 +1,41 @@
+name: Run checks on staging website
+on:
+  push:
+    branches:
+    - staging
+  workflow_dispatch:
+jobs:
+  check_gh_pages:
+    name: "Wait for GitHub Pages to complete"
+    runs-on: ubuntu-latest
+    steps:
+      # Create check run
+      - uses: octokit/request-action@v2.x
+        id: create_check_run
+        with:
+          route: GET /repos/{owner}/{repo}/pages/builds/latest
+          owner: sovereigncloudstack
+          repo: website
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Update check run to completed, successful status
+      - uses: octokit/request-action@v2.x
+        id: update_check_run
+        with:
+          route: PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}
+          owner: sovereigncloudstack
+          repo: website
+          check_run_id: ${{ fromJson(steps.create_check_run.outputs.data).id }}
+          conclusion: "success"
+          status: "built"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  lighthouse:
+    name: "Lighthouse v9 performance checks"
+    needs: check_gh_pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: https://sovereigncloudstack.github.io/website/${{github.ref_name}}
+          uploadArtifacts: true # save results as an action artifacts
