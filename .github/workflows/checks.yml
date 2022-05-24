@@ -3,6 +3,7 @@ on:
   push:
     branches:
     - staging
+    - production
   workflow_dispatch:
 jobs:
   check_gh_pages:

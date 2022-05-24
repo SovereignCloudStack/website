@@ -1,5 +1,10 @@
 name: Build staging website
-on: [push]
+on:
+  push:
+    branches-ignore:
+      - 'main'
+      - 'staging'
+      - 'production'
 jobs:
   build-and-deploy:
     name: "Build and deploy to GitHub Pages"
