@@ -2,9 +2,10 @@ name: Build staging website
 on:
   push:
     branches-ignore:
-      - 'main'
-      - 'staging'
-      - 'production'
+      - main
+  pull_request:
+  workflow_dispatch:
+
 jobs:
   build-and-deploy:
     name: "Build and deploy to GitHub Pages"
@@ -26,9 +27,6 @@ jobs:
     - uses: helaili/jekyll-action@v2
       id: build
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
         jekyll_env: development
-        target_branch: staging
-        keep_history: true
-        target_path: ${{github.ref_name}}
-        jekyll_build_options: --baseurl /website/${{github.ref_name}} --config _config.staging.yml -d _site
+        build_only: true
+        jekyll_build_options: --config _config.staging.yml
