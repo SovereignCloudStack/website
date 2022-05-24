@@ -1,4 +1,4 @@
-# Service Partners
+# Service partners
 
 One goal of Sovereign Cloud Stack is to foster an vivid ecosystem that facilitates
 the development and operation of fully open, federated and compatible platforms.
