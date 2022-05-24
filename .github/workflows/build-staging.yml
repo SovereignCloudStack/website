@@ -31,4 +31,4 @@ jobs:
         target_branch: staging
         keep_history: true
         target_path: ${{github.ref_name}}
-        jekyll_build_options: --baseurl /website/${{github.ref_name}} --config _config.staging.yml
+        jekyll_build_options: --baseurl /website/${{github.ref_name}} --config _config.staging.yml -d _site
