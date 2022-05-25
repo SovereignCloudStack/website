@@ -1,8 +1,10 @@
 ---
 layout: post
 title:  "Das Fundament von Gaia-X bleibt stabil"
-author: "Sovereign Cloud Stack"
-avatar: "SCS_logo.png"
+author: 
+  - "Sovereign Cloud Stack"
+avatar:
+  - "SCS_logo.png"
 image: "blog/foundation.jpg"
 ---
 
