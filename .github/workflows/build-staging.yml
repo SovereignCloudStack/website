@@ -11,8 +11,6 @@ jobs:
     name: "Build and deploy to GitHub Pages"
     runs-on: ubuntu-latest
     steps:
-    # Set postBuffer of git to maximum as lower values may cause trobule while pushing
-    - run: git config --global http.postBuffer 524288000
     - uses: actions/checkout@v2
       id: checkout
     # Use GitHub Actions' cache to shorten build times and decrease load on servers
@@ -28,5 +26,6 @@ jobs:
       id: build
       with:
         jekyll_env: development
+        pre_build_commands: "apk --update add vips"
         build_only: true
         jekyll_build_options: --config _config.staging.yml
