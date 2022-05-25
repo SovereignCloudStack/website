@@ -7,7 +7,7 @@ firstname: Eduard
 role: Community Manager Sovereign Cloud Stack
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
-avatar: assets/images/employees/Itrich.jpg
+avatar: employees/Itrich.jpg
 twitter: https://twitter.com/EduardItrich
 linkedin: https://www.linkedin.com/in/eduard-itrich/
 github: https://github.com/itrich

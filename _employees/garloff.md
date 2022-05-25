@@ -7,7 +7,7 @@ firstname: Kurt
 role: CTO Sovereign Cloud Stack
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
-avatar: assets/images/employees/Garloff.jpg
+avatar: employees/Garloff.jpg
 linkedin: https://www.linkedin.com/in/kurt-garloff/
 github: https://github.com/garloff
 matrix: https://matrix.to/#/@garloff:matrix.org
