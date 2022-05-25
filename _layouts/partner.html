@@ -6,7 +6,7 @@ layout: default
   <div class="row gy-5">
     <div class="col-lg-6 d-flex flex-column align-items-center text-center">
       <div style="max-width: 200px; max-height: 200px;" class="overflow-hidden">
-        <img src="{{ partner.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" class="img-fluid">
+        {% asset '{{ partner.image }}' class='img-fluid' alt='{{partner.name}}' vips:format='.webp' vips:resize='200x200' %}
       </div>
       <div class="row mt-4 w-75 text-muted">
         <p>{{partner.description}}</p>
