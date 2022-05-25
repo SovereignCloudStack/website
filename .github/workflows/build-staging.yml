@@ -26,8 +26,6 @@ jobs:
       id: build
       with:
         jekyll_env: development
-        pre_build_commands: "apk --update add vips"
+        pre_build_commands: "git config --global --add safe.directory '$GITHUB_WORKSPACE'; apk --update add vips"
         build_only: true
-        jekyll_build_options: 
-          - "git config --global --add safe.directory '$GITHUB_WORKSPACE'"
-          - "--config _config.staging.yml"
+        jekyll_build_options: "--config _config.staging.yml"
