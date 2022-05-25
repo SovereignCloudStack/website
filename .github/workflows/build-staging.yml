@@ -18,14 +18,14 @@ jobs:
       id: cache
       with:
         path: vendor/bundle
-        key: ${{ runner.os }}-gems-v2-${{ hashFiles('**/Gemfile') }}
+        key: ${{ runner.os }}-gems-v3-${{ hashFiles('**/Gemfile') }}
         restore-keys: |
-          ${{ runner.os }}-gems-v2-
+          ${{ runner.os }}-gems-v3-
     # Use GitHub Deploy Action to build and deploy to Github
     - uses: helaili/jekyll-action@v2
       id: build
       with:
         jekyll_env: development
-        pre_build_commands: "git config --global --add safe.directory '*'; apk --update add vips"
+        pre_build_commands: "apk add --update vips"
         build_only: true
         jekyll_build_options: "--config _config.staging.yml"
