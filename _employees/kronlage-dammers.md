@@ -7,7 +7,7 @@ firstname: Felix
 role: Product Owner Iaas & Operations Sovereign Cloud Stack
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
-avatar: assets/images/employees/Kronlage-Dammers.jpg
+avatar: employees/Kronlage-Dammers.jpg
 twitter: https://twitter.com/felixkronlage
 linkedin: https://www.linkedin.com/in/felix-kronlage-dammers-9378a6184/
 github: https://github.com/fkr
