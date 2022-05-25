@@ -1,17 +1,17 @@
 ---
 layout: post
 title:  "SCS: Wir arbeiten weiter an Gaia-X für digitale Souveränität"
-author: "Kurt Garloff"
 author:
   - "Dr. Manuela Urban"
   - "Felix Kronlage-Dammers"
   - "Jonas Schäfer"
   - "Kurt Garloff"
 avatar: 
-  - "/assets/images/urban.jpg"
-  - "/assets/images/fkr.jpg"
-  - "/assets/images/JS.png"
-  - "/assets/images/kgarloff.jpg"
+  - "urban.jpg"
+  - "fkr.jpg"
+  - "JS.png"
+  - "kgarloff.jpg"
+image: "blog/rowing.jpg"
 ---
 
 _(Von Dr. Manuela Urban, Felix Kronlage-Dammers, Jonas Schäfer, Kurt Garloff)_

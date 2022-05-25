@@ -4,11 +4,12 @@
 	<div class="card shadow">
 		<div class="row align-items-center p-3">
 			<div class="col-md-2 d-none d-lg-block">
-				<img class="img-fluid p-3" src="{{ quote.logo | prepend: "/assets/images/" | prepend: site.baseurl_root }}" alt="{% t quote.title %}">
+				{% capture translated_title %}{% t quote.title %}{% endcapture %}
+				{% asset '{{ quote.logo }}' alt='{{translated_title}}' class='img-fluid p-3' vips:format='.webp' vips:resize='152x' %}
 			</div>
 		 	<div class="col-lg-10">
 				<h3 class="card-title">
-					{% t quote.title %}
+					{{translated_title}}
 				</h3>
 				<p class="card-text">
 					{% tf {{quote.translation}} %}

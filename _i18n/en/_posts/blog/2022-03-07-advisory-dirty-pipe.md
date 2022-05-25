@@ -7,10 +7,10 @@ author:
   - "Kurt Garloff"
   - "Felix Kronlage-Dammers"
 avatar:
-  - "/assets/images/CB.png"
-  - "/assets/images/kgarloff.jpg"
-  - "/assets/images/fkr.jpg"
-image: "/assets/images/blog/pipe.jpg"
+  - "CB.png"
+  - "kgarloff.jpg"
+  - "fkr.jpg"
+image: "blog/pipe.jpg"
 ---
 
 ## The vulnerability

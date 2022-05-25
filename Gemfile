@@ -7,3 +7,5 @@ gem "jekyll-seo-tag"
 gem "jekyll-last-modified-at"
 gem "jekyll-feed"
 gem "jekyll-scholar"
+gem 'jekyll-assets', git: "https://github.com/envygeeks/jekyll-assets"
+gem 'ruby-vips'
