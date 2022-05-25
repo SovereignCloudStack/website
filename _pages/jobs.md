@@ -14,7 +14,7 @@ redirect_from:
       {% for job in site.jobs %}
         <div class="col">
           <div class="card h-100">
-            <img src="{{ job.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" class="card-img-top img-fluid" style="width: 100%; max-height: 20vh; object-fit: cover; object-position: center;">
+            {% asset '{{job.image}}' vips:resize='400x200' vips:format='.webp' class="card-img-top img-fluid" style="width: 100%; max-height: 20vh; object-fit: cover; object-position: center;" %}
             <div class="card-body">
               <a href="
               {%- capture content_length -%}{{job.content | strip}}{%- endcapture -%}
