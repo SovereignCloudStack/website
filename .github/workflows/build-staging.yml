@@ -22,7 +22,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gems-v2-
     # Use GitHub Deploy Action to build and deploy to Github
-    - run: git config --global --add safe.directory '${{GITHUB_WORKSPACE}}'
+    - run: git config --global --add safe.directory $GITHUB_WORKSPACE
     - uses: helaili/jekyll-action@v2
       id: build
       with:
