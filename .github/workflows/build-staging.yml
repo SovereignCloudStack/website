@@ -22,11 +22,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gems-v2-
     # Use GitHub Deploy Action to build and deploy to Github
-    - run: git config --global --add safe.directory $GITHUB_WORKSPACE
     - uses: helaili/jekyll-action@v2
       id: build
       with:
         jekyll_env: development
-        pre_build_commands: "apk --update add vips"
+        pre_build_commands: "git config --global --add safe.directory '*'; apk --update add vips"
         build_only: true
         jekyll_build_options: "--config _config.staging.yml"
