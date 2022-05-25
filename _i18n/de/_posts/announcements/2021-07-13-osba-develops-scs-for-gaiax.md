@@ -2,7 +2,7 @@
 layout: post
 title:  "OSB Alliance entwickelt Sovereign Cloud Stack (SCS) für das GAIA-X Projekt"
 author: "Open Source Business Alliance"
-avatar: "/assets/images/logo-osba.svg"
+avatar: "logo-osba.svg"
 ---
 
 Stuttgart / Berlin, 13.07.2021 ‒ Unternehmen, Bürger und Staat speichern und

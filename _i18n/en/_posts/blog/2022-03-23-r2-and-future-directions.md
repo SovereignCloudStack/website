@@ -5,7 +5,7 @@ category: tech
 author:
   - "Felix Kronlage-Dammers"
 avatar:
-  - "/assets/images/fkr.jpg"
+  - "fkr.jpg"
 ---
 
 ## Welcome Release 2

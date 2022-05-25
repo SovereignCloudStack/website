@@ -17,7 +17,13 @@
           <h3>{{post.title}}</h3>
           <p>{{post.author | join: ", "}}</p>
         </div>
-        <a href="{{post.url}}" class="stretched-link"><img src="{% if post.image %}{{post.image | prepend: site.baseurl_root}}{% else %}{{site.defaults.image | prepend: site.baseurl_root}}{% endif %}" class="d-block w-100" alt="{{post.title}}"></a>
+        <a href="{{post.url}}" class="stretched-link">
+          {% if post.image %}
+            {% asset {{post.image}} class='d-block w-100' alt='{{post.title}}' vips:format='.webp' %}
+          {% else %}
+            {% asset {{site.defaults.image}} class='d-block w-100' alt='{{post.title}}' vips:format='.webp' %}
+          {% endif %}
+        </a>
       </div>
       {% endfor %}
     </div>

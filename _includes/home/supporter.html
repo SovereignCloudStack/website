@@ -4,7 +4,7 @@
 	{% for provider in sorted %}
 	<div class="col-sm-6 col-12 mb-5">
 	<a href="{{ provider.link }}" title="{{ provider.name }}" target="_blank">
-		<img class="mx-auto d-block" src="{{ provider.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" alt="{{ provider.name }}" style="max-height: 150px; max-width: 300px;">
+		{% asset '{{ provider.image }}' alt='{{provider.name}}' class='mx-auto d-block' vips:format='.webp' vips:resize='300x150' %}
 	</a>
 	</div>
 	{% endfor %}
@@ -13,9 +13,9 @@
 	<h2 class="mb-5">{% t home.supporter %}</h2>
 	{% assign sorted = site.data.supporter | sort_natural: 'name' %}
 	{% for supporter in sorted %}
-	<div class="col-lg-3 col-sm-4 col-6 mb-5">
+	<div class="col-lg-3 col-sm-4 col-6 my-4">
 	<a href="{{ supporter.link }}" title="{{ supporter.name }}" target="_blank">
-		<img class="mx-auto d-block" src="{{ supporter.image | prepend: "/assets/images/" | prepend: site.baseurl_root }}" alt="{{ supporter.name }}" style="max-height: 60px; max-width: 150px;">
+		{% asset '{{ supporter.image }}' alt='{{supporter.name}}' class='mx-auto d-block' vips:format='.webp' vips:resize='150x60' %}
 	</a>
 	</div>
 	{% endfor %}

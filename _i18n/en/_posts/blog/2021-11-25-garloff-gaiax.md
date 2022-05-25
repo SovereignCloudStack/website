@@ -7,11 +7,11 @@ author:
   - "Jonas Schäfer"
   - "Kurt Garloff"
 avatar: 
-  - "/assets/images/urban.jpg"
-  - "/assets/images/fkr.jpg"
-  - "/assets/images/JS.png"
-  - "/assets/images/kgarloff.jpg"
-image: "/assets/images/blog/rowing.jpg"
+  - "urban.jpg"
+  - "fkr.jpg"
+  - "JS.png"
+  - "kgarloff.jpg"
+image: "blog/rowing.jpg"
 ---
 <img src="{{ "/assets/images/blog/rowing.jpg" | prepend: site.baseurl_root }}" style="width:100%; max-height: 450px; object-fit: cover;}">
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "OSB Alliance develops Sovereign Cloud Stack (SCS) for the Gaia-X project"
 author: "Open Source Business Alliance"
-avatar: "/assets/images/logo-osba.svg"
+avatar: "logo-osba.svg"
 ---
 
 Stuttgart / Berlin, July 13, 2021 ‒ Companies, citizens and the state are often
