@@ -56,7 +56,13 @@ collections:
     permalink: /:collection/:name
 
 assets:
-  compressed: true
+  source_maps: true
+  destination: "/assets"
+  compression: true
+  compress:
+    css:  true
+    js:   uglifier
+  gzip: true
   sources:
     - _assets/vendor
     - _assets/slides
