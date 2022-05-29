@@ -191,8 +191,8 @@ as an advantage. This is of course different in higher layers that
 change much more often depending on the customer needs.
 
 <figure class="figure mx-auto d-block" style="width:90%">
-  <a href="{{ "/assets/images/201001-SCS-4a.png" | prepend: site.baseurl_root }}">
-    <img src="{{ "/assets/images/201001-SCS-4a.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
+  <a href="{{ assets["201001-SCS-4a.png"].digest_path }}">
+    {% asset '201001-SCS-4a.png' class="figure-img w-100" %}
   </a>
   <figcaption class="figure-caption">
     The figure shows the architectural structure and components of SCS.
@@ -209,8 +209,8 @@ we however have standards to cover it, so we can deliver compatibility
 at this layer as well.
 
 <figure class="figure mx-auto d-block" style="width:90%">
-  <a href="{{ "/assets/images/Ecosys-SCS-Acatech.png" | prepend: site.baseurl_root }}">
-    <img src="{{ "/assets/images/Ecosys-SCS-Acatech.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
+  <a href="{{ assets["Ecosys-SCS-Acatech.png"].digest_path }}">
+    {% asset 'Ecosys-SCS-Acatech.png' class="figure-img w-100" %}
   </a>
   <figcaption class="figure-caption">
     The above figure shows an ecosystem with four clouds, two of them using
