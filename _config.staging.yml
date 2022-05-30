@@ -7,7 +7,7 @@ url: https://sovereigncloudstack.github.io/
 permalink: pretty
 
 languages: ["en", "de"]
-exclude_from_localizations: ["assets"]
+exclude_from_localizations: ["/assets"]
 
 sass:
   sass_dir: /assets/css/_sass
@@ -59,7 +59,7 @@ assets:
   destination: "/assets"
   gzip: true
   compress:
-    js:   uglifier
+    js: uglifier
   sources:
     - _assets/
     - _assets/vendor
