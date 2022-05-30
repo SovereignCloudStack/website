@@ -7,4 +7,4 @@ redirect_from:
    - /DataProtection.html.de
 ---
 {% tf footer/dataprotection.md %}
-{% asset matomoTrackingOptOut.min.js %}
+{% asset matomoTrackingOptOut.js %}
