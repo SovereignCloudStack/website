@@ -29,16 +29,16 @@ The CEE showed us that we are not at all alone. There are a lot of companies and
 <div class="row my-2">
   <div class="col-sm-6 col-12">
     <figure class="figure mx-auto d-block">
-      <a href="{{ "/assets/images/blog/cee2022-ganten.jpeg" | prepend: site.baseurl_root }}">
-        <img src="{{ "/assets/images/blog/cee2022-ganten.jpeg" | prepend: site.baseurl_root }}" class="figure-img w-100">
+      <a href="{{ assets["blog/cee2022-ganten.jpeg"].digest_path }}">
+        {% asset 'blog/cee2022-ganten.jpeg' vips:format=".webp" class="figure-img w-100" %}
       </a>
       <figcaption class="figure-caption text-end">Kurt Garloff, CTO Sovereign Cloud Stack</figcaption>
     </figure>
   </div>
   <div class="col-sm-6 col-12">
     <figure class="figure mx-auto d-block">
-      <a href="{{ "/assets/images/blog/cee2022-garloff.jpeg" | prepend: site.baseurl_root }}">
-        <img src="{{ "/assets/images/blog/cee2022-garloff.jpeg" | prepend: site.baseurl_root }}" class="figure-img w-100">
+      <a href="{{ assets["blog/cee2022-garloff.jpeg"].digest_path }}">
+        {% asset 'blog/cee2022-garloff.jpeg' vips:format=".webp" class="figure-img w-100" %}
       </a>
       <figcaption class="figure-caption text-end">Peter Ganten, Chairman of The Board - Open Source Business Alliance e.V.</figcaption>
     </figure>

@@ -91,7 +91,7 @@ layout: default
 				<div class="d-flex w-25 flex-column justify-content-start text-end position-relative">
 					<small>{% include date.html date=item.date %}</small>
 					{% if item.slides %}
-						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{{ item.slides | prepend: "/assets/slides/" | prepend: site.baseroot_url }}" target="_blank">
+						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{% asset '{{item.slides}}' @path %}" target="_blank">
 							<i class="fa fa-download my-auto"></i> <small>{% t news.conference.slides %}</small>
 						</a>
 					{% endif %}
@@ -116,7 +116,7 @@ layout: default
 				<div class="d-flex w-25 flex-column justify-content-start text-end position-relative">
 					<small>{% include date.html date=item.date %}</small>
 					{% if item.slides %}
-						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{{ item.slides | prepend: "/assets/slides/" | prepend: site.baseroot_url }}" target="_blank">
+						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{% asset '{{item.slides}}' @path %}" target="_blank">
 							<i class="fa fa-download my-auto"></i> <small>{% t news.conference.slides %}</small>
 						</a>
 					{% endif %}
