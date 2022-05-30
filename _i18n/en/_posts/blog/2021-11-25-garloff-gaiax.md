@@ -13,7 +13,7 @@ avatar:
   - "kgarloff.jpg"
 image: "blog/rowing.jpg"
 ---
-<img src="{{ "/assets/images/blog/rowing.jpg" | prepend: site.baseurl_root }}" style="width:100%; max-height: 450px; object-fit: cover;}">
+{% asset 'blog/rowing.jpg' vips:format='.webp' style="width:100%; max-height: 450px; object-fit: cover;" %}
 
 ## Context
 
@@ -122,7 +122,7 @@ actually developed and tested there.
 
 <figure class="figure mx-auto d-block my-4 col-md-7">
   <a href="https://www.gaia-x.eu/news/events/gaia-x-hackathon-2" target="_blank">
-    <img src="{{ "/assets/images/blog/gx-hackathon-2.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
+    {% asset 'blog/gx-hackathon-2.png' class="figure-img w-100" %}
   </a>
   <figcaption class="figure-caption">
     Join the Gaia-X Hackathon #2 in which you will among other workshops have the chance to attend a guided SCS deployment.

@@ -7,7 +7,7 @@ avatar:
   - "urban.jpg"
 image: "blog/sunflowers.jpg"
 ---
-<img src="{{ "/assets/images/blog/sunflowers.jpg" | prepend: site.baseurl_root }}" style="width:100%; max-height: 350px; object-fit: cover;}">
+{% asset 'blog/sunflowers.jpg' vips:format='.webp' style="width:100%; max-height: 350px; object-fit: cover;" %}
 
 Війна російського уряду проти України – це злочинний напад на невід’ємні права людини, свободу, право на самовизначення та безпеку кожної людини в Україні та мир в Європі. Без свободи і миру наша робота також неможлива; Розвиток та інновації можливі лише в умовах мирної глобальної співпраці. Наші думки з нашими колегами в Україні та всіма, хто втік. (Google Translator)
 

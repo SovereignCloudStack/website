@@ -13,7 +13,7 @@ image: "blog/sea.jpg"
 ---
 _(This text has initially been published in [The Cloud Report, issue 01/2022](https://the-report.cloud/downloads). We thank you for this opportunity!)_
 
-<img src="{{ "/assets/images/blog/sea.jpg" | prepend: site.baseurl_root }}" style="width:100%; max-height: 450px; object-fit: cover;}">
+{% asset 'blog/sea.jpg' vips:format='.webp' style="width:100%; max-height: 450px; object-fit: cover;" %}
 
 Hardly any other term has been redefined and re-framed so frequently in last year's
 digital political discourse as "digital sovereignty". The common interpretations

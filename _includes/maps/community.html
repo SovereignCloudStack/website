@@ -49,7 +49,7 @@
         {% if supporter.location.latitude and supporter.location.longitude %}
             icon = L.divIcon({
                 className: 'custom-div-icon',
-                html: "<div style='background-color:#50c3a5;' class='marker-pin'></div><img class='marker-pin-icon' src='{{ supporter.avatar | prepend: '/assets/images/' | prepend: site.baseurl_root }}' alt='{{ supporter.name }}'>",
+                html: "<div style='background-color:#50c3a5;' class='marker-pin'></div><img class='marker-pin-icon' src='{% asset '{{supporter.avatar}}' @path %}' alt='{{ supporter.name }}'>",
                 iconSize: [40, 56],
                 iconAnchor: [20, 56],
                 popupAnchor: [-7, -30]
@@ -64,7 +64,7 @@
         {% if employee.location.latitude and employee.location.longitude %}
             icon = L.divIcon({
                 className: 'custom-div-icon',
-                html: "<div style='background-color:#0f5fe1;' class='marker-pin'></div><img class='marker-pin-icon' src='{{ employee.avatar | prepend: '/' | prepend: site.baseurl_root }}' alt='{% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}'>",
+                html: "<div style='background-color:#0f5fe1;' class='marker-pin'></div><img class='marker-pin-icon' src='{% asset '{{employee.avatar}}' @path %}' alt='{% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}'>",
                 iconSize: [40, 56],
                 iconAnchor: [20, 56],
                 popupAnchor: [-7, -30]
