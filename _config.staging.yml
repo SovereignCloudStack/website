@@ -58,6 +58,8 @@ collections:
 assets:
   destination: "/assets"
   gzip: true
+  compress:
+    js:   uglifier
   sources:
     - _assets/
     - _assets/vendor
