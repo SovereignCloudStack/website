@@ -33,7 +33,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/default-card.jpg
+      image: default-card.jpg
 
 feed:
   categories:
@@ -58,6 +58,8 @@ collections:
 assets:
   destination: "/assets"
   gzip: true
+  source_maps: true
+  compression: true
   compress:
     js: uglifier
   sources:
