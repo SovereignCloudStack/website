@@ -47,7 +47,7 @@
 - date: "2021-05-19" 
   publisher: "Tagesspiegel Background" 
   title: "Gaia-X: Wo die Entwicklung des Projekts steht – Oliver Vo&szlig;"
-  link: "/assets/slides/Gaia-X-Projekt-Tagesspiegel-Background-20210519.pdf" 
+  asset: "slides/Gaia-X-Projekt-Tagesspiegel-Background-20210519.pdf" 
 
 - date:  "2021-03-25"
   publisher: "Acatech" 
