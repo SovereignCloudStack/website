@@ -1,0 +1,41 @@
+language: ruby
+after_success: script/report
+before_install:
+  - "gem install bundler"
+  - "script/install"
+before_script: script/report before
+script: script/test
+sudo: false
+cache:
+  bundler: true
+  directories:
+    - vendor/bundle
+    - node_modules
+env:
+  global:
+    secure: "\
+      h+3g4a4eXVBiZWcnSJ39lTlhv+JmRrPJPOW7Qvs0u3ix4nZLd4DhDnsmOmu2gRze9BFhX3Ga1\
+      6clq2Kku75Ty9pgZ9/8jrN+CcPbqv3rQHdHIaaQf5eFirr5Lw0eY02etRf9G6pHEdIyMSOrXU\
+      GTwDtjR+BT65M5qESGniBXTd8=\
+    "
+  matrix:
+    - JEKYLL_BRANCH="master"
+    - JEKYLL_VERSION="~> 3.8.0"
+    - JEKYLL_VERSION="~> 4.0.0"
+    - LINTING=true
+rvm:
+  - 2.6
+  - 2.7
+matrix:
+  fast_finish: true
+  allow_failures:
+    - env: JEKYLL_BRANCH="master"
+notifications:
+  email:
+    recipients:
+      - jordon@envygeeks.io
+    on_success: change
+    on_failure: change
+branches:
+  only:
+    - master
