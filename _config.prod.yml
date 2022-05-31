@@ -18,6 +18,8 @@ include:
 
 exclude:
   - .sass-cache
+  - .jekyll-cache
+  - _gems
 
 twitter:
   username: scs_osballiance

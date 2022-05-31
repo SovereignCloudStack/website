@@ -13,11 +13,20 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       id: checkout
+    # Use GitHub Actions' cache to shorten build times and decrease load on servers
+    - uses: actions/cache@v2
+      id: cache
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-v${{env.CACHE_VERSION}}-${{ hashFiles('**/Gemfile') }}-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-v${{env.CACHE_VERSION}}-${{ hashFiles('**/Gemfile') }}-${{ hashFiles('**/Gemfile.lock') }}
+          ${{ runner.os }}-gems-v${{env.CACHE_VERSION}}-
     # Use GitHub Deploy Action to build and deploy to Github
     - uses: helaili/jekyll-action@v2
       id: build
       with:
         jekyll_env: development
-        pre_build_commands: "apk add --update vips"
+        pre_build_commands: "apk add --update vips uglify-js"
         build_only: true
         jekyll_build_options: "--config _config.staging.yml"
