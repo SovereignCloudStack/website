@@ -1,8 +1,11 @@
+---
+permalink: /browserconfig.xml
+---
 <?xml version="1.0" encoding="utf-8"?>
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/assets/mstile-150x150.png"/>
+            <square150x150logo src="{% asset 'mstile-150x150.png' @path %}"/>
             <TileColor>#50c3a5</TileColor>
         </tile>
     </msapplication>
