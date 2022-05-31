@@ -1,0 +1,26 @@
+plugins:
+  - jekyll-assets
+img: img.png
+defaults:
+- scope:
+    type: pages
+    path: ""
+  values:
+    layout: default
+    type: page
+- scope:
+    type: posts
+    path: ""
+  values:
+    layout: default
+    type: post
+loopable:
+  - img.jpg
+  - img.gif
+  - img.png
+assets:
+  plugins:
+    img:
+      searcher: true
+  precompile:
+    - plugins/closure_comments.css

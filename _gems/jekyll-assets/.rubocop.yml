@@ -1,0 +1,7 @@
+inherit_gem:
+  envygeeks-rubocop:
+    - rules.yml
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
