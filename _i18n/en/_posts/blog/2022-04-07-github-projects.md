@@ -31,7 +31,7 @@ stable in our tests. Check out the [documentation](https://docs.github.com/en/is
 for further information on how to use this new feature.
 
 <figure class="figure mx-auto d-block" style="width:70%">
-  <a href="{{ assets["blog/gh-projects-1.png"].digest_path }}">
+  <a href="{% asset "blog/gh-projects-1.png" @path %}">
     {% asset 'blog/gh-projects-1.png' class="figure-img w-100" %}
   </a>
 </figure>
@@ -61,7 +61,7 @@ Definition of Done (DoD). Feel free to open pull requests against this template 
 you think that we've missed an important item in these lists.
 
 <figure class="figure mx-auto d-block" style="width:70%">
-  <a href="{{ assets["blog/gh-projects-2.png"].digest_path }}">
+  <a href="{% asset "blog/gh-projects-2.png" @path %}">
     {% asset 'blog/gh-projects-2.png' class="figure-img w-100" %}
   </a>
 </figure>
