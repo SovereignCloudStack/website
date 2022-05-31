@@ -34,6 +34,7 @@ jobs:
     - uses: helaili/jekyll-action@v2
       id: build
       with:
+        jekyll_src: "."
         jekyll_env: production
         pre_build_commands: "apk add --update vips uglify-js"
         build_only: true
