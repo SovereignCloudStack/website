@@ -191,7 +191,7 @@ as an advantage. This is of course different in higher layers that
 change much more often depending on the customer needs.
 
 <figure class="figure mx-auto d-block" style="width:90%">
-  <a href="{{ assets["201001-SCS-4a.png"].digest_path }}">
+  <a href="{% asset "201001-SCS-4a.png" @path %}">
     {% asset '201001-SCS-4a.png' class="figure-img w-100" %}
   </a>
   <figcaption class="figure-caption">
@@ -209,7 +209,7 @@ we however have standards to cover it, so we can deliver compatibility
 at this layer as well.
 
 <figure class="figure mx-auto d-block" style="width:90%">
-  <a href="{{ assets["Ecosys-SCS-Acatech.png"].digest_path }}">
+  <a href="{% asset "Ecosys-SCS-Acatech.png" @path %}">
     {% asset 'Ecosys-SCS-Acatech.png' class="figure-img w-100" %}
   </a>
   <figcaption class="figure-caption">

@@ -208,7 +208,7 @@ Schicht nicht als Vorteil. Dies ist auf höheren Schichten natürlich
 anders, in Abhängigkeit der Nutzerbedürfnisse.
 
 <figure class="figure mx-auto d-block" style="width:90%">
-  <a href="{{ assets["201001-SCS-4a.png"].digest_path }}">
+  <a href="{% asset "201001-SCS-4a.png" @path %}">
     {% asset '201001-SCS-4a.png' class="figure-img w-100" %}
   </a>
   <figcaption class="figure-caption">
@@ -227,7 +227,7 @@ dafür aber auch Standards, so dass auch auf dieser Ebene eine
 Standardkonformität und Kompatibilität erreicht werden kann.
 
 <figure class="figure mx-auto d-block" style="width:90%">
-  <a href="{{ assets["Ecosys-SCS-Acatech.png"].digest_path }}">
+  <a href="{% asset "Ecosys-SCS-Acatech.png" @path %}">
     {% asset 'Ecosys-SCS-Acatech.png' class="figure-img w-100" %}
   </a>
   <figcaption class="figure-caption">
