@@ -64,7 +64,9 @@ module Jekyll
         return @absolute_url if defined? @absolute_url
 
         @absolute_url = if raw_path.is_a?(String) && absolute_url?(raw_path) == false
-                          filters.absolute_url raw_path
+                          #filters.absolute_url raw_path
+                          # Always return raw_path so that we can use the asset pipeline
+                          raw_path
                         else
                           raw_path
                         end
