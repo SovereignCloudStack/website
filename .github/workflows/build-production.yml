@@ -34,7 +34,7 @@ jobs:
       with:
         jekyll_env: production
         build_only: true
-        jekyll_build_options: --config _config.staging.yml -d _site
+        jekyll_build_options: --config _config.production.yml -d _site
     - uses: burnett01/rsync-deployments@5.2
       with:
         switches: -avzr --delete --exclude=/docs/ --exclude=/antrag-bmwi
