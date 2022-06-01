@@ -1,16 +1,63 @@
 <div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+<svg>
+  <mask id="cut1-square">
+    <rect width="80" height="80" fill="white"/>
+  </mask>
+  <mask id="cut1-round">
+      <circle cx="40" cy="40" r="40" fill="white"/>
+  </mask>
+  <mask id="cut2-1">
+    <circle cx="40" cy="40" r="40" fill="white"/>
+    <rect x="40" y="0" width="40" height="80" fill="black" stroke="black" stroke-width="2"/>
+  </mask>
+  <mask id="cut2-2">
+    <circle cx="40" cy="40" r="40" fill="white"/>
+    <rect x="0" y="0" width="40" height="80" fill="black" stroke="black" stroke-width="2"/>
+  </mask>
+  <mask id="cut3-1">
+    <circle cx="40" cy="40" r="40" fill="white"/>
+    <polygon points="40,0 80,0 80,80 0,80 0,60 40,40" fill="black" stroke="black" stroke-width="2"/>
+  </mask>
+  <mask id="cut3-2">
+    <circle cx="40" cy="40" r="40" fill="white"/>
+    <polygon points="0,0 40,0 40,40 80,60 80,80 0,80" fill="black" stroke="black" stroke-width="2"/>
+  </mask>
+  <mask id="cut3-3">
+    <circle cx="40" cy="40" r="40" fill="white"/>
+    <polygon points="0,0 80,0 80,60 40,40 0,60" fill="black" stroke="black" stroke-width="2"/>
+  </mask>
+  <mask id="cut4-1">
+    <circle cx="40" cy="40" r="40" fill="white"/>
+    <polygon points="40,0 80,0 80,80 0,80 0,40 40,40" fill="black" stroke="black" stroke-width="2"/>
+  </mask>
+  <mask id="cut4-2">
+    <circle cx="40" cy="40" r="40" fill="white"/>
+    <polygon points="0,0 40,0 40,40 80,40 80,80 0,80" fill="black" stroke="black" stroke-width="2"/>
+  </mask>
+  <mask id="cut4-3">
+    <circle cx="40" cy="40" r="40" fill="white"/>
+    <polygon points="0,0 80,0 80,40 40,40 40,80 0,80" fill="black" stroke="black" stroke-width="2"/>
+  </mask>
+  <mask id="cut4-4">
+    <circle cx="40" cy="40" r="40" fill="white"/>
+    <polygon points="0,0 80,0 80,80 40,80 40,40 0,40" fill="black" stroke="black" stroke-width="2"/>
+  </mask>
+</svg>
 {% if post.avatar.first and post.avatar.size == 2 %}
   <svg height="80" width="80">
     <mask id="cut-two-1">
       <circle cx="40" cy="40" r="40" fill="white"/>
+    </mask>
+    <mask id="cut2-1">
+      <circle cx="40" cy="40" r="40" fill="white"/>
       <rect x="40" y="0" width="40" height="80" fill="black" stroke="black" stroke-width="2"/>
     </mask>
-    <mask id="cut-two-2">
+    <mask id="cut2-2">
       <circle cx="40" cy="40" r="40" fill="white"/>
       <rect x="0" y="0" width="40" height="80" fill="black" stroke="black" stroke-width="2"/>
     </mask>
-    <image x="-20" y="0" height="80" width="80" xlink:href="{% asset '{{post.avatar[0]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut-two-1)"></image>
-    <image x="20" y="0" height="80" width="80" xlink:href="{% asset '{{post.avatar[1]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut-two-2)"></image>  
+    <image x="-20" y="0" height="80" width="80" xlink:href="{% asset '{{post.avatar[0]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut2-1)"></image>
+    <image x="20" y="0" height="80" width="80" xlink:href="{% asset '{{post.avatar[1]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut2-2)"></image>  
   </svg>
 {% elsif post.avatar.first and post.avatar.size == 3 %}
   <svg>
@@ -18,17 +65,17 @@
       <circle cx="40" cy="40" r="40" fill="white"/>
       <polygon points="40,0 80,0 80,80 0,80 0,60 40,40" fill="black" stroke="black" stroke-width="2"/>
     </mask>
-    <mask id="cut-three-2">
+    <mask id="cut3-2">
       <circle cx="40" cy="40" r="40" fill="white"/>
       <polygon points="0,0 40,0 40,40 80,60 80,80 0,80" fill="black" stroke="black" stroke-width="2"/>
     </mask>
-    <mask id="cut-three-3">
+    <mask id="cut3-3">
       <circle cx="40" cy="40" r="40" fill="white"/>
       <polygon points="0,0 80,0 80,60 40,40 0,60" fill="black" stroke="black" stroke-width="2"/>
     </mask>
-    <image x="-10" y="-5" height="65" width="65" xlink:href="{% asset '{{post.avatar[0]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut-three-1)"></image>
-    <image x="30" y="-5" height="65" width="65" xlink:href="{% asset '{{post.avatar[1]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut-three-2)"></image>
-    <image x="5" y="30" height="70" width="70" xlink:href="{% asset '{{post.avatar[2]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut-three-3)"></image>
+    <image x="-10" y="-5" height="65" width="65" xlink:href="{% asset '{{post.avatar[0]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut3-1)"></image>
+    <image x="30" y="-5" height="65" width="65" xlink:href="{% asset '{{post.avatar[1]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut3-2)"></image>
+    <image x="5" y="30" height="70" width="70" xlink:href="{% asset '{{post.avatar[2]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut3-3)"></image>
   </svg>
 {% elsif post.avatar.first and post.avatar.size == 4 %}
   <svg>
@@ -36,33 +83,27 @@
       <circle cx="40" cy="40" r="40" fill="white"/>
       <polygon points="40,0 80,0 80,80 0,80 0,40 40,40" fill="black" stroke="black" stroke-width="2"/>
     </mask>
-    <mask id="cut-four-2">
+    <mask id="cut4-2">
       <circle cx="40" cy="40" r="40" fill="white"/>
       <polygon points="0,0 40,0 40,40 80,40 80,80 0,80" fill="black" stroke="black" stroke-width="2"/>
     </mask>
-    <mask id="cut-four-3">
+    <mask id="cut4-3">
       <circle cx="40" cy="40" r="40" fill="white"/>
       <polygon points="0,0 80,0 80,40 40,40 40,80 0,80" fill="black" stroke="black" stroke-width="2"/>
     </mask>
-    <mask id="cut-four-4">
+    <mask id="cut4-4">
       <circle cx="40" cy="40" r="40" fill="white"/>
       <polygon points="0,0 80,0 80,80 40,80 40,40 0,40" fill="black" stroke="black" stroke-width="2"/>
     </mask>
-    <image x="0" y="0" height="40" width="40" xlink:href="{% asset '{{post.avatar[0]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut-four-1)"></image>
-    <image x="40" y="0" height="40" width="40" xlink:href="{% asset '{{post.avatar[1]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut-four-2)"></image>
-    <image x="40" y="40" height="40" width="40" xlink:href="{% asset '{{post.avatar[2]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut-four-3)"></image>
-    <image x="0" y="40" height="40" width="40" xlink:href="{% asset '{{post.avatar[3]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut-four-4)"></image>
+    <image x="0" y="0" height="40" width="40" xlink:href="{% asset '{{post.avatar[0]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut4-1)"></image>
+    <image x="40" y="0" height="40" width="40" xlink:href="{% asset '{{post.avatar[1]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut4-2)"></image>
+    <image x="40" y="40" height="40" width="40" xlink:href="{% asset '{{post.avatar[2]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut4-3)"></image>
+    <image x="0" y="40" height="40" width="40" xlink:href="{% asset '{{post.avatar[3]}}' @path vips:format='.webp' vips:resize='80x80' %}" mask="url(#cut4-4)"></image>
   </svg> 
 {% else %}
   <svg height="80" width="80">
-    <mask id="cut-square">
-      <rect width="80" height="80" fill="white"/>
-    </mask>
-    <mask id="cut-round">
-        <circle cx="40" cy="40" r="40" fill="white"/>
-    </mask>
     <image x="0" y="0" height="80" width="80" xlink:href="{% asset '{{post.avatar[0]}}' @path vips:format='.webp' vips:resize='80x80' %}" 
-      {% if post.path contains '/announcements/' %} mask="url(#cut-square)" {% else %} mask="url(#cut-round)" {% endif %}
+      {% if post.path contains '/announcements/' %} mask="url(#cut1-square)" {% else %} mask="url(#cut1-round)" {% endif %}
     ></image>
   </svg>
 {% endif %}
