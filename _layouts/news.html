@@ -8,14 +8,10 @@ layout: default
 {% if post.path contains '/announcements/' %}
 	<a href="{{ site.baseurl }}{{post.url}}" class="list-group-item list-group-item-action flex-column align-items-start">
 	<div class="d-flex flex-row">
-		{% if post.avatar %}
-			<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
-				<img src="{{post.avatar | prepend: site.baseurl_root}}" class="img-fluid p-2">
-			</div>
-		{% endif %}
+		{% include news/blog_avatars.html %}
 		<div class="d-flex w-100 flex-column ms-3 my-auto">
 			<div class="d-flex w-100 justify-content-between">
-				<h5 class="mb-1" style="font-size:.875em">{{post.author}}</h5>
+				<h5 class="mb-1" style="font-size:.875em">{{post.author | join: ", "}}</h5>
 				<small class="ms-2">{% include date.html date=post.date %}</small>
 			</div>
 		<p class="mb-1">{{post.title}}</p>
