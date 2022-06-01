@@ -1,8 +1,10 @@
 ---
 layout: post
 title:  "The Gaia-X foundation is solid"
-author: "Sovereign Cloud Stack"
-avatar: "/assets/images/SCS_logo.png"
+author: 
+  - "Sovereign Cloud Stack"
+avatar:
+  - "/assets/images/SCS_logo.png"
 image: "/assets/images/blog/foundation.jpg"
 ---
 
