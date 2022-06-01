@@ -6,7 +6,7 @@
   speaker:
     - "Dr. Franziska Brantner"
   avatar:
-    - "/assets/images/fbrantner.jpeg"
+    - "fbrantner.jpeg"
   description: |
     Digital sovereignty is a key priority for the German Government and the Ministry for Economic Affairs and Climate Action (BMWK). In her keynote, Franziska Brantner will elaborate on its strategic and political relevance and will shed light on the concrete activities of the BMWK to strengthen sovereignty with a special focus on open source. A followup Q&A with Frederic Lardinois will shed more light on the role open source plays in tackling digital sovereignty. 
 
@@ -20,9 +20,9 @@
     - "Jonas Schäfer"
     - "Felix Huettner"
   avatar:
-    - "/assets/images/MT.png"
-    - "/assets/images/JS.png"
-    - "/assets/images/fhuettner.jpeg"
+    - "MT.png"
+    - "JS.png"
+    - "fhuettner.jpeg"
   description: |
     STACKIT is part of the IT organization within the Schwarz Group, the largest European retail company. This includes Lidl and Kaufland, Schwarz Produktion in food production and PreZero in environmental services.
     In cooperation with Cloud and Heat the Schwarz Group created the Lifecycle Management Tool for OpenStack "Yaook" (Yet another openstack on kubernetes). Since 2021 it is available as opensource. The Yaook project aims to be the next step in automating deployment and operation of OpenStack clouds. In its core, it relies on Kubernetes operators, small pieces of code which compare observed and intended state in order to determine actions to converge the system. This idea can, however, be taken to a next level: What if there was a control loop which managed an entire OpenStack deployment? Yaook provides just that. Beyond the initial installation, it supports "Day 2 operation" tasks, such as upgrades and node maintenance / reinstallation. At the same time, Yaook knows its limits and will wait for human operator input in cases of potential loss of data or availability. That way, Yaook makes for a resilient and reliable life-cycle management of OpenStack clouds.
@@ -35,7 +35,7 @@
   speaker: 
     - "Eduard Itrich"
   avatar: 
-    - "/assets/images/eitrich.jpg"
+    - "eitrich.jpg"
   description: |
     Hardly any other term has been redefined and reframed so frequently in public discussions in recent years as “digital sovereignty”. Interpretations range from using Open Source Software down to local franchise agreements with proprietary cloud providers applying the term as a boilerplate.
     This talk will demystify the term “digital sovereignty” and outline why it is not just enough to be sovereign on a higher container layer or create local spin-offs from proprietary cloud service providers. Together we will look at different criteria for digital sovereignty and realize that closed-source “sovereign” cloud offerings may not bring as much sovereignty as promised.
@@ -49,7 +49,7 @@
   speaker: 
     - "Christian Berendt"
   avatar: 
-    - "/assets/images/CB.png"
+    - "CB.png"
   description: |
     Cloud computing with Kubernetes has evolved to a widely accepted de-facto standard without vendor lock-in for creating scalable and flexible  applications for critical business systems of record. 23KE, based on the open source project Gardener, is a production proven open-source Kubernetes-as-a-Service solution to fully automate and operate a global, multi-cloud, and hybrid Kubernetes service. It often serves as a fundamental gateway platform for important cloud services.
     We will demonstrate how we can enable the Gaia-X vision of an open, independent multi provider and cloud-edge continuum and how we enabled City Cloud to do Managed Kubernetes right.
@@ -63,8 +63,8 @@
     - "Kurt Garloff"
     - "Felix Kronlage-Dammers" 
   avatar:
-    - "/assets/images/kgarloff.jpg"
-    - "/assets/images/fkr.jpg"
+    - "kgarloff.jpg"
+    - "fkr.jpg"
   description: |
     Open Infrastructure technology has become increasingly mature. Nevertheless, high quality management and operations of open platforms continues to require DevOps teams with significant skills. The Sovereign Cloud Stack project has been created with the goal to significantly lower the bar.
     While the integration of a standardized operational stack helps the platform operations teams, it is only an important first step.
@@ -82,9 +82,9 @@
     - "Christian Berendt"
     - "Felix Kronlage-Dammers"
   avatar:
-    - "/assets/images/kgarloff.jpg"
-    - "/assets/images/fkr.jpg"    
-    - "/assets/images/CB.png"
+    - "kgarloff.jpg"
+    - "fkr.jpg"    
+    - "CB.png"
   description: |
     As part of the collaboration within the Sovereign Cloud Stack project the topic of Loadbalancer-as-a-Service has grown interest. Especially in regard to Octavia and its further development as well as topics such a Multi-Region / geo-redundant loadbalancing. Discussion arose around the future development of octavia and wether the current path being taken is the one that serves operators of OpenStack based clouds best.
     
@@ -100,9 +100,9 @@
     - "Felix Kronlage-Dammers"
     - "Nils Magnus"
   avatar:
-    - "/assets/images/kgarloff.jpg"
-    - "/assets/images/tcarrez.jpg"
-    - "/assets/images/swenner.jpg"
-    - "/assets/images/fkr.jpg"    
+    - "kgarloff.jpg"
+    - "tcarrez.jpg"
+    - "swenner.jpg"
+    - "fkr.jpg"    
   description: |
     There's a lot of talk about the Gaia-X project and the associated principle of sovereignty in Europe recently. There are even reference implementations based on OpenStack. However, they are not the same. We'd like to have a panel discussion with stakeholders to discuss topics like strategic directions, focus, data privacy, and security features.

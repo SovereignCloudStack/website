@@ -4,8 +4,7 @@ title:  "SCS at the OpenInfra Summit 2022 – Schedule and Community Gathering"
 author:
   - "Eduard Itrich"
 avatar:
-  - "/assets/images/eitrich.jpg"
-image: "/assets/images/blog/cee2022-ganten.jpeg"
+  - "eitrich.jpg"
 ---
 
 We're just one week ahead of the [OpenInfra Summit 2022](https://openinfra.dev/summit/)
@@ -64,16 +63,3 @@ at one or the other presentation.
   {% endfor %}
   </div>
 </div>
-
-
-
-<script type="text/javascript">
-  var $targetAnchor = $(window.location.hash);
-  var tabId = $targetAnchor.closest('.content').attr('id');
-  console.log(tabId);
-  $tab-content.find('a[href=#' + tabId + ']').click();
-  
-  $('html, body').animate({
-    scrollTop: $targetAnchor.offset().top
-  });
-</script>
