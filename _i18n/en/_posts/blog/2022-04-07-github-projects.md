@@ -5,8 +5,8 @@ category: tech
 author:
   - "Eduard Itrich"
 avatar:
-  - "/assets/images/eitrich.jpg"
-image: "/assets/images/blog/github.jpg"
+  - "eitrich.jpg"
+image: "blog/github.jpg"
 ---
 
 Community,
@@ -31,8 +31,8 @@ stable in our tests. Check out the [documentation](https://docs.github.com/en/is
 for further information on how to use this new feature.
 
 <figure class="figure mx-auto d-block" style="width:70%">
-  <a href="{{ "/assets/images/blog/gh-projects-1.png" | prepend: site.baseurl_root }}">
-    <img src="{{ "/assets/images/blog/gh-projects-1.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
+  <a href="{% asset "blog/gh-projects-1.png" @path %}">
+    {% asset 'blog/gh-projects-1.png' class="figure-img w-100" %}
   </a>
 </figure>
 
@@ -61,8 +61,8 @@ Definition of Done (DoD). Feel free to open pull requests against this template 
 you think that we've missed an important item in these lists.
 
 <figure class="figure mx-auto d-block" style="width:70%">
-  <a href="{{ "/assets/images/blog/gh-projects-2.png" | prepend: site.baseurl_root }}">
-    <img src="{{ "/assets/images/blog/gh-projects-2.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
+  <a href="{% asset "blog/gh-projects-2.png" @path %}">
+    {% asset 'blog/gh-projects-2.png' class="figure-img w-100" %}
   </a>
 </figure>
 

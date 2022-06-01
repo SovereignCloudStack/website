@@ -1,22 +1,22 @@
 ---
 layout: post
 title:  "SCS: Wir arbeiten weiter an Gaia-X für digitale Souveränität"
-author: "Kurt Garloff"
 author:
   - "Dr. Manuela Urban"
   - "Felix Kronlage-Dammers"
   - "Jonas Schäfer"
   - "Kurt Garloff"
 avatar: 
-  - "/assets/images/urban.jpg"
-  - "/assets/images/fkr.jpg"
-  - "/assets/images/JS.png"
-  - "/assets/images/kgarloff.jpg"
+  - "urban.jpg"
+  - "fkr.jpg"
+  - "JS.png"
+  - "kgarloff.jpg"
+image: "blog/rowing.jpg"
 ---
 
 _(Von Dr. Manuela Urban, Felix Kronlage-Dammers, Jonas Schäfer, Kurt Garloff)_
 
-<img src="{{ "/assets/images/blog/rowing.jpg" | prepend: site.baseurl_root }}" style="width:100%; max-height: 450px; object-fit: cover;}">
+{% asset 'blog/rowing.jpg' vips:format='.webp' style="width:100%; max-height: 450px; object-fit: cover;" %}
 
 ## Kontext
 
@@ -131,7 +131,7 @@ Viable Gaia" zusammen und nehmen am zweiten Gaia-X Hackathon am 2.+3. Dezember t
 
 <figure class="figure mx-auto d-block my-4 col-md-7">
   <a href="https://www.gaia-x.eu/news/events/gaia-x-hackathon-2" target="_blank">
-    <img src="{{ "/assets/images/blog/gx-hackathon-2.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
+    {% asset 'blog/gx-hackathon-2.png' class="figure-img w-100" %}
   </a>
   <figcaption class="figure-caption">
     Beim Gaia-X Hackathon #2 erwartet dich unter anderem ein eigener Track zur geführten Installation von SCS auf echter Hardware.

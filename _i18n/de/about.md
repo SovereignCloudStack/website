@@ -208,8 +208,8 @@ Schicht nicht als Vorteil. Dies ist auf höheren Schichten natürlich
 anders, in Abhängigkeit der Nutzerbedürfnisse.
 
 <figure class="figure mx-auto d-block" style="width:90%">
-  <a href="{{ "/assets/images/201001-SCS-4a.png" | prepend: site.baseurl_root }}">
-    <img src="{{ "/assets/images/201001-SCS-4a.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
+  <a href="{% asset "201001-SCS-4a.png" @path %}">
+    {% asset '201001-SCS-4a.png' class="figure-img w-100" %}
   </a>
   <figcaption class="figure-caption">
     Das Bild zeigt die Architektur und einige Komponenten von SCS.
@@ -227,8 +227,8 @@ dafür aber auch Standards, so dass auch auf dieser Ebene eine
 Standardkonformität und Kompatibilität erreicht werden kann.
 
 <figure class="figure mx-auto d-block" style="width:90%">
-  <a href="{{ "/assets/images/Ecosys-SCS-Acatech.png" | prepend: site.baseurl_root }}">
-    <img src="{{ "/assets/images/Ecosys-SCS-Acatech.png" | prepend: site.baseurl_root }}" class="figure-img w-100">
+  <a href="{% asset "Ecosys-SCS-Acatech.png" @path %}">
+    {% asset 'Ecosys-SCS-Acatech.png' class="figure-img w-100" %}
   </a>
   <figcaption class="figure-caption">
     Diese Zeichnung zeigt ein IT Ökosystem mit vier Cloudanbietern;

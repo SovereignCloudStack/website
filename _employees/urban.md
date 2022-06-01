@@ -8,7 +8,7 @@ academic: Dr.
 role: COO Sovereign Cloud Stack
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
-avatar: assets/images/employees/Urban.jpg
+avatar: employees/Urban.jpg
 linkedin: https://www.linkedin.com/in/manuela-b-urban/
 matrix: https://matrix.to/#/@manuela.urban:matrix.org
 mail: urban@osb-alliance.com

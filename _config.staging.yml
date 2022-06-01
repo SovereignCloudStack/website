@@ -7,7 +7,7 @@ url: https://sovereigncloudstack.github.io/
 permalink: pretty
 
 languages: ["en", "de"]
-exclude_from_localizations: ["assets"]
+exclude_from_localizations: ["/assets"]
 
 sass:
   sass_dir: /assets/css/_sass
@@ -18,6 +18,8 @@ include:
 
 exclude:
   - .sass-cache
+  - .jekyll-cache
+  - _gems
 
 twitter:
   username: scs_osballiance
@@ -33,7 +35,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/default-card.jpg
+      image: default-card.jpg
 
 feed:
   categories:
@@ -54,7 +56,21 @@ collections:
     output: true
     sort_by: number
     permalink: /:collection/:name
-    
+
+assets:
+  destination: "/assets"
+  source_maps: true
+  compression: true
+  gzip: true
+  compress:
+    js: uglifier
+  sources:
+    - _assets/
+    - _assets/vendor
+    - _assets/slides
+    - _assets/fonts
+    - _assets/css/_sass
+
 plugins:
   - jekyll-multiple-languages-plugin
   - jekyll-redirect-from
@@ -62,4 +78,5 @@ plugins:
   - jekyll-last-modified-at
   - jekyll-feed
   - jekyll-scholar
+  - jekyll-assets
   

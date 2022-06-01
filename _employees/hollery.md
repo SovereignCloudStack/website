@@ -7,7 +7,7 @@ firstname: Bianca
 role: Project Management and Documentation
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
-avatar: assets/images/employees/Hollery.jpg
+avatar: employees/Hollery.jpg
 linkedin: https://www.linkedin.com/in/bianca-hollery-623008106/
 matrix: https://matrix.to/#/@biancahollery:matrix.org
 mail: hollery@osb-alliance.com

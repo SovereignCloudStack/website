@@ -4,7 +4,7 @@ title:  "Some comments on the OVH T-Systems deal"
 author: 
   - "Kurt Garloff"
 avatar:
-  - "/assets/images/kgarloff.jpg"
+  - "kgarloff.jpg"
 ---
 
 SCS is a collaboration of many companies from the industrial and ICT sector as well

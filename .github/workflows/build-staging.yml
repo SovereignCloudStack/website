@@ -11,8 +11,6 @@ jobs:
     name: "Build and deploy to GitHub Pages"
     runs-on: ubuntu-latest
     steps:
-    # Set postBuffer of git to maximum as lower values may cause trobule while pushing
-    - run: git config --global http.postBuffer 524288000
     - uses: actions/checkout@v2
       id: checkout
     # Use GitHub Actions' cache to shorten build times and decrease load on servers
@@ -20,13 +18,16 @@ jobs:
       id: cache
       with:
         path: vendor/bundle
-        key: ${{ runner.os }}-gems-v2-${{ hashFiles('**/Gemfile') }}
+        key: ${{ runner.os }}-gems-v${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/Gemfile') }}
         restore-keys: |
-          ${{ runner.os }}-gems-v2-
+          ${{ runner.os }}-gems-v${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/Gemfile') }}
+          ${{ runner.os }}-gems-v${{ secrets.CACHE_VERSION }}-
     # Use GitHub Deploy Action to build and deploy to Github
     - uses: helaili/jekyll-action@v2
       id: build
       with:
+        jekyll_src: "."
         jekyll_env: development
+        pre_build_commands: "apk add --update vips uglify-js"
         build_only: true
-        jekyll_build_options: --config _config.staging.yml
+        jekyll_build_options: "--config _config.staging.yml"

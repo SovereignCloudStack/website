@@ -4,7 +4,7 @@ title:  "Gedanken zur OVH T-Systems Zusammenarbeit"
 author: 
   - "Kurt Garloff"
 avatar: 
-  - "/assets/images/kgarloff.jpg"
+  - "kgarloff.jpg"
 ---
 
 SCS arbeitet als Arbeitspaket in GAIA-X erfolgreich gemeinsam mit

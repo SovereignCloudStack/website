@@ -48,7 +48,10 @@ layout: default
 		<div class="list-group mb-4">
 		{% assign sorted = site.data.news_en | sort: 'date' | reverse %}
 		{% for item in sorted %}
-		<a href="{{item.link}}" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">
+		{% capture news_link %}{% if item.asset %}{% asset '{{item.asset}}' @path %}{% elsif item.link%}{{item.link}}{% endif %}{% endcapture %}
+		{% if news_link %}
+			<a href="{{news_link}}" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">
+		{% endif %}
 		<div class="d-flex w-100 justify-content-between">
 		<h5 class="mb-1" style="font-size:.875em">{{item.publisher}}</h5>
 		<small class="ms-2">{% include date.html date=item.date %}</small>
@@ -63,7 +66,10 @@ layout: default
 		<div class="list-group mb-4">
 		{% assign sorted = site.data.news_de | sort: 'date' | reverse %}
 		{% for item in sorted %}
-		<a href="{{item.link}}" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">
+		{% capture news_link %}{% if item.asset %}{% asset '{{item.asset}}' @path %}{% elsif item.link%}{{item.link}}{% endif %}{% endcapture %}
+		{% if news_link %}
+			<a href="{{news_link}}" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">
+		{% endif %}
 		<div class="d-flex w-100 justify-content-between">
 		<h5 class="mb-1" style="font-size:.875em">{{item.publisher}}</h5>
 		<small class="ms-2">{% include date.html date=item.date %}</small>
@@ -91,7 +97,7 @@ layout: default
 				<div class="d-flex w-25 flex-column justify-content-start text-end position-relative">
 					<small>{% include date.html date=item.date %}</small>
 					{% if item.slides %}
-						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{{ item.slides | prepend: "/assets/slides/" | prepend: site.baseroot_url }}" target="_blank">
+						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{% asset '{{item.slides}}' @path %}" target="_blank">
 							<i class="fa fa-download my-auto"></i> <small>{% t news.conference.slides %}</small>
 						</a>
 					{% endif %}
@@ -116,7 +122,7 @@ layout: default
 				<div class="d-flex w-25 flex-column justify-content-start text-end position-relative">
 					<small>{% include date.html date=item.date %}</small>
 					{% if item.slides %}
-						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{{ item.slides | prepend: "/assets/slides/" | prepend: site.baseroot_url }}" target="_blank">
+						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{% asset '{{item.slides}}' @path %}" target="_blank">
 							<i class="fa fa-download my-auto"></i> <small>{% t news.conference.slides %}</small>
 						</a>
 					{% endif %}
