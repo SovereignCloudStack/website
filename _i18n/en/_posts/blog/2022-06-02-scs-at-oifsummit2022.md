@@ -7,6 +7,7 @@ author:
 avatar:
   - "eitrich.jpg"
   - "employees/Hollery.jpg"
+image: "oif_summit2022/countdown.jpg"
 ---
 
 We're just one week ahead of the [OpenInfra Summit 2022](https://openinfra.dev/summit/)
