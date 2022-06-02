@@ -14,30 +14,30 @@ We're just one week ahead of the [OpenInfra Summit 2022](https://openinfra.dev/s
 and we're thrilled to meet you all on-site again. This post is to inform you about
 our activities at this truly important and exciting event for our community. Numerous
 members will be present with various talks and sessions throughout all three days.
-We have collected all contributions of our community below and we hope to see you
+We have collected all contributions of our community below[^1] and we hope to see you
 at one or the other presentation.
 
 ## Schedule
 
 <div class="container my-4">
   <!-- Nav tabs -->
-  <ul class="schedule-nav nav nav-pills nav-fill" id="schedule-tab" role="tablist">
+  <ul class="schedule-nav nav nav-pills nav-justified" id="schedule-tab" role="tablist">
     <li class="nav-item me-2">
       <a class="nav-link active" id="tab-day-1" data-bs-toggle="tab" href="#day-1" role="tab" aria-controls="day-1" aria-selected="true">
         <span class="heading">Day 1</span>
-        <span class="meta">(Tuesday, June 7)</span>
+        <span class="meta d-none d-lg-block">(Tuesday, June 7)</span>
       </a>
     </li>
     <li class="nav-item me-2">
       <a class="nav-link" id="tab-day-2" data-bs-toggle="tab" href="#day-2" role="tab" aria-controls="day-2" aria-selected="false">
         <span class="heading">Day 2</span>
-        <span class="meta">(Wednesday, June 8)</span>
+        <span class="meta d-none d-lg-block">(Wednesday, June 8)</span>
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="tab-day-3" data-bs-toggle="tab" href="#day-3" role="tab" aria-controls="day-3" aria-selected="false">
         <span class="heading">Day 3</span>
-        <span class="meta">(Thursday, June 9)</span>
+        <span class="meta d-none d-lg-block">(Thursday, June 9)</span>
       </a>
     </li>
   </ul>
@@ -85,34 +85,33 @@ Let’s meet from 7 pm at the [c-base e.V.](https://c-base.org) (Rungestraße 20
 	</div>
 {% endfor %}
 </div>
+<p class="text-end text-muted fw-light"><small>Images by MeTaMiND EvoLuTioN MeTaVoLuTioN, <a href="https://creativecommons.org/licenses/by/2.0" target="_blank">CC BY 2.0</a>, via Wikimedia Commons</small></p>
 
 <div class="schedule-cta text-center mx-auto my-4">
   <a href="https://graphhopper.com/maps/?point=bcc%20berlin%20congress%20center%2C%2010178%2C%20Berlin%2C%20Germany&point=c-base%2C%2010179%2C%20Berlin%2C%20Germany&locale=en-US&elevation=false&profile=foot&use_miles=false&layer=OpenStreetMap" class="btn btn-secondary btn-lg d-block d-md-inline-block" target="_blank">Navigate me to the party</a>
 </div>
 
-Join us for food and drinks[^1], for continuing the conversations started during the day or making plans for the next meeting. We thank our sponsors [OSISM GmbH](https://osism.tech) und [Aitus UG](https://aitus.eu/) for the food – they are both members of the [Open Source Business Alliance e.V.](https://osb-alliance.com) - as well as the c-base for the great opportunity to have our social event in their space station. 😉
+Join us for food and drinks[^2], for continuing the conversations started during the day or making plans for the next meeting. We thank our sponsors [OSISM GmbH](https://osism.tech) und [Aitus UG](https://aitus.eu/) for the food – they are both members of the [Open Source Business Alliance e.V.](https://osb-alliance.com) - as well as the c-base for the great opportunity to have our social event in their space station. 😉
 
 <div class="row align-items-center justify-content-center">
-	<div class="col-6 d-flex justify-content-center">
+	<div class="col-5 col-md-4 col-lg-3 p-3 d-flex justify-content-center">
   	<a href="https://osism.tech" title="OSISM GmbH" target="_blank">
   		{% asset 'logo-osism.png' alt='OSISM GmbH' class='mx-auto d-block img-fluid' vips:format='.webp' vips:resize='300x150' %}
   	</a>
 	</div>
-  <div class="col-6 p-5 d-flex justify-content-center">
+  <div class="col-5 col-md-4 col-lg-3 p-5 d-flex justify-content-center">
   	<a href="https://aitus.eu/" title="Aitus UG" target="_blank">
   		{% asset 'logo-aitus.png' alt='Aitus UG' class='mx-auto d-block img-fluid' vips:format='.webp' vips:resize='300x150' %}
   	</a>
 	</div>
 </div>
 
-[^1]: Please note that we cannot cover the beverage.
-
 ## Contact us
 
 If you need any further information, please contact [Eduard](https://scs.community/itrich) or [Bianca](https://scs.community/hollery) – they’ll be happy to help you. See you in Berlin!
 
 <div class="row justify-content-center my-4">
-  <div class="col-3 d-flex justify-content-center">
+  <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
     <div class="card" style="width: 13rem;">
       {% asset 'employees/Itrich.jpg' class="card-img-top img-fluid" style="width: 100%; max-height: 35vh; object-fit: cover; object-position: top;" %}
       <div class="card-body">
@@ -120,7 +119,7 @@ If you need any further information, please contact [Eduard](https://scs.communi
       </div>
     </div>
   </div>
-  <div class="col-3 d-flex justify-content-center">
+  <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
     <div class="card" style="width: 13rem;">
       {% asset 'employees/Hollery.jpg' class="card-img-top img-fluid" style="width: 100%; max-height: 35vh; object-fit: cover; object-position: top;" %}
       <div class="card-body">
@@ -129,6 +128,10 @@ If you need any further information, please contact [Eduard](https://scs.communi
     </div>
   </div>
 </div>
+
+[^1]: The schedule is adapted from the great work of [Xiaoying Riley](http://themes.3rdwavemedia.com/).
+[^2]: Please note that we cannot cover the beverage.
+
 
 <!-- JavaScript to create deep links within tab -->
 
