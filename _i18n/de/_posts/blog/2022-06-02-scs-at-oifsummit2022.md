@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-06-02-scs-at-oifsummit2022.md

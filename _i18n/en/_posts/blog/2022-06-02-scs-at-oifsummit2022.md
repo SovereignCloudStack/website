@@ -73,8 +73,9 @@ at one or the other presentation.
 
 ## Community Meetup
 
-We're excited to invite you to our social evening event on Wednesday, June 8 at the [c-base](https://rc3.c-base.org/360/) in Berlin!
-Join us 
+We're excited to invite you to our community gathering on **Wednesday, June 8** (formerly known as _„the secret party“_).
+
+Let’s meet from 7 pm at the [c-base e.V.](https://c-base.org) (Rungestraße 20, 10179 Berlin), which is about 15 min by public transport from the Berlin Congress center (if you are probably attending the OpenInfra Summit).
 
 <div class="row align-items-center justify-content-center">
 {% for i in (1..3) %}
@@ -88,7 +89,7 @@ Join us
   <a href="https://graphhopper.com/maps/?point=bcc%20berlin%20congress%20center%2C%2010178%2C%20Berlin%2C%20Germany&point=c-base%2C%2010179%2C%20Berlin%2C%20Germany&locale=en-US&elevation=false&profile=foot&use_miles=false&layer=OpenStreetMap" class="btn btn-secondary btn-lg d-block d-md-inline-block" target="_blank">Navigate me to the party</a>
 </div>
 
-A special thanks goes to the people behind c-base e.V. and to our two sponsors OSISM and Aitus, who made the food possible. There will be a great variety of meat, vegetarian and vegan finger food snacks. Your drinks are payed directly at the bar.
+Join us for food and drinks[^1], for continuing the conversations started during the day or making plans for the next meeting. We thank our sponsors [OSISM GmbH](https://osism.tech) und [Aitus UG](https://aitus.eu/) for the food – they are both members of the [Open Source Business Alliance e.V.](https://osb-alliance.com) - as well as the c-base for the great opportunity to have our social event in their space station. 😉
 
 <div class="row align-items-center justify-content-center">
 	<div class="col-6 d-flex justify-content-center">
@@ -103,11 +104,13 @@ A special thanks goes to the people behind c-base e.V. and to our two sponsors O
 	</div>
 </div>
 
+[^1]: Please note that we cannot cover the beverage.
+
 ## Contact us
 
-Want to meet us at the OpenInfra Summit? Great! Contact [Eduard](https://scs.community/itrich) or [Bianca](https://scs.community/hollery) by mail or phone and let's schedule an appointment. Please don't hesitate to reach out to us if you have any questions regarding our project, our sessions at the OpenInfra Summit or our evening event. 
+If you need any further information, please contact [Eduard](https://scs.community/itrich) or [Bianca](https://scs.community/hollery) – they’ll be happy to help you. See you in Berlin!
 
-<div class="row justify-content-center">
+<div class="row justify-content-center my-4">
   <div class="col-3 d-flex justify-content-center">
     <div class="card" style="width: 13rem;">
       {% asset 'employees/Itrich.jpg' class="card-img-top img-fluid" style="width: 100%; max-height: 35vh; object-fit: cover; object-position: top;" %}
@@ -125,6 +128,8 @@ Want to meet us at the OpenInfra Summit? Great! Contact [Eduard](https://scs.com
     </div>
   </div>
 </div>
+
+<!-- JavaScript to create deep links within tab -->
 
 <script type="text/javascript">
   $(function() {
