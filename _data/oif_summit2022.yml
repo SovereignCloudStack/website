@@ -1,0 +1,203 @@
+- title: "The Intersection of Open Source Technologies and Digital Sovereignty"
+  day: 1
+  start: "10:10"
+  end: "10:17"
+  location: "Berlin Congress Center - B - B08"
+  speaker:
+    - "Dr. Franziska Brantner"
+  avatar:
+    - "fbrantner.jpeg"
+  description: |
+    Digital sovereignty is a key priority for the German Government and the Ministry for Economic Affairs and Climate Action (BMWK). In her keynote, Franziska Brantner will elaborate on its strategic and political relevance and will shed light on the concrete activities of the BMWK to strengthen sovereignty with a special focus on open source. A followup Q&A with Frederic Lardinois will shed more light on the role open source plays in tackling digital sovereignty. 
+
+- title: "Fearless automation: Deploying OpenStack on top of Kubernetes with YAOOK, How a retailer became a Cloud Provider"
+  day: 1
+  start: "16:00"
+  end: "16:40"
+  location: "Berlin Congress Center - B - B08"
+  speaker:
+    - "Marvin Titus"
+    - "Jonas Schäfer"
+    - "Felix Huettner"
+  avatar:
+    - "MT.png"
+    - "JS.png"
+    - "fhuettner.jpeg"
+  description: |
+    STACKIT is part of the IT organization within the Schwarz Group, the largest European retail company. This includes Lidl and Kaufland, Schwarz Produktion in food production and PreZero in environmental services.
+    In cooperation with Cloud and Heat the Schwarz Group created the Lifecycle Management Tool for OpenStack "Yaook" (Yet another openstack on kubernetes). Since 2021 it is available as opensource. The Yaook project aims to be the next step in automating deployment and operation of OpenStack clouds. In its core, it relies on Kubernetes operators, small pieces of code which compare observed and intended state in order to determine actions to converge the system. This idea can, however, be taken to a next level: What if there was a control loop which managed an entire OpenStack deployment? Yaook provides just that. Beyond the initial installation, it supports "Day 2 operation" tasks, such as upgrades and node maintenance / reinstallation. At the same time, Yaook knows its limits and will wait for human operator input in cases of potential loss of data or availability. That way, Yaook makes for a resilient and reliable life-cycle management of OpenStack clouds.
+
+- title: "Digital sovereignty: Why open infrastructure matters"
+  day: 2
+  start: "11:20"
+  end: "11:35"
+  location: "Berlin Congress Center - A - OpenInfra Stage"
+  speaker: 
+    - "Eduard Itrich"
+  avatar: 
+    - "eitrich.jpg"
+  description: |
+    Hardly any other term has been redefined and reframed so frequently in public discussions in recent years as “digital sovereignty”. Interpretations range from using Open Source Software down to local franchise agreements with proprietary cloud providers applying the term as a boilerplate.
+    This talk will demystify the term “digital sovereignty” and outline why it is not just enough to be sovereign on a higher container layer or create local spin-offs from proprietary cloud service providers. Together we will look at different criteria for digital sovereignty and realize that closed-source “sovereign” cloud offerings may not bring as much sovereignty as promised.
+    Open infrastructure matters and is key to independence, trust and innovation. In order to achieve true digital sovereignty, we need open source, operating knowledge and vital open communities.
+
+- title: "How to create beautiful cloud-native landscapes?"
+  day: 2
+  start: "14:15"
+  end: "14:30"
+  location: "Berlin Congress Center - A - OpenInfra Stage"
+  speaker: 
+    - "Christian Berendt"
+  avatar: 
+    - "CB.png"
+  description: |
+    Cloud computing with Kubernetes has evolved to a widely accepted de-facto standard without vendor lock-in for creating scalable and flexible  applications for critical business systems of record. 23KE, based on the open source project Gardener, is a production proven open-source Kubernetes-as-a-Service solution to fully automate and operate a global, multi-cloud, and hybrid Kubernetes service. It often serves as a fundamental gateway platform for important cloud services.
+    We will demonstrate how we can enable the Gaia-X vision of an open, independent multi provider and cloud-edge continuum and how we enabled City Cloud to do Managed Kubernetes right.
+    
+- title: "An Open Operations concept"
+  day: 2
+  start: "14:50"
+  end: "15:20"
+  location: "Berlin Congress Center - B - B05"
+  speaker: 
+    - "Kurt Garloff"
+    - "Felix Kronlage-Dammers" 
+  avatar:
+    - "kgarloff.jpg"
+    - "fkr.jpg"
+  description: |
+    Open Infrastructure technology has become increasingly mature. Nevertheless, high quality management and operations of open platforms continues to require DevOps teams with significant skills. The Sovereign Cloud Stack project has been created with the goal to significantly lower the bar.
+    While the integration of a standardized operational stack helps the platform operations teams, it is only an important first step.
+    The next step is to create strong communities that share operational practices and make them openly available. Documenting best practices, publishing the little tools to do cleanup jobs or the setup of dashboards that can be used for capacity management are all important contributions.
+    Being transparent about bugs, incidents, security responses may sound disturbing to traditional Ops teams at first -- yet it is key to build up experience. It also helps to create trust with users, especially when incidents do occur.
+    This is the core of the Open Operations concept.
+    
+- title: "Forum on Loadbalancer-as-a-Service - fostering Octavia and taking LBaaS to a next Level"
+  day: 2
+  start: "16:00"
+  end: "16:30"
+  location: "Berlin Congress Center - A - A05"
+  speaker: 
+    - "Kurt Garloff"
+    - "Christian Berendt"
+    - "Felix Kronlage-Dammers"
+  avatar:
+    - "kgarloff.jpg"
+    - "fkr.jpg"    
+    - "CB.png"
+  description: |
+    As part of the collaboration within the Sovereign Cloud Stack project the topic of Loadbalancer-as-a-Service has grown interest. Especially in regard to Octavia and its further development as well as topics such a Multi-Region / geo-redundant loadbalancing. Discussion arose around the future development of octavia and wether the current path being taken is the one that serves operators of OpenStack based clouds best.
+
+- title: "Intent-based holistic data center management"
+  day: 2
+  start: "16:40"
+  end: "17:10"
+  location: "Berlin Congress Center - A - OpenInfra Stage"
+  speaker: 
+    - "Christian Berendt"
+  avatar: 
+    - "CB.png"
+  description: |
+    OpenStack is great for delivering large amounts of resources via APIs "as a service“. However, when it comes to enrolling and managing physical resources themselves, e.g. Switches or PDUs, or even more generally the entire data center, OpenStack itself reaches its limits. Is the IPAM the source of truth or OpenStack itself? How is the reconciliation done? Who approves changes there? How can annomalies be found?
+    An intent-based holistic data center management approach approach allows a high abstraction of the underlying configurations and control.
+    For example, it is thus possible to populate a pool of physical servers first with OpenStack. If the requirement changes in the future, a part can be removed from this pool of resources and populated with a completely independent workload, for example a Gardener on Metal.
+    In this talk we will present our open source based approach (that is  available as open source) with Netbox, Git, Python, Ansible and OpenStack Ironic in detail.
+    
+- title: "Sovereign OpenStack"
+  day: 2
+  start: "17:20"
+  end: "17:40"
+  location: "Berlin Congress Center - A - A06"
+  speaker: 
+    - "Kurt Garloff"
+    - "Thierry Carrez"
+    - "Sebastian Wenner"
+    - "Felix Kronlage-Dammers"
+    - "Nils Magnus"
+  avatar:
+    - "kgarloff.jpg"
+    - "tcarrez.jpg"
+    - "swenner.jpg"
+    - "fkr.jpg"  
+  description: |
+    There's a lot of talk about the Gaia-X project and the associated principle of sovereignty in Europe recently. There are even reference implementations based on OpenStack. However, they are not the same. We'd like to have a panel discussion with stakeholders to discuss topics like strategic directions, focus, data privacy, and security features.
+    <p style="height:70px;"></p>
+
+- title: "Nova Compute REST API History"
+  day: 2
+  start: "17:20"
+  end: "17:40"
+  location: "Berlin Congress Center - B - B05"
+  speaker: 
+    - "John Garbutt"
+  avatar:
+    - "jgarbutt.jpg"
+  description: |
+    Have you ever wondered why the first version of Nova's API is called v2? And what is the point of microversions anyway? What happened to that v3 Compute API? Why don't you have any Beta APIs? What happened to the EC2 API? Why are those folks from Rackspace so touchy about HTTP 500 errors? How were all these decisions made?
+    The history of the Nova API is really a history of the community discussions and people that shaped its direction. Back when I first started working with OpenStack Bexar and Citrix XenServer, things were somewhat different to today. We used euca2ools to start VMs. At Rackspace public cloud I spent some time worrying about HTTP 500 errors. At StackHPC I have spent time working with many different people using OpenStack APIs and they are frequently interested in the history of the OpenStack Compute API. Lets take a deep look at the history of a few API quirks and lessons I learnt about Open Development.
+    
+- title: "Community Meetup"
+  day: 2
+  start: "19:00"
+  end: "...?"
+  location: "c-base, Rungestraße 20, 10179 Berlin"
+  avatar:
+    - "eitrich.jpg"
+  description: |
+    Let's socialize! See below for more information on our community meetup alongside the OIF Summit 2022.
+    
+- title: "Open Operations: the Fifth Open paradigm"
+  day: 3
+  start: "09:40"
+  end: "10:10"
+  location: "Berlin Congress Center - A - A05"
+  speaker:
+    - "Marcel Hild"
+    - "Felix Kronlage-Dammers"
+    - "Kurt Garloff"
+    - "Karsten Wade"
+  avatar:
+    - "mhild.jpg"
+    - "fkr.jpg"
+    - "kgarloff.jpg"
+    - "KW.png"  
+  description: |
+    For years the Four Opens accompanied us as we shared playbooks & config management, while ignoring what is seen as too-secret or too-hard to Open: operations.
+    Are you interested in an all-open source hybrid cloud? Do you want a continuous environment for extended workload testing & AIOps modeling beyond CI/CD? Do you care for transparency of operation processes to learn from others? Are you afraid of opening up your operations? Or are you convinced this is the way modern infrastructure can run better? 
+    The Operate First project has Open operations in our community cloud, bringing together open source development, AIOps, & SRE practices into a GitOps-driven prototype environment.
+    The SCS project is propagating the concept of Open Operations alongside the Four Opens as a Fifth paradigm to build better & more resilient infrastructure. 
+    Let’s start the broader discussion about leaving the Age of Secret Sauce & moving toward Open Operations - the benefits, hurdles, worries, & solutions.
+    
+- title: "Observability in OpenStack: - Learnings and building blocks from the SIG Monitoring at SCS"
+  day: 3
+  start: "11:50"
+  end: "12:20"
+  location: "Berlin Congress Center - B - B08"
+  speaker:
+    - "Felix Kronlage-Dammers"
+    - "Mathias Fechner"
+  avatar:
+    - "fkr.jpg"
+    - "MF.png" 
+  description: |
+    The Sovereign Cloud Stack (SCS) is built upon the shoulders of giants: With proven technology such
+    as OpenStack and Kubernetes the SCS project is building a modular software stack. SCS is much more
+    than just another cloud stack - much rather SCS gathers an open community to join forces and define
+    common standards - while also providing a reference implementation.
+    As part of the projects Special Interest Group Monitoring involved CSPs and community members looked
+    at their needs for observability within OpenStack as well as other components and derived monitoring
+    building blocks that feature alerting, metrics collection as well as logging. The talk will give
+    an overview of the outcomes but will also highlight parts of the journey within the SIG and will
+    give insights to understand the rationale behind design decisions.
+    
+- title: "Deprivileging of Service Accounts Between Individual OpenStack Services"
+  day: 3
+  start: "14:40"
+  end: "15:10"
+  location: "Berlin Congress Center - A - A05"
+  speaker: 
+    - "Christian Berendt"
+  avatar: 
+    - "CB.png"
+  description: |
+    This problem affects all OpenStack operators. We would like to briefly outline the problem itself in order to get a commitment from the community that the problem needs to be solved.
