@@ -300,7 +300,7 @@ tr:hover, tr:focus {
 .schedule-tab-content .tab-pane:after {
   content:"";
   display:block;
-  background: rgba($scs-blue, 0.6);;
+  background: rgba($scs-mint, 0.4);;
   position:absolute;
   width:3px;
   height:100%;
@@ -312,7 +312,10 @@ tr:hover, tr:focus {
 }
 .schedule-tab-content .item {
   position:relative;
-  padding-bottom:3rem
+  padding-bottom:3rem;
+}
+.schedule-tab-content .item:last-child {
+  padding-bottom: 0rem;
 }
 .schedule-tab-content .item .item-talk {
   min-height:165px

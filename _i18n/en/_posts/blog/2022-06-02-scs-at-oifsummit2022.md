@@ -3,8 +3,10 @@ layout: post
 title:  "SCS at the OpenInfra Summit 2022 – Schedule and Community Gathering"
 author:
   - "Eduard Itrich"
+  - "Bianca Hollery"
 avatar:
   - "eitrich.jpg"
+  - "employees/Hollery.jpg"
 ---
 
 We're just one week ahead of the [OpenInfra Summit 2022](https://openinfra.dev/summit/)
@@ -14,8 +16,9 @@ members will be present with various talks and sessions throughout all three day
 We have collected all contributions of our community below and we hope to see you
 at one or the other presentation.
 
-<div class="container">
-  <h2 class="mb-4">Schedule</h2>
+## Schedule
+
+<div class="container my-4">
   <!-- Nav tabs -->
   <ul class="schedule-nav nav nav-pills nav-fill" id="schedule-tab" role="tablist">
     <li class="nav-item me-2">
@@ -52,7 +55,7 @@ at one or the other presentation.
               </div><!--//profile-->
           </div><!--//meta-->
           <div class="content">
-            <h3 class="title mb-2">{{talk.title}}<a href="#session-{{ forloop.index }}" class="link-unstyled"><i class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em; color: "></i></a></h3>
+            <h3 class="title mb-2">{{talk.title}}<a data-tab-destination="day-{{i}}" href="#session-{{ forloop.index }}" class="link-unstyled"><i class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em; color: "></i></a></h3>
             <div class="location mb-2 text-muted"><i class="fa fa-map-marker me-2" aria-hidden="true"></i>{{talk.location}}</div>
             <div class="desc pb-2">{{talk.description}}</div>
           </div><!--//content-->
@@ -62,4 +65,100 @@ at one or the other presentation.
     </div> 
   {% endfor %}
   </div>
+  <div class="schedule-cta text-center mx-auto">
+    <a href="https://openinfra.dev/summit-schedule" class="btn btn-primary btn-lg me-md-2 d-block d-md-inline-block mb-3 mb-md-0" target="_blank">See complete Schedule</a>
+    <a href="https://www.eventbrite.com/e/openinfra-summit-berlin-2022-tickets-211374997307" class="btn btn-secondary btn-lg d-block d-md-inline-block" target="_blank">Buy Tickets</a>
+  </div>
 </div>
+
+## Community Meetup
+
+We're excited to invite you to our social evening event on Wednesday, June 8 at the [c-base](https://rc3.c-base.org/360/) in Berlin!
+Join us 
+
+<div class="row align-items-center justify-content-center">
+{% for i in (1..3) %}
+	<div class="col-4 d-flex justify-content-center">
+  	{% asset 'oif_summit2022/c-base-{{i}}.jpg' alt='c-base' class='mx-auto d-block img-fluid' vips:format='.webp' %}
+	</div>
+{% endfor %}
+</div>
+
+<div class="schedule-cta text-center mx-auto my-4">
+  <a href="https://graphhopper.com/maps/?point=bcc%20berlin%20congress%20center%2C%2010178%2C%20Berlin%2C%20Germany&point=c-base%2C%2010179%2C%20Berlin%2C%20Germany&locale=en-US&elevation=false&profile=foot&use_miles=false&layer=OpenStreetMap" class="btn btn-secondary btn-lg d-block d-md-inline-block" target="_blank">Navigate me to the party</a>
+</div>
+
+A special thanks goes to the people behind c-base e.V. and to our two sponsors OSISM and Aitus, who made the food possible. There will be a great variety of meat, vegetarian and vegan finger food snacks. Your drinks are payed directly at the bar.
+
+<div class="row align-items-center justify-content-center">
+	<div class="col-6 d-flex justify-content-center">
+  	<a href="https://osism.tech" title="OSISM GmbH" target="_blank">
+  		{% asset 'logo-osism.png' alt='OSISM GmbH' class='mx-auto d-block img-fluid' vips:format='.webp' vips:resize='300x150' %}
+  	</a>
+	</div>
+  <div class="col-6 p-5 d-flex justify-content-center">
+  	<a href="https://aitus.eu/" title="Aitus UG" target="_blank">
+  		{% asset 'logo-aitus.png' alt='Aitus UG' class='mx-auto d-block img-fluid' vips:format='.webp' vips:resize='300x150' %}
+  	</a>
+	</div>
+</div>
+
+## Contact us
+
+Want to meet us at the OpenInfra Summit? Great! Contact [Eduard](https://scs.community/itrich) or [Bianca](https://scs.community/hollery) by mail or phone and let's schedule an appointment. Please don't hesitate to reach out to us if you have any questions regarding our project, our sessions at the OpenInfra Summit or our evening event. 
+
+<div class="row justify-content-center">
+  <div class="col-3 d-flex justify-content-center">
+    <div class="card" style="width: 13rem;">
+      {% asset 'employees/Itrich.jpg' class="card-img-top img-fluid" style="width: 100%; max-height: 35vh; object-fit: cover; object-position: top;" %}
+      <div class="card-body">
+        <p class="card-text"><i class="fa fa-phone me-3"></i><a class="link-unstyled stretched-link" href="tel:+49-30-206539-204">+49-30-206539-204</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 d-flex justify-content-center">
+    <div class="card" style="width: 13rem;">
+      {% asset 'employees/Hollery.jpg' class="card-img-top img-fluid" style="width: 100%; max-height: 35vh; object-fit: cover; object-position: top;" %}
+      <div class="card-body">
+        <p class="card-text"><i class="fa fa-phone me-3"></i><a class="link-unstyled stretched-link" href="tel:+49-30-206539-204">+49-30-206539-206</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+      openTabHash();
+      window.addEventListener("hashchange", openTabHash, false);
+  });
+  
+  function openTabHash()
+  {
+      // Javascript to enable link to tab
+      var url = document.location.toString();
+      if (url.match('#day')) {
+          $('.nav-item a[href="#'+url.split('#')[1]+'"]').tab('show') ;
+      } else if (url.match('#session')) {
+          var day = $('.item-talk .content a[href="#'+url.split('#')[1]+'"]').closest('.tab-pane').attr('id');
+          $('.nav-item a[href="#'+day+'"]').tab('show');
+          $('html, body').animate({
+            scrollTop: $('a[href="#'+url.split('#')[1]+'"]').offset().top - 65
+          }, 300);
+      }
+      
+      $('.nav-item a').on('shown.bs.tab', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+          scrollTop: $('a[href="#'+url.split('#')[1]+'"]').offset().top - 65
+        }, 300);
+      });
+      
+      $('.nav-item').click(function() {
+          if (history.pushState) {
+              history.pushState(null, null, "#" + $(' a', this).get(0).href.split('#')[1]); 
+          } else {
+              window.location.hash = "#" + $(' a', this).get(0).href.split('#')[1];
+          }
+      })
+    }
+</script>
