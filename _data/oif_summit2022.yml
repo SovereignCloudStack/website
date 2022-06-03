@@ -201,3 +201,18 @@
     - "CB.png"
   description: |
     This problem affects all OpenStack operators. We would like to briefly outline the problem itself in order to get a commitment from the community that the problem needs to be solved.
+    
+- title: "The Future of the Public Cloud SIG"
+  day: 3
+  start: "14:40"
+  end: "15:50"
+  location: "Berlin Congress Center - A - A06"
+  speaker: 
+    - "Tobias Rydberg"
+    - "Jimmy McArthur"
+  avatar: 
+    - "trydberg.jpg"
+    - "jmcarthur.jpg"
+  description: |
+    What about a restart for the Public Cloud SIG? We would like to gather all of you OpenStack Public Cloud players to discuss the future of the Public Cloud SIG. What would be the mission for this group?  How can we work together to improve our engagement in OpenInfra and OpenInfra as a whole? What activities can we do to achieve this? How can we collaborate?
+    Meeting in person for the first time since forever is the perfect opportunity get this discussion going and put out the direction moving forward!

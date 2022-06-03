@@ -74,9 +74,12 @@ at one or the other presentation.
 
 ## Community Meetup
 
-We're excited to invite you to our community gathering on **Wednesday, June 8** (formerly known as _„the secret party“_).
+We're excited to invite you to our community gathering on **Wednesday, June 8** (formerly known as _„the secret party“_). Let’s meet from 7 pm at the [c-base e.V.](https://c-base.org) (Rungestraße 20, 10179 Berlin), which is about 15 min by public transport from the Berlin Congress center (if you are probably attending the OpenInfra Summit).
 
-Let’s meet from 7 pm at the [c-base e.V.](https://c-base.org) (Rungestraße 20, 10179 Berlin), which is about 15 min by public transport from the Berlin Congress center (if you are probably attending the OpenInfra Summit).
+<div class="alert alert-info" role="alert">
+  <i class="fa fa-info-circle fa-lg mx-3"></i>
+  Please note that you need a valid proof of vaccination or recovery to enter the c-base. Wearing a mask during the evening is optional.
+</div>
 
 <div class="row align-items-center justify-content-center">
 {% for i in (1..3) %}
@@ -88,7 +91,7 @@ Let’s meet from 7 pm at the [c-base e.V.](https://c-base.org) (Rungestraße 20
 <p class="text-end text-muted fw-light"><small>Images by MeTaMiND EvoLuTioN MeTaVoLuTioN, <a href="https://creativecommons.org/licenses/by/2.0" target="_blank">CC BY 2.0</a>, via Wikimedia Commons</small></p>
 
 <div class="schedule-cta text-center mx-auto my-4">
-  <a href="https://graphhopper.com/maps/?point=bcc%20berlin%20congress%20center%2C%2010178%2C%20Berlin%2C%20Germany&point=c-base%2C%2010179%2C%20Berlin%2C%20Germany&locale=en-US&elevation=false&profile=foot&use_miles=false&layer=OpenStreetMap" class="btn btn-secondary btn-lg d-block d-md-inline-block" target="_blank">Navigate me to the party</a>
+  <a href="geo:52.5129735,13.4201313" class="btn btn-secondary btn-lg d-block d-lg-none d-md-inline-block" target="_blank">Navigate me to the party</a>
 </div>
 
 Join us for food and drinks[^2], for continuing the conversations started during the day or making plans for the next meeting. We thank our sponsors [OSISM GmbH](https://osism.tech) und [Aitus UG](https://aitus.eu/) for the food – they are both members of the [Open Source Business Alliance e.V.](https://osb-alliance.com) - as well as the c-base for the great opportunity to have our social event in their space station. 😉
