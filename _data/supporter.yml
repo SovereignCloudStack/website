@@ -152,3 +152,17 @@
   location:
     latitude: 48.55080
     longitude: 7.97115
+- name: "Wavecon GmbH"
+  image: "logo-wavecon.png"
+  avatar: "avatar-wavecon.png"
+  link: "https://www.wavecon.de/"
+  location:
+    latitude: 49.47884
+    longitude: 10.98941
+- name: "Noris Network AG"
+  image: "logo-noris.png"
+  avatar: "avatar-noris.png"
+  link: "https://www.noris.de/"
+  location:
+    latitude: 49.41067
+    longitude: 11.13104
