@@ -12,6 +12,12 @@
 
 - date: "2022-06-07"
   event: "OpenInfra Summit"
+  title: "Fearless automation: Deploying OpenStack on top of Kubernetes with YAOOK, How a retailer became a Cloud Provider"
+  details: "Marvin Titus, Felix Hüttner, Jonas Schäfer"
+  slides: "20220607-OIF-4.pdf"
+
+- date: "2022-06-07"
+  event: "OpenInfra Summit"
   title: "Digital sovereignty: Why open infrastructure matters"
   details: "Eduard Itrich"
   slides: "20220607-OIF-1.pdf"
