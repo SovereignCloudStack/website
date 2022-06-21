@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-06-23-this-was-oifsummit2022.md
