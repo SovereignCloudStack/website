@@ -37,14 +37,8 @@ jobs:
         jekyll_src: "."
         jekyll_env: production
         pre_build_commands: "apk add --update vips uglify-js"
-        build_only: true
+        build_only: false
+        token: ${{ secrets.GITHUB_TOKEN }}
+        target_branch: gh-pages
+        keep_history: false
         jekyll_build_options: --config _config.prod.yml -d _site
-    - uses: burnett01/rsync-deployments@5.2
-      with:
-        switches: -avzr --delete --exclude=/docs/ --exclude=/antrag-bmwi
-        path: _site/
-        remote_host: ${{ secrets[matrix.host] }}
-        remote_port: ${{ secrets[matrix.port] }}
-        remote_path: ${{ secrets[matrix.path] }}
-        remote_user: ${{ secrets[matrix.user] }}
-        remote_key: ${{ secrets[matrix.key] }}
