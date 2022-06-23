@@ -69,6 +69,31 @@ talk on [Observability in OpenStack](https://www.youtube.com/watch?v=x9lk3Jk15Wc
 	</div>
 </div>
 
-**TODO: Add image gallery**
+## Gallery
 
-**TODO: Add what's next section**
+<div id="oif_summit2022_carousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+  {% for image in assets %}
+  {% if image[0] contains "images/oif_summit2022/gallery" %}
+
+      <div class="carousel-item active">
+      <a href="{{image[1].path}}" class="stretched-link">
+        {% if post.image %}
+          {% asset '{{image[0]}}' class='d-block w-100' alt='Open Infra Summit 2022 Gallery' vips:format='.webp' %}
+        {% else %}
+          {% asset '{{image[0]}}' class='d-block w-100' alt='Open Infra Summit 2022 Gallery' vips:format='.webp' %}
+        {% endif %}
+      </a>
+      </div>
+  {% endif %}
+  {% endfor %} 
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#oif_summit2022_carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#oif_summit2022_carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
