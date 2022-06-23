@@ -9,16 +9,38 @@ image: "oif_summit2022/countdown.jpg"
 ---
 
 Two weeks after this year's [OpenInfra Summit in Berlin]({% post_url 2022-06-02-scs-at-oifsummit2022 %})
-we are still overwhelmed by the impressions of this for us very important conference.
+we are still overwhelmed by the impressions of those three days at the Berlin Conference Center (bcc).
+With our reference implementation being built upon OpenStack the OpenInfra Summit is the major conference
+for us - obviously we brought our share of talks and contributions to the table as well.
+
 A multitude of great speakers and the overall welcoming and motivating atmosphere made this event unique.
 Many thanks to the whole [OpenInfra Foundation team](https://openinfra.dev/about/staff/) who made
 this summit possible and to [FNTECH](https://www.fntech.com/) for the successful organization of
 the event. You rock! 🤘
 
-With this blogpost we would like to provide you with the slides of our various presentations,
-point out some recordings worth seeing and give you a preview of the next milestones in our project.
+All of the talks at the Summit were recorded and are published. Within the SCS community we assembled a list of
+talks that we thought were really great.
 
 ## Sessions and recordings worth seeing
+
+
+## Contributions and talk from the SCS communtiy
+
+The first day started with keynotes and we were thrilled that PStS Dr. Brantner from the Federal Ministry of economic affairs and climate
+action [shared her thoughts](https://www.youtube.com/watch?v=ZlPLGmBfaVc&t=4420s).
+Eduard had the chance to present our views on [Digital sovereignty](https://www.youtube.com/watch?v=i2hQQFJi3Yo) and why open infrastructure
+matters. The subject of digital sovereignty is important - as such Eduard was assigned [another slot on day two](https://www.youtube.com/watch?v=Lvz2PcHq0yY).
+
+Kurt and Felix presented the [Open Operations concept](https://www.youtube.com/watch?v=oGuUty7ufN8) - maybe this will become the fifth _open paradigm_?
+The talk was well received and sparked discussions around the hallway track. There was a forum session on Day three together with the folks from
+[Operate First](https://www.operate-first.cloud/) on _Open Operations_ which featured a packed room. We will move this subject further and spark
+more discussions and actions within our community.
+
+The learnings and building blocks from our Special Interest Group Monitoring were presented by Felix and Mathias in their
+talk on [Observability in OpenStack](https://www.youtube.com/watch?v=x9lk3Jk15Wc). 
+
+
+## Complete list of recordings and slides
 
 <div class="row">
 	<div class="col-lg-12">
