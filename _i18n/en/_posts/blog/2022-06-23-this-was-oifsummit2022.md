@@ -6,9 +6,28 @@ author:
 avatar:
   - "eitrich.jpg"
 image: "oif_summit2022/countdown.jpg"
+watchlist:
+  - name: "Hardware Onboarding and Burn-in with Ironic in the CERN Data Center"
+    url: "https://www.youtube.com/watch?v=9QRNEJX3SXQ"
+  - name: "Confidential Computing in the Control Plane (case study using Barbican)"
+    url: "https://www.youtube.com/watch?v=vh-Q9HWdYsQ"
+  - name: "Ghosting the Spectre"
+    url: "https://www.youtube.com/watch?v=p2mQeF3gd2Q"
+  - name: "Honey, I Blew Up the Cloud"
+    url: "https://www.youtube.com/watch?v=1zgT_7-QOw8"
+  - name: "Past, present and future of the storage in the CERN private cloud"
+    url: "https://www.youtube.com/watch?v=Ik9BMkFvsoI"
+  - name: "Observability on public clouds"
+    url: "https://www.youtube.com/watch?v=dRMpdz1lDH4"
+  - name: "API Performance"
+    url: "https://www.youtube.com/watch?v=OqcnXxTbIxk"
+  - name: "OpenStack Plugin for Vault"
+    url: "https://www.youtube.com/watch?v=RANhjX6-KYE"
+  - name: "Project Necromancy"
+    url: "https://www.youtube.com/watch?v=Ujq8I8wPpng?t=432"
 ---
 
-Two weeks after this year's [OpenInfra Summit in Berlin]({% post_url 2022-06-02-scs-at-oifsummit2022 %})
+Two weeks after this year's [OpenInfra Summit in Berlin]({% post_url blog/2022-06-02-scs-at-oifsummit2022 %})
 we are still overwhelmed by the impressions of those three days at the Berlin Conference Center (bcc).
 With our reference implementation being built upon OpenStack the OpenInfra Summit is the major conference
 for us - obviously we brought our share of talks and contributions to the table as well.
@@ -20,9 +39,6 @@ the event. You rock! 🤘
 
 All of the talks at the Summit were recorded and are published. Within the SCS community we assembled a list of
 talks that we thought were really great.
-
-## Sessions and recordings worth seeing
-
 
 ## Contributions and talk from the SCS communtiy
 
@@ -39,9 +55,6 @@ more discussions and actions within our community.
 The learnings and building blocks from our Special Interest Group Monitoring were presented by Felix and Mathias in their
 talk on [Observability in OpenStack](https://www.youtube.com/watch?v=x9lk3Jk15Wc). 
 
-
-## Complete list of recordings and slides
-
 <div class="row">
 	<div class="col-lg-12">
 		<div class="list-group mb-4">
@@ -50,12 +63,10 @@ talk on [Observability in OpenStack](https://www.youtube.com/watch?v=x9lk3Jk15Wc
 		<div class="list-group-item list-group-item-action align-items-start">
 			<div class="d-flex w-100 justify-content-between">
 				<div class="d-flex w-75 flex-column justify-content-start position-relative">
-					<h5 style="font-size:.875em">{{item.event}}</h5>
 					<a href="{{item.link}}" target="_blank" class="mb-1 text-decoration-none text-body stretched-link">{{item.title}}</a>
 					{% if item.details %}<p class="mb-1 small fw-light">— {{item.details}}</p>{% endif %}
 				</div>
 				<div class="d-flex w-25 flex-column justify-content-start text-end position-relative">
-					<small>{% include date.html date=item.date %}</small>
 					{% if item.slides %}
 						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{% asset '{{item.slides}}' @path %}" target="_blank">
 							<i class="fa fa-download my-auto"></i> <small>{% t news.conference.slides %}</small>
@@ -69,31 +80,19 @@ talk on [Observability in OpenStack](https://www.youtube.com/watch?v=x9lk3Jk15Wc
 	</div>
 </div>
 
-## Gallery
 
-<div id="oif_summit2022_carousel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-  {% for image in assets %}
-  {% if image[0] contains "images/oif_summit2022/gallery" %}
+## Further sessions and recordings worth seeing
 
-      <div class="carousel-item active">
-      <a href="{{image[1].path}}" class="stretched-link">
-        {% if post.image %}
-          {% asset '{{image[0]}}' class='d-block w-100' alt='Open Infra Summit 2022 Gallery' vips:format='.webp' %}
-        {% else %}
-          {% asset '{{image[0]}}' class='d-block w-100' alt='Open Infra Summit 2022 Gallery' vips:format='.webp' %}
-        {% endif %}
-      </a>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="list-group mb-4">
+      {% for recording in page.watchlist %}
+      <div class="list-group-item list-group-item-action align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+  					<a href="{{recording.url}}" target="_blank" class="mb-1 text-decoration-none text-body stretched-link">{{recording.name}}</a>
+        </div>   
       </div>
-  {% endif %}
-  {% endfor %} 
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#oif_summit2022_carousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#oif_summit2022_carousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+      {% endfor %}
+    </div>
+    </div>
 </div>
