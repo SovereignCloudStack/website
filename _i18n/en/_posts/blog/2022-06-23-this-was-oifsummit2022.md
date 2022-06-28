@@ -3,9 +3,11 @@ layout: post
 title:  "OpenInfra Summit 2022 – Class reunion of our community"
 author:
   - "Eduard Itrich"
+  - "Felix Kronlage-Dammers"
 avatar:
   - "eitrich.jpg"
-image: "oif_summit2022/countdown.jpg"
+  - "fkr.jpg"
+image: "oif_summit2022/gallery/attatchment.IFDb2U.jpeg"
 watchlist:
   - name: "Hardware Onboarding and Burn-in with Ironic in the CERN Data Center"
     url: "https://www.youtube.com/watch?v=9QRNEJX3SXQ"
@@ -95,4 +97,18 @@ talk on [Observability in OpenStack](https://www.youtube.com/watch?v=x9lk3Jk15Wc
       {% endfor %}
     </div>
     </div>
+</div>
+
+## Gallery
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+  {% for image in assets %}
+    {% if image[0] contains "images/oif_summit2022/gallery" %}
+      <div>
+        <a href="{% asset '{{image[0]}}' @path %}">
+          {% asset '{{image[0]}}' class='card-img-top rounded' alt='Open Infra Summit 2022 Gallery' vips:resize='500x500' vips:crop='high' vips:format='.webp' %}
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
