@@ -10,6 +10,11 @@ redirect_from:
 
 {% tf tenders/tenders.md %}
 
+<button class="btn btn-sm rounded-pill bg-primary text-light" id="all">{% t tenders.filter.all %}</button>
+<button class="btn btn-sm rounded-pill bg-secondary text-light" id="open">{% t tenders.filter.open %}</button>
+<button class="btn btn-sm rounded-pill bg-secondary text-light" id="upcoming">{% t tenders.filter.upcoming %}</button> 
+<button class="btn btn-sm rounded-pill bg-secondary text-light" id="closed">{% t tenders.filter.closed %}</button> 
+
 <div class="table-responsive text-center">
 <table>
   <thead>
@@ -22,7 +27,7 @@ redirect_from:
   </thead>
   <tbody>
     {% for lot in site.tenders %}
-    <tr>
+    <tr class="lot {{lot.state}}">
       <td>{%- if lot.retry -%}—{%- else -%}{{lot.number}}{%- endif -%}</td>
       <td>{% t lot.title_slug %}</td>
       <td>
@@ -61,3 +66,18 @@ redirect_from:
   </tbody>
 </table>
 </div>
+
+<script>
+$(document).ready(function(){
+  $(".btn").on("click", function() {
+    $('.btn').addClass('bg-secondary').removeClass('bg-primary');
+    $(this).removeClass('bg-secondary').addClass('bg-primary');
+    if (this.id == "all") {
+      $('.lot').show();
+    } else {
+      $('.lot').hide();
+      $('.' + this.id).show();
+    }
+  });
+});
+</script>

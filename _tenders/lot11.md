@@ -4,5 +4,5 @@ layout: default
 
 number: 16
 number_vh81: 11
-state: undefined # undefined, defined, open or closed
+state: upcoming # open, upcoming or closed
 ---

@@ -80,6 +80,11 @@ tenders:
     lot9c: "Penetration Testing"
     lot10: "SCS Zertifizierung"
     lot11: "Aufbau Serverhardware"
+  filter:
+    all: "Alle Ausschreibungen"
+    open: "Laufende Ausschreibungen"
+    upcoming: "Ausstehende Ausschreibungen"
+    closed: "Abgeschlossene Ausschreibungen"
 jobs:
   apply: "Jetzt bewerben"
   community-manager:
