@@ -1,4 +1,8 @@
 ## Lot 10
 
 ### SCS certification
+The subject of this tender is a framework agreement with a company on programming and other services for the certification of SCS-based platforms (i.e. operating practices, IaaS standard definitions and tests, KaaS standard definitions and tests, manually to be audited areas).
+
 To achieve the project goal to successfully establish standards against which software can de developed, tested and operated on SCS plaforms, these SCS platforms need to be highly compatible with each other. As every SCS partner has the possibility to make his own choice when implementing his platform, the relevant properties need to the continuously assured using automated tests (and only do manual audits where it really can’t be avoided). This assurance should be exposed via certificates to the users and developers. Next to the relevant functional properties (APIs, system behavior, …) on IaaS and KaaS layer, the corresponding operational processes are to be checked, as these are crucial for non-functional aspects such as security, data protection, reliability and availability of the platform. These also should (and mostly can) be automated, as respective tooling is available. In the end, a few aspects will remain that might need manual audits, which can be performed using lists of criteria, check lists and audit protocols which need to be specified.
+
+The tendered contract contributes to the "Sovereign Cloud Stack - An open, sovereign, federatable infrastructure stack for GAIA-X" project, which is funded by the Federal Ministry for Economic Affairs and Climate Action.

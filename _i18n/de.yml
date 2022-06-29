@@ -81,10 +81,10 @@ tenders:
     lot10: "SCS Zertifizierung"
     lot11: "Aufbau Serverhardware"
   filter:
-    all: "Alle Ausschreibungen"
-    open: "Laufende Ausschreibungen"
-    upcoming: "Ausstehende Ausschreibungen"
-    closed: "Abgeschlossene Ausschreibungen"
+    all: "Alle"
+    open: "Laufend"
+    upcoming: "Ausstehend"
+    closed: "Abgeschlossen"
 jobs:
   apply: "Jetzt bewerben"
   community-manager:

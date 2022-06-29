@@ -81,10 +81,10 @@ tenders:
     lot10: "SCS certification"
     lot11: "Server Hardware Installation"
   filter:
-    all: "All tenders"
-    open: "Open tenders"
-    upcoming: "Upcoming tenders"
-    closed: "Closed tenders"
+    all: "All"
+    open: "Open"
+    upcoming: "Upcoming"
+    closed: "Closed"
 jobs:
   apply: "Apply now"
   community-manager:
