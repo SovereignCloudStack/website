@@ -6,3 +6,5 @@ number: 8
 number_vh81: 6c
 state: upcoming # open, upcoming or closed
 ---
+
+{% tf tenders/lot6c.md %}

@@ -1,4 +1,8 @@
 ## Vergabepaket 10
 
 ### SCS Zertifizierung
+Gegenstand der Ausschreibung ist eine Rahmenvereinbarung mit einem Unter­nehmen über Programmier- und sonstige Dienstleistungen für die Zertifizierung von SCS-basierten Plattformen (Betriebspraktiken, IaaS-Standarddefinitionen und -tests, KaaS-Standarddefinitionen und -tests, manuell zu auditierende Bereiche).
+
 Um das Projektziel zu erreichen und erfolgreich Standards zu etablieren, gegen die Software entwickelt und auf SCS Plattformen getestet und später auch betrieben werden kann, müssen alle SCS Plattformen zueinander kompatibel sein. Da dennoch jeder Partner die Möglichkeit hat, bei der Implementierung von SCS Plattformen eigene Entscheidungen zu treffen, müssen die entscheidenden Eigenschaften durch kontinuierliche automatische Tests (und wo nicht vermeidbar durch manuelle Audits) überprüft werden und den Nutzern und Entwicklern entsprechend durch Zertifizierungen zugesichert werden. Neben den entsprechenden funktionalen Standards (Schnittstellen, Systemverhalten, …) sowohl auf IaaS und KaaS Ebene sind auch entsprechende Betriebsprozesse zu überprüfen, welche am Ende ja für entscheidende nicht-funktionale Eigenschaften im Bereich Sicherheit, Datenschutz, Zuverlässigkeit und Verfügbarkeit der Plattform wichtig sind. Auch diese sind zumindest teilweise automatisierbar, da ja auch hier entsprechende Werkzeuge zum Einsatz kommen. Am Ende bleiben einige manuell zu überprüfende Aspekte übrig, die mit entsprechenden Kriterien, Prüfkatalogen und -protokollen zu spezifizieren sind.
+
+Der vorliegende Auftrag dient der Umsetzung des vom BMWK geförderten Projekts „Sovereign Cloud Stack - Ein offener, souveräner, föderierbarer Infrastruktur­stack für GAIA-X“.

@@ -35,7 +35,7 @@ redirect_from:
         {%- if content_length == blank -%}
           Lot {{lot.number_vh81}}
         {%- else if -%}
-          <a href="{{lot.url | prepend: site.baseurl_root}}">Lot {{lot.number_vh81}}</a>
+          <a href="{{lot.url | prepend: site.baseurl}}">Lot {{lot.number_vh81}}</a>
         {%- endif -%}
       </td>
       <td>
