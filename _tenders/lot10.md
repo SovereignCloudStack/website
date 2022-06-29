@@ -9,7 +9,7 @@ number: 15
 number_vh81: 10
 start_date: 2021-11-12
 closing_date: 2021-12-07
-state: closed # undefined, defined, open or closed
+state: closed # open, upcoming or closed
 ---
 
 {% tf tenders/lot10.md %}

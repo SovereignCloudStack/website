@@ -80,6 +80,11 @@ tenders:
     lot9c: "Penetration Testing"
     lot10: "SCS certification"
     lot11: "Server Hardware Installation"
+  filter:
+    all: "All tenders"
+    open: "Open tenders"
+    upcoming: "Upcoming tenders"
+    closed: "Closed tenders"
 jobs:
   apply: "Apply now"
   community-manager:
