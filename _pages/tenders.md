@@ -27,15 +27,15 @@ redirect_from:
   </thead>
   <tbody>
     {% for lot in site.tenders %}
-    <tr class="lot {{lot.state}}">
+    <tr class="lot {{lot.state}}" {% if lot.state == "open" %}style="background-color:rgba(255, 245, 157, 0.6);"{% endif %}>
       <td>{%- if lot.retry -%}—{%- else -%}{{lot.number}}{%- endif -%}</td>
-      <td>{% t lot.title_slug %}</td>
+      <td {% if lot.state == "open" %}style="font-weight: bold;"{% endif %}>{% t lot.title_slug %}</td>
       <td>
         {%- capture content_length -%}{{lot.content | strip}}{%- endcapture -%}
         {%- if content_length == blank -%}
-          Lot {{lot.number_vh81}}
+          {% t tenders.lot %} {{lot.number_vh81}}
         {%- else if -%}
-          <a href="{{lot.url | prepend: site.baseurl}}">Lot {{lot.number_vh81}}</a>
+          <a href="{{lot.url | prepend: site.baseurl}}">{% t tenders.lot %} {{lot.number_vh81}}</a>
         {%- endif -%}
       </td>
       <td>
@@ -56,7 +56,7 @@ redirect_from:
         {%- if lot.state == "closed" -%}
           <span class="text-decoration-line-through">SCS-VP{{lot.number_vh81 | prepend: '00' | slice: -2, 2 }}{%- if lot.retry -%}-{{lot.retry}}{%- endif -%}</span>
         {%- elsif lot.contracting_portal -%}
-          <a href="{{lot.contracting_portal}}">SCS-VP{{lot.number_vh81 | prepend: '00' | slice: -2, 2 }}{%- if lot.retry -%}-{{lot.retry}}{%- endif -%}</a>
+          <a style="font-weight: bold;" href="{{lot.contracting_portal}}">SCS-VP{{lot.number_vh81 | prepend: '00' | slice: -2, 2 }}{%- if lot.retry -%}-{{lot.retry}}{%- endif -%}</a>
         {%- else -%}
           <span class="fst-italic">tba</span>
         {%- endif -%}

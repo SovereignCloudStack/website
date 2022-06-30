@@ -63,6 +63,7 @@ tenders:
   start_date: "Start"
   closing_date: "Abgabefrist"
   contracting_portal: "Link zum Vergabeportal"
+  lot: "Paket"
   title:
     lot1: "Betriebswerkzeuge, Testabdeckung durch CI/CD für Infrastruktur und IaaS, BareMetal als Dienst, Lifecycle Management"
     lot2: "Wissensmanagement für Betriebsprozesse, Herstellung von Transparenz bei den Cloudanbietern"

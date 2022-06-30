@@ -63,6 +63,7 @@ tenders:
   start_date: "Start date"
   closing_date: "Closing date"
   contracting_portal: "Link to contracting portal"
+  lot: "Lot"
   title:
     lot1: "OpsTooling, CI Tests Infra/IaaS, Metal as a Service, Life Cycle Management"
     lot2: "Ops Best Practice Knowledge Base, CSP Transparency"
