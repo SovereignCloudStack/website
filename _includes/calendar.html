@@ -1,11 +1,13 @@
 {% asset fullcalendar/main.css %}
 {% asset ajax/ical.js %}
 {% asset fullcalendar/main.js %}
+{% asset fullcalendar/locales/de.js %}
+{% asset fullcalendar/locales/en-gb.js %}
 {% asset fullcalendar/icalendar/main.global.js %}
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+    var calendarEl = document.getElementById('community-calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridWeek',
       headerToolbar: {
@@ -13,8 +15,12 @@
         center: 'title',
         right: 'dayGridDay,dayGridWeek,dayGridMonth'
       },
-      selectable: true,
       height: 'auto',
+      {% if site.lang == "de" %}
+      locale: 'de',
+      {% else %}
+      locale: 'en-Gb',
+      {% endif %}
       nowIndicator: true,
       events: {
         url: 'https://sovereigncloudstack.github.io/calendar/scs.ics',
@@ -26,4 +32,4 @@
 
 </script>
 
-<div id='calendar'></div>
+<div id='community-calendar'></div>
