@@ -1,0 +1,29 @@
+{% asset fullcalendar/main.css %}
+{% asset ajax/ical.js %}
+{% asset fullcalendar/main.js %}
+{% asset fullcalendar/icalendar/main.global.js %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridWeek',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridDay,dayGridWeek,dayGridMonth'
+      },
+      selectable: true,
+      height: 'auto',
+      nowIndicator: true,
+      events: {
+        url: 'https://sovereigncloudstack.github.io/calendar/scs.ics',
+        format: 'ics'
+      }
+    });
+    calendar.render();
+  });
+
+</script>
+
+<div id='calendar'></div>
