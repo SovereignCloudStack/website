@@ -118,7 +118,7 @@ employees:
 map:
   employees: "Project Management"
   community: "SCS Community"
-  supporter: "Supporting organisations"
+  supporter: "Supporting organizations"
 calendar:
   edit: "edit"
   join: "Join meeting"
