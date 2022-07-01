@@ -14,6 +14,7 @@ nav:
   news: "Neuigkeiten"
   jobs: "Offene Stellen"
   tenders: "Ausschreibungen"
+  contribute: "Zu SCS beitragen"
 footer:
   trademark: "Sovereign Cloud Stack, SCS und das Logo sind geschützte Marken der Open Source Business Alliance e.V. — Sonstige Marken sind Eigentum ihrer jeweiligen Besitzer."
   imprint: "Impressum"
@@ -118,3 +119,6 @@ map:
   employees: "Projektmanagement"
   community: "SCS Community"
   supporter: "Unterstützende Unternehmen"
+calendar:
+  edit: "Bearbeiten"
+  join: "Meeting betreten"

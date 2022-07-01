@@ -1,0 +1,118 @@
+
+/* Event Schedule (e.g. used for OIF Summit 2022 blog post) */
+.schedule-nav .nav-link.active {
+  color: white;
+  background-color: $scs-mint;
+}
+.schedule-nav .nav-link {
+  color: $text-color;
+  background-color: rgba($scs-mint, 0.3);
+}
+.schedule-nav .nav-item span {
+  display:block
+}
+.schedule-nav .nav-item .heading {
+  font-weight:700;
+  font-size:1.25rem
+}
+.schedule-nav .nav-item .meta {
+  -webkit-opacity:.8;
+  -moz-opacity:.8;
+  opacity:.8
+}
+.schedule-tab-content {
+  padding:2rem 0
+}
+.schedule-tab-content .tab-pane {
+  position:relative
+}
+.schedule-tab-content .tab-pane:after {
+  content:"";
+  display:block;
+  background: rgba($scs-mint, 0.4);
+  position:absolute;
+  width:3px;
+  height:100%;
+  left:196px;
+  top:5px
+}
+.schedule-tab-content .tab-pane.no-timeline:after {
+  display:none
+}
+.schedule-tab-content .item {
+  position:relative;
+  padding-bottom:3rem;
+}
+.schedule-tab-content .item:last-child {
+  padding-bottom: 0rem;
+}
+.schedule-tab-content .item .item-talk {
+  min-height:165px
+}
+.schedule-tab-content .item:after {
+  content:"";
+  display:inline-block;
+  position:absolute;
+  z-index:5;
+  left:190px;
+  top:5px;
+  width:16px;
+  height:16px;
+  border:4px solid $scs-blue;
+  background:white;
+  border-radius:50%
+}
+.schedule-tab-content .item .meta {
+  position:absolute;
+  left:0;
+  top:0;
+  width:200px;
+  padding:1rem;
+  padding-top:0;
+  text-align:center;
+  font-size:0.875rem
+}
+.schedule-tab-content .item .meta .time {
+  font-size:1.25rem;
+  font-weight:bold;
+}
+.schedule-tab-content .item .meta .location {
+  font-weight:bold;
+}
+.schedule-tab-content .item .profile-image {
+  width:80px;
+}
+.schedule-tab-content .item .content {
+  padding-left:240px
+}
+.schedule-tab-content .item .content .title {
+  font-size:1.25rem;
+  font-weight:bold;
+}
+.schedule-tab-content .item .content h3{
+  padding-top: 0;
+}
+
+@media (max-width: 767.98px) {
+  .schedule-tab-content .item {
+      background: rgba($scs-mint, 0.2);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+  }
+  .schedule-tab-content .item:last-child {
+    padding-bottom: 1.5rem;
+  }
+  .schedule-tab-content .item .content {
+    padding-left: 0;
+  }
+  .schedule-tab-content .item .meta {
+      position: static;
+      width: auto;
+  }
+  .schedule-tab-content .item:after {
+    display: none;
+  }
+  .schedule-tab-content .tab-pane:after {
+    display: none;
+  }
+}

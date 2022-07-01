@@ -1,0 +1,84 @@
+{% asset fullcalendar/main.css %}
+{% asset ajax/ical.js %}
+{% asset fullcalendar/main.js %}
+{% asset fullcalendar/locales/de.js %}
+{% asset fullcalendar/locales/en-gb.js %}
+{% asset fullcalendar/icalendar/main.global.js %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('community-calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'timeGridWeek',
+      customButtons: {
+        editButton: {
+          text: '{% t calendar.edit %}',
+          click: function() {
+            window.open("https://github.com/sovereigncloudstack/calendar", '_blank').focus();
+          }
+        }
+      },
+      headerToolbar: {
+        left: 'prev,next today editButton',
+        center: 'title',
+        right: 'timeGridDay,timeGridWeek,dayGridMonth'
+      },
+      height: 'auto',
+      expandRows: false,
+      eventClick: function(info) {
+        var eventModal = new bootstrap.Modal(document.getElementById('eventModal'), {
+          keyboard: true,
+          focus: true
+        });
+        $('.modal-title').text(info.event.title);
+        $('.modal-body span').text(info.event.extendedProps.description);
+        if (info.event.extendedProps.location) {
+          $('.modal-footer').show()
+          $('.modal-footer a').attr("href", info.event.extendedProps.location)
+        } else {
+          $('.modal-footer').hide()
+        }
+        eventModal.show();
+      },
+      eventMinHeight: 50, 
+      {% if site.lang == "de" %}
+      locale: 'de',
+      {% else %}
+      locale: 'en-Gb',
+      {% endif %}
+      selectable: false,
+      navLinks: true,
+      nowIndicator: true,
+      weekends: false,
+      slotDuration: "00:15:00",
+      slotMinTime: "09:00:00",
+      slotMaxTime: "18:00:00",
+      events: {
+        url: 'https://sovereigncloudstack.github.io/calendar/scs.ics',
+        format: 'ics'
+      }
+    });
+    calendar.render();
+  });
+
+</script>
+
+<div id='community-calendar'></div>
+
+<!-- Modal -->
+<div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <span style="white-space:break-spaces; word-break: break-word;"></span>
+      </div>
+      <div class="modal-footer">
+        <a href="#" target="_blank" class="btn btn-secondary">{% t calendar.join %}</a>
+      </div>
+    </div>
+  </div>
+</div>

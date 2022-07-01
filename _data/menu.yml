@@ -7,6 +7,8 @@
       link: /about/
     - title: nav.use
       link: /use/
+    - title: nav.contribute
+      link: /contribute/
     - title: nav.partners
       link: /partners/
 
