@@ -9,19 +9,35 @@
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('community-calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridWeek',
+      initialView: 'timeGridWeek',
+      customButtons: {
+        editButton: {
+          text: '{% t calendar.edit %}',
+          click: function() {
+            window.open("https://github.com/sovereigncloudstack/calendar", '_blank').focus();
+          }
+        }
+      },
       headerToolbar: {
-        left: 'prev,next today',
+        left: 'prev,next today editButton',
         center: 'title',
-        right: 'dayGridDay,dayGridWeek,dayGridMonth'
+        right: 'timeGridDay,timeGridWeek,dayGridMonth'
       },
       height: 'auto',
+      expandRows: false,
+      eventMinHeight: 50, 
       {% if site.lang == "de" %}
       locale: 'de',
       {% else %}
       locale: 'en-Gb',
       {% endif %}
+      selectable: false,
+      navLinks: true,
       nowIndicator: true,
+      weekends: false,
+      slotDuration: "00:15:00",
+      slotMinTime: "09:00:00",
+      slotMaxTime: "18:00:00",
       events: {
         url: 'https://sovereigncloudstack.github.io/calendar/scs.ics',
         format: 'ics'

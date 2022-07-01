@@ -119,3 +119,5 @@ map:
   employees: "Projektmanagement"
   community: "SCS Community"
   supporter: "Unterstützende Unternehmen"
+calendar:
+  edit: "Bearbeiten"

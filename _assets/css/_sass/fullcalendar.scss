@@ -1,4 +1,41 @@
 /* Calendar style (used on the Contribute page) */
-.community-calendar > a {
+a[class^="fc-"] {
   color: $text-color;
+  text-decoration: unset;
+}
+
+.fc .fc-timegrid-col.fc-day-today,
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: unset !important;
+}
+
+.fc-scrollgrid-section-body,
+.fc-timegrid-body tr,
+.fc-daygrid-body tr {
+  &:hover {
+    background-color: unset;
+  }
+  &:nth-child(even):hover {
+    background-color: rgba($scs-gray, 0.1);
+  }
+}
+
+@media screen and (max-width:992px) {
+  .fc-toolbar.fc-header-toolbar,
+  .fc-col-header-cell {
+    font-size: 60%
+  }
+}
+
+.fc-button-primary {
+	background-color: $scs-gray !important;
+	border-color: $scs-gray !important;
+    &:hover{
+      background-color: $scs-blue !important;
+      border-color: $scs-blue !important;
+    }
+}
+.fc-button-active {
+  background-color: $scs-blue !important;
+  border-color: $scs-blue !important;
 }
