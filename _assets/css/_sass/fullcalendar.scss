@@ -23,7 +23,10 @@ a[class^="fc-"] {
 @media screen and (max-width:992px) {
   .fc-toolbar.fc-header-toolbar,
   .fc-col-header-cell {
-    font-size: 60%
+    font-size: 60%;
+  }
+  .fc-editButton-button {
+    display: none !important;
   }
 }
 
