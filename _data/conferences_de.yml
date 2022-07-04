@@ -24,3 +24,10 @@
   details: "Stefan Grote, Kurt Garloff"
   link: "https://media.ccc.de/v/froscon2021-2660-infrastrukturplattformen_fur_ov_mit_dem_sovereign_cloud_stack_-_ubersicht_und_roadmap"
   slides: "20210821-FrOSCon.pdf"
+  
+- date: "2022-06-15"
+  event: "Parldigi-Dinner"
+  title: "Digitale Souveränität und Swiss Cloud"
+  details: "Kurt Garloff"
+  link: "https://www.youtube.com/watch?v=M8FAIpjM6ng"
+  slides: "Parldigi-Dinner-Juni-2022-Sovereign-Cloud-Stack.pdf"
