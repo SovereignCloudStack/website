@@ -4,7 +4,7 @@ layout: default
 
 number: 6
 number_vh81: 6a
-state: undefined # undefined, defined, open or closed
+state: upcoming # open, upcoming or closed
 ---
 
 {% tf tenders/lot6a.md %}

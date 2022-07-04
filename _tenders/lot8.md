@@ -9,7 +9,7 @@ number: 11
 number_vh81: 8
 start_date: 2022-02-28
 closing_date: 2022-03-22
-state: closed # undefined, defined, open or closed
+state: closed # open, upcoming or closed
 ---
 
 {% tf tenders/lot8.md %}

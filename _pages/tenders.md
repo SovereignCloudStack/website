@@ -10,6 +10,11 @@ redirect_from:
 
 {% tf tenders/tenders.md %}
 
+<button class="btn btn-sm rounded-pill bg-primary text-light" id="all">{% t tenders.filter.all %}</button>
+<button class="btn btn-sm rounded-pill bg-secondary text-light" id="open">{% t tenders.filter.open %}</button>
+<button class="btn btn-sm rounded-pill bg-secondary text-light" id="upcoming">{% t tenders.filter.upcoming %}</button> 
+<button class="btn btn-sm rounded-pill bg-secondary text-light" id="closed">{% t tenders.filter.closed %}</button> 
+
 <div class="table-responsive text-center">
 <table>
   <thead>
@@ -22,15 +27,15 @@ redirect_from:
   </thead>
   <tbody>
     {% for lot in site.tenders %}
-    <tr>
+    <tr class="lot {{lot.state}}" {% if lot.state == "open" %}style="background-color:rgba(255, 245, 157, 0.6);"{% endif %}>
       <td>{%- if lot.retry -%}—{%- else -%}{{lot.number}}{%- endif -%}</td>
-      <td>{% t lot.title_slug %}</td>
+      <td {% if lot.state == "open" %}style="font-weight: bold;"{% endif %}>{% t lot.title_slug %}</td>
       <td>
         {%- capture content_length -%}{{lot.content | strip}}{%- endcapture -%}
         {%- if content_length == blank -%}
-          Lot {{lot.number_vh81}}
+          {% t tenders.lot %} {{lot.number_vh81}}
         {%- else if -%}
-          <a href="{{lot.url | prepend: site.baseurl_root}}">Lot {{lot.number_vh81}}</a>
+          <a href="{{lot.url | prepend: site.baseurl}}">{% t tenders.lot %} {{lot.number_vh81}}</a>
         {%- endif -%}
       </td>
       <td>
@@ -51,7 +56,7 @@ redirect_from:
         {%- if lot.state == "closed" -%}
           <span class="text-decoration-line-through">SCS-VP{{lot.number_vh81 | prepend: '00' | slice: -2, 2 }}{%- if lot.retry -%}-{{lot.retry}}{%- endif -%}</span>
         {%- elsif lot.contracting_portal -%}
-          <a href="{{lot.contracting_portal}}">SCS-VP{{lot.number_vh81 | prepend: '00' | slice: -2, 2 }}{%- if lot.retry -%}-{{lot.retry}}{%- endif -%}</a>
+          <a style="font-weight: bold;" href="{{lot.contracting_portal}}">SCS-VP{{lot.number_vh81 | prepend: '00' | slice: -2, 2 }}{%- if lot.retry -%}-{{lot.retry}}{%- endif -%}</a>
         {%- else -%}
           <span class="fst-italic">tba</span>
         {%- endif -%}
@@ -61,3 +66,18 @@ redirect_from:
   </tbody>
 </table>
 </div>
+
+<script>
+$(document).ready(function(){
+  $(".btn").on("click", function() {
+    $('.btn').addClass('bg-secondary').removeClass('bg-primary');
+    $(this).removeClass('bg-secondary').addClass('bg-primary');
+    if (this.id == "all") {
+      $('.lot').show();
+    } else {
+      $('.lot').hide();
+      $('.' + this.id).show();
+    }
+  });
+});
+</script>

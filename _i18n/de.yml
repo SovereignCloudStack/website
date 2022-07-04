@@ -14,6 +14,7 @@ nav:
   news: "Neuigkeiten"
   jobs: "Offene Stellen"
   tenders: "Ausschreibungen"
+  contribute: "Zu SCS beitragen"
 footer:
   trademark: "Sovereign Cloud Stack, SCS und das Logo sind geschützte Marken der Open Source Business Alliance e.V. — Sonstige Marken sind Eigentum ihrer jeweiligen Besitzer."
   imprint: "Impressum"
@@ -63,6 +64,7 @@ tenders:
   start_date: "Start"
   closing_date: "Abgabefrist"
   contracting_portal: "Link zum Vergabeportal"
+  lot: "Paket"
   title:
     lot1: "Betriebswerkzeuge, Testabdeckung durch CI/CD für Infrastruktur und IaaS, BareMetal als Dienst, Lifecycle Management"
     lot2: "Wissensmanagement für Betriebsprozesse, Herstellung von Transparenz bei den Cloudanbietern"
@@ -80,6 +82,11 @@ tenders:
     lot9c: "Penetration Testing"
     lot10: "SCS Zertifizierung"
     lot11: "Aufbau Serverhardware"
+  filter:
+    all: "Alle"
+    open: "Laufend"
+    upcoming: "Ausstehend"
+    closed: "Abgeschlossen"
 jobs:
   apply: "Jetzt bewerben"
   community-manager:
@@ -112,3 +119,6 @@ map:
   employees: "Projektmanagement"
   community: "SCS Community"
   supporter: "Unterstützende Unternehmen"
+calendar:
+  edit: "Bearbeiten"
+  join: "Meeting betreten"

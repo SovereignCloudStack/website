@@ -7,7 +7,7 @@ redirect_from:
    
 number: 2
 number_vh81: 2
-state: undefined # undefined, defined, open or closed
+state: upcoming # open, upcoming or closed
 ---
 
 {% tf tenders/lot2.md %}

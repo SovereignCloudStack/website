@@ -20,7 +20,7 @@ Phone: <a href="tel:{{employee.phone}}">{{employee.phone}}</a>
 <small>
 <a href="https://osb-alliance.com/">OSB Alliance - Bundesverband für digitale Souveränität e.V.</a><br />
 Pariser Platz 6a, 10117 Berlin, Germany<br />
-VR7217 (AG Stuttgart) - Chairman of the Board: Peter H. Ganten<br />
+VR 39675 B (AG Charlottenburg) - Chairman of the Board: Peter H. Ganten<br />
 Sovereign Cloud Stack & SCS-Logo are protected trademarks of the OSB Alliance.</small>
 <!-- End Signature {{employee.firstname}} -->
 ### Plain:
@@ -33,7 +33,7 @@ Phone: {{employee.phone}}{%- if employee.matrix %}, Matrix: @{{employee.matrix |
 
 OSB Alliance - Bundesverband für digitale Souveränität e.V.
 Pariser Platz 6a, 10117 Berlin, Germany
-VR7217 (AG Stuttgart) - Chairman of the Board: Peter H. Ganten
+VR 39675 B (AG Charlottenburg) - Chairman of the Board: Peter H. Ganten
 Sovereign Cloud Stack & SCS-Logo are protected trademarks of the OSB Alliance.
 ```
 <br /><br />

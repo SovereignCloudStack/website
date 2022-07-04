@@ -6,13 +6,13 @@
   slides: "20210817-SCS-OSBA.pdf"
 
 - date: "2021-01-28"
-  event: "Univention Summit"
+  event: "Univention Summit 2021"
   title: "Wer ist SCS — und wenn ja, wie viele?"
   details: "Adriana Groh, Kurt Garloff"
   link: "https://www.youtube.com/watch?v=7bVXedVeEXA"
 
 - date: "2020-11-19"
-  event: "Open Source Day"
+  event: "Open Source Day 2020"
   title: "Digitale Souveränität mit Sovereign Cloud Stack"
   details: "Kurt Garloff, Peter Ganten"
   link: "https://osb-alliance.de/veranstaltungen/open-source-day-2020-forum-fuer-digitale-souveraenitaet"
@@ -25,7 +25,7 @@
   link: "https://media.ccc.de/v/froscon2021-2660-infrastrukturplattformen_fur_ov_mit_dem_sovereign_cloud_stack_-_ubersicht_und_roadmap"
   slides: "20210821-FrOSCon.pdf"
   
-- date: "2022-06-27"
+- date: "2022-06-15"
   event: "Parldigi-Dinner"
   title: "Digitale Souveränität und Swiss Cloud"
   details: "Kurt Garloff"

@@ -42,8 +42,8 @@ function setGallery(el) {
     elements.forEach(element => {
         element.classList.remove('gallery');
 	});
-	if(el.closest('ul, p')) {
-		var link_elements = el.closest('ul, p').querySelectorAll("a[class*='lightbox-']");
+	if(el.closest('.row')) {
+		var link_elements = el.closest('.row').querySelectorAll("a[class*='lightbox-']");
 		link_elements.forEach(link_element => {
 			link_element.classList.remove('current');
 		});
