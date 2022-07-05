@@ -31,7 +31,10 @@ Of course the board we use is [publically available](https://scrumblr.ethibox.fr
 The second edition of the Lean SCS Operator Coffee saw a strong participation from the team of [PlusServer](https://www.plusserver.com). The first topic that
 was discussed was their publication of their [OSISM ops-tools](https://github.com/plusserver/osism-opstools/). This contribution to the
 [OSISM](https://github.com/osism/) landscape was warmly welcomed. Furthermore it was elaborated on how the process of open sourcing such
-additions be further supported, for example by providing outlines for processes on releasing code from corporations into the open.
+additions be further supported, for example by providing outlines for processes on releasing code from corporations into the open. A typical
+hurdle is choosing the proper license. While this seems trivial for people with a lot of experience in working with open source communities for
+companies starting to venture into this field this is a hurdle to tackle. One idea that I had was to provide the outlines that I've previously
+gave colleagues to decide on a licence and incorporate that into our [scs docs](https://github.com/sovereignCloudStack/docs)..
 
 Further discussions around osism and the handling of multiple inventories as well as multi-region handling arose and it was concluded that
 a break out hands-on session on that subject together with colleagues from OSISM makes sense. This will be scheduled shortly.
