@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-07-05-lean-scs-operator-coffee.md
