@@ -5,7 +5,7 @@ author:
   - "Felix Kronlage-Dammers"
 avatar:
   - "fkr.jpg"
-image: ""
+image: "blog/coffeebeans.png"
 ---
 
 Last week we've had the second edition of the "Lean SCS Operator Coffee". This format was sparked
