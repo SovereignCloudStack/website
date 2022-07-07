@@ -13,6 +13,8 @@ by the R2 retro we had a while ago. From the community of the SCS Operators came
 a format where the operators are able to interact and share their experiences in operating SCS
 environments.
 
+{% asset 'blog/coffeebeans.png' vips:format='.webp' style="width:100%; max-height: 450px; object-fit: cover;" %}
+
 ## Lean Coffee? 
 
 How does "a lean coffee look like"?
