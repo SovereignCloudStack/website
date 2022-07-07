@@ -24,7 +24,7 @@ Since the SCS community is distributed a remote-friendly way of organizing the L
 is anticipated. We chose a simple, yet useful (and open source) emulation of a kanban board: [scrumblr](https://github.com/aliasaria/scrumblr).
 
 While we (the SCS team) organize the lean coffee, the agenda is made by the participants and I only try to moderate the dialogue and keep the discussion going.
-Of course the board we use is [publically available](https://scrumblr.ethibox.fr/9ucuscs-lean-coffee) as well.
+Of course the board we use is [publicly available](https://scrumblr.ethibox.fr/9ucuscs-lean-coffee) as well.
 
 ## osism ops-tools 
 
@@ -41,11 +41,11 @@ a break out hands-on session on that subject together with colleagues from OSISM
 
 ## Open Operations @ Lean Coffee
 
-Since Kurt and I recently gave our [presention on open operations](https://www.youtube.com/watch?v=oGuUty7ufN8) at the open infra summit in berlin this subject came up and the 
+Since Kurt and I recently presented our [view on open operations](https://www.youtube.com/watch?v=oGuUty7ufN8) at the open infra summit in Berlin this subject came up and the
 scepticism towards public health dashboards with great details was discussed. While great detail is helpful for the ones who understand
 the underlying technology these can also be a source for irritation for others. One idea that was discussed was that the [OpenStack Health Monitor](https://github.com/SovereignCloudStack/openstack-health-monitor)
-should feature a simple dashboard that abstracts some of the detail and signals via red/orange/green wether metrics are within a certain
-treshold.
+should feature a simple dashboard that abstracts some of the detail and signals via red/orange/green whether metrics are within a certain
+threshold.
 
 ## Next Lean SCS Operator Coffee?
 
