@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-07-14-osism-ansible-lint-quality.md
