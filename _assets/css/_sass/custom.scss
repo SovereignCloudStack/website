@@ -64,7 +64,7 @@ p {
     }
 }
 
-.btn-web, {
+.btn-web {
     color: white;
     background-color: #92B4EC !important;
     border-color: #92B4EC;
@@ -73,7 +73,7 @@ p {
     }
 }
 
-.btn-mail, {
+.btn-mail {
     color: white;
     background-color: #7CB342 !important;
     border-color: #7CB342;
@@ -82,7 +82,7 @@ p {
     }
 }
 
-.btn-twitter, {
+.btn-twitter {
     color: white;
     background-color: #1DA1F2 !important;
     border-color: #1DA1F2;
@@ -91,7 +91,7 @@ p {
     }
 }
 
-.btn-linkedin, {
+.btn-linkedin {
     color: white;
     background-color: #2867B2 !important;
     border-color: #2867B2;
@@ -100,7 +100,7 @@ p {
     }
 }
 
-.btn-github, {
+.btn-github {
     color: white;
     background-color: #333 !important;
     border-color: #333;
@@ -109,7 +109,7 @@ p {
     }
 }
 
-.btn-matrix, {
+.btn-matrix {
     color: white;
     background-color: #0dbd8b !important;
     border-color: #0dbd8b;
@@ -246,4 +246,8 @@ tr:nth-child(even) { background-color: rgba($scs-gray, 0.1); }
 
 tr:hover, tr:focus {
     background-color: $table-hover;
+}
+
+.highlight {
+  padding: 10px;
 }
