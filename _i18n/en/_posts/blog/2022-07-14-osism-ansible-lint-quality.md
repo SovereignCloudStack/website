@@ -5,7 +5,7 @@ author:
   - "Ramona Beermann"
 avatar:
   - "avatar-osism.png"
-image: "XXX"
+image: "blog/corrections.jpg"
 ---
 
 ## Why this is done?
@@ -82,4 +82,3 @@ We have now started to integrate these checks into all our GitHub repositories v
 You can check a number of security critical aspects with Ansible Lint which does not mean that you are completely protected from everything. Like many other pieces of the puzzle, it only improves security. This in no way replaces the use of other security measures.
 
 For more information on Ansible Lint and its functionality, please look at the documentation: <https://ansible-lint.readthedocs.io/en/latest/>.
-
