@@ -60,10 +60,12 @@ collections:
 assets:
   destination: "/assets"
   source_maps: true
-  compression: true
   gzip: true
-  compress:
-    js: uglifier
+  compression: true
+  compressors:
+    uglifier:
+      comments: false
+      harmony: true
   sources:
     - _assets/
     - _assets/vendor
@@ -79,4 +81,3 @@ plugins:
   - jekyll-feed
   - jekyll-scholar
   - jekyll-assets
-  

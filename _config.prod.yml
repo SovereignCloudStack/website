@@ -56,14 +56,16 @@ collections:
     output: true
     sort_by: number
     permalink: /:collection/:name
-    
+
 assets:
   destination: "/assets"
-  gzip: true
   source_maps: true
+  gzip: true
   compression: true
-  compress:
-    js: uglifier
+  compressors:
+    uglifier:
+      comments: false
+      harmony: true
   sources:
     - _assets/
     - _assets/vendor
@@ -79,4 +81,3 @@ plugins:
   - jekyll-feed
   - jekyll-scholar
   - jekyll-assets
-  
