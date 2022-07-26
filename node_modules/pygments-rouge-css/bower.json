@@ -1,0 +1,24 @@
+{
+  "name": "pygments-rouge-css",
+  "description": "CSS stylesheets for pygments and also rouge",
+  "main": "",
+  "authors": [
+    "lucky zhou"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "pygments",
+    "rouge",
+    "css",
+    "syntax",
+    "highlighting"
+  ],
+  "homepage": "https://github.com/zslucky/pygments-css",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
