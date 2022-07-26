@@ -1,0 +1,25 @@
+{
+  "name": "pygments-rouge-css",
+  "version": "0.1.0",
+  "description": "CSS stylesheets for pygments and also rouge",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zslucky/pygments-css.git"
+  },
+  "keywords": [
+    "pygments",
+    "rouge",
+    "css",
+    "syntax",
+    "highlighting"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richleland/pygments-css/issues"
+  },
+  "homepage": "https://github.com/richleland/pygments-css#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lucky zhou"
+}
