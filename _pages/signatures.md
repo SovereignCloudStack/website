@@ -7,7 +7,7 @@ permalink: /signatures
 <meta name="robots" content="none" />
 </head>
 # E-Mail Signatures
-{% for employee in site.data.employees %}
+{% for employee in site.employees %}
 ## {{employee.firstname}}:
 ### HTML:
 <!-- Begin Signature {{employee.firstname}} -->
@@ -25,8 +25,7 @@ Sovereign Cloud Stack & SCS-Logo are protected trademarks of the OSB Alliance.</
 <!-- End Signature {{employee.firstname}} -->
 ### Plain:
 ```
-
--- 
+--
 {% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}} - <{{employee.mail}}>
 Phone: {{employee.phone}}{%- if employee.matrix %}, Matrix: @{{employee.matrix | split: '@' | last }}{% endif %}
 {{employee.title}}
@@ -38,4 +37,3 @@ Sovereign Cloud Stack & SCS-Logo are protected trademarks of the OSB Alliance.
 ```
 <br /><br />
 {% endfor %}
-
