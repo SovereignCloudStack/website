@@ -20,6 +20,8 @@ exclude:
   - .sass-cache
   - .jekyll-cache
   - _gems
+  - node_modules
+  - _assets
 
 twitter:
   username: scs_osballiance
@@ -59,17 +61,21 @@ collections:
 
 assets:
   destination: "/assets"
-  source_maps: true
-  compression: true
-  gzip: true
-  compress:
-    js: uglifier
   sources:
     - _assets/
     - _assets/vendor
     - _assets/slides
     - _assets/fonts
     - _assets/css/_sass
+  source_maps: false
+  cache: false
+  gzip: true
+  compression: true
+  compressors:
+    uglifier:
+      harmony: true
+      compress:
+        unused: false
 
 plugins:
   - jekyll-multiple-languages-plugin
@@ -79,4 +85,3 @@ plugins:
   - jekyll-feed
   - jekyll-scholar
   - jekyll-assets
-  

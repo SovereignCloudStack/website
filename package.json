@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@fullcalendar/common": "^5.11.0",
+    "@fullcalendar/icalendar": "^5.11.0",
+    "apexcharts": "^3.35.4",
+    "bootstrap": "^5.2.0",
+    "fork-awesome": "^1.2.0",
+    "fullcalendar": "^5.11.0",
+    "jquery": "^3.6.0",
+    "leaflet": "^1.8.0",
+    "leaflet.featuregroup.subgroup": "^1.0.2",
+    "leaflet.markercluster": "^1.5.3",
+    "pygments-css": "^1.0.0"
+  }
+}

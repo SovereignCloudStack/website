@@ -1,9 +1,9 @@
 {% asset fullcalendar/main.css %}
-{% asset ajax/ical.js %}
+{% asset ical.js/ical.js %}
 {% asset fullcalendar/main.js %}
 {% asset fullcalendar/locales/de.js %}
 {% asset fullcalendar/locales/en-gb.js %}
-{% asset fullcalendar/icalendar/main.global.js %}
+{% asset fullcalendar.icalendar/main.global.js %}
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -40,7 +40,7 @@
         }
         eventModal.show();
       },
-      eventMinHeight: 50, 
+      eventMinHeight: 50,
       {% if site.lang == "de" %}
       locale: 'de',
       {% else %}
