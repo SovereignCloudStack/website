@@ -15,7 +15,7 @@ permalink: /signatures
 \- <a href="mailto:{{employee.mail}}">&lt;{{employee.mail}}&gt;</a><br />
 Phone: <a href="tel:{{employee.phone}}">{{employee.phone}}</a>
 {%- if employee.matrix %}, Matrix: <a href="{{employee.matrix}}">@{{employee.matrix | split: '@' | last }}</a>{% endif %}<br />
-{{employee.title}}<br />
+{{employee.role}}<br />
 <br />{% asset 'scs-signature.png' %} /><br /><br />
 <small>
 <a href="https://osb-alliance.com/">OSB Alliance - Bundesverband für digitale Souveränität e.V.</a><br />
@@ -28,7 +28,7 @@ Sovereign Cloud Stack & SCS-Logo are protected trademarks of the OSB Alliance.</
 --
 {% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}} - <{{employee.mail}}>
 Phone: {{employee.phone}}{%- if employee.matrix %}, Matrix: @{{employee.matrix | split: '@' | last }}{% endif %}
-{{employee.title}}
+{{employee.role}}
 
 OSB Alliance - Bundesverband für digitale Souveränität e.V.
 Pariser Platz 6a, 10117 Berlin, Germany
