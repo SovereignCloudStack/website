@@ -8,7 +8,6 @@
 # --
 vendor/
 coverage/
-Gemfile.lock
 spec/fixture/site/
 spec/fixture/result/
 spec/fixture/out/
