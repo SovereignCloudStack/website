@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     # Use GitHub Actions' cache to shorten build times and decrease load on servers
-    - uses: actions/cache@v2
+    - uses: actions/cache@v3
       id: cache
       with:
         path: vendor/bundle
