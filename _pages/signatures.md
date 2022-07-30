@@ -16,7 +16,7 @@ permalink: /signatures
 Phone: <a href="tel:{{employee.phone}}">{{employee.phone}}</a>
 {%- if employee.matrix %}, Matrix: <a href="{{employee.matrix}}">@{{employee.matrix | split: '@' | last }}</a>{% endif %}<br />
 {{employee.role}}<br />
-<br />{% asset 'scs-signature.png' %} /><br /><br />
+<br />{% asset 'scs-signature.png' %}<br /><br />
 <small>
 <a href="https://osb-alliance.com/">OSB Alliance - Bundesverband für digitale Souveränität e.V.</a><br />
 Pariser Platz 6a, 10117 Berlin, Germany<br />
