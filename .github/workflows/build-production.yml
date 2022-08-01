@@ -19,7 +19,7 @@ jobs:
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gems-
-    # Use GitHub Deploy Action to build and deploy to Github
+    # Use GitHub Jekyll Action to build and deploy website to gh-pages branch
     - uses: helaili/jekyll-action@v2
       id: build
       with:
@@ -31,4 +31,4 @@ jobs:
         target_branch: gh-pages
         target_path: "/"
         keep_history: false
-        jekyll_build_options: "--config _config.staging.yml"
+        jekyll_build_options: "--config _config.prod.yml"
