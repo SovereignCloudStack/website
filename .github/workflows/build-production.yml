@@ -16,19 +16,20 @@ jobs:
       id: cache
       with:
         path: vendor/bundle
-        key: ${{ runner.os }}-gems-v${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/Gemfile') }}
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
-          ${{ runner.os }}-gems-v${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/Gemfile') }}
-          ${{ runner.os }}-gems-v${{ secrets.CACHE_VERSION }}-
-    # Use GitHub Deploy Action to build and deploy to Github
-    - uses: helaili/jekyll-action@v2
-      id: build
+          ${{ runner.os }}-gems-
+      # Use GitHub Deploy Action to build and deploy to Github
+    - uses: jeffreytse/jekyll-deploy-action@v0.4.0
       with:
-        jekyll_src: "."
-        jekyll_env: production
-        pre_build_commands: "apk add --update vips uglify-js"
-        build_only: false
-        token: ${{ secrets.GITHUB_TOKEN }}
-        target_branch: gh-pages
-        keep_history: false
-        jekyll_build_options: --config _config.prod.yml -d _site
+         provider: 'github'
+         token: ${{ secrets.GITHUB_TOKEN }}
+         repository: ''
+         branch: 'gh-pages'
+         jekyll_src: './'
+         jekyll_cfg: '_config.prod.yml'
+         jekyll_baseurl: ''
+         bundler_ver: '>=0'
+         cname: ''
+         actor: 'github-actions[bot]'
+         pre_build_commands: 'apk add --update vips uglify-js'
