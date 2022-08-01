@@ -19,7 +19,7 @@ jobs:
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gems-
-      # Use GitHub Deploy Action to build and deploy to Github
+    # Use GitHub Deploy Action to build and deploy to Github
     - uses: jeffreytse/jekyll-deploy-action@v0.4.0
       with:
          provider: 'github'
@@ -32,4 +32,4 @@ jobs:
          bundler_ver: '>=0'
          cname: ''
          actor: 'github-actions[bot]'
-         pre_build_commands: 'apk add --update vips uglify-js'
+         pre_build_commands: 'pacman -S --overwrite libvips uglify-js'
