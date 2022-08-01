@@ -54,7 +54,7 @@ a legally safe way.
 
 We are an open and welcoming community.
 Expectations towards the behavior of community members are
-expressed in our [Code of Conduct](https://github.com/SovereignCloudStack/Docs/blob/main/CODE-OF-CONDUCT.md).
+expressed in our [Code of Conduct](https://github.com/SovereignCloudStack/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## Adopting SCS
 
