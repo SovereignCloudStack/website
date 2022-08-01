@@ -18,11 +18,10 @@ jobs:
       id: cache
       with:
         path: vendor/bundle
-        key: ${{ runner.os }}-gems-v${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/Gemfile') }}
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
-          ${{ runner.os }}-gems-v${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/Gemfile') }}
-          ${{ runner.os }}-gems-v${{ secrets.CACHE_VERSION }}-
-    # Use GitHub Deploy Action to build and deploy to Github
+          ${{ runner.os }}-gems-
+    # Use GitHub Jekyll Action to build website
     - uses: helaili/jekyll-action@v2
       id: build
       with:
