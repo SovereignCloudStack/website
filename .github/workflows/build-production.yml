@@ -7,17 +7,7 @@ on:
 
 jobs:
   deploy:
-    strategy:
-      fail-fast: false
-      matrix:
-        # Multiple deploy targets can be added here. Define the corresponding secrets in the repository settings.
-        include:
-          - target: OTC
-            host: OTC_DEPLOY_HOST
-            port: OTC_DEPLOY_PORT
-            path: OTC_DEPLOY_PATH
-            user: OTC_DEPLOY_USER
-            key: OTC_DEPLOY_KEY
+    name: "Build and deploy website"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -37,14 +27,8 @@ jobs:
         jekyll_src: "."
         jekyll_env: production
         pre_build_commands: "apk add --update vips uglify-js"
-        build_only: true
+        build_only: false
+        token: ${{ secrets.GITHUB_TOKEN }}
+        target_branch: gh-pages
+        keep_history: false
         jekyll_build_options: --config _config.prod.yml -d _site
-    - uses: burnett01/rsync-deployments@5.2
-      with:
-        switches: -avzr --delete --exclude=/docs/ --exclude=/antrag-bmwi
-        path: _site/
-        remote_host: ${{ secrets[matrix.host] }}
-        remote_port: ${{ secrets[matrix.port] }}
-        remote_path: ${{ secrets[matrix.path] }}
-        remote_user: ${{ secrets[matrix.user] }}
-        remote_key: ${{ secrets[matrix.key] }}
