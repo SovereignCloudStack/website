@@ -59,7 +59,7 @@ damit wir den Beitrag auch in rechtlich sicherer Weise nutzen
 
 Wir sind eine offene Community, die Neuankömmlinge willkommen heisst.
 Unsere Erwartungen an das Verhalten der Beitragenden haben wir in einem
-[Verhaltenskodex](https://github.com/SovereignCloudStack/Docs/blob/main/CODE-OF-CONDUCT.md)
+[Verhaltenskodex](https://github.com/SovereignCloudStack/.github/blob/main/CODE_OF_CONDUCT.md)
 zum Ausdruck gebracht.
 
 ## SCS einsetzen
