@@ -19,8 +19,6 @@ jobs:
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gems-
-    - run: git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - run: git config --global user.name "github-actions[bot]"
     # Use GitHub Jekyll Action to build and deploy website to gh-pages branch
     - uses: helaili/jekyll-action@v2
       id: build
