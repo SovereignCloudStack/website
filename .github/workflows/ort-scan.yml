@@ -19,7 +19,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
-          java-version: '11.0.1'
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '17'
       - name: Analyze licensing
         id: ort-action
         uses: sovereigncloudstack/ort-action@main
