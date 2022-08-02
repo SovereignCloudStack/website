@@ -8,7 +8,7 @@ Wir folgen den
 [Four Opens](https://openinfra.dev/four-opens/) der Open Infrastructure
 Community. Wir arbeiten eng mit den upstream Projekten der
 [Open Infrastructure Foundation](https://openinfra.dev/), der 
-[Cloud Native Compute Foundation](https://cncf.io/) und weiteren
+[Cloud Native Computing Foundation](https://cncf.io/) und weiteren
 zusammen. Der größte Teil unseres Quellcodes kommt aus diesen
 Communities -- wenn wir diese verbessern, ergänzen, Dinge
 ändern, dann suchen wir den Kontakt mit ihnen, so dass wir
