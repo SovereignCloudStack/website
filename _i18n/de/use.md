@@ -42,6 +42,9 @@ Projekt auf.
 
 ## Beitragen
 
+Informationen rund um unsere alltägliche Zusammenarbeit sind auf
+der Seite [zu SCS beitragen](https://scs.community/de/contribute/) zusammengefasst.
+
 Wir haben einen
 [contributor guide](https://scs.community/docs/contributor/)
 geschrieben, welcher einige der Prozesse und Regeln, die wir
