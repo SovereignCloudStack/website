@@ -15,7 +15,7 @@ Communities -- wenn wir diese verbessern, ergänzen, Dinge
 unsere Änderungen wieder zurückgeben und einfließen lassen können.
 
 Wir nutzen [github/SovereignCloudStack](https://github.com/SovereignCloudStack/) um
-den von unse genutzten Code zu verwalten -- unser eigener Code
+den von uns genutzten Code zu verwalten -- unser eigener Code
 besteht hauptsächlich aus der Automatisierung und der
 Integration der die genutzten Upstream Projekte in einer
 konsistenten und gut zu verwaltenden Art verbindet.
@@ -26,7 +26,7 @@ Um den SCS Code zu installieren, um ihn zu studieren, zu testen,
 zu verändern und auch um zu ihm beitragen zu können verweisen wir
 auf unser
 [github SCS Docs](https://github.com/SovereignCloudStack/Docs/)
-repository.
+Repository.
 
 Am 15.7.2021 haben wir [Release 0]({{ site.baseurl }}/2021/07/15/release0) freigegeben.
 
@@ -49,13 +49,13 @@ zu nutzen entschieden haben, dokumentiert.
 
 Wenn man mitmachen möchte, schlagen wir vor, mit uns
 [in Kontakt zu treten](mailto:project@scs.sovereignit.de).
-Wir würden dann eine kurze onboarding Sitzung machen und
+Wir würden dann eine kurze Onboarding-Sitzung machen und
 zu den virtuellen wöchentlichen Team Meetings einladen.
 
 Wir freuen uns auch über gelegentliche Beiträge -- das kann
-über issues oder besser PRs auf github geschehen.
+über Issues oder besser PRs auf github geschehen.
 Bei letzterem sollte an den DCO (Signed-off-by:) gedacht werden,
-damit wir den Beitrag auch in rechtlich sicherer Weise nutzen
+damit wir den Beitrag auch in rechtlich sicherer Weise nutzen.
 
 Wir sind eine offene Community, die Neuankömmlinge willkommen heisst.
 Unsere Erwartungen an das Verhalten der Beitragenden haben wir in einem
