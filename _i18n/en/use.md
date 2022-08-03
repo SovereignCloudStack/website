@@ -37,6 +37,9 @@ project.
 
 ## Contributing
 
+Information regarding our daily workflow and meetings are
+summarized on the ["Contribute to SCS"](https://scs.community/contribute/) page.
+
 We have created a 
 [Contributor Guide](https://scs.community/docs/contributor/)
 that documents some of policies and processes we have
