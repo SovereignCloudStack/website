@@ -7,7 +7,7 @@ development process in an open community. We follow the
 [Four Opens](https://openinfra.dev/four-opens/) of the Open Infrastructure
 Community. We work closely with the upstream projects from the
 [Open Infrastructure Foundation](https://openinfra.dev/), the
-[Cloud Native Compute Foundation](https://cncf.io/) and other open
+[Cloud Native Computing Foundation](https://cncf.io/) and other open
 source communities. Most of our source code comes from these
 communities -- when we improve, amend, change things, we seek the
 contact with these communities to contribute our changes back.
