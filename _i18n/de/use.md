@@ -19,7 +19,7 @@ den von uns genutzten Code zu verwalten -- unser eigener Code
 besteht hauptsächlich aus der Automatisierung und der
 Integration der die genutzten Upstream Projekte in einer
 konsistenten und gut zu verwaltenden Art verbindet.
-Dazu kommmen von Dokumentaiton und natürlich eine Menge
+Dazu kommen Dokumentation und natürlich eine Menge
 von kontinuierlichen Integrationstests (CI).
 
 Um den SCS Code zu installieren, um ihn zu studieren, zu testen,
