@@ -28,4 +28,8 @@ jobs:
         jekyll_env: development
         pre_build_commands: "apk add --update vips uglify-js"
         build_only: true
+        token: ${{ secrets.GITHUB_TOKEN }}
+        target_branch: gh-pages-staging
+        target_path: "/"
+        keep_history: false
         jekyll_build_options: "--config _config.staging.yml"
