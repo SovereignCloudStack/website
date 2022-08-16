@@ -3,8 +3,10 @@ layout: post
 title:  "Introducing github-manager for consistent repository and organization management"
 category: tech
 author:
+  - "Tim Beermann"
   - "Eduard Itrich"
 avatar:
+  - "tbeermann.jpeg"
   - "eitrich.jpg"
 image: "blog/github.jpg"
 ---
