@@ -82,6 +82,7 @@ tenders:
     lot9c: "Penetration Testing"
     lot10: "SCS certification"
     lot11: "Server Hardware Installation"
+    lot13: "Metering on IaaS layer"
   filter:
     all: "All"
     open: "Open"
