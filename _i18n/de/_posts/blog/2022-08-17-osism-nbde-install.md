@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-08-17-osism-nbde-install.md
