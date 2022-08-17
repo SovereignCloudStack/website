@@ -44,10 +44,9 @@ LUKS encryption locally inside the boot procedure and is able to
 handle network base encryption or combine it with other methods.
 
 ### [Tang](https://github.com/latchset/tang)
-is a small webserver with the JOSE library, which is able respond
-to Clevis prepared encryption. Chain and save it as a key, answer
-it with a signing request, Tang relies on the JSON Object Signing and
-Encryption (JOSE) standards.
+tang itself is a small webserver with the JOSE library. The tang protocol 
+relies on the JSON Object Signing and Encryption (JOSE) standards. In tang 
+protocol is every message a valid JOSE object.
 
 ### [Build a encrypted base image](https://docs.osism.tech/configuration/environments/infrastructure/nbde.html#build-an-encrypted-image)
 As a first step, we build an image with a preconfigured LUKS encryption
@@ -148,12 +147,13 @@ Jul 20 11:53:10 tang-server tangd[54307]: 10.7.8.20 GET /adv => 200 (src/tangd.c
 Jul 20 11:53:10 tang-server systemd[1]: tangd@3-10.7.8.68:1080-10.7.8.20:34082.service: Succeeded.
 
 ```
+*and get the advertisement, the reply message contains a JWS-signed JWKSet* 
 
 *and on the bare metal server ?*
 
 ```bash
 
-$ cryptsetup luksDump dev /dev/sda1
+$ cryptsetup luksDump /dev/sda1
 
 2: tang '{"url":"http://10.7.8.68:1080"}'
 
@@ -163,9 +163,9 @@ $ cryptsetup luksDump dev /dev/sda1
 
 ```
 
-This process is very familiar with ssh-rsa authentication. Now the "PIN" is bound to the Tang service.
-After reboot the server will request with the clevis-initramfs embbed client the network Tang service.
-If Clevis Tang chain, short "PIN" is valid, the reboot will continue.
+The tang protocol implements the McCallum-Relyea exchange. This process is very familiar with ssh authentication. 
+Now the "PIN" is bound to the Tang service. After reboot the server will request with the clevis-initramfs embbed client the network Tang service.
+If the Clevis Tang advertised signing JWK, short "PIN" is valid, the reboot will continue.
 
 The server is now booting with NBDE, see the successful Tang server logs *
 
