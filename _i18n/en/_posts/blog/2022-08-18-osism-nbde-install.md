@@ -7,6 +7,7 @@ image: "blog/padlock.jpg"
 author:
   - "Mathias Fechner"
 ---
+
 ## NBDE – *Network Bound Disk Encryption*
 
 <figure class="figure mx-auto d-block" style="width:40%">
@@ -14,6 +15,7 @@ author:
     {% asset 'blog/clevis-tang-pin.png' class="figure-img w-100" %}
   </a>
 </figure>
+
 
 > As an Operator i want to be sure that storage's is encrypted, as
 a DevOps i think it is hard to integrated with Automation.
@@ -56,7 +58,6 @@ a now authorized_key file.
 
 
 ### Prebooting step
-
 At the second step at th boot phase it easy to login the with preconfigured ssh server
 and the sshkey this part will later remove from installation, because an co-existing
 installation is not possible.

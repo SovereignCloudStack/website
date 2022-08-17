@@ -1,9 +1,8 @@
 name: Build staging website
 on:
   push:
-    branches-ignore:
-      - main
-  pull_request:
+    branches:
+      - staging
   workflow_dispatch:
 
 jobs:
@@ -28,5 +27,9 @@ jobs:
         jekyll_src: "."
         jekyll_env: development
         pre_build_commands: "apk add --update vips uglify-js"
-        build_only: true
-        jekyll_build_options: "--config _config.staging.yml"
+        build_only: false
+        token: ${{ secrets.GITHUB_TOKEN }}
+        target_branch: gh-pages-staging
+        target_path: "/"
+        keep_history: false
+        jekyll_build_options: "--future --config _config.staging.yml"

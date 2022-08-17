@@ -17,7 +17,7 @@
           <h3>{{post.title}}</h3>
           <p>{{post.author | join: ", "}}</p>
         </div>
-        <a href="{{post.url}}" class="stretched-link">
+        <a href="{{post.url | prepend: site.baseurl}}" class="stretched-link">
           {% if post.image %}
             {% asset {{post.image}} class='d-block w-100' alt='{{post.title}}' vips:format='.webp' %}
           {% else %}
