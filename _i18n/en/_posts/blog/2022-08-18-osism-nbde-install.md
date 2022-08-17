@@ -44,7 +44,7 @@ LUKS encryption locally inside the boot procedure and is able to
 handle network base encryption or combine it with other methods.
 
 ### [Tang](https://github.com/latchset/tang)
-tang itself is a small webserver with the JOSE library. The tang protocol 
+itself is a small webserver with the JOSE library. The tang protocol 
 relies on the JSON Object Signing and Encryption (JOSE) standards. In tang 
 protocol is every message a valid JOSE object.
 
