@@ -3,6 +3,7 @@ on:
   push:
     branches-ignore:
       - main
+      - staging
   workflow_dispatch:
 
 jobs:
