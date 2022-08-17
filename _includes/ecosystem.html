@@ -2,7 +2,7 @@
   {% for partner in site.partners %}
     <div class="col">
       <div class="card h-100">
-        <a href="{{partner.url}}" class="text-decoration-none text-body stretched-link">
+        <a href="{{partner.url | prepend: site.baseurl}}" class="text-decoration-none text-body stretched-link">
           {% asset '{{partner.image}}' class='card-img-top p-5' vips:resize='250x150' vips:format='.webp' style='height: 200px; max-width:100%; object-fit: contain; object-position: center;'%}
         </a>
         <div class="card-body">
