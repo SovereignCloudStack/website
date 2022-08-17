@@ -7,25 +7,25 @@ image: "blog/padlock.jpg"
 author:
   - "Mathias Fechner"
 ---
-## NBDE *Network Bound Disk Encryption*
+## NBDE – *Network Bound Disk Encryption*
 
-<figure class="figure mx-auto d-block" style="width:70%">
+<figure class="figure mx-auto d-block" style="width:40%">
   <a href="{% asset "blog/clevis-tang-pin.png" @path %}">
     {% asset 'blog/clevis-tang-pin.png' class="figure-img w-100" %}
   </a>
 </figure>
 
-"As an Operator i want to be sure that storage's is encrypted, as
-a DevOps i think it is hard to integrated with Automation."
+> As an Operator i want to be sure that storage's is encrypted, as
+a DevOps i think it is hard to integrated with Automation.
 
-That was the intention to integrated NBDE in OSISM.
+That was the intention to integrate NBDE in OSISM.
 
-Network Bound Disk Encryption is a Method to handle automatically LUKS for 
-baremetal system in location such as datacenters. It should protected
-against access data to data on storage media in case of lost or vendor 
+Network Bound Disk Encryption is a method to automatically handle LUKS for
+bare metal system in location such as data centers. It should protect
+against unauthorized access to data on storage devices in case of loss or vendor
 lifecycle management.
 
-the involved components Luks, clevis and Tang:
+The involved components Luks, Clevis and Tang:
 
 <figure class="figure mx-auto d-block" style="width:70%">
   <a href="{% asset "blog/clevis_boot_procedure.png" @path %}">
@@ -33,49 +33,35 @@ the involved components Luks, clevis and Tang:
   </a>
 </figure>
 
+### [JOSE](https://jose.readthedocs.io/)
+is the Javascript Object Signing and Encryption Framework.
+In context of NBDE it uses an RSA based encryption. preconfigure
+part to solve the hen and egg problem
 
 ### [Clevis](https://github.com/latchset/clevis)
+is a JOSE based pluggable framework which is handled automated
+luks encryption local inside the boot procedure an is able to
+handle network base encryption or combine it other methods
 
-  -  is  a JOSE'based pluggable framework which is handled automated 
-     luks encryption local inside the boot procedure an is able to 
-     handle network base encryption or combine it other methods
-                          
-### [tang](https://github.com/latchset/tang)
+### [Tang](https://github.com/latchset/tang)
+is a small webserver with the JOSE library, which is able response
+to clevis prepared encryption. chain and save it as a key answer
+it with a signing request, Tang relies on the JSON Object Signing and
+Encryption (JOSE) standards
 
-  - is a small webserver with the Jose library, which is able response
-    to clevis prepared encryption. chain and save it as a key answer 
-    it with a signing request, Tang relies on the JSON Object Signing and
-    Encryption (JOSE) standards
-
-### [Jose](https://jose.readthedocs.io/)
-
-  - is the Javascript Object Signing and Encryption Framework, 
-     in NBDE context it. use an rsa based. Encryption. preconfigure 
-     part to solve the hen and egg problem
-
-
-<figure class="figure mx-auto d-block" style="width:70%">
-  <a href="{% asset "blog/clevis-tang-pin.png" @path %}">
-    {% asset 'blog/clevis-tang-pin.png' class="figure-img w-100" %}
-  </a>
-</figure>
-
-
-### [build a encrypted base image](https://docs.osism.tech/configuration/environments/infrastructure/nbde.html#build-an-encrypted-image)
-
-
-A the first step, it is to build an image with a preconfigured LUKS encryption 
-and passwordinside the images is a dropbear-ssh  server preconfigured with and
+### [Build a encrypted base image](https://docs.osism.tech/configuration/environments/infrastructure/nbde.html#build-an-encrypted-image)
+A the first step, it is to build an image with a preconfigured LUKS encryption
+and password. Inside the images is a dropbear-ssh server preconfigured with and
 a now authorized_key file.
 
 
 ### Prebooting step
 
-At the second step at th boot phase it easy to login the with preconfigured ssh server 
-and the sshkey this part will later remove from installation, because an co-existing 
+At the second step at th boot phase it easy to login the with preconfigured ssh server
+and the sshkey this part will later remove from installation, because an co-existing
 installation is not possible.
 
-```console
+```bash
 
 Listening on LPF/ens3/fa:16:3e:12:77:28
 Sending on   LPF/ens3/fa:16:3e:12:77:28
@@ -96,7 +82,7 @@ the second step is install the clevis tang "pin"
 
 that means clevis request an privat key from tang and sign it with a local blended key, which is new encryption key. this is uses as new Luks meta information to create a keyslot in Luks table.
 
-```console
+```bash
 
 $ osism apply clevis
 
@@ -155,9 +141,9 @@ RUNNING HANDLER [clevis : Enable tang boot environment] ************************
 
 ```
 
-*What is ongoing on the tang service ...* 
+*What is ongoing on the tang service ...*
 
-```console
+```bash
 
 Jul 20 11:53:10 tang-server tangd[54307]: 10.8.8.20 GET /adv => 200 (src/tangd.c:82)
 Jul 20 11:53:10 tang-server systemd[1]: tangd@3-10.8.8.68:1080-10.8.8.20:34082.service: Succeeded.
@@ -166,10 +152,10 @@ Jul 20 11:53:10 tang-server systemd[1]: tangd@3-10.8.8.68:1080-10.8.8.20:34082.s
 
 *and on the baremetallserver ?*
 
-```console
+```bash
 
 $ cryptsetup luksDump dev /dev/sda1
- 
+
 2: tang '{"url":"http://192.168.16.5:1080"}'
 
         Tokens:
@@ -178,17 +164,16 @@ $ cryptsetup luksDump dev /dev/sda1
 
 ```
 
-this process is very familiar with ssh-rsa authentication. Now the "Pin" is bind to the tang service. 
-After reboot the Server will request with the clevis-initramfs embbed client the network tang service. 
+this process is very familiar with ssh-rsa authentication. Now the "Pin" is bind to the tang service.
+After reboot the Server will request with the clevis-initramfs embbed client the network tang service.
 If clevis tang chain, short "pin" is valid the reboot will continue.
 
 *Now the server is booting with NBDE, here is the tangserver successfull logs *
-```console
+```bash
 
 Aug 16 13:08:11 tang-server tangd[157304]: 10.8.8.20 POST /rec/ebTVn9gtMeD-RV6Ux4DeCiSpff0 => 200 (src/tangd.c:165)
 Aug 16 13:08:11 tang-server systemd[1]: tangd@6-10.8.8.68:1080-10.8.8.20:40956.service: Succeeded.
 
 ```
 
-in SCS Stacks it is now able to activate for baremetal nodes like contol, compute, network and storage nodes
-
+in SCS Stacks it is now able to activate for bare metal nodes like control, compute, network and storage nodes
