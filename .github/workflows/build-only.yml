@@ -1,0 +1,31 @@
+name: Build only
+on:
+  push:
+    branches-ignore:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: "Build website"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      id: checkout
+    # Use GitHub Actions' cache to shorten build times and decrease load on servers
+    - uses: actions/cache@v3
+      id: cache
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+    # Use GitHub Jekyll Action to build website
+    - uses: helaili/jekyll-action@v2
+      id: build
+      with:
+        jekyll_src: "."
+        jekyll_env: development
+        pre_build_commands: "apk add --update vips uglify-js"
+        build_only: true
+        jekyll_build_options: "--config _config.staging.yml"
