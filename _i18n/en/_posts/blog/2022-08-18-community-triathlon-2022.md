@@ -12,7 +12,7 @@ image: "triathlon2022/banner.jpg"
 
 Community,
 
-remember when gathered for a [Community Run last year](https://scs.community/2021/09/29/run2021/)?
+remember when we gathered for a [Community Run last year](https://scs.community/2021/09/29/run2021/)?
 More than thirty members of our community competed in a 10K race during the autumn's
 [Running Days](https://laufcampus-runningdays.com/en/). We have proven that Sovereign Cloud Stack
 is running both — on the ground and in the cloud. Thank you for participating in this first
