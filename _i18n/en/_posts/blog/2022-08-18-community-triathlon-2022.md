@@ -24,11 +24,13 @@ Yes, exactly – it's happening again! We kindly invite you to participate in ou
 **Community Triathlon** this year. Let's prove once again that we not only perform
 exceptionally well as technical squads, but also as sports teams.
 
-<figure class="figure mx-auto d-block mt-3" style="width:70%">
-  <a href="{% asset "blog/clevis-tang-pin.png" @path %}">
-    {% asset 'triathlon2022/banner.jpg' class="figure-img w-100" %}
-  </a>
-</figure>
+<div class="row justify-content-center my-3">
+  <div class="figure col-lg-8 col-12">
+    <a href="{% asset "triathlon2022/banner.jpg" @path %}">
+      {% asset 'triathlon2022/banner.jpg' class="figure-img w-100" %}
+    </a>
+  </div>
+</div>
 
 ### The triathlon
 
@@ -73,7 +75,7 @@ Like last year there will be shirts for our participants. Sign up now for our Co
 availability of our goodies package is limited. We would like to thank [B1 Systems GmbH](https://b1-systems.de/)
 and [Univention GmbH](https://www.univention.de/) for making the shirts possible this year!
 
-<div class="d-grid gap-2 col-4 mx-auto mt-5">
+<div class="d-grid gap-2 col-4 mx-auto my-4">
 <a href="https://ms.scs.sovereignit.de/nextcloud/apps/forms/oZfP4N9feLBTT987" class="btn btn-secondary btn-lg">Sign up</a>
 </div>
 
