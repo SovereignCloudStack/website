@@ -71,7 +71,7 @@ classification in the discipline of walking.
 
 Like last year there will be shirts for our participants. Sign up now for our Community Triathlon,
 availability of our goodies package is limited. We would like to thank [B1 Systems GmbH](https://b1-systems.de/)
-for making the shirts possible this year!
+and [Univention GmbH](https://www.univention.de/) for making the shirts possible this year!
 
 <div class="d-grid gap-2 col-4 mx-auto mt-5">
 <a href="https://ms.scs.sovereignit.de/nextcloud/apps/forms/oZfP4N9feLBTT987" class="btn btn-secondary btn-lg">Sign up</a>
