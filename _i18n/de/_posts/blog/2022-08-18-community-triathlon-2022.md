@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-08-18-community-triathlon-2022.md
