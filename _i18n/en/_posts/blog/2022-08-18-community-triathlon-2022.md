@@ -20,7 +20,7 @@ athletic event within our community!
 
 ## It's that time again!
 
-You heard right, it's happening again! We kindly invite you to participate in our upcoming
+Yes, exactly – it's happening again! We kindly invite you to participate in our upcoming
 **Community Triathlon** this year. Let's prove once again that we not only perform
 exceptionally well as technical squads, but also as sports teams.
 
@@ -48,7 +48,7 @@ prefer, or – if you're up to – your team can compete together in the various
 
 ### Individual rankings and other disciplines
 
-As we did last year, we will again additionally honor your individual performance in
+As we did last year, we will again honor your individual performance in
 the disciplines of running, swimming and/or cycling. In addition, there will be a special
 classification in the discipline of walking.
 
@@ -74,7 +74,7 @@ availability of our goodies package is limited. We would like to thank [B1 Syste
 for making the shirts possible this year!
 
 <div class="d-grid gap-2 col-4 mx-auto mt-5">
-<a href="" class="btn btn-secondary btn-lg">Sign up</a>
+<a href="https://ms.scs.sovereignit.de/nextcloud/apps/forms/oZfP4N9feLBTT987" class="btn btn-secondary btn-lg">Sign up</a>
 </div>
 
 ### Contact us
