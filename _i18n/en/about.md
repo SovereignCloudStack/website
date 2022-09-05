@@ -191,8 +191,8 @@ as an advantage. This is of course different in higher layers that
 change much more often depending on the customer needs.
 
 <figure class="figure mx-auto d-block" style="width:90%">
-  <a href="{% asset "201001-SCS-4b.png" @path %}">
-    {% asset '201001-SCS-4b.png' class="figure-img w-100" %}
+  <a href="{% asset "201001-SCS-4c.png" @path %}">
+    {% asset '201001-SCS-4c.png' class="figure-img w-100" %}
   </a>
   <figcaption class="figure-caption">
     The figure shows the architectural structure and components of SCS.
