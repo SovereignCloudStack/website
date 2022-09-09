@@ -2,7 +2,12 @@
   publisher: "Linux Magazin"
   title: "OpenStack-Überwachung mit dem Sovereign Cloud Stack"
   link: "https://www.linux-magazin.de/ausgaben/2022/10/observability-fuer-openstack/"
-  
+
+- date: "2022-09-02"
+  publisher: "Die Open Source Couch"
+  title: "Behörden, Microsoft und Open Source - mit Gästen vom Linux-Hotel und der OSBA"
+  link: "https://www.opensourcecouch.de/episode/behoerden-microsoft-und-open-source-mit-gaesten-vom-linux-hotel-und-der-osba"
+
 - date: "2022-08-09"
   publisher: "Handelsblatt"
   title: "Warum wir schnell eine digitale Zeitenwende brauchen"
