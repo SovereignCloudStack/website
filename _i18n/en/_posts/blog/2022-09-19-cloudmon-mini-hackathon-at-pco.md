@@ -5,7 +5,7 @@ author:
   - "Felix Kronlage-Dammers"
 avatar:
   - "fkr.jpg"
-image: "blog/eocs.jpg"
+image: "blog/ecos.jpg"
 ---
 
 > We believe in collaboration rathern than competition.
