@@ -35,6 +35,8 @@ Thanks from my side to everyone who did not fear the traintravel to Bielefeld!
 CloudMon, for SCS the designated successor for the OpenStack Health Monitor, has
 been the primary subject of a few of our Open Hacking Sessions, which typically take
 place friday afternoon) but so far, we did not manage to gain major velocity.
+With the Mini-Hackathon Ralf and I wanted to lay the groundwork in order to give
+our efforts more traction.
 
 ### Behaviour-driven Monitoring
 
@@ -49,5 +51,14 @@ others can contribute more easily to the further development.
 So far CloudMon is living in the namespace of the OTC. Artem's idea is to lift the
 development of CloudMon into a more independent place - so that the various communities
 can contribute more easily.
+
+### SIG Monitoring
+
+The effort around CloudMon takes places within the Special Interest Group (SIG) Monitoring
+at SCS. If you want to find out more about what the SIG Monitoring has been working
+on I recommend the article on [Observability in OpenStack](https://www.linux-magazin.de/ausgaben/2022/10/observability-fuer-openstack/)
+that was published in the german Linux Magazine recently. The SIG Monitoring is one of
+those really good examples around the SCS community where collaboration is really lived
+and not just spoken about.
 
 
