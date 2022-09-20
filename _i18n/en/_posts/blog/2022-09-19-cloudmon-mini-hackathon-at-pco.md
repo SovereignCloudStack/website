@@ -61,4 +61,14 @@ that was published in the german Linux Magazine recently. The SIG Monitoring is 
 those really good examples around the SCS community where collaboration is really lived
 and not just spoken about.
 
-
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+  {% for image in assets %}
+    {% if image[0] contains "images/blog/20220915-hackathon-pco" %}
+      <div>
+        <a href="{% asset '{{image[0]}}' @path %}">
+          {% asset '{{image[0]}}' class='card-img-top rounded' alt='CloudMon Mini Hackathon Gallery' vips:resize='500x500' vips:crop='high' vips:format='.webp' %}
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
