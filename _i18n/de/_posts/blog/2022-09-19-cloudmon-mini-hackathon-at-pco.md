@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-09-19-cloudmon-mini-hackathon-at-pco.md
