@@ -8,7 +8,7 @@ avatar:
 image: "blog/ecos.jpg"
 ---
 
-> We believe in collaboration rathern than competition.
+{% asset 'blog/ecos.jpg' vips:format='.webp' style="width:100%; max-height: 450px; object-fit: cover;" %}
 
 This was the first impression when I arrived at the new [PlusServer](https://www.plusserver.com/)
 office, which is located at the
