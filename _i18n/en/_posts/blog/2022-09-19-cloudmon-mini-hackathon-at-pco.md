@@ -8,11 +8,13 @@ avatar:
 image: "blog/ecos.jpg"
 ---
 
-{% asset 'blog/ecos.jpg' vips:format='.webp' style="width:100%; max-height: 450px; object-fit: cover;" %}
+<figure class="figure mx-auto d-block" style="width:50%">
+    {% asset 'blog/ecos.jpg' class="figure-img w-100" %}
+</figure>
 
 This was the first impression when I arrived at the new [PlusServer](https://www.plusserver.com/)
 office, which is located at the
-[ECOS Co-Workingspace](https://www.ecos-office.com/en/locations/bielefeld/coworking) 
+[ECOS Co-Workingspace](https://www.ecos-office.com/en/locations/bielefeld/coworking)
 in Bielefeld, for the CloudMon Mini-Hackathon last thursday. Aside from now [being assured that Bielefeld
 really does exists](https://en.wikipedia.org/wiki/Bielefeld_conspiracy) (haha ;) - I had a blast.
 
