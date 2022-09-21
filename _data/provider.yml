@@ -4,3 +4,6 @@
 - name: "Betacloud"
   image: "logo-betacloud.png"
   link: "https://www.betacloud.de/"
+- name: "Wavestack"
+  image: "wavestack.png"
+  link: "https://www.noris.de/wavestack-cloud-demo"
