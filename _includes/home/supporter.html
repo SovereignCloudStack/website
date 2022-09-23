@@ -2,7 +2,7 @@
 	<h2 class="mb-5">{% t home.provider %}</h2>
 	{% assign sorted = site.data.provider | sort_natural: 'name' %}
 	{% for provider in sorted %}
-	<div class="col-sm-6 col-12 mb-5">
+	<div class="col-lg-4 col-md-6 col-12 mb-5">
 	<a href="{{ provider.link }}" title="{{ provider.name }}" target="_blank">
 		{% asset '{{ provider.image }}' alt='{{provider.name}}' class='mx-auto d-block' vips:format='.webp' vips:resize='300x150' %}
 	</a>
