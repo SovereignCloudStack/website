@@ -32,50 +32,59 @@ the [walt.id Web Wallet](https://github.com/walt-id/waltid-web-wallet) and the
 a good overview of how these components act together.
 
 <figure class="figure mx-auto d-block w-75">
-  <a href="{% asset "blog/waltid-idp.png" @path %}">
-    {% asset 'blog/waltid-idp.png' vips:format=".webp" class="figure-img w-100" %}
+  <a href="{% asset "gx-hackathon-5/waltid-idp.png" @path %}">
+    {% asset 'gx-hackathon-5/waltid-idp.png' vips:format=".webp" class="figure-img w-100" %}
   </a>
   <figcaption class="figure-caption text-end">Identity federation via an external identity and access manager. All rights reserved by walt.id GmbH</figcaption>
 </figure>
 
-We issued a Gaia-X compliant Verifiable Credential (VC) of Type Legal Person for *Jane Doe* through the Gaia-X Compliance service.
+We created a self-signed Legal Person Credential via the walt.id SSI Kit and subsequently issued a Participant Credential through
+the Gaia-X Compliance API.
 
 ```json
 {
-  "@context" : [ "https://www.w3.org/2018/credentials/v1" ],
-  "credentialSubject" : {
-    "gx-participant:blockchainAccountId" : "0x4C84a36fCDb7Bc750294A7f3B5ad5CA8F74C4A52",
-    "gx-participant:headquarterAddress" : {
-      "gx-participant:addressCode" : "DE-HH",
-      "gx-participant:addressCountryCode" : "DE",
-      "gx-participant:postal-code" : "22303",
-      "gx-participant:street-address" : "Geibelstraße 46b"
-    },
-    "gx-participant:legalAddress" : {
-      "gx-participant:addressCode" : "DE-HH",
-      "gx-participant:addressCountryCode" : "DE",
-      "gx-participant:postal-code" : "22303",
-      "gx-participant:street-address" : "Geibelstraße 46b"
-    },
-    "gx-participant:legalName" : "deltaDAO AG",
-    "gx-participant:registrationNumber" : {
-      "gx-participant:registrationNumberNumber" : "391200FJBNU0YW987L26",
-      "gx-participant:registrationNumberType" : "leiCode"
-    },
-    "gx-participant:termsAndConditions" : "0x4C84a36fCDb7Bc750294A7f3B5ad5CA8F74C4A52",
-    "id" : "did:web:dids.walt-test.cloud"
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://w3id.org/security/suites/ed25519-2020/v1",
+    "https://w3id.org/security/suites/jws-2020/v1"
+  ],
+  "credentialSchema": {
+    "id": "https://raw.githubusercontent.com/walt-id/waltid-ssikit-vclib/master/src/test/resources/schemas/ParticipantCredential.json",
+    "type": "JsonSchemaValidator2018"
   },
-  "id" : "https://delta-dao.com/.well-known/participant.json",
-  "issuanceDate" : "2022-09-15T20:05:20.997Z",
-  "issuer" : "did:web:dids.walt-test.cloud",
-  "type" : [ "VerifiableCredential", "LegalPerson" ],
-  "proof" : {
-    "type" : "JsonWebSignature2020",
-    "created" : "2022-09-27T08:01:31Z",
-    "proofPurpose" : "assertionMethod",
-    "verificationMethod" : "did:web:dids.walt-test.cloud",
-    "jws" : "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJQUzI1NiJ9..MIRIuzRQcTJMtx-3UalA9bWnBml6oyzV2e_TYJbBs_BvFjwfhw_R9sUspdsjP3s94dp99OwI20DmYHqYW2QhLXrTqTUBJom8-hFa0-P8eiBZAZF27eGZgHpLq_UhpGXw_VzLxlwg0CE9FvBcf5fxRpTDzXTsOGFni1-Zg9G1DYYVg3UKt5yYsVH8-sGa97aY9y-UU4MkmxqNmlu96p9vl57aAyXNhWYQ_OtOMkPVqJds2-hUk0UhKt5r7QmPwoSAXFEB8GMUXc6G9bkcRhm0whwSwYqYFuSlfu2P9ln6-ZtPuu9juexfgeU6gx9p-uDYeiDzbfUslI4ExTY4wWJI1A"
-  }
+  "credentialStatus": {
+    "id": "https://gaiax.europa.eu/status/participant-credential#392ac7f6-399a-437b-a268-4691ead8f176",
+    "type": "CredentialStatusList2020"
+  },
+  "credentialSubject": {
+    "ethereumAddress": "0x4C84a36fCDb7Bc750294A7f3B5ad5CA8F74C4A52",
+    "hasCountry": "GER",
+    "hasJurisdiction": "GER",
+    "hasLegallyBindingName": "deltaDAO AG",
+    "hasRegistrationNumber": "DEK1101R.HRB170364",
+    "hash": "9ecf754ffdad0c6de238f60728a90511780b2f7dbe2f0ea015115515f3f389cd",
+    "id": "did:web:wallet.walt-test.cloud:api:did-registry:2ede544a02964e2e83a0cbe0a0683bf6",
+    "leiCode": "391200FJBNU0YW987L26",
+    "parentOrganisation": "",
+    "subOrganisation": ""
+  },
+  "id": "urn:uuid:8d959928-d727-46b7-98af-b89c09b4cfb1",
+  "issued": "2022-09-26T10:15:50Z",
+  "issuer": "did:web:wallet.walt-test.cloud:api:did-registry:2ede544a02964e2e83a0cbe0a0683bf6",
+  "proof": {
+    "created": "2022-09-26T10:15:50Z",
+    "creator": "did:web:wallet.walt-test.cloud:api:did-registry:2ede544a02964e2e83a0cbe0a0683bf6",
+    "jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..hMZNpUfax_Wu4PavK3kfYUI00JlqhOdZoWxuzO3dyWABeEFqdvLTkhJEq9nDskiYnYTIa6aWJID9q6yOGeVhDQ",
+    "proofPurpose": "assertionMethod",
+    "type": "JsonWebSignature2020",
+    "verificationMethod": "did:web:wallet.walt-test.cloud:api:did-registry:2ede544a02964e2e83a0cbe0a0683bf6"
+  },
+  "validFrom": "2022-09-26T10:15:50Z",
+  "issuanceDate": "2022-09-26T10:15:50Z",
+  "type": [
+    "VerifiableCredential",
+    "ParticipantCredential"
+  ]
 }
 ```
 
@@ -83,3 +92,73 @@ This VC will be used later to authenticate against our SCS testbed that we've pr
 the week before.
 
 ## Day 2
+
+The second day started with a very good discussion about user federation between
+multiple SCS-compliant cloud offerings. We identified three possible scenarios
+for *Jane Doe*:
+
+* CSP Alpha (with OpenStack + Keycloak Alpha)
+* CSP Beta (with OpenStack + Keycloak Beta)
+* Company ACME Org. with user Jane Doe
+  * without any IAM (but with a SSI kept in a wallet)
+  * on own Keycloak of ACME Org.
+  * on third-party Keycloak SaaS provider
+
+This resulted in the following whiteboard that we sketched during brainstorming.
+
+<figure class="figure mx-auto d-block w-75">
+  <a href="{% asset "gx-hackathon-5/gx-hackathon-5-sketch.png" @path %}">
+    {% asset 'gx-hackathon-5/gx-hackathon-5-sketch.png' vips:format=".webp" class="figure-img w-100" %}
+  </a>
+  <figcaption class="figure-caption text-end">Brainstorming on the multiple scenarios of user federation with Keycloak</figcaption>
+</figure>
+
+The rest of the day we spent on integrating the walt.id IdP into our Keycloak. Unfortunately
+we ran into an [issue in Keycloak 19.0.1](https://github.com/keycloak/keycloak-ui/issues/3355)
+which prevented us from setting the OIDC Identity Provider Client Authentication to *Basic Authentication*
+via the UI.
+
+We decided to change the value `clientAuthMethod` via `kcadm.sh` and used the following trick
+```bash
+/opt/jboss/keycloak/bin/kcadm.sh get realms/osism > osism.json
+sed -e 's/clientAuth_basic/client_secret_basic/' osism.json > osism2.json
+/opt/jboss/keycloak/bin/kcadm.sh create partialImport -r osism -s ifResourceExists=OVERWRITE -o -f osism2.json
+```
+
+Finally, we were able to use the Gaia-X compliant Participant Credential we've created earlier
+to authenticate against our Keycloak instance. 🎉
+
+<div class="row row-cols-2 row-cols-lg-4 g-4">
+  {% for image in assets %}
+    {% if image[0] contains "images/gx-hackathon-5/auth-flow" %}
+      <div>
+        <a href="{% asset '{{image[0]}}' @path %}">
+          {% asset '{{image[0]}}' class='card-img-top rounded' alt='CloudMon Mini Hackathon Gallery' vips:resize='500x500' vips:crop='high' vips:format='.webp' %}
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+## Open questions
+
+We identified several challenges that are still open to discussion.
+
+* Jane Doe needs so sign in to have an entity on Keycloak Alpha and Keycloak Beta. How will rights and privileges then be mapped by Keycloak Alpha and Beta without knowing anything about Jane Doe (besides her company)?
+* CSP have to setup own Keycloaks that have to accept everything from the third party Keycloak provider. Will this find acceptance?
+* We need to tackle how permission rights for Jane Doe are maintained – especially across multiple CSP.
+
+## Thank you!
+
+The two days of the Gaia-X Hackathon #5 were yet again very interesting and we had a lot of fun
+spending time together and hacking together. We especially thank the Gaia-X OSS Community
+for organizing this great opportunity and Phillip, Severin and Kai from walt.id for cooperating with us.
+
+Many thanks also to our community members who participated in our session and contributed their knowledge.
+You are awesome! 🚀
+
+## Join us
+
+Interested in continuing working on user federation? We still have some open challenges to tackle
+and we invite you to join our open community. Check out [our public calendar](https://scs.community/contribute/)
+and participate in our various team meetings.
