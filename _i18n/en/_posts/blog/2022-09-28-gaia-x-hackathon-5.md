@@ -20,7 +20,7 @@ with Keycloak via OpenID Connect.
 
 Following the organizers' recommendation, we joined forces with the team from [walt.id](https://walt.id),
 which in the end proved to be a great opportunity and resulted in an interesting use case.
-After aligning our both proposals, we concluded to work together on realizing a
+After aligning our both proposals, we concluded to work together on realizing an
 SSI-based authentication with Gaia-X compliant Legal Person credentials for the IaaS layer of our reference implementation.
 
 ## Day 1
@@ -100,7 +100,7 @@ for *Jane Doe*:
 * CSP Alpha (with OpenStack + Keycloak Alpha)
 * CSP Beta (with OpenStack + Keycloak Beta)
 * Company ACME Org. with user Jane Doe
-  * without any IAM (but with a SSI kept in a wallet)
+  * without any IAM (but with an SSI kept in a wallet)
   * on own Keycloak of ACME Org.
   * on third-party Keycloak SaaS provider
 
@@ -144,9 +144,9 @@ to authenticate against our Keycloak instance. 🎉
 
 We identified several challenges that are still open to discussion.
 
-* Jane Doe needs so sign in to have an entity on Keycloak Alpha and Keycloak Beta. How will rights and privileges then be mapped by Keycloak Alpha and Beta without knowing anything about Jane Doe (besides her company)?
+* Jane Doe needs so sign in to have an entity on Keycloak Alpha and Keycloak Beta. How will permissions and privileges then be mapped by Keycloak Alpha and Beta without knowing anything about Jane Doe (besides her company)?
 * CSP have to setup own Keycloaks that have to accept everything from the third party Keycloak provider. Will this find acceptance?
-* We need to tackle how permission rights for Jane Doe are maintained – especially across multiple CSP.
+* We need to tackle how permissions for Jane Doe are maintained – especially across multiple CSP.
 
 ## Thank you!
 
