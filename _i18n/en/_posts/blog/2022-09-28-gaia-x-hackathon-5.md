@@ -3,8 +3,10 @@ layout: post
 title:  "Sovereign Cloud Stack at Gaia-X Hackathon #5"
 author:
   - "Eduard Itrich"
+  - "Felix Kronlage-Dammers"
 avatar:
   - "eitrich.jpg"
+  - "fkr.jpg"
 image: "blog/gx-hackathon-5.jpg"
 ---
 
