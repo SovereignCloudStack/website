@@ -20,7 +20,7 @@ with Keycloak via OpenID Connect.
 
 Following the organizers' recommendation, we joined forces with the team from [walt.id](https://walt.id),
 which in the end proved to be a great opportunity and resulted in an interesting use case.
-After aligning our both proposals, we concluded to work together on realizing an
+After aligning our proposals, we concluded to work together on realizing an
 SSI-based authentication with Gaia-X compliant Legal Person credentials for the IaaS layer of our reference implementation.
 
 ## Day 1
@@ -125,6 +125,13 @@ sed -e 's/clientAuth_basic/client_secret_basic/' osism.json > osism2.json
 /opt/jboss/keycloak/bin/kcadm.sh create partialImport -r osism -s ifResourceExists=OVERWRITE -o -f osism2.json
 ```
 
+### Teamworks to succeed
+
+One of the great effects of such an event is that various people collaboratively work together on solving
+issues. In a joint `tmux`-session we worked together and each of us was able to bring something to the table
+to help succeed. While it might initially feel weird to "poke around together at the problem" in a shared
+session, in the end it will lead to a good outcome _as well as_ a learning experience for everyone.
+
 Finally, we were able to use the Gaia-X compliant Participant Credential we've created earlier
 to authenticate against our Keycloak instance. 🎉
 
@@ -142,11 +149,17 @@ to authenticate against our Keycloak instance. 🎉
 
 ## Open questions
 
-We identified several challenges that are still open to discussion.
+We identified several challenges that are still subject to further discussion.
 
 * Jane Doe needs so sign in to have an entity on Keycloak Alpha and Keycloak Beta. How will permissions and privileges then be mapped by Keycloak Alpha and Beta without knowing anything about Jane Doe (besides her company)?
 * CSP have to setup own Keycloaks that have to accept everything from the third party Keycloak provider. Will this find acceptance?
 * We need to tackle how permissions for Jane Doe are maintained – especially across multiple CSP.
+
+### IAM Workshop for R4
+
+Since we're now starting into the R4 cycle and IAM and federation will be one of the items that will receive
+further shaping in R4 we will kick this off with a remote workshop on the overall IAM and federation subject
+on the 11th of october.
 
 ## Thank you!
 
