@@ -1,0 +1,58 @@
+---
+layout: post
+title: "Community Triathlon 2022"
+author:
+  - "Eduard Itrich"
+avatar:
+  - "eitrich.jpg"
+image: "blog/scs-hackathon-2022.png"
+---
+<link rel="stylesheet" type="text/css" href="https://pretix.eu/SovereignCloudStack/hackathon-2022/widget/v1.css">
+<script type="text/javascript" src="https://pretix.eu/widget/v1.en.js" async></script>
+<style>
+.pretix-widget button {
+  border-color: #50c3a5;
+  background-color: #50c3a5;
+}
+.pretix-widget a {
+  color: #50c3a5;
+}
+.pretix-widget input[type="checkbox"] {
+  accent-color: #50c3a5;
+}
+</style>
+
+<figure class="figure mx-auto d-block" style="width:100%">
+    {% asset 'blog/scs-hackathon-2022.png' class="figure-img w-100" %}
+</figure>
+
+Community,
+
+after all these months of attending virtual meetings, it's about time for a physical get-together! Let's meet for a memorable day in Cologne and work together on our joint mission: defining, implementing and operating a fully open, federated, compatible platform.
+
+**With great support from PlusServer, we would like to invite you to our first official community Hackathon in Cologne.**
+
+Don't miss this opportunity to meet all the familiar faces from the many video tiles, to contribute to Sovereign Cloud Stack and to spend a great evening together. Our host, PlusServer, is happy to provide us with beverages and food during the day.
+
+Would you like to see the inside of a data center? The PlusServer team invites us to a guided tour of the data center located directly under the venue. Please indicate on the registration form that you are interested in this tour.
+
+Rumor has it that some community members will meet for a drink afterwards, so you may want to consider an overnight stay in Cologne?
+
+We're looking forward to meet you soon!
+
+### Sign up now and get your swag
+
+Sign up now for our Community Hackathon 2022 in Cologne, availability of slots is limited. We would like to thank PlusServer for making this event possible!
+
+<pretix-widget event="https://pretix.eu/SovereignCloudStack/hackathon-2022/"></pretix-widget>
+<noscript>
+   <div class="pretix-widget">
+        <div class="pretix-widget-info-message">
+            JavaScript is disabled in your browser. To access our ticket shop without JavaScript, please <a target="_blank" rel="noopener" href="https://pretix.eu/SovereignCloudStack/hackathon-2022/">click here</a>.
+        </div>
+    </div>
+</noscript>
+
+### Contact us
+
+If you need any further information, please contact [Eduard](https://scs.community/itrich) or [Bianca](https://scs.community/hollery) – they’ll be happy to help you.
