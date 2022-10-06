@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Community Triathlon 2022"
+title: "Sign up for our Community Hackathon 2022"
 author:
   - "Eduard Itrich"
 avatar:
@@ -36,11 +36,7 @@ Don't miss this opportunity to meet all the familiar faces from the many video t
 
 Would you like to see the inside of a data center? The PlusServer team invites us to a guided tour of the data center located directly under the venue. Please indicate on the registration form that you are interested in this tour.
 
-Rumor has it that some community members will meet for a drink afterwards, so you may want to consider an overnight stay in Cologne?
-
-We're looking forward to meet you soon!
-
-### Sign up now and get your swag
+# Sign up now and get your swag
 
 Sign up now for our Community Hackathon 2022 in Cologne, availability of slots is limited. We would like to thank PlusServer for making this event possible!
 
@@ -53,6 +49,10 @@ Sign up now for our Community Hackathon 2022 in Cologne, availability of slots i
     </div>
 </noscript>
 
-### Contact us
+# Roadmap and details
+
+We will publish more details on the roadmap for this Community Hackathon soon on our community blog. Rumor has it that some community members will meet for a drink afterwards, so you may want to consider an overnight stay in Cologne? We're looking forward to meet you soon!
+
+# Contact us
 
 If you need any further information, please contact [Eduard](https://scs.community/itrich) or [Bianca](https://scs.community/hollery) – they’ll be happy to help you.
