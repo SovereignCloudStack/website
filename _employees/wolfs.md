@@ -7,7 +7,7 @@ firstname: Maximilian
 role: Knowledge Management Engineer Sovereign Cloud Stack
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
-avatar: employees/Diab.jpg
+avatar: employees/Wolfs.jpg
 github: https://github.com/maxwolfs
 mail: wolfs@osb-alliance.com
 phone: +49-30-206539-208
