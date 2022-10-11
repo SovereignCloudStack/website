@@ -3,11 +3,11 @@ title_slug: jobs.knowledge-management.title
 layout: default
 redirect_from:
    - /Jobs/JD-Knowledge-Management3.html
-   
+
 image: "knowledge-management.jpg"
 short_description: jobs.knowledge-management.short_description
 location: "Remote / Berlin"
-published: true
+published: false
 ---
 
 {% tf jobs/knowledge-management.md %}
