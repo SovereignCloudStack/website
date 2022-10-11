@@ -7,7 +7,7 @@ es in einem offenen Entwicklungsprozess in einer offenen Community.
 Wir folgen den
 [Four Opens](https://openinfra.dev/four-opens/) der Open Infrastructure
 Community. Wir arbeiten eng mit den upstream Projekten der
-[Open Infrastructure Foundation](https://openinfra.dev/), der 
+[Open Infrastructure Foundation](https://openinfra.dev/), der
 [Cloud Native Computing Foundation](https://cncf.io/) und weiteren
 zusammen. Der größte Teil unseres Quellcodes kommt aus diesen
 Communities -- wenn wir diese verbessern, ergänzen, Dinge
@@ -33,6 +33,8 @@ Am 15.7.2021 haben wir [Release 0]({{ site.baseurl }}/2021/07/15/release0) freig
 Am 29.9.2021 haben wir [Release 1](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release1.md) freigegeben.
 
 Am 23.3.2022 haben wir [Release 2](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release2.md) freigegeben.
+
+Am 21.9.2022 haben wir [Release 3](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release3.md) freigegeben.
 
 ## SCS und OSISM
 

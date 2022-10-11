@@ -29,6 +29,8 @@ On Sep 29, 2021 we have published [Release 1](https://github.com/SovereignCloudS
 
 On Mar 23, 2022 we have published [Release 2](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release2.md).
 
+On Sep 21, 2022 we have published [Release 3](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release3.md).
+
 ## SCS and OSISM
 
 For the base layers, we heavily build on top of the
@@ -40,7 +42,7 @@ project.
 Information regarding our daily workflow and meetings are
 summarized on the ["Contribute to SCS"](https://scs.community/contribute/) page.
 
-We have created a 
+We have created a
 [Contributor Guide](https://scs.community/docs/contributor/)
 that documents some of policies and processes we have
 chosen.

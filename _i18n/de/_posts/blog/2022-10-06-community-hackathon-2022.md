@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-10-06-community-hackathon-2022.md
