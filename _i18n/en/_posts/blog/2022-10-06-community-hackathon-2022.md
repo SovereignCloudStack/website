@@ -30,7 +30,7 @@ Community,
 
 after all these months of attending virtual meetings, it's about time for a physical get-together! Let's meet for a memorable day in Cologne and work together on our joint mission: defining, implementing and operating a fully open, federated, compatible platform.
 
-**With great support from PlusServer, we would like to invite you to our first official community Hackathon in Cologne.**
+**With great support from PlusServer, we would like to invite you to our first official community Hackathon on 2022-11-22 from 13:00 to 21:00 CEST in Cologne.**
 
 Don't miss this opportunity to meet all the familiar faces from the many video tiles, to contribute to Sovereign Cloud Stack and to spend a great evening together. Our host, PlusServer, is happy to provide us with beverages and food during the day.
 
