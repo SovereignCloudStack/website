@@ -7,6 +7,7 @@ $text-color: $gray-800;
 
 body {
     color: $text-color;
+    @include lato-font('normal');
 }
 
 p {
@@ -199,16 +200,16 @@ blockquote,
   border-left: 5px solid $scs-mint;
   position: relative;
   background: $light;
-  
+
   p {
     margin-bottom: 0em;
     text-align: justify;
   }
-  
+
   cite {
     font-size: .8em;
   }
-  
+
   cite::before {
     content: "— "
   }
