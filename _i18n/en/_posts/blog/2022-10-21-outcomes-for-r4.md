@@ -17,9 +17,13 @@ For that we looked at the funding proposal, which is document that is the ground
 Features and functions are the heart of development and the level on which we often discuss in the planning sessions. Features as part of user stories come together in epics.
 When we look at SCS and the releases, we don't just want to "throw a bunch of features over the fence". We want to enable Operators of cloud computing infrastructure, we want to provide building blocks for digital sovereignty for operators to provide innovative offers to their customers.
 
+### [SCS is standardized](https://github.com/orgs/SovereignCloudStack/projects/6/views/23)
+
 ### [SCS is federated](https://github.com/orgs/SovereignCloudStack/projects/6/views/18)
 
 While there were efforts done during the R2 and R3 cycles to work towards federated environments, as also shown [during the last GAIA-X hackathon](https://scs.community/2022/09/28/gaia-x-hackathon-5/) there will be lot's of activity on federation during the Release 4 cycle. With a [fantastic workshop](https://input.osb-alliance.de/p/2022-10-scs-iam-workshop) with members of The SIG (Special Interest Group) IAM as well as further members of our community we kicked this off in the first week of the R4 cycle.
+
+### [SCS is understandable](https://github.com/orgs/SovereignCloudStack/projects/6/views/22)
 
 ### [SCS enables Operators with an excellent toolbox](https://github.com/orgs/SovereignCloudStack/projects/6/views/20)
 
@@ -31,9 +35,7 @@ The OpenStack Image Manger is the way to assure that a cloud based on the IaaS r
 The R3 cycle has - once again ;) - shown how important a very good continous integration is. With SCS we want to enable operators to keep their environments constantly up to date.
 That two of our operators were able to directly upgrade to Release 3 shows that we're on the right track.
 
-### [SCS is understandable](https://github.com/orgs/SovereignCloudStack/projects/6/views/22)
 
 
-### [SCS is standardized](https://github.com/orgs/SovereignCloudStack/projects/6/views/23)
 
 
