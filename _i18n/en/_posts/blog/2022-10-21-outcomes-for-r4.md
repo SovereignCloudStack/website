@@ -17,7 +17,11 @@ For that we looked at the funding proposal, which is document that is the ground
 Features and functions are the heart of development and the level on which we often discuss in the planning sessions. Features as part of user stories come together in epics.
 When we look at SCS and the releases, we don't just want to "throw a bunch of features over the fence". We want to enable Operators of cloud computing infrastructure, we want to provide building blocks for digital sovereignty for operators to provide innovative offers to their customers.
 
+SCS is comprised of three pillars: Standards, Reference Implementation and Open Operations. The outcomes for Release 4 are, obviously, aligned long those pillars.
+
 ### [SCS is standardized](https://github.com/orgs/SovereignCloudStack/projects/6/views/23)
+
+One of the big rocks for Release 4 will be bringing our [Cluster standardization](https://github.com/SovereignCloudStack/issues/issues/181) forward. However our standardization efforts are comprised of many efforts. The foundational work for this is the [current effort](https://github.com/SovereignCloudStack/Docs/pull/143) to have formalized process of documenting these standard as well as our (design) decisions.
 
 ### [SCS is federated](https://github.com/orgs/SovereignCloudStack/projects/6/views/18)
 
@@ -25,17 +29,17 @@ While there were efforts done during the R2 and R3 cycles to work towards federa
 
 ### [SCS is understandable](https://github.com/orgs/SovereignCloudStack/projects/6/views/22)
 
+One of the items where we've not advanded as much as we anticipated is to lower the entry barrier to SCS and the reference implementation. However if we talk about "SCS is understandable" this shall not be reduced to our reference implementation. Our standards need to be easily understood as well, since this will lead to much better adoption. SCS being understandable is more than just mere documentation. There could be no better timing for our new colleague, Max Wolfs, to have joined the SCS team as our Knowledgement Engineer.
+
 ### [SCS enables Operators with an excellent toolbox](https://github.com/orgs/SovereignCloudStack/projects/6/views/20)
 
-SCS is comprised of three pillars: Standards, Reference Implementation and Open Operations. For this to be viable an excellent toolbox is needed. Ranging from the [OpenStack Image Manager](https://github.com/osism/openstack-image-manager), our effort to [provide a status page application](https://github.com/SovereignCloudStack/issues/issues/123) to the Health Monitor.
+For this to be viable an excellent toolbox is needed. Ranging from the [OpenStack Image Manager](https://github.com/osism/openstack-image-manager), our effort to [provide a status page application](https://github.com/SovereignCloudStack/issues/issues/123) to the Health Monitor.
 The OpenStack Image Manger is the way to assure that a cloud based on the IaaS reference implementation carries the mandated images. Plans are to move the OpenStack Image Manager to a full-fledged [OpenStack Swiss Army Knife](https://github.com/osism/issues/issues/317). 
 
 ### [SCS is continously built and tested](https://github.com/orgs/SovereignCloudStack/projects/6/views/21)
 
 The R3 cycle has - once again ;) - shown how important a very good continous integration is. With SCS we want to enable operators to keep their environments constantly up to date.
 That two of our operators were able to directly upgrade to Release 3 shows that we're on the right track.
-
-
 
 
 
