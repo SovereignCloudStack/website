@@ -109,7 +109,7 @@ GEM
     mercenary (0.4.0)
     minitest (5.16.2)
     namae (1.1.1)
-    nokogiri (1.13.8-x86_64-linux)
+    nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
