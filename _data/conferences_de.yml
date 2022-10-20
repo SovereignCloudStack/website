@@ -31,3 +31,33 @@
   details: "Kurt Garloff"
   link: "https://www.youtube.com/watch?v=M8FAIpjM6ng"
   slides: "Parldigi-Dinner-Juni-2022-Sovereign-Cloud-Stack.pdf"
+
+- date: "2022-10-18"
+  event: "Oppenhoff Digital Day"
+  title: "Sovereign Cloud Stack: Digitale Souveränität bei Cloud-Infrastrukturen verwirklichen"
+  details: "Dr. Manuela Urban"
+  slides: "Oppenhoff_Digital_Day-20221018-final.pdf"
+
+- date: "2022-08-25"
+  event: "CH Open Business Lunch"
+  title: "Sovereign Cloud Stack - ein Beitrag zur Verwirklichung digitaler Souveränität"
+  details: "Dr. Manuela Urban"
+  slides: "CH-Open_BusinessLunch_20220825_Urban_Manuela.pdf"
+
+- date: "2022-08-24"
+  event: "Berner Fachhochschule – IT-Beschaffungskonferenz 2022"
+  title: "Agile Open-Source-Entwicklung und öffentliche Beschaffung – wie geht das zusammen?"
+  details: "Dr. Manuela Urban"
+  slides: "BFH_20220824_Urban_Manuela_final.pdf"
+
+- date: "2022-08-24"
+  event: "52. Jahrestagung Gesellschaft für Informatik"
+  title: "Sovereign Cloud Stack: Open Source Toolbox für souveräne, föderierbare Cloud-Infrastrukturen"
+  details: "Dr. Manuela Urban"
+  slides: "20220929-GI_Jahrestagung-Urban_Manuela.pdf"
+
+- date: "2022-09-07"
+  event: "GXFS Connect 2022"
+  title: "Sovereign Cloud Stack: Offene Technologie und Betriebswissen für eine föderierbare, souveräne Cloud-Infrastruktur"
+  details: "Dr. Manuela Urban, Eduard Itrich"
+  slides: "20220901-GXFS-Connect.pdf"
