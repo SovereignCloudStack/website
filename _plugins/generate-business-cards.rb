@@ -10,7 +10,7 @@ module Jekyll
       self.data['layout'] = "other/business_card/front"
       @renderer = Jekyll::Renderer.new(document.site, document)
       # Create QR Code
-      qr = RQRCode::QRCode.new(document.site.config['url'] + "/" + document.basename_without_ext, size: 5)
+      qr = RQRCode::QRCode.new(document.site.config['url'] + "/" + document.basename_without_ext, size: 6)
       svg = qr.as_svg(
         color: "000",
         shape_rendering: "crispEdges",
