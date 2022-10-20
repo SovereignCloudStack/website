@@ -10,7 +10,7 @@ module Jekyll
       self.data['layout'] = "other/business_card/front"
       @renderer = Jekyll::Renderer.new(document.site, document)
       # Create QR Code
-      qr = RQRCode::QRCode.new(document.site.config['url'] + "/" + document.basename_without_ext, size: 6)
+      qr = RQRCode::QRCode.new(document.site.config['url'] + "/" + document.basename_without_ext.chomp(".vcf"), size: 6)
       svg = qr.as_svg(
         color: "000",
         shape_rendering: "crispEdges",
@@ -28,11 +28,11 @@ module Jekyll
   end
 
   Jekyll::Hooks.register :employees, :post_write do |document|
-    dest = Pathname.new(document.site.dest) + document.collection.label + document.basename_without_ext
+    dest = Pathname.new(document.site.dest) + document.collection.label + document.basename_without_ext.chomp(".vcf")
     card = BusinessCard.new(document, dest)
     # Also copy the back of the business card
     src = "_layouts/other/business_card/back.html"
-    dest = Pathname.new(document.site.dest) + document.collection.label + document.basename_without_ext + "back.svg"
+    dest = Pathname.new(document.site.dest) + document.collection.label + document.basename_without_ext.chomp(".vcf") + "back.svg"
     FileUtils.copy(src, dest)
   end
 end
