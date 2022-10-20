@@ -4,7 +4,7 @@ layout: employee
 
 lastname: Hollery-Pfister
 firstname: Bianca
-role: Project Management and Documentation
+role: Project Management
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
 avatar: employees/Hollery.jpg
