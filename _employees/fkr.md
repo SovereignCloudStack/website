@@ -23,4 +23,6 @@ timezone: Europe/Berlin
 location:
   latitude: 53.133
   longitude: 8.242
+
+redirect_from: /kronlage-dammers
 ---
