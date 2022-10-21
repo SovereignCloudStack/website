@@ -9,7 +9,7 @@ company: Open Source Business Alliance - Bundesverband für digitale Souveränit
 companylink: https://osb-alliance.com
 avatar: employees/Kronlage-Dammers.jpg
 twitter: https://twitter.com/felixkronlage
-linkedin: https://www.linkedin.com/in/felix-kronlage-dammers-9378a6184/
+linkedin: https://www.linkedin.com/in/felix-kronlage-dammers/
 github: https://github.com/fkr
 matrix: https://matrix.to/#/@fkronlage:matrix.org
 mail: fkr@osb-alliance.com
