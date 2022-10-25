@@ -24,7 +24,7 @@
   details: "Stefan Grote, Kurt Garloff"
   link: "https://media.ccc.de/v/froscon2021-2660-infrastrukturplattformen_fur_ov_mit_dem_sovereign_cloud_stack_-_ubersicht_und_roadmap"
   slides: "20210821-FrOSCon.pdf"
-  
+
 - date: "2022-06-15"
   event: "Parldigi-Dinner"
   title: "Digitale Souveränität und Swiss Cloud"
@@ -36,28 +36,33 @@
   event: "Oppenhoff Digital Day"
   title: "Sovereign Cloud Stack: Digitale Souveränität bei Cloud-Infrastrukturen verwirklichen"
   details: "Dr. Manuela Urban"
+  link: "https://www.oppenhoff.eu/de/news/detail/oppenhoff-digital-day/"
   slides: "Oppenhoff_Digital_Day-20221018-final.pdf"
 
 - date: "2022-08-25"
   event: "CH Open Business Lunch"
   title: "Sovereign Cloud Stack - ein Beitrag zur Verwirklichung digitaler Souveränität"
   details: "Dr. Manuela Urban"
+  link: "https://www.ch-open.ch/ch-open-business-events/ch-open-business-lunch/sovereign-cloud-stack-scs-ein-beitrag-zur-verwirklichung-digitaler-souveranitat/"
   slides: "CH-Open_BusinessLunch_20220825_Urban_Manuela.pdf"
 
 - date: "2022-08-24"
   event: "Berner Fachhochschule – IT-Beschaffungskonferenz 2022"
   title: "Agile Open-Source-Entwicklung und öffentliche Beschaffung – wie geht das zusammen?"
   details: "Dr. Manuela Urban"
+  link: "https://www.bfh.ch/de/aktuell/fachveranstaltungen/it-beschaffungskonferenz-2022/"
   slides: "BFH_20220824_Urban_Manuela_final.pdf"
 
-- date: "2022-08-24"
+- date: "2022-09-29"
   event: "52. Jahrestagung Gesellschaft für Informatik"
   title: "Sovereign Cloud Stack: Open Source Toolbox für souveräne, föderierbare Cloud-Infrastrukturen"
   details: "Dr. Manuela Urban"
+  link: "https://gi.de/veranstaltung/informatik-2022-52-jahrestagung-der-gesellschaft-fuer-informatik-1"
   slides: "20220929-GI_Jahrestagung-Urban_Manuela.pdf"
 
 - date: "2022-09-07"
   event: "GXFS Connect 2022"
   title: "Sovereign Cloud Stack: Offene Technologie und Betriebswissen für eine föderierbare, souveräne Cloud-Infrastruktur"
   details: "Dr. Manuela Urban, Eduard Itrich"
+  link: "https://www.gxfs.eu/de/gxfs-connect-2022/"
   slides: "20220901-GXFS-Connect.pdf"
