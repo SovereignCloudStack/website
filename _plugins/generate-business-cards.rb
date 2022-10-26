@@ -23,12 +23,12 @@ module Jekyll
       self.write(dest)
     end
     def destination(dest)
-      path = Pathname.new(dest) + "front.svg"
+      path = Pathname.new(dest)
     end
   end
 
   Jekyll::Hooks.register :employees, :post_write do |document|
-    dest = Pathname.new(document.site.dest) + document.collection.label + document.basename_without_ext
+    dest = Pathname.new(document.site.dest) + document.collection.label + document.basename_without_ext + "front.svg"
     card = BusinessCard.new(document, dest)
     # Also copy the back of the business card
     src = "_layouts/other/business_card/back.html"
