@@ -31,6 +31,11 @@ layout: default
           <a class="btn btn-matrix" href="{{employee.matrix}}"><i class="fa fa-matrix-org fa-lg"></i></a>
         </div>
         {% endif %}
+        {% if employee.mastodon %}
+        <div class="col">
+          <a class="btn btn-mastodon" href="{{employee.mastodon}}"><i class="fa fa-mastodon fa-lg"></i></a>
+        </div>
+        {% endif %}
       </div>
     </div>
     <div class="col-lg-6 align-items-center text-center px-5">
