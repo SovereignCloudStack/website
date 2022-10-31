@@ -7,10 +7,9 @@ redirect_from:
 
 number: 5
 number_vh81: 5
-state: open # open, upcoming or closed
+state: closed # open, upcoming or closed
 start_date: 2022-09-27
-closing_date: 2022-10-19 T12:00+02:00
-contracting_portal: https://www.dtvp.de/Satellite/notice/CXP4YV766K6
+closing_date: 2022-10-19
 
 ---
 

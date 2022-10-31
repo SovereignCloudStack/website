@@ -8,8 +8,7 @@ role: Product Owner Iaas & Operations Sovereign Cloud Stack
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
 avatar: employees/Kronlage-Dammers.jpg
-twitter: https://twitter.com/felixkronlage
-linkedin: https://www.linkedin.com/in/felix-kronlage-dammers-9378a6184/
+linkedin: https://www.linkedin.com/in/felix-kronlage-dammers/
 github: https://github.com/fkr
 matrix: https://matrix.to/#/@fkronlage:matrix.org
 mail: fkr@osb-alliance.com
@@ -23,4 +22,6 @@ timezone: Europe/Berlin
 location:
   latitude: 53.133
   longitude: 8.242
+
+redirect_from: /kronlage-dammers
 ---

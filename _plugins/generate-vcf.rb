@@ -11,12 +11,12 @@ module Jekyll
       self.write(dest)
     end
     def destination(dest)
-      path = Pathname.new(dest)
+      path = Pathname.new(dest).sub_ext('.vcf')
     end
-  end  
-    
+  end
+
   Jekyll::Hooks.register :employees, :post_write do |document|
-    dest = Pathname.new(document.site.dest) + document.basename_without_ext.concat(".vcf")
+    dest = Pathname.new(document.site.dest) + document.basename_without_ext
     vcf = VCF.new(document, dest)
-  end  
+  end
 end

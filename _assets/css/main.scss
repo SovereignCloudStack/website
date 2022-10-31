@@ -3,6 +3,11 @@
 
 @charset "utf-8";
 
+@import "lato/_public-api";
+$lato-font-path: 'fonts/lato';
+@include lato-include-font('black');
+@include lato-include-font('normal');
+
 @import "bootstrap/bootstrap";
 @import "fork-awesome/fork-awesome";
 @import "style", "custom";
