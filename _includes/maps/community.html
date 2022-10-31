@@ -70,7 +70,7 @@
                 popupAnchor: [-7, -30]
             });
             var marker = L.marker([{{employee.location.latitude}}, {{employee.location.longitude}}], { icon: icon });
-            marker.bindPopup("<a href='{{employee.permalink | prepend: site.baseurl_root}}' target='_blank'><b>{% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}</b></a><br />{{employee.company}}")
+            marker.bindPopup("<a href='{{employee.url}}' target='_blank'><b>{% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}</b></a><br />{{employee.company}}")
             employees.addLayer(marker);
         {% endif %}
     {% endfor %}
