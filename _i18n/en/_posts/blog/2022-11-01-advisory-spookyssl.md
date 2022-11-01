@@ -98,7 +98,7 @@ advisory will contain updated information on this.
 
 Most clouds provide public images for popular Linux distributions
 as a convenience to their users. Ubuntu 22.04 is one of the images that
-SCS recommends providing; it is affected by the OpenSSL-3 issue.
+SCS recommends providing; [it is affected by the OpenSSL-3 issue](https://ubuntu.com/security/CVE-2022-3602).
 Other modern distributions (e.g. those based on RedHat Enterprise
 Linux 9) are also affected; we recommend to use the list at
 <https://github.com/NCSC-NL/OpenSSL-2022/blob/main/software/README.md>
@@ -138,4 +138,4 @@ SCS security contact is <mailto:security@scs.community>, as published on
 
 ## Version history
 
-* Initial release on 2022-11-01, 19:00 CET.
+* Initial release on 2022-11-01, 18:30 CET.
