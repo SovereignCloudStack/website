@@ -96,25 +96,25 @@ Other modern distributions (e.g. those based on RedHat Enterprise
 Linux 9) are also affected; we recommend to use the list at
 <https://github.com/NCSC-NL/OpenSSL-2022/blob/main/software/README.md>
 to get a quick overview and to investigate yourself for the more
-critical parts of applications.
+critical parts of applications. The command `openssl version`
+can be used to learn about the installed OpenSSL version.
 
 We recommend to SCS operators to quickly replace the affected public images
-with updated images as soon as the Linux distributors have provided updated
-base images. Note that SCS has defined
+as soon as the Linux distributors have provided updated base images.
+Note that SCS has defined
 [metadata](https://github.com/SovereignCloudStack/Docs/blob/main/Design-Docs/Image-Properties-Spec.md)
 for images that allow users to see the build date. Any image that is older than
 2022-11-01 and includes OpenSSL-3.0.x will very likely be vulnerable.
 
 ## Fixing applications
 
-Affected VM-based applications that use automation for bootstrapping
-may best use the new images and just redeploy against the latest
-images to use the fixed OpenSSL version.
-Otherwise an online update of the OpenSSL-3 library is recommended.
-Note that applications need to be restarted to use the updated fixed
-shared library. Applications that statically linked the vulnerable
-OpenSSL-3.0.x (x<7) library need to be rebuilt using the fixed library
-(3.0.7 or later).
+Affected VM-based applications that are dynamically linked against OpenSSL and
+use automation for bootstrapping may best just redeploy against the latest
+images to use the fixed OpenSSL version. Otherwise an online update of the
+OpenSSL-3 library is recommended. Note that applications need to be restarted
+to use the updated fixed shared library. Applications that statically linked
+the vulnerable OpenSSL-3.0.x (x<7) library need to be rebuilt using the fixed
+library (3.0.7 or later).
 
 For container-based applications that built containers using affected
 OpenSSL-3 libraries, rebuilding the containers with the fixed version
