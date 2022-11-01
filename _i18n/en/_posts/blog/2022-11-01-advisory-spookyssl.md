@@ -55,9 +55,8 @@ language and are thus not using OpenSSL.
 Here is the list of services that can be deployed with the SCS cluster-API
 container management solution and the openSSL status of these:
 
-+----------------+------------------+-----------------------+
-| Service        | openSSL version  | Notes                 |
-+================+==================+=======================+
+| Service        | OpenSSL version  | Notes                 |
+|----------------|------------------|-----------------------|
 | OCCM           | 1.1.1n           | Alpine 3.15.4         |
 | cindercsi      | none?            | golang                |
 | calico         | 1.1.1k           | RHEL 8.6              |
@@ -66,7 +65,6 @@ container management solution and the openSSL status of these:
 | metrics        | none?            | golang                |
 | cert-manager   | none?            | golang                |
 | flux           | 1.1.1q           | Alpine 3.16.2         |
-+----------------+------------------+-----------------------+
 
 <!-- TODO: harbor -->
 
