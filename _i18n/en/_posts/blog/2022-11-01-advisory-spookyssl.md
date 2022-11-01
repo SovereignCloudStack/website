@@ -62,20 +62,18 @@ The container management solution allows to deploy a number of standard
 services. Many of the services are built using the golang programming
 language and are thus not using OpenSSL. 
 
-<!--TODO: Check all containers and provide list-->
-
 Here is the list of services that can be deployed with the SCS cluster-API
 container management solution and the openSSL status of these:
 
 | Service        | OpenSSL version  | Notes                 |
 |----------------|------------------|-----------------------|
 | OCCM           | 1.1.1n           | Alpine 3.15.4         |
-| cindercsi      | none?            | golang                |
+| cindercsi      | none             | golang                |
 | calico         | 1.1.1k           | RHEL 8.6              |
 | cilium         | 1.1.1f           | Ubuntu 20.04.5        |
 | nginx-ingress  | 1.1.1q           | Alpine 3.16           |
-| metrics        | none?            | golang                |
-| cert-manager   | none?            | golang                |
+| metrics        | none             | golang                |
+| cert-manager   | none             | golang                |
 | flux           | 1.1.1q           | Alpine 3.16.2         |
 
 <!-- TODO: harbor -->
