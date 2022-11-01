@@ -101,7 +101,7 @@ OpenSSL-3.0.x (x<7) library need to be rebuilt using the fixed library
 
 For container-based applications that built containers using affected
 OpenSSL-3 libraries, rebuilding the containers with the fixed version
-and rolling them out freshly is recommended.
+and redeploying them is recommended.
 
 We recommend users to also review the workstations and laptops that are
 used by their staff and to install available updates short-term.
