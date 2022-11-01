@@ -10,19 +10,28 @@ avatar:
   - "kgarloff.jpg"
   - "CB.png"
   - "fkr.jpg"
-<!--image: "blog/spookyssl.jpg"-->
+image: "blog/spooky.png"
 ---
 
 ## The vulnerability
 
-On Tue, 2022-11-01, a vulnerability in the popular OpenSSL library
-became publicly known. It affects OpenSSL-3.0.x versions prior
+On Tue, 2022-11-01, two vulnerabilities in the popular OpenSSL library
+became publicly known. They affect OpenSSL-3.0.x versions prior
 to the fixed version 3.0.7; older versions of OpenSSL (1.1.x
 and earlier) are not affected.
 
-<!--TODO: More details, CVE and links -->
+There are two vulnerabilities in the X.509 certificate parsing code
+for email addresses, CVE-2022-3602 and CVE-2022-3786. Both are described
+in the [OpenSSL Security Advisory](https://www.openssl.org/news/secadv/20221101.txt).
+Both can result in buffer overflows which can crash the application,
+resulting in a denial-of-service. The possibility to put 4 attacker-controlled
+bytes on the stack in CVE-2022-3602 might even result in remote code execution
+scenarios, though commonly used stack overflow protections prevent this.
+The effectiveness of the stack overflow protections has lead the severity
+classification to be downgraded from CRITICAL to HIGH.
 
-https://github.com/NCSC-NL/OpenSSL-2022
+A good collection of information on these vulnerabilities can be found on
+[Netherlands Cyber Security Centrum](https://github.com/NCSC-NL/OpenSSL-2022).
 
 ## SCS reference implementation
 
@@ -121,7 +130,7 @@ OpenSSL-3 libraries, rebuilding the containers with the fixed version
 and redeploying them is recommended.
 
 Sidenote:
-We also remind users to also review the workstations and laptops that are
+We also remind users to review the workstations and laptops that are
 used by their staff and to install available updates short-term.
 
 ## Sovereign Cloud Stack Security Contact
