@@ -138,4 +138,4 @@ SCS security contact is <mailto:security@scs.community>, as published on
 
 ## Version history
 
-* Initial release on 2022-11-01, 18:30 CET.
+* Initial release on 2022-11-01, 18:45 CET.
