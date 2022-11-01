@@ -86,7 +86,7 @@ We recommend to SCS operators to quickly replace the affected public images
 with updated images as soon as the Linux distributors have provided updated
 base images. Note that SCS has defined
 [metadata](https://github.com/SovereignCloudStack/Docs/blob/main/Design-Docs/Image-Properties-Spec.md)
-for images that allow users to see the build date. Any image that's older than
+for images that allow users to see the build date. Any image that is older than
 2022-11-01 and includes OpenSSL-3.0.x will very likely be vulnerable.
 
 ## Fixing applications
