@@ -3,11 +3,13 @@ layout: post
 title:  "Sovereign Cloud Stack Security Advisory Spooky SSL"
 category: security
 author:
-  - "Christian Berendt"
   - "Kurt Garloff"
+  - "Christian Berendt"
+  - "Felix Kronlage-Dammers"
 avatar:
-  - "CB.png"
   - "kgarloff.jpg"
+  - "CB.png"
+  - "fkr.jpg"
 <!--image: "blog/spookyssl.jpg"-->
 ---
 
@@ -28,8 +30,9 @@ The host images in the SCS reference implementation come from the
 [OSISM](https://osism.tech) project and are all built on top of Ubuntu 20.04
 LTS (focal). Ubuntu 20.04 uses OpenSSL-1.1.1 and is unaffected by the
 vulnerability. The switch to Ubuntu 22.04 (jammy) which does use OpenSSL-3.0.x
-was considered prior to SCS R3 (v4.0.0) but not executed due to technical
-challenges and due to kolla not yet doing the switch.
+is planned for SCS R4 (v5.0.0, due in Mar 2023) and has not happened yet,
+neither in the OSISM image build system nor in the one from the upstream kolla
+project.
 
 The deployment of SCS happens via deploying numerous infrastructure
 and OpenStack services in containers. The OpenStack containers come from
