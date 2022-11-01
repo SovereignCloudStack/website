@@ -108,34 +108,21 @@ for images that allow users to see the build date. Any image that is older than
 ## Fixing applications
 
 Affected VM-based applications that use automation for bootstrapping
-may best use the new images and just redeploy to use the fixed OpenSSL
-version. Otherwise an online update of the OpenSSL-3 library is recommended.
-Not that applications need to be restarted to use the updated fixed
+may best use the new images and just redeploy against the latest
+images to use the fixed OpenSSL version.
+Otherwise an online update of the OpenSSL-3 library is recommended.
+Note that applications need to be restarted to use the updated fixed
 shared library. Applications that statically linked the vulnerable
 OpenSSL-3.0.x (x<7) library need to be rebuilt using the fixed library
-(3.0.7).
+(3.0.7 or later).
 
 For container-based applications that built containers using affected
 OpenSSL-3 libraries, rebuilding the containers with the fixed version
 and redeploying them is recommended.
 
-We recommend users to also review the workstations and laptops that are
+Sidenote:
+We also remind users to also review the workstations and laptops that are
 used by their staff and to install available updates short-term.
-Using Ubuntu 22.04 or other modern Linux distributions is a popular
-choice amongst technically minded engineers.
-
-## Note
-
-Not yet having done the switch to Ubuntu-22.04 resulted in the exposure
-of providers using the SCS reference implementation to be minimal.
-Similar to the ["dirty pipe"](https://scs.community/security/2022/03/07/advisory-dirty-pipe/)
-case, our choice of technology turned out to be a lucky one.
-We know that there is no guarantee for luck; we do ensure we can react
-quickly and effectively when affected.
-
-Images are built and tested nightly in the OSISM infrastructure; we had
-prepared to push out new images within a day if we had been affected, so we
-have prepared to react to issues like this.
 
 ## Sovereign Cloud Stack Security Contact
 
