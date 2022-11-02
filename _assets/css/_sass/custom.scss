@@ -119,6 +119,15 @@ p {
     }
 }
 
+.btn-mastodon {
+    color: white;
+    background-color: #5b4de3 !important;
+    border-color: #5b4de3;
+    &:hover{
+      color: rgba(white, 0.9);
+    }
+}
+
 .bg-dark{
     background-color: $scs-gray !important;
 }
