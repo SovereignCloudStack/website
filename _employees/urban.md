@@ -11,6 +11,7 @@ companylink: https://osb-alliance.com
 avatar: employees/Urban.jpg
 linkedin: https://www.linkedin.com/in/manuela-b-urban/
 matrix: https://matrix.to/#/@manuela.urban:matrix.org
+github: https://github.com/manuela-urban
 mail: urban@osb-alliance.com
 phone: +49-30-206539-202
 street: Pariser Platz 6a
