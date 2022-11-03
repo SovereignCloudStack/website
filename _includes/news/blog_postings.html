@@ -6,6 +6,11 @@
 <div class="list-group mb-2">
 {% assign sorted = site.posts | sort: 'date' | reverse %}
 {% for post in sorted %}
+{% if include.category %}
+  {% unless post.category contains include.category %}
+    {% continue %}
+  {% endunless %}
+{% endif %}
 {% if post.path contains {{include.filter}} %}
 	<a href="{{ site.baseurl }}{{post.url}}" class="list-group-item list-group-item-action flex-column align-items-start">
 	<div class="d-flex flex-row">
