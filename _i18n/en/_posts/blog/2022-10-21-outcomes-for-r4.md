@@ -4,8 +4,10 @@ title:  "R3 is before R4"
 category: tech
 author:
   - "Felix Kronlage-Dammers"
+  - "Kurt Garloff"
 avatar:
   - "fkr.jpg"
+  - "kgarloff.jpg"
 ---
 
 ## Looking towards Release 4
