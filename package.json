@@ -2,7 +2,7 @@
   "dependencies": {
     "@fullcalendar/common": "^5.11.0",
     "@fullcalendar/icalendar": "^5.11.2",
-    "apexcharts": "^3.35.4",
+    "apexcharts": "^3.36.1",
     "bootstrap": "^5.2.0",
     "fork-awesome": "^1.2.0",
     "fullcalendar": "^5.11.2",
