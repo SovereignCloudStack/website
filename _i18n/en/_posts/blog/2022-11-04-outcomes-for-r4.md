@@ -12,7 +12,7 @@ avatar:
 
 ## Looking towards Release 4
 
-We've just [released the Release 3](https://scs.community/release/2022/09/21/release3/) and with that we immediatly started our R4 cycle.
+We've just [released the Release 3](https://scs.community/release/2022/09/21/release3/) and with that we immediately started our R4 cycle.
 Of course there are certain topics that we carry over from R3, especially since we work in a very iterative way, these turnovers mark a good spot to actually look at what we want to achieve with the next release cycle. While the majority of planning is done in our team meetings, Kurt, Christian and Felix prepared some initial work.
 For that we looked at the funding proposal, the groundwork for our funding by the BMWK, and matched that with the outcomes we've accomplished so far. Likewise we looked at the currently running tenders as well the ones we're planning to kick off over the period of the next four months, since those tenders will play into items we work on for R4.
 
@@ -23,7 +23,7 @@ SCS is comprised of three pillars: Standards, Reference Implementation and Open 
 
 ### [SCS is standardized](https://github.com/orgs/SovereignCloudStack/projects/6/views/23)
 
-One of the big rocks for Release 4 will be bringing our [Cluster standardization](https://github.com/SovereignCloudStack/issues/issues/181) fmrward. However our standardization efforts are comprised of many efforts -- we need to standardize the parameters that the cluster consumers can choose, the way how these are fed to the service to create and manage the k8s cluters and last not least the properties of the resulting clusters. The foundational work for this is the [current effort](https://github.com/SovereignCloudStack/Docs/pull/143) to have a formalized process of documenting these standard as well as our (design) decisions.
+One of the big rocks for Release 4 will be bringing our [Cluster standardization](https://github.com/SovereignCloudStack/issues/issues/181) forward. However our standardization efforts are comprised of many efforts -- we need to standardize the parameters that the cluster consumers can choose, the way how these are fed to the service to create and manage the k8s clusters and last not least the properties of the resulting clusters. The foundational work for this is the [current effort](https://github.com/SovereignCloudStack/Docs/pull/143) to have a formalized process of documenting these standard as well as our (design) decisions.
 
 ### [SCS is federated](https://github.com/orgs/SovereignCloudStack/projects/6/views/18)
 
@@ -36,7 +36,7 @@ The fact that two of our operators were able to directly upgrade to Release 3 sh
 
 ### [SCS is understandable](https://github.com/orgs/SovereignCloudStack/projects/6/views/22)
 
-One of the areas where we've not advanded as much as we wanted is to lower the entry barrier to SCS and the reference implementation. However if we talk about "SCS is understandable" this shall not be reduced to our reference implementation. Our standards need to be easily understood as well, since this will lead to much better adoption. SCS being understandable is more than just mere documentation. There could be no better timing for our new colleague, Max Wolfs, to have joined the SCS team as our Knowledge Management Engineer.
+One of the areas where we've not advanced as much as we wanted is to lower the entry barrier to SCS and the reference implementation. However if we talk about "SCS is understandable" this shall not be reduced to our reference implementation. Our standards need to be easily understood as well, since this will lead to much better adoption. SCS being understandable is more than just mere documentation. There could be no better timing for our new colleague, Max Wolfs, to have joined the SCS team as our Knowledge Management Engineer.
 
 ### [SCS enables Operators with an excellent toolbox](https://github.com/orgs/SovereignCloudStack/projects/6/views/20)
 
