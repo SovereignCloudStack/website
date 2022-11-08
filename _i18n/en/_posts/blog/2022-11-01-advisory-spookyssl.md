@@ -3,12 +3,12 @@ layout: post
 title:  "Sovereign Cloud Stack Security Advisory Spooky SSL"
 category: security
 author:
-  - "Kurt Garloff"
   - "Christian Berendt"
+  - "Kurt Garloff"
   - "Felix Kronlage-Dammers"
 avatar:
-  - "kgarloff.jpg"
   - "CB.png"
+  - "kgarloff.jpg"
   - "fkr.jpg"
 image: "blog/spooky.png"
 ---
