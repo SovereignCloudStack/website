@@ -201,8 +201,8 @@ Nutzungserfassung, ...), Nutzerverwaltung (LDAP, Keycloak, ...),
 die grundlegende Virtualisierung (KVM, ceph, OVN), die IaaS Schicht
 (Kerndienste von OpenStack) und die Werkzeuge rund um Kubernetes werden
 hier alle abgedeckt. Die Dienste werden durch Ansible als Container
-augebracht. Auf dieser Schicht werden Docker/Podman Container benutzt.
-Hierdurch wird die Platzierung ... explizit
+aufgebaut. Auf dieser Schicht werden Docker/Podman Container benutzt.
+Hierdurch wird die Platzierung explizit
 festgelegt -- wir sehen die von k8s erzeugte hohe Dynamik auf dieser
 Schicht nicht als Vorteil. Dies ist auf höheren Schichten natürlich
 anders, in Abhängigkeit der Nutzerbedürfnisse.
