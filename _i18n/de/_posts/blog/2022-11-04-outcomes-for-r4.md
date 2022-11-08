@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-11-04-outcomes-for-r4.md
