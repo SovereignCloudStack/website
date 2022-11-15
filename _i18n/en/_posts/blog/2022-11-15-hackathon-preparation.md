@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sign up for our Community Hackathon 2022"
+title: "See you in Cologne | Heads up for our first SCS Community Hackathon"
 author:
   - "Eduard Itrich"
 avatar:
