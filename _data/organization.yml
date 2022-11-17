@@ -27,7 +27,14 @@ types:
 team:
   - name: Team IaaS
     lead: Felix Kronlage-Dammers
-    contact: https://scs.community/dammers
+    contact: https://scs.community/fkr
+    description: |
+      Defining and implementing the SCS Infrastructure-as-a-Service (IaaS) optional standard and reference implementation.
+  - name: Team OPS & IAM
+    lead: Felix Kronlage-Dammers
+    contact: https://scs.community/fkr
+    description: |
+      The OPS & IAM team works on Tooling for day-2 operations as well as all things around the federation with the identity and access management (IAM) stack.
 
 sig:
   - name: SIG Market
