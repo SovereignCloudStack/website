@@ -13,12 +13,6 @@ types:
       or the community. Special Interest Groups can be freely proclaimed and
       founded by any community member if there is enough interest on the particular
       domain.
-  - name: Working Group
-    abbreviation: WG
-    description: |
-      Working groups are organizational units that gather to complete a concrete task
-      and thus exist only for a limited period of time. Working groups can be freely
-      proclaimed and founded by any community member.
   - name: Other
     abbreviation: Other
     description: |
@@ -54,10 +48,7 @@ sig:
     contact: https://scs.community/fkr
     description: |
       All things around monitoring and obersability in the scope of cloud service providers (CSPs) are the focus. This SIG works hand in hand with the other three technical teams and will accept input from them in order to deep dive into topics that serve the outcomes of the three technical teams.
-
-
-wg:
-    - name: WG Open Operations Manifesto
+  - name: SIG Open Operations Manifesto
 
 other:
     - name: Product Board
