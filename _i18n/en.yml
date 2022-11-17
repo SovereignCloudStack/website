@@ -50,15 +50,19 @@ tiles:
     body: "Important building blocks will be awarded to companies through open tenders, which will be continously published on this page."
     action: "Apply &raquo;"
 news:
-  announcments: "Own Announcements"
+  announcements: "Own Announcements"
   blog: "Community Blog"
   press:
     de: "Press on SCS (German)"
     en: "Press on SCS (English)"
+    title: "Press on SCS"
+  conference_title: "Conference Contributions"
   conference:
     de: "Conference Contributions (German)"
     en: "Conference Contributions (English)"
+    title: "Conference Contributions"
     slides: "Slides"
+  read_more: "Read more..."
 tenders:
   name: "Name"
   description: "Description"

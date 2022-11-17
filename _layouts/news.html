@@ -1,136 +1,20 @@
 ---
 layout: default
 ---
-<h2 class="mb-3"><small><i class="fa fa-bullhorn me-1"></i> {% t news.announcments %}</small></h2>
-<div class="list-group mb-4">
-{% assign sorted = site.posts | sort: 'date' | reverse %}
-{% for post in sorted %}
-{% if post.path contains '/announcements/' %}
-	<a href="{{ site.baseurl }}{{post.url}}" class="list-group-item list-group-item-action flex-column align-items-start">
-	<div class="d-flex flex-row">
-		{% include news/blog_avatars.html %}
-		<div class="d-flex w-100 flex-column ms-3 my-auto">
-			<div class="d-flex w-100 justify-content-between">
-				<h5 class="mb-1" style="font-size:.875em">{{post.author | join: ", "}}</h5>
-				<small class="ms-2">{% include date.html date=post.date %}</small>
-			</div>
-		<p class="mb-1">{{post.title}}</p>
-	</div>
-	</div>
-	</a>
-{% endif %}
-{% endfor %}
-</div>
+{% include news/blog_postings.html limit="3" filter="/announcements/" title_slug="news.announcements" icon="fa-bullhorn" %}
+{% include news/read_more.html ref="announcements" %}
 
-<h2 class="mb-3"><small><i class="fa fa-community me-1"></i> {% t news.blog %}</small></h2>
-<div class="list-group mb-4">
-{% assign sorted = site.posts | sort: 'date' | reverse %}
-{% for post in sorted %}
-{% if post.path contains '/blog/' %}
-	<a href="{{ site.baseurl }}{{post.url}}" class="list-group-item list-group-item-action flex-column align-items-start">
-	<div class="d-flex flex-row">
-		{% include news/blog_avatars.html %}
-		<div class="d-flex w-100 flex-column ms-3 my-auto">
-			<div class="d-flex w-100 justify-content-between">
-				<h5 class="mb-1" style="font-size:.875em">{{post.author | join: ", "}}</h5>
-				<small class="ms-2">{% include date.html date=post.date %}</small>
-			</div>
-			<p class="mb-1">{{post.title}}</p>
-		</div>
-	</div>
-	</a>
-{% endif %}
-{% endfor %}
-</div>
+{% include news/blog_postings.html limit="3" filter="/blog/" title_slug="news.blog" icon="fa-community" %}
+{% include news/read_more.html ref="blog" %}
+
 <div class="row">
-	<div class="col-lg-6">
-		<h2 class="mb-3"><small><i class="fa fa-newspaper-o me-1"></i> {% t news.press.en %}</small></h2>
-		<div class="list-group mb-4">
-		{% assign sorted = site.data.news_en | sort: 'date' | reverse %}
-		{% for item in sorted %}
-		{% capture news_link %}{% if item.asset %}{% asset '{{item.asset}}' @path %}{% elsif item.link%}{{item.link}}{% endif %}{% endcapture %}
-		{% if news_link %}
-			<a href="{{news_link}}" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">
-		{% endif %}
-		<div class="d-flex w-100 justify-content-between">
-		<h5 class="mb-1" style="font-size:.875em">{{item.publisher}}</h5>
-		<small class="ms-2">{% include date.html date=item.date %}</small>
-		</div>
-		<p class="mb-1">{{item.title}}</p>
-		</a>
-		{% endfor %}
-		</div>
-	</div>
-	<div class="col-lg-6">
-		<h2 class="mb-3"><small><i class="fa fa-newspaper-o me-1"></i> {% t news.press.de %}</small></h2>
-		<div class="list-group mb-4">
-		{% assign sorted = site.data.news_de | sort: 'date' | reverse %}
-		{% for item in sorted %}
-		{% capture news_link %}{% if item.asset %}{% asset '{{item.asset}}' @path %}{% elsif item.link%}{{item.link}}{% endif %}{% endcapture %}
-		{% if news_link %}
-			<a href="{{news_link}}" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">
-		{% endif %}
-		<div class="d-flex w-100 justify-content-between">
-		<h5 class="mb-1" style="font-size:.875em">{{item.publisher}}</h5>
-		<small class="ms-2">{% include date.html date=item.date %}</small>
-		</div>
-		<p class="mb-1">{{item.title}}</p>
-		</a>
-		{% endfor %}
-		</div>
-	</div>
+	{% include news/press.html limit="3" title_slug="news.press.en" icon="fa-newspaper-o" data=site.data.news_en %}
+	{% include news/press.html limit="3" title_slug="news.press.en" icon="fa-newspaper-o" data=site.data.news_de %}
+	{% include news/read_more.html ref="press" %}
 </div>
 
 <div class="row">
-	<div class="col-lg-6">
-		<h2 class="mb-3"><small><i class="fa fa-comment-o me-1"></i> {% t news.conference.en %}</small></h2>
-		<div class="list-group mb-4">
-		{% assign sorted = site.data.conferences_en | sort: 'date' | reverse %}
-		{% for item in sorted %}
-		<div class="list-group-item list-group-item-action align-items-start">
-			<div class="d-flex w-100 justify-content-between">
-				<div class="d-flex w-75 flex-column justify-content-start position-relative">
-					<h5 style="font-size:.875em">{{item.event}}</h5>
-					<a href="{{item.link}}" target="_blank" class="mb-1 text-decoration-none text-body stretched-link">{{item.title}}</a>
-					{% if item.details %}<p class="mb-1 small fw-light">— {{item.details}}</p>{% endif %}
-				</div>
-				<div class="d-flex w-25 flex-column justify-content-start text-end position-relative">
-					<small>{% include date.html date=item.date %}</small>
-					{% if item.slides %}
-						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{% asset '{{item.slides}}' @path %}" target="_blank">
-							<i class="fa fa-download my-auto"></i> <small>{% t news.conference.slides %}</small>
-						</a>
-					{% endif %}
-				</div>
-			</div>
-		</div>
-		{% endfor %}
-		</div>
-	</div>
-	<div class="col-lg-6">
-		<h2 class="mb-3"><small><i class="fa fa-comment-o me-1"></i> {% t news.conference.de %}</small></h2>
-		<div class="list-group mb-4">
-		{% assign sorted = site.data.conferences_de | sort: 'date' | reverse %}
-		{% for item in sorted %}
-		<div class="list-group-item list-group-item-action flex-column align-items-start">
-			<div class="d-flex w-100 justify-content-between">
-				<div class="d-flex w-75 flex-column justify-content-start position-relative">
-					<h5 style="font-size:.875em">{{item.event}}</h5>
-					<a href="{{item.link}}" target="_blank" class="mb-1 text-decoration-none text-body stretched-link">{{item.title}}</a>
-					<p class="mb-1 small fw-light">— {{item.details}}</p>
-				</div>
-				<div class="d-flex w-25 flex-column justify-content-start text-end position-relative">
-					<small>{% include date.html date=item.date %}</small>
-					{% if item.slides %}
-						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{% asset '{{item.slides}}' @path %}" target="_blank">
-							<i class="fa fa-download my-auto"></i> <small>{% t news.conference.slides %}</small>
-						</a>
-					{% endif %}
-				</div>
-			</div>
-		</div>
-		{% endfor %}
-		</div>
-	</div>
+	{% include news/conferences.html limit="3" title_slug="news.conference.en" icon="fa-comment-o" data=site.data.conferences_en %}
+	{% include news/conferences.html limit="3" title_slug="news.conference.en" icon="fa-comment-o" data=site.data.conferences_de %}
+	{% include news/read_more.html ref="conferences" %}
 </div>
-

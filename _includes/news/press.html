@@ -1,0 +1,18 @@
+<div class="col-lg-6">
+  <h2 class="mb-3 mt-4"><small><i class="fa {{include.icon}} me-1"></i> {% t include.title_slug %}</small></h2>
+  <div class="list-group mb-2">
+  {% assign sorted = {{include.data}} | sort: 'date' | reverse %}
+  {% for item in sorted limit:{{include.limit}} %}
+  {% capture news_link %}{% if item.asset %}{% asset '{{item.asset}}' @path %}{% elsif item.link%}{{item.link}}{% endif %}{% endcapture %}
+  {% if news_link %}
+  <a href="{{news_link}}" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start">
+  {% endif %}
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1" style="font-size:.875em">{{item.publisher}}</h5>
+      <small class="ms-2">{% include date.html date=item.date %}</small>
+    </div>
+    <p class="mb-1">{{item.title}}</p>
+  </a>
+  {% endfor %}
+  </div>
+</div>
