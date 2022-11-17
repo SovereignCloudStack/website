@@ -1,0 +1,52 @@
+types:
+  - name: Team
+    abbreviation: Team
+    description: |
+      Teams are organizational units that directly contribute to a particular
+      layer of the SCS project. Every team is orchestrated by an employed product
+      owner and predefined by the project's architecture.
+  - name: Special Interest Group
+    abbreviation: SIG
+    description: |
+      Special Interest Groups are organizational units that work on a specific,
+      well-defined field of action and usually do preliminary work for the teams
+      or the community. Special Interest Groups can be freely proclaimed and
+      founded by any community member if there is enough interest on the particular
+      domain.
+  - name: Working Group
+    abbreviation: WG
+    description: |
+      Working groups are organizational units that gather to complete a concrete task
+      and thus exist only for a limited period of time. Working groups can be freely
+      proclaimed and founded by any community member.
+  - name: Other
+    abbreviation: Other
+    description: |
+      Any other organizational unit that doesn't match any of the above categories.
+
+team:
+  - name: Team IaaS
+    lead: Felix Kronlage-Dammers
+    contact: https://scs.community/dammers
+
+sig:
+  - name: SIG Market
+    lead: Alexander Diab
+    contact: https://scs.community/diab
+    description: |
+       The mission of the special interest group „SCS Market“ is to discuss and agree upon measures and actions to increase the adoption and dissemination of SCS as a technology standard and a technology stack. We will collect ideas and decide, where SCS can sensibly be introduced, presented and deployed and what resources must be provided and applied, in order to successfully bring SCS in usage.
+       We will set ourselves goals to achieve certain outcomes like a successful Proof-Of-Concept with a potential customer or a campaign with a high positive feedback or ideally an in-production state.
+       We will consider both, the high level perspective like expectations and chances in different segments (public, healthcare, banking, etc.) as well as concrete examples and assignments, where actions should be taken to create a specific successful outcome.
+       We understand the term „market“ as the aggregate of every entity, which „uses“ SCS in one or the other way, i.e. build their business model upon this technology or where it is at least an integral part. That may be:
+          - CSPs, which create public cloud offerings based on SCS
+          - private (corporate) data centers
+          - IT service firms (also corporate internal ones), which develop and operate cloud native apps on SCS for customers
+          - … and their customers (the end user)
+
+wg:
+    - name: WG Open Operations Manifesto
+
+other:
+    - name: Product Board
+      lead: Kurt Garloff
+      contact: https://scs.community/garloff
