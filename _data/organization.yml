@@ -41,14 +41,14 @@ sig:
     lead: Alexander Diab
     contact: https://scs.community/diab
     description: |
-       The mission of the special interest group „SCS Market“ is to discuss and agree upon measures and actions to increase the adoption and dissemination of SCS as a technology standard and a technology stack. We will collect ideas and decide, where SCS can sensibly be introduced, presented and deployed and what resources must be provided and applied, in order to successfully bring SCS in usage.
+      The mission of the special interest group „SCS Market“ is to discuss and agree upon measures and actions to increase the adoption and dissemination of SCS as a technology standard and a technology stack. We will collect ideas and decide, where SCS can sensibly be introduced, presented and deployed and what resources must be provided and applied, in order to successfully bring SCS in usage.
        We will set ourselves goals to achieve certain outcomes like a successful Proof-Of-Concept with a potential customer or a campaign with a high positive feedback or ideally an in-production state.
        We will consider both, the high level perspective like expectations and chances in different segments (public, healthcare, banking, etc.) as well as concrete examples and assignments, where actions should be taken to create a specific successful outcome.
-       We understand the term „market“ as the aggregate of every entity, which „uses“ SCS in one or the other way, i.e. build their business model upon this technology or where it is at least an integral part. That may be:
-          - CSPs, which create public cloud offerings based on SCS
-          - private (corporate) data centers
-          - IT service firms (also corporate internal ones), which develop and operate cloud native apps on SCS for customers
-          - … and their customers (the end user)
+      We understand the term „market“ as the aggregate of every entity, which „uses“ SCS in one or the other way, i.e. build their business model upon this technology or where it is at least an integral part. That may be:
+        - CSPs, which create public cloud offerings based on SCS
+        - private (corporate) data centers
+        - IT service firms (also corporate internal ones), which develop and operate cloud native apps on SCS for customers
+        - … and their customers (the end user)
   - name: SIG Monitoring
     lead: Felix Kronlage-Dammers
     contact: https://scs.community/fkr
