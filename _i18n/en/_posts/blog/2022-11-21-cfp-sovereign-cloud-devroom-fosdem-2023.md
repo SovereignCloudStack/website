@@ -20,14 +20,14 @@ This is your chance to submit a proposal for a presentation, lightning talk or B
 </p>
 <div class="collapse" id="collapseCfP">
   <div class="card card-body" markdown="1">
-# FOSDEM 2023 In Person – Sovereign Cloud DevRoom Call for Participation!
+### FOSDEM 2023 In Person – Sovereign Cloud DevRoom Call for Participation!
 
 The twenty-third edition of FOSDEM takes place Saturday 4th and Sunday 5th
 February 2023 in Brussels, Belgium.
 For the first time there will be a DevRoom that focuses on the subject of Sovereign Cloud
 and its  practical aspect for digital sovereignty.
 
-## Key dates tl;dr:
+#### Key dates tl;dr:
 
    - Conference dates 4-5 February, 2023 In person
    - Sovereign Cloud DevRoom date: Saturday 4th February
@@ -35,9 +35,9 @@ and its  practical aspect for digital sovereignty.
    - Announcement of selected talks: Thursday 15th December
    - You must be available in person to present your talk
 
-## About the Sovereign Cloud DevRoom
+#### About the Sovereign Cloud DevRoom
 
-### Overview
+##### Overview
 
 The Sovereign Cloud DevRoom is for discussing topics and issues of user privacy and
 sovereignty and the intersection with the needs of infrastructure providers in the cloud
@@ -56,7 +56,7 @@ These are just a few example suggestions, we welcome proposals on any aspects ar
 
 More topic ideas and details on how to submit proposals is below.
 
-### Discussing the Sovereign Cloud
+##### Discussing the Sovereign Cloud
 
 The recent EU focus on digital sovereignity has brought fresh attention and innovation to a problem
 area many of us have been interested in and working on for a long time. This DevRoom focuses on
