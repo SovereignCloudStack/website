@@ -19,7 +19,7 @@ This is your chance to submit a proposal for a presentation, lightning talk or B
   </button>
 </p>
 <div class="collapse" id="collapseCfP">
-  <div class="card card-body">
+  <div class="card card-body" markdown="1">
 # FOSDEM 2023 In Person – Sovereign Cloud DevRoom Call for Participation!
 
 The twenty-third edition of FOSDEM takes place Saturday 4th and Sunday 5th
