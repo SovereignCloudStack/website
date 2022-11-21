@@ -1,11 +1,17 @@
----
-layout: default
----
-<h2 class="mb-3"><small><i class="fa fa-exclamation-triangle me-1"></i> {% t nav.security %}</small></h2>
-<div class="list-group mb-4">
+{% if include.limit %}
+  {% assign i = include.limit %}
+{% endif %}
+
+<h2 class="mb-3 mt-4"><small><i class="fa {{include.icon}} me-1"></i> {% t include.title_slug %}</small></h2>
+<div class="list-group mb-2">
 {% assign sorted = site.posts | sort: 'date' | reverse %}
 {% for post in sorted %}
-{% if post.category contains 'security' %}
+{% if include.category %}
+  {% unless post.category contains include.category %}
+    {% continue %}
+  {% endunless %}
+{% endif %}
+{% if post.path contains {{include.filter}} %}
 	<a href="{{ site.baseurl }}{{post.url}}" class="list-group-item list-group-item-action flex-column align-items-start">
 	<div class="d-flex flex-row">
 		{% include news/blog_avatars.html %}
@@ -18,6 +24,12 @@ layout: default
 	</div>
 	</div>
 	</a>
+  {% if i %}
+    {% assign i = i | minus: 1 %}
+  {% endif %}
+{% endif %}
+{% if i == 0 %}
+  {% break %}
 {% endif %}
 {% endfor %}
 </div>

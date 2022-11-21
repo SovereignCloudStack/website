@@ -50,15 +50,18 @@ tiles:
     body: "Wichtige Bausteine sollen über offene Ausschreibungen an Unternehmen vergeben werden, welche hier regelmäßig veröffentlich werden."
     action: "Bewerben &raquo;"
 news:
-  announcments: "Eigene Ankündigungen"
+  announcements: "Eigene Ankündigungen"
   blog: "Community-Blog"
   press:
     de: "Presse zu SCS (Deutsch)"
     en: "Presse zu SCS (Englisch)"
+    title: Presse zu SCS""
   conference:
     de: "Konferenzbeiträge (Deutsch)"
     en: "Konferenzbeiträge (Englisch)"
+    title: "Konferenzbeiträge"
     slides: "Folien"
+  read_more: "Weiterlesen..."
 tenders:
   name: "Name"
   description: "Beschreibung"
