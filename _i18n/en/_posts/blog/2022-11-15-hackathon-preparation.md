@@ -46,7 +46,7 @@ The basic time frame of the day will be as follows:
 
 ## Health and safety
 
-Please test yourself before you join us during the Hackathon. We will not control the test results, but trust in your awareness to create a safe event for our community. Wearing masks during the event is optional. **However, during the guided data center tour wearing a FFP2 mask is mandatory.** We will provide test kits and FFP2 masks at the venue in case anyone forgot anything.
+Please test yourself before you join us during the Hackathon. We will not control the test results, but trust in your awareness to create a safe event for our community. Wearing masks during the event is optional. **However, during the guided data center tour wearing a FFP2 mask is mandatory.** We will provide test kits and FFP2 masks at the venue in case you forgot something to bring along.
 
 ## Virtual attendance
 
