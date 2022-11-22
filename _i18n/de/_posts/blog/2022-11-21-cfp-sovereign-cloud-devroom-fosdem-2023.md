@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-11-21-cfp-sovereign-cloud-devroom-fosdem-2023.md
