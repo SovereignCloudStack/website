@@ -11,7 +11,7 @@ After couple of years where [FOSDEM](https://www.fosdem.org) was a pure remote e
 the next FOSDEM on February 4th and 5th will be in person again. FOSDEM has published the overall [Call for Participation](https://fosdem.org/2023/news/2022-11-13-call-for-presentations/).
 Together with the [Operate First](https://www.operate-first.cloud/) community a "Sovereign Cloud" DevRoom is organized.
 Most of the [DevRooms CfPs](https://fosdem.org/2023/news/2022-11-07-accepted-developer-rooms/) have been published.
-This is your chance to submit a proposal for a presentation, lightning talk or BoF-Session for the Sovereign Dev Room.
+This is your chance to submit a proposal for a presentation, lightning talk or BoF-Session for the Sovereign Cloud DevRoom.
 
 <p>
   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCfP" aria-expanded="false" aria-controls="collapseCfP">
