@@ -7,6 +7,9 @@
 - title: LinkedIn
   icon: fa-linkedin-square fa-lg
   link: https://www.linkedin.com/showcase/sovereigncloudstack
+- title: YouTube
+  icon: fa-youtube-square fa-lg
+  link: https://www.youtube.com/@sovereigncloudstack
 - title: GitHub
   icon: fa-github fa-lg
   link: https://github.com/SovereignCloudStack
