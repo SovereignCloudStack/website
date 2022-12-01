@@ -3,6 +3,12 @@
   title: "Developing the Open Source Sovereign Cloud Stack"
   details: "Kurt Garloff"
   slides: "20221117-SCS-MercedesFOSS.pdf"
+
+- date: "2022-10-26"
+  event: "EclipseCon 2022"
+  title: "The fifth Open Paradigm: Open Operations"
+  details: "Christian Berendt"
+  slides: "20221026-EclipseCon.pdf"
   
 - date: "2022-06-09"
   event: "OpenInfra Summit 2022"
