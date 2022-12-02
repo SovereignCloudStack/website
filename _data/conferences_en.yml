@@ -3,7 +3,21 @@
   title: "Developing the Open Source Sovereign Cloud Stack"
   details: "Kurt Garloff"
   slides: "20221117-SCS-MercedesFOSS.pdf"
-  
+
+- date: "2022-10-26"
+  event: "EclipseCon 2022"
+  title: "The Fifth Open Paradigm: Open Operations"
+  details: "Christian Berendt"
+  slides: "20221026-EclipseCon-OpenOps.pdf"
+  link: "https://www.youtube.com/watch?v=mO77xNLRoTc"
+
+- date: "2022-10-25"
+  event: "EclipseCon 2022"
+  title: "Digital sovereignty: Why open infrastructure matters"
+  details: "Eduard Itrich"
+  slides: "20221025-EclipseCon-DigiSov.pdf"
+  link: "https://www.youtube.com/watch?v=r2UdWhCOpWQ"
+
 - date: "2022-06-09"
   event: "OpenInfra Summit 2022"
   title: "Intent-based holistic data center management"
