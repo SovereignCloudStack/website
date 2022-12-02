@@ -12,14 +12,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       id: checkout
-    # Use GitHub Actions' cache to shorten build times and decrease load on servers
-    - uses: actions/cache@v3
-      id: cache
+    # Use GitHub Node Action to install node_modules
+    - uses: actions/setup-node@v3
       with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-
+        node-version: 16
+    - run: npm install
     # Use GitHub Jekyll Action to build website
     - uses: helaili/jekyll-action@v2
       id: build
