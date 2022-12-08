@@ -4,9 +4,9 @@ layout: default
 
 number: 14
 number_vh81: 9c
-state: open # open, upcoming or closed
-closing_date: 2022-12-08 T12:00+01:00
-contracting_portal: https://www.dtvp.de/Satellite/notice/CXP4YV76M4N
+state: closed # open, upcoming or closed
+start_date: 2022-11-02
+closing_date: 2022-12-08
 ---
 
 {% tf tenders/lot9c.md %}
