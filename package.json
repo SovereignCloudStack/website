@@ -6,7 +6,7 @@
     "bootstrap": "^5.2.3",
     "fork-awesome": "^1.2.0",
     "fullcalendar": "^5.11.2",
-    "jquery": "^3.6.0",
+    "jquery": "^3.6.3",
     "lato-font": "^3.0.0",
     "leaflet": "^1.9.3",
     "leaflet.featuregroup.subgroup": "^1.0.2",
