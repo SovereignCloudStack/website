@@ -5,6 +5,8 @@ author:
   - "Arvid Requate"
 avatar:
   - "arequate.jpg"
+about:
+  - "arequate"
 ---
 
 The mission of the Sovereign Cloud Stack (SCS) is to define standards that enable to build and operate fully federated,  state-of-the-art open source solutions that enables cloud service providers to deploy Infrastructure-as-a-Service and Container-as-a-Service in a sovereign manner, i.e. independent of other vendors. As such SCS is comprised of a set of standards as well as a reference implementation of these standards.
@@ -59,5 +61,4 @@ As next step we will propose our extension to keystoneauth for inclusion in the 
 And then, we will need get back to the topic of mapping attributes/claims and documenting how to configure Keycloak properly for this use case and make recommendations how to coordinate this from the external IAM to SCS to achieve the desired results. The general idea is to allow customers to self service configure the federation according to their needs. This in turn plays into the greater topic of what the desired role model would be and how to match that with the current OpenStack policy model. But that will be the topic of a future post.
 
 Enjoy,
-Arvid Requate (Univention and member SCS "Operations and IAM" Team)
-
+Arvid Requate (Member SCS "Operations and IAM" Team)
