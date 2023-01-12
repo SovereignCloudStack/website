@@ -16,34 +16,7 @@
         <div class="mb-0"><b>{% if author.academic %}{{author.academic}} {% endif %}{{author.firstname}} {{author.lastname}}</b></div>
         <div class="small text-muted mt-0">{{author.role}} @ <a href="{{author.companylink}} target="_blank">{{author.company}}</a></div>
         <div class="mt-2">{{author.bio}}</div>
-        <div class="mt-3 d-flex flex-row">
-            {% if author.twitter %}
-            <div class="me-2">
-                <a class="btn btn-twitter" href="{{author.twitter}}"><i class="fa fa-twitter fa-lg"></i></a>
-            </div>
-            {% endif %}
-            {% if author.mastodon %}
-            <div class="me-2">
-                <a class="btn btn-mastodon" href="{{author.mastodon}}"><i class="fa fa-mastodon fa-lg"></i></a>
-            </div>
-                {% endif %}
-                {% if author.linkedin %}
-                <div class="me-2">
-                  <a class="btn btn-linkedin" href="{{author.linkedin}}"><i class="fa fa-linkedin fa-lg"></i></a>
-                </div>
-                {% endif %}
-                {% if author.github %}
-                <div class="me-2">
-                  <a class="btn btn-github" href="{{author.github}}"><i class="fa fa-github fa-lg"></i></a>
-                </div>
-                {% endif %}
-                {% if author.matrix %}
-                <div class="me-2">
-                  <a class="btn btn-matrix" href="{{author.matrix}}"><i class="fa fa-matrix-org fa-lg"></i></a>
-                </div class="me-2">
-                {% endif %}
-              </div>
-        </div>
+        {% include community/social.html community_member=author %}
     </div>
 </div>
 {% endif %}

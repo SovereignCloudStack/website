@@ -17,34 +17,7 @@ layout: default
             <div class="mb-0"><b>{% if community_member.academic %}{{community_member.academic}} {% endif %}{{community_member.firstname}} {{community_member.lastname}}</b></div>
             <div class="small text-muted mt-0">{{community_member.role}} @ <a href="{{community_member.companylink}} target="_blank">{{community_member.company}}</a></div>
             <div class="mt-2">{{community_member.bio}}</div>
-            <div class="mt-3 d-flex flex-row">
-                {% if community_member.twitter %}
-                <div class="me-2">
-                    <a class="btn btn-twitter" href="{{community_member.twitter}}"><i class="fa fa-twitter fa-lg"></i></a>
-                </div>
-                {% endif %}
-                {% if community_member.mastodon %}
-                <div class="me-2">
-                    <a class="btn btn-mastodon" href="{{community_member.mastodon}}"><i class="fa fa-mastodon fa-lg"></i></a>
-                </div>
-                    {% endif %}
-                    {% if community_member.linkedin %}
-                    <div class="me-2">
-                    <a class="btn btn-linkedin" href="{{community_member.linkedin}}"><i class="fa fa-linkedin fa-lg"></i></a>
-                    </div>
-                    {% endif %}
-                    {% if community_member.github %}
-                    <div class="me-2">
-                    <a class="btn btn-github" href="{{community_member.github}}"><i class="fa fa-github fa-lg"></i></a>
-                    </div>
-                    {% endif %}
-                    {% if community_member.matrix %}
-                    <div class="me-2">
-                    <a class="btn btn-matrix" href="{{community_member.matrix}}"><i class="fa fa-matrix-org fa-lg"></i></a>
-                    </div class="me-2">
-                    {% endif %}
-                </div>
-            </div>
+            {% include community/social.html community_member=community_member %}
         </div>
     </div>
     {% if community_member.holopin_username %}
