@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2023-01-05-sig-iam-openstack-cli-with-federation.md
