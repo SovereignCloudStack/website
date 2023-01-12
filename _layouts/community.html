@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign community_member = page %}
 <div class="my-5">
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row mb-5">
         <div class="mx-4 d-flex align-items-center">
             <svg height="200" width="200">
               {% assign id_round = 6 | random_hex_string %}
@@ -21,8 +21,8 @@ layout: default
         </div>
     </div>
     {% if community_member.holopin_username %}
-    <h2>Badges & Achievements</h2>
-    <div class="row">
+    <h2 id="badges">Badges & Achievements</h2>
+    <div class="row mb-3">
         <a href="https://holopin.io/@{{community_member.holopin_username}}">
             <img
             src="https://holopin.me/{{community_member.holopin_username}}"
@@ -31,4 +31,23 @@ layout: default
         </a>
     </div>
     {% endif %}
+    <h2 id="posts">Blog posts</h2>
+    {% assign sorted = site.posts | where_exp:"sorted", "sorted.about contains community_member.slug" | sort: 'date' | reverse %}
+    {% for post in sorted %}
+    <div class="list-group mb-2"> 
+	    <a href="{{ site.baseurl }}{{post.url}}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex flex-row">
+            {% include news/blog_avatars.html %}
+            <div class="d-flex w-100 flex-column ms-3 my-auto">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1" style="font-size:.875em">{{post.author | join: ", "}}</h5>
+                    <small class="ms-2">{% include date.html date=post.date %}</small>
+                </div>
+            <p class="mb-1">{{post.title}}</p>
+            </div>
+        </div>
+        </a>
+    </div>
+    {% endfor %}
+
 </div>
