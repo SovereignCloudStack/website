@@ -1,11 +1,13 @@
 ---
 author_slug: eitrich
+title: Eduard Itrich
+layout: community
 lastname: Itrich
 firstname: Eduard
 role: Community Manager Sovereign Cloud Stack
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
-avatar: eitrich.jpg
+holopin_username: itrich
 twitter: https://twitter.com/EduardItrich
 linkedin: https://www.linkedin.com/in/eduard-itrich/
 github: https://github.com/itrich
