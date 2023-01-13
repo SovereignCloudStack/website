@@ -17,11 +17,13 @@ layout: default
             <div class="mb-0"><b>{% if community_member.academic %}{{community_member.academic}} {% endif %}{{community_member.firstname}} {{community_member.lastname}}</b></div>
             <div class="small text-muted mt-0">{{community_member.role}} @ <a href="{{community_member.companylink}} target="_blank">{{community_member.company}}</a></div>
             <div class="mt-2">{{community_member.bio}}</div>
-            {% include community/social.html community_member=community_member %}
+            <div class="mt-2 d-flex flex-row">
+                {% include community/social.html community_member=community_member %}
+            </div>
         </div>
     </div>
     {% if community_member.holopin_username %}
-    <h2 id="badges">Badges & Achievements</h2>
+    <h2 id="badges">{% t about_author.badges %}</h2>
     <div class="row mb-3">
         <a href="https://holopin.io/@{{community_member.holopin_username}}">
             <img
@@ -31,7 +33,7 @@ layout: default
         </a>
     </div>
     {% endif %}
-    <h2 id="posts">Blog posts</h2>
+    <h2 id="posts">{% t about_author.posts %}</h2>
     {% assign sorted = site.posts | where_exp:"sorted", "sorted.about contains community_member.slug" | sort: 'date' | reverse %}
     {% for post in sorted %}
     <div class="list-group mb-2"> 
