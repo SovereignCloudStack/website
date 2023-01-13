@@ -5,6 +5,8 @@ author:
   - "Eduard Itrich"
 avatar:
   - "eitrich.jpg"
+about:
+  - "eitrich"
 image: "blog/scs-hackathon-2022.png"
 ---
 

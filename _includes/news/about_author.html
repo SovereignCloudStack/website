@@ -1,0 +1,23 @@
+<h2 id="about_author">About the author(s)</h2>
+{% for author_slug in post.about %}
+{% assign author = site.community | where:"author_slug", author_slug | first %}
+{% if author %}
+<div class="d-flex flex-row">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        {% assign id_round = 6 | random_hex_string %}
+        <mask id="{{id_round}}">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="{% asset '{{author.avatar}}' @path vips:format='.webp' vips:resize='120x120' %}" mask="url(#{{id_round}})"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column me-3">
+        <div class="mb-0"><b>{% if author.academic %}{{author.academic}} {% endif %}{{author.firstname}} {{author.lastname}}</b></div>
+        <div class="small text-muted mt-0">{{author.role}} @ <a href="{{author.companylink}} target="_blank">{{author.company}}</a></div>
+        <div class="mt-2">{{author.bio}}</div>
+        {% include community/social.html community_member=author %}
+    </div>
+</div>
+{% endif %}
+{% endfor %}
