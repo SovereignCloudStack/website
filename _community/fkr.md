@@ -15,5 +15,5 @@ mastodon: https://bsd.network/@fkr
 mail: fkr@osb-alliance.com
 avatar: fkr.jpg
 bio: |
-Felix has been building (open source) IT Infrastructure since the late 90s. Between then and now felix was part of various open source development communities (from DarwinPorts, OpenDarwin to OpenBSD and nowadays the Sovereign Cloud Stack). His interests range from monitoring and observability over infrastructure-as-code to building and scaling communities and companies. He has been part of the extended board of the OSBA for the last six years and describes himself as an unix/open source nerd. If not working or spending time with his family, he is usually found on a road bike. 
+    Felix has been building (open source) IT Infrastructure since the late 90s. Between then and now felix was part of various open source development communities (from DarwinPorts, OpenDarwin to OpenBSD and nowadays the Sovereign Cloud Stack). His interests range from monitoring and observability over infrastructure-as-code to building and scaling communities and companies. He has been part of the extended board of the OSBA for the last six years and describes himself as an unix/open source nerd. If not working or spending time with his family, he is usually found on a road bike. 
 ---
