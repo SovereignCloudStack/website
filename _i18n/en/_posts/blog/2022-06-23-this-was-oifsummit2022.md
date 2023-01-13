@@ -8,6 +8,8 @@ avatar:
   - "eitrich.jpg"
   - "fkr.jpg"
 image: "oif_summit2022/gallery/attatchment.IFDb2U.jpeg"
+about:
+  - "eitrich"
 watchlist:
   - name: "Hardware Onboarding and Burn-in with Ironic in the CERN Data Center"
     url: "https://www.youtube.com/watch?v=9QRNEJX3SXQ"

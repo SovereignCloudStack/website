@@ -7,6 +7,8 @@ author:
 avatar:
   - "eitrich.jpg"
 image: "blog/github.jpg"
+about:
+  - "eitrich"
 ---
 
 Community,

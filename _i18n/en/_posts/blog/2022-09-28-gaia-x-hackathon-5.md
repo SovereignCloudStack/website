@@ -8,6 +8,8 @@ avatar:
   - "eitrich.jpg"
   - "fkr.jpg"
 image: "blog/gx-hackathon-5.jpg"
+about:
+  - "eitrich"
 ---
 
 As previously, our community engaged in the
