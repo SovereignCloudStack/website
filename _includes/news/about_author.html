@@ -10,7 +10,7 @@
 {% for author_slug in post.about %}
 {% assign author = site.community | where:"author_slug", author_slug | first %}
 {% if author %}
-<div class="d-flex flex-md-row flex-column align-items-center">
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
     <div class="me-4 d-flex align-items-center">
       <svg height="120" width="120">
         {% assign id_round = 6 | random_hex_string %}
