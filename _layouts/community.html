@@ -15,7 +15,7 @@ layout: default
         </div>
         <div class="d-flex flex-column me-3">
             <div class="mb-0"><b>{% if community_member.academic %}{{community_member.academic}} {% endif %}{{community_member.firstname}} {{community_member.lastname}}</b></div>
-            <div class="small text-muted mt-0">{{community_member.role}} @ <a href="{{community_member.companylink}} target="_blank">{{community_member.company}}</a></div>
+            <div class="small text-muted mt-0">{{community_member.role}} @ <a href="{{community_member.companylink}}" target="_blank">{{community_member.company}}</a></div>
             <div class="mt-2">{{community_member.bio}}</div>
             <div class="mt-2 d-flex flex-row">
                 {% include community/social.html community_member=community_member %}
