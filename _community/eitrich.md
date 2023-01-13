@@ -16,6 +16,7 @@ github: https://github.com/itrich
 matrix: https://matrix.to/#/@itrich:matrix.org
 mastodon: https://hachyderm.io/@EduardItrich#
 mail: itrich@osb-alliance.com
+website: https://itrich.net
 avatar: eitrich.jpg
 bio: |
   Eduard is an open source community manager currently empowering the Sovereign Cloud Stack community at the OSB Alliance (Open Source Business Alliance). After graduating from university, he was part of a software development team and responsible for the release management of a Linux enterprise distribution. Following up his two-year parental leave, during which he orchestrated his twin daughters rather than continuous deployment pipelines, he became the head of digitalization and IT of the medium-sized town Bühl in southwestern Germany.
