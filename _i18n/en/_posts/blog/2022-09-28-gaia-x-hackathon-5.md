@@ -10,6 +10,7 @@ avatar:
 image: "blog/gx-hackathon-5.jpg"
 about:
   - "eitrich"
+  - "fkr"
 ---
 
 As previously, our community engaged in the

@@ -6,6 +6,8 @@ author:
   - "Felix Kronlage-Dammers"
 avatar:
   - "fkr.jpg"
+about:
+  - "fkr"
 ---
 
 ## Welcome Release 2
