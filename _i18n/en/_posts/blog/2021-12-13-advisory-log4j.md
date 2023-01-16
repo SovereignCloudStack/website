@@ -10,6 +10,8 @@ avatar:
   - "CB.png"
   - "kgarloff.jpg"
   - "fkr.jpg"
+about:
+  - "fkr"
 ---
 ## The vulnerability
 

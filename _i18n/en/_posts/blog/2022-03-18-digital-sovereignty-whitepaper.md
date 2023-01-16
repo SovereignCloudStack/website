@@ -10,6 +10,9 @@ avatar:
   - "kgarloff.jpg"
   - "fkr.jpg"
 image: "blog/sea.jpg"
+about:
+  - "eitrich"
+  - "fkr"
 ---
 _(This text has initially been published in [The Cloud Report, issue 01/2022](https://the-report.cloud/downloads). We thank you for this opportunity!)_
 

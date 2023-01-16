@@ -5,6 +5,8 @@ author:
   - "Felix Kronlage-Dammers"
 avatar:
   - "fkr.jpg"
+about:
+  - "fkr"
 ---
 
 After couple of years where [FOSDEM](https://www.fosdem.org) was a pure remote event (due to COVID-19 obviously)

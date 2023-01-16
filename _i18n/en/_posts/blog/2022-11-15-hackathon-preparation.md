@@ -6,6 +6,8 @@ author:
 avatar:
   - "eitrich.jpg"
 image: "blog/scs-hackathon-2022.png"
+about:
+  - "eitrich"
 ---
 
 <figure class="figure mx-auto d-block" style="width:100%">

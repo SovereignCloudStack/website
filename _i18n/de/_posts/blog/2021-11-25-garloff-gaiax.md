@@ -11,6 +11,8 @@ avatar:
   - "fkr.jpg"
   - "JS.png"
   - "kgarloff.jpg"
+about:
+  - "fkr"
 image: "blog/rowing.jpg"
 ---
 

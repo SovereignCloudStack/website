@@ -1,7 +1,9 @@
 ---
 author_slug: arequate
-lastname: Arvid
-firstname: Requate
+title: Arvid Requate
+layout: community
+lastname: Requate
+firstname: Arvid
 role: SCS IAM Team Lead
 company: Univention GmbH
 companylink: https://www.univention.de/ueber-uns/karriere/rolle-software-engineering/

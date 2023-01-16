@@ -9,6 +9,8 @@ avatar:
   - "tbeermann.jpeg"
   - "eitrich.jpg"
 image: "blog/github.jpg"
+about:
+  - "eitrich"
 ---
 
 Thanks to the preliminary work from our friends at [OTC](https://github.com/opentelekomcloud)

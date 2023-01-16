@@ -8,6 +8,8 @@ author:
 avatar:
   - "fkr.jpg"
   - "kgarloff.jpg"
+about:
+  - "fkr"
 ---
 
 ## Looking towards Release 4
