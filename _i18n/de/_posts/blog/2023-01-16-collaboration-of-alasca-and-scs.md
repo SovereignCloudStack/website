@@ -6,7 +6,7 @@ author:
   - "Marius Feldmann"
 avatar:
   - "kgarloff.jpg"
-  - "Marius_Feldmann-new-200x200.webp"
+  - "mfeldmann.jpg"
 image: "blog/fistbump.jpg"
 ---
 
