@@ -15,8 +15,8 @@ where a provider-focused ecosystem collaborates to create and operate cloud and
 container technology together in order to support their customers to achieve
 higher levels of Digital Sovereignty. Common certifiable standards, a fully
 open modular reference implementation and transparency and knowledge sharing
-for operational processes are main outcomes from this collaboration. SCS is
-hosted by the OSB Alliance e.V. and funded by the BMWK (German Ministry for
+for operational processes are main outcomes from this collaboration. SCS is a
+project by the OSB Alliance e.V. and funded by the BMWK (German Ministry for
 Economic Affairs and Climate Action).
 
 While the reference implementation of course instantiates and also inspires the
