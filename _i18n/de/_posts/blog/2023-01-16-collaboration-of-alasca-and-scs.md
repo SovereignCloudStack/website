@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Collaboration of ALASCA and SCS"
+title: "Zusammenarbeit von ALASCA und SCS"
 author:
   - "Kurt Garloff"
   - "Marius Feldmann"
