@@ -8,6 +8,8 @@ avatar:
   - "eitrich.jpg"
   - "employees/Hollery.jpg"
 image: "triathlon2022/banner.jpg"
+about:
+  - "eitrich"
 ---
 
 Community and friends,

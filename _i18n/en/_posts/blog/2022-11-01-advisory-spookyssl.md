@@ -10,6 +10,8 @@ avatar:
   - "kgarloff.jpg"
   - "CB.png"
   - "fkr.jpg"
+about:
+  - "fkr"
 image: "blog/spooky.png"
 ---
 

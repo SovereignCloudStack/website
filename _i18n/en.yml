@@ -128,3 +128,11 @@ map:
 calendar:
   edit: "edit"
   join: "Join meeting"
+about_author:
+  more: "Community profile &raquo;"
+  posts: "Blog posts"
+  badges: "Badges & Achievements"
+  single:
+    title: About the author
+  multiple:
+    title: About the authors

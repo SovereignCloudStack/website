@@ -6,6 +6,8 @@ author:
 avatar:
   - "eitrich.jpg"
 image: "blog/scs-hackathon-2022.png"
+about:
+  - "eitrich"
 ---
 <link rel="stylesheet" type="text/css" href="https://pretix.eu/SovereignCloudStack/hackathon-2022/widget/v1.css">
 <script type="text/javascript" src="https://pretix.eu/widget/v1.en.js" async></script>
