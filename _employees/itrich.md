@@ -12,6 +12,7 @@ twitter: https://twitter.com/EduardItrich
 linkedin: https://www.linkedin.com/in/eduard-itrich/
 github: https://github.com/itrich
 matrix: https://matrix.to/#/@itrich:matrix.org
+mastodon: https://hachyderm.io/@EduardItrich#
 mail: itrich@osb-alliance.com
 phone: +49-30-206539-204
 street: Pariser Platz 6a

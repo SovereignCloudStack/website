@@ -1,0 +1,35 @@
+{% if include.community_member.mail %}
+<div class="me-2 mb-2">
+    <a class="btn btn-mail" href="mailto:{{include.community_member.mail}}"><i class="fa fa-envelope fa-lg"></i></a>
+</div>
+{% endif %}
+{% if include.community_member.website %}
+<div class="me-2 mb-2">
+    <a class="btn btn-web" target="_blank" href="{{include.community_member.website}}"><i class="fa fa-globe fa-lg"></i></a>
+</div>
+{% endif %}
+{% if include.community_member.twitter %}
+<div class="me-2 mb-2">
+    <a class="btn btn-twitter" target="_blank" href="{{include.community_member.twitter}}"><i class="fa fa-twitter fa-lg"></i></a>
+</div>
+{% endif %}
+{% if include.community_member.mastodon %}
+<div class="me-2 mb-2">
+    <a class="btn btn-mastodon" target="_blank" href="{{include.community_member.mastodon}}"><i class="fa fa-mastodon fa-lg"></i></a>
+</div>
+{% endif %}
+{% if include.community_member.linkedin %}
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="{{include.community_member.linkedin}}"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+{% endif %}
+{% if include.community_member.github %}
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="{{include.community_member.github}}"><i class="fa fa-github fa-lg"></i></a>
+</div>
+{% endif %}
+{% if include.community_member.matrix %}
+<div class="me-2 mb-2">
+    <a class="btn btn-matrix" target="_blank" href="{{include.community_member.matrix}}"><i class="fa fa-matrix-org fa-lg"></i></a>
+</div>
+{% endif %}

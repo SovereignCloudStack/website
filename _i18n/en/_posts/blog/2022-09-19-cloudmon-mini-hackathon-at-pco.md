@@ -5,6 +5,8 @@ author:
   - "Felix Kronlage-Dammers"
 avatar:
   - "fkr.jpg"
+about:
+  - "fkr"
 image: "blog/ecos.jpg"
 ---
 

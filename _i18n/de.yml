@@ -127,3 +127,11 @@ map:
 calendar:
   edit: "Bearbeiten"
   join: "Meeting betreten"
+about_author:
+  more: "Community-Profil &raquo;"
+  posts: "Blogposts"
+  badges: "Badges & Achievements"
+  single:
+    title: Über den Autor
+  multiple:
+    title: Über die Autoren

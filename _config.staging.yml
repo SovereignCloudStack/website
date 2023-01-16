@@ -59,6 +59,9 @@ collections:
     output: true
     sort_by: number
     permalink: /:collection/:name
+  community:
+    output: true
+    permalink: /:collection/:name
 
 assets:
   destination: "/assets"

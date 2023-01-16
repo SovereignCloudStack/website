@@ -8,11 +8,13 @@ avatar:
   - "eitrich.jpg"
   - "employees/Hollery.jpg"
 image: "triathlon2022/banner.jpg"
+about:
+  - "eitrich"
 ---
 
 Community and friends,
 
-thank you for your active participation in our [SCS Community Triathlon 2022]({% post_url 2022-08-18-community-triathlon-2022 %}),
+thank you for your active participation in our [SCS Community Triathlon 2022]({% post_url blog/2022-08-18-community-triathlon-2022 %}),
 we are still overwhelmed by your enthusiasm and the great feedback. You are awesome!
 
 **So, let's hear it our for our winners and participants!** 🥁  
