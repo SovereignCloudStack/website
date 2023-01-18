@@ -173,3 +173,10 @@
   location:
     latitude: 52.46096
     longitude: 13.51292
+- name: "dNation"
+  image: "logo-dnation.png"
+  avatar: "avatar-dnation.png"
+  link: "https://dnation.cloud/"
+  location:
+    latitude: 48.28427
+    longitude: 17.27119
