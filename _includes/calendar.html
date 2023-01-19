@@ -25,6 +25,7 @@
       },
       height: 'auto',
       expandRows: false,
+      eventTimeFormat: { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' },
       eventClick: function(info) {
         var eventModal = new bootstrap.Modal(document.getElementById('eventModal'), {
           keyboard: true,
