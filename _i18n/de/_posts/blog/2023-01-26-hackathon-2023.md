@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2022-11-15-hackathon-preparation.md
