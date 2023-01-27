@@ -1,92 +1,68 @@
 ---
 layout: post
-title: "Sovereign Cloud Stack Community Hackathon: Die Community schlägt zurück"
+title: "See you in Cologne | Heads up for our first SCS Community Hackathon"
 author:
   - "Eduard Itrich"
 avatar:
   - "eitrich.jpg"
-image: "blog/scs-hackathon-2023.png"
+image: "blog/scs-hackathon-2022.png"
 about:
   - "eitrich"
 ---
-<link rel="stylesheet" type="text/css" href="https://events.scs.community/hackathon-2023/widget/v1.css">
-<script type="text/javascript" src="https://pretix.eu/widget/v1.en.js" async></script>
-<style>
-.pretix-widget button {
-  border-color: #50c3a5;
-  background-color: #50c3a5;
-}
-.pretix-widget a {
-  color: #50c3a5;
-}
-.pretix-widget input[type="checkbox"] {
-  accent-color: #50c3a5;
-}
-</style>
 
 <figure class="figure mx-auto d-block" style="width:100%">
-    {% asset 'blog/scs-hackathon-2023.png' class="figure-img w-100" %}
+    {% asset 'blog/scs-hackathon-2022.png' class="figure-img w-100" %}
 </figure>
 
 Community,
 
-nach einem erfolgreichen [ersten Sovereign Cloud Stack Community Hackathon in Köln]({% post_url blog/2022-11-25-hackathon-wrapup %}), möchten wir euch ganz herzlich zu unserem zweiten offiziellen Hackathon in Nürnberg einladen. Mit großer Unterstützung der [noris network AG](https://www.noris.de/), der [Wavecon GmbH](https://www.wavecon.de/) sowie der [OSISM GmbH](https://osism.tech) geht es damit in die Fortsetzung dieses erfolgreichen Formats!
+with only one week left until we finally meet in Cologne for our first SCS Community Hackathon, I want to highlight some of the organizational details for this event.
 
-## Datum und Uhrzeit
+## Date/Time
 
-Der zweite Community Hackathon findet am **Donnerstag, den 02.03.2023 von 10:00 bis 22:00 Uhr** statt. 
+The Community Hackathon will take place on Tuesday, 2022-11-22 from 13:00 CET until 21:00 CET.
 
-## Anreise
+## Venue
 
-Wir treffen uns in den Räumlichkeiten der [noris network AG]((https://www.noris.de/)): **Thomas-Mann-Straße 16-20, 90471 Nürnberg**.
+The location is kindly provided by [PlusServer](https://www.plusserver.com/). We'll meet at Welserstraße 14, 51149 Köln (https://what3words.com/nearing.after.topic). The venue will be accessible from 09:00 CET. We have no hard limit for the end of the Hackathon, but we'd like to spent an unofficial evening with you downtown and end the day together in a bar.
 
-<figure class="figure mx-auto d-block" style="width:70%">
-  <a href="{% asset "blog/directions-noris.png" @path %}">
-    {% asset 'blog/directions-noris.png' class="figure-img w-100" %}
-  </a>
-</figure>
+## Agenda
 
-**Da der Zutritt zum Gebäude nur nach vorherigem Check-In möglich ist, empfehlen wir spätestens um 9:30 Uhr vor Ort zu sein. Bitte bring hierzu einen gültigen Personalausweis oder Reisepass mit!** Um die Registrierung vor Ort zu beschleunigen, werden wir mit deinen Anmeldedaten zu diesem Event die entsprechenden Formulare vorbereiten. 
+> Every contribution is welcome and worth bringing in. Just like a puzzle - all the little pieces make up a great picture.
 
-## Übernachtung
+The Community Hackathon is what you make it. Please contribute to our open agenda and invite your friends to tackle a specific topic. Don't hesitate to propose a working stream and raise your voice for the domain that matters to you. You want to gather for fostering our knowledge base and peer-think about how to maintain a good documentation? Propose it for our agenda! You're interested in creating a strong ecosystem around SCS? Draft a working session and get us around the table!
 
-Solltest du vor oder nach dem Hackathon noch gemeinsam mit uns frühstücken beziehungsweise das Nachtleben von Nürnberg erkunden wollen, empfehlen wir das [Motel One am Hauptbahnhof](https://www.motel-one.com/en/hotels/nuremberg/hotel-nuremberg-hauptbahnhof/).
+Feel free to add your proposal to [this pad](https://input.osb-alliance.de/p/2022-11-scs-hackathon-ccaa) and don't hesitate to reach out [on Matrix](https://matrix.to/#/#scs-hackathons:matrix.org) or via this mailing list in order to find fellows.
 
-## Programm und Call for Sessions
+Don't worry. You don't have to ultimately commit to one working session. We will follow the Law of Two Feet that states:
 
-Der Tag beginnt mit einer kurzen Führung durch das [Rechenzentrum Nürnberg Süd](https://www.noris.de/rechenzentren/rechenzentrum-nuernberg-sued/), zu welcher uns die [noris network AG](https://www.noris.de/) einlädt. Im Anschluss werden wir direkt in die Arbeitsphase wechseln. Wie auch im vergangenen Jahr verfolgen wir den [Open Space Ansatz](https://de.wikipedia.org/wiki/Open_Space) und ermutigen zum Gesetz der zwei Füße:
+> If, during the course of the gathering, any person finds themselves in a situation where they are neither learning nor contributing, they can go to some more productive place.
 
-> Sei immer am richtigen Ort. Solltest du in einer Gruppe nichts mehr lernen oder beitragen können, verabschiede dich höflich und laufe weiter. Dies ist nicht nur ein akzeptiertes, sondern ein erwünschtes Verhalten.
+The basic time frame of the day will be as follows:
 
-**Den Inhalt des Tages bestimmst du!** An welchen Themen oder Herausforderungen möchtgest du gerne mit anderen Communitymitgliedern arbeiten? Lass es uns wissen, damit wir deinen Vorschlag am **16.02.2023** bekanntgeben können!
+* **13:15 CET**: Opening by Stephan and Eduard
+* **15:00 CET**: Guided data center tour group 1
+* **16:00 CET**: Guided data center tour group 2
+* **17:00 CET**: Pizza Break 🍕
+* **21:00 CET**: Closing and moving downtown together
 
-<div class="d-grid gap-2 col-4 mx-auto my-4">
-<a href="https://scs.sovereignit.de/nextcloud/apps/forms/gNsJDKeXDTGEtcjt" class="btn btn-secondary btn-lg">Session vorschlagen</a>
-</div>
+## Health and safety
 
-## Verpflegung
+Please test yourself before you join us during the Hackathon. We will not control the test results, but trust in your awareness to create a safe event for our community. Wearing masks during the event is optional. **However, during the guided data center tour wearing a FFP2 mask is mandatory.** We will provide test kits and FFP2 masks at the venue in case you forgot something to bring along.
 
-Zwischen 17:00 und 18:00 Uhr werden wir eine längere Pause einlegen, bei der es auch Pizza geben wird. Auf ein veganes und vegetarisches Angebot werden wir achten. Solltest du eine Unverträglichkeit haben, lass uns dies bitte vorab wissen!
+## Virtual attendance
 
-## Datenschutz und Hinweise
+We are aware that not everyone is able or wants to attend this physical meetup. If you still want to participate in the Community Hackathon, you are welcome to join our channel [on Matrix](https://matrix.to/#/#scs-hackathons:matrix.org). Please contact the working stream organizers directly if you want to participate in one of the proposed sessions. We will surely find a way to onboard you to the hack'n'fun.
 
-Die Sicherheitsanforderungen des Standorts verlangen die persönliche Registrierung durch einen gültigen Personalausweis oder Reisepass. Die noris Network AG wird diese für die Dauer der Aufbewahrungsfrist speichern und im Falle einer Auditierung verarbeiten müssen.
+## Food and beverages
 
-Darüber hinaus werden wir im Verlauf des Tages Fotos oder Videos von dem Event machen. Solltest du damit nicht einverstanden sein, weise uns bitte während deines Check-Ins darauf hin. Du erhältst in diesem Fall einen "No camera" Aufkleber von uns, den du bitte sichtbar auf deinem Namensschild anbringst. Alle Fotos werden vor Veröffentlichung in einem geschützten Bereich bereitgestellt, so dass ihr in jedem Fall euer Veto geben könnt.
+We thank [PlusServer](https://www.plusserver.com/), who will provide us with enough food and drinks on this day. We'll definitely make sure that no one must leave hungry. 😉
 
-## Registrierung
+## Social Media
 
-<pretix-widget event="https://events.scs.community/hackathon-2023/"></pretix-widget>
-<noscript>
-   <div class="pretix-widget">
-        <div class="pretix-widget-info-message">
-            JavaScript is disabled in your browser. To access our ticket shop without JavaScript, please <a target="_blank" rel="noopener" href="https://events.scs.community/hackathon-2023/">click here</a>.
-        </div>
-    </div>
-</noscript>
+Please help us to spread the word about this great event and make the public aware of the awesome momentum within our community. You can use the above banner for your social media accounts or posts to raise awareness about  your participation among your audience. Don't forget to tag your posts with #SCSCH2022 and leave a mention for [@Sovereign Cloud Stack](https://www.linkedin.com/showcase/sovereigncloudstack), [@sovereigncloudstack@fosstodon.org](https://fosstodon.org/@sovereigncloudstack), and/or [@scs_osballiance](https://twitter.com/scs_osballiance). Thank you!
 
 
-## Kontakt
+Don't hesitate to reach out if you should have any other questions or feedback. We are already looking forward to welcoming you next week!
 
-Solltest du noch Fragen zu unserem zweiten Community Hackathon haben, lass es uns wissen! [Eduard](https://scs.community/itrich) und [Bianca](https://scs.community/hollery) helfen dir gerne weiter!
-
+See you in Cologne!
