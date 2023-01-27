@@ -13,6 +13,7 @@ avatar:
   - "kgarloff.jpg"
 about:
   - "fkr"
+  - "garloff"
 image: "blog/rowing.jpg"
 ---
 {% asset 'blog/rowing.jpg' vips:format='.webp' style="width:100%; max-height: 450px; object-fit: cover;" %}

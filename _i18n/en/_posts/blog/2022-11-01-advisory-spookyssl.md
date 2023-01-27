@@ -11,6 +11,7 @@ avatar:
   - "CB.png"
   - "fkr.jpg"
 about:
+  - "garloff"
   - "fkr"
 image: "blog/spooky.png"
 ---

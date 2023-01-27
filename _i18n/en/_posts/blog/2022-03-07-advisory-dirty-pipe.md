@@ -11,6 +11,7 @@ avatar:
   - "kgarloff.jpg"
   - "fkr.jpg"
 about:
+  - "garloff"
   - "fkr"
 image: "blog/pipe.jpg"
 ---
