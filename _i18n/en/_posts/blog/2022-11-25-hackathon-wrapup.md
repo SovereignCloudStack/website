@@ -29,7 +29,7 @@ and we're more than happy to have you in our community!
 For the first Community Hackathon, we decided to adopt an open space approach.
 You all contributed excellent proposals – both for engineers as well as non-engineers.
 
-In changing groups, the following topics have been adressed:
+In changing groups, the following topics have been addressed:
 
 - Cloud-in-a-box
 - Documentation
