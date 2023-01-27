@@ -5,6 +5,8 @@ author:
   - "Kurt Garloff"
 avatar:
   - "kgarloff.jpg"
+about:
+  - "garloff"
 ---
 
 SCS is a collaboration of many companies from the industrial and ICT sector as well

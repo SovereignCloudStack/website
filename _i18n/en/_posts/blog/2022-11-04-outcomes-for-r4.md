@@ -10,6 +10,7 @@ avatar:
   - "kgarloff.jpg"
 about:
   - "fkr"
+  - "garloff"
 ---
 
 ## Looking towards Release 4

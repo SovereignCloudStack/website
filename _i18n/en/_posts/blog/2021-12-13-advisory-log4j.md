@@ -11,6 +11,7 @@ avatar:
   - "kgarloff.jpg"
   - "fkr.jpg"
 about:
+  - "garloff"
   - "fkr"
 ---
 ## The vulnerability

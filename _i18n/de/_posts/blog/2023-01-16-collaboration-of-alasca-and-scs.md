@@ -8,6 +8,8 @@ avatar:
   - "kgarloff.jpg"
   - "mfeldmann.jpg"
 image: "blog/fistbump.jpg"
+about:
+  - "garloff"
 ---
 
 Das Sovereign Cloud Stack (SCS) Projekt ist eine Plattform für offene
