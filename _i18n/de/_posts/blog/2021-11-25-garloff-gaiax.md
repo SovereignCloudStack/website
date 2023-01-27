@@ -13,6 +13,7 @@ avatar:
   - "kgarloff.jpg"
 about:
   - "fkr"
+  - "garloff"
 image: "blog/rowing.jpg"
 ---
 

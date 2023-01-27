@@ -5,6 +5,8 @@ author:
   - "Kurt Garloff"
 avatar: 
   - "kgarloff.jpg"
+about:
+  - "garloff"
 ---
 
 SCS arbeitet als Arbeitspaket in GAIA-X erfolgreich gemeinsam mit
