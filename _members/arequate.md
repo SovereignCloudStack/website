@@ -7,6 +7,7 @@ firstname: Arvid
 role: SCS IAM Team Lead
 company: Univention GmbH
 companylink: https://www.univention.de/ueber-uns/karriere/rolle-software-engineering/
+holopin_username: reqa
 avatar: arequate.jpg
 twitter: https://twitter.com/vidareq
 github: https://github.com/reqa
