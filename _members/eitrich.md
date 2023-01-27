@@ -1,7 +1,7 @@
 ---
 author_slug: eitrich
 redirect_from:
-   - /community/itrich
+   - /members/itrich
 title: Eduard Itrich
 layout: community
 lastname: Itrich

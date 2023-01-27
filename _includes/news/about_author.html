@@ -8,7 +8,7 @@
 </h2>
 {% endif %}
 {% for author_slug in post.about %}
-{% assign author = site.community | where:"author_slug", author_slug | first %}
+{% assign author = site.members | where:"author_slug", author_slug | first %}
 {% if author %}
 <div class="d-flex flex-md-row flex-column align-items-center mb-5">
     <div class="me-4 d-flex align-items-center">
@@ -26,7 +26,7 @@
         <div class="mt-2">{{author.bio}}</div>
         <div class="mt-2 d-flex flex-row flex-wrap">
           {% include community/social.html community_member=author %}
-          <div class="ms-md-auto pe-3"><a href="{{ site.baseurl }}/community/{{ author_slug }}" class="btn btn-outline-primary" role="button">{% t about_author.more %}</a></div>
+          <div class="ms-md-auto pe-3"><a href="{{ site.baseurl }}/members/{{ author_slug }}" class="btn btn-outline-primary" role="button">{% t about_author.more %}</a></div>
       </div>
     </div>
 </div>
