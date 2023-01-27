@@ -1,5 +1,5 @@
 <div class="row mb-5">
-  {% assign sorted = site.posts | sort: 'date' | reverse %}
+  {% assign sorted = site.posts | where: "hide_on_carousel", nil | sort: 'date' | reverse %}
   <div id="newsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="1"></button>
