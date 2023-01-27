@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Brag with digital Swag and our new Community Member Profiles"
+title: "Brag with digital swag and our new Community Member Profiles"
 author:
   - "Eduard Itrich"
 avatar:
