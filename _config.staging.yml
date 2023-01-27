@@ -59,7 +59,7 @@ collections:
     output: true
     sort_by: number
     permalink: /:collection/:name
-  community:
+  members:
     output: true
     permalink: /:collection/:name
 
