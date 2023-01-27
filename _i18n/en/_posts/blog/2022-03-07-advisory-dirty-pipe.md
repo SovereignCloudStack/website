@@ -10,8 +10,6 @@ avatar:
   - "CB.png"
   - "kgarloff.jpg"
   - "fkr.jpg"
-about:
-  - "fkr"
 image: "blog/pipe.jpg"
 ---
 
