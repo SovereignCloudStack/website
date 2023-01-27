@@ -29,9 +29,9 @@ For instance, [Arvid](https://scs.community/members/arequate) from [Univention](
 Creating your individual profile is easy and straightforward. All you have to do is to open a pull request in our [website repository](https://github.com/SovereignCloudStack/website).
 
 <ol>
-<li>Create a YAML file under <code>_members</code> with your individual handle following this template.
+<li>Create a Markdown file under <code>_members</code> with your individual handle following this template.
 <div markdown=1>
-```yaml
+```markdown
 ---
 author_slug: jdoe
 title: Jane Doe
