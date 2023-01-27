@@ -3,23 +3,23 @@ layout: default
 ---
 {% assign community_member = page %}
 <div class="my-5">
-    <div class="d-flex flex-row mb-5">
-        <div class="mx-4 d-flex align-items-center">
-            <svg height="200" width="200">
-              {% assign id_round = 6 | random_hex_string %}
-              <mask id="{{id_round}}">
-                <circle cx="100" cy="100" r="100" fill="white"/>
-              </mask>
-              <image x="0" y="0" height="200" width="200" xlink:href="{% asset '{{community_member.avatar}}' @path vips:format='.webp' vips:resize='200x200' %}" mask="url(#{{id_round}})"></image>
-            </svg>
+    <div class="d-flex flex-md-row flex-column align-items-center mb-5">
+        <div class="me-4 d-flex align-items-center">
+          <svg height="200" width="200">
+            {% assign id_round = 6 | random_hex_string %}
+            <mask id="{{id_round}}">
+              <circle cx="100" cy="100" r="100" fill="white"/>
+            </mask>
+            <image x="0" y="0" height="200" width="200" xlink:href="{% asset '{{community_member.avatar}}' @path vips:format='.webp' vips:resize='200x200' %}" mask="url(#{{id_round}})"></image>
+          </svg>
         </div>
-        <div class="d-flex flex-column me-3">
-            <div class="mb-0"><b>{% if community_member.academic %}{{community_member.academic}} {% endif %}{{community_member.firstname}} {{community_member.lastname}}</b></div>
-            <div class="small text-muted mt-0">{{community_member.role}} @ <a href="{{community_member.companylink}}" target="_blank">{{community_member.company}}</a></div>
+        <div class="d-flex flex-column pe-3">
+            <div class="mb-0 text-center text-md-start"><b>{% if community_member.academic %}{{community_member.academic}} {% endif %}{{community_member.firstname}} {{community_member.lastname}}</b></div>
+            <div class="small text-muted mt-0 text-center text-md-start">{{community_member.role}} @ <a href="{{community_member.companylink}}" target="_blank">{{community_member.company}}</a></div>
             <div class="mt-2">{{community_member.bio}}</div>
-            <div class="mt-2 d-flex flex-row">
-                {% include community/social.html community_member=community_member %}
-            </div>
+            <div class="mt-2 d-flex flex-row flex-wrap">
+              {% include community/social.html community_member=community_member %}
+          </div>
         </div>
     </div>
     {% if community_member.holopin_username %}
