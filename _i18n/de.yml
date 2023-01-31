@@ -109,15 +109,15 @@ jobs:
   ma-dok:
     title: "Mitarbeiter:in (d/w/m) Dokumentation/Projektmanagement"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und unterstütze uns dabei die zentrale Entwicklungsarbeit zu orchestrieren sowie die Dokumentation der Vergabeverfahren aufzubauen."
-  monitoring-engineer:
-    title: "Cloud Monitoring & Test Engineer (d/w/m)"
-    short_description: "Diese Stellenanzeige wird demnächst veröffentlicht. Du möchtest nicht warten? Kontaktiere uns, wir freuen uns darauf dich kennenzulernen!"
   product-engineer:
     title: "Product Engineer (d/w/m)"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und leiste einen wichtigen Beitrag zur Schaffung von digitaler Souveränität."
-  po-standards:
-    title: "Product Owner Standards and Federation (d/w/m)"
-    short_description: "Diese Stellenanzeige wird demnächst veröffentlicht. Du möchtest nicht warten? Kontaktiere uns, wir freuen uns darauf dich kennenzulernen!"
+  sre:
+    title: "Site Reliability Engineer (d/w/m)"
+    short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und leiste einen wichtigen Beitrag zur Schaffung von digitaler Souveränität."
+  business-developer:
+    title: "Business Developer Cloud Computing (d/w/m)"
+    short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und leiste einen wichtigen Beitrag zur Schaffung von digitaler Souveränität."
   unknown:
     title: "Nichts passendes dabei?"
     short_description: "Wir suchen nach motivierten Menschen statt Lückenfüllern. Du hast Lust am Projekt mitzuwirken, kannst dich aber mit keiner der hier ausgeschriebenen Stellen identifizieren? Kontaktiere uns, wir freuen uns darauf dich kennenzulernen!"

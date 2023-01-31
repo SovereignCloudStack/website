@@ -1,5 +1,7 @@
 *Die Position soll zum nächstmöglichen Zeitpunkt besetzt werden.*
 
+## Über das Projekt
+
 Die Open Source Business Alliance – Bundesverband für digitale Souveränität e.V. (OSB Alliance) vertritt mehr als 200 Mitgliedsunternehmen der Open-Source-Wirtschaft, die in Deutschland
 gemeinsam jährlich mehr als 1,7 Milliarden Euro erwirtschaften. Zusammen mit wissenschaftlichen Einrichtungen und Anwenderorganisationen setzt sich der Verband dafür ein, die zentrale Bedeutung von Open-Source-Software und offenen Standards für eine digital souveräne Gesellschaft im öffentlichen Bewusstsein zu verankern. Die OSB Alliance betrachtet Open Source und offene Standards als zwingende Grundlagen für digitale Souveränität, Flexibilität und Sicherheit im digitalen Wandel und damit als Antwort auf eine der größten Herausforderungen unserer Zeit.
 
@@ -14,11 +16,13 @@ SCS kann sowohl von Cloud-Service-Providern als auch von internen IT-Teams genut
 
 SCS trägt zu dem europäischen Vorhaben Gaia-X bei, indem es als Referenz für die Entwicklungs­arbeit dient und Implementierungen bietet, die Node-Provider als Ganzes oder in Teilen nutzen können, um eine föderierte, souveräne Infrastruktur zu schaffen, die die Basis für ein Ökosystem für souveräne Daten bildet.
 
-Als Product Engineer wirst Du
+## Über die Rolle
+
+**Als Product Engineer wirst Du**
 
 * einen wichtigen Beitrag zur Schaffung von digitaler Souveränität leisten, indem du mit uns sicherstellst,
-  - dass der Sovereign Cloud Stack marktgerecht ist,
-  - dass unsere Standardisierungen dazu führen, dass die Endnutzer einen größeren Nutzen aus Cloud Computing ziehen können,
+    - dass der Sovereign Cloud Stack marktgerecht ist,
+    - dass unsere Standardisierungen dazu führen, dass die Endnutzer einen größeren Nutzen aus Cloud Computing ziehen können,
 * die Betreuung von Partnern (Cloud-Service-Provider, Unternehmen, die SCS als Basis für ihre private Cloud einsetzen wollen, SCS-Integratoren, Ökosystem) aus Produktsicht übernehmen,
 * die Produktanforderungen unserer Partner verstehen,  
 * in gemeinsamer Arbeit mit den Product Ownern Hebel erkennen, um die Partner zu befähigen, ihren Kunden ein besseres Produkt liefern zu können,
@@ -28,7 +32,7 @@ Als Product Engineer wirst Du
 * interessierten Kontakten aus Wirtschaft, Forschung und dem öffentlichen Sektor einen Anschluss in die SCS Community bieten,
 * Auftragnehmer des SCS-Projekts steuern.
 
-Wir erwarten, dass Du
+**Wir erwarten, dass Du**
 
 * praktische Erfahrung mit Cloud-Computing-Plattformen (virtualisiert und/oder containerisiert) hast,
 * ein gutes Verständnis von modernenen Konzepten in Bezug auf die Architektur von Cloud-nativen Anwendungen hast,
@@ -45,8 +49,7 @@ Es wäre klasse und toll - jedoch nicht zwingend erforderlich -, wenn Du
 * es gewohnt bist, offen zu arbeiten, Deine laufende Arbeit mit einer breiten Community zu teilen, konstruktive Kritik zu akzeptieren und bereit bist, an der Definition und Verfeinerung des gewählten Ansatzes in Interaktion mit der Community zu arbeiten und einen (den sog. trägen) Konsens zu erzielen,
 * mit Open-Source-Entwicklungswerkzeugen und -Plattformen wie Git, GitHub und den damit verbundenen Arbeitsabläufen vertraut bist.
 
-
-Wir bieten
+**Wir bieten**
 
 * Arbeit in einer offenen und inspirierenden Umgebung, in der Du mit hochqualifizierten und engagierten Personen aus dem Projekt, von Partnern und den relevanten Open Source Communities weltweit zusammenarbeiten kannst,
 * die Möglichkeit, zu einem Projekt beizutragen, das maßgeblich für ein lebendiges Ökosystem von föderierten Infrastrukturanbietern in Europa und darüber hinaus sein will,
