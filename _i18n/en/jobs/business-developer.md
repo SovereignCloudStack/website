@@ -16,46 +16,33 @@ SCS contributes to the European Gaia-X project by serving as a reference for dev
 
 ## About the role
 
-**As a Product Engineer, you will**
+**As Business Developer Cloud Computing you will**
 
-* make a significant contribution to the creation of digital sovereignty by working with us to ensure
-    - that the Sovereign Cloud Stack is market-driven,
-    - that our standardisation work leads to greater end-user benefits from cloud computing,
-* manage partners (cloud service providers, companies that want to use SCS as the basis for their private cloud, SCS integrators, ecosystem) from a product perspective,
-* understand the product requirements of our partners,  
-* in joint work with product owners, identify levers to enable partners to deliver a better product to their customers,
-* recognise what lies behind stated solutions and the needs that the partners really have,
-* help our partners understand and grasp the Sovereign Cloud Stack in its entirety,
-* demonstrate what SCS enables, both on a strategic and technical level,
-* offer interested contacts from business, research and the public sector a connection into the SCS community,
-* manage contractors of the SCS project.
+* work in close cooperation with the SCS project management team on the development of new business models,
+* organise and document interviews with SCS stakeholders from cloud computing corporates to politics,
+* develop business plans and slide decks in coordination with the SCS project management,
+* organise and document workshops with SCS stakeholders.
 
-**We expect you to have**
+**We expect that you**
 
-* practical experience with cloud computing platforms (virtualised and/or containerised),
-* a good understanding of modern concepts related to cloud-native application architecture,
-* hands-on experience with open source operating systems and virtualisation,
-* experience in not only using such infrastructures, but also planning, deploying and operating them in a responsible position,
-* speak and write German fluently, as much of the work will be with German-speaking companies and public sector organisations, 
-* a sufficient understanding of the English language,
-* enjoy exchanges and contact with people. 
-
-**It would be great - but not mandatory - if you**
-
-* already have experience with OpenStack as well as with standard configuration management and monitoring tools,
-* are familiar with the relevant open source communities,
-* are used to working openly, sharing your ongoing work with a broad community, accepting constructive criticism, and are willing to work on defining and refining your chosen approach in interaction with the community and to reach (what is known as) „lazy consensus“,
-* are familiar with open source development tools and platforms such as Git, GitHub and the associated workflows.
+* have a university degree in business administration, business informatics or computer science (Bachelor or Master degree) or similar corresponding experience,
+* develop concepts, critically review them with the team and evaluate them externally,
+* have made first (or more) experiences in the area of cloud computing and are passionate about open source,
+* have initial experience in developing business plans and with start-ups,
+* have strong communication skills and moderation competence,
+* have a good command of the German language, both written and spoken, as many stakeholders come from the public sector of the DACH region,
+* enjoy working in a self-organized team and can present work results convincingly, both orally and in writing,
+* think out of the box and combine standardized with innovative concepts to create new business models,
+* are prepared to carry out practical projects in the areas of open source and cloud computing with commitment and responsibility as part of a team.
 
 **We offer**
 
-* a work in an open and inspiring environment where you can collaborate with highly skilled and dedicated people from the project, partners and relevant open source communities worldwide,
-* the opportunity to contribute to a project that aims to be instrumental to a vibrant ecosystem of federated infrastructure providers in Europe and beyond,
-* a key role in this project of distinction,
-* to be able to work on cutting-edge open source infrastructure technology,
-* a lot of flexibility in how you can organise your work and contribute to the internationally distributed team. This is a full-time position; however, part-time is not excluded.
+* working in an open and inspiring environment, interacting with highly-skilled and driven individuals from the project, the partners and the relevant open-source communities,
+* contributing to a project that will make a difference by being instrumental in a vivid ecosystem of federated infrastructure providers in Europe and beyond,
+* to be a key part of a new project,
+* working on cutting-edge open-source infrastructure technology, that will make the cloud world better,
+* a lot of flexibility in organising your work and contributing to the internationally distributed team. This is a full-time position; however, part-time is also possible.
 * visibility by presenting the project to stakeholders and the public at technology conferences,
-* reasonable compensation.
+* an adequate compensation package.
 
-Please contact Kurt Garloff, Dirk Loßack or Manuela Urban via
-[jobs[minus]scs[at]osb[minus]alliance[dot]com](mailto:jobs-scs@osb-alliance.com) if you are interested and want to know more details or send us your application with cover letter, CV and other relevant documents right away!
+Get in touch with Dirk Loßack or Manuela Urban via [jobs[minus]scs[at]osb[minus]alliance[dot]com](mailto:jobs-scs@osb-alliance.com) if you are interested and would like to know further details or send us your application right away with a letter of motivation, CV and other relevant documents.
