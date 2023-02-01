@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "FOSDEM 2023 - Sovereign Cloud DevRoom"
+image: "blog/fosdem2023.png"
 author:
   - "Felix Kronlage-Dammers"
 avatar:
