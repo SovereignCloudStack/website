@@ -37,7 +37,7 @@ There are numerous other devrooms that touch topics that are relevant to the SCS
 * [CI/CD](https://fosdem.org/2023/schedule/track/continuous_integration_and_continuous_deployment/)
 * [Software Bill of Materials](https://fosdem.org/2023/schedule/track/software_bill_of_materials/)
 
-If you now have the urge to develope [FOMO](https://en.wikipedia.org/wiki/Fear_of_missing_out), no worries: All the talks are recorded and available for later consumption!
+If you now have the urge to develop [FOMO](https://en.wikipedia.org/wiki/Fear_of_missing_out), no worries: All the talks will be recorded and available for later consumption!
 
 If you come to FOSDEM and want to meet for coffee, beer or food: be sure to reach out! Some of us will be heading to the 
 [OpenInfra Meetup](https://www.meetup.com/brussels-openinfra-meetup-group/events/290894971/) on Saturday evening, so if you don't have the time
