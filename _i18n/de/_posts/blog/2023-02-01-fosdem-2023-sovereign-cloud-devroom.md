@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2023-02-01-fosdem-2023-sovereign-cloud-devroom.md
