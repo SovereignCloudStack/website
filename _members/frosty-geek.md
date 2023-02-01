@@ -8,6 +8,7 @@ role: Cloud Architect
 company: PlusServer GmbH
 companylink: https://plusserver.com
 holopin_username: frostygeek
+website: https://frosty-geek.net
 linkedin: https://www.linkedin.com/in/ralf-heiringhoff/
 github: https://github.com/frosty-geek
 matrix: https://matrix.to/#/@frosty-geek:matrix.org
