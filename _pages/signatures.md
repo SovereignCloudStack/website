@@ -20,7 +20,7 @@ Sovereign Cloud Stack — standardized, built and operated by many
 Ein Projekt der Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 
 Tel.: {{employee.phone}}
-{%- if employee.matrix %}Matrix: @{{employee.matrix | split: '@' | last }}{% endif %}
+{% if employee.matrix %}Matrix: @{{employee.matrix | split: '@' | last }}{% endif %}
 {{employee.mail}}
 
 https://scs.community
@@ -52,7 +52,7 @@ Registernummer: VR 39675 B
 Sovereign Cloud Stack — standardized, built and operated by many
 Ein Projekt der Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 
-Tel.: {{employee.phone}} {%- if employee.matrix %}| Matrix: @{{employee.matrix | split: '@' | last }}{% endif %} | {{employee.mail}}
+Tel.: {{employee.phone}} {% if employee.matrix %}| Matrix: @{{employee.matrix | split: '@' | last }}{% endif %} | {{employee.mail}}
 ```
 <!-- End Short Signature {{employee.firstname}} -->
 <br /><br />
