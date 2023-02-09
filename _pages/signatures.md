@@ -11,7 +11,6 @@ permalink: /signatures
 ## {{employee.firstname}}:
 ### Langform
 <!-- Begin Short Signature {{employee.firstname}} -->
-```
 --
 {% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}
 {{employee.role}}
@@ -40,11 +39,11 @@ Ehrenvorsitzender: Dr. Karl Heinz Strassemeyer
 
 Registergericht: Amtsgericht Charlottenburg
 Registernummer: VR 39675 B
-```
+
 <!-- End Short Signature {{employee.firstname}} -->
 ### Kurzform:
 <!-- Begin Short Signature {{employee.firstname}} -->
-```
+
 --
 {% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}
 {{employee.role}}
@@ -53,7 +52,7 @@ Sovereign Cloud Stack — standardized, built and operated by many
 Ein Projekt der Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 
 Tel.: {{employee.phone}} {% if employee.matrix %}| Matrix: @{{employee.matrix | split: '@' | last }}{% endif %} | {{employee.mail}}
-```
+
 <!-- End Short Signature {{employee.firstname}} -->
 <br /><br />
 {% endfor %}
