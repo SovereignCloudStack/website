@@ -10,7 +10,7 @@ permalink: /signatures
 {% for employee in site.employees %}
 ## {{employee.firstname}}:
 ### Langform
-<!-- Begin Short Signature {{employee.firstname}} -->
+<!-- Begin Long Signature {{employee.firstname}} -->
 \-\-<br />
 {% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}<br />
 {{employee.role}}<br />
@@ -40,7 +40,7 @@ Ehrenvorsitzender: Dr. Karl Heinz Strassemeyer<br />
 Registergericht: Amtsgericht Charlottenburg<br />
 Registernummer: VR 39675 B<br />
 
-<!-- End Short Signature {{employee.firstname}} -->
+<!-- End Long Signature {{employee.firstname}} -->
 ### Kurzform:
 <!-- Begin Short Signature {{employee.firstname}} -->
 
