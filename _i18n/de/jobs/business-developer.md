@@ -26,14 +26,14 @@ SCS trägt zu dem europäischen Vorhaben Gaia-X bei, indem es als Referenz für 
 **Wir erwarten, dass Du**
       
 * ein abgeschlossenes Hochschulstudium der Betriebswirtschaftslehre, Wirtschaftsinformatik oder Informatik (Bachelor oder Master) oder gleichwertige Fähigkeiten und Erfahrungen hast,
-* Konzepte entwickeln, diese im Team kritisch prüfen und extern evaluieren,
-* erste (oder mehr) Erfahrungen im Bereich Cloud Computing gemacht haben und sich für Open Source begeistern können,
-* erste Erfahrungen in der Entwicklung von Businessplänen und mit Start-Ups aufweisen,
-* über Kommunikationsstärke und Moderationskompetenz verfügen,
-* gute Deutschkenntnisse in Wort und Schrift besitzen, da viele Stakeholder aus dem öffentlichen Sektor der DACH-Region kommen,
-* gerne in einem selbstorganisierten Team arbeiten und Arbeitsergebnisse sowohl mündlich als auch schriftlich überzeugend präsentieren können,
-* out of the box denken und standardisierte Konzepte mit innovativen kombinieren, um neue Geschäftsmodelle zu schaffen,
-* bereit sind, praxisnahe Projekte in den Bereichen Open Source und Cloud Computing engagiert und eigenverantwortlich im Team durchzuführen.
+* Konzepte entwickelst, diese im Team kritisch prüfst und extern evaluierst,
+* erste (oder mehr) Erfahrungen im Bereich Cloud Computing gemacht hast und dich für Open Source begeistern kannst,
+* erste Erfahrungen in der Entwicklung von Businessplänen und mit Start-Ups aufweist,
+* über Kommunikationsstärke und Moderationskompetenz verfügst,
+* gute Deutschkenntnisse in Wort und Schrift besitzt, da viele Stakeholder aus dem öffentlichen Sektor der DACH-Region kommen,
+* gerne in einem selbstorganisierten Team arbeitest und Arbeitsergebnisse sowohl mündlich als auch schriftlich überzeugend präsentieren kannst,
+* out of the box denkst und standardisierte Konzepte mit innovativen kombinierst, um neue Geschäftsmodelle zu schaffen,
+* bereit bist, praxisnahe Projekte in den Bereichen Open Source und Cloud Computing engagiert und eigenverantwortlich im Team durchzuführen.
 
 **Wir bieten**
       
