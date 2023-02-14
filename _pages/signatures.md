@@ -30,7 +30,7 @@ Pariser Platz 6a, 10117 Berlin<br />
 <br />
 Vorstandsvorsitzender: Peter H. Ganten, Univention GmbH<br />
 Stellvertretende Vorsitzende:<br />
-Anja Stock, SUSE Software Solutions Germany GmbH<br />
+Anja Stock<br />
 Hong Phuc Dang<br />
 Timo Levi, Deutsche Telekom AG<br />
 Finanzvorstand: Diego Calvo de Nó, Proventa AG<br />
