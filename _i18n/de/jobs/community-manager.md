@@ -1,79 +1,45 @@
-The Sovereign Cloud Stack (SCS) Project is looking for a
-# SCS Community Manager
+*Die Position soll zum nächstmöglichen Zeitpunkt besetzt werden.*
 
-We aim to fill this position by Jul 2021.
+## Über das Projekt
 
-The Project is driven by a small team in the
-[OSB Alliance](https://osb-alliance.com) with
-multi-year funding from the German Ministry for Economy and Energy (BMWi).
-This job offering is for hiring into this team. In addition to this
-team there are numerous engineers from various companies contributing
-to the project -- some of them paid through the project funding,
-some of them because their employer is interested in making this
-project successful.
+Die Open Source Business Alliance - Bundesverband für digitale Souveränität e.V. (OSB Alliance) vertritt mehr als 200 Mitgliedsunternehmen der Open-Source-Wirtschaft, die in Deutsch­land gemeinsam jährlich mehr als 1,7 Milliarden Euro erwirtschaften. Zusammen mit wissenschaftlichen Einrichtungen und Anwenderorganisationen setzt sich der Verband dafür ein, die zentrale Bedeutung von Open-Source-Software und offenen Standards für eine digital souveräne Gesellschaft im öffentlichen Bewusstsein zu verankern. Die OSB Alliance betrachtet Open Source und offene Standards als zwingende Grundlagen für digitale Souveränität, Flexibilität und Sicherheit im digitalen Wandel und damit als Antwort auf eine der größten Herausforderungen unserer Zeit.
 
-The Sovereign Cloud Stack (SCS) Project is aiming to define and
-implement a complete, modular, secure, open-source software stack. It
-covers software-defined storage and networking, operations tooling for
-automated deployment, logging, monitoring, alerting, trending,
-identity and authorization management, an Infrastructure-as-a-Service
-layer, as well as Container(Platform)-as-a-Service layer. It allows
-users (development teams) to create and control their own kubernetes
-cluster through standardized APIs and delivers standard building
-blocks used to construct and manage container applications. This
-stack fulfills high security standards and comes with tooling and
-documentation that reduces the amount of specialized expertise
-required to run complex cloud and container infrastructure. SCS can
-be used by cloud service providers and internal IT teams alike and it
-can be deployed as a whole or by just cherry-picking needed
-components from it. The end result can be subjected to a
-certification process, ensuring strict compatibility with other SCS
-based platforms, thus building a network of federatable compatible
-clouds.
+Mit dem Projekt Sovereign Cloud Stack (SCS) trägt die OSB Alliance zur Verwirklichung der Ziele der ”Digitalstrategie Deutschland” der Bundesregierung und des europäischen Vorhabens Gaia-X bei, indem es eine offene Cloud-Infrastruktur der nächsten Generation entwickelt.
 
-The SCS project is contributing to the pan-european GAIA-X effort,
-serving as reference for development work and enhancing
-it with an implementation that node-providers can leverage as a whole
-or in parts to deliver federated sovereign infrastructure, underpinning
-a sovereign data ecosystem.
+Das Projekt wird von einem kleinen Team in der OSB Alliance mit mehrjähriger Förderung durch das Bundesministerium für Wirtschaft und Klimaschutz (BMWK) vorangetrieben. Die ausgeschriebene Position gehört zu diesem zentralen Team. Zusätzlich zu diesem Team gibt es zahlreiche Entwickler:innen aus verschiedenen Unternehmen und Institutionen Europas, die zu SCS beitragen – einige von ihnen werden durch das Projekt finanziert, andere, weil ihre Arbeitgeber:innen daran interessiert sind, SCS erfolgreich zu machen.
 
-In this role, you will
+Das Projekt SCS zielt darauf ab, einen vollständigen, modularen, sicheren und quelloffenen Software-Stack und entsprechende offene Standards zu definieren und zu implementieren. Der Stack umfasst Software-definierten Speicher und Netzwerktechnologie, Betriebswerkzeuge für die automatisierte Bereitstellung, Protokollierung, Überwachung, Alarmierung, Trendanalyse, Identitäts- und Berechtigungsmanagement, eine Infrastructure-as-a-Service-Schicht sowie eine Container(Platform)-as-a-Service-Schicht. Der Stack ermöglicht es Anwendern (Entwicklungsteams), ihren eigenen Kubernetes-Cluster über standardisierte APIs zu erstellen und zu steuern und liefert Standardbausteine, die für den Aufbau und die Verwaltung von Container-Anwendungen verwendet werden können. Der Stack erfüllt hohe Sicherheitsstandards und wird mit Werkzeugen und Dokumentation geliefert, die den Bedarf an spezialisiertem Fachwissen für den Betrieb komplexer Cloud- und Container-Infrastrukturen reduzieren. Die systematische, gemeinschaftliche Entwicklung, Dokumentation und offene Bereitstellung von Betriebswissen (“Open Operations”) ist ein wesentlicher Baustein, der den Betrieb komplexer Cloud-Infrastrukturen auf höchstem Niveau vereinfachen soll.
 
-* be part of a small central team that orchestrates the efforts to define, 
-	implement and validate (CI/CD) a stack of open source software
-* orchestrate a cross-cultural and cross-company team of engineers that
-	contribute to the effort
-* work intensely with these communities to understand their needs
-	and get their input and contribution to the project organized
-* support the process of creating a culture that allows to work
-	effectively with open communities
-* help refine the vision, mission and strategy of the project
-* help organize community events
-* present the project, its goals and status at relevant media and
-	conferences.
+SCS kann sowohl von Cloud-Service-Providern als auch von internen IT-Teams genutzt  und als Ganzes oder je nach spezifischem Bedarf in Teilkomponenten eingesetzt werden. Die Komponenten können automatisiert zertifiziert werden, was die Kompatibilität mit anderen SCS-basierten Plattformen sicherstellt und so ein Netzwerk föderierbarer, kompatibler Clouds etabliert. 
 
- We expect that you
+SCS trägt zu dem europäischen Vorhaben Gaia-X bei, indem es als Referenz für die Entwicklungsarbeit dient und Implementierungen bietet, die Node-Provider als Ganzes oder in Teilen nutzen können, um eine föderierte, souveräne Infrastruktur zu schaffen, die die Basis für ein Ökosystem für souveräne Daten bildet.
 
-* have a good overview over open source system software technology
-* have been working in and with open source communities in the past
-* have a genuine interest to work with technology people and enjoy
-	 discussions with diverse communities
-* are used to very open and transparent communication
+## Über die Rolle
 
-We offer
+**Als Open-Source Community Manager wirst Du**
 
-* working in an open and inspiring environment, interacting with highly-skilled and 
-	driven individuals from the project, the partners and the relevant open-source communities
-* contributing to a project that will make a difference by being instrumental for
-	a vivid ecosystem of federated infrastructure providers in Europe and beyond
-* being a key part of a new project
-* working on cutting-edge open source infrastructure technology
-* getting visibility by presenting the project to stakeholders and to the public 
-	on technology conferences
-* an adequate compensation package
+* eine globale, unternehmensübergreifende Gemeinschaft von Entwickler:innen orchestrieren,
+* intensiv mit diesen Communities zusammenarbeiten, um ihre Bedürfnisse zu identifizieren und ihren Beitrag zum Projekt zu organisieren,
+* die Schaffung einer offenen, transparenten Kultur vorantreiben,
+* mit der Community auf verschiedenen Kanälen kommunizieren, damit die Mitglieder interessiert, informiert, involviert und inspiriert bleiben,
+* ein Fürsprecher und Gesicht für die Community sein, der die Entwickler:innen unterstützt und die Hürde für Beiträge zum Projekt senkt,
+* bei der Organisation von Community Events helfen.
 
-Get in touch with Kurt Garloff, Dirk Loßack or Manuela Urban via
-[jobs[minus]scs[at]osb[minus]alliance[dot]com](mailto:jobs-scs@osb-alliance.com)
-if you are interested and would like to know further details. We are
-looking forward to receive applications with application letter, CV and
-other relevant material from you!
+**Wir erwarten, dass Du**
+
+* für Open-Source und eine offene Zusammenarbeit brennst,
+* du in der Lage bist, zwischen den verschiedenen Interessengruppen zu vermitteln, um sie auf die gemeinsame Mission des Projekts einzuschwören,
+* über Kommunikationsstärke verfügst und mit Entwickler:innen auf Augenhöhe diskutieren kannst,
+* ein Verständnis für moderne Entwicklungsmethoden in Open-Source-Projekten besitzt.
+
+**Wir bieten**
+      
+* eine Tätigkeit in einer offenen und inspirierenden Umgebung, in der Du mit hochqualifizierten und engagierten Personen aus dem Projekt, von Partnern und den relevanten Open Source Communities weltweit zusammenarbeiten kannst,
+* die Möglichkeit, zu einem Projekt beizutragen, das maßgeblich für ein lebendiges Ökosystem von föderierten Infrastrukturanbietern in Europa und darüber hinaus sein will,
+* eine Schlüsselrolle in diesem Projekt von herausgehobener Bedeutung,
+* die Mitarbeit an hochmoderner Open-Source-Infrastrukturtechnologie,
+* viel Flexibilität, wie Du Deine Arbeit organisieren und zu dem international verteilten Team beitragen kannst. Es handelt sich um eine Vollzeittätigkeit; Teilzeit ist jedoch nicht ausgeschlossen.
+* Sichtbarkeit durch die Präsentation des Projekts vor Stakeholdern und der Öffentlichkeit auf Technologiekonferenzen,
+* eine angemessene Vergütung.
+      
+Setz Dich mit Dirk Loßack oder Manuela Urban via [jobs[minus]scs[at]osb[minus]alliance[dot]com](mailto:jobs-scs@osb-alliance.com) in Verbindung, wenn Du interessiert bist und weitere Details erfahren möchtest oder schick uns gleich Deine Bewerbung mit Anschreiben, Lebenslauf und weiteren relevanten Unterlagen!
