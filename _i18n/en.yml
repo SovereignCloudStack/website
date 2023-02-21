@@ -96,7 +96,7 @@ tenders:
 jobs:
   apply: "Apply now"
   community-manager:
-    title: "Community Manager (d/f/m)"
+    title: "Open Source Community Manager (d/f/m)"
     short_description: "Be part of a small central remote team at the Open Source Business Alliance and empower an active community of cloud operators, developers and users."
   po-container:
     title: "Product Owner Container Technologies (d/f/m)"
