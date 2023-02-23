@@ -28,7 +28,7 @@ auf unser
 [github SCS Docs](https://github.com/SovereignCloudStack/Docs/)
 Repository.
 
-Am 15.7.2021 haben wir [Release 0]({{ site.baseurl }}/2021/07/15/release0) freigegeben.
+Am 15.7.2021 haben wir [Release 0](https://github.com/SovereignCloudStack/release-notes/blob/main/Release0.md) freigegeben.
 
 Am 29.9.2021 haben wir [Release 1](https://github.com/SovereignCloudStack/release-notes/blob/main/Release1.md) freigegeben.
 
