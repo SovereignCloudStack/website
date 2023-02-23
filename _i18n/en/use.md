@@ -25,11 +25,11 @@ repository.
 
 On Jul 15, 2021 we have published [Release 0]({{ site.baseurl }}/2021/07/15/release0).
 
-On Sep 29, 2021 we have published [Release 1](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release1.md).
+On Sep 29, 2021 we have published [Release 1](https://github.com/SovereignCloudStack/release-notes/blob/main/Release1.md).
 
-On Mar 23, 2022 we have published [Release 2](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release2.md).
+On Mar 23, 2022 we have published [Release 2](https://github.com/SovereignCloudStack/release-notes/blob/main/Release2.md).
 
-On Sep 21, 2022 we have published [Release 3](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release3.md).
+On Sep 21, 2022 we have published [Release 3](https://github.com/SovereignCloudStack/release-notes/blob/main/Release3.md).
 
 ## SCS and OSISM
 
