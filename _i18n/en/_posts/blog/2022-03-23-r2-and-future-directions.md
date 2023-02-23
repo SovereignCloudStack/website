@@ -12,7 +12,7 @@ about:
 
 ## Welcome Release 2
 
-Today we're [releasing the R2](https://github.com/SovereignCloudStack/Docs/blob/main/Release-Notes/Release2.md) of the reference implementation of the Sovereign
+Today we're [releasing the R2](https://github.com/SovereignCloudStack/release-notes/blob/main/Release2.md) of the reference implementation of the Sovereign
 Cloud Stack. Our release announcement covers the many aspects of this release
 in detail. These range from our work on integrating the Kubernetes Cluster API,
 many improvements that focus on the operator experience up to items that help
