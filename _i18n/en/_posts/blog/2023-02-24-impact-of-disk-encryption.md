@@ -13,7 +13,7 @@ image: "blog/luks-performance-impact.png"
 ## Preface
 
 During some weekly meetings of SCS Team Container and also 
-SCS SIG Infrastructure the question emerged whether or not generally 
+SCS Team IaaS the question emerged whether or not generally 
 enabling full disk encryption on servers - especially related 
 to software defined storage like Ceph - should be the default.
 
