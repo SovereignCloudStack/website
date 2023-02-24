@@ -83,7 +83,11 @@ There is still one big problem: They all require an internet connection. But it'
 
 As you might have noticed, this is quite some stuff to do, so let's put it into one big image:
 
-{% asset 'blog/airgap-architecture.png' class="figure-img w-100" %}
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="{% asset "blog/airgap-architecture.png" @path %}">
+    {% asset 'blog/airgap-architecture.png' class="figure-img w-100" %}
+  </a>
+</figure>
 
 The grafic is devided into two major parts, let's start with the upper one: This is the mirror infrastructure of OSISM GmbH. We'll use this for our CI-CD tests and maybe also for public SCS installations in the future. The mirrors itself pull the assets from the upstream sources. You might have noticed, that there is also a component called "harbor". Harbor deals also with container images. We use it for our own build containers, therefore we'll split container images into just "pure" mirrors and the ones we build our own.
 
