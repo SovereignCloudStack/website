@@ -174,17 +174,17 @@ The specs of these are:
 ### Test system A: SAS HDD only
 
 <dl class="row">
-<dt class="col-sm-3">CPU</dt><dd class="col-sm-9">2 x Intel(R) Xeon(R) Gold 6151 CPU @ 3.00GHz</dd>
-<dt class="col-sm-3">RAM</dt><dd class="col-sm-9">512 GB</dd>
-<dt class="col-sm-3">Drives</dt><dd class="col-sm-9">24 x HGST HUC101818CS4200 10k RPM 1.8 TB</dd>
+<dt class="col-sm-1">CPU</dt><dd class="col-sm-11">2 x Intel(R) Xeon(R) Gold 6151 CPU @ 3.00GHz</dd>
+<dt class="col-sm-1">RAM</dt><dd class="col-sm-11">512 GB</dd>
+<dt class="col-sm-1">Drives</dt><dd class="col-sm-11">24 x HGST HUC101818CS4200 10k RPM 1.8 TB</dd>
 </dl>
 
 ### Test system B: NVME all flash only
 
 <dl class="row">
-<dt class="col-sm-3">CPU</dt><dd class="col-sm-9">1 x AMD EPYC 7402P</dd>
-<dt class="col-sm-3">RAM</dt><dd class="col-sm-9">512 GB (16 x 32 GB Samsung RDIMM DDR4-3200 CL22-22-22 reg ECC)</dd>
-<dt class="col-sm-3">Drives</dt><dd class="col-sm-9">3 x Samsung MZQLB3T8HALS-00007 SSD PM983 3.84TB U.2</dd>
+<dt class="col-sm-1">CPU</dt><dd class="col-sm-11">1 x AMD EPYC 7402P</dd>
+<dt class="col-sm-1">RAM</dt><dd class="col-sm-11">512 GB (16 x 32 GB Samsung RDIMM DDR4-3200 CL22-22-22 reg ECC)</dd>
+<dt class="col-sm-1">Drives</dt><dd class="col-sm-11">3 x Samsung MZQLB3T8HALS-00007 SSD PM983 3.84TB U.2</dd>
 </dl>
 
 ### Benchmark specifications
