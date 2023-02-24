@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2023-03-00-airgapped-scs.md
