@@ -6,7 +6,7 @@ author:
   - "Tim Beermann"
 avatar:
   - "tbeermann.jpeg"
-image: "airgap-takeoff.jpg"
+image: "blog/airgap-takeoff.jpg"
 about:
   - "tibeer"
 ---
