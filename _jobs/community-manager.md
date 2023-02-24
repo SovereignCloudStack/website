@@ -5,8 +5,9 @@ redirect_from:
    - /Jobs/JD-Community-Manager2.html
    
 short_description: jobs.community-manager.short_description
+image: "community-manager.jpg"
 location: "Remote / Berlin"
-published: false
+published: true
 ---
 
 {% tf jobs/community-manager.md %}
