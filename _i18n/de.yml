@@ -87,6 +87,7 @@ tenders:
     lot10: "SCS Zertifizierung"
     lot11: "Aufbau Serverhardware"
     lot13: "Nutzungsmessung auf IaaS-Ebene"
+    lot18: "Beschaffung Rechenzentrums-Hardware und Betrieb"
   filter:
     all: "Alle"
     open: "Laufend"

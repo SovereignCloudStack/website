@@ -26,7 +26,8 @@ redirect_from:
     <th scope="col">{% t tenders.contracting_portal %}</th>
   </thead>
   <tbody>
-    {% for lot in site.tenders %}
+    {% assign tenders = site.tenders | sort: "retry" | sort: "number" %}
+    {% for lot in tenders %}
     <tr class="lot {{lot.state}}" {% if lot.state == "open" %}style="background-color:rgba(255, 245, 157, 0.6);"{% endif %}>
       <td>{%- if lot.retry -%}—{%- else -%}{{lot.number}}{%- endif -%}</td>
       <td {% if lot.state == "open" %}style="font-weight: bold;"{% endif %}>{% t lot.title_slug %}</td>
