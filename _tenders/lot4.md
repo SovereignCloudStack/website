@@ -7,7 +7,10 @@ redirect_from:
    
 number: 4
 number_vh81: 4
-state: upcoming # open, upcoming or closed
+state: open # open, upcoming or closed
+start_date: 2023-02-28
+closing_date: 2023-03-22 T12:00+01:00
+contracting_portal: https://www.dtvp.de/Satellite/notice/CXP4YV76F1Y
 ---
 
 {% tf tenders/lot4.md %}

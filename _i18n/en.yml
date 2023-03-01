@@ -88,6 +88,7 @@ tenders:
     lot10: "SCS certification"
     lot11: "Server Hardware Installation"
     lot13: "Metering on IaaS layer"
+    lot18: "Procurement of Data Centre Hardware and Operation"
   filter:
     all: "All"
     open: "Open"
