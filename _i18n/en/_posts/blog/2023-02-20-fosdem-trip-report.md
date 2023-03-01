@@ -32,6 +32,18 @@ to get to know [Robert Holling](https://www.linkedin.com/feed/update/urn:li:acti
 presenting their [Open Campus Infrastructure powered by OpenStack](https://www.linkedin.com/feed/update/urn:li:activity:7029170851237257216/)
 at this years [OpenInfra Summit](https://openinfra.dev/summit/vancouver-2023) in Vancouver.
 
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+  {% for image in assets %}
+    {% if image[0] contains "images/blog/fosdem2023-travel" %}
+      <div>
+        <a href="{% asset '{{image[0]}}' @path %}">
+          {% asset '{{image[0]}}' class='card-img-top rounded' alt='FOSDEM 2023 Gallery' vips:resize='500x500' vips:crop='high' vips:format='.webp' %}
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
 FOSDEM, which is completely run by volunteers, does have an amazing video team. All of the talks are recorded
 as well as live streamed. Because of the recordings there is no reason to have the slightest fear of missing out.
 This is yet another reason for me to spend time in the hallway track as well. FOSDEM is one of those conferences
