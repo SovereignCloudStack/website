@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "FOSDEM 2023 - Sovereign Cloud DevRoom"
+title: "SCS Team FOSDEM 2023 - Travel Report"
 image: "blog/fosdem2023.png"
 author:
   - "Felix Kronlage-Dammers"
+  - "Max Wolfs"
 avatar:
   - "fkr.jpg"
+  - "mwolfs.jpg"
 about:
   - "fkr"
 ---
