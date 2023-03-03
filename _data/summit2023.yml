@@ -1,0 +1,64 @@
+speakers:
+  - name: John Doe
+    title: ACME Org.
+    avatar: summit2023/default-avatar.jpg
+  - name: John Doe
+    title: ACME Org.
+    avatar: summit2023/default-avatar.jpg
+  - name: John Doe
+    title: ACME Org.
+    avatar: summit2023/default-avatar.jpg
+  - name: John Doe
+    title: ACME Org.
+    avatar: summit2023/default-avatar.jpg
+  - name: John Doe
+    title: ACME Org.
+    avatar: summit2023/default-avatar.jpg
+  - name: John Doe
+    title: ACME Org.
+    avatar: summit2023/default-avatar.jpg
+  - name: John Doe
+    title: ACME Org.
+    avatar: summit2023/default-avatar.jpg
+  - name: John Doe
+    title: ACME Org.
+    avatar: summit2023/default-avatar.jpg
+  - name: John Doe
+    title: ACME Org.
+    avatar: summit2023/default-avatar.jpg
+  - name: John Doe
+    title: ACME Org.
+    avatar: summit2023/default-avatar.jpg
+  - name: John Doe
+    title: ACME Org.
+    avatar: summit2023/default-avatar.jpg
+
+sponsors:
+  gold:
+    - name: B1 Systems GmbH
+      logo: summit2023/partner/b1-systems.svg
+      url: https://www.b1-systems.de/
+    - name: plusserver GmbH
+      logo: summit2023/partner/plusserver_blue.svg
+      url: https://plusserver.com
+  silver:
+    - name: Dr. Daniel Gerber
+      logo: summit2023/partner/daniel-gerber.svg
+      padding: 2
+    - name: Cloud&Heat Technologies GmbH
+      logo: summit2023/partner/cloud-and-heat.svg
+      padding: 5
+      url: https://www.cloudandheat.com/
+      url: https://danielgerber.eu/
+    - name: Linuxhotel GmbH
+      logo: summit2023/partner/linuxhotel.svg
+      padding: 3
+      url: https://www.linuxhotel.de/
+    - name: SEP AG
+      logo: summit2023/partner/sep.svg
+      padding: 5
+      url: https://www.sep.de/
+    - name: Univention GmbH
+      logo: summit2023/partner/univention.svg
+      padding: 3
+      url: https://univention.com/
