@@ -232,30 +232,31 @@ the results should be useful nonetheless.
 ## fio benchmark script
 In case you want to run your own benchmarks, here is the script that was used to generate the data:
 
-  #!/bin/bash
-  LOGPATH="$1"
-  BENCH_DEVICE="$2"
-  mkdir -p $LOGPATH
-
-  IOENGINE="libaio"
-  DATE=`date +%s`
-  for RW in "write" "randwrite" "read" "randread"
+```bash
+#!/bin/bash
+LOGPATH="$1"
+BENCH_DEVICE="$2"
+mkdir -p $LOGPATH
+IOENGINE="libaio"
+DATE=`date +%s`
+for RW in "write" "randwrite" "read" "randread"
+do
+  for BS in "4K" "64K" "1M" "4M" "16M" "64M"
   do
-          for BS in "4K" "64K" "1M" "4M" "16M" "64M"
-          do
-                  (
-                  echo "==== $RW - $BS - DIRECT ===="
-                  echo 3 > /proc/sys/vm/drop_caches
-                  fio --rw=$RW --ioengine=${IOENGINE} --size=400G --bs=$BS --direct=1 --runtime=60 --time_based --name=bench --filename=$BENCH_DEVICE --output=$LOGPATH/$RW.${BS}-direct-`basename $BENCH_DEVICE`.$DATE.log.json --output-format=json
-                  sync
-                  echo 3 > /proc/sys/vm/drop_caches
-                  echo "==== $RW - $BS - DIRECT IODEPTH 32  ===="
-                  fio --rw=$RW --ioengine=${IOENGINE} --size=400G --bs=$BS --iodepth=32 --direct=1 --runtime=60 --time_based --name=bench --filename=$BENCH_DEVICE --output=$LOGPATH/$RW.${BS}-direct-iod32-`basename $BENCH_DEVICE`.$DATE.log.json --output-format=json
-                  sync
-                  ) | tee $LOGPATH/$RW.$BS-`basename $BENCH_DEVICE`.$DATE.log
-                  echo
-          done
+    (
+    echo "==== $RW - $BS - DIRECT ===="
+    echo 3 > /proc/sys/vm/drop_caches
+    fio --rw=$RW --ioengine=${IOENGINE} --size=400G --bs=$BS --direct=1 --runtime=60 --time_based --name=bench --filename=$BENCH_DEVICE --output=$LOGPATH/$RW.${BS}-direct-`basename $BENCH_DEVICE`.$DATE.log.json --output-format=json
+    sync
+    echo 3 > /proc/sys/vm/drop_caches
+    echo "==== $RW - $BS - DIRECT IODEPTH 32  ===="
+    fio --rw=$RW --ioengine=${IOENGINE} --size=400G --bs=$BS --iodepth=32 --direct=1 --runtime=60 --time_based --name=bench --filename=$BENCH_DEVICE --output=$LOGPATH/$RW.${BS}-direct-iod32-`basename $BENCH_DEVICE`.$DATE.log.json --output-format=json
+    sync
+    ) | tee $LOGPATH/$RW.$BS-`basename $BENCH_DEVICE`.$DATE.log
+    echo
   done
+done
+```
 
 The script expects two parameters:
 - First the path where to store the log files (the path will be created if it does not exist)
