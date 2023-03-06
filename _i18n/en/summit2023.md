@@ -17,9 +17,9 @@ the Sovereign Cloud Stack is now in its second year successfully building a comm
 <ul id="lightSlider">
 {% for speaker in site.data.summit2023.speakers %}
   <li>
-    <div>{% asset '{{speaker.avatar}}' class="img-fluid" style="width: 100%; max-height: 15vh; object-fit: cover; object-position: top;" %}</div>
+    <div>{% asset '{{speaker.avatar}}' class="img-fluid" style="width: 100%; height: 150px; object-fit: cover; object-position: center;" %}</div>
     <span class="fw-bold">{{speaker.name}}</span><br />
-    <span class="fw-light">{{speaker.title}}</span>
+    <span class="fw-light" style="word-wrap: break-word;">{{speaker.title}}</span>
   </li>
 {% endfor %}
 </ul>
@@ -35,8 +35,8 @@ What you can expect are exciting talks, discussions and workshops on the followi
 
 <div class="row align-items-center justify-content-center">
 {% for i in (1..3) %}
-	<div class="col-4 d-flex justify-content-center">
-  	{% asset 'summit2023/bbaw-{{i}}.jpg' alt='BBAW' class='mx-auto d-block img-fluid' %}
+	<div class="col-12 col-md-4 d-flex">
+  	{% asset 'summit2023/bbaw-{{i}}.jpg' alt='BBAW' class='mx-auto d-block img-fluid my-3' %}
 	</div>
 {% endfor %}
 </div>
