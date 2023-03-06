@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2023-03-01-fosdem-trip-report.md
