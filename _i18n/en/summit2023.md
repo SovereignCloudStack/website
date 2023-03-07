@@ -7,7 +7,9 @@ the Sovereign Cloud Stack is now in its second year successfully building a comm
 ## Speakers
 
 <div class="row mb-5">
-    <div class="col-sm-2">{% asset 'summit2023/default-avatar.jpg' class="img-fluid" style="width: 100%; max-height: 35vh; object-fit: cover; object-position: top;" %}</div>
+    <div class="col-sm-2">{% asset 'summit2023/speaker/pressefoto-brantner.png' class="img-fluid" style="width: 100%; max-height: 35vh; object-fit: cover; object-position: top;" %}
+    <p class="text-end text-muted fw-light"><small>© Edith Forster</small></p>
+    </div>
     <div class="col-sm-10">
         <span class="fw-bold">Dr. Franziska Brantner</span><br />
         <span class="fw-light">Parlamentarische Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz</span>
