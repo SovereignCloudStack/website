@@ -2,7 +2,7 @@
 
 Dear Friends of SCS and interested Observers,
 
-the Sovereign Cloud Stack is now in its second year successfully building a community to develop and maintain a standardized open source cloud computing stack. Success means that we have released the fourth version and that by now three cloud service providers base their offering on SCS standards and technology. Reason enough to call for our first summit for users, developers, adopters and everybody, who is affiliated to this project to gather, share knowledge, as well as experience and to – of course – network and have fun.
+the Sovereign Cloud Stack is now in its second year successfully building a community to develop and maintain a standardized open source cloud computing stack. Success means that we have released the fourth version and that by now three cloud service providers base their offering on SCS standards and technology. Reason enough to call for our first summit on 23rd and 24th of May 2023 in Berlin for users, developers, adopters and everybody, who is affiliated to this project to gather, share knowledge, as well as experience and to – of course – network and have fun.
 
 ## Speakers
 
@@ -17,7 +17,7 @@ the Sovereign Cloud Stack is now in its second year successfully building a comm
 <ul id="lightSlider">
 {% for speaker in site.data.summit2023.speakers %}
   <li>
-    <div>{% asset '{{speaker.avatar}}' class="img-fluid" style="width: 100%; height: 150px; object-fit: cover; object-position: center;" %}</div>
+    <div>{% asset '{{speaker.avatar}}' class="img-fluid" style="width: 100%; height: 150px; object-fit: cover; object-position: top;" %}</div>
     <span class="fw-bold">{{speaker.name}}</span><br />
     <span class="fw-light" style="word-wrap: break-word;">{{speaker.title}}</span>
   </li>
@@ -27,11 +27,17 @@ the Sovereign Cloud Stack is now in its second year successfully building a comm
 ## Topics
 
 What you can expect are exciting talks, discussions and workshops on the following topics:
-* SCS as integrating community: Present and Future
-* SCS as technology in action: Where it is used, how and by whom
-* SCS as truly sovereign alternative: Interoperable, standardized, shared knowledge
+
+* The importance of digital sovereignty for economy, state and society in Europe
+* Deutsche Verwaltungscloud-Strategie
+* Use cases for SCS such as the Bavarian School Cloud
+* Why SCS is important for innovation in Europe
+* The SCS certification program and the first SCS-certified clouds
+* Creating genuine added value with standardization
 
 ## Location
+
+The SCS Summit will take place in the beautiful facilities of the Berlin-Brandenburg Academy of Sciences and Humanities (BBAW). You can find [detailed directions on the official BBAW website](https://veranstaltungszentrum.bbaw.de/en/directions).
 
 <div class="row align-items-center justify-content-center">
 {% for i in (1..3) %}
@@ -40,6 +46,7 @@ What you can expect are exciting talks, discussions and workshops on the followi
 	</div>
 {% endfor %}
 </div>
+<p class="text-end text-muted fw-light"><small>© Images by BBAW / Judith Affolter</small></p>
 
 ## Register
 
@@ -53,6 +60,8 @@ What you can expect are exciting talks, discussions and workshops on the followi
 </noscript>
 
 ## Press
+
+We look forward to welcoming press and media partners to our SCS Summit. For accreditation, please contact [presse@osb-alliance.com](mailto:presse@osb-alliance.com). We will be happy to send you a detailed press kit and the opportunity for interviews in advance.
 
 ## Sponsors
 
@@ -77,7 +86,7 @@ What you can expect are exciting talks, discussions and workshops on the followi
 
 ## Contact us
 
-If you need any further information, please contact [Bianca](https://scs.community/hollery) or [Alex](https://scs.community/diab) – they’ll be happy to help you. See you in Berlin!
+If you need any further information, please contact [Bianca](https://scs.community/hollery) or [Alexander](https://scs.community/diab) – they’ll be happy to help you. See you in Berlin!
 
 <div class="row justify-content-center my-4">
   <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
