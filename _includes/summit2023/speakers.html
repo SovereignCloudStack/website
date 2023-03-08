@@ -1,0 +1,19 @@
+<div class="row mb-5">
+    <div class="col-md-4 col-xl-2">{% asset 'summit2023/speaker/pressefoto-brantner.jpg' class="img-fluid" style="width: 100%; object-fit: cover; object-position: top;" %}
+    <p class="text-end text-muted fw-light"><small>© Edith Forster</small></p>
+    </div>
+    <div class="col-md-8 col-xl-10">
+        <span class="fw-bold">Dr. Franziska Brantner</span><br />
+        <span class="fw-light">Parlamentarische Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz</span>
+    </div>
+</div>
+
+<ul id="lightSlider" lang="de">
+{% for speaker in site.data.summit2023.speakers %}
+  <li>
+    <div class="ratio ratio-1x1 mb-2">{% asset '{{speaker.avatar}}' class="img-fluid" style="width: 100%; object-fit: cover; object-position: center;" %}</div>
+    <span class="fw-bold">{{speaker.name}}</span><br />
+    <span class="fs-6 fw-light" style="  -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto;">{{speaker.title}}</span>
+  </li>
+{% endfor %}
+</ul>
