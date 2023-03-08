@@ -11,7 +11,7 @@ permalink: /summit
 <script type="text/javascript">
 $(document).ready(function() {
     $("#lightSlider").lightSlider({
-        item: 8,
+        item: 6,
         slideMargin: 20,
  
         auto: true,
@@ -25,13 +25,25 @@ $(document).ready(function() {
  
         responsive : [
             {
-                breakpoint:800,
+                breakpoint:1400,
+                settings: {
+                    item:5,
+                }
+            },
+            {
+                breakpoint:1200,
                 settings: {
                     item:4,
                 }
             },
             {
-                breakpoint:480,
+                breakpoint:992,
+                settings: {
+                    item:3,
+                }
+            },
+            {
+                breakpoint:768,
                 settings: {
                     item:2,
                 }

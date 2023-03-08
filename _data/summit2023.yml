@@ -8,15 +8,15 @@ speakers:
   - name: Silke Tessmann-Storch
     title: Vorständin der Dataport AöR, Leiterin des Unternehmensbereichs Lösungen
     avatar: summit2023/speaker/tessmann-storch.jpg
-  - name: Martin Schallbruch
-    title: Vorsitzender des Vorstands der govdigital eG
-    avatar: summit2023/speaker/schallbruch.jpg
   - name: Johan Christenson
     title: CEO Cleura AB
     avatar: summit2023/default-avatar.jpg
   - name: Andreas Weiss
     title: Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V.
     avatar: summit2023/speaker/andreas-weiss.jpg
+  - name: Martin Schallbruch
+    title: Vorsitzender des Vorstands der govdigital eG
+    avatar: summit2023/speaker/schallbruch.jpg
   - name: Alexander Wallner
     title: CEO PlusServer GmbH
     avatar: summit2023/default-avatar.jpg
