@@ -4,10 +4,10 @@
 <svg
    version="1.1"
    id="svg2"
-   width="660.65869"
-   height="410.35333"
-   viewBox="0 0 660.65869 410.35333"
-   sodipodi:docname="10. C&amp;H_White_on blue_portrait.ai"
+   width="900.00024"
+   height="559.01501"
+   viewBox="0 0 900.00024 559.01468"
+   sodipodi:docname="cloud-and-heat.svg"
    inkscape:version="1.2.2 (1:1.2.2+202212051552+b0a8486541)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -41,10 +41,10 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="0.92688476"
-     inkscape:cx="16.722683"
+     inkscape:cx="374.91176"
      inkscape:cy="315.57321"
      inkscape:window-width="1920"
-     inkscape:window-height="1024"
+     inkscape:window-height="1056"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -53,8 +53,8 @@
        x="0"
        y="0"
        id="page8"
-       width="660.65869"
-       height="410.35333" />
+       width="900.00024"
+       height="559.01471" />
   </sodipodi:namedview>
   <g
      id="g10"
@@ -62,12 +62,12 @@
      inkscape:label="Page 1"
      transform="matrix(1.3333333,0,0,-1.3333333,0,660.65867)">
     <path
-       d="m 11.079015,197.04451 v 289.134 H 484.41502 v -289.134 z"
+       d="m 100.8321,141.29637 v 289.134 h 473.336 v -289.134 z"
        style="fill:#1ab8ec;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path190" />
     <g
        id="g192"
-       transform="rotate(-90,248.13706,246.41667)">
+       transform="rotate(-90,265.14413,173.66144)">
       <g
          id="g194"
          clip-path="url(#clipPath198)">

@@ -44,21 +44,16 @@ sponsors:
   silver:
     - name: Dr. Daniel Gerber
       logo: summit2023/partner/daniel-gerber.svg
-      padding: 2
+      url: https://danielgerber.eu/
     - name: Cloud&Heat Technologies GmbH
       logo: summit2023/partner/cloud-and-heat.svg
-      padding: 5
-      url: https://www.cloudandheat.com/
-      url: https://danielgerber.eu/
+      url: https://www.cloudandheat.com/ 
     - name: Linuxhotel GmbH
       logo: summit2023/partner/linuxhotel.svg
-      padding: 3
       url: https://www.linuxhotel.de/
     - name: SEP AG
       logo: summit2023/partner/sep.svg
-      padding: 5
       url: https://www.sep.de/
     - name: Univention GmbH
       logo: summit2023/partner/univention.svg
-      padding: 3
       url: https://univention.com/
