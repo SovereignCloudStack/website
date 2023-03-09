@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "plusserver gx-scs upgrade to SCS Release 4"
-image: "blog/fosdem2023.png"
+image: "blog/construction.png"
 author:
   - "Ralf Heiringhoff"
 avatar:
