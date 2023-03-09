@@ -1,6 +1,8 @@
 $scs-mint: #50c3a5;
 $scs-blue: #0f5fe1;
 $scs-gray: #7d7d82;
+$scs-gold: #e1900e;
+$scs-gold-tint: #ffb729;
 $table-border: 1px solid rgba($secondary, 0.4);
 $table-hover: rgba($scs-mint, 0.1);
 $text-color: $gray-800;
@@ -134,6 +136,10 @@ p {
 
 .bg-primary{
     background-color: $scs-mint !important;
+}
+
+.bg-gold{
+  background-color: $scs-gold-tint !important;
 }
 
 .navbar {
