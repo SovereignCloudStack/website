@@ -19,7 +19,7 @@ The journey began with pluscloud open running on OpenStack [Ussuri](https://rele
 
 {% asset 'blog/2023-scs-r4-pco-journey-sky-is-the-limit.jpg' vips:format='.webp' style="width:100%; max-height: 450px; object-fit: contain;" %}
 
-pluscloud open has two productive public regions, prod1 and prod2, located in Cologne and Hamburg, respectively. prod1 went live in July 2021 with the SCS pre-R0 release, while Prod2 was launched in March 2023, both running now the latest release SCS R4. It's important to stress that this achievement was made possible by the SCS community, which has kept up with the supported OpenStack releases and enabled us to perform rolling upgrades without major downtime.
+pluscloud open has two productive public regions, prod1 and prod2, located in Cologne and Hamburg, respectively. prod1 went live in July 2021 with the SCS pre-R0 release, while prod2 was launched in March 2023, both running now the latest release SCS R4. It's important to stress that this achievement was made possible by the SCS community, which has kept up with the supported OpenStack releases and enabled us to perform rolling upgrades without major downtime.
 
 
 As part of our commitment to building and improving a sustainable and data-sovereign Europe, we will continue to contribute to the Sovereign Cloud Stack Community. We aim to build a community of practice and transparency for operations using Open Operations, and we look forward to seeing what the future holds for the Sovereign Cloud Stack Community.
