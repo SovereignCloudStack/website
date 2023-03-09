@@ -14,4 +14,4 @@ We would like to inform you that PlusServer will be upgrading the development en
 
 Although we do not anticipate any impact on your actual workloads during the upgrade process, API endpoints may be sporadically unavailable during the upgrade procedures.
 
-If you have any questions or concerns regarding the upgrade, please do not hesitate to contact me or the PlusCloud Open team. We are looking forward to the next SCS release.
+If you have any questions or concerns regarding the upgrade, please do not hesitate to contact me or the pluscloud open team. We are looking forward to the next SCS release.
