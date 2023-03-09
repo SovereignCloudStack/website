@@ -24,7 +24,7 @@ always filled to at least 80% capacity and the feedback that we received at the 
 impression that it was not only well received but that people did actually take insights and learnings home
 with them.
 
-Max opened the Sovereign Cloud DevRoom presenting our insights of [wow we created a our documentation framework.](https://fosdem.org/2023/schedule/event/sovcloud_how_we_created_a_documentation_framework_that_works_across_a_group_of_vendors/). You can have a look at the result the which is our ever growing [documentation page](docs.scs.community).
+Max opened the Sovereign Cloud DevRoom presenting our insights of [wow we created a our documentation framework.](https://fosdem.org/2023/schedule/event/sovcloud_how_we_created_a_documentation_framework_that_works_across_a_group_of_vendors/). You can have a look at the result the which is our ever growing [documentation page](https://docs.scs.community).
 
 After great talks posing questions around sustainability and the spicy topic of the global cloud landscape, it was Kurt's time to demystify an important term that has become a buzzword – [Digital Sovereignty](https://fosdem.org/2023/schedule/event/sovcloud_what_is_digital_sovereignty_and_how_can_oss_help_to_achieve_it/).
 
