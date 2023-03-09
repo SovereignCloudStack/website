@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Journey Through Two Years of pluscloud open: A Recap of the SCS Stack Upgrade Path"
-image: "blog/2023-04-06-scs-r4-pco-journey.png"
+image: "blog/2023-scs-r4-pco-journey.png"
 author:
   - "Ralf Heiringhoff"
   - "Toens Bueker"
@@ -11,7 +11,7 @@ about:
   - "frosty-geek"
 ---
 
-{% asset 'blog/2023-04-06-scs-r4-pco-journey.png' vips:format='.webp' style="width:100%; max-height: 450px; object-fit: cover;" %}
+{% asset 'blog/2023-scs-r4-pco-journey.png' vips:format='.webp' style="width:100%; max-height: 450px; object-fit: cover;" %}
 
 Over the past two years, [pluscloud open](https://www.plusserver.com/en/products/pluscloud-open) has made significant progress since its closed-beta launch in 2020. It is based on the SCS IaaS reference implementation developed by [OSISM GmbH](https://osism.tech), which stands on the shoulders of open source giants, including the [OpenStack Kolla Ansible](https://docs.openstack.org/kolla-ansible/latest/) framework.
 
