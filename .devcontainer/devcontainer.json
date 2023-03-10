@@ -1,0 +1,11 @@
+{
+    "name": "Jekyll Devcontainer",
+    "image":"mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+        "ghcr.io/devcontainers/features/ruby:1": {
+            "version": "2.7"
+        }
+    },
+    "forwardPorts": [4000],
+    "postCreateCommand": "bash .devcontainer/install_dependencies.sh"
+}
