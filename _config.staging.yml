@@ -1,6 +1,8 @@
 incremental: true
 show_drafts: true
 future: true
+unpublished: true
+livereload: true
 
 title: Sovereign Cloud Stack
 tagline: One platform — standardized, built and operated by many.
