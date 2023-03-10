@@ -1,19 +1,24 @@
 {
-    "name": "Jekyll Devcontainer",
-    "image":"mcr.microsoft.com/devcontainers/universal:2",
-    "features": {
-        "ghcr.io/devcontainers/features/ruby:1": {
-            "version": "2.7"
-        }
-    },
-    "forwardPorts": [4000],
-	"postCreateCommand": "bash .devcontainer/install_dependencies.sh",
-	"portsAttributes": {
-		"4000": {
-			"label": "Website"
-		},
-		"35729": {
-			"label": "Livereload"
-		}
-	}
+	"build": {
+		"dockerfile": "./Dockerfile",
+		"context": "."
+	},
+	"args": {
+		"VARIANT": "2",
+		"NODE_VERSION": "latest" // Set to "none" to skip Node.js installation
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		// Jekyll server
+		4000,
+		// Live reload server
+		35729
+	],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "sh /usr/local/post-create.sh",
+	"postStartCommand": "jekyll serve -c _config.yml,_config.dev.yml",
+
+	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "root"
 }
