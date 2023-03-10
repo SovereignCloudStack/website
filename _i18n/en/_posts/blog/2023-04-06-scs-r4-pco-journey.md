@@ -15,7 +15,11 @@ about:
 
 Over the past two years, [pluscloud open](https://www.plusserver.com/en/products/pluscloud-open) has made significant progress since its closed-beta launch in 2020. It is based on the SCS IaaS reference implementation developed by [OSISM GmbH](https://osism.tech), which stands on the shoulders of open source giants, including the [OpenStack Kolla Ansible](https://docs.openstack.org/kolla-ansible/latest/) framework.
 
-The journey began with pluscloud open running on OpenStack [Ussuri](https://releases.openstack.org/ussuri/index.html) and has since been rolling upgraded following the SCS releases, currently running on the latest release of OpenStack, [Zed](https://releases.openstack.org/zed/index.html). Throughout this journey, we have been grateful to be part of an open and welcoming community around the Sovereign Cloud Stack. We take pride in having contributed to and supported this community.
+The journey began with pluscloud open running on OpenStack [Ussuri](https://releases.openstack.org/ussuri/index.html) and has since been rolling upgraded following the SCS releases, currently running on the latest release of OpenStack, [Zed](https://releases.openstack.org/zed/index.html). 
+
+For these upgrades we follow a step-by-step approach through our dev and stage environments before upgrading production regions. That allows us to work through the release notes and to detect unexpected issues. The upgrade process includes backups, operating system upgrades, functional and non-functional checks, updates of all OpenStack components on controllers, compute- and manager-nodes as well as upgrades of our ceph storage. This approach gives us the confidence to upgrade our production environments with zero or nearly no downtime. 
+
+Throughout this journey, we have been grateful to be part of an open and welcoming community around the Sovereign Cloud Stack. We take pride in having contributed to and supported this community.
 
 {% asset 'blog/2023-scs-r4-pco-journey-sky-is-the-limit.jpg' vips:format='.webp' style="width:100%; max-height: 450px; object-fit: contain;" %}
 
