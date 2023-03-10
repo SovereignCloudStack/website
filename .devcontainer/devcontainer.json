@@ -7,5 +7,13 @@
         }
     },
     "forwardPorts": [4000],
-    "postCreateCommand": "bash .devcontainer/install_dependencies.sh"
+	"postCreateCommand": "bash .devcontainer/install_dependencies.sh",
+	"portsAttributes": {
+		"4000": {
+			"label": "Website"
+		},
+		"35729": {
+			"label": "Livereload"
+		}
+	}
 }
