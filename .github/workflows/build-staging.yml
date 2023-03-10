@@ -29,4 +29,4 @@ jobs:
         target_branch: gh-pages-staging
         target_path: "/"
         keep_history: false
-        jekyll_build_options: "--future --config _config.staging.yml"
+        jekyll_build_options: "--config _config.yml,_config.staging.yml"

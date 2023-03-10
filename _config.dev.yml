@@ -1,0 +1,16 @@
+incremental: true
+show_drafts: true
+future: true
+unpublished: true
+livereload: true
+
+assets:
+  caching:
+    enabled: true
+    path: ".jekyll-cache/assets"
+    type: file
+  gzip: false
+  compression: false
+  compressors:
+    uglifier:
+      harmony: false
