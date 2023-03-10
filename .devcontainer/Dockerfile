@@ -1,5 +1,4 @@
-# [Choice] Debian OS version (use 2.7-bullseye on local arm64/Apple Silicon): 2.7-bullseye, 2.7-buster
-ARG VARIANT=2.7-bullseye
+ARG VARIANT="2.7-bullseye"
 FROM mcr.microsoft.com/devcontainers/ruby:${VARIANT}
 
 USER root
@@ -21,6 +20,10 @@ RUN chown -R "vscode:rvm" "/usr/local/rvm/" \
     && find "/usr/local/rvm/" -type d | xargs -n 1 chmod g+s
 
 COPY post-create.sh /usr/local/post-create.sh
+
+# [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
+ARG NODE_VERSION="none"
+RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
