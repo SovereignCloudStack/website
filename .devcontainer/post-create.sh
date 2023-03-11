@@ -15,3 +15,6 @@ fi
 if [ -d .jekyll-cache ]; then
     rm -rf .jekyll-cache
 fi
+
+# Install npm modules
+npm install
