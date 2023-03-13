@@ -4,10 +4,13 @@ title:  "SCS Release 4 on the horizon"
 category: tech
 author:
   - "Felix Kronlage-Dammers"
+  - "Ralf Heiringhoff"
 avatar:
   - "fkr.jpg"
+  - "frosty-geek.webp"
 about:
   - "fkr"
+  - "frosty-geek"
 ---
 
 ## SCS Release 4 on the horizon
