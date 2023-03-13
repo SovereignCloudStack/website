@@ -19,7 +19,11 @@ include:
 exclude:
   - .sass-cache
   - .jekyll-cache
+  - .devcontainer
+  - .github
   - _gems
+  - node_modules
+  - _assets
 
 twitter:
   username: scs_osballiance
