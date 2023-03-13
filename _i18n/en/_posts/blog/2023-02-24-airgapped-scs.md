@@ -89,9 +89,9 @@ As you might have noticed, this is quite some stuff to do, so let's put it into 
   </a>
 </figure>
 
-The graphic is devided into two major parts, let's start with the upper one: This is the mirror infrastructure of OSISM GmbH. We'll use this for our CI-CD tests and maybe also for public SCS installations in the future. The mirrors itself pull the assets from the upstream sources. You might have noticed, that there is also a component called "harbor". Harbor deals also with container images. We use it for our own build containers, therefore we'll split container images into just "pure" mirrors and the ones we build our own.
+The graphic is devided into two major parts, let's start with the upper one: This is the mirror infrastructure of OSISM GmbH. We'll use this for our CI-CD tests and maybe also for public SCS installations in the future. The mirrors itself pull the assets from the upstream sources. You might have noticed, that there is also a component called "harbor". [Harbor](https://goharbor.io/) deals also with container images. We use it for our own build containers, therefore we'll split container images into just "pure" mirrors and the ones we build our own.
 
-The bottom half represents any installation of SCS, may it be a testbed, a cloud in a box or similar. With a squid proxy in front requests get blocked if they want to access something else than the mirrors OSISM provides. Additionally, each deployment should also bring their own mirror stack. This will allow SCS integrators to provide these mirrors to their users resepctively.
+The bottom half represents any installation of SCS, may it be a testbed, a [cloud-in-a-box](https://github.com/osism/cloud-in-a-box) or similar. With a squid proxy in front requests get blocked if they want to access something else than the mirrors OSISM provides. Additionally, each deployment should also bring their own mirror stack. This will allow SCS integrators to provide these mirrors to their users resepctively.
 
 In the middle is still something that is not clear yet: Github and SBOM. These two points still need clarification and will be refined in the future.
 
