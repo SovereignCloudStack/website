@@ -15,7 +15,7 @@ about:
 Für unsere aktiven Community-Mitglieder ist es bereits seit einigen Wochen bekannt, da es
 sowohl im Product Board als auch in unserem Community Call diskutiert wurde.
 Weitere Hinweise, wie den [Upgrade Hinweis](https://scs.community/2023/03/09/gx-scs-r4-upgrade/) für die gx-scs
-Umgebung sind klare Zeichen, dass Release 4 kurz bevorsteht ;)
+Umgebung sind klare Zeichen, dass SCS Release 4 kurz bevorsteht ;)
 
 Der Release Termin für die Freigabe von SCS Release 4 wurde auf *22. März 2023* gelegt.
 
