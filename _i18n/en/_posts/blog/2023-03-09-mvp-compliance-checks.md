@@ -25,13 +25,12 @@ The compliance checks are currently in the MVP phase and are being run nightly a
 
 We hope that our automated compliance checks will encourage more cloud providers to adopt the SCS standards and make it easier for users to choose a cloud provider that is compatible with SCS. We also welcome feedback from the community on how we can improve our compliance checks and make them more useful for everyone.
 
-A brief guide on how to use our test suite can be found in the [`README.md`](https://github.com/SovereignCloudStack/standards/tree/main/Tests#testsuite-for-scs-standards) within the [`Tests`](https://github.com/SovereignCloudStack/standards/tree/main/Tests) directory of the [standards repository](https://github.com/SovereignCloudStack/standards). The test suite expects `$CLOUDNAME` to be defined similar to the cloud name as in your local OpenStack configuration within `~/.config/openstack`.
+A brief guide on how to use our test suite can be found in the [`README.md`](https://github.com/SovereignCloudStack/standards/tree/main/Tests#testsuite-for-scs-standards) within the [`Tests`](https://github.com/SovereignCloudStack/standards/tree/main/Tests) directory of the [standards repository](https://github.com/SovereignCloudStack/standards). The test suite expects `$OS_CLOUD` to be defined similar to the cloud name as in your local OpenStack configuration within `~/.config/openstack`.
 
 ```bash
 git clone git@github.com:SovereignCloudStack/standards.git .
 cd standards/Tests
-CLOUDNAME="mycloud"
-docker run -it --env OS_CLOUD=$CLOUDNAME -v ~/.config/openstack:/root/.config/openstack:ro ghcr.io/sovereigncloudstack/scs-compliance-check:main scs-compatible.yaml iaas
+docker run -it --env OS_CLOUD="mycloud" -v ~/.config/openstack:/root/.config/openstack:ro ghcr.io/sovereigncloudstack/scs-compliance-check:main scs-compatible.yaml iaas
 ```
 
 The Docker image is built on every push to `main` from the corresponding [`Dockerfile`](https://github.com/SovereignCloudStack/standards/blob/main/Tests/Dockerfile) and automatically published to the [GitHub Container Registry](https://github.com/SovereignCloudStack/standards/pkgs/container/scs-compliance-check).
