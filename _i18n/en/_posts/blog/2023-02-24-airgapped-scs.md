@@ -25,25 +25,25 @@ Table of content:
 
 ## Current situation
 
-Every installation of SCS requires an internet connection. Not only for the workload on SCS, but rather for installation and updating. If you start from scratch, you need to have access to several repositories and upstream mirros (e.g. <https://pypi.org>). Without them, the underlay reference implementation [osism](https://github.com/osism) cannot provision the hardware machines with the required software components.
+Every installation of SCS requires an internet connection, not only for the workload on SCS, but rather for installation and updating. If you start from scratch, you need to have access to several repositories and upstream mirrors (e.g. <https://pypi.org>). Without them, the underlay reference implementation [osism](https://github.com/osism) cannot provision the hardware machines with the required software components.
 
 ## Pain points
 
-The biggest point for having an air gapped is of course based on customer requirements: Allowing industrial partners to host SCS as a private cloud is a major game changer when it comes to adoption of SCS in general. It allows consumers to avoid enourmous firewall configurations and leads therefore to clear visibility, traceability and the ability to audit, whats happening (or whats blocked) on you connections.
+The main reason for having an air gapped is of course based on customer requirements: Allowing industrial partners to host SCS as a private cloud is a major game changer when it comes to adoption of SCS in general. It allows consumers to avoid enourmous firewall configurations and therefore leads to clear visibility, traceability and the ability to audit, what is happening (or what is blocked) on your connections.
 
-But as initially mentioned, this is not the only benefit we gain by this improvement. Especially when it comes to development and testing of this huge stack of software, we often face several issues which harm us. They slow down the development process in general:
+As initially mentioned, this is not the only benefit we gain by this improvement. Especially when it comes to development and testing of this huge stack of software, we often face several issues which harm us. These slow down the development process in general:
 
 1. 🛑 API rate limits :stop
 
-    Our testing infrastructure deploys multiple [Testbeds](https://github.com/osism/testbed) per day, presumably using the same public IP address for these tasks. Official mirrors like [dockerhub](hub.docker.com) or [quay](quay.io) for container images or [pypi](pypi.org) for python packages use rate limits on their API's to reduce traffik an load. The turnside of this measure is, that our test-deployments break. Because of the high frequency and the bulk load of downloads, our IP addresses get blocked for a certain amount of time.
+    Our testing infrastructure deploys multiple [Testbeds](https://github.com/osism/testbed) per day, presumably using the same public IP address for these tasks. Official mirrors like [dockerhub](hub.docker.com) or [quay](quay.io) for container images or [pypi](pypi.org) for python packages use rate limits on their APIs to reduce traffic. The flipside of this measure is, that our test-deployments break. Because of the high frequency and the bulk load of downloads, our IP addresses get blocked for a certain amount of time.
 
 2. 🪢 Bandwidth
 
-    deb-packages in particular are sometimes very slow while downloading. They consume a lot of time and therefore a lot of resources over time.
+    Debian-packages, so called deb-packages, in particular are sometimes very slow while downloading. They consume a lot of time and therefore a lot of resources over time.
 
 3. ⏸️ Availability
 
-    Sometimes upstream mirrors are in maintanance. Especially [quay.io](https://quay.io) is very unreliable when it comes to availability. They have nearly every week downtimes of several minutes or even hours. As we do not know when these downtimes will happen, we cannot schedule our deployments around these timeframes. Sometimes deployments get disruped during operation which leads to all kinds of errors that involve manual debugging. Finding an unavailable upstream mirror as the reason for a failed deployment / test is tedious work and rather wasted worktime.
+    Sometimes upstream mirrors are in maintanance. Especially [quay.io](https://quay.io) is very unreliable when it comes to availability. Nearly every week they have downtimes of several minutes or even hours. As we do not know when these downtimes will happen, we cannot schedule our deployments around these timeframes. Sometimes deployments get disrupted during operation which leads to all kinds of errors that involve manual debugging. Finding an unavailable upstream mirror as the reason for a failed deployment / test is tedious work and wasted worktime.
 
 4. 📖 SBOM generation
 
@@ -59,15 +59,15 @@ But as initially mentioned, this is not the only benefit we gain by this improve
 
 ## Requirements for air gaps
 
-For the first iteration of air-gapped installations we set our goal to create mirrors for the following components: _ansible_ collections and roles, _deb_ packages, _container_ images and _pypi_ packages. Depending on the -let's call them- asset to be mirrored, different software has be levereged or even developed from the ground up.
+For the first iteration of air-gapped installations we set our goal to create mirrors for the following components: _ansible_ collections and roles, _deb_ packages, _container_ images and _pypi_ packages. Depending on the -let's call them- asset to be mirrored, different software has be improved or even developed from the ground up.
 
 1. __wormhole__ for _ansible_ collections and roles
 
-    Starting with more or less the complexest component. Wormhole is a completly new software that is able to mirror collections and roles from the ansible galaxy. Actually, there is other software available which should be able to mirror assets from the ansible galaxy: Pulp. Pulp would have been actually really nice, because it can also mirror other stuff like pypi packages, etc. Eventually we decided that pulp will not be the solution for us because: It is still under heavy development; it offers only OpenShift deployments or an all in one container or a bare metal installation. They will not provide (even with contribution from our side) helm charts. Additionally, the handling of pulp itself is quite aweful in general. KISS is the way we want it! Enter [_wormhole_](github.com/osism/python-ansible-wormhole) - the mirror software for the ansible-galaxy. It might not be pretty, but it does the job. And it required reverse-engineering and even debugging the galaxy api. By the way: this might be the reason, why ansible itself want's to migrate to pulp. The current implementation of the galaxy is scary.
+    Starting with more or less the most complex component. Wormhole is a completly new software that is able to mirror collections and roles from the ansible galaxy. Actually, there is other software available which should be able to mirror assets from the ansible galaxy: [Pulp](https://pulpproject.org/). Pulp would have been actually really nice, because it can also mirror other stuff like pypi packages, etc. Eventually we decided that pulp will not be the solution for us because: It is still under heavy development; it offers only OpenShift deployments or an all in one container or a bare metal installation. They will not provide (even with contribution from our side) helm charts. Additionally, the handling of pulp itself is quite aweful in general. KISS is the way we want it! Enter [_wormhole_](github.com/osism/python-ansible-wormhole) - the mirror software for the ansible-galaxy. It might not be pretty, but it does the job. And it required reverse-engineering and even debugging the galaxy api. By the way: this might be the reason, why ansible itself want's to migrate to pulp. The current implementation of the galaxy is scary.
 
 2. __aptly__ for _deb_ packages
 
-    Aptly is a project with a long history and is still being maintained. There are several implementations evailable, all good enough to just use them. It's been battle proven as a reliable deb package mirror software. Aptly provides some sort of API functionality, but not everything we need. For the moment, we decided that this is good enough, even if it involves some manual steps.
+    [Aptly](https://www.aptly.info/) is a project with a long history and is still being maintained. There are several implementations evailable, all good enough to just use them. It's been battle proven as a reliable deb package mirror software. Aptly provides some sort of API functionality, but not everything we need. For the moment, we decided that this is good enough, even if it involves some manual steps.
 
 3. __registry__ for _container_ images
 
@@ -75,7 +75,7 @@ For the first iteration of air-gapped installations we set our goal to create mi
 
 4. __bandersnatch__ for _pypi_ packages
 
-    Bandersnatch itself is "just" a client, but an official one. Sadly, it uses a config file which needs to contain the packages that are about to be mirrored. So no API. Therefore [_banderctl_](github.com/osism/python-banderctl) was developed. It mounts the config file and puts an API in front of it. The client itself is executed periodically to perform mirroring. Pretty neat!
+    [Bandersnatch](https://pypi.org/project/bandersnatch/) itself is "just" a client, but an official one. Sadly, it uses a config file which needs to contain the packages that are about to be mirrored. So no API. Therefore [_banderctl_](github.com/osism/python-banderctl) was developed. It mounts the config file and puts an API in front of it. The client itself is executed periodically to perform mirroring. Pretty neat!
 
 There is still one big problem: They all require an internet connection. But it's only these services, that require them. And the datastores of them can be prefilled and be "manuall migrated" to the air gapped installation. But this is still something you need to do on your own. We aim to prepare more information on this in the next featureset for air gapped installations.
 
@@ -89,7 +89,7 @@ As you might have noticed, this is quite some stuff to do, so let's put it into 
   </a>
 </figure>
 
-The grafic is devided into two major parts, let's start with the upper one: This is the mirror infrastructure of OSISM GmbH. We'll use this for our CI-CD tests and maybe also for public SCS installations in the future. The mirrors itself pull the assets from the upstream sources. You might have noticed, that there is also a component called "harbor". Harbor deals also with container images. We use it for our own build containers, therefore we'll split container images into just "pure" mirrors and the ones we build our own.
+The graphic is devided into two major parts, let's start with the upper one: This is the mirror infrastructure of OSISM GmbH. We'll use this for our CI-CD tests and maybe also for public SCS installations in the future. The mirrors itself pull the assets from the upstream sources. You might have noticed, that there is also a component called "harbor". Harbor deals also with container images. We use it for our own build containers, therefore we'll split container images into just "pure" mirrors and the ones we build our own.
 
 The bottom half represents any installation of SCS, may it be a testbed, a cloud in a box or similar. With a squid proxy in front requests get blocked if they want to access something else than the mirrors OSISM provides. Additionally, each deployment should also bring their own mirror stack. This will allow SCS integrators to provide these mirrors to their users resepctively.
 
