@@ -1,3 +1,8 @@
+- date: "2023-02-10"
+  publisher: "Berlin-Brandenburgische Akademie der Wissenschaften"
+  title: "Denkanstöße aus der Medizin 11: Künstliche Intelligenz in der Medizin"
+  link: "https://edoc.bbaw.de/files/3796/BBAW_Denkanstoesse_11_2023.pdf"
+
 - date: "2022-10-29"
   publisher: "Linux Magazin"
   title: "Open-Source-Clouds für alle: der Sovereign Cloud Stack"
@@ -132,7 +137,7 @@
 - date:  "2020-07-01"
   publisher: "SPRIND" 
   title: "Eine europäische Superwolke: IT-Infrastruktur fürs 3. Jahrtausend"
-  link: "https://www.sprind.org/de/laufende-projekte/sovereign-cloud-stack/"
+  link: "https://www.sprind.org/de/projekte/sovereign-cloud-stack"
 
 - date:  "2020-06-25"
   publisher: "cloudmag"

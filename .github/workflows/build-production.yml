@@ -28,4 +28,4 @@ jobs:
         target_branch: gh-pages
         target_path: "/"
         keep_history: false
-        jekyll_build_options: "--config _config.prod.yml"
+        jekyll_build_options: "--config _config.yml"
