@@ -23,6 +23,6 @@ Der Release Termin für die Freigabe von SCS Release 4 wurde auf *22. März 2023
 
 Eine der besten Möglichkeiten, um sich einzubringen und dazu beizutragen, dass Release 4 die
 bisher beste Version wird, ist das Testen.
-Eine weitere gute Möglichkeit ist beim Füllen der Release Notes zu unterstützen. In dem [r4 Branch](https://github.com/SovereignCloudStack/release-notes/tree/feat/r4) in
+Eine weitere gute Möglichkeit ist beim Füllen der Release Notes zu unterstützen. Im [r4 Branch](https://github.com/SovereignCloudStack/release-notes/tree/feat/r4) in
 dem [release-notes](https://github.com/SovereignCloudStack/release-notes) Repository gibt es einen entsprechenden [work-in-progress PR](https://github.com/SovereignCloudStack/release-notes/pull/5).
 
