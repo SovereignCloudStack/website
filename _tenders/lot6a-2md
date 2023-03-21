@@ -5,10 +5,9 @@ layout: default
 number: 6
 number_vh81: 6a
 retry: 2
-state: open # open, upcoming or closed
+state: closed # open, upcoming or closed
 start_date: 2023-02-24
-closing_date: 2023-03-20 T12:00+01:00
-contracting_portal: https://www.dtvp.de/Satellite/notice/CXP4YV76FQE
+closing_date: 2023-03-20
 ---
 
 {% tf tenders/lot6a.md %}

@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.6.0"
   s.add_runtime_dependency("execjs", "~> 2.7")
   s.add_runtime_dependency("nokogiri", "~> 1.10")
-  s.add_runtime_dependency("activesupport", ">= 5", "< 7")
+  s.add_runtime_dependency("activesupport", ">= 5", "< 8")
   s.add_runtime_dependency("sprockets", "~> 4.0.beta7")
   s.add_runtime_dependency("fastimage", ">= 1.8", "~> 2.0")
   s.add_runtime_dependency("liquid-tag-parser", ">= 1", "< 3")
@@ -48,7 +48,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency("babel-transpiler", "~> 0.7")
   s.add_development_dependency("mini_magick", "~> 4.2")
   s.add_development_dependency("simplecov", "~> 0.16")
-  s.add_development_dependency("bootstrap", "~> 4.0")
+  s.add_development_dependency("bootstrap", "~> 5.2")
   s.add_development_dependency("ruby-vips", "~> 2")
   s.add_development_dependency("crass", "~> 1.0")
   s.add_development_dependency("rake", "~> 13")
