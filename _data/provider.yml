@@ -7,3 +7,6 @@
 - name: "Wavestack"
   image: "logo-wavestack.svg"
   link: "https://www.noris.de/wavestack-cloud"
+- name: "REGIO.cloud"
+  image: "logo-regiocloud.png"
+  link: "https://regio.digital/"
