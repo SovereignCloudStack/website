@@ -154,7 +154,7 @@ refined in the future.
 
 [__Wormhole__](github.com/osism/python-ansible-wormhole) can be used by you to mirror collections and roles from the official
 ansible galaxy. That being said, it fakes some values in the API responses (like IDs or timestamps). It would just make no
-sense to also store this data. Its only purpose is to mirror the assets with the versions in the correct orde. Oh, by the way:
+sense to also store this data. Its only purpose is to mirror the assets with the versions in the correct order. Oh, by the way:
 There is a nasty bug inside the official galaxy client tool (and probably also the galaxy API). When querying for a latest
 version of a collection, the client just scrapes _ALL_ versions and picks the highest one. Even though, the API provides a link to
 the latest version. Details can be found [here](https://github.com/ansible/ansible/issues/79467).
