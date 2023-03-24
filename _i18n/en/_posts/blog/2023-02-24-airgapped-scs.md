@@ -123,7 +123,7 @@ mirrored, different software has be improved or even developed from the ground u
     build times.
 
 There is still one big problem: They all require an internet connection, but only these services require the connection. Their
-datastores can be prefilled and be "manuall migrated" to the air gapped installation. This however is something you still need
+datastores can be pre-filled and be "manually migrated" to the air gapped installation. This however is something you still need
 to do on your own. We aim to prepare more information on this in the next featureset for air gapped installations.
 
 ## Architecture
