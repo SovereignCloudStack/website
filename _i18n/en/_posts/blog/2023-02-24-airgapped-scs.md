@@ -128,7 +128,7 @@ to do on your own. We aim to prepare more information on this in the next featur
 
 ## Architecture
 
-As you might have noticed, this are some pieces to the puzzle, so let's put it into one big image:
+As you might have noticed, there are some pieces to the puzzle, so let's put it into one big image:
 
 <figure class="figure mx-auto d-block" style="width:50%">
   <a href="{% asset "blog/airgap-architecture.png" @path %}">
