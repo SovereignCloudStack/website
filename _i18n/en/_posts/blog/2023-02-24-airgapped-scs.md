@@ -97,7 +97,7 @@ mirrored, different software has be improved or even developed from the ground u
     installation. They will not provide (even with contribution from our side) helm charts. Additionally, the handling of pulp
     itself is quite aweful in general. KISS is the way we want it! Enter [_wormhole_](github.com/osism/python-ansible-wormhole) -
     the mirror software for the ansible-galaxy. It might not be pretty, but it does the job. However it did require
-    reverse-engineering and even debugging the galaxy api. By the way: this might be the reason, why ansible itself want's to
+    reverse-engineering and even debugging the galaxy api. By the way: this might be the reason, why ansible itself wants to
     migrate to pulp. The current implementation of the galaxy is scary.
 
 2. ~~__aptly__~~ for _deb_ packages
