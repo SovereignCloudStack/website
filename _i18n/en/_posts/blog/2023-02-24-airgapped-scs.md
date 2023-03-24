@@ -159,7 +159,7 @@ There is a nasty bug inside the official galaxy client tool (and probably also t
 version of a collection, the client just scrapes _ALL_ versions and picks the highest one. Even though, the API provides a link to
 the latest version. Details can be found [here](https://github.com/ansible/ansible/issues/79467).
 
-[__banderctl__](github.com/osism/python-banderctl) creates an API endpoint in front of the bandersnatch clients config.
+[__Banderctl__](github.com/osism/python-banderctl) creates an API endpoint in front of the bandersnatch clients config.
 Bandersnatch itself is capable of a lot more things than just mirroring. But as we just require mirroring, this is still fine for
 us. What's missing is an API to edit this file and append new packages or even remove packages from it. That's where banderctl
 jumps right in. It translates your API request and applies the desired addition or deletion into bandersnatch's config.
