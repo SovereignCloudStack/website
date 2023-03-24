@@ -14,7 +14,7 @@ about:
 In this post we will introduce you to our latest feature of SCS: Air-gapped installations.
 You will learn why this is benificial for the consumers of SCS but also for the development and testing process in general.
 
-Table of content:
+Table of contents:
 
 - [Current situation](#current-situation)
 - [Pain points](#pain-points)
@@ -32,7 +32,7 @@ the hardware machines with the required software components.
 
 ## Pain points
 
-The main reason for having an air gapped is of course based on customer requirements: Allowing industrial partners to host SCS as
+The main reason for having an air gapped method is of course based on customer requirements: Allowing industrial partners to host SCS as
 a private cloud is a major game changer when it comes to adoption of SCS in general. It allows consumers to avoid enourmous
 firewall configurations and therefore leads to clear visibility, traceability and the ability to audit, what is happening (or
 what is blocked) on your connections.
@@ -45,7 +45,7 @@ general:
 
     Our testing infrastructure deploys multiple [Testbeds](https://github.com/osism/testbed) per day, presumably using the same
     public IP address for these tasks. Official mirrors like [dockerhub](hub.docker.com) or [quay](quay.io) for container images
-    or [pypi](pypi.org) for python packages use rate limits on their APIs to reduce traffic. The flipside of this measure is,
+    or [pypi](pypi.org) for python packages employ rate limits on their APIs to reduce traffic. The flipside of this measure is,
     that our test-deployments break. Because of the high frequency and the bulk load of downloads, our IP addresses get blocked
     for a certain amount of time.
 
@@ -89,23 +89,23 @@ mirrored, different software has be improved or even developed from the ground u
 
 1. __wormhole__ for _ansible_ collections and roles
 
-    Starting with more or less the most complex component. Wormhole is a completly new software that is able to mirror
+    Starting with more or less the most complex component: Wormhole is a completely new software that is able to mirror
     collections and roles from the ansible galaxy. Actually, there is other software available which should be able to mirror
     assets from the ansible galaxy: [Pulp](https://pulpproject.org/). Pulp would have been actually really nice, because it can
-    also mirror other stuff like pypi packages, etc. Eventually we decided that pulp will not be the solution for us because: It
+    also mirror other stuff like pypi packages, etc. Eventually we decided that pulp will not be the solution for us due of a variety of reasons: It
     is still under heavy development; it offers only OpenShift deployments or an all in one container or a bare metal
     installation. They will not provide (even with contribution from our side) helm charts. Additionally, the handling of pulp
     itself is quite aweful in general. KISS is the way we want it! Enter [_wormhole_](github.com/osism/python-ansible-wormhole) -
-    the mirror software for the ansible-galaxy. It might not be pretty, but it does the job. And it required reverse-engineering
-    and even debugging the galaxy api. By the way: this might be the reason, why ansible itself want's to migrate to pulp. The
-    current implementation of the galaxy is scary.
+    the mirror software for the ansible-galaxy. It might not be pretty, but it does the job. However it did required
+    reverse-engineering and even debugging the galaxy api. By the way: this might be the reason, why ansible itself want's to
+    migrate to pulp. The current implementation of the galaxy is scary.
 
 2. ~~__aptly__~~ for _deb_ packages
 
     [Aptly](https://www.aptly.info/) is a project with a long history and is still being maintained. There are several
-    implementations evailable, all good enough to just use them. It's been battle proven as a reliable deb package mirror
-    software. Aptly provides some sort of API functionality, but not everything we need. For the moment, twe decided that this is
-    good enough, even if it involves some manual steps. In the current version, aplty is not used in the testbed as this is under
+    implementations available, all good enough to just use them. It has a good track record as a reliable deb package mirror
+    software. Aptly provides some sort of API functionality, but not everything we need. For the moment, we decided that this is
+    good enough, even if it involves some manual steps. In the current version, aptly is not used in the testbed as this is under
     active implementation development.
 
 3. __registry__ for _container_ images
@@ -122,13 +122,13 @@ mirrored, different software has be improved or even developed from the ground u
     installations during a testbed deployment. But for CI-CD activity, this is a big step towards more frequent and faster
     build times.
 
-There is still one big problem: They all require an internet connection. But it's only these services, that require them. And the
-datastores of them can be prefilled and be "manuall migrated" to the air gapped installation. But this is still something you
-need to do on your own. We aim to prepare more information on this in the next featureset for air gapped installations.
+There is still one big problem: They all require an internet connection, but only these services require the connection. Their
+datastores can be prefilled and be "manuall migrated" to the air gapped installation. This however is something you still need
+to do on your own. We aim to prepare more information on this in the next featureset for air gapped installations.
 
 ## Architecture
 
-As you might have noticed, this is quite some stuff to do, so let's put it into one big image:
+As you might have noticed, this are some pieces to the puzzle, so let's put it into one big image:
 
 <figure class="figure mx-auto d-block" style="width:50%">
   <a href="{% asset "blog/airgap-architecture.png" @path %}">
@@ -139,7 +139,7 @@ As you might have noticed, this is quite some stuff to do, so let's put it into 
 The graphic is devided into two major parts, let's start with the upper one: This is the mirror infrastructure of OSISM GmbH.
 We'll use this for our CI-CD tests and maybe also for public SCS installations in the future. The mirrors itself pull the assets
 from the upstream sources. You might have noticed, that there is also a component called "harbor". [Harbor](https://goharbor.io/)
-deals also with container images. We use it for our own build containers, therefore we'll split container images into just "pure"
+deals with container images. We use it for our own build containers, therefore we'll split container images into just "pure"
 mirrors and the ones we build our own.
 
 The bottom half represents any installation of SCS, may it be a testbed, a
@@ -153,16 +153,16 @@ refined in the future.
 ## Spin-off standalone software
 
 [__wormhole__](github.com/osism/python-ansible-wormhole) can be used by you to mirror collections and roles from the official
-ansible galaxy. That beeing said, it fakes some values in the API reposonses (like IDs or timestamps). It would just make no
-sense to also store this data. It's only purpose is to mirror the assets with the versions in the correct orde. Oh, by the way:
+ansible galaxy. That beeing said, it fakes some values in the API responses (like IDs or timestamps). It would just make no
+sense to also store this data. Its only purpose is to mirror the assets with the versions in the correct orde. Oh, by the way:
 There is a nasty bug inside the official galaxy client tool (and probably also the galaxy API). When querying for a latest
-version of a collection, the client just scraps _ALL_ versions and picks the highest one. Even though, the API provides a link to
+version of a collection, the client just scrapes _ALL_ versions and picks the highest one. Even though, the API provides a link to
 the latest version. Details can be found [here](https://github.com/ansible/ansible/issues/79467).
 
 [__banderctl__](github.com/osism/python-banderctl) creates an API endpoint in front of the bandersnatch clients config.
 Bandersnatch itself is capable of a lot more things than just mirroring. But as we just require mirroring, this is still fine for
 us. What's missing is an API to edit this file and append new packages or even remove packages from it. That's where banderctl
-jumps right in. It translates your API request and applies the desired addition or deletion into bandersnatchs config.
+jumps right in. It translates your API request and applies the desired addition or deletion into bandersnatch's config.
 Bandersnatch itself runs in parallel and is periodically executed. You do not want to trigger it on every change, as its runtime
 takes quite long and would throw errors, if there are parallel executions happening on the index files.
 
@@ -171,4 +171,4 @@ takes quite long and would throw errors, if there are parallel executions happen
 Beside the already mentioned points, we still need to implement signing for deb packages. While doing this, we might also need to
 consider, how we abuse the proxy to redirecting official requests (e.g. against the official quay.io from clients) to our
 internal mirror. Once this is done, we can continue to create a guide to preload the internal mirrors before cutting the
-installation from the internet. This way, we will have finally a full air gap installation.
+installation from the internet. This way, we will have a fully air gapped installation finally.
