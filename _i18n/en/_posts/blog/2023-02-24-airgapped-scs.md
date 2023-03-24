@@ -152,7 +152,7 @@ refined in the future.
 
 ## Spin-off standalone software
 
-[__wormhole__](github.com/osism/python-ansible-wormhole) can be used by you to mirror collections and roles from the official
+[__Wormhole__](github.com/osism/python-ansible-wormhole) can be used by you to mirror collections and roles from the official
 ansible galaxy. That beeing said, it fakes some values in the API responses (like IDs or timestamps). It would just make no
 sense to also store this data. Its only purpose is to mirror the assets with the versions in the correct orde. Oh, by the way:
 There is a nasty bug inside the official galaxy client tool (and probably also the galaxy API). When querying for a latest
