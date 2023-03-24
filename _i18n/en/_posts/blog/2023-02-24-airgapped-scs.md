@@ -92,7 +92,7 @@ mirrored, different software has be improved or even developed from the ground u
     Starting with more or less the most complex component: Wormhole is a completely new software that is able to mirror
     collections and roles from the ansible galaxy. Actually, there is other software available which should be able to mirror
     assets from the ansible galaxy: [Pulp](https://pulpproject.org/). Pulp would have been actually really nice, because it can
-    also mirror other stuff like pypi packages, etc. Eventually we decided that pulp will not be the solution for us due of a variety of reasons: It
+    also mirror other stuff like pypi packages, etc. Eventually we decided that pulp will not be the solution for us due to a variety of reasons: It
     is still under heavy development; it offers only OpenShift deployments or an all in one container or a bare metal
     installation. They will not provide (even with contribution from our side) helm charts. Additionally, the handling of pulp
     itself is quite aweful in general. KISS is the way we want it! Enter [_wormhole_](github.com/osism/python-ansible-wormhole) -
