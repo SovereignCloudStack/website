@@ -1,8 +1,3 @@
----
-title: Sovereign Cloud Stack Summit 2023
-layout: default
-permalink: /summit
----
 <!-- HEAD -->
 {% asset lightslider/css/lightslider.css %}
 {% asset lightslider/js/lightslider.min.js %}
