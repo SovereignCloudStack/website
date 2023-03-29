@@ -27,4 +27,14 @@ As allways, we publish all exciting topics on GitHub and on our website for furt
 
 ## Gallery
 
-<!--- TODO: Fotos --->
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+  {% for image in assets %}
+    {% if image[0] contains "images/hackathon2023/gallery" %}
+      <div>
+        <a href="{% asset '{{image[0]}}' @path %}">
+          {% asset '{{image[0]}}' class='card-img-top rounded' alt='SCS Community Hackathon 2023 Gallery' vips:resize='500x500' vips:crop='high' vips:format='.webp' %}
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
