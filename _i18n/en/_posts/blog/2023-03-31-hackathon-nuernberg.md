@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "Sovereign Cloud Stack Community Hackathon Nuremberg 2023"
-image: #ToDo
+image: hackathon-nuremberg-2023/hackathon-03-23_osism_IMG_0724.jpg
 author:
   - "Ramona Beermann"
   - "Eduard Itrich"
-avatar: #ToDo
+avatar:
+  - "RB.png"
+  - "eitrich.jpg"
 about: #ToDo
 ---
 
@@ -31,7 +33,7 @@ As always, we publish all exciting topics on GitHub and on our website for furth
 
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
   {% for image in assets %}
-    {% if image[0] contains "images/hackathon2023/gallery" %}
+    {% if image[0] contains "images/hackathon-nuremberg-2023/" %}
       <div>
         <a href="{% asset '{{image[0]}}' @path %}">
           {% asset '{{image[0]}}' class='card-img-top rounded' alt='SCS Community Hackathon 2023 Gallery' vips:resize='500x500' vips:crop='high' vips:format='.webp' %}
