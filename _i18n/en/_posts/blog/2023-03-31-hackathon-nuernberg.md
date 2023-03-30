@@ -13,6 +13,8 @@ watchlist:
     url: "https://input.scs.community/p/scs-community-hackathon-2023-ceph-in-a-box#/"
   - name: "Workload identities"
     url: "https://input.scs.community/p/8xXw9cm-G#/"
+  - name: "(Interactive) Overview for SCS Standards / Architecture"
+    url: "https://input.scs.community/p/McKZb7j1R#/"
 ---
 
 Four weeks ago our [second Community Hackathon]({% post_url blog/2023-01-27-hackathon-2023 %}) took place in Nuremberg. During this great event we gathered with familiar faces from our community as well as with new friends to work together on many interesting topics. All in all it was a very productive event with good discussions and lot of fun.
