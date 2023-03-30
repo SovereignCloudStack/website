@@ -8,7 +8,7 @@ author:
 avatar:
   - "RB.png"
   - "eitrich.jpg"
-watchlist:
+sessions:
   - name: "Ceph in a box"
     url: "https://input.scs.community/p/scs-community-hackathon-2023-ceph-in-a-box#/"
   - name: "Workload identities"
@@ -17,11 +17,15 @@ watchlist:
     url: "https://input.scs.community/p/McKZb7j1R#/"
 ---
 
+<figure class="figure mx-auto d-block" style="width:100%">
+    {% asset 'blog/scs-hackathon-2023.png' class="figure-img w-100" %}
+</figure>
+
 Four weeks ago our [second Community Hackathon]({% post_url blog/2023-01-27-hackathon-2023 %}) took place in Nuremberg. During this great event we gathered with familiar faces from our community as well as with new friends to work together on many interesting topics. All in all it was a very productive event with good discussions and lot of fun.
 
 Special thanks go to the organizing companies of the event [Wavecon GmbH](https://www.wavecon.de/) and [OSISM GmbH](https://osism.tech). The data center tour at [noris network AG](https://www.noris.de/) was amazing. It was exciting to see one of the most modern data centers in Europe from the inside.
 
-A big thanks goes to our community too. Without you the event wouldn't be so awesome. Thanks a lot to all.
+A big thanks goes to our community too. Without you the event wouldn't have been so awesome. Thanks a lot to all of you. 💕
 
 But let us tell you a little more...
 
