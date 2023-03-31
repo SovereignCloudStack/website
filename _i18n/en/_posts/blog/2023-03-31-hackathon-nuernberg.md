@@ -15,6 +15,8 @@ sessions:
     url: "https://input.scs.community/p/8xXw9cm-G#/"
   - name: "(Interactive) Overview for SCS Standards / Architecture"
     url: "https://input.scs.community/p/McKZb7j1R#/"
+  - name: "Container Layer Monitoring"
+    url: "https://input.scs.community/s/EQ_Koce80"
 ---
 
 <figure class="figure mx-auto d-block" style="width:100%">
@@ -25,7 +27,7 @@ Four weeks ago our [second Community Hackathon]({% post_url blog/2023-01-27-hack
 
 Special thanks go to the organizing companies of the event [Wavecon GmbH](https://www.wavecon.de/) and [OSISM GmbH](https://osism.tech). The data center tour at [noris network AG](https://www.noris.de/) was amazing. It was exciting to see one of the most modern data centers in Europe from the inside.
 
-A big thanks goes to our community too. Without you the event wouldn't have been so awesome. Thanks a lot to all of you. 💕
+A big thanks goes to our community too. Without you the event wouldn't be so awesome. Thanks a lot to all.
 
 But let us tell you a little more...
 
@@ -36,6 +38,8 @@ The morning began with an empowering breakfast and many great conversations, whi
 As always, we publish all exciting topics on GitHub and on our website for further reading.
 
 ## This topics took place at the hackathon
+
+Various topics that the community wanted to work on were already identified in advance. The full list can be viewed here in [this](https://input.scs.community/s/EQ_Koce80) Hedgedoc. Below you can find some of the result presentations of the individual groups.
 
 <div class="row">
 	<div class="col-lg-12">
@@ -64,3 +68,4 @@ As always, we publish all exciting topics on GitHub and on our website for furth
     {% endif %}
   {% endfor %}
 </div>
+<p class="text-end text-muted fw-light"><small>Images powered by Larissa Stoffers from OSISM and Pascal Geck from Wavecon.</small></p>
