@@ -1,7 +1,7 @@
 ---
 title: Sovereign Cloud Stack Summit 2023
 layout: default
-permalink: /summit
+permalink: /summit/
 image: summit2023/social.png
 ---
 
