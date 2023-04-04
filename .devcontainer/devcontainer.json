@@ -17,7 +17,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "sh /usr/local/post-create.sh",
-	"postStartCommand": "jekyll serve -c _config.yml,_config.dev.yml > /dev/null 2>&1 &",
+	"postStartCommand": ["jekyll serve -c _config.yml,_config.dev.yml"],
 
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "root"
