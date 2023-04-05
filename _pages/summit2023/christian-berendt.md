@@ -1,5 +1,5 @@
 ---
-title: John Doe at Sovereign Cloud Stack Summit 2023
+title: Christian Berendt at Sovereign Cloud Stack Summit 2023
 permalink: /summit/christian-berendt/
 layout: default
 image: summit2023/share/christian-berendt.png
