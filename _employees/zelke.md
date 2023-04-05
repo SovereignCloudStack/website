@@ -19,4 +19,7 @@ state: Berlin
 zip: 10117
 country: Germany
 timezone: Europe/Berlin
+location:
+  latitude: 52.563
+  longitude: 13.725
 ---
