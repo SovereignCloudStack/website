@@ -5,7 +5,7 @@
 Die Open Source Business Alliance – Bundesverband für digitale Souveränität e.V. (OSB Alliance) vertritt mehr als 200 Mitgliedsunternehmen der Open-Source-Wirtschaft, die in Deutschland
 gemeinsam jährlich mehr als 1,7 Milliarden Euro erwirtschaften. Zusammen mit wissenschaftlichen Einrichtungen und Anwenderorganisationen setzt sich der Verband dafür ein, die zentrale Bedeutung von Open-Source-Software und offenen Standards für eine digital souveräne Gesellschaft im öffentlichen Bewusstsein zu verankern. Die OSB Alliance betrachtet Open Source und offene Standards als zwingende Grundlagen für digitale Souveränität, Flexibilität und Sicherheit im digitalen Wandel und damit als Antwort auf eine der größten Herausforderungen unserer Zeit.
 
-Mit dem Projekt Sovereign Cloud Stack [verlinken] (SCS) trägt die OSB Alliance zur Verwirk­lichung der Ziele der ”Digitalstrategie Deutschland” der Bundesregierung und des europäischen Vorhabens Gaia-X bei, indem es eine offene Cloud-Infrastruktur der nächsten Generation entwickelt.
+Mit dem Projekt Sovereign Cloud Stack (SCS) trägt die OSB Alliance zur Verwirk­lichung der Ziele der ”Digitalstrategie Deutschland” der Bundesregierung und des europäischen Vorhabens Gaia-X bei, indem es eine offene Cloud-Infrastruktur der nächsten Generation entwickelt.
 
 Das Projekt wird von einem kleinen Team in der OSB Alliance mit mehrjähriger Förderung durch das Bundesministerium für Wirtschaft und Klimaschutz (BMWK) vorangetrieben. Die ausge­schriebene Position gehört zu diesem zentralen Team. Zusätzlich zu diesem Team gibt es zahlreiche Entwickler:innen aus verschiedenen Unternehmen und Institutionen Europas, die zu SCS beitragen – einige von ihnen werden durch das Projekt finanziert, andere, weil ihre Arbeit­geber:innen daran interessiert sind, SCS erfolgreich zu machen.
 
@@ -23,8 +23,8 @@ SCS trägt zu dem europäischen Vorhaben Gaia-X bei, indem es als Referenz für 
 * einen wichtigen Beitrag zur Schaffung von digitaler Souveränität leisten, indem du mit uns sicherstellst,
     - dass der Sovereign Cloud Stack marktgerecht ist,
     - dass unsere Standardisierungen dazu führen, dass die Endnutzer einen größeren Nutzen aus Cloud Computing ziehen können,
-* die Betreuung von Partnern (Cloud-Service-Provider, Unternehmen, die SCS als Basis für ihre private Cloud einsetzen wollen, SCS-Integratoren, Ökosystem) aus Produktsicht übernehmen,
-* die Produktanforderungen unserer Partner verstehen,  
+* die Betreuung von Partnern (Cloud-Service-Provider, Unternehmen, die SCS als Basis für ihre private Cloud einsetzen wollen, SCS-Integratoren, Ökosystem) aus Produktsicht übernehmen,
+* die Produktanforderungen unserer Partner verstehen,
 * in gemeinsamer Arbeit mit den Product Ownern Hebel erkennen, um die Partner zu befähigen, ihren Kunden ein besseres Produkt liefern zu können,
 * erkennen, was hinter genannten Lösungen und Wünschen als eigentliche Bedürfnisse des Partners verborgen sind,
 * unseren Partnern helfen, den Sovereign Cloud Stack in Gänze zu verstehen und greifen zu koennen,
