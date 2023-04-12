@@ -1,1 +1,1 @@
-../../../en/_posts/blog/2023-02-24-airgapped-scs.md
+../../../en/_posts/blog/2023-04-12-airgapped-scs.md
