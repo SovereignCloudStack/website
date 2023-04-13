@@ -44,8 +44,8 @@ general:
 1. 🛑 API rate limits :stop
 
     Our testing infrastructure deploys multiple [Testbeds](https://github.com/osism/testbed) per day, presumably using the same
-    public IP address for these tasks. Official mirrors like [dockerhub](hub.docker.com) or [quay](quay.io) for container images
-    or [pypi](pypi.org) for python packages employ rate limits on their APIs to reduce traffic. The flipside of this measure is,
+    public IP address for these tasks. Official mirrors like [dockerhub](https://hub.docker.com) or [quay](https://quay.io) for container images
+    or [pypi](https://pypi.org) for python packages employ rate limits on their APIs to reduce traffic. The flipside of this measure is,
     that our test-deployments break. Because of the high frequency and the bulk load of downloads, our IP addresses get blocked
     for a certain amount of time.
 
@@ -95,7 +95,7 @@ mirrored, different software has be improved or even developed from the ground u
     also mirror other stuff like pypi packages, etc. Eventually we decided that pulp will not be the solution for us due to a variety of reasons: It
     is still under heavy development; it offers only OpenShift deployments or an all in one container or a bare metal
     installation. They will not provide (even with contribution from our side) helm charts. Additionally, the handling of pulp
-    itself is quite aweful in general. KISS is the way we want it! Enter [_wormhole_](github.com/osism/python-ansible-wormhole) -
+    itself is quite aweful in general. KISS is the way we want it! Enter [_wormhole_](https://github.com/osism/python-ansible-wormhole) -
     the mirror software for the ansible-galaxy. It might not be pretty, but it does the job. However it did require
     reverse-engineering and even debugging the galaxy api. By the way: this might be the reason, why ansible itself wants to
     migrate to pulp. The current implementation of the galaxy is scary.
@@ -116,7 +116,7 @@ mirrored, different software has be improved or even developed from the ground u
 
     [Bandersnatch](https://pypi.org/project/bandersnatch/) itself is "just" a client, but an official one. Sadly, it uses a
     config file which needs to contain the packages that are about to be mirrored. So no API. Therefore
-    [_banderctl_](github.com/osism/python-banderctl) was developed. It mounts the config file and puts an API in front of it.
+    [_banderctl_](https://github.com/osism/python-banderctl) was developed. It mounts the config file and puts an API in front of it.
     The client itself is executed periodically to perform mirroring. Pretty neat!
     Bandersnatch and banderctl only act as supporting services outside of a testbed, as there is no need for python package
     installations during a testbed deployment. But for CI-CD activity, this is a big step towards more frequent and faster
@@ -152,14 +152,14 @@ refined in the future.
 
 ## Spin-off standalone software
 
-[__Wormhole__](github.com/osism/python-ansible-wormhole) can be used by you to mirror collections and roles from the official
+[__Wormhole__](https://github.com/osism/python-ansible-wormhole) can be used by you to mirror collections and roles from the official
 ansible galaxy. That being said, it fakes some values in the API responses (like IDs or timestamps). It would just make no
 sense to also store this data. Its only purpose is to mirror the assets with the versions in the correct order. Oh, by the way:
 There is a nasty bug inside the official galaxy client tool (and probably also the galaxy API). When querying for a latest
 version of a collection, the client just scrapes _ALL_ versions and picks the highest one. Even though, the API provides a link to
 the latest version. Details can be found [here](https://github.com/ansible/ansible/issues/79467).
 
-[__Banderctl__](github.com/osism/python-banderctl) creates an API endpoint in front of the bandersnatch clients config.
+[__Banderctl__](https://github.com/osism/python-banderctl) creates an API endpoint in front of the bandersnatch clients config.
 Bandersnatch itself is capable of a lot more things than just mirroring. But as we just require mirroring, this is still fine for
 us. What's missing is an API to edit this file and append new packages or even remove packages from it. That's where banderctl
 jumps right in. It translates your API request and applies the desired addition or deletion into bandersnatch's config.
