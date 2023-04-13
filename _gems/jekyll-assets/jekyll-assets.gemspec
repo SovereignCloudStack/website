@@ -41,7 +41,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency("mini_racer", "~> 0.1")
   s.add_development_dependency("image_optim", "~> 0.25")
   s.add_development_dependency("image_optim_pack", "~> 0.5")
-  s.add_development_dependency("font-awesome-sass", "~> 5.0")
+  s.add_development_dependency("font-awesome-sass", "~> 6.4")
   s.add_development_dependency("luna-rspec-formatters", "~> 3.2")
   s.add_development_dependency("envygeeks-rubocop", "~> 92.0")
   s.add_development_dependency("autoprefixer-rails", "~> 10.4")
