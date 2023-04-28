@@ -14,12 +14,27 @@ Registration on 23 May is possible from 12:00 CEST, the event will start at 13:0
 
 What you can expect are exciting talks, discussions and workshops on the following topics:
 
-* The importance of digital sovereignty for economy, state and society in Europe
-* Deutsche Verwaltungscloud-Strategie
-* Use cases for SCS such as the Bavarian School Cloud
-* Why SCS is important for innovation in Europe
-* The SCS certification program and the first SCS-certified clouds
-* Creating genuine added value with standardization
+* Grußwort Bundesministerium für Wirtschaft und Klimaschutz
+Ernst Stöckl-Pukall, Leiter Referat Digitalisierung & Industrie 4.0
+
+* Podiumsdiskussion: "Warum digitale Souveränität wichtig für Europa ist" mit
+Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz
+Thomas Bendig, Chief Innovation Officer adesso SE
+Stephan Iländer., STACKIT
+Alfred Schröder, Geschäftsführer GONICUS GmbH
+
+* "Warum digitale Souveränität von zentraler Bedeutung für Innovation, Freiheit und Demokratie in Europa ist"
+Rafael Laguna de la Vera, Direktor der Bundesagentur für Sprunginnovationen SPRIN-D
+
+* "SCS - The vision of one platform - standardised, built and operated by many"
+Johan Christenson, Vice President Innovation, Cleura AB
+Kurt Garloff, CTO Sovereign Cloud Stack
+
+* "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis von SCS aufbauen"
+Christian Wolter, B1 Systems GmbH
+
+* "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit"
+Silke Tessmann-Storch, Vorständin Lösungen, dataport A.ö.R.
 
 Most of the contributions will be in German, although we are also happy to announce that we have additional English-language contributions.
 
