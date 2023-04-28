@@ -2,6 +2,9 @@ speakers:
   - name: Ernst Stöckl-Pukall
     title: Leiter des Referates „Digitalisierung, Industrie 4.0“ im Bundesministerium für Wirtschaft und Klimaschutz
     avatar: summit2023/speaker/stoeckl-pukall.jpg
+  - name: Jutta Rößner
+    title: Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG
+    avatar: summit2023/speaker/roessner.jpeg
   - name: Rafael Laguna de la Vera
     title: Gründungsdirektor der Bundesagentur für Sprunginnovationen (SPRIND GmbH)
     avatar: summit2023/speaker/rafael-laguna.jpg
@@ -9,7 +12,7 @@ speakers:
     title: Vorständin der Dataport AöR, Leiterin des Unternehmensbereichs Lösungen
     avatar: summit2023/speaker/tessmann-storch.jpg
   - name: Johan Christenson
-    title: CEO Cleura AB
+    title: Founder and VP Innovation, Cleura AB
     avatar: summit2023/default-avatar.jpg
   - name: Andreas Weiss
     title: Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V.
@@ -31,6 +34,15 @@ speakers:
     avatar: summit2023/speaker/cemil.jpg
   - name: Christian Schmitz
     title: Director Open Source, PlusServer GmbH
+    avatar: summit2023/speaker/christian-schmitz.jpg
+  - name: Miriam Seyffarth
+    title: Leiterin Politische Kommunikation, OSB Alliance e.V.
+    avatar: summit2023/speaker/seyffarth.jpg
+  - name: Robert Holling
+    title: Dipl. Wirtsch.-Inf. (FH), 5G Reallabor, Hochschule Osnabrück 
+    avatar: summit2023/speaker/holling.jpg
+  - name: Dr. Hans-Joachim Popp
+    title: Princicpal Consultant@BwConsulting GmbH, Stellv. Vorsitzender VOICE - Bundesverband der IT-Anwender e.V.- 
     avatar: summit2023/default-avatar.jpg
 
 sponsors:
@@ -57,3 +69,6 @@ sponsors:
     - name: Univention GmbH
       logo: summit2023/partner/univention.svg
       url: https://univention.com/
+    - name: Bundesverband der IT-Anwender e.V.
+      logo: summit2023/partner/voice.png
+      url: https://voice-ev.org/

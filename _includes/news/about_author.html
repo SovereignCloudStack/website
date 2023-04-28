@@ -22,7 +22,7 @@
     </div>
     <div class="d-flex flex-column pe-3">
         <div class="mb-0 text-center text-md-start"><b>{% if author.academic %}{{author.academic}} {% endif %}{{author.firstname}} {{author.lastname}}</b></div>
-        <div class="small text-muted mt-0 text-center text-md-start">{{author.role}} @ <a href="{{author.companylink}}" target="_blank">{{author.company}}</a></div>
+        {% if author.company and author.role %}<div class="small text-muted mt-0 text-center text-md-start">{{author.role}} @ <a href="{{author.companylink}}" target="_blank">{{author.company}}</a></div>{% endif %}
         <div class="mt-2">{{author.bio}}</div>
         <div class="mt-2 d-flex flex-row flex-wrap">
           {% include community/social.html community_member=author %}
