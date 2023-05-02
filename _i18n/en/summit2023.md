@@ -14,26 +14,26 @@ Registration on 23 May is possible from 12:00 CEST, the event will start at 13:0
 
 What you can expect are exciting talks, discussions and workshops on the following topics:
 
-* Welcoming address Federal Ministry for Economic Affairs and Climate Action of Germany
+* Welcoming address Federal Ministry for Economic Affairs and Climate Action of Germany (DE)
 Ernst Stöckl-Pukall, Director Department Digitisation & Industrie 4.0
 
-* Panel discussion: "Why digital sovereignty is important for Europe"
+* Panel discussion: "Why digital sovereignty is important for Europe" (DE)
 Dr. Franziska Brantner, Parliamentary State Secretary at the Federal Ministry for Economic Affairs and Climate Action of Germany
 Thomas Bendig, Chief Innovation Officer adesso SE
 Stephan Iländer, STACKIT
 Alfred Schröder, CEO GONICUS GmbH
 
-* "Why digital sovereignty is central to innovation, freedom and democracy in Europe"
+* "Why digital sovereignty is central to innovation, freedom and democracy in Europe" (DE)
 Rafael Laguna de la Vera, Director Federal Agency for disruptive Innovation SPRIN-D
 
-* "SCS - The vision of one platform - standardised, built and operated by many"
+* "SCS - The vision of one platform - standardised, built and operated by many" (EN)
 Johan Christenson, Vice President Innovation, Cleura AB
 Kurt Garloff, CTO Sovereign Cloud Stack
 
-* "Build your own hyperscaler: how to build a sovereign private cloud based on SCS"
+* "Build your own hyperscaler: how to build a sovereign private cloud based on SCS" (DE)
 Christian Wolter, B1 Systems GmbH
 
-* "How administration becomes digitally sovereign - open source as a way out of dependency"
+* "How administration becomes digitally sovereign - open source as a way out of dependency" (DE)
 Silke Tessmann-Storch, Director Solutions, dataport A.ö.R.
 
 Most of the contributions will be in German, although we are also happy to announce that we have additional English-language contributions.
