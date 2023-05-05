@@ -4,39 +4,63 @@ Liebe Freunde und interessierte Beobachter von SCS,
 
 der Sovereign Cloud Stack ist erfolgreich im zweiten Jahr angekommen und hat eine aktive Community etabliert, die einen standardisierten Open Source Cloud Computing Stack entwickelt und pflegt. Erfolg heißt, dass wir die vierte Version herausgebracht haben und  drei Cloud Service Provider ihr Angebot auf SCS Standards und Technologie bereitstellen. Grund genug, um zu unserem ersten SCS Summit am **23. und 24. Mai 2023 in Berlin** einzuladen, wo Anwender, Partner und Entwickler und jeder, der mit dem Projekt verbunden ist, Wissen und Erfahrungen austauschen und - natürlich - netzwerken und Spaß haben können.
 
-Die Registrierung am 23. Mai ist ab 12:00 Uhr möglich, die Veranstaltung beginnt um 13:00 Uhr. Der zweite Tag beginnt mit der Registrierung ab 9:00 Uhr und endet offiziell um 13:00 Uhr
+Die Registrierung am 23. Mai ist ab 12:00 Uhr möglich, die Veranstaltung beginnt um 13:00 Uhr. Am zweite Tag ist die Registrierung ab 8:00 Uhr möglich, das Programm beginnt um 9:00 und endet offiziell um 13:00 Uhr
 
 ## Gäste
 
 {% include summit2023/speakers.html %}
 
-## Themen
+## Programm
 
-Es erwarten Sie spannende Vorträge, Diskussionen und Workshops zu den folgenden Themen:
+Folgende Vorträge und Diskussionen erwarten Sie:
 
+Tag 1:
 * Grußwort Bundesministerium für Wirtschaft und Klimaschutz
 Ernst Stöckl-Pukall, Leiter Referat Digitalisierung & Industrie 4.0
 
-* Podiumsdiskussion: "Warum digitale Souveränität wichtig für Europa ist" mit
-Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz
-Thomas Bendig, Chief Innovation Officer adesso SE
-Stephan Iländer., STACKIT
-Alfred Schröder, Geschäftsführer GONICUS GmbH
+* Paneldiskussion: "Warum digitale Souveränität wichtig für Europa ist" mit
+Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz; 
+Dr.Reinhard Brandl, Mitglied des Bundestages, Vorsitzender der Arbeitsgruppe Digitales der CDU/CSU Fraktion;  
+Stephan Iländer, STACKIT; 
+Jan Hill, Bereichsleiter Public Services, adesso SE
 
-* "Warum digitale Souveränität von zentraler Bedeutung für Innovation, Freiheit und Demokratie in Europa ist"
-Rafael Laguna de la Vera, Direktor der Bundesagentur für Sprunginnovationen SPRIN-D
+* Impulsvortrag: "Warum digitale Souveränität von zentraler Bedeutung für Innovation, Freiheit und Demokratie in Europa ist"
+Rafael Laguna de la Vera, Direktor der Bundesagentur für Sprunginnovationen SPRIND
 
-* "SCS - The vision of one platform - standardised, built and operated by many"
-Johan Christenson, Vice President Innovation, Cleura AB
+* Ein Gespräch zwischen Johan und Kurt: "SCS - The vision of one platform - standardised, built and operated by many" (auf Englisch)
+Johan Christenson, Vice President Innovation, Cleura AB;
 Kurt Garloff, CTO Sovereign Cloud Stack
 
-* "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis von SCS aufbauen"
+* Impulsvortrag: "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis von SCS aufbauen"
 Christian Wolter, B1 Systems GmbH
 
-* "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit"
+* Impulsvortrag: "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit"
 Silke Tessmann-Storch, Vorständin Lösungen, dataport A.ö.R.
 
-Die meisten Konferenzbeiträge werden in Deutsch gehalten, wobei wir uns zusätzlich auch auf einige englischsprachige Vorträge freuen.
+Tag 2:
+* Impulsvortrag: "Ein SCS-Datencenter für das Campusnetz der Hochschule Osnabrück"
+Robert Holling, Dipl.-Wirtsch.-Inf. Reallabor Hoschschule Osnabrück
+
+* Paneldiskussion: "Building a Community of Practice – der Betrieb von SCS-Infrastrukturen"
+Alexander Wallner, CEO PlusServer GmbH; 
+Christian Berendt, Founder und CEO der OSISM GmbH; 
+Cemil Demirgenci, Geschäftsführer der Wavecon GmbH (100% noris network AG); 
+Felix Kronlage-Dammers, Product Owner SCS IaaS
+
+* "Federation Services – Die Open Source Werkzeugkiste zum Aufbau souveräner Datenökosysteme"
+Andreas Weiss, Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V.
+
+* Impulsvortrag: tbd
+Christian Schmitz, Director Open Source, PlusServer GmbH
+
+* Impulsvortrag: tbd
+Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG
+
+* Impulsvortrag: tbd 
+Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting GmbH, Stellv. Vorsitzender VOICE - Bundesverband der IT-Anwender e.V.- 
+
+
+Die meisten Konferenzbeiträge werden in Deutsch gehalten, außer dort, wo die Sprache explizit angegeben ist.
 
 ## Veranstaltungsort
 
