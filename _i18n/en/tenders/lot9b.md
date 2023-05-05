@@ -1,0 +1,9 @@
+## Lot 9b
+
+### Supply chain security by means of checking the bill of materials
+
+The subject of the invitation to tender is a framework agreement with a company for programming and other services for the development, documentation, validation and integration of open source software to determine the the software component bill of materials (SBOM) in the Sovereign Cloud Stack (SCS) reference implementation for the purpose of verification of authenticity, recording of licenses and in particular the management of security information (in particular also security vulnerabilities) of the used pieces based on the Open Source Review Toolkit.
+
+The goal of the project is the development of a software tool for the determination of the bill of materials of a software for the purpose of the examination of the authenticity, the collection of licenses and the management of safety information (in particular also safety gaps) of the pieces. Pieces are definable components that are built into the software. Each piece shall be identified and documented with relevant information.
+A plugin architecture will enable the extension of the tool with different functionalities. Vulnerability management will be developed as part of this project; other functionalities are not part of this project, but can be developed by third parties if they are interested. The tool is intended to fit into the Open Source Review Toolkit, which provides relevant functionalities.
+The software tool will be developed as open source software under an OSI license (preferably AGPL-3.0-or-later) on GitHub in a repository to be set up for this purpose.  It will be set up as a web application and can be applied via a container in the context of a company or project. In addition to automated processes, the web application allows the interactive storage of information on individual components or parts lists.
