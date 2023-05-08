@@ -10,7 +10,7 @@ jobs:
     name: "Lighthouse v9 performance checks"
     runs-on: ubuntu-latest
     steps:
-      - uses: treosh/lighthouse-ci-action@v9
+      - uses: treosh/lighthouse-ci-action@v10
         with:
           urls: https://scs.community
           uploadArtifacts: true # save results as an action artifacts

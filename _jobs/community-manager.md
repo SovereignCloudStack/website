@@ -7,7 +7,7 @@ redirect_from:
 short_description: jobs.community-manager.short_description
 image: "community-manager.jpg"
 location: "Remote / Berlin"
-published: true
+published: false
 ---
 
 {% tf jobs/community-manager.md %}

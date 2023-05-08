@@ -1,0 +1,9 @@
+## Vergabepaket 9b
+
+### Lieferkettenabsicherung mittels Prüfung der Stücklisten
+
+Gegenstand der Ausschreibung ist eine Rahmenvereinbarung mit einem Unternehmen über Programmier- und sonstige Dienstleistungen für die Entwicklung, Dokumentation, Validierung und Integration von Open Source Software zur Bestimmung der Stückliste der Softwarekomponenten (SBOM) in der Referenzimplementierung von Sovereign Cloud Stack (SCS) zwecks Überprüfung der Authentizität, Erfassung der Lizenzen und insbesondere dem Management von Sicherheitsinformationen (insbesondere auch Sicherheitslücken) der genutzten Stücke auf Basis des Open-Source Review Toolkits.
+
+Ziel des Projekts ist die Entwicklung eines Softwarewerkzeugs zur Bestimmung der Stückliste einer Software zwecks Überprüfung der Authentizität, der Erfassung von Lizenzen und dem Manage­ment von Sicherheitsinformationen (insbesondere auch Sicherheitslücken) der Stücke. Stücke sind abgrenzbare Komponenten, die in der Software verbaut werden. Jedes Stück soll identifiziert und mit relevanter Information dokumentiert werden.
+Eine Plugin-Architektur soll die Erweiterung des Werkzeugs um unterschiedliche Funktionalitätenermöglichen. Im Rahmen dieses Projekts soll das Management von Sicherheitslücken entwickelt werden; andere Funktionalitäten sind nicht Teil dieses Projekts, können aber bei etwaigem Inter­esse von Drittparteien entwickelt werden. Das Werkzeug soll sich in das Open Source Review Toolkit einfügen, welches relevante Funktionalitäten bereitstellt.
+Das Softwarewerkzeug wird als Open-Source-Software unter einer OSI Lizenz (bevorzugt  AGPL-3.0-or-later) auf GitHub in einem dazu aufzusetzendem Repository entwickelt werden.  Es wird als Webanwendung aufgesetzt und über einen Container im Kontext eines Unternehmens oder Projekts angewendet werden können. Die Webanwendung erlaubt neben automatisierten Abläufen das interaktive Hinterlegen von Informationen zu einzelnen Komponenten oder Stücklisten.

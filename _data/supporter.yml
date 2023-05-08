@@ -26,10 +26,10 @@
   location:
     latitude: 52.530880
     longitude: 13.373400
-- name: "City Network"
-  image: "logo-citynetwork.png"
-  avatar: "avatar-citynetwork.png"
-  link: "https://citynetwork.eu/"
+- name: "Cleura"
+  image: "logo-cleura.png"
+  avatar: "avatar-cleura.png"
+  link: "https://cleura.com/"
   location:
     latitude: 56.162100
     longitude: 15.583340

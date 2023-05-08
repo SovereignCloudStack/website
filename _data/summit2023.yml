@@ -4,7 +4,7 @@ speakers:
     avatar: summit2023/speaker/stoeckl-pukall.jpg
   - name: Jutta Rößner
     title: Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG
-    avatar: summit2023/default-avatar.jpg
+    avatar: summit2023/speaker/roessner.jpeg
   - name: Rafael Laguna de la Vera
     title: Gründungsdirektor der Bundesagentur für Sprunginnovationen (SPRIND GmbH)
     avatar: summit2023/speaker/rafael-laguna.jpg
@@ -12,8 +12,8 @@ speakers:
     title: Vorständin der Dataport AöR, Leiterin des Unternehmensbereichs Lösungen
     avatar: summit2023/speaker/tessmann-storch.jpg
   - name: Johan Christenson
-    title: CEO Cleura AB
-    avatar: summit2023/default-avatar.jpg
+    title: Founder and VP Innovation, Cleura AB
+    avatar: summit2023/speaker/johan-christenson.jpg
   - name: Andreas Weiss
     title: Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V.
     avatar: summit2023/speaker/andreas-weiss.jpg
@@ -23,9 +23,6 @@ speakers:
   - name: Alexander Wallner
     title: CEO der PlusServer GmbH
     avatar: summit2023/default-avatar.jpg
-  - name: Alfred Schröder
-    title: Geschäftsführer der GONICUS GmbH & Mitglied des erweiterten Vorstands der OSB Alliance e.V.
-    avatar: summit2023/speaker/fred.jpg
   - name: Christian Berendt
     title: Founder & CEO of OSISM GmbH
     avatar: summit2023/speaker/christian.jpg
@@ -35,6 +32,15 @@ speakers:
   - name: Christian Schmitz
     title: Director Open Source, PlusServer GmbH
     avatar: summit2023/speaker/christian-schmitz.jpg
+  - name: Miriam Seyffarth
+    title: Leiterin Politische Kommunikation, OSB Alliance e.V.
+    avatar: summit2023/speaker/seyffarth.jpg
+  - name: Robert Holling
+    title: Dipl. Wirtsch.-Inf. (FH), 5G Reallabor, Hochschule Osnabrück 
+    avatar: summit2023/speaker/holling.jpg
+  - name: Dr. Hans-Joachim Popp
+    title: Princicpal Consultant@BwConsulting GmbH, Stellv. Vorsitzender VOICE - Bundesverband der IT-Anwender e.V.- 
+    avatar: summit2023/default-avatar.jpg
 
 sponsors:
   gold:
