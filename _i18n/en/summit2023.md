@@ -19,16 +19,19 @@ Day 1:
 Ernst Stöckl-Pukall, Director Department Digitisation & Industrie 4.0
 
 * Panel discussion: "Why digital sovereignty is important for Europe" (DE)
-Dr. Franziska Brantner, Parliamentary State Secretary at the Federal Ministry for Economic Affairs and Climate Action of Germany; 
-Dr.Reinhard Brandl, Member of Parliament; 
-Stephan Iländer, STACKIT; 
+Dr. Franziska Brantner, Parliamentary State Secretary at the Federal Ministry for Economic Affairs and Climate Action of Germany;
+Dr.Reinhard Brandl, Member of Parliament;
+Stephan Ilaender, STACKIT;
 Jan Hill, Director Public Services, adesso SE
 
 * Impulse talk: "Why digital sovereignty is central to innovation, freedom and democracy in Europe" (DE)
 Rafael Laguna de la Vera, Director Federal Agency for disruptive Innovation SPRIND
 
+* „Cloud-Transformation in the public sector and the development of the  Deutsche Verwaltungscloud (German public services cloud)“ (DE)
+Martin Schallbruch, CEO govdigital eG
+
 * A talk between Johan and Kurt: "SCS - The vision of one platform - standardised, built and operated by many" (DE)
-Johan Christenson, Vice President Innovation, Cleura AB; 
+Johan Christenson, Vice President Innovation, Cleura AB;
 Kurt Garloff, CTO Sovereign Cloud Stack
 
 * Impulse talk: "Build your own hyperscaler: how to build a sovereign private cloud based on SCS" (DE)
@@ -42,22 +45,22 @@ Day 2:
 Robert Holling, Dipl.-Wirtsch.-Inf. Reallabor Hoschschule Osnabrück
 
 * Panel discussion: "Building a Community of Practice – Operations of  SCS-Infrastructures" (DE)
-Alexander Wallner, CEO PlusServer GmbH; 
-Christian Berendt, Founder and CEO OSISM GmbH; 
-Cemil Demirgenci, CEO Wavecon GmbH (100% noris network AG);  
+Alexander Wallner, CEO PlusServer GmbH;
+Christian Berendt, Founder and CEO OSISM GmbH;
+Cemil Demirgenci, CEO Wavecon GmbH (100% noris network AG);
 Felix Kronlage-Dammers, Product Owner SCS IaaS
 
-* Impulse Talk: "Federation Services – Open Source Toolset for developing sovereign Data ecosystems"
+* Impulse Talk: "Federation Services – Open Source Toolset for developing sovereign Data ecosystems" (DE)
 Andreas Weiss, Director Digital Business Models, eco - Verband der Internetwirtschaft e.V.
 
-* Impulse Talk: tbd
+* Impulse Talk: tbd (DE)
 Christian Schmitz, Director Open Source, PlusServer GmbH
 
-* Impulse Talk: tbd
+* Impulse Talk: tbd (DE)
 Jutta Rößner, Member of executive board DATEV eG, head of Ecosystem & EAM
 
-* Impulse Talk: tbd 
-Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting GmbH, vice president VOICE - Bundesverband der IT-Anwender e.V.- 
+* Impulse Talk: tbd (DE)
+Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting GmbH, vice president VOICE - Bundesverband der IT-Anwender e.V.-
 
 
 Most of the contributions will be in German, otherwise it is explicitely labeled.
