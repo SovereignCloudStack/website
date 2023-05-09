@@ -18,48 +18,48 @@ Tag 1:
 * Grußwort Bundesministerium für Wirtschaft und Klimaschutz (DE)
 Ernst Stöckl-Pukall, Leiter Referat Digitalisierung & Industrie 4.0
 
-* Paneldiskussion: "Warum digitale Souveränität wichtig für Europa ist" (DE) mit  
-Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz;  
-Dr.Reinhard Brandl, Mitglied des Bundestages, Vorsitzender der Arbeitsgruppe Digitales der CDU/CSU Fraktion;  
-Stephan Ilaender, STACKIT;  
+* Paneldiskussion: "Warum digitale Souveränität wichtig für Europa ist" (DE) mit
+Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz;
+Dr.Reinhard Brandl, Mitglied des Bundestages, Vorsitzender der Arbeitsgruppe Digitales der CDU/CSU Fraktion;
+Stephan Ilaender, STACKIT;
 Jan Hill, Bereichsleiter Public Services, adesso SE
 
-* Impulsvortrag: "Warum digitale Souveränität von zentraler Bedeutung für Innovation, Freiheit und Demokratie in Europa ist" (DE)  
+* Impulsvortrag: "Warum digitale Souveränität von zentraler Bedeutung für Innovation, Freiheit und Demokratie in Europa ist" (DE)
 Rafael Laguna de la Vera, Direktor der Bundesagentur für Sprunginnovationen SPRIND
 
-* „Cloud-Transformation im öffentlichen Sektor und der Aufbau der Deutschen Verwaltungscloud“ (DE)  
+* „Cloud-Transformation im öffentlichen Sektor und der Aufbau der Deutschen Verwaltungscloud“ (DE)
 Martin Schallbruch, Vorsitzender des Vorstands der govdigital eG
 
-* Ein Gespräch zwischen Johan und Kurt: "SCS - The vision of one platform - standardised, built and operated by many" (EN)  
-Johan Christenson, Vice President Innovation, Cleura AB;  
+* Ein Gespräch zwischen Johan und Kurt: "SCS - The vision of one platform - standardised, built and operated by many" (EN)
+Johan Christenson, Vice President Innovation, Cleura AB;
 Kurt Garloff, CTO Sovereign Cloud Stack
 
-* Impulsvortrag: "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis von SCS aufbauen" (DE)  
+* Impulsvortrag: "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis von SCS aufbauen" (DE)
 Christian Wolter, B1 Systems GmbH
 
-* Impulsvortrag: "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit" (DE)  
+* Impulsvortrag: "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit" (DE)
 Silke Tessmann-Storch, Vorständin Lösungen, dataport A.ö.R.
 
 Tag 2:
-* Impulsvortrag: "Ein SCS-Datencenter für das Campusnetz der Hochschule Osnabrück" (DE)  
+* Impulsvortrag: "Ein SCS-Datencenter für das Campusnetz der Hochschule Osnabrück" (DE)
 Robert Holling, Dipl.-Wirtsch.-Inf. Reallabor Hoschschule Osnabrück
 
-* Paneldiskussion: "Building a Community of Practice – der Betrieb von SCS-Infrastrukturen" (DE)  
-Alexander Wallner, CEO PlusServer GmbH;  
-Christian Berendt, Founder und CEO der OSISM GmbH;  
-Cemil Demirgenci, Geschäftsführer der Wavecon GmbH (100% noris network AG);  
+* Paneldiskussion: "Building a Community of Practice – der Betrieb von SCS-Infrastrukturen" (DE)
+Alexander Wallner, CEO PlusServer GmbH;
+Christian Berendt, Founder und CEO der OSISM GmbH;
+Cemil Demirgenci, Geschäftsführer der Wavecon GmbH (100% noris network AG);
 Felix Kronlage-Dammers, Product Owner SCS IaaS
 
-* "Federation Services – Die Open Source Werkzeugkiste zum Aufbau souveräner Datenökosysteme" (DE)  
+* "Federation Services – Die Open Source Werkzeugkiste zum Aufbau souveräner Datenökosysteme" (DE)
 Andreas Weiss, Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V.
 
-* Impulsvortrag: tbd (DE)  
+* Impulsvortrag: tbd (DE)
 Christian Schmitz, Director Open Source, PlusServer GmbH
 
-* Impulsvortrag: tbd (DE)   
+* Impulsvortrag: tbd (DE)
 Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG
 
-* Impulsvortrag: tbd (DE)  
+* Impulsvortrag: tbd (DE)
 Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting GmbH, Stellv. Vorsitzender VOICE - Bundesverband der IT-Anwender e.V.- 
 
 
@@ -67,7 +67,7 @@ Die meisten Konferenzbeiträge werden in Deutsch gehalten, außer dort, wo die S
 
 ## Veranstaltungsort
 
-Der SCS Summit findet in den wunderschönen Räumlichkeiten der Berlin-Brandenburgischen Akademie der Wissenschaften (BBAW) statt. 
+Der SCS Summit findet in den wunderschönen Räumlichkeiten der Berlin-Brandenburgischen Akademie der Wissenschaften (BBAW) statt.
 Eine [ausführliche Wegbeschreibung](https://veranstaltungszentrum.bbaw.de/en/directions) finden Sie auf der offiziellen Seite der BBAW.
 
 {% include summit2023/bbaw.html %}
