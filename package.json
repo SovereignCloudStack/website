@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@fullcalendar/common": "^5.11.4",
+    "@fullcalendar/common": "^5.11.5",
     "@fullcalendar/icalendar": "^5.11.4",
     "apexcharts": "^3.40.0",
     "bootstrap": "^5.2.3",
