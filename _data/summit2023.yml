@@ -22,7 +22,7 @@ speakers:
     avatar: summit2023/speaker/schallbruch.jpg
   - name: Alexander Wallner
     title: CEO der PlusServer GmbH
-    avatar: summit2023/default-avatar.jpg
+    avatar: summit2023/speaker/wallner.jpeg
   - name: Christian Berendt
     title: Founder & CEO of OSISM GmbH
     avatar: summit2023/speaker/christian.jpg
@@ -41,6 +41,9 @@ speakers:
   - name: Dr. Hans-Joachim Popp
     title: Princicpal Consultant@BwConsulting GmbH, Stellv. Vorsitzender VOICE - Bundesverband der IT-Anwender e.V.- 
     avatar: summit2023/default-avatar.jpg
+  - name: Jan Hill
+    title: Director Public Services, adesso SE
+    avatar: summit2023/speaker/hill.jpg
 
 sponsors:
   gold:
