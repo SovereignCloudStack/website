@@ -1,7 +1,6 @@
 Die [Open Source Business Alliance -
 Bundesverband für digitale Souveränität
-e.V. (OSB Alliance)](https://osb-alliance.de/) sucht für ihr vom [German Federal Ministry for Economic Affairs
-and Energy (BMWi)](https://bmwi.de/) gefördertes Projekt [Sovereign Cloud Stack (SCS)](https://scs.community/) einen
+e.V. (OSB Alliance)](https://osb-alliance.de/) sucht für ihr vom [Bundesministerium für Wirtschaft und Klimaschutz (BMWK)](https://bmwk.de/) gefördertes Projekt [Sovereign Cloud Stack (SCS)](https://scs.community/) einen
 # Product Owner Betrieb und Sicherheit (d/w/m)
 (Remote oder Berlin-Zentrum)
 
