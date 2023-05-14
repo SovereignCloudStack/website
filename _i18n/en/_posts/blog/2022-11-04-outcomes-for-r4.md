@@ -26,7 +26,7 @@ SCS is comprised of three pillars: Standards, Reference Implementation and Open 
 
 ### [SCS is standardized](https://github.com/orgs/SovereignCloudStack/projects/6/views/23)
 
-One of the big rocks for Release 4 will be bringing our [Cluster standardization](https://github.com/SovereignCloudStack/issues/issues/181) forward. However our standardization efforts are comprised of many efforts -- we need to standardize the parameters that the cluster consumers can choose, the way how these are fed to the service to create and manage the k8s clusters and last not least the properties of the resulting clusters. The foundational work for this is the [current effort](https://github.com/SovereignCloudStack/Docs/pull/143) to have a formalized process of documenting these standard as well as our (design) decisions.
+One of the big rocks for Release 4 will be bringing our [Cluster standardization](https://github.com/SovereignCloudStack/issues/issues/181) forward. However our standardization efforts are comprised of many efforts -- we need to standardize the parameters that the cluster consumers can choose, the way how these are fed to the service to create and manage the k8s clusters and last not least the properties of the resulting clusters. The foundational work for this is the [current effort](https://github.com/SovereignCloudStack/standards/pull/143) to have a formalized process of documenting these standard as well as our (design) decisions.
 
 ### [SCS is federated](https://github.com/orgs/SovereignCloudStack/projects/6/views/18)
 
