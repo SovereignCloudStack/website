@@ -28,8 +28,8 @@ Milisav Radmanic, Vice President Products and Technology, Univention GmbH
 * Impulse talk: "Why digital sovereignty is central to innovation, freedom and democracy in Europe" (DE)
 Rafael Laguna de la Vera, Director Federal Agency for disruptive Innovation SPRIND
 
-* Impulse talk: tbd (DE)
-Chief Digital Officer, Federal Ministry for Economic Cooperation and Development
+* Impulse talk: International perspectives on digital sovereignty and open source: GovStack the digital.global network (DE)
+Martin Wimmer, Chief Digital Officer, Federal Ministry for Economic Cooperation and Development
 
 * „Cloud-Transformation in the public sector and the development of the  Deutsche Verwaltungscloud (German public services cloud)“ (DE)
 Martin Schallbruch, CEO govdigital eG
