@@ -28,7 +28,7 @@ Milisav Radmanic, Vice President Products and Technology, Univention GmbH
 * Impulsvortrag: "Warum digitale Souveränität von zentraler Bedeutung für Innovation, Freiheit und Demokratie in Europa ist" (DE)
 Rafael Laguna de la Vera, Direktor der Bundesagentur für Sprunginnovationen SPRIND
 
-* Impulsvortrag: tbd (DE)
+* Impulsvortrag: Internationale Perspektiven auf Digitale Souveränität und Open Source: GovStack und das Netzwerk digital.global (DE)
 Martin Wimmer, Chief Digital Officer, Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung
 
 * „Cloud-Transformation im öffentlichen Sektor und der Aufbau der Deutschen Verwaltungscloud“ (DE)
