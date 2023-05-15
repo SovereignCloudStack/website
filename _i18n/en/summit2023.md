@@ -13,48 +13,59 @@ Registration on 23 May is possible from 12:00 CEST, the event will start at 13:0
 ## Schedule
 
 <div class="container my-4">
-  <!-- Nav tabs -->
-  <ul class="schedule-nav nav nav-pills nav-justified" id="schedule-tab" role="tablist">
-    <li class="nav-item me-2">
-      <a class="nav-link active" id="tab-day-1" data-bs-toggle="tab" href="#day-1" role="tab" aria-controls="day-1" aria-selected="true">
-        <span class="heading">Day 1</span>
-        <span class="meta d-none d-lg-block">(Tuesday, May 23)</span>
-      </a>
-    </li>
-    <li class="nav-item me-2">
-      <a class="nav-link" id="tab-day-2" data-bs-toggle="tab" href="#day-2" role="tab" aria-controls="day-2" aria-selected="false">
-        <span class="heading">Day 2</span>
-        <span class="meta d-none d-lg-block">(Wednesday, May 24)</span>
-      </a>
-    </li>
-  </ul>
-  <!-- Tab panes -->
-	<div class="schedule-tab-content tab-content mt-5">
-  {% for i in (1..3) %}
-		<div class="tab-pane fade {% if i == 1 %}show active{% endif %}" id="day-{{i}}" role="tabpanel" aria-labelledby="day-{{i}}">
-      {% for talk in site.data.summit2023-talks %}
-      {% if i == talk.day %}
-        <div class="item item-talk">
-          <div class="meta">
-            <h4 class="time">{{talk.start}} – {{talk.end}}</h4>
-            {% if talk.speaker %}
-              <div class="profile mt-3">
-                <div class="d-flex justify-content-center">{% assign post = talk %}{% include news/blog_avatars.html %}</div>
-                <div class="name mt-2">{{talk.speaker | join: "<br/>"}}</div>
-              </div><!--//profile-->
+    <!-- Nav tabs -->
+    <ul class="schedule-nav nav nav-pills nav-justified" id="schedule-tab" role="tablist">
+        <li class="nav-item me-2">
+            <a class="nav-link active" id="tab-day-1" data-bs-toggle="tab" href="#day-1" role="tab"
+                aria-controls="day-1" aria-selected="true">
+                <span class="heading">Day 1</span>
+                <span class="meta d-none d-lg-block">(Tuesday, May 23)</span>
+            </a>
+        </li>
+        <li class="nav-item me-2">
+            <a class="nav-link" id="tab-day-2" data-bs-toggle="tab" href="#day-2" role="tab" aria-controls="day-2"
+                aria-selected="false">
+                <span class="heading">Day 2</span>
+                <span class="meta d-none d-lg-block">(Wednesday, May 24)</span>
+            </a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="schedule-tab-content tab-content mt-5">
+        {% for i in (1..3) %}
+        <div class="tab-pane fade {% if i == 1 %}show active{% endif %}" id="day-{{i}}" role="tabpanel"
+            aria-labelledby="day-{{i}}">
+            {% for talk in site.data.summit2023-talks %}
+            {% if i == talk.day %}
+            <div class="item item-talk">
+                <div class="meta">
+                    <h4 class="time">{{talk.start}} – {{talk.end}}</h4>
+                    {% if talk.speaker %}
+                    <div class="profile mt-3">
+                        <div class="d-flex justify-content-center">{% assign post = talk %}{% include
+                            news/blog_avatars.html %}</div>
+                        <div class="name mt-2">{{talk.speaker | join: "<br />"}}</div>
+                    </div>
+                    <!--//profile-->
+                    {% endif %}
+                </div>
+                <!--//meta-->
+                <div class="content">
+                    <h3 class="title mb-2">{{talk.title}}<a data-tab-destination="day-{{i}}"
+                            href="#session-{{ forloop.index }}" class="link-unstyled"><i
+                                class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em;"></i></a>
+                    </h3>
+                    <div class="location mb-2 text-muted"><i class="fa fa-map-marker me-2"
+                            aria-hidden="true"></i>{{talk.location}}</div>
+                    <div class="desc pb-2">{{talk.description}}</div>
+                </div>
+                <!--//content-->
+            </div>
             {% endif %}
-          </div><!--//meta-->
-          <div class="content">
-            <h3 class="title mb-2">{{talk.title}}<a data-tab-destination="day-{{i}}" href="#session-{{ forloop.index }}" class="link-unstyled"><i class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em;"></i></a></h3>
-            <div class="location mb-2 text-muted"><i class="fa fa-map-marker me-2" aria-hidden="true"></i>{{talk.location}}</div>
-            <div class="desc pb-2">{{talk.description}}</div>
-          </div><!--//content-->
+            {% endfor %}
         </div>
-      {% endif %}
-      {% endfor %}
-    </div> 
-  {% endfor %}
-  </div>
+        {% endfor %}
+    </div>
 </div>
 
 ## Location

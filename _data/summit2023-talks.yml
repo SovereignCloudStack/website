@@ -6,7 +6,7 @@
   description: |
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
 
-- title: "Welcome by SCS"
+- title: "Welcome by the SCS Team"
   day: 1
   start: "13:00"
   end: "13:10"
@@ -20,14 +20,298 @@
   description: |
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
 
-- title: "Welcome by OSBA"
+- title: "Welcome by the OSBA"
   day: 1
   start: "13:10"
-  end: "13:20"
+  end: "13:15"
   location: "BBAW"
   speaker:
     - "Milisav Radmanic"
   avatar:
-    - "default-avatar.jpg"
+    - "summit2023/default-avatar.jpg"
   description: |
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Welcome by BMWK"
+  day: 1
+  start: "13:15"
+  end: "13:30"
+  location: "BBAW"
+  speaker:
+    - "Ernst Stöckl-Pukall"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Warum digitale Souveränität von zentraler Bedeutung für Innovation, Freiheit und Demokratie in Europa ist"
+  day: 1
+  start: "13:30"
+  end: "14:15"
+  location: "BBAW"
+  speaker:
+    - "Rafael Laguna de La Vera"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Warum digitale Souveränität wichtig für Europa (die europäische Wirtschaft) ist"
+  day: 1
+  start: "14:15"
+  end: "15:00"
+  location: "BBAW"
+  speaker:
+    - "Miriam Seyffarth"
+    - "Dr. Franziska Brantner"
+    - "Dr. Reinhard Brandl"
+    - "Jan Hill"
+    - "Stephan Ilaender"
+    - "Milisav Radmanic"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Break"
+  day: 1
+  start: "15:00"
+  end: "15:50"
+  location: "BBAW"
+
+- title: "TBA"
+  day: 1
+  start: "15:50"
+  end: "16:15"
+  location: "BBAW"
+  speaker:
+    - "Martin Wimmer"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Cloud Transformation im öffentlichen Sektor und der Aufbau der Deutschen Verwaltungscloud"
+  day: 1
+  start: "16:15"
+  end: "16:40"
+  location: "BBAW"
+  speaker:
+    - "Martin Schallbruch"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "The vision of one platform - standardized, built and operated by many"
+  day: 1
+  start: "16:40"
+  end: "17:10"
+  location: "BBAW"
+  speaker:
+    - "Johan Christenson"
+    - "Kurt Garloff"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+  
+- title: "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis des Souvereign Cloud Stack aufbauen"
+  day: 1
+  start: "17:10"
+  end: "17:35"
+  location: "BBAW"
+  speaker:
+    - "Christian Wolter"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit"
+  day: 1
+  start: "17:35"
+  end: "17:55"
+  location: "BBAW"
+  speaker:
+    - "Silke Tessmann-Storch"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Zusammenfassung und Ausblick"
+  day: 1
+  start: "17:55"
+  end: "18:00"
+  location: "BBAW"
+  speaker:
+    - "Miriam Seyffarth"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Ausklang auf der Dachterrasse"
+  day: 1
+  start: "18:00"
+  location: "BBAW"
+
+- title: "Registration"
+  day: 2
+  start: "08:00"
+  end: "09:00"
+  location: "BBAW"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Welcome und Rückblick auf Tag 1"
+  day: 2
+  start: "09:00"
+  end: "09:10"
+  location: "BBAW"
+  speaker:
+    - "Miriam Seyffarth"
+  avatar:
+    - "summit2023/speaker/seyffarth.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Die strategische Relevanz von SCS als Praxisbeispiel digitaler Transformation"
+  day: 2
+  start: "09:10"
+  end: "09:30"
+  location: "BBAW"
+  speaker:
+    - "Christian Schmitz"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Ein SCS Datacenter für das 5G-Campusnetz an der Hochschule Osnabrück"
+  day: 2
+  start: "09:30"
+  end: "09:50"
+  location: "BBAW"
+  speaker:
+    - "Robert Holling"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Building a Community of Practice - der Betrieb von SCS-Infrastrukturen"
+  day: 2
+  start: "09:50"
+  end: "10:20"
+  location: "BBAW"
+  speaker:
+    - "Friederike Zelke"
+    - "Felix Kronlage-Dammers"
+    - "Alexander Wallner"
+    - "Cemil Degirmenci"
+    - "Christian Berendt"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    
+- title: "Vom Oligopol zurück zum echten Wettbewerb" 
+  day: 2
+  start: "10:20"
+  end: "10:30"
+  location: "BBAW"
+  speaker:
+    - "Dr. Hans-Joachim Popp"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Vom Oligopol zurück zum echten Wettbewerb" 
+  day: 2
+  start: "10:30"
+  end: "10:40"
+  location: "BBAW"
+  speaker:
+    - "Jutta Rößner"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Paneldiskussion"
+  day: 2
+  start: "10:40"
+  end: "11:00"
+  location: "BBAW"
+  speaker:
+    - "Miriam Seyffarth"
+    - "Jutta Rößner"
+    - "Dr. Hans-Joachim Popp"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Break"
+  day: 2
+  start: "11:00"
+  end: "11:30"
+  location: "BBAW"
+
+- title: "Federation Services - Die Open Source Werkzeugkiste zum Aufbau souveräner Datenökosysteme"
+  day: 2
+  start: "11:30"
+  end: "12:00"
+  location: "BBAW"
+  speaker:
+    - "Andreas Weiss"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Eine Zero Emission Cloud Computing Center durch SCS betrieben"
+  day: 2
+  start: "12:00"
+  end: "12:15"
+  location: "BBAW"
+  speaker:
+    - "Christian Berendt"
+    - "Julian Hauber"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Die Zukunft von SCS: Ein Ausblick in 5 Jahren"
+  day: 2
+  start: "12:15"
+  end: "12:50"
+  location: "BBAW"
+  speaker:
+    - "Kurt Garloff"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Abschluss und Verabschiedung"
+  day: 2
+  start: "12:50"
+  end: "13:00"
+  location: "BBAW"
+  speaker:
+    - "Miriam Seyffarth"
+  avatar:
+    - "summit2023/default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Ende der Veranstaltung"
+  day: 2
+  start: "13:00"
+  location: "BBAW"
