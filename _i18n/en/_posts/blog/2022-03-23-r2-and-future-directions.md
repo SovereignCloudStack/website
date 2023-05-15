@@ -28,7 +28,7 @@ SCS builds on top of the interaction of community members - CSPs, operators
 of cloud infrastructure as well as integrators who either build or support the
 process of building cloud infrastructure. 
 
-There is a proposal for a [gitops style cluster management](https://github.com/SovereignCloudStack/Docs/pull/47)
+There is a proposal for a [gitops style cluster management](https://github.com/SovereignCloudStack/standards/pull/47)
 approach on the table.
 
 As part of our discussions in the last week around octavia we concluded that it

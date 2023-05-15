@@ -26,11 +26,11 @@ SCS is comprised of three pillars: Standards, Reference Implementation and Open 
 
 ### [SCS is standardized](https://github.com/orgs/SovereignCloudStack/projects/6/views/23)
 
-One of the big rocks for Release 4 will be bringing our [Cluster standardization](https://github.com/SovereignCloudStack/issues/issues/181) forward. However our standardization efforts are comprised of many efforts -- we need to standardize the parameters that the cluster consumers can choose, the way how these are fed to the service to create and manage the k8s clusters and last not least the properties of the resulting clusters. The foundational work for this is the [current effort](https://github.com/SovereignCloudStack/Docs/pull/143) to have a formalized process of documenting these standard as well as our (design) decisions.
+One of the big rocks for Release 4 will be bringing our [Cluster standardization](https://github.com/SovereignCloudStack/issues/issues/181) forward. However our standardization efforts are comprised of many efforts -- we need to standardize the parameters that the cluster consumers can choose, the way how these are fed to the service to create and manage the k8s clusters and last not least the properties of the resulting clusters. The foundational work for this is the [current effort](https://github.com/SovereignCloudStack/standards/pull/143) to have a formalized process of documenting these standard as well as our (design) decisions.
 
 ### [SCS is federated](https://github.com/orgs/SovereignCloudStack/projects/6/views/18)
 
-While there were efforts done during the R2 and R3 cycles to work towards federated environments, as also shown [during the last GAIA-X hackathon](https://scs.community/2022/09/28/gaia-x-hackathon-5/) there will be lots of activity on federation during the Release 4 cycle. With a [fantastic workshop](https://input.osb-alliance.de/p/2022-10-scs-iam-workshop) with members of The SIG (Special Interest Group) IAM as well as further members of our community we kicked this off in the first week of the R4 cycle.
+While there were efforts done during the R2 and R3 cycles to work towards federated environments, as also shown [during the last GAIA-X hackathon](https://scs.community/2022/09/28/gaia-x-hackathon-5/) there will be lots of activity on federation during the Release 4 cycle. With a [fantastic workshop](https://input.scs.community/dZSsRirJR0ul67ZFB0rOsQ) with members of The SIG (Special Interest Group) IAM as well as further members of our community we kicked this off in the first week of the R4 cycle.
 
 ### [SCS is continuously built and tested](https://github.com/orgs/SovereignCloudStack/projects/6/views/21)
 
