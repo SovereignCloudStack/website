@@ -19,13 +19,17 @@ Tag 1:
 Ernst Stöckl-Pukall, Leiter Referat Digitalisierung & Industrie 4.0
 
 * Paneldiskussion: "Warum digitale Souveränität wichtig für Europa ist" (DE) mit
-Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz;
-Dr.Reinhard Brandl, Mitglied des Bundestages, Vorsitzender der Arbeitsgruppe Digitales der CDU/CSU Fraktion;
-Stephan Ilaender, STACKIT;
-Jan Hill, Bereichsleiter Public Services, adesso SE
+Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz;  
+Dr.Reinhard Brandl, Mitglied des Bundestages, Vorsitzender der Arbeitsgruppe Digitales der CDU/CSU Fraktion;  
+Stephan Ilaender, Geschäftsführer Plattform StackIT, Schwarz Gruppe;  
+Jan Hill, Bereichsleiter Public Sector, adesso SE;  
+Milisav Radmanic, Vice President Products and Technology, Univention GmbH
 
 * Impulsvortrag: "Warum digitale Souveränität von zentraler Bedeutung für Innovation, Freiheit und Demokratie in Europa ist" (DE)
 Rafael Laguna de la Vera, Direktor der Bundesagentur für Sprunginnovationen SPRIND
+
+* Impulsvortrag: tbd (DE)
+Martin Wimmer, Chief Digital Officer, Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung
 
 * „Cloud-Transformation im öffentlichen Sektor und der Aufbau der Deutschen Verwaltungscloud“ (DE)
 Martin Schallbruch, Vorsitzender des Vorstands der govdigital eG
@@ -53,14 +57,14 @@ Felix Kronlage-Dammers, Product Owner SCS IaaS
 * "Federation Services – Die Open Source Werkzeugkiste zum Aufbau souveräner Datenökosysteme" (DE)
 Andreas Weiss, Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V.
 
-* Impulsvortrag: tbd (DE)
+* Impulsvortrag: "Die strategische Relevanz von SCS als Praxisbeispiel digitaler Transformation" (DE)
 Christian Schmitz, Director Open Source, PlusServer GmbH
 
 * Impulsvortrag: tbd (DE)
 Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG
 
-* Impulsvortrag: tbd (DE)
-Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting GmbH, Stellv. Vorsitzender VOICE - Bundesverband der IT-Anwender e.V.- 
+* Impulsvortrag: „Vom Oligopol zurück zum echten Wettbewerb“ (DE)
+Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting GmbH, Mitglied des Präsidiums, Beauftragter für IT-Politik, VOICE - Bundesverband der IT-Anwender e.V -
 
 
 Die meisten Konferenzbeiträge werden in Deutsch gehalten; die Sprache ist mit (DE) oder (EN) gekennzeichnet.
