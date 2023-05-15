@@ -30,7 +30,7 @@ Rafael Laguna de la Vera, Director Federal Agency for disruptive Innovation SPRI
 * „Cloud-Transformation in the public sector and the development of the  Deutsche Verwaltungscloud (German public services cloud)“ (DE)
 Martin Schallbruch, CEO govdigital eG
 
-* A talk between Johan and Kurt: "SCS - The vision of one platform - standardised, built and operated by many" (DE)
+* A talk between Johan and Kurt: "SCS - The vision of one platform - standardised, built and operated by many" (EN)
 Johan Christenson, Vice President Innovation, Cleura AB;
 Kurt Garloff, CTO Sovereign Cloud Stack
 
@@ -63,7 +63,7 @@ Jutta Rößner, Member of executive board DATEV eG, head of Ecosystem & EAM
 Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting GmbH, vice president VOICE - Bundesverband der IT-Anwender e.V.-
 
 
-Most of the contributions will be in German, otherwise it is explicitely labeled.
+Most of the contributions will be in German, the language is designated with (DE) or (EN).
 
 ## Location
 
