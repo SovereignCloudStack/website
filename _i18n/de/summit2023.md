@@ -63,7 +63,7 @@ Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DAT
 Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting GmbH, Stellv. Vorsitzender VOICE - Bundesverband der IT-Anwender e.V.- 
 
 
-Die meisten Konferenzbeiträge werden in Deutsch gehalten, außer dort, wo die Sprache explizit angegeben ist.
+Die meisten Konferenzbeiträge werden in Deutsch gehalten; die Sprache ist mit (DE) oder (EN) gekennzeichnet.
 
 ## Veranstaltungsort
 
