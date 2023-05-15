@@ -20,7 +20,7 @@ Ernst Stöckl-Pukall, Director Department Digitisation & Industrie 4.0
 
 * Panel discussion: "Why digital sovereignty is important for Europe" (DE)
 Dr. Franziska Brantner, Parliamentary State Secretary at the Federal Ministry for Economic Affairs and Climate Action of Germany;  
-Dr.Reinhard Brandl, Member of Parliament;  
+Dr. Reinhard Brandl, Member of Parliament;  
 Stephan Ilaender, CTO StackIT, Schwarz Gruppe;  
 Jan Hill, Director Public Sector, adesso SE;  
 Milisav Radmanic, Vice President Products and Technology, Univention GmbH
