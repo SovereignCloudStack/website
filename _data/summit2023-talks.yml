@@ -1,0 +1,33 @@
+- title: "Registration"
+  day: 1
+  start: "12:00"
+  end: "13:00"
+  location: "BBAW"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Welcome by SCS"
+  day: 1
+  start: "13:00"
+  end: "13:10"
+  location: "BBAW"
+  speaker:
+    - "Kurt Garloff"
+    - "Miriam Seyffarth"
+  avatar:
+    - "kgarloff.jpg"
+    - "summit2023/speaker/seyffarth.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+- title: "Welcome by OSBA"
+  day: 1
+  start: "13:10"
+  end: "13:20"
+  location: "BBAW"
+  speaker:
+    - "Milisav Radmanic"
+  avatar:
+    - "default-avatar.jpg"
+  description: |
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
