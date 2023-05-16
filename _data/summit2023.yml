@@ -50,6 +50,21 @@ speakers:
   - name: Martin Wimmer
     title: Chief Digital Officer, Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung
     avatar: summit2023/speaker/wimmer.jpg
+  - name: Kurt Garloff
+    title: Chief Technology Officer SCS, OSB Alliance e.V.
+    avatar: summit2023/speaker/garloff.webp
+  - name: Alexander Diab
+    title: Ecosystem Manager SCS, OSB Alliance e.V.
+    avatar: summit2023/speaker/diab.webp
+  - name: Felix Kronlage-Dammers
+    title: Product Owner IaaS & OPS SCS, OSB Alliance e.V.
+    avatar: summit2023/speaker/kronlage.webp
+  - name: Friederike Zelke
+    title: Community Manager SCS, OSB Alliance e.V.
+    avatar: summit2023/speaker/zelke.webp
+  - name: Milisav Radmanic
+    title: Vorstand, OSB Alliance e.V.
+    avatar: summit2023/speaker/radmanic.jpeg
 
 
 sponsors:
