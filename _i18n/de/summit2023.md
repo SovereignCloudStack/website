@@ -10,64 +10,62 @@ Die Registrierung am 23. Mai ist ab 12:00 Uhr möglich, die Veranstaltung beginn
 
 {% include summit2023/speakers.html %}
 
-## Programm
+## Schedule
 
-Folgende Vorträge und Diskussionen erwarten Sie:
-
-Tag 1:
-* Grußwort Bundesministerium für Wirtschaft und Klimaschutz (DE)
-Ernst Stöckl-Pukall, Leiter Referat Digitalisierung & Industrie 4.0
-
-* Paneldiskussion: "Warum digitale Souveränität wichtig für Europa ist" (DE) mit
-Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz;  
-Dr.Reinhard Brandl, Mitglied des Bundestages, Vorsitzender der Arbeitsgruppe Digitales der CDU/CSU Fraktion;  
-Stephan Ilaender, Geschäftsführer Plattform StackIT, Schwarz Gruppe;  
-Jan Hill, Bereichsleiter Public Sector, adesso SE;  
-Milisav Radmanic, Vice President Products and Technology, Univention GmbH
-
-* Impulsvortrag: "Warum digitale Souveränität von zentraler Bedeutung für Innovation, Freiheit und Demokratie in Europa ist" (DE)
-Rafael Laguna de la Vera, Direktor der Bundesagentur für Sprunginnovationen SPRIND
-
-* Impulsvortrag: Internationale Perspektiven auf Digitale Souveränität und Open Source: GovStack und das Netzwerk digital.global (DE)
-Martin Wimmer, Chief Digital Officer, Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung
-
-* „Cloud-Transformation im öffentlichen Sektor und der Aufbau der Deutschen Verwaltungscloud“ (DE)
-Martin Schallbruch, Vorsitzender des Vorstands der govdigital eG
-
-* Ein Gespräch zwischen Johan und Kurt: "SCS - The vision of one platform - standardised, built and operated by many" (EN)
-Johan Christenson, Vice President Innovation, Cleura AB;
-Kurt Garloff, CTO Sovereign Cloud Stack
-
-* Impulsvortrag: "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis von SCS aufbauen" (DE)
-Christian Wolter, B1 Systems GmbH
-
-* Impulsvortrag: "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit" (DE)
-Silke Tessmann-Storch, Vorständin Lösungen, dataport A.ö.R.
-
-Tag 2:
-* Impulsvortrag: "Ein SCS-Datencenter für das Campusnetz der Hochschule Osnabrück" (DE)
-Robert Holling, Dipl.-Wirtsch.-Inf. Reallabor Hoschschule Osnabrück
-
-* Paneldiskussion: "Building a Community of Practice – der Betrieb von SCS-Infrastrukturen" (DE)
-Alexander Wallner, CEO PlusServer GmbH;
-Christian Berendt, Founder und CEO der OSISM GmbH;
-Cemil Demirgenci, Geschäftsführer der Wavecon GmbH (100% noris network AG);
-Felix Kronlage-Dammers, Product Owner SCS IaaS
-
-* "Federation Services – Die Open Source Werkzeugkiste zum Aufbau souveräner Datenökosysteme" (DE)
-Andreas Weiss, Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V.
-
-* Impulsvortrag: "Die strategische Relevanz von SCS als Praxisbeispiel digitaler Transformation" (DE)
-Christian Schmitz, Director Open Source, PlusServer GmbH
-
-* Impulsvortrag: tbd (DE)
-Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG
-
-* Impulsvortrag: „Vom Oligopol zurück zum echten Wettbewerb“ (DE)
-Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting GmbH, Mitglied des Präsidiums, Beauftragter für IT-Politik, VOICE - Bundesverband der IT-Anwender e.V -
-
-
-Die meisten Konferenzbeiträge werden in Deutsch gehalten; die Sprache ist mit (DE) oder (EN) gekennzeichnet.
+<div class="container my-4">
+    <!-- Nav tabs -->
+    <ul class="schedule-nav nav nav-pills nav-justified" id="schedule-tab" role="tablist">
+        <li class="nav-item me-2">
+            <a class="nav-link active" id="tab-day-1" data-bs-toggle="tab" href="#day-1" role="tab"
+                aria-controls="day-1" aria-selected="true">
+                <span class="heading">Tag 1</span>
+                <span class="meta d-none d-lg-block">(Dienstag, 23. Mai)</span>
+            </a>
+        </li>
+        <li class="nav-item me-2">
+            <a class="nav-link" id="tab-day-2" data-bs-toggle="tab" href="#day-2" role="tab" aria-controls="day-2"
+                aria-selected="false">
+                <span class="heading">Tag 2</span>
+                <span class="meta d-none d-lg-block">(Mittwoch, 24. Mai)</span>
+            </a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="schedule-tab-content tab-content mt-5">
+        {% for i in (1..2) %}
+        <div class="tab-pane fade {% if i == 1 %}show active{% endif %}" id="day-{{i}}" role="tabpanel"
+            aria-labelledby="day-{{i}}">
+            {% for talk in site.data.summit2023-talks %}
+            {% if i == talk.day %}
+            <div class="item item-talk">
+                <div class="meta">
+                    <h4 class="time">{{talk.start}} – {{talk.end}}</h4>
+                    <div class="profile mt-3">
+                        <div class="d-flex justify-content-center">{% assign post = talk %}{% include news/blog_avatars.html %}</div>
+                        <div class="name mt-2">
+                        {{talk.speaker | join: ", "}}
+                        </div>
+                    </div>
+                    <!--//profile-->
+                </div>
+                <!--//meta-->
+                <div class="content">
+                    <h3 class="title mb-2">{{talk.title}}<a data-tab-destination="day-{{i}}"
+                            href="#session-{{ forloop.index }}" class="link-unstyled"><i
+                                class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em;"></i></a>
+                    </h3>
+                    <div class="location mb-2 text-muted"><i class="fa fa-map-marker me-2"
+                            aria-hidden="true"></i>{{talk.location}}</div>
+                    <div class="desc pb-2">{{talk.description}}</div>
+                </div>
+                <!--//content-->
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 ## Veranstaltungsort
 
