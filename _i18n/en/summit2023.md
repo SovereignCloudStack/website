@@ -32,7 +32,7 @@ Registration on 23 May is possible from 12:00 CEST, the event will start at 13:0
     </ul>
     <!-- Tab panes -->
     <div class="schedule-tab-content tab-content mt-5">
-        {% for i in (1..3) %}
+        {% for i in (1..2) %}
         <div class="tab-pane fade {% if i == 1 %}show active{% endif %}" id="day-{{i}}" role="tabpanel"
             aria-labelledby="day-{{i}}">
             {% for talk in site.data.summit2023-talks %}
@@ -40,14 +40,13 @@ Registration on 23 May is possible from 12:00 CEST, the event will start at 13:0
             <div class="item item-talk">
                 <div class="meta">
                     <h4 class="time">{{talk.start}} – {{talk.end}}</h4>
-                    {% if talk.speaker %}
                     <div class="profile mt-3">
-                        <div class="d-flex justify-content-center">{% assign post = talk %}{% include
-                            news/blog_avatars.html %}</div>
-                        <div class="name mt-2">{{talk.speaker | join: "<br />"}}</div>
+                        <div class="d-flex justify-content-center">{% assign post = talk %}{% include news/blog_avatars.html %}</div>
+                        <div class="name mt-2">
+                        {{talk.speaker | join: ", "}}
+                        </div>
                     </div>
                     <!--//profile-->
-                    {% endif %}
                 </div>
                 <!--//meta-->
                 <div class="content">

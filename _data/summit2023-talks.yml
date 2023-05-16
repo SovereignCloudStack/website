@@ -1,317 +1,272 @@
-- title: "Registration"
+- title: "Registrierung"
   day: 1
   start: "12:00"
   end: "13:00"
+  speaker: ""
+  avatar:
+    - "white.png"
   location: "BBAW"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+  description: |-
 
-- title: "Welcome by the SCS Team"
+- title: "Begrüßung durch das SCS Team"
   day: 1
   start: "13:00"
   end: "13:10"
   location: "BBAW"
-  speaker:
-    - "Kurt Garloff"
-    - "Miriam Seyffarth"
+  speaker: ""
   avatar:
     - "kgarloff.jpg"
-    - "summit2023/speaker/seyffarth.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    - "kgarloff.jpg"
+  description: "Manuela Urban , Miriam Seyffarth"
 
-- title: "Welcome by the OSBA"
+- title: "Begrüßung durch die OSBA"
   day: 1
   start: "13:10"
   end: "13:15"
   location: "BBAW"
-  speaker:
-    - "Milisav Radmanic"
+  speaker: ""
   avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    - "kgarloff.jpg"
+  description: "Milisav Radmanic, Vorstandsmitglied, OSB Alliance e.V."
 
-- title: "Welcome by BMWK"
+- title: "Grußwort des BMWK"
   day: 1
   start: "13:15"
   end: "13:30"
   location: "BBAW"
-  speaker:
-    - "Ernst Stöckl-Pukall"
+  speaker: ""
   avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    - "kgarloff.jpg"
+  description: "Ernst Stöckl-Pukall, Leiter Referat Digitalisierung & Industrie 4.0, Bundesministerium für Wirtschaft und Klimaschutz"
 
-- title: "Warum digitale Souveränität von zentraler Bedeutung für Innovation, Freiheit und Demokratie in Europa ist"
+- title: "Die Bedeutung von Digitaler Souveränität für Innovation, Freiheit und Demokratie"
   day: 1
   start: "13:30"
   end: "14:15"
   location: "BBAW"
-  speaker:
-    - "Rafael Laguna de La Vera"
+  speaker: ""
   avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    - "kgarloff.jpg"
+  description: "Rafael Laguna de La Vera, Direktor der Bundesagentur für Sprunginnovationen SPRIND"
 
 - title: "Warum digitale Souveränität wichtig für Europa (die europäische Wirtschaft) ist"
   day: 1
   start: "14:15"
   end: "15:00"
   location: "BBAW"
-  speaker:
-    - "Miriam Seyffarth"
-    - "Dr. Franziska Brantner"
-    - "Dr. Reinhard Brandl"
-    - "Jan Hill"
-    - "Stephan Ilaender"
-    - "Milisav Radmanic"
+  speaker: ""
   avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    - "kgarloff.jpg"
+  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz; Dr. Reinhard Brandl, Mitglied des Bundestag, Digitalpolitscher Sprecher CDU/CSU Fraktion; Jan Hill Director Public Sector, adesso SE; Stephan Ilaender CTO StackIT, Schwarz Gruppe; Milisav Radmanic Vorstandsmitglied OSB Alliance e.V."
 
-- title: "Break"
+- title: "Pause"
   day: 1
   start: "15:00"
   end: "15:50"
   location: "BBAW"
+  speaker: ""
+  avatar:
+    - "kgarloff.jpg"
+  description: ""
 
-- title: "TBA"
+- title: "„Internationale Perspektiven auf Digitale Souveränität und Open Source: GovStack und das Netzwerk digital.global“"
   day: 1
   start: "15:50"
   end: "16:15"
   location: "BBAW"
-  speaker:
-    - "Martin Wimmer"
+  speaker: ""
   avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    - "kgarloff.jpg"
+  description: "Martin Wimmer, Chief Digital Officer, Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung"
 
 - title: "Cloud Transformation im öffentlichen Sektor und der Aufbau der Deutschen Verwaltungscloud"
   day: 1
   start: "16:15"
   end: "16:40"
   location: "BBAW"
-  speaker:
-    - "Martin Schallbruch"
+  speaker: ""
   avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    - "kgarloff.jpg"
+  description: "Martin Schallbruch, Vorsitzender des Vorstands der govdigital eG"
 
 - title: "The vision of one platform - standardized, built and operated by many"
   day: 1
   start: "16:40"
-  end: "17:10"
+  end: "17:05"
   location: "BBAW"
   speaker:
-    - "Johan Christenson"
-    - "Kurt Garloff"
   avatar:
-    - "summit2023/default-avatar.jpg"
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    - "kgarloff.jpg"
+    - "kgarloff.jpg"
+  description: "Johan Christenson, Vice President Innovation, Cleura AB; Kurt Garloff, CTO SCS, OSB Alliance e.V."
   
 - title: "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis des Souvereign Cloud Stack aufbauen"
   day: 1
-  start: "17:10"
-  end: "17:35"
+  start: "17:05"
+  end: "17:30"
   location: "BBAW"
-  speaker:
-    - "Christian Wolter"
+  speaker: ""
   avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    - "kgarloff.jpg"
+  description: "Christian Wolter, Key Account Manager, B1 Systems GmbH"
 
 - title: "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit"
   day: 1
-  start: "17:35"
+  start: "17:30"
   end: "17:55"
   location: "BBAW"
-  speaker:
-    - "Silke Tessmann-Storch"
+  speaker: ""
   avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    - "kgarloff.jpg"
+  description: "Silke Tessmann-Storch, Vorständin Lösungen, dataport A.ö.R."
 
 - title: "Zusammenfassung und Ausblick"
   day: 1
   start: "17:55"
   end: "18:00"
   location: "BBAW"
-  speaker:
-    - "Miriam Seyffarth"
+  speaker: ""
   avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    - "kgarloff.jpg"
+  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
 
-- title: "Ausklang auf der Dachterrasse"
-  day: 1
-  start: "18:00"
-  location: "BBAW"
-
-- title: "Registration"
+- title: "Registrierung"
   day: 2
   start: "08:00"
   end: "09:00"
-  location: "BBAW"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-
-- title: "Welcome und Rückblick auf Tag 1"
-  day: 2
-  start: "09:00"
-  end: "09:10"
-  location: "BBAW"
   speaker:
-    - "Miriam Seyffarth"
+    - ""
   avatar:
-    - "summit2023/speaker/seyffarth.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-
-- title: "Die strategische Relevanz von SCS als Praxisbeispiel digitaler Transformation"
-  day: 2
-  start: "09:10"
-  end: "09:30"
+    - "kgarloff.jpg"
   location: "BBAW"
-  speaker:
-    - "Christian Schmitz"
-  avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+  description: ""
 
-- title: "Ein SCS Datacenter für das 5G-Campusnetz an der Hochschule Osnabrück"
-  day: 2
-  start: "09:30"
-  end: "09:50"
-  location: "BBAW"
-  speaker:
-    - "Robert Holling"
-  avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+# - title: "Welcome und Rückblick auf Tag 1"
+#   day: 2
+#   start: "09:00"
+#   end: "09:10"
+#   location: "BBAW"
+#   speaker: ""
+#   avatar:
+#     - "summit2023/speaker/seyffarth.jpg"
+#   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
 
-- title: "Building a Community of Practice - der Betrieb von SCS-Infrastrukturen"
-  day: 2
-  start: "09:50"
-  end: "10:20"
-  location: "BBAW"
-  speaker:
-    - "Friederike Zelke"
-    - "Felix Kronlage-Dammers"
-    - "Alexander Wallner"
-    - "Cemil Degirmenci"
-    - "Christian Berendt"
-  avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+# - title: "Die strategische Relevanz von SCS als Praxisbeispiel digitaler Transformation"
+#   day: 2
+#   start: "09:10"
+#   end: "09:30"
+#   location: "BBAW"
+#   speaker: ""
+#   avatar:
+#     - "kgarloff.jpg"
+#   description: "Christian Schmitz, Director Open Source, plusserver gmbh"
+
+# - title: "Ein SCS Datacenter für das 5G-Campusnetz an der Hochschule Osnabrück"
+#   day: 2
+#   start: "09:30"
+#   end: "09:50"
+#   location: "BBAW"
+#   speaker: ""
+#   avatar:
+#     - "kgarloff.jpg"
+#   description: "Robert Holling, Dipl.-Wirtsch.-Inf. Reallabor Hoschschule Osnabrück"
+
+# - title: "Building a Community of Practice - der Betrieb von SCS-Infrastrukturen"
+#   day: 2
+#   start: "09:50"
+#   end: "10:20"
+#   location: "BBAW"
+#   speaker: ""
+#   avatar:
+#     - "kgarloff.jpg"
+#   description: "Friederike Zelke, Community Manager SCS, OSB Alliance e.V. (Moderation); Alexander Wallner, CEO plusserver gmbh; Cemil Degirmenci, Geschäftsführer der Wavecon GmbH (100% noris network AG); Felix Kronlage-Dammers, Product Owner IaaS & OPS SCS, OSB Alliance e.V.; Christian Berendt, Founder und CEO der OSISM GmbH"
     
-- title: "Vom Oligopol zurück zum echten Wettbewerb" 
-  day: 2
-  start: "10:20"
-  end: "10:30"
-  location: "BBAW"
-  speaker:
-    - "Dr. Hans-Joachim Popp"
-  avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+# - title: "Vom Oligopol zurück zum echten Wettbewerb" 
+#   day: 2
+#   start: "10:20"
+#   end: "10:30"
+#   location: "BBAW"
+#   speaker:
+#   avatar:
+#     - "kgarloff.jpg"
+#   description: "Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE, Bundesverband der IT-Anwender"
 
-- title: "Vom Oligopol zurück zum echten Wettbewerb" 
-  day: 2
-  start: "10:30"
-  end: "10:40"
-  location: "BBAW"
-  speaker:
-    - "Jutta Rößner"
-  avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+# - title: "tbd" 
+#   day: 2
+#   start: "10:30"
+#   end: "10:40"
+#   location: "BBAW"
+#   speaker: ""
+#   avatar:
+#     - "kgarloff.jp0g"
+#   description: "Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG"
 
-- title: "Paneldiskussion"
-  day: 2
-  start: "10:40"
-  end: "11:00"
-  location: "BBAW"
-  speaker:
-    - "Miriam Seyffarth"
-    - "Jutta Rößner"
-    - "Dr. Hans-Joachim Popp"
-  avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+# - title: "Paneldiskussion"
+#   day: 2
+#   start: "10:40"
+#   end: "11:00"
+#   location: "BBAW"
+#   speaker: ""
+#   avatar:
+#     - "kgarloff.jpg"
+#   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG; Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE, Bundesverband der IT-Anwender"
 
-- title: "Break"
-  day: 2
-  start: "11:00"
-  end: "11:30"
-  location: "BBAW"
+# - title: "Pause"
+#  day: 2
+#  start: "11:00"
+#  end: "11:30"
+#  location: "BBAW"
+#  speaker: ""
+#  avatar:
+#    - "kgarloff.jpg"
+#  description: ""
 
-- title: "Federation Services - Die Open Source Werkzeugkiste zum Aufbau souveräner Datenökosysteme"
-  day: 2
-  start: "11:30"
-  end: "12:00"
-  location: "BBAW"
-  speaker:
-    - "Andreas Weiss"
-  avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+# - title: "Federation Services - Die Open Source Werkzeugkiste zum Aufbau souveräner Datenökosysteme"
+#   day: 2
+#   start: "11:30"
+#   end: "12:00"
+#   location: "BBAW"
+#   speaker: ""
+#   avatar:
+#     - "kgarloff.jpg"
+#   description: "Andreas Weiss, Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V."
 
-- title: "Eine Zero Emission Cloud Computing Center durch SCS betrieben"
-  day: 2
-  start: "12:00"
-  end: "12:15"
-  location: "BBAW"
-  speaker:
-    - "Christian Berendt"
-    - "Julian Hauber"
-  avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+# - title: "Ein Zero Emission Cloud Computing Center durch SCS betrieben"
+#   day: 2
+#   start: "12:00"
+#   end: "12:15"
+#   location: "BBAW"
+#   speaker: ""
+#   avatar:
+#     - "kgarloff.jpg"
+#   description: "Julian Hauber, Geschäftsführer JH-Computers; Christian Berendt, Founder und CEO der OSISM GmbH"
 
-- title: "Die Zukunft von SCS: Ein Ausblick in 5 Jahren"
-  day: 2
-  start: "12:15"
-  end: "12:50"
-  location: "BBAW"
-  speaker:
-    - "Kurt Garloff"
-  avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+# - title: „Was ist eigentliche eine SCS Zertifizierung“
+#   day: 2
+#   start: "12:15"
+#   end: "12:25"
+#   location: "BBAW"
+#   speaker: ""
+#   avatar:
+#     - "kgarloff.jpg"
+#   description: "Alexander Diab, Ecosystem Manager SCS, OSB Alliance e.V."
 
-- title: "Abschluss und Verabschiedung"
-  day: 2
-  start: "12:50"
-  end: "13:00"
-  location: "BBAW"
-  speaker:
-    - "Miriam Seyffarth"
-  avatar:
-    - "summit2023/default-avatar.jpg"
-  description: |
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+# - title: "SCS in 5 Jahren - Ein Ausblick"
+#   day: 2
+#   start: "12:25"
+#   end: "12:55"
+#   location: "BBAW"
+#   speaker: ""
+#   avatar:
+#     - "kgarloff.jpg"
+#   description: "Kurt Garloff, CTO SCS, OSB Alliance e.V."
 
-- title: "Ende der Veranstaltung"
-  day: 2
-  start: "13:00"
-  location: "BBAW"
+# - title: "Abschluss und Verabschiedung"
+#   day: 2
+#   start: "12:55"
+#   end: "13:00"
+#   location: "BBAW"
+#   speaker: ""
+#   avatar:
+#     - "kgarloff.jpg"
+#   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
