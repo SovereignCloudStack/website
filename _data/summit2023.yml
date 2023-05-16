@@ -21,7 +21,7 @@ speakers:
     title: Vorsitzender des Vorstands der govdigital eG
     avatar: summit2023/speaker/schallbruch.jpg
   - name: Alexander Wallner
-    title: CEO der PlusServer GmbH
+    title: CEO der plusserver gmbh
     avatar: summit2023/speaker/wallner.jpeg
   - name: Christian Berendt
     title: Founder & CEO of OSISM GmbH
@@ -39,11 +39,18 @@ speakers:
     title: Dipl. Wirtsch.-Inf. (FH), 5G Reallabor, Hochschule Osnabrück 
     avatar: summit2023/speaker/holling.jpg
   - name: Dr. Hans-Joachim Popp
-    title: Princicpal Consultant@BwConsulting GmbH, Stellv. Vorsitzender VOICE - Bundesverband der IT-Anwender e.V.- 
-    avatar: summit2023/default-avatar.jpg
+    title: Princicpal Consultant@BwConsulting GmbH, Mitglied des Präsidiums, Beauftragter für IT-Politik, VOICE - Bundesverband der IT-Anwender e.V.-
+    avatar: summit2023/speaker/popp.jpg
   - name: Jan Hill
-    title: Director Public Services, adesso SE
+    title: Director Public Sector, adesso SE
     avatar: summit2023/speaker/hill.jpg
+  - name: Stephan Ilaender
+    title: Geschäftsführer Plattform Stackit der Schwarz Gruppe
+    avatar: summit2023/default-avatar.jpg
+  - name: Martin Wimmer
+    title: Chief Digital Officer, Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung
+    avatar: summit2023/speaker/wimmer.jpg
+
 
 sponsors:
   gold:
