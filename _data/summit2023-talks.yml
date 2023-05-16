@@ -15,8 +15,8 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "kgarloff.jpg"
-    - "kgarloff.jpg"
+    - "urban.jpg"
+    - "avatar-seyffarth.jpg"
   description: "Manuela Urban , Miriam Seyffarth"
 
 - title: "Begrüßung durch die OSBA"
@@ -26,7 +26,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "kgarloff.jpg"
+    - "default-avatar.jpg"
   description: "Milisav Radmanic, Vorstandsmitglied, OSB Alliance e.V."
 
 - title: "Grußwort des BMWK"
@@ -36,7 +36,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "kgarloff.jpg"
+    - "avatar-stoeckl-pukall.jpg"
   description: "Ernst Stöckl-Pukall, Leiter Referat Digitalisierung & Industrie 4.0, Bundesministerium für Wirtschaft und Klimaschutz"
 
 - title: "Die Bedeutung von Digitaler Souveränität für Innovation, Freiheit und Demokratie"
@@ -46,7 +46,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "kgarloff.jpg"
+    - "avatar-rafael-laguna.jpg"
   description: "Rafael Laguna de La Vera, Direktor der Bundesagentur für Sprunginnovationen SPRIND"
 
 - title: "Warum digitale Souveränität wichtig für Europa (die europäische Wirtschaft) ist"
@@ -56,7 +56,11 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "kgarloff.jpg"
+    - "avatar-seyffarth.jpg"
+    - "avatar-brantner.jpg"
+    - "default-avatar.jpg"
+    - "default-avatar.jpg"
+    - "default-avatar.jpg"
   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz; Dr. Reinhard Brandl, Mitglied des Bundestag, Digitalpolitscher Sprecher CDU/CSU Fraktion; Jan Hill Director Public Sector, adesso SE; Stephan Ilaender CTO StackIT, Schwarz Gruppe; Milisav Radmanic Vorstandsmitglied OSB Alliance e.V."
 
 - title: "Pause"
@@ -66,7 +70,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "kgarloff.jpg"
+    - "white.png"
   description: ""
 
 - title: "„Internationale Perspektiven auf Digitale Souveränität und Open Source: GovStack und das Netzwerk digital.global“"
@@ -76,7 +80,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "kgarloff.jpg"
+    - "default-avatar.jpg"
   description: "Martin Wimmer, Chief Digital Officer, Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung"
 
 - title: "Cloud Transformation im öffentlichen Sektor und der Aufbau der Deutschen Verwaltungscloud"
@@ -86,7 +90,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "kgarloff.jpg"
+    - "avatar-schallbruch.jpg"
   description: "Martin Schallbruch, Vorsitzender des Vorstands der govdigital eG"
 
 - title: "The vision of one platform - standardized, built and operated by many"
@@ -96,7 +100,7 @@
   location: "BBAW"
   speaker:
   avatar:
-    - "kgarloff.jpg"
+    - "avatar-johna-christenson.jpg"
     - "kgarloff.jpg"
   description: "Johan Christenson, Vice President Innovation, Cleura AB; Kurt Garloff, CTO SCS, OSB Alliance e.V."
   
@@ -107,7 +111,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "kgarloff.jpg"
+    - "default-avatar.jpg"
   description: "Christian Wolter, Key Account Manager, B1 Systems GmbH"
 
 - title: "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit"
@@ -117,7 +121,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "kgarloff.jpg"
+    - "avatar-tessmann-storch.jpg"
   description: "Silke Tessmann-Storch, Vorständin Lösungen, dataport A.ö.R."
 
 - title: "Zusammenfassung und Ausblick"
@@ -127,7 +131,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "kgarloff.jpg"
+    - "avatar-seyffarth.jpg"
   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
 
 - title: "Registrierung"
@@ -137,136 +141,142 @@
   speaker:
     - ""
   avatar:
-    - "kgarloff.jpg"
+    - "white.png"
   location: "BBAW"
   description: ""
 
-# - title: "Welcome und Rückblick auf Tag 1"
-#   day: 2
-#   start: "09:00"
-#   end: "09:10"
-#   location: "BBAW"
-#   speaker: ""
-#   avatar:
-#     - "summit2023/speaker/seyffarth.jpg"
-#   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
+- title: "Welcome und Rückblick auf Tag 1"
+  day: 2
+  start: "09:00"
+  end: "09:10"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "avatar-seyffarth.jpg"
+  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
 
-# - title: "Die strategische Relevanz von SCS als Praxisbeispiel digitaler Transformation"
-#   day: 2
-#   start: "09:10"
-#   end: "09:30"
-#   location: "BBAW"
-#   speaker: ""
-#   avatar:
-#     - "kgarloff.jpg"
-#   description: "Christian Schmitz, Director Open Source, plusserver gmbh"
+- title: "Die strategische Relevanz von SCS als Praxisbeispiel digitaler Transformation"
+  day: 2
+  start: "09:10"
+  end: "09:30"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "avatar-christian-schmitz.jpg"
+  description: "Christian Schmitz, Director Open Source, plusserver gmbh"
 
-# - title: "Ein SCS Datacenter für das 5G-Campusnetz an der Hochschule Osnabrück"
-#   day: 2
-#   start: "09:30"
-#   end: "09:50"
-#   location: "BBAW"
-#   speaker: ""
-#   avatar:
-#     - "kgarloff.jpg"
-#   description: "Robert Holling, Dipl.-Wirtsch.-Inf. Reallabor Hoschschule Osnabrück"
+- title: "Ein SCS Datacenter für das 5G-Campusnetz an der Hochschule Osnabrück"
+  day: 2
+  start: "09:30"
+  end: "09:50"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "avatar-holling.jpg"
+  description: "Robert Holling, Dipl.-Wirtsch.-Inf. Reallabor Hoschschule Osnabrück"
 
-# - title: "Building a Community of Practice - der Betrieb von SCS-Infrastrukturen"
-#   day: 2
-#   start: "09:50"
-#   end: "10:20"
-#   location: "BBAW"
-#   speaker: ""
-#   avatar:
-#     - "kgarloff.jpg"
-#   description: "Friederike Zelke, Community Manager SCS, OSB Alliance e.V. (Moderation); Alexander Wallner, CEO plusserver gmbh; Cemil Degirmenci, Geschäftsführer der Wavecon GmbH (100% noris network AG); Felix Kronlage-Dammers, Product Owner IaaS & OPS SCS, OSB Alliance e.V.; Christian Berendt, Founder und CEO der OSISM GmbH"
+- title: "Building a Community of Practice - der Betrieb von SCS-Infrastrukturen"
+  day: 2
+  start: "09:50"
+  end: "10:20"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "zelke.jpg"
+    - "avatar-wallner.jpg"
+    - "avatar-cemil"
+    - "fkr.jpg"
+    - "avatar-christian-berendt.jpg"
+  description: "Friederike Zelke, Community Manager SCS, OSB Alliance e.V. (Moderation); Alexander Wallner, CEO plusserver gmbh; Cemil Degirmenci, Geschäftsführer der Wavecon GmbH (100% noris network AG); Felix Kronlage-Dammers, Product Owner IaaS & OPS SCS, OSB Alliance e.V.; Christian Berendt, Founder und CEO der OSISM GmbH"
     
-# - title: "Vom Oligopol zurück zum echten Wettbewerb" 
-#   day: 2
-#   start: "10:20"
-#   end: "10:30"
-#   location: "BBAW"
-#   speaker:
-#   avatar:
-#     - "kgarloff.jpg"
-#   description: "Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE, Bundesverband der IT-Anwender"
+- title: "Vom Oligopol zurück zum echten Wettbewerb" 
+  day: 2
+  start: "10:20"
+  end: "10:30"
+  location: "BBAW"
+  speaker:
+  avatar:
+    - "default-avatar.jpg"
+  description: "Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE, Bundesverband der IT-Anwender"
 
-# - title: "tbd" 
-#   day: 2
-#   start: "10:30"
-#   end: "10:40"
-#   location: "BBAW"
-#   speaker: ""
-#   avatar:
-#     - "kgarloff.jp0g"
-#   description: "Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG"
+- title: "tbd" 
+  day: 2
+  start: "10:30"
+  end: "10:40"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "avatar-juttar-roessner.jpg"
+  description: "Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG"
 
-# - title: "Paneldiskussion"
-#   day: 2
-#   start: "10:40"
-#   end: "11:00"
-#   location: "BBAW"
-#   speaker: ""
-#   avatar:
-#     - "kgarloff.jpg"
-#   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG; Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE, Bundesverband der IT-Anwender"
+- title: "Paneldiskussion"
+  day: 2
+  start: "10:40"
+  end: "11:00"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "avatar-seyffarth.jpg"
+    - "avatar-juttar-roessner.jpg"
+    - "default-avatar.jpg"
+  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG; Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE, Bundesverband der IT-Anwender"
 
-# - title: "Pause"
-#  day: 2
-#  start: "11:00"
-#  end: "11:30"
-#  location: "BBAW"
-#  speaker: ""
-#  avatar:
-#    - "kgarloff.jpg"
-#  description: ""
+- title: "Pause"
+  day: 2
+  start: "11:00"
+  end: "11:30"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+   - "white.png"
+  description: ""
 
-# - title: "Federation Services - Die Open Source Werkzeugkiste zum Aufbau souveräner Datenökosysteme"
-#   day: 2
-#   start: "11:30"
-#   end: "12:00"
-#   location: "BBAW"
-#   speaker: ""
-#   avatar:
-#     - "kgarloff.jpg"
-#   description: "Andreas Weiss, Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V."
+- title: "Federation Services - Die Open Source Werkzeugkiste zum Aufbau souveräner Datenökosysteme"
+  day: 2
+  start: "11:30"
+  end: "12:00"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "avatar-andreas-weiss.jpg"
+  description: "Andreas Weiss, Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V."
 
-# - title: "Ein Zero Emission Cloud Computing Center durch SCS betrieben"
-#   day: 2
-#   start: "12:00"
-#   end: "12:15"
-#   location: "BBAW"
-#   speaker: ""
-#   avatar:
-#     - "kgarloff.jpg"
-#   description: "Julian Hauber, Geschäftsführer JH-Computers; Christian Berendt, Founder und CEO der OSISM GmbH"
+- title: "Ein Zero Emission Cloud Computing Center durch SCS betrieben"
+  day: 2
+  start: "12:00"
+  end: "12:15"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "default-avatar.jpg"
+  description: "Julian Hauber, Geschäftsführer JH-Computers; Christian Berendt, Founder und CEO der OSISM GmbH"
 
-# - title: „Was ist eigentliche eine SCS Zertifizierung“
-#   day: 2
-#   start: "12:15"
-#   end: "12:25"
-#   location: "BBAW"
-#   speaker: ""
-#   avatar:
-#     - "kgarloff.jpg"
-#   description: "Alexander Diab, Ecosystem Manager SCS, OSB Alliance e.V."
+- title: „Was ist eigentliche eine SCS Zertifizierung“
+  day: 2
+  start: "12:15"
+  end: "12:25"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "diab.jpg"
+  description: "Alexander Diab, Ecosystem Manager SCS, OSB Alliance e.V."
 
-# - title: "SCS in 5 Jahren - Ein Ausblick"
-#   day: 2
-#   start: "12:25"
-#   end: "12:55"
-#   location: "BBAW"
-#   speaker: ""
-#   avatar:
-#     - "kgarloff.jpg"
-#   description: "Kurt Garloff, CTO SCS, OSB Alliance e.V."
+- title: "SCS in 5 Jahren - Ein Ausblick"
+  day: 2
+  start: "12:25"
+  end: "12:55"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "kgarloff.jpg"
+  description: "Kurt Garloff, CTO SCS, OSB Alliance e.V."
 
-# - title: "Abschluss und Verabschiedung"
-#   day: 2
-#   start: "12:55"
-#   end: "13:00"
-#   location: "BBAW"
-#   speaker: ""
-#   avatar:
-#     - "kgarloff.jpg"
-#   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
+- title: "Abschluss und Verabschiedung"
+  day: 2
+  start: "12:55"
+  end: "13:00"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "avatar-seyffarth.jpg"
+  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
