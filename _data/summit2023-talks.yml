@@ -16,7 +16,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Manuela Urban , Miriam Seyffarth"
+  description: "Dr. Manuela Urban, COO SCS, OSB Alliance e.V.; Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. "
 
 - title: "Begrüßung durch die OSBA"
   day: 1
@@ -56,7 +56,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz; Dr. Reinhard Brandl, Mitglied des Bundestag, Digitalpolitscher Sprecher CDU/CSU Fraktion; Jan Hill Director Public Sector, adesso SE; Stephan Ilaender CTO StackIT, Schwarz Gruppe; Milisav Radmanic Vorstandsmitglied OSB Alliance e.V."
+  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz; Dr. Reinhard Brandl, Mitglied des Bundestag, Digitalpolitscher Sprecher CDU/CSU Fraktion; Jan Hill, Director Public Sector, adesso SE; Stephan Ilaender, CTO StackIT, Schwarz Gruppe; Milisav Radmanic, Vorstand OSB Alliance e.V."
 
 - title: "Pause"
   day: 1
@@ -128,6 +128,16 @@
     - "SCS_logo.png"
   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
 
+- title: "Ausklang auf der Dachterasse"
+  day: 1
+  start: "18:00"
+  end: "22:00"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: ""
+
 - title: "Registrierung"
   day: 2
   start: "08:00"
@@ -166,7 +176,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Robert Holling, Dipl.-Wirtsch.-Inf. Reallabor Hoschschule Osnabrück"
+  description: "Robert Holling, Dipl.-Wirtsch.-Inf., Reallabor Hoschschule Osnabrück"
 
 - title: "Building a Community of Practice - der Betrieb von SCS-Infrastrukturen"
   day: 2
@@ -176,7 +186,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Friederike Zelke, Community Manager SCS, OSB Alliance e.V. (Moderation); Alexander Wallner, CEO plusserver gmbh; Cemil Degirmenci, Geschäftsführer der Wavecon GmbH (100% noris network AG); Felix Kronlage-Dammers, Product Owner IaaS & OPS SCS, OSB Alliance e.V.; Christian Berendt, Founder und CEO der OSISM GmbH"
+  description: "Friederike Zelke, Community Manager SCS, OSB Alliance e.V. (Moderation); Alexander Wallner, CEO plusserver GmbH; Cemil Degirmenci, Geschäftsführer der Wavecon GmbH (100% noris network AG); Felix Kronlage-Dammers, Product Owner IaaS & OPS SCS, OSB Alliance e.V.; Christian Berendt, Founder und CEO der OSISM GmbH"
     
 - title: "Vom Oligopol zurück zum echten Wettbewerb" 
   day: 2
@@ -186,7 +196,7 @@
   speaker:
   avatar:
     - "SCS_logo.png"
-  description: "Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE, Bundesverband der IT-Anwender"
+  description: "Dr. Hans-Joachim Popp, Principal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE, Bundesverband der IT-Anwender"
 
 - title: "Digitale Souveränität und Gaia-X: Warum DATEV sich engagiert" 
   day: 2
@@ -206,7 +216,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG; Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE, Bundesverband der IT-Anwender"
+  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG; Dr. Hans-Joachim Popp, Principal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE - Bundesverband der IT-Anwender e.V."
 
 - title: "Pause"
   day: 2
@@ -238,7 +248,7 @@
     - "SCS_logo.png"
   description: "Julian Hauber, Geschäftsführer JH-Computers; Christian Berendt, Founder und CEO der OSISM GmbH"
 
-- title: „Was ist eigentliche eine SCS Zertifizierung“
+- title: "Was ist eigentliche eine SCS Zertifizierung"
   day: 2
   start: "12:15"
   end: "12:25"
