@@ -7,12 +7,13 @@
       <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2" aria-label="3"></button>
     </div>
     <div class="carousel-inner">
-      {% for post in sorted limit: 3%}
-      {% if forloop.index == 1 %}
       <div class="carousel-item active">
-      {% else %}
+        <a href="{{ "/summit" | prepend: site.baseurl}}" class="stretched-link">
+          {% asset 'summit2023/banner.png' class="d-block w-100" %}
+        </a>
+      </div>
+      {% for post in sorted limit: 2%}
       <div class="carousel-item">
-      {% endif %}
         <div class="carousel-caption">
           <h3>{{post.title}}</h3>
           <p>{{post.author | join: ", "}}</p>
