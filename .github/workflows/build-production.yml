@@ -22,7 +22,11 @@ jobs:
       with:
         jekyll_src: "."
         jekyll_env: production
-        pre_build_commands: "apk add --update vips uglify-js"
+        # contemporary workaround for deploying on GH Pages, see: https://github.com/orgs/community/discussions/55820#discussioncomment-5948453
+        pre_build_commands: |
+          apk add --update vips uglify-js
+          git config --global http.version HTTP/1.1
+          apk fetch git-lfs
         build_only: false
         token: ${{ secrets.GITHUB_TOKEN }}
         target_branch: gh-pages
