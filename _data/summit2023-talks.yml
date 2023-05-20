@@ -1,0 +1,279 @@
+- title: "Registrierung"
+  day: 1
+  start: "12:00"
+  end: "13:00"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  location: "BBAW"
+  description: ""
+
+- title: "Begrüßung durch das SCS Team"
+  day: 1
+  start: "13:00"
+  end: "13:10"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Dr. Manuela Urban, COO SCS, OSB Alliance e.V.; Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. "
+
+- title: "Begrüßung durch die OSBA"
+  day: 1
+  start: "13:10"
+  end: "13:15"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Milisav Radmanic, Vorstandsmitglied, OSB Alliance e.V."
+
+- title: "Grußwort des BMWK"
+  day: 1
+  start: "13:15"
+  end: "13:30"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Ernst Stöckl-Pukall, Leiter Referat Digitalisierung & Industrie 4.0, Bundesministerium für Wirtschaft und Klimaschutz"
+
+- title: "Die Bedeutung von Digitaler Souveränität für Innovation, Freiheit und Demokratie"
+  day: 1
+  start: "13:30"
+  end: "14:15"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Rafael Laguna de La Vera, Direktor der Bundesagentur für Sprunginnovationen SPRIND"
+
+- title: "Warum digitale Souveränität wichtig für Europa (die europäische Wirtschaft) ist"
+  day: 1
+  start: "14:15"
+  end: "15:00"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz; Dr. Reinhard Brandl, Mitglied des Bundestag, Digitalpolitscher Sprecher CDU/CSU Fraktion; Jan Hill, Director Public Sector, adesso SE; Stephan Ilaender, CTO StackIT, Schwarz Gruppe; Milisav Radmanic, Vorstand OSB Alliance e.V."
+
+- title: "Pause"
+  day: 1
+  start: "15:00"
+  end: "15:50"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: ""
+
+- title: "„Internationale Perspektiven auf Digitale Souveränität und Open Source: GovStack und das Netzwerk digital.global“"
+  day: 1
+  start: "15:50"
+  end: "16:15"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Martin Wimmer, Chief Digital Officer, Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung"
+
+- title: "Cloud Transformation im öffentlichen Sektor und der Aufbau der Deutschen Verwaltungscloud"
+  day: 1
+  start: "16:15"
+  end: "16:40"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Martin Schallbruch, Vorsitzender des Vorstands der govdigital eG"
+
+- title: "The vision of one platform - standardized, built and operated by many"
+  day: 1
+  start: "16:40"
+  end: "17:05"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Johan Christenson, Vice President Innovation, Cleura AB; Kurt Garloff, CTO SCS, OSB Alliance e.V."
+  
+- title: "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis des Souvereign Cloud Stack aufbauen"
+  day: 1
+  start: "17:05"
+  end: "17:30"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Christian Wolter, Key Account Manager, B1 Systems GmbH"
+
+- title: "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit"
+  day: 1
+  start: "17:30"
+  end: "17:55"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Silke Tessmann-Storch, Vorständin Lösungen, dataport A.ö.R."
+
+- title: "Zusammenfassung und Ausblick"
+  day: 1
+  start: "17:55"
+  end: "18:00"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
+
+- title: "Ausklang auf der Dachterasse"
+  day: 1
+  start: "18:00"
+  end: "22:00"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: ""
+
+- title: "Registrierung"
+  day: 2
+  start: "08:00"
+  end: "09:00"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  location: "BBAW"
+  description: ""
+
+- title: "Welcome und Rückblick auf Tag 1"
+  day: 2
+  start: "09:00"
+  end: "09:10"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
+
+- title: "Die strategische Relevanz von SCS als Praxisbeispiel digitaler Transformation"
+  day: 2
+  start: "09:10"
+  end: "09:30"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Christian Schmitz, Director Open Source, plusserver gmbh"
+
+- title: "Ein SCS Datacenter für das 5G-Campusnetz an der Hochschule Osnabrück"
+  day: 2
+  start: "09:30"
+  end: "09:50"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Robert Holling, Dipl.-Wirtsch.-Inf., Reallabor Hoschschule Osnabrück"
+
+- title: "Building a Community of Practice - der Betrieb von SCS-Infrastrukturen"
+  day: 2
+  start: "09:50"
+  end: "10:20"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Friederike Zelke, Community Manager SCS, OSB Alliance e.V. (Moderation); Alexander Wallner, CEO plusserver GmbH; Cemil Degirmenci, Geschäftsführer der Wavecon GmbH (100% noris network AG); Felix Kronlage-Dammers, Product Owner IaaS & OPS SCS, OSB Alliance e.V.; Christian Berendt, Founder und CEO der OSISM GmbH"
+    
+- title: "Vom Oligopol zurück zum echten Wettbewerb" 
+  day: 2
+  start: "10:20"
+  end: "10:30"
+  location: "BBAW"
+  speaker:
+  avatar:
+    - "SCS_logo.png"
+  description: "Dr. Hans-Joachim Popp, Principal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE, Bundesverband der IT-Anwender"
+
+- title: "Digitale Souveränität und Gaia-X: Warum DATEV sich engagiert" 
+  day: 2
+  start: "10:30"
+  end: "10:40"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG"
+
+- title: "Paneldiskussion"
+  day: 2
+  start: "10:40"
+  end: "11:00"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG; Dr. Hans-Joachim Popp, Principal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE - Bundesverband der IT-Anwender e.V."
+
+- title: "Pause"
+  day: 2
+  start: "11:00"
+  end: "11:30"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: ""
+
+- title: "Federation Services - Die Open Source Werkzeugkiste zum Aufbau souveräner Datenökosysteme"
+  day: 2
+  start: "11:30"
+  end: "12:00"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Andreas Weiss, Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V."
+
+- title: "Ein Zero Emission Cloud Computing Center durch SCS betrieben"
+  day: 2
+  start: "12:00"
+  end: "12:15"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Julian Hauber, Geschäftsführer JH-Computers; Christian Berendt, Founder und CEO der OSISM GmbH"
+
+- title: "Was ist eigentliche eine SCS Zertifizierung"
+  day: 2
+  start: "12:15"
+  end: "12:25"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Alexander Diab, Ecosystem Manager SCS, OSB Alliance e.V."
+
+- title: "SCS in 5 Jahren - Ein Ausblick"
+  day: 2
+  start: "12:25"
+  end: "12:55"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Kurt Garloff, CTO SCS, OSB Alliance e.V."
+
+- title: "Abschluss und Verabschiedung"
+  day: 2
+  start: "12:55"
+  end: "13:00"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
