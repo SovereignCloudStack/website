@@ -15,5 +15,5 @@ matrix: https://matrix.to/#/@friederike_zelke:matrix.org
 mail: friederike@zelke.de
 avatar: zelke.jpg
 bio: |
-  After several years as editor in chief of the cloud report, Friederike  joined the SCS team as Community Manager in April 2023. Her focus was and will be on free and open source technology, on sovereignty, openness, collaboration, security, and sustainability. With all these topics she wants to get and stay people interested, informed, involved and inspired to engage in SCS, open source and open operations.
+  After several years as editor in chief of the cloud report, Friederike joined the SCS team as Community Manager in April 2023. Her focus was and will be on free and open source technology, on sovereignty, openness, collaboration, security, and sustainability. With all these topics she wants to get and keep people interested, informed, involved and inspired to engage in SCS, open source and open operations.
 ---
