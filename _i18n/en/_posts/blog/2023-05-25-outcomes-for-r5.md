@@ -21,20 +21,18 @@ SCS delivers building blocks for digital sovereign cloud infrastructure.  But we
 
 #### Working with outcomes on github
 
-The outcomes allow us to look through various angles on our development efforts. Each outcomes is reflected through a label within our github repositories, so that issues and pull requests can be labeled accordingly. Furthermore in the projects view we've added various filtered views to be able to quickly see which issues and working items play into which outcomes.
+The outcomes allow us to view our development efforts through various angles. Throughout our github organization a specific label represents each outcome. The projects view has filtered views for each outcome to be able to quickly see which issues and working items play into which outcomes.
 
 An [overall board](https://github.com/orgs/SovereignCloudStack/projects/6/views/28) summarizes all of them.
-
 
 ### [SCS is standardized](https://github.com/orgs/SovereignCloudStack/projects/6/views/23)
 
 While the S in SCS (at least the first ;) stands for *Sovereign* it could also stand for *Standardized*.
 SCS standardizes. Creating Standards within the community, reaching out to surrounding communities, working with upstream as well as other players in our ecosystem to make sure we don’t “just reinvent the wheel” or stew in their own juice is a fair share of our work within the project.
 
-Alongside the standardization work that has happened in the container and IaaS teams with [tender 10](https://scs.community/tenders/lot10) an importan tender package just kicked off and the work of this tender will play a significant role throughout the Release 5 cycle.
+The [certification tender 10](https://scs.community/tenders/lot10) plays an important role in our ongoing standardization effort. Alongside the standardization work that happens in the container and IaaS teams this will lead to an increased pace on the standardization efforts through Release 5 cycle.
 
-https://input.scs.community/tqKlv1Z_Srmi5e5o76CxhQ?view
-
+[Issue #285](https://github.com/SovereignCloudStack/standards/issues/285) gives an overview of standardization items for the IaaS layer.
 
 ### [SCS is understandable](https://github.com/orgs/SovereignCloudStack/projects/6/views/22)
 
