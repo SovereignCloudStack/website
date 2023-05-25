@@ -34,10 +34,11 @@ The [certification tender 10](https://scs.community/tenders/lot10) plays an impo
 
 [Issue #285](https://github.com/SovereignCloudStack/standards/issues/285) gives an overview of standardization items for the IaaS layer.
 
+The first results of our standardization effort became visible recently in our [standards repository](https://github.com/SovereignCloudStack/standards) where we now feature a 
+
 ### [SCS is understandable](https://github.com/orgs/SovereignCloudStack/projects/6/views/22)
 
-In the last half year the [documentation page](https://docs.scs.community) already came to life and with the efforts of the SIG Documentation it is not just a pile of documents but has a concept to it. However in order for SCS to be understandable more than just awesome docs are needed. Collecting feedback from SCS integrators just as much as people and organizations that have their first touchpoint with SCS plays an important role to assure SCS is continously becoming more understandable. 
-
+In the last half year the [documentation page](https://docs.scs.community) came to life and thanks to the efforts of the SIG Documentation it is not just a pile of documents but has a concept to it. For SCS to be understandable more than just awesome docs are needed. Collecting feedback from SCS integrators just as much as people and organizations that have their first touchpoint with SCS plays an important role to assure SCS is continously becoming more understandable. 
 
 ### [SCS enables](https://github.com/orgs/SovereignCloudStack/projects/6/views/20)
 
@@ -47,19 +48,12 @@ For the R4 development cycle one of the outcomes we proclaimed was *SCS enables 
 ### [SCS is transparent](https://github.com/orgs/SovereignCloudStack/projects/6/views/30)
 
 Transparency is one of the core values embedded in our project - yet we want to make sure our development efforts throughout the R5 cycles are actively working towards being transparent. This ranges from our development culture (which needs to be transparent not only to be trustworthy but also to lower the barrier to join the community), to the open operations movement and all the way to technical items such as [SBOMs](https://en.wikipedia.org/wiki/Software_supply_chain) for our complete stack.
-Transparent projects can be audited easily and trust can be built up more easily.
-
+Transparent projects can be audited easily and thus trust can be built up more easily.
 
 ### [SCS is continuously built and tested](https://github.com/orgs/SovereignCloudStack/projects/6/views/21)
 
-Throughout the R4 cycle the work on our own [zuul](https://zuul-ci.org) have begun. During the R4 retro the topic came up in va
-
-The R3 cycle has - once again ;) - shown how important a very good continuous integration is. With SCS we want to enable operators to keep their environments constantly up to date with confidence. The fact that two of our operators were able to directly upgrade to Release 3 shows that we’re on the right track.
+As part of the [tender 6d](https://scs.community/tenders/lot6d) the [work on our own Zuul instance](https://github.com/SovereignCloudStack/issues/issues/157) began in the R4 cycle. This will be the backbone of our own testing infrastructure - ranging from running CI for various components in the SCS stack up to end to end tests for the CAPI provider, an idea that was raised during the R4 retro.
 
 ### [SCS is opinionated](https://github.com/orgs/SovereignCloudStack/projects/6/views/29)
 
-While the SCS projects provides a modular stack and stronlgy works towards interoperability, we want to be opinionated in our reference implementation. Being opinionated on that level leads to focus and avoids having to many loose ends. 
-A very good example for this is how we addressed the need to monitoring
-
-
-
+While the SCS projects provides a modular stack and strongly works towards interoperability, we are opinionated in our reference implementation. Being opinionated on that level leads to focus and avoids having too many loose ends. It forces us to take informed decisions. These decisions need to be well documented - which is why we started early in the R4 cycle to use our ADR framework. This in return pays into *SCS is understandable*. 
