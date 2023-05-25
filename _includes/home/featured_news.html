@@ -8,11 +8,7 @@
     </div>
     <div class="carousel-inner">
       {% for post in sorted limit: 3%}
-      {% if forloop.index == 1 %}
-      <div class="carousel-item active">
-      {% else %}
       <div class="carousel-item">
-      {% endif %}
         <div class="carousel-caption">
           <h3>{{post.title}}</h3>
           <p>{{post.author | join: ", "}}</p>

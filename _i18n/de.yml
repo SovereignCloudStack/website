@@ -105,6 +105,9 @@ jobs:
   po-infra:
     title: "Product Owner IaaS and Operations (d/w/m)"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und koordiniere die Implementierung und Validierung (CI/CD) von Open Source IaaS und Operations Technologien."
+  po-ops:
+    title: "Product Owner Betrieb und Sicherheit (d/w/m)"
+    short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und koordiniere die Implementierung und Validierung (CI/CD) und Automatisierung von Betriebs- und Sicherheitstechnologieb."
   knowledge-management:
     title: "Knowledge Management Engineer (d/w/m)"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und entwickle moderne Prozesse, um das im Projekt gesammelte Wissen für Cloud-Provider, Entwickler:innen und Kunden leicht zugänglich zu gestalten."

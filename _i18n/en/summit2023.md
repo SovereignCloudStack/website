@@ -10,60 +10,62 @@ Registration on 23 May is possible from 12:00 CEST, the event will start at 13:0
 
 {% include summit2023/speakers.html %}
 
-## Program
+## Schedule
 
-You can expect the following talks and discussion :
-
-Day 1:
-* Welcoming address Federal Ministry for Economic Affairs and Climate Action of Germany (DE)
-Ernst Stöckl-Pukall, Director Department Digitisation & Industrie 4.0
-
-* Panel discussion: "Why digital sovereignty is important for Europe" (DE)
-Dr. Franziska Brantner, Parliamentary State Secretary at the Federal Ministry for Economic Affairs and Climate Action of Germany;
-Dr.Reinhard Brandl, Member of Parliament;
-Stephan Ilaender, STACKIT;
-Jan Hill, Director Public Services, adesso SE
-
-* Impulse talk: "Why digital sovereignty is central to innovation, freedom and democracy in Europe" (DE)
-Rafael Laguna de la Vera, Director Federal Agency for disruptive Innovation SPRIND
-
-* „Cloud-Transformation in the public sector and the development of the  Deutsche Verwaltungscloud (German public services cloud)“ (DE)
-Martin Schallbruch, CEO govdigital eG
-
-* A talk between Johan and Kurt: "SCS - The vision of one platform - standardised, built and operated by many" (EN)
-Johan Christenson, Vice President Innovation, Cleura AB;
-Kurt Garloff, CTO Sovereign Cloud Stack
-
-* Impulse talk: "Build your own hyperscaler: how to build a sovereign private cloud based on SCS" (DE)
-Christian Wolter, B1 Systems GmbH
-
-* Impulse talk: "How administration becomes digitally sovereign - open source as a way out of dependency" (DE)
-Silke Tessmann-Storch, Director Solutions, dataport A.ö.R.
-
-Day 2:
-* Impulse talk: "An SCS-Datacenter for the Campusnet Hochschule Osnabrück" (DE)
-Robert Holling, Dipl.-Wirtsch.-Inf. Reallabor Hoschschule Osnabrück
-
-* Panel discussion: "Building a Community of Practice – Operations of  SCS-Infrastructures" (DE)
-Alexander Wallner, CEO PlusServer GmbH;
-Christian Berendt, Founder and CEO OSISM GmbH;
-Cemil Demirgenci, CEO Wavecon GmbH (100% noris network AG);
-Felix Kronlage-Dammers, Product Owner SCS IaaS
-
-* Impulse Talk: "Federation Services – Open Source Toolset for developing sovereign Data ecosystems" (DE)
-Andreas Weiss, Director Digital Business Models, eco - Verband der Internetwirtschaft e.V.
-
-* Impulse Talk: tbd (DE)
-Christian Schmitz, Director Open Source, PlusServer GmbH
-
-* Impulse Talk: tbd (DE)
-Jutta Rößner, Member of executive board DATEV eG, head of Ecosystem & EAM
-
-* Impulse Talk: tbd (DE)
-Dr. Hans-Joachim Popp, Princicpal Consultant@BwConsulting GmbH, vice president VOICE - Bundesverband der IT-Anwender e.V.-
-
-
-Most of the contributions will be in German, the language is designated with (DE) or (EN).
+<div class="container my-4">
+    <!-- Nav tabs -->
+    <ul class="schedule-nav nav nav-pills nav-justified" id="schedule-tab" role="tablist">
+        <li class="nav-item me-2">
+            <a class="nav-link active" id="tab-day-1" data-bs-toggle="tab" href="#day-1" role="tab"
+                aria-controls="day-1" aria-selected="true">
+                <span class="heading">Day 1</span>
+                <span class="meta d-none d-lg-block">(Tuesday, May 23)</span>
+            </a>
+        </li>
+        <li class="nav-item me-2">
+            <a class="nav-link" id="tab-day-2" data-bs-toggle="tab" href="#day-2" role="tab" aria-controls="day-2"
+                aria-selected="false">
+                <span class="heading">Day 2</span>
+                <span class="meta d-none d-lg-block">(Wednesday, May 24)</span>
+            </a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="schedule-tab-content tab-content mt-5">
+        {% for i in (1..2) %}
+        <div class="tab-pane fade {% if i == 1 %}show active{% endif %}" id="day-{{i}}" role="tabpanel"
+            aria-labelledby="day-{{i}}">
+            {% for talk in site.data.summit2023-talks %}
+            {% if i == talk.day %}
+            <div class="item item-talk">
+                <div class="meta">
+                    <h4 class="time">{{talk.start}} – {{talk.end}}</h4>
+                    <div class="profile mt-3">
+                        <div class="d-flex justify-content-center">{% assign post = talk %}{% include news/blog_avatars.html %}</div>
+                        <div class="name mt-2">
+                        {{talk.speaker | join: ", "}}
+                        </div>
+                    </div>
+                    <!--//profile-->
+                </div>
+                <!--//meta-->
+                <div class="content">
+                    <h3 class="title mb-2">{{talk.title}}<a data-tab-destination="day-{{i}}"
+                            href="#session-{{ forloop.index }}" class="link-unstyled"><i
+                                class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em;"></i></a>
+                    </h3>
+                    <div class="location mb-2 text-muted"><i class="fa fa-map-marker me-2"
+                            aria-hidden="true"></i>{{talk.location}}</div>
+                    <div class="desc pb-2">{{talk.description}}</div>
+                </div>
+                <!--//content-->
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 ## Location
 
