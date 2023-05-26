@@ -75,7 +75,7 @@ Most cloud operators provide images for the most popular Linux operating
 systems. We strongly recommend to replace them with updated images as soon
 as the Linux distributors have provided updated base images (which is
 the case for many distributors at this point).
-Note that SCS has defined [metadata](https://github.com/SovereignCloudStack/standards/blob/main/Drafts/Image-Properties-Spec.md)
+Note that SCS has defined [metadata](https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0102-v1-image-metadata.md)
 for images that allow users to see the build date. Any image that's older than
 2022-02-21 and has a Linux kernel version >= 5.8 will very likely
 be vulnerable.
