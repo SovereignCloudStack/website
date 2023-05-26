@@ -10,7 +10,7 @@ number_vh81: 9b
 start_date: 2022-05-03
 closing_date: 2022-05-26
 contracting_portal: https://www.dtvp.de/Satellite/notice/CXP4YV76Z12
-state: open # open, upcoming or closed
+state: closed # open, upcoming or closed
 ---
 
 {% tf tenders/lot9b.md %}
