@@ -97,6 +97,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Johan Christenson, Vice President Innovation, Cleura AB; Kurt Garloff, CTO SCS, OSB Alliance e.V."
+  slides: "https://scs.sovereignit.de/nextcloud/s/ydXyXSmN88WL8FS"
   
 - title: "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis des Souvereign Cloud Stack aufbauen"
   day: 1
@@ -267,6 +268,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Kurt Garloff, CTO SCS, OSB Alliance e.V."
+  slides: "https://scs.sovereignit.de/nextcloud/s/7imHjZR2NjjXLTc"
 
 - title: "Abschluss und Verabschiedung"
   day: 2

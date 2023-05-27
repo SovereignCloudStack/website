@@ -2,15 +2,19 @@
 
 Liebe Freunde und interessierte Beobachter von SCS,
 
-der Sovereign Cloud Stack ist erfolgreich im zweiten Jahr angekommen und hat eine aktive Community etabliert, die einen standardisierten Open Source Cloud Computing Stack entwickelt und pflegt. Erfolg heißt, dass wir die vierte Version herausgebracht haben und  drei Cloud Service Provider ihr Angebot auf SCS Standards und Technologie bereitstellen. Grund genug, um zu unserem ersten SCS Summit am **23. und 24. Mai 2023 in Berlin** einzuladen, wo Anwender, Partner und Entwickler und jeder, der mit dem Projekt verbunden ist, Wissen und Erfahrungen austauschen und - natürlich - netzwerken und Spaß haben können.
+der Sovereign Cloud Stack ist erfolgreich im zweiten Jahr angekommen und hat eine aktive Community etabliert, die einen standardisierten Open Source Cloud Computing Stack entwickelt und pflegt. Erfolg heißt, dass wir die vierte Version herausgebracht haben und ~~drei~~vier Public Cloud Service Provider ihr Angebot auf SCS Standards und Technologie bereitstellen. Grund genug, um zu unserem ersten SCS Summit am **23. und 24. Mai 2023 in Berlin** einzuladen, wo Anwender, Partner und Entwickler und jeder, der mit dem Projekt verbunden ist, Wissen und Erfahrungen austauschen und - natürlich - netzwerken und Spaß haben können.
 
-Die Registrierung am 23. Mai ist ab 12:00 Uhr möglich, die Veranstaltung beginnt um 13:00 Uhr. Am zweite Tag ist die Registrierung ab 8:00 Uhr möglich, das Programm beginnt um 9:00 und endet offiziell um 13:00 Uhr
+## Danke!
 
-## Gäste
+Die Veranstaltung ist jetzt vorbei. Wir hatten sehr interessante Vorträge und Podiumsdiskussionen auf der Bühne und wirklich gute Gespräche mit allen Teilnehmenden. Danke an alle, die teilgenommen haben, insbesondere natürlich an die Sprecherinnen und Sprecher und an die Organisatorinnen und Organisatoren.
+
+Diese Seite bleibt bestehen, um die Veranstaltung zu dokumentieren und enthält die gesammelten Links zu den Folien und den Videos.
+
+## Sprecherinnen und Sprecher
 
 {% include summit2023/speakers.html %}
 
-## Schedule
+## Zeitplan
 
 <div class="container my-4">
     <!-- Nav tabs -->
@@ -57,6 +61,12 @@ Die Registrierung am 23. Mai ist ab 12:00 Uhr möglich, die Veranstaltung beginn
                     <div class="location mb-2 text-muted"><i class="fa fa-map-marker me-2"
                             aria-hidden="true"></i>{{talk.location}}</div>
                     <div class="desc pb-2">{{talk.description}}</div>
+                    {% if talk.slides %}
+			<div class="desc pb-2"><a href={{talk.slides}} alt="Link zu den Folien">Folien</a></div>
+		    {% endif %}
+                    {% if talk.video %}
+			<div class="desc pb-2"><a href={{talk.video}} alt="Link zum Vortragsvideo">Video</a></div>
+		    {% endif %}
                 </div>
                 <!--//content-->
             </div>
@@ -69,25 +79,10 @@ Die Registrierung am 23. Mai ist ab 12:00 Uhr möglich, die Veranstaltung beginn
 
 ## Veranstaltungsort
 
-Der SCS Summit findet in den wunderschönen Räumlichkeiten der Berlin-Brandenburgischen Akademie der Wissenschaften (BBAW) statt.
+Der SCS Summit fand in den wunderschönen Räumlichkeiten der Berlin-Brandenburgischen Akademie der Wissenschaften (BBAW) statt.
 Eine [ausführliche Wegbeschreibung](https://veranstaltungszentrum.bbaw.de/en/directions) finden Sie auf der offiziellen Seite der BBAW.
 
 {% include summit2023/bbaw.html %}
-
-## Anmelden
-
-<pretix-widget event="https://events.scs.community/scs-summit-2023"></pretix-widget>
-<noscript>
-   <div class="pretix-widget">
-        <div class="pretix-widget-info-message">
-            JavaScript ist in Ihrem Browser deaktiviert. Um unseren Ticketshop ohne JavaScript aufzurufen, klicken Sie bitte <a target="_blank" rel="noopener" href="https://events.scs.community/scs-summit-2023">hier</a>.
-        </div>
-    </div>
-</noscript>
-
-## Presse
-
-Wir freuen uns darauf Presse und Medienpartner auf unserem SCS Summit zu begrüßen. Bitte melden Sie sich für eine Akkreditierung an [presse@osb-alliance.com](mailto:presse@osb-alliance.com). Gerne lassen wir Ihnen vorab eine ausführliche Pressemappe sowie die Möglichkeit auf Interviews zukommen.
 
 ## Sponsoren
 

@@ -2,9 +2,13 @@
 
 Dear Friends of SCS and interested Observers,
 
-The Sovereign Cloud Stack is now in its second year successfully building a community to develop and maintain a standardized open source cloud computing stack. Success means that we have released the fourth version and that by now three cloud service providers base their offering on SCS standards and technology. Reason enough to call for our first summit on **23rd and 24th of May 2023 in Berlin** for users, developers, adopters and everybody, who is affiliated to this project to gather, share knowledge, as well as experience and to – of course – network and have fun.
+The Sovereign Cloud Stack is now in its second year successfully building a community to develop and maintain a standardized open source cloud computing stack. Success means that we have released the fourth version and that by now ~~three~~ four public cloud service providers base their offering on SCS standards and technology. Reason enough to call for our first summit, which happened on **23rd and 24th of May 2023 in Berlin** for users, developers, adopters and everybody, who is affiliated to this project to gather, share knowledge, as well as experience and to – of course – network and have fun.
 
-Registration on 23 May is possible from 12:00 CEST, the event will start at 13:00 CEST. The second day starts with registration at 8:00 CEST, program begins at 9:00 CEST and officially ends at 13:00 CEST.
+## Thank you!
+
+The event is now over. We had really interesting presentations and panel discussions on stage and really good conversations with all participants. Thanks for everyone who joined us, but especially the speakers and organizers!
+
+This page will remain in place, documenting the event and containing links to the slides and videos from the program.
 
 ## Speakers
 
@@ -57,7 +61,13 @@ Registration on 23 May is possible from 12:00 CEST, the event will start at 13:0
                     <div class="location mb-2 text-muted"><i class="fa fa-map-marker me-2"
                             aria-hidden="true"></i>{{talk.location}}</div>
                     <div class="desc pb-2">{{talk.description}}</div>
-                </div>
+                    {% if talk.slides %}
+			<div class="desc pb-2"><a href={{talk.slides}}>Slides</a></div>
+		    {% endif %}
+                    {% if talk.video %}
+			<div class="desc pb-2"><a href={{talk.video}}>Video</a></div>
+		    {% endif %}
+		</div>
                 <!--//content-->
             </div>
             {% endif %}
@@ -69,24 +79,9 @@ Registration on 23 May is possible from 12:00 CEST, the event will start at 13:0
 
 ## Location
 
-The SCS Summit will take place in the beautiful facilities of the Berlin-Brandenburg Academy of Sciences and Humanities (BBAW). You can find [detailed directions on the official BBAW website](https://veranstaltungszentrum.bbaw.de/en/directions).
+The SCS Summit took place in the beautiful facilities of the Berlin-Brandenburg Academy of Sciences and Humanities (BBAW). You can find [detailed directions on the official BBAW website](https://veranstaltungszentrum.bbaw.de/en/directions).
 
 {% include summit2023/bbaw.html %}
-
-## Register
-
-<pretix-widget event="https://events.scs.community/scs-summit-2023"></pretix-widget>
-<noscript>
-   <div class="pretix-widget">
-        <div class="pretix-widget-info-message">
-            JavaScript is disabled in your browser. To access our ticket shop without JavaScript, please <a target="_blank" rel="noopener" href="https://events.scs.community/scs-summit-2023">click here</a>.
-        </div>
-    </div>
-</noscript>
-
-## Press
-
-We look forward to welcoming press and media partners to our SCS Summit. For accreditation, please contact [presse@osb-alliance.com](mailto:presse@osb-alliance.com). We will be happy to send you a detailed press kit and the opportunity for interviews in advance.
 
 ## Sponsors
 
