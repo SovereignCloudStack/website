@@ -62,10 +62,10 @@ Diese Seite bleibt bestehen, um die Veranstaltung zu dokumentieren und enthält 
                             aria-hidden="true"></i>{{talk.location}}</div>
                     <div class="desc pb-2">{{talk.description}}</div>
                     {% if talk.slides %}
-			<div class="desc pb-2"><a href={{talk.slides}} alt="Link zu den Folien">Folien</a></div>
+			<div class="desc pb-2"><a href="{{talk.slides}}">Folien</a></div>
 		    {% endif %}
                     {% if talk.video %}
-			<div class="desc pb-2"><a href={{talk.video}} alt="Link zum Vortragsvideo">Video</a></div>
+			<div class="desc pb-2"><a href="{{talk.video}}">Video</a></div>
 		    {% endif %}
                 </div>
                 <!--//content-->

@@ -62,10 +62,10 @@ This page will remain in place, documenting the event and containing links to th
                             aria-hidden="true"></i>{{talk.location}}</div>
                     <div class="desc pb-2">{{talk.description}}</div>
                     {% if talk.slides %}
-			<div class="desc pb-2"><a href={{talk.slides}}>Slides</a></div>
+			<div class="desc pb-2"><a href="{{talk.slides}}">Slides</a></div>
 		    {% endif %}
                     {% if talk.video %}
-			<div class="desc pb-2"><a href={{talk.video}}>Video</a></div>
+			<div class="desc pb-2"><a href="{{talk.video}}">Video</a></div>
 		    {% endif %}
 		</div>
                 <!--//content-->
