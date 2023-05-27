@@ -54,13 +54,23 @@ This page will remain in place, documenting the event and containing links to th
                 </div>
                 <!--//meta-->
                 <div class="content">
+		    {% if talk.title_en %}
+                    <h3 class="title mb-2">{{talk.title_en}}<a data-tab-destination="day-{{i}}"
+                            href="#session-{{ forloop.index }}" class="link-unstyled"><i
+                                class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em;"></i></a>
+		    {% else %}
                     <h3 class="title mb-2">{{talk.title}}<a data-tab-destination="day-{{i}}"
                             href="#session-{{ forloop.index }}" class="link-unstyled"><i
                                 class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em;"></i></a>
                     </h3>
+                    {% endif %}
                     <div class="location mb-2 text-muted"><i class="fa fa-map-marker me-2"
                             aria-hidden="true"></i>{{talk.location}}</div>
+                    {% if talk.description_en %}
+                    <div class="desc pb-2">{{talk.description_en}}</div>
+		    {% else %}
                     <div class="desc pb-2">{{talk.description}}</div>
+                    {% endif %}
                     {% if talk.slides %}
 			<div class="desc pb-2"><a href="{{talk.slides}}">Slides</a></div>
 		    {% endif %}
