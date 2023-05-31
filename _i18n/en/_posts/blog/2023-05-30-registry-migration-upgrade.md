@@ -43,7 +43,7 @@ by a different cloud service provider. After the migration process, the upgrade 
 latest stable version of the Harbor container registry v2.7.1 using the latest stable
 version of harbor-helm chart v1.11.1 (that is not affected by mentioned security issue)
 was planned. The upgrade procedure contains also increasing the number of replicas for
-Harbor fundamental services to >=2 to achieve the HA of Harbor components. The HA mode
+Harbor fundamental services to >=2 to achieve the [HA of Harbor components](https://goharbor.io/docs/main/install-config/harbor-ha-helm/). The HA mode
 for the Harbor database (Postgres) and Harbor key-value database (Redis) was not planned
 this time. 
 Most of Harbor’s components are stateless, hence you can simply increase the number of 
@@ -61,8 +61,6 @@ storage backend. Our first choice was to use object store as a backend for image
 as the amount of data here is expected to be large and the object store drive is a good
 option when you want to store this type of unstructured data at scale.
 See the original and planned architecture high-level diagram below:
-
-![scs_harbor_migration](images/scs_harbor_migration.png)
 
 <figure class="figure mx-auto d-block" style="width:50%">
   <a href="{% asset "blog/registry_migration.png" @path %}">
@@ -358,6 +356,7 @@ Using this pod we copied all image blobs from PV to the object store.
 ```bash
 # create `~/.aws/credentials`file with the right secrets
 # sync /storage directory with the bucket
+kubectl --kubeconfig <path of Cluster_B kubeconfig> exec -it aws-cli -- bash
 cd /storage
 aws s3 sync . s3://registry/ --endpoint-url https://api.gx-scs.sovereignit.cloud:8080
 ```
