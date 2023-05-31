@@ -1,0 +1,33 @@
+---
+layout: post
+title: "Together we are stronger"
+image: "blog/Panel_small.jpg"
+author:
+  - "Friederike Zelke"
+avatar:
+  - "zelke.jpg"
+about:
+  - "FriederikeZelke"
+---
+
+That sounds emotive, maybe, but this is the essence of our [Cloud Expo Europe] (https://www.cloudexpoeurope.de/) visit this year. Once again, the [Open Source Business Alliance] (https://osb-alliance.de/) and the [Sovereign Cloud Stack] (https://scs.community/index.html) had a booth and panel discussion at Cloud Expo Europe in Frankfurt. And like last year, it was apparent that while digital sovereignty is a commonly used buzzword, there is little reflection on what it really means and the implications it brings.
+
+Also, apart from eco Verband and [Gaia-X Federation Services] (https://www.gxfs.eu/), we were the only representatives of associations or open source projects - at least that was my impression. In fact, the trade fair is a good place to find out about cloud offerings and services from Germany and Europe and to find business partners - as a classic B2B event. However, we were somehow the birds of paradise in the hall. There were quite a few people who reacted with surprise that we were not selling a product. But, this led to some very good conversations, because our “product” is genuine digital sovereignty.
+
+In a broader sense, the SCS is of course also a product, in the meantime the cloud stack can be used productively; as some cloud providers are using SCS technology in their data centers for their customers. Fortunately, two of our partners were also at Cloud Expo: [PlusServer] (https://www.plusserver.com/en/) and [B1 systems] (https://www.b1-systems.de/en/), so we were happy to refer interested parties to them, because interest in sovereign cloud is there!
+
+We also met some older and very liked companions of SCS like [Stephan Ilaender] (https://www.linkedin.com/in/stephan-ilaender-128b365/) and [StackIT] (https://www.stackit.de/en/), who also provide sovereign cloud services (watch out for penguins). And we met quite new companions of [Syself] (https://syself.com/) (at the picture of our booth), who are supporting and contributing to the SCS-Project, especially in the area of our Kubernetes layer, and are the integration partner for GXFS, so the services can run on SCS.
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+  {% for image in assets %} 
+    {% if image[0] contains "images/blog/cee2023" %}
+      <div>
+        <a href="{% asset '{{image[0]}}' @path %}">
+          {% asset '{{image[0]}}' class='card-img-top rounded' alt='Cloud Expo 2023 Gallery' vips:resize='500x500' vips:crop='high' vips:format='.webp' %}
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+We were also able to prove that SCS has long since gone beyond a pure open-source project during our panel discussion, where we were able to present ourselves as an ecosystem with contributors, users, SCS-based cloud service providers and, of course, the SCS team. It became clear that SCS is the perfect basis for GXFS and is already used for it, but SCS is also used as the infrastructure layer of [Betacloud] (https://www.betacloud.de/), [PlusCloud Open] (https://www.plusserver.com/produkte/compute/pluscloud-open), [Wavestack] (https://www.noris.de/wavestack-cloud/) and [Regio.digital] (https://regio.digital/). But even more important to me was to highlight that the collaborative approach and the transparency in development and documentation offer enormous advantages to the relatively “small fishes” in the big “cloud ocean”. The comparably small teams of PlusServer, [OSISM] (https://osism.tech/de), and Noris ([Wavecon] (https://www.wavecon.de/de/)) would hardly have the ability to deliver this development effort alone. The transparent documentation of the software, but also of processes, and the active participation of the community enable a level of security and speed in bug-fixing that could not be achieved without the collaboration. This also makes the offerings they provide to their customers more affordable, more secure, and more digitally sovereign. And that’s a nice win for everyone involved. (This was the conclusion from the panel - I hope this was also conveyed to the audience - the acoustics in the hall were … suboptimal.)
