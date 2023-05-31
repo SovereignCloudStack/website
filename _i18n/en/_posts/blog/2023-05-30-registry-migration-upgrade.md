@@ -28,7 +28,7 @@ for this maintenance work.
 Originally, the SCS Harbor container registry instance (https://registry.scs.community/)
 was operated on SCS infrastructure in Kubernetes cluster v1.18.20. This Harbor instance
 with version 2.2.4 was deployed by [harbor-helm](https://github.com/goharbor/harbor-helm)
-chart v1.6.0. This version of  harbor-helm chart is affected by [security issue](https://github.com/goharbor/harbor/security/advisories/GHSA-j7jh-fmcm-xxwv)
+chart v1.6.0. This version of harbor-helm chart is affected by [security issue](https://github.com/goharbor/harbor/security/advisories/GHSA-j7jh-fmcm-xxwv)
 with high severity. It is possible for anyone to forge a JWT token and push/pull images
 to/from Harbor private registries without any authentication. 
 Besides the outdated registry version and outdated version of the underlying Kubernetes
