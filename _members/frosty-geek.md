@@ -5,7 +5,7 @@ layout: community
 lastname: Heiringhoff
 firstname: Ralf
 role: Cloud Architect
-company: PlusServer GmbH
+company: plusserver GmbH
 companylink: https://plusserver.com
 holopin_username: frostygeek
 website: https://frosty-geek.net

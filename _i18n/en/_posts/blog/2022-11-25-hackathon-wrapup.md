@@ -20,7 +20,7 @@ we're still overwhelmed by the impressions of our first Community Hackathon.
 Thank you so much for spending an amazing day with us in Cologne and making a
 significant contribution to the success of this event.
 
-First of all, we would like to thank [PlusServer](https://www.plusserver.com/) for making this day possible.
+First of all, we would like to thank [plusserver](https://www.plusserver.com/) for making this day possible.
 Shout out to Saskia, Lidia, Stephan and all involved teams. You did a great job
 and we're more than happy to have you in our community!
 

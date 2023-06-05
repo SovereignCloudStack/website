@@ -32,7 +32,7 @@ We would also like to thank the following teams for participating in our communi
 
 - [B1 Systems](https://www.b1-systems.de/)
 - [Hochschule Hof and friends](https://www.hof-university.de/)
-- [PlusServer](https://www.plusserver.com/)
+- [plusserver](https://www.plusserver.com/)
 - [OSISM](https://osism.tech/)
 - [Konnektiv](https://konnektiv.de/)
 - [OSB Alliance](https://osb-alliance.de/)
@@ -42,7 +42,7 @@ As for the individual ranking, we congratulate
 
 🏃🏻‍ David Kammerer from [B1 Systems](https://www.b1-systems.de/), who completed the 10 kilometer run in incredible **00:41:52 minutes**  
 🚴 Manuel König from [SEP Tri Team](https://www.sep.de/) for for completing the 40km cycling in **01:06:28 hours**  
-🏊 Markus Lindenblatt from [PlusServer](https://www.plusserver.com/) for his record-breaking completion of the 1.5km swim in **00:22:15 minutes**  
+🏊 Markus Lindenblatt from [plusserver](https://www.plusserver.com/) for his record-breaking completion of the 1.5km swim in **00:22:15 minutes**  
 
 ## Gallery
 

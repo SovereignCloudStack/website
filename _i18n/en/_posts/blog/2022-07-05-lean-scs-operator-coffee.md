@@ -32,7 +32,7 @@ Of course the board we use is [publicly available](https://scrumblr.ethibox.fr/9
 
 ## osism ops-tools 
 
-The second edition of the Lean SCS Operator Coffee saw a strong participation from the team of [PlusServer](https://www.plusserver.com). The first topic that
+The second edition of the Lean SCS Operator Coffee saw a strong participation from the team of [plusserver](https://www.plusserver.com). The first topic that
 was discussed was their publication of their [OSISM ops-tools](https://github.com/plusserver/osism-opstools/). This contribution to the
 [OSISM](https://github.com/osism/) landscape was warmly welcomed. Furthermore it was elaborated on how the process of open sourcing such
 additions be further supported, for example by providing outlines for processes on releasing code from corporations into the open. A typical
