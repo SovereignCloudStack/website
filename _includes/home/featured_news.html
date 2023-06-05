@@ -2,39 +2,39 @@
   {% assign sorted = site.posts | where: "hide_on_carousel", nil | sort: 'date' | reverse %}
   <div id="newsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="1"></button>
+      <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="1"></button>
       <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1" aria-label="2"></button>
       <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2" aria-label="3"></button>
     </div>
     <div class="carousel-inner">
+      {% for post in sorted limit: 3%}
+      {% if forloop.index == 1 %}
       <div class="carousel-item active">
-        <a href="{{ "/summit" | prepend: site.baseurl}}" class="stretched-link">
-          {% asset 'summit2023/banner.png' class="d-block w-100" %}
-        </a>
-      </div>
-      {% for post in sorted limit: 2%}
-      <div class="carousel-item">
-        <div class="carousel-caption">
-          <h3>{{post.title}}</h3>
-          <p>{{post.author | join: ", "}}</p>
-        </div>
-        <a href="{{post.url | prepend: site.baseurl}}" class="stretched-link">
-          {% if post.image %}
-            {% asset {{post.image}} class='d-block w-100' alt='{{post.title}}' vips:format='.webp' %}
-          {% else %}
-            {% asset {{site.defaults.image}} class='d-block w-100' alt='{{post.title}}' vips:format='.webp' %}
+        {% else %}
+        <div class="carousel-item">
           {% endif %}
-        </a>
+          <div class="carousel-caption">
+            <h3>{{post.title}}</h3>
+            <p>{{post.author | join: ", "}}</p>
+          </div>
+          <a href="{{post.url | prepend: site.baseurl}}" class="stretched-link">
+            {% if post.image %}
+            {% asset {{post.image}} class='d-block w-100' alt='{{post.title}}' vips:format='.webp' %}
+            {% else %}
+            {% asset {{site.defaults.image}} class='d-block w-100' alt='{{post.title}}' vips:format='.webp' %}
+            {% endif %}
+          </a>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
+      <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">{% t home.news.prev %}</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">{% t home.news.next %}</span>
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">{% t home.news.prev %}</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">{% t home.news.next %}</span>
-    </button>
   </div>
-</div>
