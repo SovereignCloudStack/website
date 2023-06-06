@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2023-05-30-registry-migration-upgrade.md

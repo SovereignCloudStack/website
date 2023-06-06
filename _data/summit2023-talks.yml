@@ -44,6 +44,8 @@
     - "SCS_logo.png"
   description: "Ernst Stöckl-Pukall, Leiter Referat Digitalisierung & Industrie 4.0, Bundesministerium für Wirtschaft und Klimaschutz"
   description_en: "Ernst Stöckl-Pukall, Head of Section Digitalization & Industry 4.0, German Ministry for Economic Affairs and Climate Action"
+  slides: "https://scs.sovereignit.de/nextcloud/s/p6WYHzWT28jEpff"
+  video: "https://www.youtube.com/watch?v=OqCNSivEKdY"
 
 - title: "Die Bedeutung von Digitaler Souveränität für Innovation, Freiheit und Demokratie"
   title_en: "The relevance of Digital Sovereignty for innovation, freemdom, and democracy (DE)"
@@ -56,6 +58,7 @@
     - "SCS_logo.png"
   description: "Rafael Laguna de La Vera, Direktor der Bundesagentur für Sprunginnovationen SPRIND"
   description_en: "Rafael Laguna de La Vera, Director of the Federal Agency for Disruptive Innovation SPRIND"
+  video: "https://www.youtube.com/watch?v=IJOQsmHlRUM"
 
 - title: "Warum digitale Souveränität wichtig für Europa (die europäische Wirtschaft) ist"
   title_en: "Why digital sovereignty matters for Europe (and the European economy) (DE)"
@@ -99,6 +102,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Martin Schallbruch, Vorsitzender des Vorstands der govdigital eG"
+  slides: "https://scs.sovereignit.de/nextcloud/s/GQcpjrQczpNroNa"
 
 - title: "The vision of one platform - standardized, built and operated by many (EN)"
   day: 1
@@ -109,7 +113,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Johan Christenson, Vice President Innovation, Cleura AB; Kurt Garloff, CTO SCS, OSB Alliance e.V."
-  slides: "https://scs.sovereignit.de/nextcloud/s/ydXyXSmN88WL8FS"
+  slides: "https://scs.sovereignit.de/nextcloud/s/p3QXm3PnKTcQZT8"
   
 - title: "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis des Souvereign Cloud Stack aufbauen"
   title_en: "Build your own hyperscaler: How to build your own sovereign private cloud based on SCS (DE)"
@@ -121,6 +125,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Christian Wolter, Key Account Manager, B1 Systems GmbH"
+  slides: "https://scs.sovereignit.de/nextcloud/s/s8FZtc4Y6CTCXSy"
 
 - title: "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit"
   title_en: "How to make adminsitration digitally sovereign - Open Source to escape the dependence (DE)"
@@ -132,6 +137,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Silke Tessmann-Storch, Vorständin Lösungen, dataport A.ö.R."
+  slides: "https://scs.sovereignit.de/nextcloud/s/bmKekWRiy8cf8nb"
 
 - title: "Zusammenfassung und Ausblick"
   title_en: "Summary and outlook (DE)"
@@ -187,6 +193,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Christian Schmitz, Director Open Source, plusserver gmbh"
+  slides: "https://scs.sovereignit.de/nextcloud/s/DwLApGp3yjxkPNz"
 
 - title: "Ein SCS Datacenter für das 5G-Campusnetz an der Hochschule Osnabrück"
   title_en: "An SCS data center for the 5G campus network at Osnabrück University (DE)"
@@ -198,6 +205,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Robert Holling, Dipl.-Wirtsch.-Inf., Reallabor Hoschschule Osnabrück"
+  slides: "https://scs.sovereignit.de/nextcloud/s/8Y3d3qMKe3azBZ3"
 
 - title: "Building a Community of Practice - der Betrieb von SCS-Infrastrukturen"
   title_en: "Building a Community of Practice - Operations of SCS infrastructure (DE)"
@@ -209,6 +217,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Friederike Zelke, Community Manager SCS, OSB Alliance e.V. (Moderation); Alexander Wallner, CEO plusserver GmbH; Cemil Degirmenci, Geschäftsführer der Wavecon GmbH (100% noris network AG); Felix Kronlage-Dammers, Product Owner IaaS & OPS SCS, OSB Alliance e.V.; Christian Berendt, Founder und CEO der OSISM GmbH"
+  slides: "https://scs.sovereignit.de/nextcloud/s/SgB5nTQ5Ex8LsNs"
     
 - title: "Vom Oligopol zurück zum echten Wettbewerb" 
   title_en: "From oligopoly back to real competition (DE)"
@@ -220,6 +229,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Dr. Hans-Joachim Popp, Principal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE, Bundesverband der IT-Anwender"
+  slides: "https://scs.sovereignit.de/nextcloud/s/6b3myq9DiXDHctS"
 
 - title: "Digitale Souveränität und Gaia-X: Warum DATEV sich engagiert" 
   title_en: "Digital Sovereignty and Gaia-X: Why does DATEV contribute? (EN)"
@@ -231,6 +241,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG"
+  slides: "https://scs.sovereignit.de/nextcloud/s/HsifaQ8LSgmgipt"
 
 - title: "Paneldiskussion"
   title_en: "Panel discussion"
@@ -263,6 +274,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Andreas Weiss, Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V."
+  slides: "https://scs.sovereignit.de/nextcloud/s/gF67bdQjNexHM43"
 
 - title: "Ein Zero Emission Cloud Computing Center durch SCS betrieben"
   title_en: "A zero emission cloud data center operated with SCS (DE)"
@@ -274,6 +286,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Julian Hauber, Geschäftsführer JH-Computers; Christian Berendt, Founder und CEO der OSISM GmbH"
+  slides: "https://scs.sovereignit.de/nextcloud/s/bAarpwCM2k7c72Q"
 
 - title: "Was ist eigentliche eine SCS Zertifizierung"
   title_en: "What is SCS certification? (DE)"
@@ -285,6 +298,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Alexander Diab, Ecosystem Manager SCS, OSB Alliance e.V."
+  slides: "https://scs.sovereignit.de/nextcloud/s/PCg7XdRb7c8DZt2"
 
 - title: "SCS in 5 Jahren - Ein Ausblick"
   title_en: "SCS in 5 years - an outlook (DE)"
