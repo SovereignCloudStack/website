@@ -70,6 +70,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz; Dr. Reinhard Brandl, Mitglied des Bundestag, Digitalpolitscher Sprecher CDU/CSU Fraktion; Jan Hill, Director Public Sector, adesso SE; Stephan Ilaender, CTO StackIT, Schwarz Gruppe; Milisav Radmanic, Vorstand OSB Alliance e.V."
+  video: "https://www.youtube.com/watch?v=B4xikpMiT00"
 
 - title: "Pause"
   day: 1
@@ -91,6 +92,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Martin Wimmer, Chief Digital Officer, Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung"
+  video: "https://www.youtube.com/watch?v=tTfpFwp-zO4"
 
 - title: "Cloud Transformation im öffentlichen Sektor und der Aufbau der Deutschen Verwaltungscloud"
   title_en: "Cloud transformation in the public sector and setting up the German Adminstrative Cloud (DE)"
@@ -103,6 +105,7 @@
     - "SCS_logo.png"
   description: "Martin Schallbruch, Vorsitzender des Vorstands der govdigital eG"
   slides: "https://scs.sovereignit.de/nextcloud/s/GQcpjrQczpNroNa"
+  video: "https://www.youtube.com/watch?v=ij4CN989Rms"
 
 - title: "The vision of one platform - standardized, built and operated by many (EN)"
   day: 1
@@ -114,6 +117,7 @@
     - "SCS_logo.png"
   description: "Johan Christenson, Vice President Innovation, Cleura AB; Kurt Garloff, CTO SCS, OSB Alliance e.V."
   slides: "https://scs.sovereignit.de/nextcloud/s/p3QXm3PnKTcQZT8"
+  video: "https://www.youtube.com/watch?v=lzMLSZIm9Uo"
   
 - title: "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis des Souvereign Cloud Stack aufbauen"
   title_en: "Build your own hyperscaler: How to build your own sovereign private cloud based on SCS (DE)"
@@ -126,6 +130,7 @@
     - "SCS_logo.png"
   description: "Christian Wolter, Key Account Manager, B1 Systems GmbH"
   slides: "https://scs.sovereignit.de/nextcloud/s/s8FZtc4Y6CTCXSy"
+  video: "https://www.youtube.com/watch?v=TP8EXq0pr6s"
 
 - title: "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit"
   title_en: "How to make adminsitration digitally sovereign - Open Source to escape the dependence (DE)"
@@ -194,6 +199,7 @@
     - "SCS_logo.png"
   description: "Christian Schmitz, Director Open Source, plusserver gmbh"
   slides: "https://scs.sovereignit.de/nextcloud/s/DwLApGp3yjxkPNz"
+  video: "https://www.youtube.com/watch?v=uAh-yMYWvP8"
 
 - title: "Ein SCS Datacenter für das 5G-Campusnetz an der Hochschule Osnabrück"
   title_en: "An SCS data center for the 5G campus network at Osnabrück University (DE)"
@@ -287,6 +293,7 @@
     - "SCS_logo.png"
   description: "Julian Hauber, Geschäftsführer JH-Computers; Christian Berendt, Founder und CEO der OSISM GmbH"
   slides: "https://scs.sovereignit.de/nextcloud/s/bAarpwCM2k7c72Q"
+  video: "https://www.youtube.com/watch?v=8hhm4vy7i5k"
 
 - title: "Was ist eigentliche eine SCS Zertifizierung"
   title_en: "What is SCS certification? (DE)"
