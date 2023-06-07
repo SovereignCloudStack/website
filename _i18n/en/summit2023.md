@@ -2,7 +2,7 @@
 
 Dear Friends of SCS and interested Observers,
 
-The Sovereign Cloud Stack is now in its second year successfully building a community to develop and maintain a standardized open source cloud computing stack. Success means that we have released the fourth version and that by now ~~three~~ four public cloud service providers base their offering on SCS standards and technology. Reason enough to call for our first summit, which happened on **23rd and 24th of May 2023 in Berlin** for users, developers, adopters and everybody, who is affiliated to this project to gather, share knowledge, as well as experience and to – of course – network and have fun.
+The Sovereign Cloud Stack is now in its second year successfully building a community to develop and maintain a standardized open source cloud computing stack. Success means that we have released the fourth version and that by now four public cloud service providers base their offering on SCS standards and technology. Reason enough to call for our first summit, which happened on **23rd and 24th of May 2023 in Berlin** for users, developers, adopters and everybody, who is affiliated to this project to gather, share knowledge, as well as experience and to – of course – network and have fun.
 
 ## Thank you!
 

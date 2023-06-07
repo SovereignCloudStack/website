@@ -16,7 +16,7 @@ Auf dem SCS Summit auf jeden Fall. Der Summit schlägt einen Bogen von der Notwe
 
 Da der SCS ein öffentlich gefördertes Projekt ist, eröffneten Ernst Stöckl-Pukall als Vertreter des BMWK (Bundesministerium für Wirtschaft und Klimaschutz) und Rafael Laguna de La Vera von SPRIN-D, der Bundesagentur für Sprunginnovationen, den Summit mit der Geschichte des SCS und warum es sich lohnte, dieses Projekt zu starten und zu finanzieren - denn um eine Chance zu haben, digital souverän zu werden, braucht es die Basis und die IT-Infrastruktur! Martin Schallbruch und Silke Tessmann-Storch machten greifbar, was es für die öffentliche Verwaltung bedeutet, mit Open-Source auch mit der “Verwaltungscloud” digital-souverän zu werden.
 
-Digitale Souveränität wird aber nicht nur in Deutschland gebraucht, das mit Vertretern aus Politik und Wirtschaft hochkarätig besetzte Panel zeigte, dass dies eine europäische Notwendigkeit ist. Europa basiert auf Werten, aber diese Werte wie Unabhängigkeit, Freiheit, Sicherheit, Offenheit bleiben so lange unkonkret, wie die Basis für ihre praktische Umsetzung nicht geschaffen wird. Und diese Umsetzung muss in Europa erfolgen, wir brauchen die Technologie und das Wissen. Deshalb ist der SCS so wichtig. Und wir hatten das Glück, eine politische Führung zu wählen, die die Notwendigkeit und die Lösung verstanden hat…
+Digitale Souveränität wird aber nicht nur in Deutschland gebraucht. Das mit Vertretern aus Politik und Wirtschaft hochkarätig besetzte Panel zeigte, dass dies eine europäische Notwendigkeit ist. Europa basiert auf Werten, aber diese Werte wie Unabhängigkeit, Freiheit, Sicherheit, Offenheit bleiben so lange unkonkret, wie die Basis für ihre praktische Umsetzung nicht geschaffen wird. Und diese Umsetzung muss in Europa erfolgen, wir brauchen die Technologie und das Wissen. Deshalb ist der SCS so wichtig. Und wir hatten das Glück, eine politische Führung zu wählen, die die Notwendigkeit und die Lösung verstanden hat…
 
 Welche Werte SCS mit seiner technischen Lösung bietet, war Thema in zwei Panels, in denen zum Einen Kurt Garloff, CTO SCS, und Johan Christensen von Cleura über die Offenheit von SCS sprachen und wie diese Offenheit eine Community, aber auch das Geschäft fördert. Die geschäftliche Zusammenarbeit war Thema des Panels Open Operations, in dem Vertreter und CEOs von Cloud Service Providern und der Community über die Vorteile von Open-Source und transparenten Abläufen sprachen: Auch kleinere Teams sind in der Lage, schnell zu reagieren, sich gegenseitig zu unterstützen und Sicherheit zu garantieren.
 
@@ -51,7 +51,7 @@ Die archivierte Seite mit dem gesamten Programm finden Sie unter: <https://scs.c
 	</div>
 </div>
 
-## Gallerie
+## Galerie
 
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
   {% for image in assets %}
