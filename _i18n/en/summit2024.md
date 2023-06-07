@@ -1,8 +1,8 @@
 # Save the Date: Sovereign Cloud Stack Summit 2024
 
-Dear Friends of SCS and interested Observers,
+Dear Friends of SCS and interested observers,
 
-Thank You for Making the Sovereign Cloud Stack Summit 2023 a Huge Success!
+Thank you for making the Sovereign Cloud Stack Summit 2023 a huge success!
 
 We extend our heartfelt gratitude to all the participants, sponsors, and supporters who made the recent Sovereign Cloud Stack Summit an incredible milestone in advancing the future of cloud technology. Your unwavering commitment and enthusiasm have greatly contributed to the success of this global event.
 
