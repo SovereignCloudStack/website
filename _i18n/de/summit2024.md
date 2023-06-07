@@ -8,7 +8,7 @@ Wir bedanken uns herzlich bei allen Teilnehmern, Sponsoren und Unterstützern, d
 
 **Merken Sie sich Ihren Kalender vor: Der Sovereign Cloud Stack Summit wird 2024 wieder stattfinden!**
 
-Wir freuen uns, Ihnen mitteilen zu können, dass die nächste Ausgabe des Sovereign Cloud Stack Summit am [Datum] in [Stadt, Land] stattfinden wird. Seien Sie dabei, wenn wir unsere Reise zu einem sichereren, dezentralisierten und souveränen Cloud-Ökosystem fortsetzen.
+Wir freuen uns, Ihnen mitteilen zu können, dass die nächste Ausgabe des Sovereign Cloud Stack Summit in Berlin im Mai 2024 stattfinden wird. Seien Sie dabei, wenn wir unsere Reise zu einem sichereren, dezentralisierten und souveränen Cloud-Ökosystem fortsetzen.
 
 Freuen Sie sich auf ein spannendes Programm mit Hauptrednern, aufschlussreichen Podiumsdiskussionen, spannenden Workshops und Networking-Möglichkeiten, die die Zukunft des Sovereign Cloud Stack gestalten werden. Das Programm des Gipfels wird im Laufe des Jahres bekannt gegeben, besuchen Sie also regelmäßig unsere Website, um sich auf dem Laufenden zu halten.
 
