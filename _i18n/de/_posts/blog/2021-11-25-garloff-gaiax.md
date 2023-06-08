@@ -50,7 +50,7 @@ Grund, Gaia-X nicht weiterhin als wichtige und nützlich Initiative zu betrachte
 
 Die [Open Source Business Alliance](https://osb-alliance.com) (OSB Alliance,
 OSBA) ist seit Sommer 2021 Gaia-X Mitglied, hat aber bereits seit Anfang
-2020 über persönliches Engagement und über OSBA Mitglieder wie PlusServer den
+2020 über persönliches Engagement und über OSBA Mitglieder wie plusserver den
 Gründungsprozess des Gaia-X Projekts begleitet.
 
 Die OSB Alliance koordiniert mit dem Projekt [Sovereign Cloud Stack](https://scs.community/) (SCS) ein

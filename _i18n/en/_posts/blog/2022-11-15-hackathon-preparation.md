@@ -24,7 +24,7 @@ The Community Hackathon will take place on Tuesday, 2022-11-22 from 13:00 CET un
 
 ## Venue
 
-The location is kindly provided by [PlusServer](https://www.plusserver.com/). We'll meet at Welserstraße 14, 51149 Köln (https://what3words.com/nearing.after.topic). The venue will be accessible from 09:00 CET. We have no hard limit for the end of the Hackathon, but we'd like to spent an unofficial evening with you downtown and end the day together in a bar.
+The location is kindly provided by [plusserver](https://www.plusserver.com/). We'll meet at Welserstraße 14, 51149 Köln (https://what3words.com/nearing.after.topic). The venue will be accessible from 09:00 CET. We have no hard limit for the end of the Hackathon, but we'd like to spent an unofficial evening with you downtown and end the day together in a bar.
 
 ## Agenda
 
@@ -56,7 +56,7 @@ We are aware that not everyone is able or wants to attend this physical meetup. 
 
 ## Food and beverages
 
-We thank [PlusServer](https://www.plusserver.com/), who will provide us with enough food and drinks on this day. We'll definitely make sure that no one must leave hungry. 😉
+We thank [plusserver](https://www.plusserver.com/), who will provide us with enough food and drinks on this day. We'll definitely make sure that no one must leave hungry. 😉
 
 ## Social Media
 

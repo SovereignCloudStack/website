@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Sovereign Cloud Stack Community Plusserver Environment"
+title:  "Sovereign Cloud Stack Community plusserver Environment"
 avatar: 
-  - "avatar-plusopen.png"
+  - "avatar-pluscloudopen.png"
 image: "blog/wallaby.jpg"
 author: 
   - "Mathias Fechner"
@@ -11,9 +11,9 @@ author:
 ---
 ### One Wallaby Update Experience
 
-Since more then one year Plusserver has provided the SCS Community Environment which is based on osism OpenStack Distrubution.
+Since more then one year plusserver has provided the SCS Community Environment which is based on osism OpenStack Distrubution.
 
-For the Plusserver SCS Community Environment we started our OpenStack Wallaby upgrade
+For the plusserver SCS Community Environment we started our OpenStack Wallaby upgrade
 in early December 2021 everything looked good and fine.
 
 One cosmetic issue was, that the neutron-metadata-agent was missing in "openstack network agent list"

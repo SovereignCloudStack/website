@@ -18,7 +18,7 @@ digital sovereignty.
 The SCS project was initiated in November 2019 by OSB Alliance CEO Peter
 Ganten, a leading cloud architect Kurt Garloff, the Director of the German
 Federal Agency for Disruptive Innovation, Rafael Laguna de la Vera and former
-PlusServer CEO Dr. Oliver Mauss. The project was initially evaluated with
+plusserver CEO Dr. Oliver Mauss. The project was initially evaluated with
 funding by the German Federal Agency for Disruptive Innovation SPRIND and is
 now receiving 14.9M€ of federal funding from the Federal Ministry for Economic
 Affairs and Energy (BMWi) to develop and build the Sovereign Cloud Stack.

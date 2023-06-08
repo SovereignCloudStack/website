@@ -44,7 +44,7 @@ useful initiative.
 
 The [Open Source Business Alliance](https://osb-alliance.com) (OSB Alliance, OSBA) has been a Gaia-X member since summer 2021, but has
 already accompanied the founding process of the Gaia-X project through personal
-commitment and OSBA members such as PlusServer since the beginning of 2020.
+commitment and OSBA members such as plusserver since the beginning of 2020.
 
 With the [Sovereign Cloud Stack](https://scs.community/) project, the OSB Alliance is leading a significant project
 funded by the [BMWi](https://bmwi.de/) (German Ministry for Economic
