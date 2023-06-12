@@ -24,7 +24,7 @@ At [Syself](https://syself.com), we focus on modern, European cloud infrastructu
 
 The CEE showed us that we are not at all alone. There are a lot of companies and projects that aim for European IT infrastructure where end users are truly sovereign. It is great that many of them are collaborating in projects like SCS or GAIA-X. 
 
-[Alexander Wallner](https://www.cloudexpoeurope.de/konferenzprogramm-2022/multi-cloud-needs-a-german-foothold-data-sovereignty-is-business-critical) and Christian Berendt ([here](https://www.cloudexpoeurope.de/konferenzprogramm-2022/session-delivered-by-b1-systems) and [here](https://www.cloudexpoeurope.de/konferenzprogramm-2022/session-delivered-by-b1-systems-1)) from Plusserver and OSISM - the two companies who run the SCS-based commercial cloud services Pluscloud Open and Betacloud - indicated in their talks the importance of SCS in the European cloud world. They stressed the importance of open-source, of active collaboration between cloud providers, and modern IT infrastructure.
+[Alexander Wallner](https://www.cloudexpoeurope.de/konferenzprogramm-2022/multi-cloud-needs-a-german-foothold-data-sovereignty-is-business-critical) and Christian Berendt ([here](https://www.cloudexpoeurope.de/konferenzprogramm-2022/session-delivered-by-b1-systems) and [here](https://www.cloudexpoeurope.de/konferenzprogramm-2022/session-delivered-by-b1-systems-1)) from plusserver and OSISM - the two companies who run the SCS-based commercial cloud services pluscloud open and Betacloud - indicated in their talks the importance of SCS in the European cloud world. They stressed the importance of open-source, of active collaboration between cloud providers, and modern IT infrastructure.
 
 <div class="row my-2">
   <div class="col-sm-6 col-12">

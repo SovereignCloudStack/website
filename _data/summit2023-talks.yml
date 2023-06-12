@@ -1,4 +1,5 @@
 - title: "Registrierung"
+  title_en: "Registration"
   day: 1
   start: "12:00"
   end: "13:00"
@@ -9,6 +10,7 @@
   description: ""
 
 - title: "Begrüßung durch das SCS Team"
+  title_en: "Welcome from the SCS team (DE)"
   day: 1
   start: "13:00"
   end: "13:10"
@@ -17,8 +19,10 @@
   avatar:
     - "SCS_logo.png"
   description: "Dr. Manuela Urban, COO SCS, OSB Alliance e.V.; Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. "
+  description_en: "Dr. Manuela Urban, COO SCS, OSB Alliance e.V.; Miriam Seyffarth, Head of Political Communication, OSB Alliance e.V. "
 
 - title: "Begrüßung durch die OSBA"
+  title_en: "Welcome by the OSBA (DE)"
   day: 1
   start: "13:10"
   end: "13:15"
@@ -27,8 +31,10 @@
   avatar:
     - "SCS_logo.png"
   description: "Milisav Radmanic, Vorstandsmitglied, OSB Alliance e.V."
+  description_en: "Milisav Radmanic, Member of the executive board, OSB Alliance e.V."
 
 - title: "Grußwort des BMWK"
+  title_en: "Welcome note from the BMWK (DE)"
   day: 1
   start: "13:15"
   end: "13:30"
@@ -37,8 +43,12 @@
   avatar:
     - "SCS_logo.png"
   description: "Ernst Stöckl-Pukall, Leiter Referat Digitalisierung & Industrie 4.0, Bundesministerium für Wirtschaft und Klimaschutz"
+  description_en: "Ernst Stöckl-Pukall, Head of Section Digitalization & Industry 4.0, German Ministry for Economic Affairs and Climate Action"
+  slides: "https://scs.sovereignit.de/nextcloud/s/p6WYHzWT28jEpff"
+  video: "https://www.youtube.com/watch?v=OqCNSivEKdY"
 
 - title: "Die Bedeutung von Digitaler Souveränität für Innovation, Freiheit und Demokratie"
+  title_en: "The relevance of Digital Sovereignty for innovation, freemdom, and democracy (DE)"
   day: 1
   start: "13:30"
   end: "14:15"
@@ -47,8 +57,11 @@
   avatar:
     - "SCS_logo.png"
   description: "Rafael Laguna de La Vera, Direktor der Bundesagentur für Sprunginnovationen SPRIND"
+  description_en: "Rafael Laguna de La Vera, Director of the Federal Agency for Disruptive Innovation SPRIND"
+  video: "https://www.youtube.com/watch?v=IJOQsmHlRUM"
 
 - title: "Warum digitale Souveränität wichtig für Europa (die europäische Wirtschaft) ist"
+  title_en: "Why digital sovereignty matters for Europe (and the European economy) (DE)"
   day: 1
   start: "14:15"
   end: "15:00"
@@ -57,6 +70,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. (Moderation); Dr. Franziska Brantner, Parl. Staatssekretärin im Bundesministerium für Wirtschaft und Klimaschutz; Dr. Reinhard Brandl, Mitglied des Bundestag, Digitalpolitscher Sprecher CDU/CSU Fraktion; Jan Hill, Director Public Sector, adesso SE; Stephan Ilaender, CTO StackIT, Schwarz Gruppe; Milisav Radmanic, Vorstand OSB Alliance e.V."
+  video: "https://www.youtube.com/watch?v=B4xikpMiT00"
 
 - title: "Pause"
   day: 1
@@ -68,7 +82,8 @@
     - "SCS_logo.png"
   description: ""
 
-- title: "„Internationale Perspektiven auf Digitale Souveränität und Open Source: GovStack und das Netzwerk digital.global“"
+- title: "Internationale Perspektiven auf Digitale Souveränität und Open Source: GovStack und das Netzwerk digital.global"
+  title_en: "International perspective on Digital Sovereignty and Open Source: GovStack and the network digital.global (DE)"
   day: 1
   start: "15:50"
   end: "16:15"
@@ -77,8 +92,10 @@
   avatar:
     - "SCS_logo.png"
   description: "Martin Wimmer, Chief Digital Officer, Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung"
+  video: "https://www.youtube.com/watch?v=tTfpFwp-zO4"
 
 - title: "Cloud Transformation im öffentlichen Sektor und der Aufbau der Deutschen Verwaltungscloud"
+  title_en: "Cloud transformation in the public sector and setting up the German Adminstrative Cloud (DE)"
   day: 1
   start: "16:15"
   end: "16:40"
@@ -87,8 +104,10 @@
   avatar:
     - "SCS_logo.png"
   description: "Martin Schallbruch, Vorsitzender des Vorstands der govdigital eG"
+  slides: "https://scs.sovereignit.de/nextcloud/s/GQcpjrQczpNroNa"
+  video: "https://www.youtube.com/watch?v=ij4CN989Rms"
 
-- title: "The vision of one platform - standardized, built and operated by many"
+- title: "The vision of one platform - standardized, built and operated by many (EN)"
   day: 1
   start: "16:40"
   end: "17:05"
@@ -97,8 +116,11 @@
   avatar:
     - "SCS_logo.png"
   description: "Johan Christenson, Vice President Innovation, Cleura AB; Kurt Garloff, CTO SCS, OSB Alliance e.V."
+  slides: "https://scs.sovereignit.de/nextcloud/s/p3QXm3PnKTcQZT8"
+  video: "https://www.youtube.com/watch?v=lzMLSZIm9Uo"
   
 - title: "Bauen Sie Ihren eigenen Hyperscaler: Wie Sie eine souveräne Private Cloud auf Basis des Souvereign Cloud Stack aufbauen"
+  title_en: "Build your own hyperscaler: How to build your own sovereign private cloud based on SCS (DE)"
   day: 1
   start: "17:05"
   end: "17:30"
@@ -107,8 +129,11 @@
   avatar:
     - "SCS_logo.png"
   description: "Christian Wolter, Key Account Manager, B1 Systems GmbH"
+  slides: "https://scs.sovereignit.de/nextcloud/s/s8FZtc4Y6CTCXSy"
+  video: "https://www.youtube.com/watch?v=TP8EXq0pr6s"
 
 - title: "So wird Verwaltung digital souverän - Open Source als Weg aus der Abhängigkeit"
+  title_en: "How to make adminsitration digitally sovereign - Open Source to escape the dependence (DE)"
   day: 1
   start: "17:30"
   end: "17:55"
@@ -117,8 +142,10 @@
   avatar:
     - "SCS_logo.png"
   description: "Silke Tessmann-Storch, Vorständin Lösungen, dataport A.ö.R."
+  slides: "https://scs.sovereignit.de/nextcloud/s/bmKekWRiy8cf8nb"
 
 - title: "Zusammenfassung und Ausblick"
+  title_en: "Summary and outlook (DE)"
   day: 1
   start: "17:55"
   end: "18:00"
@@ -129,6 +156,7 @@
   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
 
 - title: "Ausklang auf der Dachterasse"
+  title_en: "Social Event on the roof terrace"
   day: 1
   start: "18:00"
   end: "22:00"
@@ -139,6 +167,7 @@
   description: ""
 
 - title: "Registrierung"
+  title_en: "Registration"
   day: 2
   start: "08:00"
   end: "09:00"
@@ -149,6 +178,7 @@
   description: ""
 
 - title: "Welcome und Rückblick auf Tag 1"
+  title_en: "Welcome and review of day 1 (DE)"
   day: 2
   start: "09:00"
   end: "09:10"
@@ -159,6 +189,7 @@
   description: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
 
 - title: "Die strategische Relevanz von SCS als Praxisbeispiel digitaler Transformation"
+  title_en: "The strategic relevance of SCS as real life example for digital transformation (DE)"
   day: 2
   start: "09:10"
   end: "09:30"
@@ -167,8 +198,11 @@
   avatar:
     - "SCS_logo.png"
   description: "Christian Schmitz, Director Open Source, plusserver gmbh"
+  slides: "https://scs.sovereignit.de/nextcloud/s/DwLApGp3yjxkPNz"
+  video: "https://www.youtube.com/watch?v=uAh-yMYWvP8"
 
 - title: "Ein SCS Datacenter für das 5G-Campusnetz an der Hochschule Osnabrück"
+  title_en: "An SCS data center for the 5G campus network at Osnabrück University (DE)"
   day: 2
   start: "09:30"
   end: "09:50"
@@ -177,8 +211,11 @@
   avatar:
     - "SCS_logo.png"
   description: "Robert Holling, Dipl.-Wirtsch.-Inf., Reallabor Hoschschule Osnabrück"
+  slides: "https://scs.sovereignit.de/nextcloud/s/8Y3d3qMKe3azBZ3"
+  video: "https://www.youtube.com/watch?v=WRaH7u7mBK8"
 
 - title: "Building a Community of Practice - der Betrieb von SCS-Infrastrukturen"
+  title_en: "Building a Community of Practice - Operations of SCS infrastructure (DE)"
   day: 2
   start: "09:50"
   end: "10:20"
@@ -187,8 +224,11 @@
   avatar:
     - "SCS_logo.png"
   description: "Friederike Zelke, Community Manager SCS, OSB Alliance e.V. (Moderation); Alexander Wallner, CEO plusserver GmbH; Cemil Degirmenci, Geschäftsführer der Wavecon GmbH (100% noris network AG); Felix Kronlage-Dammers, Product Owner IaaS & OPS SCS, OSB Alliance e.V.; Christian Berendt, Founder und CEO der OSISM GmbH"
+  slides: "https://scs.sovereignit.de/nextcloud/s/SgB5nTQ5Ex8LsNs"
+  video: "https://www.youtube.com/watch?v=MJS2Dqiz7MM"
     
 - title: "Vom Oligopol zurück zum echten Wettbewerb" 
+  title_en: "From oligopoly back to real competition (DE)"
   day: 2
   start: "10:20"
   end: "10:30"
@@ -197,8 +237,10 @@
   avatar:
     - "SCS_logo.png"
   description: "Dr. Hans-Joachim Popp, Principal Consultant@BwConsulting, Mitglied des Präsidiums, VOICE, Bundesverband der IT-Anwender"
+  slides: "https://scs.sovereignit.de/nextcloud/s/6b3myq9DiXDHctS"
 
 - title: "Digitale Souveränität und Gaia-X: Warum DATEV sich engagiert" 
+  title_en: "Digital Sovereignty and Gaia-X: Why does DATEV contribute? (EN)"
   day: 2
   start: "10:30"
   end: "10:40"
@@ -207,8 +249,11 @@
   avatar:
     - "SCS_logo.png"
   description: "Jutta Rößner, Leiterin Ecosystem & EAM, Mitglied der Geschäftsleitung bei DATEV eG"
+  slides: "https://scs.sovereignit.de/nextcloud/s/HsifaQ8LSgmgipt"
+  video: "https://www.youtube.com/watch?v=mi0M46FjIe4"
 
 - title: "Paneldiskussion"
+  title_en: "Panel discussion"
   day: 2
   start: "10:40"
   end: "11:00"
@@ -229,6 +274,7 @@
   description: ""
 
 - title: "Federation Services - Die Open Source Werkzeugkiste zum Aufbau souveräner Datenökosysteme"
+  title_en: "Federation Services - The Open Source tool box to build up sovereign data ecosystems (DE)"
   day: 2
   start: "11:30"
   end: "12:00"
@@ -237,8 +283,11 @@
   avatar:
     - "SCS_logo.png"
   description: "Andreas Weiss, Geschäftsbereichsleiter Digitale Geschäftsmodelle, eco - Verband der Internetwirtschaft e.V."
+  slides: "https://scs.sovereignit.de/nextcloud/s/gF67bdQjNexHM43"
+  video: "https://www.youtube.com/watch?v=0_8C24LzrIQ"
 
 - title: "Ein Zero Emission Cloud Computing Center durch SCS betrieben"
+  title_en: "A zero emission cloud data center operated with SCS (DE)"
   day: 2
   start: "12:00"
   end: "12:15"
@@ -247,8 +296,11 @@
   avatar:
     - "SCS_logo.png"
   description: "Julian Hauber, Geschäftsführer JH-Computers; Christian Berendt, Founder und CEO der OSISM GmbH"
+  slides: "https://scs.sovereignit.de/nextcloud/s/bAarpwCM2k7c72Q"
+  video: "https://www.youtube.com/watch?v=8hhm4vy7i5k"
 
 - title: "Was ist eigentliche eine SCS Zertifizierung"
+  title_en: "What is SCS certification? (DE)"
   day: 2
   start: "12:15"
   end: "12:25"
@@ -257,8 +309,11 @@
   avatar:
     - "SCS_logo.png"
   description: "Alexander Diab, Ecosystem Manager SCS, OSB Alliance e.V."
+  slides: "https://scs.sovereignit.de/nextcloud/s/PCg7XdRb7c8DZt2"
+  video: "https://www.youtube.com/watch?v=-gjRDFhT_-E"
 
 - title: "SCS in 5 Jahren - Ein Ausblick"
+  title_en: "SCS in 5 years - an outlook (DE)"
   day: 2
   start: "12:25"
   end: "12:55"
@@ -267,8 +322,11 @@
   avatar:
     - "SCS_logo.png"
   description: "Kurt Garloff, CTO SCS, OSB Alliance e.V."
+  slides: "https://scs.sovereignit.de/nextcloud/s/7imHjZR2NjjXLTc"
+  video: "https://www.youtube.com/watch?v=Kv_1_Veny6U"
 
 - title: "Abschluss und Verabschiedung"
+  title_en: "Conclusion and Goodbye (DE)"
   day: 2
   start: "12:55"
   end: "13:00"

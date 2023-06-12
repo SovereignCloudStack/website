@@ -7,7 +7,7 @@ author:
   - "Toens Bueker"
   - "Markus Lindenblatt"
 avatar:
-  - "avatar-plusopen.png"
+  - "avatar-pluscloudopen.png"
 about:
   - "frosty-geek"
 ---

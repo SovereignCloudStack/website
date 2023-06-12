@@ -14,7 +14,7 @@ image: "blog/ecos.jpg"
     {% asset 'blog/ecos.jpg' class="figure-img w-100" %}
 </figure>
 
-This was the first impression when I arrived at the new [PlusServer](https://www.plusserver.com/)
+This was the first impression when I arrived at the new [plusserver](https://www.plusserver.com/)
 office, which is located at the
 [ECOS Co-Workingspace](https://www.ecos-office.com/en/locations/bielefeld/coworking)
 in Bielefeld, for the CloudMon Mini-Hackathon last thursday. Aside from now [being assured that Bielefeld
@@ -22,10 +22,10 @@ really does exists](https://en.wikipedia.org/wiki/Bielefeld_conspiracy) (haha ;)
 
 ## Commitment from the team
 
-Ralf (Architect SCS & Open Source at Plusserver) and I had the idea for the hackathon
+Ralf (Architect SCS & Open Source at plusserver) and I had the idea for the hackathon
 a while back in order to get people working on the new version of
 [CloudMon](https://github.com/stackmon/cloudmon) together. The complete
-squad working on the [PlusCloud Open](https://www.plusserver.com/en/products/pluscloud-open)
+squad working on the [pluscloud open](https://www.plusserver.com/en/products/pluscloud-open)
 as well as Artem from [Open Telekom Cloud](https://open-telekom-cloud.com/en/)
 (who is the author of CloudMon) came to Bielefeld to spend a day getting their hands
 wet on CloudMon. Ralf managed to get everyone to Bielefeld in person. In times

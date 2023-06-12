@@ -96,8 +96,8 @@
   location:
     latitude: 48.88945
     longitude: 2.31341
-- name: "PlusServer GmbH"
-  image: "logo-plusserver.png"
+- name: "plusserver GmbH"
+  image: "logo-plusserver.svg"
   avatar: "avatar-plusserver.jpg"
   link: "https://www.plusserver.com/"
   location:
