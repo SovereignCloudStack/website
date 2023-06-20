@@ -10,3 +10,6 @@
 - name: "REGIO.cloud"
   image: "logo-regiocloud.png"
   link: "https://regio.digital/"
+- name: "aov IT.services"
+  image: "logo-aov.svg"
+  link: "https://www.aov.de/aov-itservices-gmbh/"
