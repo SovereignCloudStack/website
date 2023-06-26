@@ -1,3 +1,10 @@
+For its [Sovereign Cloud Stack (SCS)](https://scs.community/)
+project funded by the [German Federal Ministry for Economic Affairs and Energy (BMWi)](https://bmwi.de/), the
+[Open Source Business Alliance - Bundesverband für digitale Souveränität e.V. (OSB Alliance)](https://osb-alliance.de/)
+is looking for a
+# SCS Product Engineer (d/f/m)
+(Remote or Berlin city centre)
+
 *The position is to be filled as soon as possible.*
 
 ## About the project
