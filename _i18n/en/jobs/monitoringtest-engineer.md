@@ -1,9 +1,8 @@
 For its [Sovereign Cloud Stack (SCS)](https://scs.community/)
-project funded by the [German Federal Ministry for Economic Affairs
-and Climate Action (BMWK)](https://bmwk.de/), the
-[Open Source Business Alliance -
-Bundesverband für digitale Souveränität
-e.V. (OSB Alliance)](https://osb-alliance.de/) is looking for a
+project funded by the
+[German Federal Ministry for Economic Affairs and Climate Action (BMWK)](https://bmwk.de/), the
+[Open Source Business Alliance - Bundesverband für digitale Souveränität e.V. (OSB Alliance)](https://osb-alliance.de/)
+is looking for a
 # Monitoring and Test Engineer (d/f/m)
 (Remote or Berlin city centre)
 
