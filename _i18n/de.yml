@@ -123,6 +123,9 @@ jobs:
   business-developer:
     title: "Business Developer Cloud Computing (d/w/m)"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und leiste einen wichtigen Beitrag zur Schaffung von digitaler Souveränität."
+  cmte:
+    title: "Cloud Monitoring und Test Ingenieur (d/w/m)"
+    short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und leiste einen wichtigen Beitrag zur Qualität des digitale Souveränität ermöglichenden SCS."
   unknown:
     title: "Nichts passendes dabei?"
     short_description: "Wir suchen nach motivierten Menschen statt Lückenfüllern. Du hast Lust am Projekt mitzuwirken, kannst dich aber mit keiner der hier ausgeschriebenen Stellen identifizieren? Kontaktiere uns, wir freuen uns darauf dich kennenzulernen!"
