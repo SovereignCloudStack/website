@@ -4,7 +4,7 @@ layout: default
 short_description: jobs.sre.short_description
 image: "sre.jpg"
 location: "Remote / Berlin"
-published: true
+published: false
 ---
 
 {% tf jobs/sre.md %}
