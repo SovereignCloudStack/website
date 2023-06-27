@@ -20,3 +20,6 @@
 
 - title: nav.tenders
   link: /tenders/
+
+- title: nav.docs
+  link: /docs
