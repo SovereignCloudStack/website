@@ -23,16 +23,15 @@ This year not the fastest time counts, this year the most kilometers are crucial
 
 ### Every kilometer counts - sponsoring our sport event
 The event is a sponsored/donation event. And there are several possibilities to sponsor:
-* sponsors pay a little sum for every x, the sponsor decides how much they will offer
+* Sponsors pay an amount, which he himself determines, for all sports and participants for each (x):
     * x =
-    * 5 km running
-    * 20 km walking/hiking
-    * 30 km cycling
-    * 1 km swimming
-    * (these numbers can be collected, so if one attendee runs 4 km, another 11 km, the sum will be 15 = 3x, for example)
-* sponsors pay a bigger sum for the kilometers of one team
-* sponsors pay a sum for every kilometer of one type of sport
-* sponsors pay a fixed sum
+    * 1 km running
+    * 10 km walking
+    * 15 km cycling
+    * 0,5 km swimming
+    * (these numbers are collected over all teams, so if one participant walks e.g. 12 km and another 18 km, the sum is 30 = 3x10 km walking = 3x amount)
+* Sponsors pay a larger amount, which can also be determined by themselves, for the kilometers of a team, which the sponsor chooses in advance
+* sponsors pay a self-selected amount for each kilometer of a sport
 
 All the collected oney will be donated to a social digitization project.
 
