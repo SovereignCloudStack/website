@@ -6,6 +6,8 @@ author:
 avatar: 
   - "zelke.jpg"
 image: "blog/run.jpg"
+about:
+  - "Zelke"
 ---
 {% asset 'blog/run.jpg' vips:format='.webp' style="width:100%; max-height: 350px; object-fit: cover;" %}
 Auch in diesem Jahr wollen wir die Tradition fortsetzen, den Run (oder Spaziergang, oder Fahrt, ...) zu skalieren. Wir werden unser nächstes Sportereignis haben.
