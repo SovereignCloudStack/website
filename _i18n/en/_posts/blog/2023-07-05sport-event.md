@@ -38,7 +38,7 @@ All the collected oney will be donated to a social digitization project.
 
 ### Possible projects to donate to:
 * This project provides devices and knowledge to a children´s home: (https://www.betterplace.org/de/projects/109462-neue-computer-fuer-die-kinder-aus-dem-kinderheim-trebbin)
-* This projects provides lectures in hardware and software usage for elderly people: (https://www.digitaler-engel.org/ueber-das-projekt) 
+* This project provides lectures in hardware and software usage for elderly people: (https://www.digitaler-engel.org/ueber-das-projekt) 
 * This project provides devices and knowledge for refugee children: (www.redi-school.org) / (https://www.betterplace.org/de/projects/79952-redi4homeschooling-foerdere-den-zugang-zu-digitaler-bildung-fuer-kinder)
 
 Please vote for the project we donate to: [Poll](https://scs.sovereignit.de/nextcloud/apps/polls/s/ptvcZeIOyhAZa4yA)
