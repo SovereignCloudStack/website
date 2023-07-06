@@ -4,7 +4,7 @@ title:  "Get your butts up!"
 author:
   - "Friederike Zelke"
 avatar: 
-  - "Zelke.jpg"
+  - "zelke.jpg"
 image: "blog/run.jpg"
 ---
 {% asset 'blog/run.jpg' vips:format='.webp' style="width:100%; max-height: 350px; object-fit: cover;" %}
