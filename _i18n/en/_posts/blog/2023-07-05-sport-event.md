@@ -22,8 +22,8 @@ This year not the fastest time counts, this year the most kilometers are crucial
 * No e-bikes, no virtual cycling/running are allowed
 
 ### Every kilometer counts - sponsoring our sport event
-The event is a sponsored/donation event. And there are several possibilities to sponsor:
-* Sponsors pay an amount, which he himself determines, for all sports and participants for each (x):
+The event is a sponsored/donation event. There are several possibilities to sponsor:
+* Sponsors pay an amount, which they determines, for all sports and participants for each (x):
     * x =
     * 1 km running
     * 10 km walking
