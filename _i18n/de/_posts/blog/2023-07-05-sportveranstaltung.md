@@ -23,8 +23,8 @@ Dieses Jahr zählt nicht die schnellste Zeit, dieses Jahr sind die meisten Kilom
 
 
 ### Jeder Kilometer zählt - sponsern Sie unsere Sportveranstaltung
-Die Veranstaltung ist eine Sponsoren-/Spendenveranstaltung. Und es gibt mehrere Möglichkeiten zu sponsern:
-* Sponsoren zahlen einen Betrag, den er selbst festlegt, für alle Sportarten und Teilnehmer für jeweils (x):
+Die Veranstaltung ist eine Sponsoren-/Spendenveranstaltung. Es gibt mehrere Möglichkeiten zu sponsern:
+* Sponsoren zahlen einen Betrag, den sie selbst festlegen, für alle Sportarten und Teilnehmer für jeweils (x):
     * x =
     * 1 km Laufen
     * 10 km Wandern
