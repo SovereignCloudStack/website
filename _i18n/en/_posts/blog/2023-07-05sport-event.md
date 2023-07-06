@@ -10,7 +10,7 @@ image: "blog/run.jpg"
 {% asset 'blog/run.jpg' vips:format='.webp' style="width:100%; max-height: 350px; object-fit: cover;" %}
 Also this year we want to continue the tradition to scale the run (or walk, or ride, ...). We will have our next sports event.
 
-We compete in teams in the types of sport: running, cycling, hiking, swimming. But the teams will be random teams, so every attendee signs up with the hint in which sport he or she wants to compete, multiple choices are possible, if an attendee is able to compete in more than one type of sport. The SIG Community triggers the teams anonymized, depending on the mentioned sports. All team mates then get a mail to introduce their team and the sport to complete [Sign up here](https://scs.sovereignit.de/nextcloud/apps/forms/tBpJLwaArj4eRHpt)
+We compete in teams of 3-4 attendees in the types of sport: running, cycling, hiking, swimming. But the teams will be random teams, so every attendee signs up with the hint in which sport he or she wants to compete, multiple choices are possible, if an attendee is able to compete in more than one type of sport. The SIG Community triggers the teams anonymized, depending on the mentioned sports. All team mates then get a mail to introduce their team and the sport to complete [Sign up here](https://scs.sovereignit.de/nextcloud/apps/forms/tBpJLwaArj4eRHpt)
 
 This year not the fastest time counts, this year the most kilometers are crucial. The team with the most kilometers wins. Because this will be a sponsored event (more information below). 
 
