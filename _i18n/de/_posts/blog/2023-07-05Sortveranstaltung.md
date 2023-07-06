@@ -24,16 +24,15 @@ Dieses Jahr zählt nicht die schnellste Zeit, dieses Jahr sind die meisten Kilom
 
 ### Jeder Kilometer zählt - sponsern Sie unsere Sportveranstaltung
 Die Veranstaltung ist eine Sponsoren-/Spendenveranstaltung. Und es gibt mehrere Möglichkeiten zu sponsern:
-* Sponsoren zahlen einen kleinen Betrag für jedes x, der Sponsor entscheidet, wie viel er bietet
+* Sponsoren zahlen einen Betrag, den er selbst festlegt, für alle Sportarten und Teilnehmer für jeweils (x):
     * x =
-    * 5 km Laufen
-    * 20 km Laufen/Wandern
-    * 30 km Radfahren
-    * 1 km Schwimmen
-    * (diese Zahlen werden über alle Teams gesammelt, wenn also ein Teilnehmer z.B. 4 km läuft und ein anderer 11 km, dann ist die Summe 15 = 3x)
-* Sponsoren zahlen eine größere Summe für die Kilometer eines Teams
-* Sponsoren zahlen einen Betrag für jeden Kilometer einer Sportart
-* Sponsoren zahlen einen festen Betrag
+    * 1 km Laufen
+    * 10 km Wandern
+    * 15 km Radfahren
+    * 0,5 km Schwimmen
+    * (diese Zahlen werden über alle Teams gesammelt, wenn also ein Teilnehmer z.B. 12 km wandert und ein anderer 18 km, dann ist die Summe 30 = 3x10 km wandern = 3x Betrag)
+* Sponsoren zahlen eine größere Summe, die auch selbst festgelegt werden kann, für die Kilometer eines Teams, das sich der Sponsor im Vorfeld aussucht
+* Sponsoren zahlen einen selbst gewählten Betrag für jeden Kilometer einer Sportart
 
 Alle gesammelten Gelder werden an ein soziales Digitalisierungsprojekt gespendet.
 
