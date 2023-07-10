@@ -25,37 +25,10 @@ to the realisation of the goals of the German government's Digital Strategy
 infrastructure.
 
 The project is driven by a small team in the OSB Alliance with multi-year
-funding from the Federal Ministry for Economic Affairs and Energy (BMWi). The
-advertised position is part of this central team. In addition to this team,
+funding from the Federal Ministry for Economic Affairs and Climate Action (BMWK).
+The advertised position is part of this central team. In addition to this team,
 there are numerous developers from different companies and institutions in
-Europe who contribute to the project - some of them are funded by the project,
-others because their employers are interested in making this project
-successful.
-
-The SCS project aims to standardise and implement a complete, modular, secure,
-open-source software stack. It covers software-defined storage and networking,
-operations tooling for automated deployment, logging, monitoring, alerting,
-trending, identity and authorisation management, an Infrastructure-as-a-Service
-layer, as well as a Container(Platform)-as-a-Service layer. It allows users
-(development teams) to create and control their own kubernetes cluster through
-standardised APIs and delivers standard building blocks that can be used to
-construct and manage container applications. This stack fulfills high security
-standards and comes with tooling and documentation that reduce the need for
-specialised expertise to run complex cloud and container infrastructures. SCS
-can be used by both cloud service providers and internal IT teams and can be
-deployed as a whole or by just cherry-picking needed components from it. The
-resulting infrastructure can be subjected to a certification process that
-ensures strict compatibility with other SCS-based platforms, thus building a
-network of federatable, compatible clouds. The SCS project also works on
-establishing collaboration on the operations of infrastructure, jointly
-building the skills and sharing the knowledge to successfully do so. This
-idea is at the heart of the Open Operations movement that goes beyond SCS.
-
-The SCS project contributes to the European Gaia-X effort by serving as a
-reference for development work and enhancing it with an implementation that
-node-providers can leverage as a whole or in parts to deliver federated
-sovereign infrastructure, underpinning federation services (e.g. GXFS)
-and a sovereign data ecosystem.
+Europe who contribute to the project.
 
 In this role, you will
 
