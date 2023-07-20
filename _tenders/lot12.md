@@ -4,7 +4,6 @@ layout: default
 
 number: 16
 number_vh81: 12
-retry: 1
 start_date: 2023-07-19
 closing_date: 2022-08-09
 state: open
