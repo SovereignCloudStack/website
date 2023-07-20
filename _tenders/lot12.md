@@ -2,7 +2,7 @@
 title_slug: tenders.title.lot12
 layout: default
 
-number: 17
+number: 16
 number_vh81: 12
 retry: 1
 start_date: 2023-07-19
