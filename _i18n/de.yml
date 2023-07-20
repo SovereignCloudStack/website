@@ -88,6 +88,7 @@ tenders:
     lot9c: "Penetration Testing"
     lot10: "SCS Zertifizierung"
     lot11: "Aufbau Serverhardware"
+    lot12: "Cloud/Container Plaftform health monitoring"
     lot13: "Nutzungsmessung auf IaaS-Ebene"
     lot18: "Beschaffung Rechenzentrums-Hardware und Betrieb"
   filter:
