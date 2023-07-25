@@ -5,7 +5,7 @@ category: tech
 author:
   - "Christian Berendt"
 avatar:
-  - "berendt.jpeg"
+  - "cberendt.jpeg"
 image: "blog/airgap-takeoff.jpg"
 about:
   - "berendt"
@@ -19,9 +19,10 @@ with some distance. If this possibility does not arise, it should be explicitly
 planned and created.
 
 One of the pillars of SCS is to pick up and use existing open source building
-blocks. This is to avoid stretching the limited project budget unnecessarily
-and to create a sustainable solution with broad acceptance. The available and
-established solutions are not always a perfect match and you often have to adapt
+blocks. For once this avoids stretching the limited project budget unnecessarily.
+Even more important this helps strengthen the overall open-source ecosystem and helps
+to create a sustainable solution with broad acceptance. The available and
+established solutions are not always a perfect match and often you have to adapt
 to the realities. But even then, more complex own developments should be avoided
 whenever possible. If existing technology does not match perfectly, you should
 first try to adapt the problem in order to be able to use the existing technology
@@ -31,7 +32,7 @@ can be extended to make it suitable.
 Back to the air gap installation. We had created a concept by providing a variety
 of individual services, some of them own developments, to mirror the individual
 sources like APT packages used within the infrastructure layer. After re-evaluating this
-approach, we now have to note that something difficult to maintain has emerged.
+approach, we have to note that something difficult to maintain has emerged.
 We have asked ourselves who will finish the services and who will ensure that they
 remain in good condition and usable for the next few years. In the end, we came to
 the conclusion that it was not worth the time to continue with the previous concept.
@@ -39,14 +40,14 @@ the conclusion that it was not worth the time to continue with the previous conc
 So back to start? Not complete. The original idea of splitting the problem in two,
 supplying the nodes of the control and data planes themselves, as well as supplying
 the management planes and the hedging of our build processes were not discarded.
-The approach with Squid as the middle layer between management plane and control and
-data plane remains and is fully implemented. This ensures that all internal nodes are
-supplied exclusively via the management plane.
+The approach with [Squid](http://www.squid-cache.org/) as the middle layer between
+management plane and control and data plane remains and is fully implemented. This
+ensures that all internal nodes are supplied exclusively via the management plane.
 
 On the management plane, all services planned in the
 [original concept](https://scs.community/de/tech/2023/04/12/airgapped-scs/)
-were discarded. [Pulp](https://pulpproject.org) now takes their place. Pulp is a
-software repository management that can be extended with plugins.
+were discarded. [Pulp](https://pulpproject.org), a software repository management
+that can be extended with plugins, takes their place now.
 [Pulp is established](https://analytics.pulpproject.org). Practically, all plugins
 we need are already available and everything is controllable via API.
 
