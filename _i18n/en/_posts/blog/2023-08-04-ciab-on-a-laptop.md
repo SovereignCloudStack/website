@@ -5,7 +5,7 @@ author:
   - "Robert Holling"
 avatar:
   - "avatar-holling.jpg"
-image: "first.jpg"
+image: "blog/ciab/first.jpg"
 ---
 
 ## Preface
