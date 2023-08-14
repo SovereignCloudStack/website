@@ -11,7 +11,8 @@ avatar:
 
 ## CPU leak introduction and history
 
-Since January 2018, a new class of hardware vulnerabilities became publicly known.
+In January 2018, a new class of hardware vulnerabilities became publicly known.
+
 Modern CPUs have the capability to do an amazing amount of things in parallel.
 While they are calculating the result of one operation, they are already executing
 instructions that occur afterwards. This is necessary for high performance, because
@@ -38,9 +39,11 @@ However, even if the official (architectural) state of the CPU is correctly rein
 after misspeculation, there may be traces from the misspeculation, such as internal
 CPU buffers and caches (the microarchitectural state) that have a different state.
 While these states should not influence the outcome of future operations, they may
-be observable, e.g. by timing effects. As misspeculation might depend on data
-and that data may be sensitive, we may have a potential side-channel that can leak
-sensitive data.
+be observable, e.g. by timing effects. Authors of code that handles cryptography have
+thus learned to avoid writing code that has code paths or execution times that depend
+on keys or sensitive data. With misspeculation this however is at the mercy of the
+CPU -- as misspeculation might depend on sensitive data, we may have a potential
+side-channel that can leak such data.
 
 A program could observe misspeculation and thus take conclusions from data in other
 parts of the program -- not normally an issue, unless the program is specifically
@@ -91,10 +94,15 @@ for some. Operating system and hypervisor developers also tend to allow
 opt-out for these protections.
 
 The stream of vulnerabilities since the original Meltdown and Spectre reports
-has kept CPU vendors and OS developers busy. 
+has kept CPU vendors and OS developers busy.
 ...
 ...
 
+spectre-meltdown-checker.sh
 
-## New CPU leaks August 2023
+## New CPU leaks July/August 2023
+### Zenbleed (Zen 2)
+### Inception (Zen 1-4)
+### Div-by-Zero (Zen 1)
+### Downfall (Skylake -- TigerLake)
 
