@@ -5,7 +5,7 @@ author:
   - "Kurt Garloff"
 avatar:
   - "avatar-garloff.jpg"
-#image: "blog/ciab/first.jpg"
+image: "blog/diskless.jpg"
 ---
 
 ## Flavor standardization
