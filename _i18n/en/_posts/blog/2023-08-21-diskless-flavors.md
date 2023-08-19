@@ -101,9 +101,62 @@ choose a diskless flavor.
 
 The VM instance will boot normally. You can see the volume in the
 volume list; it has no name but you can see it being attached to your
-freshly booted VM. If you have activated the 
+freshly booted VM. If you have activated the "Delete Volume on Instance Delete"
+setting, it will vanish as soon as you destroy the VM instance.
 
-### API
+The fact that no name can be assigned to the volume is a limitation
+of the OpenStack nova API. (But of course you could assign a name
+manually after it has been created.)
+
+### OpenStack API
+Horizon of course uses an API call to create the VM instance with
+a volume allocated on the fly. This is a `POST` REST call to the
+compute (nova) endpoint of your cloud and the settings are described
+in the [nova API documentation](https://docs.openstack.org/api-ref/compute/?expanded=create-server-detail#create-server).
+
+To allocate a disk (volume), the (optional) `block_device_mapping_v2`
+parameter is passed with settings like
+```json
+ "block_device_mapping_v2": [{
+   "boot_index": 0,
+   "uuid": "$IMAGE_UUID",
+   "source_type": "image",
+   "volume_size": $WANTED_SIZE,
+   "destination_type": "volume",
+   "delete_on_termination": true,
+   "volume_type": "__DEFAULT__",
+   "disk_bus": "scsi" }]
+```
+
+Obviously, you would replace `$IMAGE_UUID` and `$WANTED_SIZE` by the wanted settings.
+(The size is specified in GiB.)
+You may leave out `volume_type` and `disk_bus`. If you leave out `delete_on_termination`,
+it will default to `false`, resulting in a volume that remains allocated after the VM
+instance has been removed and thus behaving differently from the root volumes that come
+with a flavor with root disk.
+You can also add a `tag` property to place a tag on the created volume.
+
+When using the openstack SDK, the API call would be invoked with
+```python
+vm = conn.compute.create_server(
+	name="test-diskless",
+	networks=[{"uuid": "2bc6b86c-77e2-4cfb-a2d1-7d7210b1e215"}],
+	flavor_id="82889eb7-99d0-4025-a0a3-95b3b47f792a",
+	key_name="SSHkey-gxscscapi",
+	block_device_mapping_v2=[{'boot_index': 0,
+		'uuid': '09337995-b91b-4763-8f6b-5e77f1d9d262',
+		'source_type': 'image',
+		'volume_size': 12,
+		'destination_type': 'volume',
+		'delete_on_termination': True}
+	]
+)
+```
+with the fields `name`, `uuid` in `networks`, `flavor_id`, `key_name`,
+`uuid` in `block_device_mapping_v2`, `volume_size` according to your
+needs. Note that the `block_device_mapping_v2`'s `uuid` is the `uuid`
+of the wanted image.
+
 ### openstack-cli
 #### Example: openstack-health-monitor
 ### terraform
@@ -123,14 +176,12 @@ described above to allocate arbitraty SSD storage when booting?
 The unfortunate truth is: We can't.
 This is for two reasons:
 1. The [OpenStack server creation API](https://docs.openstack.org/api-ref/compute/?expanded=create-server-detail#create-server)
-   does not allow us to define a storage class when deploying an image to
-   a volume. The best we could do would be to chose `local` as destination
-   instead in the `block_device_mapping_v2` paraters in the nova `POST`
-   call and hope that the local disk happens to be an SSD. But hope is not
-   how you want to operate your applications across SCS clouds.
+   does allow us to define a volume type when deploying an image to
+   a volume only with recent API microversions (2.67 and newer).
+   Not all tools support this yet.
    Or we could revert to a two step process and create the volume in a
    separate step where we choose an appropriate `volume_type` in volume
-   creation and then tell nova to boot from it.
+   creation and then tell nova to boot from it. 
 2. The SCS project has not yet standardized on a cinder storage type that
    makes a networked SSD type storage available across all IaaS layer
    SCS-compatible clouds. So even the inconvenient two step process
