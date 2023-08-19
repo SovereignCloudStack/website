@@ -13,7 +13,7 @@ avatar:
 SCS offers the promise to make it easy for Cloud users (typically DevOps teams
 that develop and operate services / workloads on top of SCS IaaS and/or
 Container infrastructure) to move between different SCS enviroments and vendors
-or to use several of them in a federated way. One of the eearly accomplishments
+or to use several of them in a federated way. One of the early accomplishments
 in standardizing SCS has been to standardize IaaS flavor properties and flavor
 naming.
 
@@ -45,7 +45,9 @@ users -- these are then just not guaranteed to be available on all SCS
 environments.
 
 Adding a variety of root disk sizes now multiplies these flavors.
-In versions 1 and 2 of the flavor standard, the SCS community has tried to
+In versions [1](https://docs.scs.community/standards/scs-0100-v1-flavor-naming)
+and [2](https://docs.scs.community/standards/scs-0100-v2-flavor-naming)
+of the flavor standard, the SCS community has tried to
 prevent flavor explosion by just mandating one disk size per flavor, scaling
 it with the size of the RAM and chosing discete values of 5, 10, 20,
 50 and 100 GB for them. (By extension, providers that want to provide
@@ -53,13 +55,16 @@ larger disks have been advised to choose 200, 500, 1000, ... GB for these.)
 
 Next to the each flavor with a root disk size (e.g. `SCS-4V-16-50`), SCS
 also mandates a flavor without a root disk (e.g. `SCS-4V-16`). This is useful,
-as OpenStack also allows users to allocate block storage (a virtual disk) with
+as OpenStack also allows users to boot from a preexisting disk ("volume")
+or to allocate block storage (a virtual disk) with
 arbitrary size upon VM creation, although it is a bit more complicated (see
 below). So we have one disk size per vCPU-RAM combination for simplicity
 and the flexibility to have an arbitrary disk size with a bit more effort.
 This is what we had for the SCS flavor standards v1 and v2.
 
-With v3, we also added two flavors with (at least) SSD type root disk storage.
+With [v3](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
+we also [added](https://docs.scs.community/standards/scs-0100-v2-flavor-naming)
+two flavors with (at least) SSD type root disk storage.
 Adding all combinations here would have again resulted in many new flavors.
 Yet the cloud operators in the SCS community really wanted to avoid a
 proliferation of many new flavors mandated by the standards. The SCS community
@@ -67,7 +72,8 @@ agreed on avoiding more mandatory flavors and instead stopped mandating
 the flavors with disks (except for the two new ones with SSDs, more on this
 later).
 
-With the SCS flavor standard v3, the formerly mandatory flavors with disk
+With the [SCS flavor standard v3](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
+the formerly mandatory flavors with disk
 have been downgraded to recommended. Operators still should provide them for
 best portability of apps written against older SCS standards, but they are no
 longer required to in order to be able to achieve the SCS-compatible certification
@@ -88,4 +94,37 @@ own projects.
 #### Example: k8s-cluster-api-provider
 
 ## Why create the two (new) SSD flavors?
+So when moving from flavor standard v2 to v3, we have downgraded all flavors
+with disks from mandatory to recommended. Yet we have added two new flavors with
+SSD (or better) storage as mandatory. This looks puzzling at first.
 
+The reason why offering SSD storage is highly desirable is documented in the
+[scs-0110-v1-ssd-flavors.md](https://docs.scs.community/standards/scs-0110-v1-ssd-flavors)
+standard. But couldn't we use the mechanisms
+described above to allocate arbitraty SSD storage when booting?
+
+The unfortunate truth is: We can't.
+This is for two reasons:
+1. The [OpenStack server creation API](https://docs.openstack.org/api-ref/compute/?expanded=create-server-detail#create-server)
+   does not allow us to define a storage class when deploying an image to
+   a volume. The best we could do would be to chose `local` as destination
+   instead in the `block_device_mapping_v2` paraters in the nova `POST`
+   call and hope that the local disk happens to be an SSD. But hope is not
+   how you want to operate your applications across SCS clouds.
+   Or we could revert to a two step process and create the volume in a
+   separate step where we choose an appropriate `volume_type` in volume
+   creation and then tell nova to boot from it.
+2. The SCS project has not yet standardized on a cinder storage type that
+   makes a networked SSD type storage available across all IaaS layer
+   SCS-compatible clouds. So even the inconvenient two step process
+   does not work across clouds in a portable way.
+   Looking at the use cases of the SSD flavors, a local SSD (or better)
+   type storage without the redundancy of a storage cluster is actually
+   the desired property for these flavors. In the etcd case, the
+   clustering is done by etcd; the same is true for big data use cases,
+   where hadoop would take care of data replication and not expect the
+   storage layer to do so. The local storage has the additional advantage
+   of allowing for lower latency than you can get from networked storage.
+
+So we need those two SSD flavors `SCS-2V-4-20s` and `SCS-4V-16-100s`
+to serve our customers well. 
