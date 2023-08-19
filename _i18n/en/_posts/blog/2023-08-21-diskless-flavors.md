@@ -5,7 +5,7 @@ author:
   - "Kurt Garloff"
 avatar:
   - "avatar-garloff.jpg"
-image: "blog/diskless.jpg"
+image: "blog/diskless/diskless.jpg"
 ---
 
 ## Flavor standardization
@@ -86,6 +86,23 @@ own projects.
 ## Creating VMs with diskless flavors
 
 ### Horizon
+In the second page of the create instance dialogues, you can chose to
+create a volume of any size you want (though you better make it large
+enough to accommodate the needs of the used image) and you can also
+choose that the disk should be destroyed upon destruction of the VM
+as it would if you had used a flavor with disk. This second page
+can be seen on the horizon screensho. One the third page,
+choose a diskless flavor.
+<figure class="figure mx-auto d-block" style="width:100%">
+    {% asset 'blog/diskless/Horizon-VM-Create.png' class="figure-img w-100" alt="Horizon Instance Create p2"%}
+    <figcaption>Horizon's VM instance creation dialog page 2</figcaption>
+</figure>
+
+
+The VM instance will boot normally. You can see the volume in the
+volume list; it has no name but you can see it being attached to your
+freshly booted VM. If you have activated the 
+
 ### API
 ### openstack-cli
 #### Example: openstack-health-monitor
