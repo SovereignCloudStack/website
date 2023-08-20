@@ -72,16 +72,16 @@ and the flexibility to have an arbitrary disk size with a bit more effort.
 This is what we had for the SCS flavor standards v1 and v2.
 
 With [v3](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
-we also [added](https://docs.scs.community/standards/scs-0100-v2-flavor-naming)
+we also [added](https://docs.scs.community/standards/scs-0110-v1-ssd-flavors)
 two flavors with (at least) SSD type root disk storage.
 Adding all combinations here would have again resulted in many new flavors.
 Yet the cloud operators in the SCS community really wanted to avoid a
 proliferation of many new flavors mandated by the standards. The SCS community
-agreed on avoiding more mandatory flavors and instead stopped mandating
-the flavors with disks (except for the two new ones with SSDs, more on this
-later).
+agreed on avoiding more mandatory flavors and instead agreed on reducing the
+number of mandatory flavors by stopping to require the flavors with disks
+(except for the two new ones with SSDs, more on this later).
 
-With the [SCS flavor standard v3](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
+With the [version 3 of the SCS flavor standard](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
 the formerly mandatory flavors with disk
 have been downgraded to recommended. Operators still should provide them for
 the best portability of apps written against older SCS standards, but they are no
@@ -206,7 +206,7 @@ volumes, virtual machines, loadbalancers, etc. testing them all for correct func
 then carefully cleaning up everything again. It measures the success rate as well as the
 timing (API performance) and stores it into an influxDB and visualizes it via grafana dashboards.
 
-It traditionally used the diskful SCS flavors `SCS-1V-2-5` and `SCS-1L-1-5` by default and
+It traditionally used the SCS flavors `SCS-1V-2-5` and `SCS-1L-1-5` with disks by default and
 would not cope with diskless flavors unless told to create and manage the root disks separately.
 But this is not what was wanted, thus
 [PR #133](https://github.com/SovereignCloudStack/openstack-health-monitor/pull/133)
@@ -220,7 +220,7 @@ many different infrastructure platforms. While it may become much less popular n
 Hashicorp's decision to stop providing it under an open source license, it is currently
 still in wide use, as the old free versions can still be used.
 
-Creating a VM instance for OpenStack with terraform looks like this with a diskful flavor:
+Creating a VM instance for OpenStack with terraform looks like this with a flavor with disk:
 ```hcl
 resource "openstack_compute_instance_v2" "mgmtcluster_server" {
    name              = "${var.prefix}-mgmtcluster"
@@ -356,7 +356,7 @@ because of missing `jq` binary for people that upgraded by `git pull`.
 
 ## FAQ
 
-### What happens if a root volume is allocated but a diskful flavor is used?
+### What happens if a root volume is allocated but a flavor with disk is used?
 Using the `block_device_mapping_v2` in the OpenStack API or the corresponding options
 in the python SDK, the openstack client CLI or terraform while using a flavor that
 comes with a root disk does not create any harm. The cinder volume is still created
