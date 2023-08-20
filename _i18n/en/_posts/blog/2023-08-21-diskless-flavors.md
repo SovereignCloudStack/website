@@ -28,7 +28,7 @@ naming.
 
 On OpenStack (like on many other IaaS environments), when you create a virtual
 machine (VM), you can not choose an arbitrary amount of (virtual) CPUs or memory
-(RAM). Instead you have a discrete set of choices, so called flavors. They
+(RAM). Instead, you have a discrete set of choices, so-called flavors. They
 combine an amount of vCPUs with a certain amount of RAM and often also a
 virtual disk to boot from. On a typical VM creation, an operating system image
 is being copied to the disk (of a size defined by the chosen flavor) on the
