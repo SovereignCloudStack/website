@@ -118,7 +118,7 @@ of the OpenStack nova API. (But of course, you could assign a name
 manually after it has been created.)
 
 ### OpenStack API
-Horizon of course uses an API call to create the VM instance with
+Horizon, of course, uses an API call to create the VM instance with
 a volume allocated on the fly. This is a `POST` REST call to the
 compute (nova) endpoint of your cloud and the settings are described
 in the [nova API documentation](https://docs.openstack.org/api-ref/compute/?expanded=create-server-detail#create-server).
