@@ -8,6 +8,15 @@ avatar:
 image: "blog/diskless/diskless.jpg"
 ---
 
+## TL;DR
+
+SCS has downgraded the formerly mandatory flavors with root disks to
+recommended in the next flavor naming standard version 3 and thus suggests
+every SCS IaaS user to preferably use the diskless flavors.
+This blog post describes the motivation for this change and also explains
+how the diskless flavors can be used with common automation (Infra-as-Code)
+tooling.
+
 ## Flavor standardization
 
 SCS offers the promise to make it easy for Cloud users (typically DevOps teams
