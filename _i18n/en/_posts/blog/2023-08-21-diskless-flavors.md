@@ -98,7 +98,7 @@ own projects.
 On the second page of the create instance dialogues, you can choose to
 create a volume of any size you want (though you better make it large
 enough to accommodate the needs of the used image) and you can also
-choose that the disk should be destroyed upon destruction of the VM
+choose that the disk should be destroyed upon the destruction of the VM
 as it would if you had used a flavor with disk. This second page
 can be seen on the horizon screenshot. On the third page,
 choose a diskless flavor.
