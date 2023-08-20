@@ -33,7 +33,7 @@ combine a number of vCPUs with a certain amount of RAM and often also a
 virtual disk to boot from. On a typical VM creation, an operating system image
 is being copied to the disk (of a size defined by the chosen flavor) on the
 compute host, vCPUs and RAM are allocated (according to the numbers defined in
-the chosen flavor) and the virtual then can start booting.
+the chosen flavor) and the virtual can then start booting.
 
 While this is not as flexible as some users might like, this is how most clouds
 do it. On SCS environments, a number of standard flavors exist, e.g. flavors
