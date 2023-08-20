@@ -31,20 +31,19 @@ def main(argv):
 	if not image:
 		raise ValueError(f"No image {IMAGE} found")
 	# Determine network to connect to
-	found = False
-	net = None
+	found_network = None
 	for net in conn.network.networks():
 		if not net.is_admin_state_up or net.is_router_external:
 			continue
 		if not NETWORK or net.name == NETWORK:
-			found = True
+			found_network = net
 			break
-	if not found:
+	if found_network is None:
 		raise ValueError(f"No network {NETWORK} found")
 	# Create VM instance
 	vm = conn.compute.create_server(
 		name="test-diskless",
-		networks=[{"uuid": net.id}],
+		networks=[{"uuid": found_network.id}],
 		flavor_id=flavor.id,
 		key_name=KEYNAME,
 		block_device_mapping_v2=[{'boot_index': 0,
