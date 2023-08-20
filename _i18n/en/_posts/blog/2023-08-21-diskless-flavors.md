@@ -62,7 +62,7 @@ it with the size of the RAM and choosing discrete values of 5, 10, 20,
 50 and 100 GB for them. (By extension, providers that want to provide
 larger disks have been advised to choose 200, 500, 1000, ... GB for these.)
 
-Next to the each flavor with a root disk size (e.g. `SCS-4V-16-50`), SCS
+Next to each flavor with a root disk size (e.g. `SCS-4V-16-50`), SCS
 also mandates a flavor without a root disk (e.g. `SCS-4V-16`). This is useful,
 as OpenStack also allows users to boot from a preexisting disk ("volume")
 or to allocate block storage (a virtual disk) with
