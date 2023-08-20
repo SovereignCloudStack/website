@@ -160,6 +160,34 @@ of the wanted image.
 A more complete exmample can be found at [create\_vm.py](/scripts/create_vm.py).
 
 ### openstack-cli
+
+If you are using the OpenStack command line client, you can pass the desire to create
+a volume on the fly via the command line parameter `--block-device` parameter.
+This does not work for old versions (<5.5 / Wallaby) of the openstack CLI.
+(You can work around this using the nova client rather than the openstack client
+if you really need to stick to such an old version.)
+Versions prior to 6.0 (Zed) also need an additional patch: These versions refuse to
+issue the API call to nova because they think you have passed neither a volume
+nor an image when you pass the `--block-device` option. This trivial patch fixes
+this:
+```patch
+--- openstackclient/compute/v2/server.py.orig   2021-03-20 10:17:40.000000000 +0100
++++ openstackclient/compute/v2/server.py        2023-07-03 15:59:27.301268807 +0200
+@@ -802,7 +802,7 @@ class CreateServer(command.ShowOne):
+             help=_('Create server with this flavor (name or ID)'),
+         )
+         disk_group = parser.add_mutually_exclusive_group(
+-            required=True,
++            required=False,
+         )
+         disk_group.add_argument(
+             '--image',
+```
+
+With a working openstack command line client, things are pretty straight-forward:
+`openstack server create --block-device boot_index=0,uuid=$IMGID,source_type=image,volume_size=$SIZE,destination_type=volume,delete_on_termination=true ...`
+will do what you need.
+
 #### Example: openstack-health-monitor
 ### terraform
 ### OCCM
