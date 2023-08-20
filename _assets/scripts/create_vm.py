@@ -4,7 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 
 import openstack
-# import os
 import sys
 
 # OS_CLOUD will be taken from environment
@@ -14,10 +13,12 @@ IMAGE="Debian 12"
 KEYNAME="SSHkey-gxscscapi"
 
 def main(argv):
-	"""creates a server on a diskless flavor in a cloud env["OS_CLOUD"]
-	   (configured in clouds.yaml+secure.yaml) with flavor FLAVOR
-	   in network NETWORK (defaults to first if empty) with image IMAGE
-	   injecting keypari KEYNAME."""
+	"""
+	Creates a server on a diskless flavor in a cloud env["OS_CLOUD"]
+	(configured in clouds.yaml+secure.yaml) with flavor FLAVOR
+	in network NETWORK (defaults to first if empty) with image IMAGE
+	injecting keypair KEYNAME.
+	"""
 	# Connect and get token   
 	conn = openstack.connect()
 	conn.authorize()
@@ -29,20 +30,19 @@ def main(argv):
 	if not image:
 		raise ValueError(f"No image {IMAGE} found")
 	# Determine network to connect to
-	found = False
-	net = None
+	found_network = None
 	for net in conn.network.networks():
 		if not net.is_admin_state_up or net.is_router_external:
 			continue
 		if not NETWORK or net.name == NETWORK:
-			found = True
+			found_network = net
 			break
-	if not found:
+	if found_network is None:
 		raise ValueError(f"No network {NETWORK} found")
 	# Create VM instance
 	vm = conn.compute.create_server(
 		name="test-diskless",
-		networks=[{"uuid": net.id}],
+		networks=[{"uuid": found_network.id}],
 		flavor_id=flavor.id,
 		key_name=KEYNAME,
 		block_device_mapping_v2=[{'boot_index': 0,

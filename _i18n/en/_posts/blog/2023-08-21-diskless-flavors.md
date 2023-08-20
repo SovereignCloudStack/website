@@ -11,8 +11,8 @@ image: "blog/diskless/diskless.jpg"
 ## TL;DR
 
 SCS has downgraded the formerly mandatory flavors with root disks to
-recommended in the next flavor naming standard version 3 and thus suggests
-every SCS IaaS user to preferably use the diskless flavors.
+recommended ones in the next flavor naming standard version 3. Thus,
+every SCS IaaS user should preferably use the diskless flavors.
 This blog post describes the motivation for this change and also explains
 how the diskless flavors can be used with common automation (Infra-as-Code)
 tooling.
@@ -20,37 +20,37 @@ tooling.
 ## Flavor standardization
 
 SCS offers the promise to make it easy for Cloud users (typically DevOps teams
-that develop and operate services / workloads on top of SCS IaaS and/or
+that develop and operate services/workloads on top of SCS IaaS and/or
 Container infrastructure) to move between different SCS environments and vendors
 or to use several of them in a federated way. One of the early accomplishments
 in standardizing SCS has been to standardize IaaS flavor properties and flavor
 naming.
 
 On OpenStack (like on many other IaaS environments), when you create a virtual
-machine (VM), you can not chose an arbitrary amount of (virtual) CPUs or memory
-(RAM). Instead you have a discrete set of choices, so called flavors. They
-combine an amount of vCPUs with a certain amount of RAM and often also a
+machine (VM), you can not choose an arbitrary amount of (virtual) CPUs or memory
+(RAM). Instead, you have a discrete set of choices, so-called flavors. They
+combine a number of vCPUs with a certain amount of RAM and often also a
 virtual disk to boot from. On a typical VM creation, an operating system image
 is being copied to the disk (of a size defined by the chosen flavor) on the
 compute host, vCPUs and RAM are allocated (according to the numbers defined in
-the chosen flavor) and the virtual then can start booting.
+the chosen flavor) and the virtual can then start booting.
 
 While this is not as flexible as some users might like, this is how most clouds
-do it. On SCS environments, a number of standard flavors exist, e.g. flavors
+do it. In SCS environments, several standard flavors exist, e.g., flavors
 with 4vCPUs, 8GiB of RAM and a 20GB root disk (`SCS-4V-8-20`) or one
 with 4vCPUs, 16GiB of RAM and a 50GB root disk (`SCS-4V-16-50`).
 
 ## Diskless flavors
 
 Creating a set of flavors that caters to the needs of most users results in
-a non-trivial amount of flavors. Some workloads require more compute power
+a non-trivial amount of flavors. Some workloads require more computing power
 (thus more vCPUs), some require more RAM. So, many combinations of these
 will be needed. The mandatory flavors in SCS cover 1 through 16 vCPUs and
 2 through 32GiB of RAM, with ratios of 1:2, 1:4 and 1:8 between vCPUs and
 RAM (in GiB). This results in 12 flavors. (There is one additional flavor
 for tiny machines, `SCS-1L-1`, resulting in 13 flavors actually.)
 Of course, providers can implement many more based on the needs of their
-users -- these are then just not guaranteed to be available on all SCS
+users -- these are just not guaranteed to be available on all SCS
 environments.
 
 Adding a variety of root disk sizes now multiplies these flavors.
@@ -62,7 +62,7 @@ it with the size of the RAM and choosing discrete values of 5, 10, 20,
 50 and 100 GB for them. (By extension, providers that want to provide
 larger disks have been advised to choose 200, 500, 1000, ... GB for these.)
 
-Next to the each flavor with a root disk size (e.g. `SCS-4V-16-50`), SCS
+Next to each flavor with a root disk size (e.g. `SCS-4V-16-50`), SCS
 also mandates a flavor without a root disk (e.g. `SCS-4V-16`). This is useful,
 as OpenStack also allows users to boot from a preexisting disk ("volume")
 or to allocate block storage (a virtual disk) with
@@ -72,21 +72,21 @@ and the flexibility to have an arbitrary disk size with a bit more effort.
 This is what we had for the SCS flavor standards v1 and v2.
 
 With [v3](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
-we also [added](https://docs.scs.community/standards/scs-0100-v2-flavor-naming)
+we also [added](https://docs.scs.community/standards/scs-0110-v1-ssd-flavors)
 two flavors with (at least) SSD type root disk storage.
 Adding all combinations here would have again resulted in many new flavors.
 Yet the cloud operators in the SCS community really wanted to avoid a
 proliferation of many new flavors mandated by the standards. The SCS community
-agreed on avoiding more mandatory flavors and instead stopped mandating
-the flavors with disks (except for the two new ones with SSDs, more on this
-later).
+agreed on avoiding more mandatory flavors and instead agreed on reducing the
+number of mandatory flavors by stopping to require the flavors with disks
+(except for the two new ones with SSDs, more on this later).
 
-With the [SCS flavor standard v3](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
+With the [version 3 of the SCS flavor standard](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
 the formerly mandatory flavors with disk
 have been downgraded to recommended. Operators still should provide them for
-best portability of apps written against older SCS standards, but they are no
+the best portability of apps written against older SCS standards, but they are no
 longer required to in order to be able to achieve the SCS-compatible certification
-on the IaaS layer. We recommend developers to use the diskless flavors and
+on the IaaS layer. We recommend developers use the diskless flavors and
 allocate root disks dynamically.
 
 The next section explains how this can be done and uses examples from SCS'
@@ -95,11 +95,11 @@ own projects.
 ## Creating VMs with diskless flavors
 
 ### Horizon
-In the second page of the create instance dialogues, you can chose to
+On the second page of the create instance dialogues, you can choose to
 create a volume of any size you want (though you better make it large
 enough to accommodate the needs of the used image) and you can also
-choose that the disk should be destroyed upon destruction of the VM
-as it would if you had used a flavor with disk. This second page
+choose that the disk should be destroyed upon the destruction of the VM
+as it would if you had used a flavor with a disk. This second page
 can be seen on the horizon screenshot. On the third page,
 choose a diskless flavor.
 <figure class="figure mx-auto d-block" style="width:100%">
@@ -109,16 +109,16 @@ choose a diskless flavor.
 
 
 The VM instance will boot normally. You can see the volume in the
-volume list; it has no name but you can see it being attached to your
+volume list; it has no name, but you can see it being attached to your
 freshly booted VM. If you have activated the "Delete Volume on Instance Delete"
 setting, it will vanish as soon as you destroy the VM instance.
 
 The fact that no name can be assigned to the volume is a limitation
-of the OpenStack nova API. (But of course you could assign a name
+of the OpenStack nova API. (But of course, you could assign a name
 manually after it has been created.)
 
 ### OpenStack API
-Horizon of course uses an API call to create the VM instance with
+Horizon, of course, uses an API call to create the VM instance with
 a volume allocated on the fly. This is a `POST` REST call to the
 compute (nova) endpoint of your cloud and the settings are described
 in the [nova API documentation](https://docs.openstack.org/api-ref/compute/?expanded=create-server-detail#create-server).
@@ -137,7 +137,7 @@ parameter is passed with settings like
    "disk_bus": "scsi" }]
 ```
 
-Obviously, you would replace `$IMAGE_UUID` and `$WANTED_SIZE` by the wanted settings.
+Obviously, you would replace `$IMAGE_UUID` and `$WANTED_SIZE` with the wanted settings.
 (The size is specified in GiB.)
 You may leave out `volume_type` and `disk_bus`. If you leave out `delete_on_termination`,
 it will default to `false`, resulting in a volume that remains allocated after the VM
@@ -206,7 +206,7 @@ volumes, virtual machines, loadbalancers, etc. testing them all for correct func
 then carefully cleaning up everything again. It measures the success rate as well as the
 timing (API performance) and stores it into an influxDB and visualizes it via grafana dashboards.
 
-It traditionally used the diskful SCS flavors `SCS-1V-2-5` and `SCS-1L-1-5` by default and
+It traditionally used the SCS flavors `SCS-1V-2-5` and `SCS-1L-1-5` with disks by default and
 would not cope with diskless flavors unless told to create and manage the root disks separately.
 But this is not what was wanted, thus
 [PR #133](https://github.com/SovereignCloudStack/openstack-health-monitor/pull/133)
@@ -215,12 +215,12 @@ to the nova resp. openstack client tool. Now, the flavors `SCS-1V-2` and `SCS-1L
 
 ### terraform
 
-Hashicorp's terraform is a flexible and popular tool to manage infrastructure has support for
+Hashicorp's terraform is a flexible and popular tool to manage infrastructure and has support for
 many different infrastructure platforms. While it may become much less popular now after
 Hashicorp's decision to stop providing it under an open source license, it is currently
 still in wide use, as the old free versions can still be used.
 
-Creating a VM instance for OpenStack with terraform looks like this with a diskful flavor:
+Creating a VM instance for OpenStack with terraform looks like this with a flavor with disk:
 ```hcl
 resource "openstack_compute_instance_v2" "mgmtcluster_server" {
    name              = "${var.prefix}-mgmtcluster"
@@ -260,7 +260,7 @@ resource "openstack_compute_instance_v2" "mgmtcluster_server" {
 ```
 
 As you can see, the `image_name` setting has been commented out and is replaced
-by the to-be-created block device, where we again instruct the OpenStack's
+by the to-be-created block device, where we again instruct OpenStack's
 compute service (nova) to create a volume from the image on the fly.
 
 The code here is even prepared to handle cases with multiple images with the same
@@ -272,7 +272,7 @@ fulfill the image's needs can be chosen.
 
 When creating Kubernetes (k8s) clusters on SCS, we use the K8s Cluster-API (capi) to
 do so. The OpenStack provider (capo) does the hard work of talking to the OpenStack
-API to create resources on the infrastructure such as the virtual machines that become
+API to create resources on the infrastructure, such as the virtual machines that become
 our control plane and worker nodes (using kubeadm to bootstrap and kubernetize them).
 
 The OpenStack VM instances are custom resources in capo. Here is the 
@@ -347,7 +347,7 @@ for worker and control nodes if (and only if) they use a diskless flavor. There 
 heuristic to determine a reasonable volume size.
 
 This feature is available for the SCS Release 5 (to be released in Sept. 2023) in line with
-the v3 flavor spec. Note however that the control plane nodes by default use the new SSD
+the v3 flavor spec. The control plane nodes, by default, use the new SSD
 flavor `SCS-2V-4-20s` to ensure robust etcd operation. The feature was also backported to
 the [maintained/v5.x](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/tree/maintained/v5.x)
 tree, though it needs a bit of work there still to avoid
@@ -356,7 +356,7 @@ because of missing `jq` binary for people that upgraded by `git pull`.
 
 ## FAQ
 
-### What happens if a root volume is allocated but a diskful flavor is used?
+### What happens if a root volume is allocated but a flavor with disk is used?
 Using the `block_device_mapping_v2` in the OpenStack API or the corresponding options
 in the python SDK, the openstack client CLI or terraform while using a flavor that
 comes with a root disk does not create any harm. The cinder volume is still created
@@ -392,7 +392,7 @@ This is for two reasons:
    the desired property for these flavors. In the etcd case, the
    clustering is done by etcd; the same is true for big data use cases,
    where hadoop would take care of data replication and not expect the
-   storage layer to do so. The local storage has the additional advantage
+   storage layer to do so. Local storage has the additional advantage
    of allowing for lower latency than you can get from networked storage.
 
 So we need those two SSD flavors `SCS-2V-4-20s` and `SCS-4V-16-100s`
