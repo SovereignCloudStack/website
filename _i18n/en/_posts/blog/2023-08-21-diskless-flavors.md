@@ -347,7 +347,7 @@ for worker and control nodes if (and only if) they use a diskless flavor. There 
 heuristic to determine a reasonable volume size.
 
 This feature is available for the SCS Release 5 (to be released in Sept. 2023) in line with
-the v3 flavor spec. Note however that the control plane nodes by default use the new SSD
+the v3 flavor spec. The control plane nodes, by default, use the new SSD
 flavor `SCS-2V-4-20s` to ensure robust etcd operation. The feature was also backported to
 the [maintained/v5.x](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/tree/maintained/v5.x)
 tree, though it needs a bit of work there still to avoid
