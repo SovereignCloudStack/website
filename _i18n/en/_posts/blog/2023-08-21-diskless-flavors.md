@@ -272,7 +272,7 @@ fulfill the image's needs can be chosen.
 
 When creating Kubernetes (k8s) clusters on SCS, we use the K8s Cluster-API (capi) to
 do so. The OpenStack provider (capo) does the hard work of talking to the OpenStack
-API to create resources on the infrastructure such as the virtual machines that become
+API to create resources on the infrastructure, such as the virtual machines that become
 our control plane and worker nodes (using kubeadm to bootstrap and kubernetize them).
 
 The OpenStack VM instances are custom resources in capo. Here is the 
