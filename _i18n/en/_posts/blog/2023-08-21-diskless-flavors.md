@@ -43,7 +43,7 @@ with 4vCPUs, 16GiB of RAM and a 50GB root disk (`SCS-4V-16-50`).
 ## Diskless flavors
 
 Creating a set of flavors that caters to the needs of most users results in
-a non-trivial amount of flavors. Some workloads require more compute power
+a non-trivial amount of flavors. Some workloads require more computing power
 (thus more vCPUs), some require more RAM. So, many combinations of these
 will be needed. The mandatory flavors in SCS cover 1 through 16 vCPUs and
 2 through 32GiB of RAM, with ratios of 1:2, 1:4 and 1:8 between vCPUs and
