@@ -157,6 +157,8 @@ with the fields `name`, `uuid` in `networks`, `flavor_id`, `key_name`,
 needs. Note that the `block_device_mapping_v2`'s `uuid` is the `uuid`
 of the wanted image.
 
+A more complete exmample can be found at [create\_vm.py](/scripts/create_vm.py).
+
 ### openstack-cli
 #### Example: openstack-health-monitor
 ### terraform
