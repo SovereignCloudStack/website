@@ -4,7 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 
 import openstack
-# import os
 import sys
 
 # OS_CLOUD will be taken from environment
