@@ -392,7 +392,7 @@ This is for two reasons:
    the desired property for these flavors. In the etcd case, the
    clustering is done by etcd; the same is true for big data use cases,
    where hadoop would take care of data replication and not expect the
-   storage layer to do so. The local storage has the additional advantage
+   storage layer to do so. Local storage has the additional advantage
    of allowing for lower latency than you can get from networked storage.
 
 So we need those two SSD flavors `SCS-2V-4-20s` and `SCS-4V-16-100s`
