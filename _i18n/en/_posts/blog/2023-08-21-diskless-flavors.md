@@ -109,7 +109,7 @@ choose a diskless flavor.
 
 
 The VM instance will boot normally. You can see the volume in the
-volume list; it has no name but you can see it being attached to your
+volume list; it has no name, but you can see it being attached to your
 freshly booted VM. If you have activated the "Delete Volume on Instance Delete"
 setting, it will vanish as soon as you destroy the VM instance.
 
