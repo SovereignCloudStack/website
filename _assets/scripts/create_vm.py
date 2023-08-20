@@ -14,10 +14,12 @@ IMAGE="Debian 12"
 KEYNAME="SSHkey-gxscscapi"
 
 def main(argv):
-	"""creates a server on a diskless flavor in a cloud env["OS_CLOUD"]
-	   (configured in clouds.yaml+secure.yaml) with flavor FLAVOR
-	   in network NETWORK (defaults to first if empty) with image IMAGE
-	   injecting keypari KEYNAME."""
+	"""
+	Creates a server on a diskless flavor in a cloud env["OS_CLOUD"]
+	(configured in clouds.yaml+secure.yaml) with flavor FLAVOR
+	in network NETWORK (defaults to first if empty) with image IMAGE
+	injecting keypair KEYNAME.
+	"""
 	# Connect and get token   
 	conn = openstack.connect()
 	conn.authorize()
