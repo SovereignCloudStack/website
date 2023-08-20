@@ -36,7 +36,7 @@ compute host, vCPUs and RAM are allocated (according to the numbers defined in
 the chosen flavor) and the virtual can then start booting.
 
 While this is not as flexible as some users might like, this is how most clouds
-do it. On SCS environments, a number of standard flavors exist, e.g. flavors
+do it. In SCS environments, several standard flavors exist, e.g., flavors
 with 4vCPUs, 8GiB of RAM and a 20GB root disk (`SCS-4V-8-20`) or one
 with 4vCPUs, 16GiB of RAM and a 50GB root disk (`SCS-4V-16-50`).
 
