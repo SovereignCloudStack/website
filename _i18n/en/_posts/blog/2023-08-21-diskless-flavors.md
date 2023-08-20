@@ -4,7 +4,7 @@ title: "Preferring diskless flavors in SCS"
 author:
   - "Kurt Garloff"
 avatar:
-  - "avatar-garloff.jpg"
+  - "kgarloff.jpg"
 image: "blog/diskless/diskless.jpg"
 ---
 
