@@ -100,7 +100,7 @@ create a volume of any size you want (though you better make it large
 enough to accommodate the needs of the used image) and you can also
 choose that the disk should be destroyed upon destruction of the VM
 as it would if you had used a flavor with disk. This second page
-can be seen on the horizon screenshot. One the third page,
+can be seen on the horizon screenshot. On the third page,
 choose a diskless flavor.
 <figure class="figure mx-auto d-block" style="width:100%">
     {% asset 'blog/diskless/Horizon-VM-Create.png' class="figure-img w-100" alt="Horizon Instance Create p2"%}
@@ -208,7 +208,7 @@ timing (API performance) and stores it into an influxDB and visualizes it via gr
 
 It traditionally used the diskful SCS flavors `SCS-1V-2-5` and `SCS-1L-1-5` by default and
 would not cope with diskless flavors unless told to create and manage the root disks separately.
-But thus is not what was wanted, thus
+But this is not what was wanted, thus
 [PR #133](https://github.com/SovereignCloudStack/openstack-health-monitor/pull/133)
 addressed this and implemented booting from diskless flavors by passing `--block-device`
 to the nova resp. openstack client tool. Now, the flavors `SCS-1V-2` and `SCS-1L-1` can be used.
