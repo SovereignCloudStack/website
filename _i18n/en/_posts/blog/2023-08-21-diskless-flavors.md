@@ -215,7 +215,7 @@ to the nova resp. openstack client tool. Now, the flavors `SCS-1V-2` and `SCS-1L
 
 ### terraform
 
-Hashicorp's terraform is a flexible and popular tool to manage infrastructure has support for
+Hashicorp's terraform is a flexible and popular tool to manage infrastructure and has support for
 many different infrastructure platforms. While it may become much less popular now after
 Hashicorp's decision to stop providing it under an open source license, it is currently
 still in wide use, as the old free versions can still be used.
