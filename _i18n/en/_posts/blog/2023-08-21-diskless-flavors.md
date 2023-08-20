@@ -260,7 +260,7 @@ resource "openstack_compute_instance_v2" "mgmtcluster_server" {
 ```
 
 As you can see, the `image_name` setting has been commented out and is replaced
-by the to-be-created block device, where we again instruct the OpenStack's
+by the to-be-created block device, where we again instruct OpenStack's
 compute service (nova) to create a volume from the image on the fly.
 
 The code here is even prepared to handle cases with multiple images with the same
