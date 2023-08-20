@@ -114,7 +114,7 @@ freshly booted VM. If you have activated the "Delete Volume on Instance Delete"
 setting, it will vanish as soon as you destroy the VM instance.
 
 The fact that no name can be assigned to the volume is a limitation
-of the OpenStack nova API. (But of course you could assign a name
+of the OpenStack nova API. (But of course, you could assign a name
 manually after it has been created.)
 
 ### OpenStack API
