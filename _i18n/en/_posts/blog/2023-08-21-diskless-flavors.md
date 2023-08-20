@@ -50,7 +50,7 @@ will be needed. The mandatory flavors in SCS cover 1 through 16 vCPUs and
 RAM (in GiB). This results in 12 flavors. (There is one additional flavor
 for tiny machines, `SCS-1L-1`, resulting in 13 flavors actually.)
 Of course, providers can implement many more based on the needs of their
-users -- these are then just not guaranteed to be available on all SCS
+users -- these are just not guaranteed to be available on all SCS
 environments.
 
 Adding a variety of root disk sizes now multiplies these flavors.
