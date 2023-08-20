@@ -137,7 +137,7 @@ parameter is passed with settings like
    "disk_bus": "scsi" }]
 ```
 
-Obviously, you would replace `$IMAGE_UUID` and `$WANTED_SIZE` by the wanted settings.
+Obviously, you would replace `$IMAGE_UUID` and `$WANTED_SIZE` with the wanted settings.
 (The size is specified in GiB.)
 You may leave out `volume_type` and `disk_bus`. If you leave out `delete_on_termination`,
 it will default to `false`, resulting in a volume that remains allocated after the VM
