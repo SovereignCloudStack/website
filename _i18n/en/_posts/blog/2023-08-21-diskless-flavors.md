@@ -168,8 +168,8 @@ This does not work for old versions (<5.5 / Wallaby) of the openstack CLI.
 if you really need to stick to such an old version.)
 Versions prior to 6.0 (Zed) also need an additional patch: These versions refuse to
 issue the API call to nova because they think you have passed neither a volume
-nor an image when you pass the `--block-device` option. This trivial patch fixes
-this:
+nor an image when you pass the `--block-device` option. This 
+[trivial patch](/scripts/openstackclient-diskless-boot.diff) fixes this:
 ```patch
 --- openstackclient/compute/v2/server.py.orig   2021-03-20 10:17:40.000000000 +0100
 +++ openstackclient/compute/v2/server.py        2023-07-03 15:59:27.301268807 +0200
@@ -189,11 +189,171 @@ With a working openstack command line client, things are pretty straight-forward
 will do what you need.
 
 #### Example: openstack-health-monitor
+
+The [openstack-health-monitor](https://github.com/SovereignCloudStack/openstack-health-monitor/)
+is a large shell script using the openstackclient CLI tooling to implement a scenario test
+against an OpenStack environment, creating routers, networks, security groups, keypairs,
+volumes, virtual machines, loadbalancers, etc. testing them all for correct function and
+then carefully cleaning up everything again. It measures the success rate as well as the
+timing (API performance) and stores it into an influxDB and visualizes it via grafana dashboards.
+
+It traditionally used the diskful SCS flavors `SCS-1V-2-5` and `SCS-1L-1-5` by default and
+would not cope with diskless flavors unless told to create and manage the root disks separately.
+But thus is not what was wanted, thus
+[PR #133](https://github.com/SovereignCloudStack/openstack-health-monitor/pull/133)
+addressed this and implmented booting from diskless flavors by passing `--block-device`
+to the nova resp. openstack client tool. Now, the flavors `SCS-1V-2` and `SCS-1L-1` can be used.
+
 ### terraform
-### OCCM
+
+Hashicorp's terraform is a flexible and popular tool to manage infrastructure has support for
+many different infrastructure platforms. While it may become much less popular now after
+Hashicorp's decision to stop providing it under an open source license, it is currently
+still in wide use, as the old free versions can still be used.
+
+Creating a VM instance for OpenStack with terraform looks like this with a diskful flavor:
+```hcl
+resource "openstack_compute_instance_v2" "mgmtcluster_server" {
+   name              = "${var.prefix}-mgmtcluster"
+   flavor_name       = var.kind_flavor
+   availability_zone = var.availability_zone
+   key_pair          = openstack_compute_keypair_v2.keypair.name
+   network { port = openstack_networking_port_v2.mgmtcluster_port.id }
+   image_name        = var.image
+}
+```
+
+In order to support a diskless flavor here (for `var.kind_flavor`), we'll have to
+pass a block device again. As we need the image by UUID there, we need to do a bit
+of additional work to determine the UUID. Here's the complete code ...
+```hcl
+data "openstack_images_image_ids_v2" "images" {
+  name = var.image
+  sort = "updated_at:desc"
+}
+
+resource "openstack_compute_instance_v2" "mgmtcluster_server" {
+   name              = "${var.prefix}-mgmtcluster"
+   flavor_name       = var.kind_flavor
+   availability_zone = var.availability_zone
+   key_pair          = openstack_compute_keypair_v2.keypair.name
+   network { port = openstack_networking_port_v2.mgmtcluster_port.id }
+   # image_name      = var.image
+   block_device {
+     uuid                  = data.openstack_images_image_ids_v2.images.ids[0]
+     source_type           = "image"
+     volume_size           = 30
+     boot_index            = 0
+     destination_type      = "volume"
+     delete_on_termination = true
+   }
+}
+```
+
+As you can see, the `image_name` setting has been commented out and is replaced
+by the to-be-created block device, where we again instruct the OpenStack's
+compute service (nova) to create a volume from the image on the fly.
+
+The code here is even prepared to handle cases with multiple images with the same
+name and use the latest one (the one with the most recent `updated_at` value).
+The `volume_size` here was chosen to be 30GB, though any value large enough to
+fulfill the image's needs can be chosen.
+
+### Cluster API provider for OpenStack (capo)
+
+When creating Kubernetes (k8s) clusters on SCS, we use the K8s Cluster-API (capi) to
+do so. The OpenStack provider (capo) does the hard work of talking to the OpenStack
+API to create resources on the infrastructure such as the virtual machines that become
+our control plane and worker nodes (using kubeadm to bootstrap and kubernetize them).
+
+The OpenStack VM instances are custom resources in capo. Here is the 
+`OpenStackMachineTemplate` representation of a worker node as capo custom resource
+in YAML:
+```yaml
+apiVersion: infrastructure.cluster.x-k8s.io/v1alpha6
+kind: OpenStackMachineTemplate
+metadata:
+  name: ${PREFIX}-${CLUSTER_NAME}-md-0-${WORKER_MACHINE_GEN}
+spec:
+  template:
+    spec:
+      cloudName: ${OPENSTACK_CLOUD}
+      identityRef:
+        name: ${CLUSTER_NAME}-cloud-config
+        kind: Secret
+      flavor: ${OPENSTACK_NODE_MACHINE_FLAVOR}
+      serverGroupID: ${OPENSTACK_SRVGRP_WORKER}
+      image: ${OPENSTACK_IMAGE_NAME}
+      sshKeyName: ${OPENSTACK_SSH_KEY_NAME}
+      securityGroups:
+        - name: ${PREFIX}-allow-ssh
+        - name: ${PREFIX}-allow-icmp
+        - name: ${PREFIX}-${CLUSTER_NAME}-cilium
+```
+
+If the flavor `$OPENSTACK_NODE_MACHINE_FLAVOR` is diskless, the `OpenStackMachineTemplate`
+needs to be changed a bit:
+
+```yaml
+apiVersion: infrastructure.cluster.x-k8s.io/v1alpha6
+kind: OpenStackMachineTemplate
+metadata:
+  name: ${PREFIX}-${CLUSTER_NAME}-md-0-${WORKER_MACHINE_GEN}
+spec:
+  template:
+    spec:
+      cloudName: ${OPENSTACK_CLOUD}
+      identityRef:
+        name: ${CLUSTER_NAME}-cloud-config
+        kind: Secret
+      flavor: ${OPENSTACK_NODE_MACHINE_FLAVOR}
+      serverGroupID: ${OPENSTACK_SRVGRP_WORKER}
+      image: ${OPENSTACK_IMAGE_NAME}
+      rootVolume:
+        diskSize: ${WORKER_ROOT_DISKSIZE}
+      sshKeyName: ${OPENSTACK_SSH_KEY_NAME}
+      securityGroups:
+        - name: ${PREFIX}-allow-ssh
+        - name: ${PREFIX}-allow-icmp
+        - name: ${PREFIX}-${CLUSTER_NAME}-cilium
+```
+
+This is fairly painless: Adding the `rootVolume` with a `rootVolume.diskSize` to the
+template spec and all magically works. With these instructions, the capo driver just
+creates a rootVolume from the image and boots from it. Capo also keeps track of it, so
+it will be removed again when the VM instance is no longer needed. So while not using
+nova `block_device_mapping_v2` API and it's `delete_on_termination` property, the
+handling is working well, as we have the capo operator taking care of the volume's
+lifecycle.
+
 #### Example: k8s-cluster-api-provider
 
-## Why create the two (new) SSD flavors?
+The [SCS k8s-cluster-api-provider](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/)
+implementation is designed to work out of the box on all SCS-compatible IaaS environments.
+It should thus not rely on flavors that are no longer mandatory. With
+[PR #424](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/pull/424), the
+implementation was changed to create the root volume in terraform for the kind management
+host and to patch the cluster-template dynamically (using kustomize for robust YAML patching)
+for worker and control nodes if (and only if) they use a diskless flavor. There is also some
+heuristic to determine a reasonable volume size.
+
+This feature is available for the SCS Release 5 (to be released in Sept. 2023) in line with
+the v3 flavor spec. Note however that the control plane nodes by default use the new SSD
+flavor `SCS-2V-4-20s` to ensure robust etcd operation. The feature was also backported to
+the [maintained/v5.x](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/tree/maintained/v5.x)
+tree, though it needs a bit of work there still to avoid
+[errors](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/issues/500)
+because of missing `jq` binary for people that upgraded by `git pull`.
+
+## FAQ
+
+### What happens if a root volume is allocated but a diskful flavor is used?
+Using the `block_device_mapping_v2` in the OpenStack API or the corresponding options
+in the python SDK, the openstack client CLI or terraform while using a flavor that
+comes with a root disk does not create any harm. The cinder volume is still created
+and used, while the disk that comes with the flavor is not used.
+
+### Why create the two (new) SSD flavors?
 So when moving from flavor standard v2 to v3, we have downgraded all flavors
 with disks from mandatory to recommended. Yet we have added two new flavors with
 SSD (or better) storage as mandatory. This looks puzzling at first.
@@ -211,11 +371,13 @@ This is for two reasons:
    Not all tools support this yet.
    Or we could revert to a two step process and create the volume in a
    separate step where we choose an appropriate `volume_type` in volume
-   creation and then tell nova to boot from it. 
+   creation and then tell nova to boot from it. The downside is that
+   we can not set the `delete_on_termination` flag directly this way,
+   creating one more resource that needs to be tracked separately.
 2. The SCS project has not yet standardized on a cinder storage type that
    makes a networked SSD type storage available across all IaaS layer
    SCS-compatible clouds. So even the inconvenient two step process
-   does not work across clouds in a portable way.
+   does not work across all SCS-compatible clouds in a portable way.
    Looking at the use cases of the SSD flavors, a local SSD (or better)
    type storage without the redundancy of a storage cluster is actually
    the desired property for these flavors. In the etcd case, the
@@ -225,4 +387,4 @@ This is for two reasons:
    of allowing for lower latency than you can get from networked storage.
 
 So we need those two SSD flavors `SCS-2V-4-20s` and `SCS-4V-16-100s`
-to serve our customers well. 
+to serve our customers well.
