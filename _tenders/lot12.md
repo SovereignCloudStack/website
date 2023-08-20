@@ -4,9 +4,8 @@ layout: default
 
 number: 16
 number_vh81: 12
-retry: 1
 start_date: 2023-07-19
-closing_date: 2022-08-09
+closing_date: 2023-08-15
 state: open
 contracting_portal: https://www.dtvp.de/Satellite/notice/CXP4YV767EM/documents
 ---
