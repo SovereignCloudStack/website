@@ -12,7 +12,7 @@ image: "blog/diskless/diskless.jpg"
 
 SCS offers the promise to make it easy for Cloud users (typically DevOps teams
 that develop and operate services / workloads on top of SCS IaaS and/or
-Container infrastructure) to move between different SCS enviroments and vendors
+Container infrastructure) to move between different SCS environments and vendors
 or to use several of them in a federated way. One of the early accomplishments
 in standardizing SCS has been to standardize IaaS flavor properties and flavor
 naming.
@@ -49,7 +49,7 @@ In versions [1](https://docs.scs.community/standards/scs-0100-v1-flavor-naming)
 and [2](https://docs.scs.community/standards/scs-0100-v2-flavor-naming)
 of the flavor standard, the SCS community has tried to
 prevent flavor explosion by just mandating one disk size per flavor, scaling
-it with the size of the RAM and chosing discete values of 5, 10, 20,
+it with the size of the RAM and choosing discrete values of 5, 10, 20,
 50 and 100 GB for them. (By extension, providers that want to provide
 larger disks have been advised to choose 200, 500, 1000, ... GB for these.)
 
@@ -91,7 +91,7 @@ create a volume of any size you want (though you better make it large
 enough to accommodate the needs of the used image) and you can also
 choose that the disk should be destroyed upon destruction of the VM
 as it would if you had used a flavor with disk. This second page
-can be seen on the horizon screensho. One the third page,
+can be seen on the horizon screenshot. One the third page,
 choose a diskless flavor.
 <figure class="figure mx-auto d-block" style="width:100%">
     {% asset 'blog/diskless/Horizon-VM-Create.png' class="figure-img w-100" alt="Horizon Instance Create p2"%}
@@ -157,7 +157,7 @@ with the fields `name`, `uuid` in `networks`, `flavor_id`, `key_name`,
 needs. Note that the `block_device_mapping_v2`'s `uuid` is the `uuid`
 of the wanted image.
 
-A more complete exmample can be found at [create\_vm.py](/scripts/create_vm.py).
+A more complete example can be found at [create\_vm.py](/scripts/create_vm.py).
 
 ### openstack-cli
 
@@ -201,7 +201,7 @@ It traditionally used the diskful SCS flavors `SCS-1V-2-5` and `SCS-1L-1-5` by d
 would not cope with diskless flavors unless told to create and manage the root disks separately.
 But thus is not what was wanted, thus
 [PR #133](https://github.com/SovereignCloudStack/openstack-health-monitor/pull/133)
-addressed this and implmented booting from diskless flavors by passing `--block-device`
+addressed this and implemented booting from diskless flavors by passing `--block-device`
 to the nova resp. openstack client tool. Now, the flavors `SCS-1V-2` and `SCS-1L-1` can be used.
 
 ### terraform
@@ -361,13 +361,13 @@ SSD (or better) storage as mandatory. This looks puzzling at first.
 The reason why offering SSD storage is highly desirable is documented in the
 [scs-0110-v1-ssd-flavors.md](https://docs.scs.community/standards/scs-0110-v1-ssd-flavors)
 standard. But couldn't we use the mechanisms
-described above to allocate arbitraty SSD storage when booting?
+described above to allocate arbitrary SSD storage when booting?
 
 The unfortunate truth is: We can't.
 This is for two reasons:
 1. The [OpenStack server creation API](https://docs.openstack.org/api-ref/compute/?expanded=create-server-detail#create-server)
    does allow us to define a volume type when deploying an image to
-   a volume only with recent API microversions (2.67 and newer).
+   a volume only with recent API micro-versions (2.67 and newer).
    Not all tools support this yet.
    Or we could revert to a two step process and create the volume in a
    separate step where we choose an appropriate `volume_type` in volume
