@@ -84,7 +84,7 @@ later).
 With the [SCS flavor standard v3](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
 the formerly mandatory flavors with disk
 have been downgraded to recommended. Operators still should provide them for
-best portability of apps written against older SCS standards, but they are no
+the best portability of apps written against older SCS standards, but they are no
 longer required to in order to be able to achieve the SCS-compatible certification
 on the IaaS layer. We recommend developers to use the diskless flavors and
 allocate root disks dynamically.
