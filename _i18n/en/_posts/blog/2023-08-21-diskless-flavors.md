@@ -20,7 +20,7 @@ tooling.
 ## Flavor standardization
 
 SCS offers the promise to make it easy for Cloud users (typically DevOps teams
-that develop and operate services / workloads on top of SCS IaaS and/or
+that develop and operate services/workloads on top of SCS IaaS and/or
 Container infrastructure) to move between different SCS environments and vendors
 or to use several of them in a federated way. One of the early accomplishments
 in standardizing SCS has been to standardize IaaS flavor properties and flavor
