@@ -95,7 +95,7 @@ own projects.
 ## Creating VMs with diskless flavors
 
 ### Horizon
-In the second page of the create instance dialogues, you can chose to
+On the second page of the create instance dialogues, you can choose to
 create a volume of any size you want (though you better make it large
 enough to accommodate the needs of the used image) and you can also
 choose that the disk should be destroyed upon destruction of the VM
