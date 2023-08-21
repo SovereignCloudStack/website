@@ -33,7 +33,7 @@ combine a number of vCPUs with a certain amount of RAM and often also a
 virtual disk to boot from. On a typical VM creation, an operating system image
 is being copied to the disk (of a size defined by the chosen flavor) on the
 compute host, vCPUs and RAM are allocated (according to the numbers defined in
-the chosen flavor) and the virtual can then start booting.
+the chosen flavor) and the virtual machine can then start booting.
 
 While this is not as flexible as some users might like, this is how most clouds
 do it. In SCS environments, several standard flavors exist, e.g., flavors
@@ -82,11 +82,11 @@ number of mandatory flavors by stopping to require the flavors with disks
 (except for the two new ones with SSDs, more on this later).
 
 With the [version 3 of the SCS flavor standard](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
-the formerly mandatory flavors with disk
+the formerly mandatory flavors with disks
 have been downgraded to recommended. Operators still should provide them for
 the best portability of apps written against older SCS standards, but they are no
 longer required to in order to be able to achieve the SCS-compatible certification
-on the IaaS layer. We recommend developers use the diskless flavors and
+on the IaaS layer. We recommend developers to use the diskless flavors and
 allocate root disks dynamically.
 
 The next section explains how this can be done and uses examples from SCS'
@@ -167,7 +167,7 @@ needs. Note that the `block_device_mapping_v2`'s `uuid` is the `uuid`
 of the wanted image.
 
 A more complete example can be found at
-<a href="{% asset "scripts/create_vm.py" @path %}">create\_vmpy</A>.
+<a href="{% asset "scripts/create_vm.py" @path %}">create\_vm.py</A>.
 
 ### openstack-cli
 
@@ -221,7 +221,7 @@ many different infrastructure platforms. While it may become much less popular n
 Hashicorp's decision to stop providing it under an open source license, it is currently
 still in wide use, as the old free versions can still be used.
 
-Creating a VM instance for OpenStack with terraform looks like this with a flavor with disk:
+Creating a VM instance for OpenStack with terraform looks like this with a flavor with a disk:
 ```hcl
 resource "openstack_compute_instance_v2" "mgmtcluster_server" {
    name              = "${var.prefix}-mgmtcluster"
@@ -357,7 +357,7 @@ because of missing `jq` binary for people that upgraded by `git pull`.
 
 ## FAQ
 
-### What happens if a root volume is allocated but a flavor with disk is used?
+### What happens if a root volume is allocated but a flavor with a disk is used?
 Using the `block_device_mapping_v2` in the OpenStack API or the corresponding options
 in the python SDK, the openstack client CLI or terraform while using a flavor that
 comes with a root disk does not create any harm. The cinder volume is still created
