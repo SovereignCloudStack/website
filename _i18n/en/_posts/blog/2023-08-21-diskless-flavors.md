@@ -167,7 +167,7 @@ needs. Note that the `block_device_mapping_v2`'s `uuid` is the `uuid`
 of the wanted image.
 
 A more complete example can be found at
-<a href="% asset 'scripts/create_vm.py' %}">create\_vmpy</A>).
+<a href="{% asset 'scripts/create_vm.py' %}">create\_vmpy</A>.
 
 ### openstack-cli
 
@@ -179,7 +179,7 @@ if you really need to stick to such an old version.)
 Versions prior to 6.0 (Zed) also need an additional patch: These versions refuse to
 issue the API call to nova because they think you have passed neither a volume
 nor an image when you pass the `--block-device` option. This 
-<a href="(% asset 'scripts/openstackclient-diskless-boot.diff' %}"> trivial patch</A>) fixes this:
+<a href="{% asset 'scripts/openstackclient-diskless-boot.diff' %}"> trivial patch</A> fixes this:
 ```patch
 --- openstackclient/compute/v2/server.py.orig   2021-03-20 10:17:40.000000000 +0100
 +++ openstackclient/compute/v2/server.py        2023-07-03 15:59:27.301268807 +0200
