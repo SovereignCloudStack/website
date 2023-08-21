@@ -10,9 +10,9 @@ image: "blog/diskless/diskless.jpg"
 
 ## TL;DR
 
-SCS has downgraded the formerly mandatory flavors with root disks to
-recommended ones in the next flavor naming standard version 3. Thus,
-every SCS IaaS user should preferably use the diskless flavors.
+Sovereign Cloud Stack (SCS) has downgraded the formerly mandatory flavors with
+root disks to recommended ones in the next flavor naming standard version 3.
+Thus, every SCS IaaS user should preferably use the diskless flavors.
 This blog post describes the motivation for this change and also explains
 how the diskless flavors can be used with common automation (Infra-as-Code)
 tooling.
@@ -142,8 +142,9 @@ Obviously, you would replace `$IMAGE_UUID` and `$WANTED_SIZE` with the wanted se
 You may leave out `volume_type` and `disk_bus`. If you leave out `delete_on_termination`,
 it will default to `false`, resulting in a volume that remains allocated after the VM
 instance has been removed and thus behaving differently from the root volumes that come
-with a flavor with root disk.
-You can also add a `tag` property to place a tag on the created volume.
+with a flavor with a root disk.
+You can also add a `tag` property to place a tag on the created volume, but you
+unfortunately can not add a name here.
 
 When using the openstack SDK, the API call would be invoked with
 ```python
@@ -172,14 +173,14 @@ A more complete example can be found at
 ### openstack-cli
 
 If you are using the OpenStack command line client, you can pass the desire to create
-a volume on the fly via the command line parameter `--block-device` parameter.
+a volume on the fly via the command line parameter `--block-device`.
 This does not work for old versions (<5.5 / Wallaby) of the openstack CLI.
 (You can work around this using the nova client rather than the openstack client
 if you really need to stick to such an old version.)
 Versions prior to 6.0 (Zed) also need an additional patch: These versions refuse to
 issue the API call to nova because they think you have passed neither a volume
 nor an image when you pass the `--block-device` option. This 
-<a href="{% asset "scripts/openstackclient-diskless-boot.diff" @path %}"> trivial patch</A> fixes this:
+<a href="{% asset "scripts/openstackclient-diskless-boot.diff" @path %}">trivial patch</A> fixes this:
 ```patch
 --- openstackclient/compute/v2/server.py.orig   2021-03-20 10:17:40.000000000 +0100
 +++ openstackclient/compute/v2/server.py        2023-07-03 15:59:27.301268807 +0200
@@ -228,13 +229,13 @@ resource "openstack_compute_instance_v2" "mgmtcluster_server" {
    flavor_name       = var.kind_flavor
    availability_zone = var.availability_zone
    key_pair          = openstack_compute_keypair_v2.keypair.name
-   network { port = openstack_networking_port_v2.mgmtcluster_port.id }
+   network     { port = openstack_networking_port_v2.mgmtcluster_port.id }
    image_name        = var.image
 }
 ```
 
 In order to support a diskless flavor here (for `var.kind_flavor`), we'll have to
-pass a block device again. As we need the image by UUID there, we need to do a bit
+pass a block device again. As we need the image by UUID then, we need to do a bit
 of additional work to determine the UUID. Here's the complete code ...
 ```hcl
 data "openstack_images_image_ids_v2" "images" {
@@ -247,7 +248,7 @@ resource "openstack_compute_instance_v2" "mgmtcluster_server" {
    flavor_name       = var.kind_flavor
    availability_zone = var.availability_zone
    key_pair          = openstack_compute_keypair_v2.keypair.name
-   network { port = openstack_networking_port_v2.mgmtcluster_port.id }
+   network     { port = openstack_networking_port_v2.mgmtcluster_port.id }
    # image_name      = var.image
    block_device {
      uuid                  = data.openstack_images_image_ids_v2.images.ids[0]
@@ -268,6 +269,11 @@ The code here is even prepared to handle cases with multiple images with the sam
 name and use the latest one (the one with the most recent `updated_at` value).
 The `volume_size` here was chosen to be 30GB, though any value large enough to
 fulfill the image's needs can be chosen.
+
+Of course, the root volume could also have been managed as a separate resource
+in terraform, allowing for a name to be used, but not allowing to have
+it automatically deleted on termination of the VM. Terraform does a good job
+at tracking resources and their dependencies, so this is not a bad option.
 
 ### Cluster API provider for OpenStack (capo)
 
