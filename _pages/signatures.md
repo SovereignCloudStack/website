@@ -23,7 +23,6 @@ Tel.: {{employee.phone}}<br />
 {{employee.mail}}<br />
 <br />
 https://scs.community<br />
-https://twitter.com/scs_osballiance<br />
 https://www.linkedin.com/showcase/sovereigncloudstack<br />
 <br />
 Pariser Platz 6a, 10117 Berlin<br />
