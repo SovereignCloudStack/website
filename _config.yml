@@ -25,13 +25,9 @@ exclude:
   - node_modules
   - _assets
 
-twitter:
-  username: scs_osballiance
-
 social:
   name: Sovereign Cloud Stack
   links:
-    - https://twitter.com/scs_osballiance
     - https://www.linkedin.com/company/sovereigncloudstack
     - https://github.com/SovereignCloudStack
 
@@ -71,6 +67,7 @@ assets:
     - _assets/vendor
     - _assets/slides
     - _assets/fonts
+    - _assets/scripts
     - _assets/css/_sass
   source_maps: false
   cache: false
