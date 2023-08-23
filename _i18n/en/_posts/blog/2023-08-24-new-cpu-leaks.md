@@ -125,11 +125,133 @@ The issue is described well [here](https://lock.cmpxchg8b.com/zenbleed.html).
 AMD has provided updated microcode to address this; while updated 
 `linux-firmware` contains these microcode updates for EPYC Rome server processors,
 desktop/laptop users will need to wait for BIOS updates with updated
-AGESA versions to get the fixes. 
-for the 
-
+AGESA versions to get the fixes. Until this happens, the Linux kernel
+since version 6.4.6, 6.1.41 and 5.15.122 does set an MSR bit that disables certain
+AVX features which causes performance degradation but avoids the issue.
+The author is not aware of performance measurements done with this
+mitigation.
 
 ### Inception aka SRSO (Zen 1-4)
+Researchers from ETH Zürich have found a new vulnerability in AMD Zen 1, 2, 3, 4
+processors. They abuse Phantom speculation [CVE-2022-23825](https://www.cve.org/CVERecord?id=CVE-2022-23825)
+where these Zen processors "dream" about a branch instruction where none
+exists. The researchers are able to inject more predictions into the
+branch predictor during the misspeculation window (before the CPU
+notices that its dreaming and cleans up on awaking), so that the
+phantom speculation becomes possible to abuse. This is called
+after the inception movie where ideas are injected during a victim's
+dream. It's described well in their [publication](https://comsec.ethz.ch/research/microarch/inception/).
+The researchers have been able to create a flow where a harmless
+`XOR` instruction turns into a misspeculation to become a recursive call,
+overflowing the return stack buffer (RSB) with an attacker controlled
+value that will be speculatively jumped to upon the next `RET` instruction.
+The alternative name Speculative Return Stack Overflow (SRSO) is thus used
+as well. Inception was published on Aug 8 and has been assigned
+CVE-2023-20569.
+
+This again allows attackers to access data across contexts (such as address
+spaces, privileged modes, virtualization boundaries).
+
+Mitigating is hard -- flushing the complete branch predictor when switching
+between untrusted contexts comes with a hefty performance penalty.
+The complete flush is only possble with Zen 1 and Zen 2 CPUs; for Zen 3
+and Zen 4, new microcode is required to do safe flushing with `IBPB`.
+This is used to protect the hyperviso KVM.
+
+A different approach has been taken in the Linux kernel. Channeling all
+returns there into a single location `__x86_return_thunk`, the branch predictor
+state can be ensured to have a safe (yet wrong) state. This also comes with
+[significant performance implications](https://www.phoronix.com/review/amd-inception-benchmarks).
+though less than using the `IBPB` instruction to flush branch predictors
+for most workloads. The performance hit is negligible for number-crunching
+workloads (which are running in user-space mode most of the time) and
+becomes bad (>20%) on I/O heavy workloads.
+
+The fixes are included in Linux kernel 6.4.9, 6.1.44 and 5.15.125.
+
+Note that the fixes are being reworked currently to not interfere with
+the retbleed mitigation which they resemble. It is however believed that
+the cleanup work will not change the performance impact nor effectiveness
+of the mitigation. The improvements are part of Linux 6.4.12.
+
 ### Div-by-Zero (Zen 1)
+
+On Zen-1 CPUs, under some circumstances, doing a division by zero
+(which raises an exception) can expose the content of a previous
+division and thus leak data.
+This was reported with the [fix](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=77245f1c3c6495521f6a3af082696ee2f8ce3921) from Borislav Petkov from AMD. No further information
+on the discovery was reported.
+
+The first fix, included in above link was incomplete: While
+flushing the divider by doing an extra 0/1 division in the exception
+handler does its job, there is a time window where the exception
+handler has not yet executed. To close this, a follow-up patch
+added divider clearing on context switches, making sure that the
+data leakage can not happen across domains.
+
+The original fix was added to Linux 6.4.10, 6.1.45, 5.15.126.
+The improved fix is in 6.4.12.
+
+The performance impact of the mitigation is expected to be small.
+
 ### Downfall (Skylake -- TigerLake)
+
+On August 8, a new vulnerability in the implementation of AVX data
+gathering on intel processors from Skylake till Tigerlake was published.
+It was found a long time ago by Daniel Moghini and disclosed to intel.
+It was assigned [CVE-2022-40982](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-40982)
+and the name [Downfall](https://downfall.page/)
+is used to describe it.
+
+Whenn the AVX GATHER instructions are used to speed up access data scattered in
+memory, affected intel CPUs transiently expose the contents of the internal
+vector register file via speculative execution. This leads to data leakage,
+potentially affecting sensitive data (as was observed with Zenbleed) as AVX
+is being used for `strlen()` and `memcpy()` in the glibc system library.
+AVX registers are also used by cryptographic instructions.
+Vector register used in SGX enclaves also leak data.
+
+The latest intel processors (AlderLake / Sapphire Rapids) appear not to be
+affected. 
+
+intel has released updated microcode for many of the affected CPUs.
+With the fixes applied, memory access with AVX GATHER is slowed down
+significantly, as can be seen from [benchmarks](https://www.phoronix.com/review/intel-downfall-benchmarks).
+The impact is especially large for numbercrunching workloads which
+tend to benefit from the full set of AVX capabilities.
+A patch to the GCC compiler (version 14) allows users to avoid
+generating GATHER instructions and using GATHER scalar emulation
+instead. This should provide better performance on CPUs that are
+affected and have the microcode fix.
+
+On CPUs without microcode fix, the Linux kernel will switch off
+AVX completely. This negates all optimizations from this vectorization
+instructions, at a significantly higher cost to performance than
+the microcode based mitigation. Handling Downfall was added to
+the Linux kernel 6.4.9, 6.1.44, 5.15.125.
+
+## SCS flavor policy
+
+SCS requires providers of SCS-compatible IaaS to deploy fixes
+that are available upstream within a month of the availability.
+This is mandated by the
+[SCS flavor naming standard](https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0100-v3-flavor-naming.md#baseline)
+-- by not using the `i` (for insecure) suffix, they commit to
+keeping their compute hosts secured against such flaws by
+deploying the needed microcode, kernel and hypervisor fixes
+and mitigations.
+
+Expect for users of the latest intel server technology, pretty
+much every server CPU is affected; expect your SCS providers to
+reboot their compute hosts soon if they have not done so yet.
+Thanks to live-migration, the impact to customers can be kept
+rather limited, but most providers still announce such events
+to their customers due to short-term performance degradation
+and increased risk of VM failure during live migrations.
+
+## Links
+@bitkeks
+LWN
+Phoronix
+iX
 
