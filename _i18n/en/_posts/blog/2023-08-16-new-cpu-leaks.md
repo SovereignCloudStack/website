@@ -95,14 +95,41 @@ opt-out for these protections.
 
 The stream of vulnerabilities since the original Meltdown and Spectre reports
 has kept CPU vendors and OS developers busy.
-...
-...
 
-spectre-meltdown-checker.sh
+One extremely useful tool to know is the
+[spectre-meltdown-checker.sh](https://github.com/speed47/spectre-meltdown-checker).
+When executed (with root privileges) on a host, it checks whether your CPU
+is susceptible to various vulnerabilities and informs you about the mitigation
+status. There's one limitation that you should be aware of, however:
+When running the tool inside a virtual machine, it can not comprehensively
+determine how well the hypervisor protects against these speculative data leaks
+between virtual machines.
 
 ## New CPU leaks July/August 2023
 ### Zenbleed (Zen 2)
-### Inception (Zen 1-4)
+This vulnerability was discovered by Tavis Ormandy from Google, is catalogued as
+CVE-2023-20593 and became public on July 25.
+The AVX vector unit of affected processors does speculatively
+execute depending on the parts of vectors registers that should have been
+cleared by `vzeroupper`. As AVX registers are used commonly for copying
+or analyzing data (such as e.g. in glibc's `strlen()` routine),
+chances that these contain valuable data such as e.g. passwords
+are significant. This vulnerability only affects AMD processors with the
+Zen 2 architecture (such as e.g. EPYC Rome or Zen 3000 desktop processors,
+Zen 4000 and confusingly also some Zen 5000U and 7020 processors which
+are also using the old Zen2 architecture). Access to the system is
+required to exploit this vulnerability.
+
+The issue is described well [here](https://lock.cmpxchg8b.com/zenbleed.html).
+
+AMD has provided updated microcode to address this; while updated 
+`linux-firmware` contains these microcode updates for EPYC Rome server processors,
+desktop/laptop users will need to wait for BIOS updates with updated
+AGESA versions to get the fixes. 
+for the 
+
+
+### Inception aka SRSO (Zen 1-4)
 ### Div-by-Zero (Zen 1)
 ### Downfall (Skylake -- TigerLake)
 
