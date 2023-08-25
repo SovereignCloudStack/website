@@ -48,7 +48,7 @@ side-channel that can leak such data.
 A program could observe misspeculation and thus take conclusions from data in other
 parts of the program -- not normally an issue, unless the program is specifically
 designed to create sandboxes for executing untrusted code. Browsers do this for
-example to execute javascript code in a somewhat secure way.
+example to execute JavaScript code in a somewhat secure way.
 
 Things become more serious if microarchitectural state survives a context switch.
 When the operating system switches between processes or a hypervisor between
@@ -77,7 +77,7 @@ can be updated by the BIOS or by the operating system during the boot process.
 (Footnote: In theory, it can also be updated later on -- however, it is very
 difficult to do this in a safe way and thus unsupported for most setups.)
 Some of the leaks can be fixed by µcode updates -- typically at the cost
-of performance, sometimes very signficantly so. So these security protecting
+of performance, sometimes very significantly so. So these security protecting
 features may be designed as opt-in features.
 
 The operating system kernel and hypervisor
@@ -106,23 +106,34 @@ determine how well the hypervisor protects against these speculative data leaks
 between virtual machines.
 
 ## New CPU leaks July/August 2023
+
+
+| Name | Website | CVE | CPUs | CVSS |
+| :--- | :--- | :--- | :--- | :--- |
+| Zenbleed | [lock.cmpxchg8b.com](https://lock.cmpxchg8b.com/zenbleed.html) |  [CVE-2023-20593](https://nvd.nist.gov/vuln/detail/CVE-2023-20593) | AMD Zen 2 | 5.5 |
+| Inception | [comsec.ethz.ch](https://comsec.ethz.ch/research/microarch/inception/) | [CVE-2023-20569](https://nvd.nist.gov/vuln/detail/CVE-2023-20569) | alle AMD Zen | 7.5 |
+| Downfall | [downfall.page](https://downfall.page) | [CVE-2022-40982](https://nvd.nist.gov/vuln/detail/CVE-2022-40982) | Intel Core Skylake (6th) to Tiger Lake (11th), Xeon 1st to 4th | 6.5 |
+| div0 | [git.kernel.org](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f58d6fbcb7c848b7f2469be339bc571f2e9d245b) | - | AMD Zen 1 | - |
+
+
+
 ### Zenbleed (Zen 2)
 This vulnerability was discovered by Tavis Ormandy from Google, is catalogued as
 CVE-2023-20593 and became public on July 25.
 The AVX vector unit of affected processors does speculatively
 execute depending on the parts of vectors registers that should have been
 cleared by `vzeroupper`. As AVX registers are used commonly for copying
-or analyzing data (such as e.g. in glibc's `strlen()` routine),
+or analysing data (such as e.g. in glibc's `strlen()` routine),
 chances that these contain valuable data such as e.g. passwords
 are significant. This vulnerability only affects AMD processors with the
 Zen 2 architecture (such as e.g. EPYC Rome or Zen 3000 desktop processors,
 Zen 4000 and confusingly also some Zen 5000U and 7020 processors which
-are also using the old Zen2 architecture). Access to the system is
+are also using the old Zen 2 architecture). Access to the system is
 required to exploit this vulnerability.
 
 The issue is described well [here](https://lock.cmpxchg8b.com/zenbleed.html).
 
-AMD has provided updated microcode to address this; while updated 
+AMD has provided updated microcode to address this; while updated
 `linux-firmware` contains these microcode updates for EPYC Rome server processors,
 desktop/laptop users will need to wait for BIOS updates with updated
 AGESA versions to get the fixes. Until this happens, the Linux kernel
@@ -154,9 +165,9 @@ spaces, privileged modes, virtualization boundaries).
 
 Mitigating is hard -- flushing the complete branch predictor when switching
 between untrusted contexts comes with a hefty performance penalty.
-The complete flush is only possble with Zen 1 and Zen 2 CPUs; for Zen 3
+The complete flush is only possible with Zen 1 and Zen 2 CPUs; for Zen 3
 and Zen 4, new microcode is required to do safe flushing with `IBPB`.
-This is used to protect the hyperviso KVM.
+This is used to protect the KVM hypervisor.
 
 A different approach has been taken in the Linux kernel. Channeling all
 returns there into a single location `__x86_return_thunk`, the branch predictor
@@ -185,7 +196,7 @@ on the discovery was reported.
 The first fix, included in above link was incomplete: While
 flushing the divider by doing an extra 0/1 division in the exception
 handler does its job, there is a time window where the exception
-handler has not yet executed. To close this, a follow-up patch
+handler has not yet executed. To close this, [a follow-up patch](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f58d6fbcb7c848b7f2469be339bc571f2e9d245b)
 added divider clearing on context switches, making sure that the
 data leakage can not happen across domains.
 
@@ -194,27 +205,29 @@ The improved fix is in 6.4.12.
 
 The performance impact of the mitigation is expected to be small.
 
-### Downfall (Skylake -- TigerLake)
+### Downfall (Intel Core Skylake (6th) to TigerLake (11th) and Xeon 1st to 4th)
 
 On August 8, a new vulnerability in the implementation of AVX data
-gathering on intel processors from Skylake till Tigerlake was published.
-It was found a long time ago by Daniel Moghini and disclosed to intel.
+gathering on Intel processors from Core Skylake till Tigerlake and Xeon
+1st to 4th was published.
+It was found a long time ago by Daniel Moghini and disclosed to Intel.
 It was assigned [CVE-2022-40982](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-40982)
 and the name [Downfall](https://downfall.page/)
 is used to describe it.
 
-Whenn the AVX GATHER instructions are used to speed up access data scattered in
-memory, affected intel CPUs transiently expose the contents of the internal
+When the AVX GATHER instructions are used to speed up access data scattered in
+memory, affected Intel CPUs transiently expose the contents of the internal
 vector register file via speculative execution. This leads to data leakage,
 potentially affecting sensitive data (as was observed with Zenbleed) as AVX
 is being used for `strlen()` and `memcpy()` in the glibc system library.
 AVX registers are also used by cryptographic instructions.
 Vector register used in SGX enclaves also leak data.
 
-The latest intel processors (AlderLake / Sapphire Rapids) appear not to be
-affected. 
+The latest Intel processors (AlderLake / Sapphire Rapids) appear not to be
+affected. A full list of affected Intel products is published by Intel as
+[Affected Processors: Guidance for Security Issues on Intel® Processors](https://www.intel.com/content/www/us/en/developer/topic-technology/software-security-guidance/processors-affected-consolidated-product-cpu-model.html)
 
-intel has released updated microcode for many of the affected CPUs.
+Intel has released updated microcode for many of the affected CPUs.
 With the fixes applied, memory access with AVX GATHER is slowed down
 significantly, as can be seen from [benchmarks](https://www.phoronix.com/review/intel-downfall-benchmarks).
 The impact is especially large for numbercrunching workloads which
@@ -230,6 +243,8 @@ instructions, at a significantly higher cost to performance than
 the microcode based mitigation. Handling Downfall was added to
 the Linux kernel 6.4.9, 6.1.44, 5.15.125.
 
+
+
 ## SCS flavor policy
 
 SCS requires providers of SCS-compatible IaaS to deploy fixes
@@ -241,7 +256,7 @@ keeping their compute hosts secured against such flaws by
 deploying the needed microcode, kernel and hypervisor fixes
 and mitigations.
 
-Expect for users of the latest intel server technology, pretty
+Expect for users of the latest Intel server technology, pretty
 much every server CPU is affected; expect your SCS providers to
 reboot their compute hosts soon if they have not done so yet.
 Thanks to live-migration, the impact to customers can be kept
@@ -250,8 +265,10 @@ to their customers due to short-term performance degradation
 and increased risk of VM failure during live migrations.
 
 ## Links
-@bitkeks
+
+* [Downfall and Zenbleed: Googlers helping secure the ecosystem ](https://security.googleblog.com/2023/08/downfall-and-zenbleed-googlers-helping.html)
+* [Collide+Power, Downfall, and Inception: New Side-Channel Attacks Affecting Modern CPUs](https://thehackernews.com/2023/08/collidepower-downfall-and-inception-new.html)
+
 LWN
 Phoronix
 iX
-
