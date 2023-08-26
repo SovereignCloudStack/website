@@ -5,7 +5,7 @@ author:
   - "Kurt Garloff"
   - "Dominik Pataky"
 avatar:
-  - "avatar-garloff.jpg"
+  - "kgarloff.jpg"
 #image: "blog/cpu/littleboy.jpg"
 ---
 
