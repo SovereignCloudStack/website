@@ -46,7 +46,7 @@ CPU -- as misspeculation might depend on sensitive data, we may have a potential
 side-channel that can leak such data.
 
 A program could observe misspeculation and thus take conclusions from data in other
-parts of the program -- not normally an issue, unless the program is specifically
+parts of the same program -- not normally an issue, unless the program is specifically
 designed to create sandboxes for executing untrusted code. Browsers do this for
 example to execute JavaScript code in a somewhat secure way.
 
@@ -58,11 +58,11 @@ TLB, ...) upon each context switch would result in bad context switching perform
 so CPUs try to limit this.
 
 Worse, CPUs with Simultaneous MultiThreading (SMT -- called HyperThreading in
-the x86 world) have two (or more) logical CPUs that share a lot of infrastructure
+the x86 world) have two (or more) logical CPUs that share a lot of CPU core components (register files, execution units, prediction buffers, ...) 
 and thus microarchitectural state. One logical CPU may however execute code from
-a different process or virtual machine from a different user than another logical
-CPU sharing the same infrastructure. This creates a significant risk for side-channel
-leaking data.
+a different process or a virtual machine from a different user than the other logical
+CPU sharing the same core. This creates a significant risk for side-channel
+leaking data and extra care from an operating system or hypervisor with context switches may not be effective.
 
 All these vulnerabilities share the property that they can cause data leaks.
 An attacker tricks the CPU into speculation and then observes microarchitectural
@@ -183,7 +183,7 @@ The fixes are included in Linux kernel 6.4.9, 6.1.44 and 5.15.125.
 Note that the fixes are being reworked currently to not interfere with
 the retbleed mitigation which they resemble. It is however believed that
 the cleanup work will not change the performance impact nor effectiveness
-of the mitigation. The improvements are part of Linux 6.4.12.
+of the mitigation. The first set of improvements are part of Linux 6.4.12, more are being worked on.
 
 ### Div-by-Zero (Zen 1)
 
@@ -221,7 +221,7 @@ vector register file via speculative execution. This leads to data leakage,
 potentially affecting sensitive data (as was observed with Zenbleed) as AVX
 is being used for `strlen()` and `memcpy()` in the glibc system library.
 AVX registers are also used by cryptographic instructions.
-Vector register used in SGX enclaves also leak data.
+Vector registers used in SGX enclaves also leak data.
 
 The latest Intel processors (AlderLake / Sapphire Rapids) appear not to be
 affected. A full list of affected Intel products is published by Intel as
@@ -238,7 +238,7 @@ instead. This should provide better performance on CPUs that are
 affected and have the microcode fix.
 
 On CPUs without microcode fix, the Linux kernel will switch off
-AVX completely. This negates all optimizations from this vectorization
+AVX completely. This negates all optimizations from these vectorization
 instructions, at a significantly higher cost to performance than
 the microcode based mitigation. Handling Downfall was added to
 the Linux kernel 6.4.9, 6.1.44, 5.15.125.
