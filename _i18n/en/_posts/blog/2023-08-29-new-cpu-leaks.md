@@ -244,7 +244,6 @@ the microcode based mitigation. Handling Downfall was added to
 the Linux kernel 6.4.9, 6.1.44, 5.15.125.
 
 
-
 ## SCS flavor policy
 
 SCS requires providers of SCS-compatible IaaS to deploy fixes
@@ -263,6 +262,12 @@ Thanks to live-migration, the impact to customers can be kept
 rather limited, but most providers still announce such events
 to their customers due to short-term performance degradation
 and increased risk of VM failure during live migrations.
+
+The above-mentioned spectre-meltdown-checker tool has been updated
+to test for the new vulnerabilities except for the Div-by-0 (Zen 1)
+issue, so cloud providers can use this to check whether their
+deployment of microcode and hypervisor and kernel mitigations
+have been successful.
 
 ## Keeping workloads secured
 
@@ -315,7 +320,7 @@ security issues in a timely manner.
 
 Using providers with an IaaS SCS-compatible certification and with
 official SCS flavors (without the `i` = insecure CPU-suffix) gives you an
-additional benefit: Could providers that offer SCS flavors have committed
+additional benefit: Cloud providers that offer SCS flavors have committed
 themselves to apply security patches as soon as possible.
 
 Using certified SCS providers is thus a reasonable protection against
