@@ -6,6 +6,9 @@ author:
   - "Dominik Pataky"
 avatar:
   - "kgarloff.jpg"
+  - "bitkeks.png"
+about:
+  - "garloff"
 image: "blog/cpu/downfall.png"
 ---
 
