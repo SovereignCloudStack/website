@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "New CPU leaks (Aug 2023)"
+title: "New CPU leaks (August 2023)"
 author:
   - "Kurt Garloff"
   - "Dominik Pataky"
@@ -8,6 +8,13 @@ avatar:
   - "kgarloff.jpg"
 #image: "blog/cpu/littleboy.jpg"
 ---
+
+## Summary
+
+A new set of hardware CPU speculation vulnerabilities were uncovered in
+July/August 2023. They do create risks for information disclosure for 
+providers and users of SCS clouds. This blog article explains the issues,
+the associated risks and how these can be mitigated by providers and users.
 
 ## CPU leak introduction and history
 
@@ -19,8 +26,8 @@ instructions that occur afterwards. This is necessary for high performance, beca
 some operations take longer than others. And more importantly, if data is not available
 in the CPU registers or caches, it may take way beyond 100 CPU cycles to get them
 from main memory (RAM). CPUs would be rather slow if they would incur many cache
-misses and then sit idle at each cache (or worse TLB) miss. Good cache handling is
-thus part of every modern CPU design.
+misses and then sit idle at each cache or worse translation lookaside buffer (TLB) miss.
+Good cache handling is thus part of every modern CPU design.
 
 Some instructions depend on results of previous instructions. The code flow does often
 depend on such results (conditional branches). If the CPU wants to execute these
@@ -31,13 +38,13 @@ return stack buffers, etc.
 
 Nevertheless misspeculation can happen of course. When it does, the CPU needs to
 carefully rewind the state and undo everything that has happened after a mispredicted
-speculation. Results need to be discarded and the state of registers, memory, ...
+speculation. Results need to be discarded and the state of registers and memory
 be reinstated from before the misprediction. Failures to do so would cause unpredictable
 CPU behaviors and be very serious CPU bugs. CPU vendors are good at avoiding this.
 
-However, even if the official (architectural) state of the CPU is correctly reinstated
+However, even if the official architectural state of the CPU is correctly reinstated
 after misspeculation, there may be traces from the misspeculation, such as internal
-CPU buffers and caches (the microarchitectural state) that have a different state.
+CPU buffers and caches, the microarchitectural state, that have a different state.
 While these states should not influence the outcome of future operations, they may
 be observable, e.g. by timing effects. Authors of code that handles cryptography have
 thus learned to avoid writing code that has code paths or execution times that depend
@@ -74,11 +81,12 @@ When such vulnerabilities were reported, mitigating measures were developed by
 kernel developers and CPU vendors. The low-level operation of some of the more
 complex operations of CPUs is programmable by so called microcode (µcode), which
 can be updated by the BIOS or by the operating system during the boot process.
-(Footnote: In theory, it can also be updated later on -- however, it is very
-difficult to do this in a safe way and thus unsupported for most setups.)
+In theory, it can also be updated later on -- however, it is very
+difficult to do this in a safe way and thus unsupported for most setups.
 Some of the leaks can be fixed by µcode updates -- typically at the cost
 of performance, sometimes very significantly so. So these security protecting
-features may be designed as opt-in features.
+features may be designed as opt-in features or may just enable new features
+that the hypervisor or kernel can then use for mitigation.
 
 The operating system kernel and hypervisor
 on the other hand can use extra instructions to do cleanup on context switches,
@@ -100,7 +108,7 @@ One extremely useful tool to know is the
 [spectre-meltdown-checker.sh](https://github.com/speed47/spectre-meltdown-checker).
 When executed (with root privileges) on a host, it checks whether your CPU
 is susceptible to various vulnerabilities and informs you about the mitigation
-status. There's one limitation that you should be aware of, however:
+status. There's one limitation that you should be aware of:
 When running the tool inside a virtual machine, it can not comprehensively
 determine how well the hypervisor protects against these speculative data leaks
 between virtual machines.
@@ -157,8 +165,8 @@ The researchers have been able to create a flow where a harmless
 overflowing the return stack buffer (RSB) with an attacker controlled
 value that will be speculatively jumped to upon the next `RET` instruction.
 The alternative name Speculative Return Stack Overflow (SRSO) is thus used
-as well. Inception was published on Aug 8 and has been assigned
-CVE-2023-20569.
+as well. Inception was published on August 8 and has been assigned
+[CVE-2023-20569](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2023-20569).
 
 This again allows attackers to access data across contexts (such as address
 spaces, privileged modes, virtualization boundaries).
