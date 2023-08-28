@@ -58,7 +58,7 @@ TLB, ...) upon each context switch would result in bad context switching perform
 so CPUs try to limit this.
 
 Worse, CPUs with Simultaneous MultiThreading (SMT -- called HyperThreading in
-the x86 world) have two (or more) logical CPUs that share a lot of CPU core components (register files, execution units, prediction buffers, ...) 
+the x86 world) have two (or more) logical CPUs that share a lot of CPU core components (register files, execution units, prediction buffers, ...)
 and thus microarchitectural state. One logical CPU may however execute code from
 a different process or a virtual machine from a different user than the other logical
 CPU sharing the same core. This creates a significant risk for side-channel
@@ -263,6 +263,43 @@ Thanks to live-migration, the impact to customers can be kept
 rather limited, but most providers still announce such events
 to their customers due to short-term performance degradation
 and increased risk of VM failure during live migrations.
+
+
+## CPU-based security issues: mitigation recommendations
+
+Now that we have talked about the technical details and SCS flavor policy
+in regard to security fixes, what mitigations seem the most effective?
+
+One critical aspect of shared infrastructure is the usage of SMT in hypervisor
+host systems. Does the hardware of your CSP use CPUs with SMT/HT? If yes, the
+potential security impact might be increased due to more simultaneous access
+to CPU registers and threads. Security of sensitive workloads might therefore
+benefit from disabling SMT altogether. The loss of performance and
+the decreased cost-benefit ratio for CSPs could be deal-breakers though.
+
+But there's an alternative. Having full performance without increasing
+the risk of data leaks on shared hardware can be achieved by using
+dedicated CPU cores. In SCS, flavors with a `C` CPU-suffix
+provide dedicated hardware CPU cores for your workload. Example: the
+flavor `SCS-4C-8-20` would create an instance with four of the host's
+cores reserved solely for this single machine.
+In regards to the discussed `i` suffix,
+you could even go further and use a flavor like `SCS-4Ci-8-20` which
+removes the performance penalty of microcode security updates.
+Not applying security updates is not recommended though and should be
+handled with care.
+
+In the end, you have to trust
+the CSP as the hardware provider for your computing infrastructure.
+Establishing a good communication channel is a key factor in handling
+security issues in a timely manner.
+Using SCS-certified providers with official SCS flavors gives you an
+additional benefit: CSPs that offer SCS flavors have committed themselves
+to apply security patches as soon as possible.
+
+A good compromise for your business could therefore be: use SCS-based
+hosting environments which hardware is maintained by a professional CSP.
+
 
 ## Links
 
