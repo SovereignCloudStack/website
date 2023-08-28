@@ -6,7 +6,7 @@ author:
   - "Dominik Pataky"
 avatar:
   - "kgarloff.jpg"
-#image: "blog/cpu/littleboy.jpg"
+image: "blog/cpu/downfall.png"
 ---
 
 ## Summary
