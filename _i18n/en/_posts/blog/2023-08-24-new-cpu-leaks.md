@@ -250,7 +250,7 @@ the Linux kernel 6.4.9, 6.1.44, 5.15.125.
 SCS requires providers of SCS-compatible IaaS to deploy fixes
 that are available upstream within a month of the availability.
 This is mandated by the
-[SCS flavor naming standard](https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0100-v3-flavor-naming.md#baseline)
+[SCS flavor naming standard](https://docs.scs.community/standards/scs-0100-v2-flavor-naming#complete-proposal-for-systematic-flavor-naming)
 -- by not using the `i` (for insecure) suffix, they commit to
 keeping their compute hosts secured against such flaws by
 deploying the needed microcode, kernel and hypervisor fixes
@@ -264,42 +264,67 @@ rather limited, but most providers still announce such events
 to their customers due to short-term performance degradation
 and increased risk of VM failure during live migrations.
 
+## Keeping workloads secured
 
-## CPU-based security issues: mitigation recommendations
+Users of cloud infrastructure are advised to keep their workloads
+up-to-date with security updates. This means installing online
+updates or redeploying workloads based on (new) images which are
+up-to-date with respect to security fixes. Cloud providers often
+provide standard Operating System images that can be a good basis
+for deployments, customizing all configuration and software
+installation by injecting user-data for cloud-init.
 
-Now that we have talked about the technical details and SCS flavor policy
-in regard to security fixes, what mitigations seem the most effective?
+On SCS-compatible clouds, the
+[SCS image metadata standard](https://docs.scs.community/standards/scs-0102-v1-image-metadata/)
+allows users to see when the image has been built and what regular
+update intervals are to be expected.
 
-One critical aspect of shared infrastructure is the usage of SMT in hypervisor
-host systems. Does the hardware of your CSP use CPUs with SMT/HT? If yes, the
+Of course, the cloud provider needs to do his part as well by
+udpating microcode and hypervisors/kernels on the infrastructure
+in a timely manner.
+SCS providers will need to do so; in case of doubt, ask your
+provider.
+
+## CPU-based security issues: Outlook
+
+We can expect that the reported CPU speculation vulnerabilities from this
+summer were not the last ones to exist and to be uncovered.
+
+One technology remains especially exposed to such vulnerabilities:
+The usage of SMT in hypervisor host systems. Does the hardware of your
+cloud provider use CPUs with SMT/HT? If yes, the
 potential security impact might be increased due to more simultaneous access
-to CPU registers and threads. Security of sensitive workloads might therefore
-benefit from disabling SMT altogether. The loss of performance and
-the decreased cost-benefit ratio for CSPs could be deal-breakers though.
+to internal CPU resources (such as register files, buffers, caches, ...).
+Security of sensitive workloads might therefore
+benefit from disabling SMT alltogether. The loss of performance and
+the decreased cost-benefit ratio for cloud service providers makes this
+a not-so-attractive option for cloud providers though.
 
-But there's an alternative. Having full performance without increasing
-the risk of data leaks on shared hardware can be achieved by using
-dedicated CPU cores. In SCS, flavors with a `C` CPU-suffix
+Cloud providers could offer flavors with dedicated cores, so no
+workload with a different security context can run simultaneously on
+a different thread of the same core. In SCS, flavors with a `C` CPU-suffix
 provide dedicated hardware CPU cores for your workload. Example: the
-flavor `SCS-4C-8-20` would create an instance with four of the host's
-cores reserved solely for this single machine.
-In regards to the discussed `i` suffix,
-you could even go further and use a flavor like `SCS-4Ci-8-20` which
-removes the performance penalty of microcode security updates.
-Not applying security updates is not recommended though and should be
-handled with care.
+flavor `SCS-4C-8` would create an instance with four of the host's
+cores reserved solely for this single virtual machine. Currently, the
+SCS standard does not mandate the availability of such dedicated core
+flavors, so the support is cloud-dependant at this time.
 
-In the end, you have to trust
-the CSP as the hardware provider for your computing infrastructure.
+Short of dedicated core flavors, you need rely on your cloud provider.
 Establishing a good communication channel is a key factor in handling
 security issues in a timely manner.
-Using SCS-certified providers with official SCS flavors gives you an
-additional benefit: CSPs that offer SCS flavors have committed themselves
-to apply security patches as soon as possible.
 
-A good compromise for your business could therefore be: use SCS-based
-hosting environments which hardware is maintained by a professional CSP.
+Using providers with an IaaS SCS-compatible certification and with
+official SCS flavors (without the `i` = insecure CPU-suffix) gives you an
+additional benefit: Could providers that offer SCS flavors have committed
+themselves to apply security patches as soon as possible.
 
+Using certified SCS providers is thus a reasonable protection against
+such CPU weaknesses. If you have especially high protection requirements,
+you might want to use flavors with dedicated cores or even build your own
+private cloud environment -- hopefully on the same SCS technology
+that allows you the full benefit of offering a full self-service cloud
+internally and the benefit of easily connecting or even federating out
+to public cloud SCS offerings.
 
 ## Links
 
