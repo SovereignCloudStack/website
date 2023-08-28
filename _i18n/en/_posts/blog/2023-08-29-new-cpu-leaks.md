@@ -330,7 +330,6 @@ to public cloud SCS offerings.
 
 * [Downfall and Zenbleed: Googlers helping secure the ecosystem ](https://security.googleblog.com/2023/08/downfall-and-zenbleed-googlers-helping.html)
 * [Collide+Power, Downfall, and Inception: New Side-Channel Attacks Affecting Modern CPUs](https://thehackernews.com/2023/08/collidepower-downfall-and-inception-new.html)
-
-LWN
-Phoronix
-iX
+* [LWN on Downfall and Inception](https://lwn.net/Articles/940783/) 
+* [Phoronix update on Inception mitigation](https://www.phoronix.com/news/Linux-x86-bugs-AMD-SRSO)
+* [iX article on Meltdown & Spectre from 2018](https://www.heise.de/select/ix/2018/2/1517770391119975) (German language)
