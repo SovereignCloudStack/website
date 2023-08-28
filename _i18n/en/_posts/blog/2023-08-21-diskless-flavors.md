@@ -10,9 +10,9 @@ image: "blog/diskless/diskless.jpg"
 
 ## TL;DR
 
-SCS has downgraded the formerly mandatory flavors with root disks to
-recommended ones in the next flavor naming standard version 3. Thus,
-every SCS IaaS user should preferably use the diskless flavors.
+Sovereign Cloud Stack (SCS) has downgraded the formerly mandatory flavors with
+root disks to recommended ones in the next flavor naming standard version 3.
+Thus, every SCS IaaS user should preferably use the diskless flavors.
 This blog post describes the motivation for this change and also explains
 how the diskless flavors can be used with common automation (Infra-as-Code)
 tooling.
@@ -33,7 +33,7 @@ combine a number of vCPUs with a certain amount of RAM and often also a
 virtual disk to boot from. On a typical VM creation, an operating system image
 is being copied to the disk (of a size defined by the chosen flavor) on the
 compute host, vCPUs and RAM are allocated (according to the numbers defined in
-the chosen flavor) and the virtual can then start booting.
+the chosen flavor) and the virtual machine can then start booting.
 
 While this is not as flexible as some users might like, this is how most clouds
 do it. In SCS environments, several standard flavors exist, e.g., flavors
@@ -82,11 +82,11 @@ number of mandatory flavors by stopping to require the flavors with disks
 (except for the two new ones with SSDs, more on this later).
 
 With the [version 3 of the SCS flavor standard](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
-the formerly mandatory flavors with disk
+the formerly mandatory flavors with disks
 have been downgraded to recommended. Operators still should provide them for
 the best portability of apps written against older SCS standards, but they are no
 longer required to in order to be able to achieve the SCS-compatible certification
-on the IaaS layer. We recommend developers use the diskless flavors and
+on the IaaS layer. We recommend that developers use the diskless flavors and
 allocate root disks dynamically.
 
 The next section explains how this can be done and uses examples from SCS'
@@ -142,8 +142,9 @@ Obviously, you would replace `$IMAGE_UUID` and `$WANTED_SIZE` with the wanted se
 You may leave out `volume_type` and `disk_bus`. If you leave out `delete_on_termination`,
 it will default to `false`, resulting in a volume that remains allocated after the VM
 instance has been removed and thus behaving differently from the root volumes that come
-with a flavor with root disk.
-You can also add a `tag` property to place a tag on the created volume.
+with a flavor with a root disk.
+You can also add a `tag` property to place a tag on the created volume, but you
+unfortunately can not add a name here.
 
 When using the openstack SDK, the API call would be invoked with
 ```python
@@ -167,19 +168,19 @@ needs. Note that the `block_device_mapping_v2`'s `uuid` is the `uuid`
 of the wanted image.
 
 A more complete example can be found at
-<a href="{% asset "scripts/create_vm.py" @path %}">create\_vmpy</A>.
+<a href="{% asset "scripts/create_vm.py" @path %}">create\_vm.py</A>.
 
 ### openstack-cli
 
 If you are using the OpenStack command line client, you can pass the desire to create
-a volume on the fly via the command line parameter `--block-device` parameter.
+a volume on the fly via the command line parameter `--block-device`.
 This does not work for old versions (<5.5 / Wallaby) of the openstack CLI.
 (You can work around this using the nova client rather than the openstack client
 if you really need to stick to such an old version.)
 Versions prior to 6.0 (Zed) also need an additional patch: These versions refuse to
 issue the API call to nova because they think you have passed neither a volume
 nor an image when you pass the `--block-device` option. This 
-<a href="{% asset "scripts/openstackclient-diskless-boot.diff" @path %}"> trivial patch</A> fixes this:
+<a href="{% asset "scripts/openstackclient-diskless-boot.diff" @path %}">trivial patch</A> fixes this:
 ```patch
 --- openstackclient/compute/v2/server.py.orig   2021-03-20 10:17:40.000000000 +0100
 +++ openstackclient/compute/v2/server.py        2023-07-03 15:59:27.301268807 +0200
@@ -221,20 +222,20 @@ many different infrastructure platforms. While it may become much less popular n
 Hashicorp's decision to stop providing it under an open source license, it is currently
 still in wide use, as the old free versions can still be used.
 
-Creating a VM instance for OpenStack with terraform looks like this with a flavor with disk:
+Creating a VM instance for OpenStack with terraform looks like this with a flavor with a disk:
 ```hcl
 resource "openstack_compute_instance_v2" "mgmtcluster_server" {
    name              = "${var.prefix}-mgmtcluster"
    flavor_name       = var.kind_flavor
    availability_zone = var.availability_zone
    key_pair          = openstack_compute_keypair_v2.keypair.name
-   network { port = openstack_networking_port_v2.mgmtcluster_port.id }
+   network     { port = openstack_networking_port_v2.mgmtcluster_port.id }
    image_name        = var.image
 }
 ```
 
 In order to support a diskless flavor here (for `var.kind_flavor`), we'll have to
-pass a block device again. As we need the image by UUID there, we need to do a bit
+pass a block device again. As we need the image by UUID then, we need to do a bit
 of additional work to determine the UUID. Here's the complete code ...
 ```hcl
 data "openstack_images_image_ids_v2" "images" {
@@ -247,7 +248,7 @@ resource "openstack_compute_instance_v2" "mgmtcluster_server" {
    flavor_name       = var.kind_flavor
    availability_zone = var.availability_zone
    key_pair          = openstack_compute_keypair_v2.keypair.name
-   network { port = openstack_networking_port_v2.mgmtcluster_port.id }
+   network     { port = openstack_networking_port_v2.mgmtcluster_port.id }
    # image_name      = var.image
    block_device {
      uuid                  = data.openstack_images_image_ids_v2.images.ids[0]
@@ -268,6 +269,11 @@ The code here is even prepared to handle cases with multiple images with the sam
 name and use the latest one (the one with the most recent `updated_at` value).
 The `volume_size` here was chosen to be 30GB, though any value large enough to
 fulfill the image's needs can be chosen.
+
+Of course, the root volume could also have been managed as a separate resource
+in terraform, allowing for a name to be used, but not allowing to have
+it automatically deleted on termination of the VM. Terraform does a good job
+at tracking resources and their dependencies, so this is not a bad option.
 
 ### Cluster API provider for OpenStack (capo)
 
@@ -357,7 +363,7 @@ because of missing `jq` binary for people that upgraded by `git pull`.
 
 ## FAQ
 
-### What happens if a root volume is allocated but a flavor with disk is used?
+### What happens if a root volume is allocated but a flavor with a disk is used?
 Using the `block_device_mapping_v2` in the OpenStack API or the corresponding options
 in the python SDK, the openstack client CLI or terraform while using a flavor that
 comes with a root disk does not create any harm. The cinder volume is still created
