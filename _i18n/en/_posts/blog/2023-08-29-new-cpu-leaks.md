@@ -121,10 +121,10 @@ between virtual machines.
 
 | Name | Website | CVE | CPUs | CVSS |
 | :--- | :--- | :--- | :--- | :--- |
-| Zenbleed | [lock.cmpxchg8b.com](https://lock.cmpxchg8b.com/zenbleed.html) |  [CVE-2023-20593](https://nvd.nist.gov/vuln/detail/CVE-2023-20593) | AMD Zen 2 | 5.5 |
-| Inception | [comsec.ethz.ch](https://comsec.ethz.ch/research/microarch/inception/) | [CVE-2023-20569](https://nvd.nist.gov/vuln/detail/CVE-2023-20569) | alle AMD Zen | 7.5 |
+| Zenbleed | [lock.cmpxchg8b.com](https://lock.cmpxchg8b.com/zenbleed.html) |  [CVE-2023-20593](https://nvd.nist.gov/vuln/detail/CVE-2023-20593) | AMD Zen 2 / EPYC Rome 7xx2 | 5.5 |
+| Inception | [comsec.ethz.ch](https://comsec.ethz.ch/research/microarch/inception/) | [CVE-2023-20569](https://nvd.nist.gov/vuln/detail/CVE-2023-20569) | AMD Zen 1-4 / EPYC xxx[1-4] | 7.5 |
 | Downfall | [downfall.page](https://downfall.page) | [CVE-2022-40982](https://nvd.nist.gov/vuln/detail/CVE-2022-40982) | Intel Core Skylake (6th) to Tiger Lake (11th), Xeon 1st to 4th | 6.5 |
-| div0 | [git.kernel.org](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f58d6fbcb7c848b7f2469be339bc571f2e9d245b) | - | AMD Zen 1 | - |
+| div0 | [git.kernel.org](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f58d6fbcb7c848b7f2469be339bc571f2e9d245b) | - | AMD Zen 1 / EPYC Naples 7xx1 | - |
 
 
 ### Zenbleed (Zen 2)
