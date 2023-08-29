@@ -127,7 +127,6 @@ between virtual machines.
 | div0 | [git.kernel.org](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f58d6fbcb7c848b7f2469be339bc571f2e9d245b) | - | AMD Zen 1 | - |
 
 
-
 ### Zenbleed (Zen 2)
 This vulnerability was discovered by Tavis Ormandy from Google, is catalogued as
 CVE-2023-20593 and became public on July 25.
@@ -183,7 +182,7 @@ This is used to protect the KVM hypervisor.
 A different approach has been taken in the Linux kernel. Channeling all
 returns there into a single location `__x86_return_thunk`, the branch predictor
 state can be ensured to have a safe (yet wrong) state. This also comes with
-[significant performance implications](https://www.phoronix.com/review/amd-inception-benchmarks).
+[significant performance implications](https://www.phoronix.com/review/amd-inception-benchmarks),
 though less than using the `IBPB` instruction to flush branch predictors
 for most workloads. The performance hit is negligible for number-crunching
 workloads (which are running in user-space mode most of the time) and
@@ -226,10 +225,10 @@ It was assigned [CVE-2022-40982](https://cve.mitre.org/cgi-bin/cvename.cgi?name=
 and the name [Downfall](https://downfall.page/)
 is used to describe it.
 
-When the AVX GATHER instructions are used to speed up access data scattered in
+When the AVX GATHER instructions are used to speed up access to data scattered in
 memory, affected Intel CPUs transiently expose the contents of the internal
 vector register file via speculative execution. This leads to data leakage,
-potentially affecting sensitive data (as was observed with Zenbleed) as AVX
+potentially affecting sensitive data (like with Zenbleed) as AVX
 is being used for `strlen()` and `memcpy()` in the glibc system library.
 AVX registers are also used by cryptographic instructions.
 Vector registers used in SGX enclaves also leak data.
@@ -243,7 +242,8 @@ With the fixes applied, memory access with AVX GATHER is slowed down
 significantly, as can be seen from [benchmarks](https://www.phoronix.com/review/intel-downfall-benchmarks).
 The impact is especially large for numbercrunching workloads which
 tend to benefit from the full set of AVX capabilities.
-A patch to the GCC compiler (version 14) allows users to avoid
+A [patch to the GCC compiler](https://www.phoronix.com/news/GCC-Workaround-Intel-Downfall)
+(version 14) allows users to avoid
 generating GATHER instructions and using GATHER scalar emulation
 instead. This should provide better performance on CPUs that are
 affected and have the microcode fix.
@@ -255,7 +255,27 @@ the microcode based mitigation. Handling Downfall was added to
 the Linux kernel 6.4.9, 6.1.44, 5.15.125.
 
 
-## SCS flavor policy
+## Mitigation and SCS flavor policy
+
+Linux distributors have published updated microcode (called
+`linux-firmware`, `intel-microcode`, `amd-microcode` depending
+on your distribution)) and updated kernels (which include the
+KVM hypervisor) in the past weeks.
+For the Ubuntu 22.04 LTS distribution normally used on
+SCS installations, the updates to the Intel microcode, AMD
+microcode are described in
+[USN-6286-1](https://ubuntu.com/security/notices/USN-6286-1) and
+[USN-6244-1](https://ubuntu.com/security/notices/USN-6244-1).
+As of 2023-08-28, Ubuntu does seem to ship the software mitigation
+for ZenBleed and Downfall, though not yet for SRSO (Inception)
+with the 5.15.0-82 kernel built on August 14 and referenced in
+[USN-6300-1](https://ubuntu.com/security/notices/USN-6300-1).
+Canonical lists the kernel status for [ZenBleed](https://ubuntu.com/security/CVE-2023-20593),
+[SRSO](https://ubuntu.com/security/CVE-2023-20593) and
+[Downfall](https://ubuntu.com/security/CVE-2023-20593) as
+Pending, Needs Triage and Needs Triage, so we'll probably
+have to wait for at least the SRSO(Inception) kernel mitigation in
+Ubuntu kernels for some more days.
 
 SCS requires providers of SCS-compatible IaaS to deploy fixes
 that are available upstream within a month of the availability.
