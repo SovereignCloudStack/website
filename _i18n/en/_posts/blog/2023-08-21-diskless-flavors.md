@@ -87,7 +87,9 @@ have been downgraded to recommended. Operators still should provide them for
 the best portability of apps written against older SCS standards, but they are no
 longer required to in order to be able to achieve the SCS-compatible certification
 on the IaaS layer. We recommend that developers use the diskless flavors and
-allocate root disks dynamically.
+allocate root disks dynamically. Using proper cinder volumes also has the
+additional advantage of supporting live-migration and of course to use the
+volume management capabilities to e.g. create snapshots or backups.
 
 The next section explains how this can be done and uses examples from SCS'
 own projects.
