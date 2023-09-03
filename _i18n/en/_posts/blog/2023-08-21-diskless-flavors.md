@@ -61,6 +61,12 @@ prevent flavor explosion by just mandating one disk size per flavor, scaling
 it with the size of the RAM and choosing discrete values of 5, 10, 20,
 50 and 100 GB for them. (By extension, providers that want to provide
 larger disks have been advised to choose 200, 500, 1000, ... GB for these.)
+Note that these root disks are not proper cinder volumes (that you could
+enlarge or create snapshots or backups from), but so called ephemeral
+disks, which get deleted as soon as the VM gets deleted. Often, they are
+stored on the local compute node which makes live-migration slow (if the
+provider enabled block migration) or completely prevents live-migration
+(if the provider has not enabled block migration).
 
 Next to each flavor with a root disk size (e.g. `SCS-4V-16-50`), SCS
 also mandates a flavor without a root disk (e.g. `SCS-4V-16`). This is useful,
@@ -98,7 +104,7 @@ own projects.
 
 ### Horizon
 On the second page of the create instance dialogues, you can choose to
-create a volume of any size you want (though you better make it large
+create a new volume, chose any size you want (though you better make it large
 enough to accommodate the needs of the used image) and you can also
 choose that the disk should be destroyed upon the destruction of the VM
 as it would if you had used a flavor with a disk. This second page
@@ -369,7 +375,11 @@ because of missing `jq` binary for people that upgraded by `git pull`.
 Using the `block_device_mapping_v2` in the OpenStack API or the corresponding options
 in the python SDK, the openstack client CLI or terraform while using a flavor that
 comes with a root disk does not create any harm. The cinder volume is still created
-and used, while the disk that comes with the flavor is not used.
+and used, while the disk that comes with the flavor is not accessible to the VM then.
+You still want to avoid this, as you are allocating resources (ephemeral disks) that
+you can't use, but potentially have to pay for, especially on the SSD flavors. So
+remember to not pass `--block-device boot_index=0,...` or to uncheck "Create new volume"
+in horizon if you use flavors with a disk.
 
 ### Why create the two (new) SSD flavors?
 So when moving from flavor standard v2 to v3, we have downgraded all flavors
