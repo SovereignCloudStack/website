@@ -41,5 +41,17 @@ to extract best practice recommendations for the users of SCS. When it comes dow
 important not to blindly follow upstream howtos, but to test what implications the proposed configuration has
 and if it is still best practice today before implementing it as part of the project.
 
+One example of this kind is the [case of Horizon logout](https://github.com/SovereignCloudStack/issues/issues/347):
+During an SCS presentation we discovered that hitting logout
+in OpenStack Horizon fooled you to believe that you where actually logged out. But with federated login
+we found that you would be logged in again immediately without entering your password as the Keycloak session
+did not get terminated and so the OpenID Connect token was stil valid. After some expermentation and research
+we found that this problem was well know to OpenStack developers to such an extent that there was a blog article
+explaining how to address that. In the weekly SIG IAM meeting we discussed this and a colleague from Wavestack
+explained that they found an even better solution.
+This has been [merged into the testbed](https://github.com/osism/testbed/pull/1717) some weeks ago
+and we will continue with making that fix part of the bigger move to ship our configuration for identity federation
+as part of the OSISM Cookiecutter repository to make it easily available to productive deployments of SCS.
+
 Enjoy,
 Arvid Requate (Member SCS "Operations and IAM" Team)
