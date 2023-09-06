@@ -82,13 +82,13 @@ This is what we had for the SCS flavor standards v1 and v2.
 
 With [v3](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
 we also [added](https://docs.scs.community/standards/scs-0110-v1-ssd-flavors)
-two flavors with (at least) SSD type root disk storage.
+two flavors with (at least) local SSD type root disk storage.
 Adding all combinations here would have again resulted in many new flavors.
 Yet the cloud operators in the SCS community really wanted to avoid a
 proliferation of many new flavors mandated by the standards. The SCS community
 agreed on avoiding more mandatory flavors and instead agreed on reducing the
 number of mandatory flavors by stopping to require the flavors with disks
-(except for the two new ones with SSDs, more on this later).
+(except for the two new ones with local SSDs, more on this later).
 
 With the [version 3 of the SCS flavor standard](https://docs.scs.community/standards/scs-0100-v3-flavor-naming),
 the formerly mandatory flavors with disks
@@ -365,7 +365,7 @@ for worker and control nodes if (and only if) they use a diskless flavor. There 
 heuristic to determine a reasonable volume size.
 
 This feature is available for the SCS Release 5 (to be released in Sept. 2023) in line with
-the v3 flavor spec. The control plane nodes, by default, use the new SSD
+the v3 flavor spec. The control plane nodes, by default, use the new local SSD
 flavor `SCS-2V-4-20s` to ensure robust etcd operation. The feature was also backported to
 the [maintained/v5.x](https://github.com/SovereignCloudStack/k8s-cluster-api-provider/tree/maintained/v5.x)
 tree, though it needs a bit of work there still to avoid
@@ -379,7 +379,7 @@ Using the `block_device_mapping_v2` in the OpenStack API or the corresponding op
 in the python SDK, the openstack client CLI or terraform while using a flavor that
 comes with a root disk does not create any harm. The cinder volume is still created
 and used, while the disk that comes with the flavor is not accessible to the VM then.
-You still want to avoid this, as you are allocating resources (ephemeral disks) that
+You still want to avoid this, as you are allocating resources (local storage) that
 you can't use, but potentially have to pay for, especially on the SSD flavors. So
 remember to not pass `--block-device boot_index=0,...` or to uncheck "Create new volume"
 in horizon if you use flavors with a disk.
@@ -387,9 +387,9 @@ in horizon if you use flavors with a disk.
 ### Why create the two (new) SSD flavors?
 So when moving from flavor standard v2 to v3, we have downgraded all flavors
 with disks from mandatory to recommended. Yet we have added two new flavors with
-SSD (or better) storage as mandatory. This looks puzzling at first.
+local SSD (or better) storage as mandatory. This looks puzzling at first.
 
-The reason why offering SSD storage is highly desirable is documented in the
+The reason why offering local SSD storage is highly desirable is documented in the
 [scs-0110-v1-ssd-flavors.md](https://docs.scs.community/standards/scs-0110-v1-ssd-flavors)
 standard. But couldn't we use the mechanisms
 described above to allocate arbitrary SSD storage when booting?
@@ -417,7 +417,7 @@ This is for two reasons:
    storage layer to do so. Local storage has the additional advantage
    of allowing for lower latency than you can get from networked storage.
 
-So we need those two SSD flavors `SCS-2V-4-20s` and `SCS-4V-16-100s`
+So we need those two local SSD flavors `SCS-2V-4-20s` and `SCS-4V-16-100s`
 to serve our customers well.
 
 ### How do I know whether the instances will be live-migrated upon host maintenance?
