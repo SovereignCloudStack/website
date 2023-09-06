@@ -61,12 +61,15 @@ prevent flavor explosion by just mandating one disk size per flavor, scaling
 it with the size of the RAM and choosing discrete values of 5, 10, 20,
 50 and 100 GB for them. (By extension, providers that want to provide
 larger disks have been advised to choose 200, 500, 1000, ... GB for these.)
+
 Note that these root disks are not proper cinder volumes (that you could
-enlarge or create snapshots or backups from), but so called ephemeral
-disks, which get deleted as soon as the VM gets deleted. Often, they are
-stored on the local compute node which makes live-migration slow (if the
-provider enabled block migration) or completely prevents live-migration
-(if the provider has not enabled block migration).
+enlarge or create snapshots or backups from), but -- like the so called
+ephemeral disks -- are managed on the compute node by nova and get deleted
+as soon as the VM gets deleted. They are stored on the local compute node
+and unless the provider uses ceph storage (via rbd) for these, it makes
+live-migration slow (if the provider enabled block migration) or completely
+prevents live-migration (if the provider has not enabled block migration,
+for example because he uses LVM).
 
 Next to each flavor with a root disk size (e.g. `SCS-4V-16-50`), SCS
 also mandates a flavor without a root disk (e.g. `SCS-4V-16`). This is useful,
@@ -416,3 +419,16 @@ This is for two reasons:
 
 So we need those two SSD flavors `SCS-2V-4-20s` and `SCS-4V-16-100s`
 to serve our customers well.
+
+### How do I know whether the instances will be live-migrated upon host maintenance?
+Instances with a flavor without a root disk are using proper cinder
+volumes which can be accessed from the network. Live-migration for these
+is straight-forward and we expect providers to live-migrate these
+upon planned host maintance.
+(Note that we have no policy yet that would mandate this, however.)
+Expect VM instances on a flavor with root disk not to be live-migrated;
+some providers may use rbd-backed "local" storage for these though
+(which you could see from the upcoming `scs:disk0-type:network` extra\_spec)
+or enable block-migration, so you can not rely on them not being live-migrated
+either. Transparency and control of live-migration will be part of future
+SCS standardization work.
