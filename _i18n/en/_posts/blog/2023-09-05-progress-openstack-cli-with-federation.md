@@ -32,7 +32,7 @@ Keystone, we decided to give it try and add the PKCE functionality to the `v3oid
 Delayed somewhat by reviewer vacations [the patch got accepted mid-August](https://review.opendev.org/c/openstack/keystoneauth/+/883852).
 
 This feels like some path nicely finished and also helped us to improve the working relationship with the upstream
-OpenStack Keystone team. While we still work on some challanges with regards to mapping customer realms to the OpenStack
+OpenStack Keystone team. While we still work on some challenges with regards to mapping customer realms to the OpenStack
 domain concept, we started [documenting our current concept of identity federation in SCS](https://docs-staging.scs.community/docs/iam/identity-federation-in-scs). This path is part of a larger journey and shows how we work starting on PoCs in the OSISM testbed
 and then continue to work on upstreaming upcoming improvements towards OpenStack. This time it was code, but we also
 proposed improvements to upstream documentationm where we feel like we wasted time by barking up the wrong tree.
@@ -45,7 +45,7 @@ One example of this kind is the [case of Horizon logout](https://github.com/Sove
 During an SCS presentation we discovered that hitting logout
 in OpenStack Horizon fooled you to believe that you where actually logged out. But with federated login
 we found that you would be logged in again immediately without entering your password as the Keycloak session
-did not get terminated and so the OpenID Connect token was stil valid. After some expermentation and research
+did not get terminated and so the OpenID Connect token was still valid. After some experimentation and research
 we found that this problem was well know to OpenStack developers to such an extent that there was a blog article
 explaining how to address that. In the weekly SIG IAM meeting we discussed this and a colleague from Wavestack
 explained that they found an even better solution.
