@@ -280,7 +280,7 @@ Ubuntu kernels for some more days.
 SCS requires providers of SCS-compatible IaaS to deploy fixes
 that are available upstream within a month of the availability.
 This is mandated by the
-[SCS flavor naming standard](https://docs.scs.community/standards/scs-0100-v2-flavor-naming#complete-proposal-for-systematic-flavor-naming)
+[SCS flavor naming standard](https://docs.scs.community/standards/scs-0100-v3-flavor-naming#complete-proposal-for-systematic-flavor-naming)
 -- by not using the `i` (for insecure) suffix, they commit to
 keeping their compute hosts secured against such flaws by
 deploying the needed microcode, kernel and hypervisor fixes
