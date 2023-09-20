@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "Kubernetes - digitally sovereign"
+author:
+  - "Friederike Zelke"
+avatar: 
+  - "zelke.jpg"
+image: "blog/release.jpg"
+about:
+  - "Zelke"
+---
+## Sovereign Cloud Stack publishes Releases 5
+The Sovereign Cloud Stack project publishes its fifth release. Release 5 focuses on the expansion of quality assurance, further standardization of the technology building blocks, and the expansion and further development of the container layer based on Kubernetes Cluster API and Cluster Stacks.
+
+As in every release of open source projects, bugs have been fixed and new functionalities added. More important than the individual pieces of the puzzle, however, is the overall picture, which is becoming more and more complete:
+
+Felix Kronlage-Dammers, Product Owner IaaS Reference Implementation & Operations: "SCS delivers building blocks for a digital, sovereign cloud infrastructure.  But we are also changing the way infrastructure is operated."
+
+Michael Bayr, CEO of artcodix UG, says on the occasion of the launch of his SCS Cloud: "We are grateful for all the support we have received from the SCS team and the community. We are very happy with our decision to rely on the SCS implementation and look forward to working intensively with the community in the future."
+
+SCS provides all cloud technology foundations for the realization of digital sovereignty and the implementation of an open source strategy. Many users of cloud services from the public sector, but also from the private sector and academia, expect "cloud" to be container-based technology that can be hosted and operated in a digitally-sovereign manner in the best case. This is possible: SCS offers a digitally-sovereign, secure, full open-source container layer as the basis for all containerized applications. And not only that.
+### Automated quality assurance guarantees high reliability
+"As a fast-growing project, we need to invest increasingly into automated testing to guarantee quality even at fast development speeds. My personal highlight in the R5 cycle is therefore the successful integration of Kubernetes CNCF E2E tests into our zuul test infrastructure. This ensures consistently high quality for the container platform as well," says Kurt Garloff, CTO of the Sovereign Cloud Stack project at OSB Alliance.
+
+An important element of quality assurance is to regularly update the technologies used. Thus, in R5 for infrastructure, the core services of OpenStack 2023.1 (Antelope), ceph Quincy and OVN 2023.06 were implemented. The container platform now officially supports Kubernetes v1.25 through v1.27; older versions still work. (The new version v1.28 is also available and has been successfully tested, but is currently still marked as Technical Preview due to lack of official capi support).
+
+The previously existing support for IPv6 was taken into regular operation at one of the partners and is now an officially supported feature backed up by testing.
+### Expansion of the container layer
+The solution for managing container clusters continues to be built on the CNCF project Cluster API and has been improved with regard to user requirements. For example, it can now be used on OpenStack infrastructure with a private Certificate Authority and provides new controls on network addresses and access. The container registry built with harbor technology has been integrated into cluster management, so that with a few settings a registry can optionally be rolled out with each cluster. This registry – or the registry.scs.community operated by the SCS project - can now also be used as a cache for upstream container registries.
+
+For container network integration, the default has been changed from Calico to Cilium after all E2E tests can finally be passed successfully. As before, both solutions are officially supported. With the help of Cilium, the future gateway API can also be used, although this currently still has the status of Technical Preview.
+
+A new tool, a ClusterStack operator, will in future make it possible (planned in R6) to use the container layer (CaaS) independently of the underlying infrastructure layer (IaaS). In R5, initial work has been done for this. This brings SCS's vision of developing a complete, easy-to-use cloud and container stack, whose modules can also be used individually as required, a significant step closer.
+
+User federation with the help of keycloak was further improved - improvements for the upstream projects (especially Keystone) were also worked out here and successfully introduced. SCS thus realizes its claim of not contributing to further fragmentation, but to the integration of open source projects.
+### Standardization progresses: interoperability of building blocks and federability of services further expanded
+Standards ensure the interoperability of all building blocks and enable the federation of services. This allows applications to be ported from one platform to another (or from one service provider to another) with minimal effort. Standardization also allows resources to be easily scaled across providers through federation.
+
+A certification program for SCS-Standards will be available soon to provide assurance of interoperabilty to customers of the procured or self-built services. Now already, the service providers are tested against the existing SCS standards nightly, using an automated compliace test. The results are transparent for every customer at (https://docs.scs.community/standards/).
+
+After a significant one-time change became necessary moving from v1 SCS Flavors to v2, no such painful change happened again during the R5 development cycle nor is one expected in the future. The new SSD flavors are slated to become mandatory in December 2023 with the new version of the certification suite. (More on the more flexible recommended diskless flavors in a [Blog-article](https://scs.community/de/2023/08/21/diskless-flavors/)
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    {% asset 'blog/Release5.png' class="figure-img w-100 mx-auto" %}
+</figure>
+
+### Release Summary
+**SCS is standardized**
+Standardization of flavors has been completed: (https://scs.community/2023/08/21/diskless-flavors/)  Extensive testing has been implemented to verifiably check the standards of SCS-based CSPs on a regular basis. All current and also planned standards are documented on this page: (https://docs.scs.community/standards)
+
+**SCS is understandable**
+The new, complete documentation of SCS is now accessible: (https://docs.scs.community/docs)  There, in addition to the project documentation, feedback from SCS integrators and from people and organizations coming into contact with SCS for the first time is reflected to ensure that SCS becomes even more understandable.
+
+**SCS enables** 
+SCS enables - on a variety of levels and not only operators, but also integrators, developers and especially users of infrastructure built on SCS to use and operate a fully digital, sovereign cloud infrastructure and platform. With the new release, the cloud stack has been extended with essential building blocks of the container layer, so that SCS can also be used as an application platform and is available for all containerized applications.
+
+**SCS is transparent**
+Transparency is one of the core values of the project - and the community wants to ensure that all development efforts are actively focused on transparency. This ranges from the development culture to the open operations movement to technical elements like [SBOMs](https://en.wikipedia.org/wiki/Software_supply_chain) for the entire stack. But not only is all development transparent, all deliverables, all logs, all documentation is open and accessible. Every decision is documented and is traceable. Every bug is transparently fixed.
+
+**SCS is continuously built and tested**
+As part of the development work, work began on the custom Zuul instance in the R4 cycle. This has since become the backbone of the test infrastructure - from running CI for various components in the SCS stack to end-to-end testing for the CAPI provider.
+
+**SCS is opinionated**
+While the SCS project provides a modular stack and focuses on clear standards that ensure  interoperability, the community in our reference implementation is opinionated. Forming opinions at this level leads to focus and prevents the project from getting tangled in an arbitrary "both/and." This forces informed decisions to be made. These decisions need to be well documented - which is why an ADR framework was started early on. This in turn pays into SCS is understandable. Focusing on a specific tool set and dedicated open source projects ensures deep integration, focused development, and a stable, production-ready cloud stack that delivers the desired benefits to all users.
+
+**further links**
+Sovereign Cloud Stack: (https://scs.community/)
+Technical Documentation SCS: (https://docs.scs.community/docs)
+SCS Repositories: (https://github.com/SovereignCloudStack)
+Release notes: (https://github.com/SovereignCloudStack/release-notes)
+SCS’s notion of digital sovereignty: (https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/) and (https://link.springer.com/epdf/10.1007/s11623-022-1669-5?sharing_token=ie7xTVzv_afod07w5Y2lJfe4RwlQNchNByi7wbcMAY4yFyxh9Qw2iCtygUYjun7MI5leBYqiHZBlIeTPv8Sm1Wv8c1dEUf6ebSwnRfo99_nAYh2FgwUyIHjFyZFWv_EIOEIetr2eBSiAPrI68ptBgKxMVkNlS4udZRAhx1X-WB8=)
