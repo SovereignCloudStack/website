@@ -10,7 +10,7 @@ about:
 ---
 
 As reported in a previous blog article about the [plans regarding OpenID Connect federation that came up from
-tje SCS hackathon in Cologne](https://scs.community/2023/01/05/sig-iam-openstack-cli-with-federation/), the IAM part of
+the SCS hackathon in Cologne](https://scs.community/2023/01/05/sig-iam-openstack-cli-with-federation/), the IAM part of
 the SCS project decided to work on adding support for the [OAuth 2.0 Device Authorization
 Grant](https://www.rfc-editor.org/rfc/rfc8628) to OpenStack Keystone.
 
@@ -52,6 +52,3 @@ explained that they found an even better solution.
 This has been [merged into the testbed](https://github.com/osism/testbed/pull/1717) some weeks ago
 and we will continue with making that fix part of the bigger move to ship our configuration for identity federation
 as part of the OSISM Cookiecutter repository to make it easily available to productive deployments of SCS.
-
-Enjoy,
-Arvid Requate (Member SCS "Operations and IAM" Team)
