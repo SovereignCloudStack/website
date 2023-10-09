@@ -13,3 +13,6 @@
 - name: "aov IT.Services GmbH"
   image: "logo-aov.svg"
   link: "https://www.aov.de"
+- name: "artcodix"
+  image: "logo-artcodix-cloud.svg"
+  link: "https://artcodix.com"
