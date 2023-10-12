@@ -5,7 +5,7 @@ Sovereign Cloud Stack ist eine offenes Netzwerk von Anbietern und Usern, die gem
 ## Wir sind auf GitHub
 
 Wir entwickeln, diskutieren und planen auf [GitHub](https://github.com/SovereignCloudStack).
-Die drei technischen Teams verwenden ein gemeinsames [Project Board](https://github.com/orgs/SovereignCloudStack/projects/6)
+Die technischen Teams verwenden ein gemeinsames [Project Board](https://github.com/orgs/SovereignCloudStack/projects/6)
 um den Fortschritt während unserer Sprints festzuhalten und zu überwachen. 
 
 ## Wir sind eine offene Community
