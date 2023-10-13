@@ -8,7 +8,7 @@ participate in the various discussions happening on GitHub or during our various
 ## We're on GitHub
 
 We're actively developing, discussing and planning on [GitHub](https://github.com/SovereignCloudStack).
-The three technical teams are using a joint [project board](https://github.com/orgs/SovereignCloudStack/projects/6)
+The technical teams are using a joint [project board](https://github.com/orgs/SovereignCloudStack/projects/6)
 to plan and monitor the progress during our sprints. 
 
 ## We're  an open community
