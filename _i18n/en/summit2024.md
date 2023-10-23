@@ -2,9 +2,9 @@
 
 Dear friends of SCS and interested observers,
 
-we are pleased to announce that the next edition of the Sovereign Cloud Stack Summit will take place in Berlin on Tuesday, May 14, 2024. Join us as we continue our journey towards a more secure, decentralized and sovereign cloud ecosystem.
+We are pleased to announce that the next edition of the Sovereign Cloud Stack Summit will take place in Berlin on Tuesday, May 14, 2024. Join us as we continue our journey towards a more secure, decentralized and sovereign cloud ecosystem.
 
-Look forward to an exciting program of keynote speakers, insightful panel discussions, engaging workshops and networking opportunities that will shape the future of the Sovereign Cloud Stack. The Summit program will be announced over the next few months, so check our website regularly or subcribe our [SCS Digest](https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/) to keep up to date.
+Look forward to an exciting program of keynote speakers, insightful panel discussions, engaging workshops and networking opportunities that will shape the future of the Sovereign Cloud Stack. The Summit program will be announced over the next few months, so check our website regularly or subcribe our [SCS Digest](https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/) to stay up to date.
 
 Save the date, as we look forward to your participation in the Sovereign Cloud Stack Summit 2024. Let's pave the way together for a cloud infrastructure built on trust, resilience and independence.
 
