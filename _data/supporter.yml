@@ -180,3 +180,10 @@
   location:
     latitude: 48.28427
     longitude: 17.27119
+- name: "stackXperts GmbH"
+  image: "logo-stackxperts.png"
+  avatar: "avatar-stackxperts.png"
+  link: "https://www.stackxperts.com/"
+  location:
+    latitude: 51.142700
+    longitude: 14.246100
