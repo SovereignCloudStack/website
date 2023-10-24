@@ -29,10 +29,10 @@ We will meet at [CLOUD&HEAT](https://www.cloudandheat.com/): **Königsbrücker S
 We will start the hackathon with a welcome session - if you want to be present for that, please arrive by 09:30.
 
 ## Overnight stay
-If you want to have sometime with us after the Hackathon or want to join us for a drink, we recommend the [Motel One Dresden-Palaisplatz](https://www.motel-one.com/de/hotels/dresden/hotel-dresden-palaisplatz/).
+If you want to have some time with us after the Hackathon or want to join us for a drink, we recommend the [Motel One Dresden-Palaisplatz](https://www.motel-one.com/de/hotels/dresden/hotel-dresden-palaisplatz/).
 
 ## Programm
-The day will start with a short introduction of our hosts Cloud&Heat and their energy concept. Afterwards we will dive into working phase. As a short break during the day we are invited to an introduction of Yaook and ALASCA with a little snack. After that we go back to our topics and work on. Befor diner we will present all outcomes of the day. As last year, we will follow the [open space approach](https://en.wikipedia.org/wiki/Open_Space_Technology) and embrace the Law of Two Feet:
+The day will start with a short introduction of our hosts Cloud&Heat and their energy concept. After that, we will dive into the work phase. As a short break during the day we are invited to an introduction of Yaook and ALASCA with a little snack. After that we go back to our topics and work on. Before dinner we will present all outcomes of the day. As last year, we will follow the [open space approach](https://en.wikipedia.org/wiki/Open_Space_Technology) and embrace the Law of Two Feet:
 
 > If, during the course of the gathering, any person finds themselves in a situation where they are neither learning nor contributing, they can go to some more productive place. This is not only an accepted, but a desired behavior.
 
@@ -40,7 +40,7 @@ The day will start with a short introduction of our hosts Cloud&Heat and their e
 
 ### Food and beverage
 
-Between 17:00 and 18:00 we will have an extended break for a dinner. We will ensure that vegan and vegetarian options are available. Should you have an allergy, please let us know in advance! 
+Between 17:00 and 18:00 we will have an extended break for dinner. We will ensure that vegan and vegetarian options are available. Should you have an allergy, please let us know in advance! 
 
 ### Data protection and notices
 The security requirements of the location demand personal registration. 
