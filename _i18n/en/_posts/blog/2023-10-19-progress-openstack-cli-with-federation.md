@@ -53,7 +53,7 @@ This has been [merged into the testbed](https://github.com/osism/testbed/pull/17
 and we will continue with making that fix part of the bigger move to ship our configuration for identity federation
 as part of the OSISM Cookiecutter repository to make it easily available to productive deployments of SCS.
 
-<font size="small">
+<p style="font-size:12px; ">
 Editorial note/Changelog 2023-10-27: While most of this was written before Sep 5 and thus originally had a
 planned publication date of Sep 5, it was only ultimately approved and published on Oct 19. We have now changed
-the publication date to reflect that and no longer claim Sep 5.</font>
+the publication date to reflect that and no longer claim Sep 5.</p>
