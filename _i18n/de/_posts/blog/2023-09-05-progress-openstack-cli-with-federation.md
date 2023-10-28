@@ -1,1 +1,0 @@
-../../../en/_posts/blog/2023-09-05-progress-openstack-cli-with-federation.md
