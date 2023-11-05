@@ -16,6 +16,7 @@ nav:
   jobs: "Open positions"
   tenders: "Public tenders"
   docs: "Documentation"
+  events: "Events"
   contribute: "Contribute to SCS"
   summit2023: "Join us for our first SCS Summit on 23rd and 24th of May 2023 in Berlin."
 footer:
@@ -51,6 +52,10 @@ tiles:
     title: "Tenders"
     body: "Important building blocks will be awarded to companies through open tenders, which will be continously published on this page."
     action: "Apply &raquo;"
+  events:
+    title: "Events"
+    body: "Events that are (co)organized by the SCS Team as well as important events with contributions from SCS."
+    action: "More details"
 news:
   announcements: "Own Announcements"
   blog: "Community Blog"

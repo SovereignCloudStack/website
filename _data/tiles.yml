@@ -3,6 +3,11 @@
   action: tiles.news.action
   link: /news/
   color: "mint"
+- title: tiles.events.title
+  body: tiles.events.body
+  action: tiles.events.action
+  link: /events/
+  color: "mint"
 - title: tiles.documentation.title
   body: tiles.documentation.body
   action: tiles.documentation.action
