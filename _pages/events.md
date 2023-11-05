@@ -1,4 +1,3 @@
-
 ---
 title_slug: events.title
 layout: default
