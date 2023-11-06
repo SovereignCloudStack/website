@@ -15,6 +15,9 @@
 - title: nav.news
   link: /news/
 
+- title: nav.events
+  link: /events/
+
 - title: nav.jobs
   link: /jobs/
 

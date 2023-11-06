@@ -10,10 +10,6 @@ Merken Sie sich diesen Termin vor. Wir freuen uns auf Ihre Teilnahme! Lassen Sie
 
 Wir freuen uns besonders, dass unser Summit mit dem Auftakt der OpenInfra Day Roadshow kombiniert wird. Der [OpenInfra Day Germany 2024](https://superuser.openinfra.dev/articles/openinfra-event-strategy-update/) findet am Mittwoch, den 15. Mai 2024 in den gleichen Räumlichkeiten wie unser Summit statt. Nutzen Sie die einmalige Gelegenheit, am ersten Tag SCS, unsere Partner und unsere Community kennenzulernen, und am zweiten Tag in die Welt der Open-Source-Community-Arbeit einzutauchen. Wir laden Sie herzlich dazu ein.
 
-Wir danken Ihnen,
-
-Das Team des Sovereign Cloud Stack Summit
-
 [Hier](https://scs.community/summit2023) finden Sie die Präsentationen und Vorträge des Summit 2023.
 
 ## Kontakt
