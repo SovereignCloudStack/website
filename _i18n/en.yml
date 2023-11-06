@@ -58,6 +58,7 @@ tiles:
     action: "More details"
 events:
   title: "Events"
+  hint: "Please also see our Events page"
 news:
   announcements: "Own Announcements"
   blog: "Community Blog"

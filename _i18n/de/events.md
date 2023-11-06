@@ -1,6 +1,6 @@
 # Veranstaltungen
 
-## Eigene Veranstaltungen: SCS Hackathons und SCS Summits
+## Eigene Veranstaltungen
 
 ### SCS Summits
 
