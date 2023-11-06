@@ -43,19 +43,15 @@ project.
 
 ## Contributing
 
+We are a global community of companies and organizations.
+
+{% include maps/community.html %}
+
 Please see the [Community section on our docs pages](https://docs.scs.community/community/)
 to understand how the community interacts to create the SCS standards, code and knowledge.
 <!--We have created a [Contributor Guide](https://scs.community/docs/contributor/) that documents some of policies and processes we have chosen.-->
-
-If you want join the effort, we encourage you to
+If you want an individual onboarding, you can also directly
 [get in touch](mailto:project@scs.sovereignit.de) with us.
-We will do a short onboarding session and invite you to weekly
-virtual team meetings.
-
-We also appreciate occasional feedback from people -- feel
-free to raise issues on github or better open PRs. Don't forget
-to use DCO (Sign-off) to ensure we can use your contribution in
-a legally safe way.
 
 We are an open and welcoming community.
 Expectations towards the behavior of community members are

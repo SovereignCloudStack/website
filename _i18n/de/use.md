@@ -48,20 +48,17 @@ Projekt auf.
 
 ## Beitragen
 
+Wir sind eine internationales Gemeinschaft aus verschiedeen Unternehmen und Organisationen.
+
+{% include maps/community.html %}
+
 Im [Community Bereich unserer Docs Seiten](https://docs.scs.community/community/)
 kann man besser verstehen, wie die Community interagiert, um SCS Standards,
 Code und Wissen zu entwickeln.
 <!--Wir haben einen [contributor guide](https://scs.community/docs/contributor/) geschrieben, welcher einige der Prozesse und Regeln, die wir zu nutzen entschieden haben, dokumentiert.-->
-
-Wenn man mitmachen möchte, schlagen wir vor, mit uns
-[in Kontakt zu treten](mailto:project@scs.sovereignit.de).
-Wir würden dann eine kurze Onboarding-Sitzung machen und
-zu den virtuellen wöchentlichen Team Meetings einladen.
-
-Wir freuen uns auch über gelegentliche Beiträge -- das kann
-über Issues oder besser PRs auf github geschehen.
-Bei letzterem sollte an den DCO (Signed-off-by:) gedacht werden,
-damit wir den Beitrag auch in rechtlich sicherer Weise nutzen.
+Wer möchte kann auch direkt mit uns
+[in Kontakt treten](mailto:project@scs.sovereignit.de).
+für ein individuelles Onboarding.
 
 Wir sind eine offene Community, die Neuankömmlinge willkommen heisst.
 Unsere Erwartungen an das Verhalten der Beitragenden haben wir in einem
