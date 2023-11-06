@@ -56,6 +56,8 @@ tiles:
     title: "Veranstaltungen"
     body: "Veranstaltungen, die durch das SCS Team (mit)organisiert werden sowie die wichtigsten Veranstaltungen, an denen SCS aktiv teilnimmt."
     action: "Details"
+events:
+  title: "Veranstaltungen"
 news:
   announcements: "Eigene Ankündigungen"
   blog: "Community-Blog"
