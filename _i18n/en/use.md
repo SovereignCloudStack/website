@@ -43,9 +43,7 @@ project.
 
 ## Contributing
 
-We are a global community of companies and organizations.
-
-{% include maps/community.html %}
+We are a global community of companies, organizations and individuals.
 
 Please see the [Community section on our docs pages](https://docs.scs.community/community/)
 to understand how the community interacts to create the SCS standards, code and knowledge.
@@ -56,6 +54,8 @@ If you want an individual onboarding, you can also directly
 We are an open and welcoming community.
 Expectations towards the behavior of community members are
 expressed in our [Code of Conduct](https://github.com/SovereignCloudStack/.github/blob/main/CODE_OF_CONDUCT.md).
+
+{% include maps/community.html %}
 
 ## Adopting SCS
 
@@ -73,7 +73,7 @@ First is that SCS is modular. You might adopt just some pieces of
 our container stack. Or maybe the Ops stack. Or IaaS. Or ceph.
 Or maybe everything but ceph ...
 
-Second, we see two different levels of adoption.
+Second, we see three different levels of adoption.
 
 ### Adoption levels
 
@@ -89,18 +89,18 @@ of code and save a lot of work in curating, integrating, automating,
 testing, documenting this piece. Importantly, as we create best practices
 for Operations, you'd also be able to participate in this -- possibly
 opening yourself up to a model, where you could share Operational
-duties in an OpenOps model.
+duties in an [Open Operations](http://openoperations.org/) model.
 
 So an adoption matrix could look like this (simplified):
 
 <div class="table-responsive" markdown="1">
 
-| Module       | Adoption level 2021 | Adoption level 2022 |
+| Module       | Adoption level 2022 | Adoption level 2023 |
 |--------------|:-------------------:|:-------------------:|
 | Monitoring   |     none            |  compliant          |
 | IaaS         |     compliant       |  implementation     |
 | Storage      |     none            |  none               |
-| k8s-capi     |     implementation  |  implementation     |
+| k8s-capi     |     implementation  |  impl+OpenOps       |
 | k8s registry |     implementation  |  implementation     |
 
 </div>
