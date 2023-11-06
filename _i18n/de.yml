@@ -58,7 +58,6 @@ tiles:
     action: "Details"
 events:
   title: "Veranstaltungen"
-  hint: "Weiteres gibt es auf unserer Veranstaltungsseite."
 news:
   announcements: "Eigene Ankündigungen"
   blog: "Community-Blog"
@@ -72,6 +71,7 @@ news:
     title: "Konferenzbeiträge"
     slides: "Folien"
   read_more: "Weiterlesen..."
+  events_link: "Mehr auf unserer Veranstaltungsseite."
 tenders:
   name: "Name"
   description: "Beschreibung"
