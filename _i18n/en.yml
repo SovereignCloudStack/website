@@ -72,7 +72,7 @@ news:
     title: "Conference Contributions"
     slides: "Slides"
   read_more: "Read more..."
-  event_link: "See also our events page."
+  events_link: "See also our events page."
 tenders:
   name: "Name"
   description: "Description"
