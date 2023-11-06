@@ -48,13 +48,10 @@ Projekt auf.
 
 ## Beitragen
 
-Informationen rund um unsere alltägliche Zusammenarbeit sind auf
-der Seite ["Zu SCS beitragen"](https://scs.community/de/contribute/) zusammengefasst.
-
-<!--Wir haben einen [contributor guide](https://scs.community/docs/contributor/) geschrieben, welcher einige der Prozesse und Regeln, die wir zu nutzen entschieden haben, dokumentiert.-->
 Im [Community Bereich unserer Docs Seiten](https://docs.scs.community/community/)
-kann man besser verstehen, wie die Community interagiert, um SCS Standards, C
-ode und Wissen zu entwickeln.
+kann man besser verstehen, wie die Community interagiert, um SCS Standards,
+Code und Wissen zu entwickeln.
+<!--Wir haben einen [contributor guide](https://scs.community/docs/contributor/) geschrieben, welcher einige der Prozesse und Regeln, die wir zu nutzen entschieden haben, dokumentiert.-->
 
 Wenn man mitmachen möchte, schlagen wir vor, mit uns
 [in Kontakt zu treten](mailto:project@scs.sovereignit.de).
