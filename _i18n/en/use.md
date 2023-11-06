@@ -46,10 +46,9 @@ project.
 Information regarding our daily workflow and meetings are
 summarized on the ["Contribute to SCS"](https://scs.community/contribute/) page.
 
-We have created a
-[Contributor Guide](https://scs.community/docs/contributor/)
-that documents some of policies and processes we have
-chosen.
+<!--We have created a [Contributor Guide](https://scs.community/docs/contributor/) that documents some of policies and processes we have chosen.-->
+Please see the [Community section on our docs pages](https://docs.scs.community/community/)
+to understand how the community interacts to create the SCS standards, code and knowledge.
 
 If you want join the effort, we encourage you to
 [get in touch](mailto:project@scs.sovereignit.de) with us.
