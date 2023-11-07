@@ -43,27 +43,19 @@ project.
 
 ## Contributing
 
-Information regarding our daily workflow and meetings are
-summarized on the ["Contribute to SCS"](https://scs.community/contribute/) page.
+We are a global community of companies, organizations and individuals.
 
-We have created a
-[Contributor Guide](https://scs.community/docs/contributor/)
-that documents some of policies and processes we have
-chosen.
-
-If you want join the effort, we encourage you to
+Please see the [Community section on our docs pages](https://docs.scs.community/community/)
+to understand how the community interacts to create the SCS standards, code and knowledge.
+<!--We have created a [Contributor Guide](https://scs.community/docs/contributor/) that documents some of policies and processes we have chosen.-->
+If you want an individual onboarding, you can also directly
 [get in touch](mailto:project@scs.sovereignit.de) with us.
-We will do a short onboarding session and invite you to weekly
-virtual team meetings.
-
-We also appreciate occasional feedback from people -- feel
-free to raise issues on github or better open PRs. Don't forget
-to use DCO (Sign-off) to ensure we can use your contribution in
-a legally safe way.
 
 We are an open and welcoming community.
 Expectations towards the behavior of community members are
 expressed in our [Code of Conduct](https://github.com/SovereignCloudStack/.github/blob/main/CODE_OF_CONDUCT.md).
+
+{% include maps/community.html %}
 
 ## Adopting SCS
 
@@ -81,7 +73,7 @@ First is that SCS is modular. You might adopt just some pieces of
 our container stack. Or maybe the Ops stack. Or IaaS. Or ceph.
 Or maybe everything but ceph ...
 
-Second, we see two different levels of adoption.
+Second, we see three different levels of adoption.
 
 ### Adoption levels
 
@@ -97,18 +89,18 @@ of code and save a lot of work in curating, integrating, automating,
 testing, documenting this piece. Importantly, as we create best practices
 for Operations, you'd also be able to participate in this -- possibly
 opening yourself up to a model, where you could share Operational
-duties in an OpenOps model.
+duties in an [Open Operations](http://openoperations.org/) model.
 
 So an adoption matrix could look like this (simplified):
 
 <div class="table-responsive" markdown="1">
 
-| Module       | Adoption level 2021 | Adoption level 2022 |
+| Module       | Adoption level 2022 | Adoption level 2023 |
 |--------------|:-------------------:|:-------------------:|
 | Monitoring   |     none            |  compliant          |
 | IaaS         |     compliant       |  implementation     |
 | Storage      |     none            |  none               |
-| k8s-capi     |     implementation  |  implementation     |
+| k8s-capi     |     implementation  |  impl+OpenOps       |
 | k8s registry |     implementation  |  implementation     |
 
 </div>
