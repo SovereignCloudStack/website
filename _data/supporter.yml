@@ -187,3 +187,10 @@
   location:
     latitude: 51.142700
     longitude: 14.246100
+- name: "Daiteap GmbH & Co KG"
+  image: "logo-daiteap.webp"
+  avatar: "avatar-daiteap.webp"
+  link: "https://www.daiteap.com"
+  location:
+    latitude: 49.397796339312585
+    longitude: 8.673631826448544
