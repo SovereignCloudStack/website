@@ -187,3 +187,10 @@
   location:
     latitude: 51.142700
     longitude: 14.246100
+- name: "aov IT.Services GmbH"
+  image: "logo-aov.png"
+  avatar: "avatar-aov.png"
+  link: "https://www.aov.de"
+  location:
+    latitude: 51.88271743778417
+    longitude: 8.446083613057226
