@@ -187,3 +187,11 @@
   location:
     latitude: 51.142700
     longitude: 14.246100
+- name: "Proventa AG"
+  image: "logo-proventa.png"
+  avatar: "avatar-proventa.png"
+  link: "https://proventa.de"
+  location:
+    latitude: 50.10506968992267
+    longitude: 8.671724439698709
+
