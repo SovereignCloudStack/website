@@ -187,3 +187,11 @@
   location:
     latitude: 51.142700
     longitude: 14.246100
+- name: "JH-Computers GmbH"
+  image: "logo-jh-computers.png"
+  avatar: "avatar-jh-computers.png"
+  link: "https://jh-computers.de"
+  location:
+    latitude: 49.00645831758871
+    longitude: 10.30503938410078
+
