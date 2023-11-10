@@ -188,8 +188,8 @@
     latitude: 51.142700
     longitude: 14.246100
 - name: "ScaleUp Technologies GmbH & Co. KG"
-  image: "logo-scaleup.svg"
-  avatar: "avatar-scaleup.svg"
+  image: "logo-scaleup.jpg"
+  avatar: "avatar-scaleup.jpg"
   link: "https://www.scaleuptech.com"
   location:
     latitude: 53.54814091174572
