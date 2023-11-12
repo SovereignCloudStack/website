@@ -194,6 +194,13 @@
   location:
     latitude: 47.9230
     longitude: 12.0745
+- name: "aov IT.Services GmbH"
+  image: "logo-aov.png"
+  avatar: "avatar-aov.png"
+  link: "https://www.aov.de"
+  location:
+    latitude: 51.88271743778417
+    longitude: 8.446083613057226
 - name: "Daiteap GmbH & Co KG"
   image: "logo-daiteap.webp"
   avatar: "avatar-daiteap.webp"
