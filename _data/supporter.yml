@@ -187,6 +187,13 @@
   location:
     latitude: 51.142700
     longitude: 14.246100
+- name: "Daiteap GmbH & Co KG"
+  image: "logo-daiteap.webp"
+  avatar: "avatar-daiteap.webp"
+  link: "https://www.daiteap.com"
+  location:
+    latitude: 49.397796339312585
+    longitude: 8.673631826448544
 - name: "JH-Computers GmbH"
   image: "logo-jh-computers.png"
   avatar: "avatar-jh-computers.png"
@@ -207,4 +214,3 @@
   location:
     latitude: 53.54814091174572
     longitude: 10.043509157308835
-
