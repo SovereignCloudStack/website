@@ -187,6 +187,12 @@
   location:
     latitude: 51.142700
     longitude: 14.246100
+- name: "Proventa AG"
+  image: "logo-proventa.png"
+  avatar: "avatar-proventa.png"
+  link: "https://proventa.de"
+  location:
+    latitude: 50.10506968992267
 - name: "ScaleUp Technologies GmbH & Co. KG"
   image: "logo-scaleup.jpg"
   avatar: "avatar-scaleup.jpg"
