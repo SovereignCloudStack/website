@@ -187,6 +187,13 @@
   location:
     latitude: 51.142700
     longitude: 14.246100
+- name: "artcodix UG"
+  image: "logo-artcodix.png"
+  avatar: "avatar-artcodix.png"
+  link: "https://artcodix.com/"
+  location:
+    latitude: 47.9230
+    longitude: 12.0745
 - name: "aov IT.Services GmbH"
   image: "logo-aov.png"
   avatar: "avatar-aov.png"
