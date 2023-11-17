@@ -47,6 +47,8 @@ Attestation of such an SGX Enclave will measure the Enclave's current memory con
 
 Since Linux kernel 5.13, a system with SGX enabled will be supported by the mainstream kernel without additional configuration in all Linux distributions. On bare metal and within KVM/Qemu-based VMs, SGX memory - the so-called Enclave Page Cache - will be accessible to code utilizing SGX instructions. Up to date versions of qemu (>=6.2) and libvirt (>=8.10) support using SGX within virtual machines.
 
+Being on the market for this extended time, SGX has been researched well and [vulnerabilities found](https://en.wikipedia.org/wiki/Software_Guard_Extensions#List_of_SGX_vulnerabilities) have been [fixed](https://www.intel.com/content/www/us/en/security-center/default.html) either through microcode updates or microarchitectural changes that were applied along with SGX' Trusted Compute Base Recovery (TCB-R) process which allows to gracefully handle enclave version and patch level changes in its attestation framework. For more information on both SGX attestation and TCB Recovery please see this page on [SGX attestation technical details](https://www.intel.com/content/www/us/en/security-center/technical-details/sgx-attestation-technical-details.html).
+
 b) VM-based TEEs: Intel TDX And AMD SEV
 
 While application-based TEEs like SGX enclaves minimize the trust boundary around confidential data and thus help to keep attack surfaces small, it requires explicit effort to convert existing artifacts, whether through re-linking or through application refactoring. Technologies such as Intel Trust Domain Extensions (Intel TDX) and AMD Secure Encrypted Virtualization (AMD SEV) in their respective variants directly support virtual machines to be deployed as TEEs. 
