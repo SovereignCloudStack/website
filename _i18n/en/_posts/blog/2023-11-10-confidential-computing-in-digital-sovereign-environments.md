@@ -23,7 +23,7 @@ Throughout a data asset's life cycle, multiple and well-understood methods exist
 
 This execution model helps to separate duties between a tenant and a platform owner that do not belong to the same organization - a model all too common in public cloud computing. Going one step further, typical Confidential Computing implementations also allow any external party to get a cryptographic proof of a TEE's content at runtime via a remote attestation mechanism. In such a case a challenged TEE's CPU would reply with a signed current measurement (hash) of the TEE's memory map as well as a patch level indicator for the underlying server platform's critical firmware, allowing the relying party to validate these values against expectations before sharing secrets with the TEE. 
 
-Overall, Confidential Computing when implemented well can be utilized to enforce compliance needs and as such helps to amplify the sovereignty posture of digital services based on it. 
+Overall, Confidential Computing, when implemented well, can be utilized to enforce compliance needs and, as such, helps to amplify the sovereignty posture of digital services based on it. 
 
 ## Technology explained
 
