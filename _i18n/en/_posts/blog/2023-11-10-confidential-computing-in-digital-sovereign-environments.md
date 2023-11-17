@@ -108,4 +108,4 @@ These services empower federations to authenticate and authorize participants in
     <figcaption>XFSC Architecture Overview</figcaption>
 </figure>
 
-The architectural overview shows the various microservices involved in the XFSC. Confidential Computing for the Organizational Credential Manager (OCM) allows to attest running code of OCM before sending secrets and enables to keep secrets confidential while processing further activities in XFSC.
+The architectural overview shows the various microservices involved in the XFSC. Confidential Computing for the Organizational Credential Manager (OCM) allows one to attest to the running code of OCM before sending secrets. It enables one to keep secrets confidential while processing further activities in XFSC.
