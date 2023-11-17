@@ -17,7 +17,7 @@ about:
 
 ## Why is confidential computing anticipated
 
-Protecting data is at the heart of any digital sovereignty discussion. Traditional controls to achieve this rely on encryption of data assets with keys managed such that sovereignty goals can be achieved. This bases the protection of data on proper management of keys based on a consistent role understanding and access management. So far, so common...
+Protecting data is at the heart of any digital sovereignty discussion. Traditional controls to achieve this rely on the encryption of data assets with keys managed such that sovereignty goals can be achieved. This bases data protection on proper key management based on a consistent role understanding and access management. So far, so common...
 
 Throughout a data asset's life cycle, there exist multiple and well-understood methods for protecting data at rest, i.e. when stored, such as drive, file, and object encryption, and for protecting data in transit on the wire via e.g. IPsec or TLS. Up to recently, however, when data is being processed it was required to be in cleartext, as was the code being executed to process it. Confidential Computing sets out to solve this: a Trusted Execution Environment (TEE) in the CPU gets established that protects and isolates code and data at runtime. Implemented as part of a processor's memory map, encryption is again used to keep code and data within such as TEE confidential. Only after reading the encrypted memory lines into the processor package, such data gets decrypted so that it can be processed. Processor busines logic ensures that encryption keys are only managed by the tenant and cannot be utilized by other tenants nor by system software or platform administrators. 
 
