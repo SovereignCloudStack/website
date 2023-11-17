@@ -33,7 +33,7 @@ a) Process-based TEEs: Intel Software Guard Extensions (SGX)
 
 Intel SGX was the first Confidential Computing technology on the market. It appeared with support for size-limited TEEs (up to 256 MB), so called Secure Enclaves, in Intel's client architectures of the Skylake microarchitecture and following, and supported an attestation method based on the Enhanced Privacy ID (EPID). This initial version of SGX was since discontinued. 
 
-Today's version of Intel SGX has improved performance, supports Enclave sizes of up to 1 TB in 2S system, and features a scalable attestation protocol based on ECDSA signatures. It has been on the market since the Xeon Scalable Processor of the 3rd generation, codename Icelake. 
+Today's version of Intel SGX has improved performance, supports Enclave sizes of up to 1 TB in 2 socket system, and features a scalable attestation protocol based on ECDSA signatures. It has been on the market since the Xeon Scalable Processor of the 3rd generation, codename Icelake. 
 
 An SGX Enclave effectively encapsulates code and data that make up a process. Code entry and exit from such an enclave are done explicitly through call gates, while neither operating system calls nor devices are directly supported within the enclave and thus have to be proxied through call gates. In order to utilize existing applications within such an Enclave, library operating systems such as Gramine (https://gramineproject.io) are utilized to implement a largely Linux-compliant ABI to an application and can help to even run container processes within the TEE (Gramine Shielded Containers, https://gramine.readthedocs.io/en/stable/gsc-installation.html).
 
