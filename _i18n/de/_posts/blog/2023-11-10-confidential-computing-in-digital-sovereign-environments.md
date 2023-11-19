@@ -1,1 +1,0 @@
-../../../en/_posts/blog/2023-11-10-confidential-computing-in-digital-sovereign-environments.md
