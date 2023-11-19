@@ -79,11 +79,10 @@ For SCS to embark on the support for Confidential Computing, SGX presents itself
 
 With the [Secured Cloud Management Stack](https://github.com/intel/secured-cloud-management-stack/) (SCM) a lot of work has been done by Intel to bring Trusted Execution Environments to OpenStack. In order to make this accessable on top of SCS it must become part of upstream OpenStack. Through the various tenders run by the Sovereign Cloud Stack project, bringing technology upstream is being funded, and a while ago, it was concluded to tackle the upstreaming of the Intel patchset as part of our [tender package 01](https://scs.community/tenders/lot1).
 
-The work is aligned in the Team IaaS and is outlined in [a corresponding epic](https://github.com/SovereignCloudStack/issues/issues/39).
+The work is aligned in the Team IaaS and is outlined in [a corresponding epic](https://github.com/SovereignCloudStack/issues/issues/39). The epic contains the theoretical aspects as well as the technical aspects such as the userstory [Forwarding-porting and retesting of upstream intel patchset for SGX and OpenStack](https://github.com/SovereignCloudStack/issues/issues/246) which contains the references to the necessary work on the codebase. Once the patchsets are updated to match the current OpenStack codebase the next steps will be to have SGX-enabled kolla images available. With those present it will be much easier to test SGX on top of OpenStack in the SCS-community and work from upstreaming the changes from there.
+Once support has landed in upstream OpenStack proper automated testing needs to be added in order to assure that the code paths properly keep working each time changes are done to the relevant codebase.
 
 Aside from the funding through the tender 01 the effort is supported by Intel providing the corresponding hardware.
-
-Once support has landed in upstream OpenStack proper testing needs to be added in order to assure 
 
 ## Moving upwards from the metal
 
