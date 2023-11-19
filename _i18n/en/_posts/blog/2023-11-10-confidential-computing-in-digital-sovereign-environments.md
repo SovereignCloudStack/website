@@ -108,3 +108,5 @@ These services empower federations to authenticate and authorize participants in
 </figure>
 
 The architectural overview shows the various microservices involved in the XFSC. Confidential Computing for the Organizational Credential Manager (OCM) allows one to attest to the running code of OCM before sending secrets. It enables one to keep secrets confidential while processing further activities in XFSC.
+
+In a follow up blogpost, and once we have the SGX-enabled OpenStack up and running, we will be diving into the depth of actually moving the OCM and other services to a SGX-backed system.
