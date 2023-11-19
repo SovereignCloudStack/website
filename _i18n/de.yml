@@ -16,6 +16,7 @@ nav:
   jobs: "Offene Stellen"
   tenders: "Ausschreibungen"
   docs: "Dokumentation"
+  events: "Veranstaltungen"
   contribute: "Zu SCS beitragen"
   summit2023: "Unser erster SCS Summit findet am 23. and 24. Mai 2023 in Berlin statt."
 footer:
@@ -51,6 +52,12 @@ tiles:
     title: "Ausschreibungen"
     body: "Wichtige Bausteine sollen über offene Ausschreibungen an Unternehmen vergeben werden, welche hier regelmäßig veröffentlich werden."
     action: "Bewerben &raquo;"
+  events:
+    title: "Veranstaltungen"
+    body: "Veranstaltungen, die durch das SCS Team (mit)organisiert werden sowie die wichtigsten Veranstaltungen, an denen SCS aktiv teilnimmt."
+    action: "Details"
+events:
+  title: "Veranstaltungen"
 news:
   announcements: "Eigene Ankündigungen"
   blog: "Community-Blog"
@@ -64,6 +71,7 @@ news:
     title: "Konferenzbeiträge"
     slides: "Folien"
   read_more: "Weiterlesen..."
+  events_link: "Mehr auf unserer Veranstaltungsseite."
 tenders:
   name: "Name"
   description: "Beschreibung"

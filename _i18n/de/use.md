@@ -48,28 +48,23 @@ Projekt auf.
 
 ## Beitragen
 
-Informationen rund um unsere alltägliche Zusammenarbeit sind auf
-der Seite ["Zu SCS beitragen"](https://scs.community/de/contribute/) zusammengefasst.
+Wir sind eine internationale Gemeinschaft aus verschiedenen Unternehmen, Organisationen
+und Individuen.
 
-Wir haben einen
-[contributor guide](https://scs.community/docs/contributor/)
-geschrieben, welcher einige der Prozesse und Regeln, die wir
-zu nutzen entschieden haben, dokumentiert.
-
-Wenn man mitmachen möchte, schlagen wir vor, mit uns
-[in Kontakt zu treten](mailto:project@scs.sovereignit.de).
-Wir würden dann eine kurze Onboarding-Sitzung machen und
-zu den virtuellen wöchentlichen Team Meetings einladen.
-
-Wir freuen uns auch über gelegentliche Beiträge -- das kann
-über Issues oder besser PRs auf github geschehen.
-Bei letzterem sollte an den DCO (Signed-off-by:) gedacht werden,
-damit wir den Beitrag auch in rechtlich sicherer Weise nutzen.
+Im [Community Bereich unserer Docs Seiten](https://docs.scs.community/community/)
+kann man besser verstehen, wie die Community interagiert, um SCS Standards,
+Code und Wissen zu entwickeln.
+<!--Wir haben einen [contributor guide](https://scs.community/docs/contributor/) geschrieben, welcher einige der Prozesse und Regeln, die wir zu nutzen entschieden haben, dokumentiert.-->
+Wer möchte kann auch direkt mit uns
+[in Kontakt treten](mailto:project@scs.sovereignit.de)
+für ein individuelles Onboarding.
 
 Wir sind eine offene Community, die Neuankömmlinge willkommen heisst.
 Unsere Erwartungen an das Verhalten der Beitragenden haben wir in einem
 [Verhaltenskodex](https://github.com/SovereignCloudStack/.github/blob/main/CODE_OF_CONDUCT.md)
 zum Ausdruck gebracht.
+
+{% include maps/community.html %}
 
 ## SCS einsetzen
 
@@ -87,7 +82,7 @@ Zum einen ist SCS modular. Man kann z.B. einfach nur Teile des Container
 Stacks einsetzen. Oder vielleicht den ganzen Stack an Betriebswerkzeugen.
 Oder den IaaS Teil. Oder ceph. Oder alles außer ceph ...
 
-Desweiteren gibt es zwei verschiedene Stufen der Umsetzung.
+Desweiteren gibt es drei verschiedene Stufen der Umsetzung.
 
 ### Stufen der Umsetzung
 
@@ -106,18 +101,19 @@ Dokumentation dieses Teils spart. Da wir auch Best Practices für
 den Betrieb definieren und Umsetzen, eröffnet das auch die Möglichkeit
 eines Effizienzgewinns im Betrieb -- bis hin zur Möglichkeit, betriebliche
 Aufgaben über die einzelne Plattform hinweg gemeinsam wahrzunehmen
-in einer Art OpenOperations Modell.
+in einem [Open Operations](https://openoperations.org/) Modell.
+Das wäre dann die dritte Stufe.
 
 Eine Umsetzungsmatrix könnte (stark vereinfacht) wir folgt aussehen:
 
 <div class="table-responsive" markdown="1">
 
-| Modul        | Umsetzungstufe 2021 | Umsetzungsstufe 2022 |
+| Modul        | Umsetzungstufe 2022 | Umsetzungsstufe 2023 |
 |--------------|:-------------------:|:--------------------:|
 | Monitoring   |     nicht           |  kompatibel          |
 | IaaS         |     kompatibel      |  Implementierung     |
 | Storage      |     nicht           |  nicht               |
-| k8s-capi     |     Implementierung |  Implementierung     |
+| k8s-capi     |     Implementierung |  Impl+OpenOps        |
 | k8s registry |     Implementierung |  Implementierung     |
 
 </div>
