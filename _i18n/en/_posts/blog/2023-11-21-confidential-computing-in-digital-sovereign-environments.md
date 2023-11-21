@@ -39,7 +39,7 @@ An SGX Enclave effectively encapsulates code and data that make up a process. Co
 
 Attestation of such an SGX Enclave will measure the Enclave's current memory content and provide back the security version of the platform's firmware setup in addition. A simplified sequence for SGX ECDSA-based attestation is shown in the following animation:  
 
-<figure class="figure mx-auto d-block" style="width:100%">
+<figure class="figure mx-auto d-block" style="width:50%">
     {% asset 'blog/cc/JM-ecdsa-attestation-sequence.gif' class="figure-img w-100" alt="Intel SGX ECDSA Attestation"%}
     <figcaption>Intel SGX ECDSA Attestation</figcaption>
 </figure>
