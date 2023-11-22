@@ -12,7 +12,7 @@ about:
 
 ## SCS Release 6 countdown begins
 
-The product board meeting has considered and confirmed the release date for the upcoming SCS Release 6.
+The product board has considered and confirmed the release date for the upcoming SCS Release 6.
 
 Mark your calendars because the release date for SCS Release 6 has been set for *March 20th, 2024*.
 
