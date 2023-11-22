@@ -7,7 +7,7 @@ firstname: Marc
 role: Site Reliability Engineer Sovereign Cloud Stack
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
-avatar: employees/Schoone.jpg
+avatar: employees/Schoechlin.jpg
 linkedin: https://www.linkedin.com/in/marc-sch%C3%B6chlin-a5b93b130/
 github: https://github.com/scoopex
 matrix: https://matrix.org/#/@marc_schoechlin:matrix.org

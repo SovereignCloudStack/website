@@ -3,11 +3,11 @@ author_slug: scoopex
 title: Marc Schöchlin
 layout: community
 lastname: Schöchlin
-firstname: Felix
+firstname: Marc
 role: Site Reliability Engineer Sovereign Cloud Stack
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
-holopin_username: fkr
+holopin_username: scoopex
 linkedin: https://www.linkedin.com/in/marc-sch%C3%B6chlin-a5b93b130/
 github: https://github.com/scoopex
 matrix: https://matrix.org/#/@marc_schoechlin:matrix.org
