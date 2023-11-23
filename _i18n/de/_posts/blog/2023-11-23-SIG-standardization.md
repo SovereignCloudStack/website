@@ -15,7 +15,7 @@ about:
 {% asset 'Handshake_SCS_ALASCA.png' vips:format='.webp' style="width:100%; max-height: 350px; object-fit: cover;" %}
 
 ## Zusammenarbeit bei Cloud Standards
-### Sovereign Cloud Stack und ALASCA e.V. entwickeln die Standards von jetzt an gemeinsam
+### Sovereign Cloud Stack und ALASCA e.V. - gemeinsam für gute Standards
 
 Das Sovereign Cloud Stack (SCS) Projekt entwickelt gemeinsam mit einer Community aus Cloudanbietern, Nutzern und Partnern offene Standards zur Bereitstellung von Cloud- und Containerinfrastruktur. Diese wird als vollständig offen entwickelte produktionsreife Softwareimplementierung angeboten und mit einer breiten Wissensbasis für den zuverlässigen Betrieb ergänzt. Durch den vereinfachten Betrieb hochmoderner Cloud-Infrastruktur soll ein breites interoperables Ökosystem aus Angeboten entstehen, welches es Nutzern vereinfacht, mehr digitale Souveränität -- also mehr Selbstbestimmheit im Digitalen zu erlangen. SCS ist ein Projekt der OSB Alliance - Bundesverband für digitale Souveränität e.V. und wird durch das BMWK (Bundesministerium für Wirtschaft und Klimaschutz) gefördert. SCS trägt auch zur Realisierung von Gaia-X und der Deutschen Verwaltungscloud (DVC) bei und setzt die dort entwickelten Rahmenbedingungen als modulare Open-Source-Lösung in der Referenzimplementierung technisch um.
 
