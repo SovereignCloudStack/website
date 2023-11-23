@@ -48,12 +48,12 @@ and the sustainability of the SCS standardization efforts. The Special
 Interest Group is open to all cloud providers and integrators that want
 to contribute and provide SCS-compliant services.
 
-For ALASCA, the closer collaboration in the evolution of the standards
-als offers significant value: The association strives enabling digitally
+Likewise for ALASCA, the closer collaboration in the evolution of the standards
+als offers significant value: The association pursues enabling the digitally
 sovereign setup and operations of own cloud infrastructure by research,
 educational or generally public entities as well as private sector
 companies and individuals based on Open Source Software and the connected
 supply of competencies. With the SCS standards, this effort receives
-a unique foundation, upgrading the relevance of the ALASCA driven
+a unique foundation, upgrading the relevance of the ALASCA-driven
 Open Source Software. The ALASCA community significantly benefits from
 the additional support by the SCS community.
