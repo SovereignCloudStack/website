@@ -18,7 +18,7 @@ about:
 The Sovereign Cloud Stack (SCS) project develops open standards for the
 provisioning of cloud and container infrastructure together with cloud
 providers, users and partners. In addition, a complete, completely openly
-developed and production-ready softare implementation is offered together
+developed and production-ready software implementation is offered together
 with broad knowledge on how to reliably operate it. Simplifying
 the operations of modern cloud infrastructure facilitates the emergence
 of a broad interoperable ecosystem of cloud offerings, supporting users
