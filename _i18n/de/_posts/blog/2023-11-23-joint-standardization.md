@@ -7,7 +7,7 @@ author:
 avatar:
   - "mfeldmann.jpg"
   - "kgarloff.jpg"
-image: "blog/SCS-ALSACA.png"
+image: "blog/SCS-ALASCA.png"
 about:
   - "garloff"
 ---
