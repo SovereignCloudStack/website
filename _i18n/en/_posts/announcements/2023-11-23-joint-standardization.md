@@ -40,9 +40,9 @@ of SCS will be governed by both the ALASCA project and the SCS project team
 and coordintated by Dr. Matthias Büchse from Cloud & Heat Technologies.
 Building on top of already existing standards, the goal is to achieve a
 broader adoption of SCS standards by more close collaboration with ALASCA
-and also cover the ALASCA technology stack with the cloud lifecycle management
-tool yaook. Providing a second standards-compliant implementation of SCS
-standards on top of yaook validates the universal nature of the standards.
+and also cover the ALASCA technology stack with the cloud-lifecycle management
+tool Yaook. Providing a second standards-compliant implementation of SCS
+standards on top of Yaook validates the universal nature of the standards.
 The broader setup also supports the high quality of the evolving standards
 and the sustainability of the SCS standardization efforts. The Special
 Interest Group is open to all cloud providers and integrator that want
