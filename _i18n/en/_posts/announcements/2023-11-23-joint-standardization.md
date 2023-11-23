@@ -30,7 +30,7 @@ Action). SCS supports the realization of Gaia-X and the German Administrative
 Cloud (DVC) and provides a technical implementation with a modular Open
 Source solution.
 
-After announcing the collaboration between SCS and ALASCA e.v. already
+After announcing the collaboration between SCS and ALASCA e.V. already
 in January 2023 in a [joint statement](https://scs.community/2023/01/16/collaboration-of-alasca-and-scs/)
 a lot of joint work has happened throughout the last months especially
 in the area of SCS standardization.
