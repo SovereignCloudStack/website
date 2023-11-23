@@ -49,7 +49,7 @@ Interest Group is open to all cloud providers and integrators that want
 to contribute and provide SCS-compliant services.
 
 Likewise for ALASCA, the closer collaboration in the evolution of the standards
-als offers significant value: The association pursues enabling the digitally
+offers significant value: The association pursues enabling the digitally
 sovereign setup and operations of own cloud infrastructure by research,
 educational or generally public entities as well as private sector
 companies and individuals based on Open Source Software and the connected
