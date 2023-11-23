@@ -33,7 +33,7 @@ Nachdem SCS und der ALASCA e.V. bereits Anfang 2023 in einer gemeinsamen
 Absichtserklärung ihre künftig verstärkte
 [Zusammenarbeit](https://scs.community/de/2023/01/16/collaboration-of-alasca-and-scs/)
 verkündet hatten, wurde im Bereich der SCS-Standardisierung in den vergangenen
-Monaten intensiv zusammengearbeitet:
+Monaten intensiv zusammengearbeitet.
 
 Die Special Interest Group für die Standardisierungsaktivität des SCS wird
 zukünftig gemeinsam von ALASCA und dem SCS-Projektteam gesteuert und durch Dr.
