@@ -33,7 +33,7 @@ Source solution.
 After announcing the collaboration between SCS and ALASCA e.v. already
 in January 2023 in a [joint statement](https://scs.community/en/2023/01/16/collaboration-of-alasca-and-scs/)
 a lot of joint work has happened throughout the last months especially
-in the area of SCS standardization:
+in the area of SCS standardization.
 
 Starting today, the Special Interest Group for the standardization activities
 of SCS will be governed by both the ALASCA project and the SCS project team
