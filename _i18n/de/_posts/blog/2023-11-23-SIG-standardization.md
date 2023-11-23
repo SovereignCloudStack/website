@@ -7,13 +7,10 @@ author:
 avatar: 
   - "kgarloff.jpg"
   - "mfeldmann.jpg"
-  - 
 image: "Handshake_SCS_ALASCA.png"
 about:
   -  "garloff"
 ---
-{% asset 'Handshake_SCS_ALASCA.png' vips:format='.webp' style="width:100%; max-height: 350px; object-fit: cover;" %}
-
 ## Zusammenarbeit bei Cloud Standards
 ### Sovereign Cloud Stack und ALASCA e.V. - gemeinsam für gute Standards
 
