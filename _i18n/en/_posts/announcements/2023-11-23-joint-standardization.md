@@ -45,7 +45,7 @@ tool Yaook. Providing a second standards-compliant implementation of SCS
 standards on top of Yaook validates the universal nature of the standards.
 The broader setup also supports the high quality of the evolving standards
 and the sustainability of the SCS standardization efforts. The Special
-Interest Group is open to all cloud providers and integrator that want
+Interest Group is open to all cloud providers and integrators that want
 to contribute and provide SCS-compliant services.
 
 For ALASCA, the closer collaboration in the evolution of the standards
