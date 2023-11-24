@@ -10,6 +10,7 @@ avatar:
 image: "Handshake_SCS_ALASCA.png"
 about:
   -  "garloff"
+  -  "Feldmann"
 ---
 ## Zusammenarbeit bei Cloud Standards
 ### Sovereign Cloud Stack und ALASCA e.V. - gemeinsam für gute Standards
