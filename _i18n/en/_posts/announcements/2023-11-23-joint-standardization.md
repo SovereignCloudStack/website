@@ -10,6 +10,7 @@ avatar:
 image: "Handshake_SCS_ALASCA.png"
 about:
   - "garloff"
+  - "Feldmann"
 ---
 
 ## Collaboration on Cloud Standards
