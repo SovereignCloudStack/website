@@ -14,7 +14,7 @@ about:
 ---
 
 ## Collaboration on Cloud Standards
-### Sovereign Cloud Stack and ALASCA e.V. - joining forces for good standards
+### Sovereign Cloud Stack and ALASCA e.V.: joining forces for good standards
 
 The Sovereign Cloud Stack (SCS) project develops open standards for the
 provisioning of cloud and container infrastructure together with cloud
