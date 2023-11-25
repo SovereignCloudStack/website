@@ -38,7 +38,7 @@ Monaten intensiv zusammengearbeitet.
 
 Die Special Interest Group für die Standardisierungsaktivität des SCS wird
 zukünftig gemeinsam von ALASCA und dem SCS-Projektteam gesteuert und durch Dr.
-Matthias Büchse von Cloud & Heat Technologies koordiniert. Durch die engere Zusammenarbeit
+Matthias Büchse von Cloud&Heat Technologies koordiniert. Durch die engere Zusammenarbeit
 mit ALASCA und aufbauend auf den bereits entwickelten Standards soll erreicht
 werden, dass die SCS-Standards eine breitere Adaption erfahren und in den
 ALASCA-Technologiestack, insbesondere bestehend aus dem
