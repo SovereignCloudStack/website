@@ -13,7 +13,7 @@ about:
   -  "Feldmann"
 ---
 ## Zusammenarbeit bei Cloud Standards
-### Sovereign Cloud Stack und ALASCA e.V. - gemeinsam für gute Standards
+### Sovereign Cloud Stack und ALASCA e.V. – gemeinsam für gute Standards
 
 Das Sovereign Cloud Stack (SCS) Projekt entwickelt gemeinsam mit einer
 Community aus Cloudanbietern, Nutzern und Partnern offene Standards zur
