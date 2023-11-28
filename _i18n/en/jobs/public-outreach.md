@@ -1,9 +1,9 @@
-#Public Outreach Manager (f/m/d)
+# Public Outreach Manager (f/m/d)
 (Remote or Berlin-Centre)
 
 The position is to be filled at the earliest possible date.
 
-##About the project
+## About the project
 
 The Open Source Business Alliance - Bundesverband für digitale Souveränität
 e.V. (OSB Alliance) represents more than 200 member companies of the open
@@ -49,7 +49,7 @@ development work and providing implementations that node providers can use in
 whole or in part to create a federated, sovereign infrastructure that forms the
 basis for a sovereign data ecosystem.
 
-##About the role
+## About the role
 
 **As a Public Outreach Manager you will**
       
