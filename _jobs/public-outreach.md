@@ -5,7 +5,7 @@ redirect_from:
    - /Jobs/Public-Outreach.html
    
 short_description: jobs.public-outreach.short_description
-image: "public-outreach.png"
+image: "public-outreach.jpg"
 location: "Remote / Berlin"
 published: false
 ---
