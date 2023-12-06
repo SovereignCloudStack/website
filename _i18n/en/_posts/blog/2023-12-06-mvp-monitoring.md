@@ -47,6 +47,9 @@ visualized in the Observer. [It's worth giving it a try!](#monitoring-of-the-kaa
 
 The SCS Monitoring MVP is developed on the foundation of the [dNation monitoring solution](https://github.com/dNationCloud/kubernetes-monitoring).
 
+_Disclaimer: Please be aware that the MVP demo URLs referenced in the sections below are
+expected to be unavailable within the next couple of months. We appreciate your understanding._
+
 ## Monitoring of the KaaS Layer
 
 As mentioned earlier, we aim to showcase how the Observer monitors the CSP KaaS offering.
