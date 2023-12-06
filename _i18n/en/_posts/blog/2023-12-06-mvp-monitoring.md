@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MVP - SCS infrastructure monitoring"
+title:  "SCS observability and monitoring - An opinionated proposal"
 category: tech
 author:
   - "Matej Feder"
@@ -10,9 +10,8 @@ about:
   - "matofeder"
 ---
 
-We're excited to announce that our Minimum Viable Product (MVP) for SCS infrastructure
-monitoring has achieved a presentable and viable state. MVP aims to provide a global
-monitoring view of various SCS infrastructure layers, including KaaS, IaaS, and actively
+We're excited to announce that our Minimum Viable Product (MVP) for extending the monitoring from the IaaS layer to a solution that covers observability and monitoring full-stack has achieved a presentable and viable state. MVP aims to provide a global
+monitoring view of various SCS layers and components, including KaaS, IaaS, and actively
 used services within the SCS community such as Jitsi, HedgeDoc, Nextcloud, Harbor container
 registry, and more. The global view is made possible by the Observer monitoring solution
 we've designed. The Observer enables the collection, storage, and visualization of metrics
