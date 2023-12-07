@@ -7,7 +7,7 @@ redirect_from:
 short_description: jobs.public-outreach.short_description
 image: "public-outreach.jpg"
 location: "Remote / Berlin"
-published: true
+published: false
 ---
 
 {% tf jobs/public-outreach.md %}
