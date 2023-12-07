@@ -26,3 +26,24 @@ As we're using Bootstrap, please add your custom styling definitions to `assets/
 ## Testing changes on `staging` branch
 
 We're using a dedicated workflow to build a staging preview of our website that subsequently is published with GitHub Pages. To make use of this feature, simply push to `staging`. Please try to keep `staging` in sync with `main`, e.g. by deleting and recreating after testing your recent changes. The staging area can be reached via <https://sovereigncloudstack.github.io/website/>.
+
+## Testing changes locally
+
+* Clone Repo
+  ```
+  git clone git@github.com:SovereignCloudStack/website.git
+  ```
+* Start testserver
+  ```
+  docker run --privileged -it --rm -p 4000:4000 -e LC_ALL=C.UTF-8 -e LANG=C.UTF-8 -v $(pwd):/site debezium/website-builder bash
+  apk add --update vips uglify-js
+  bundle update
+  bundle install
+  jekyll serve config _config.yml,_config.dev.yml  --incremental -H 0.0.0.0
+  ```
+* Edit files, wait for 16 seconds for minor changes
+* Test the view
+  ```
+  firefox  http://127.0.0.1:4000
+  ```
+
