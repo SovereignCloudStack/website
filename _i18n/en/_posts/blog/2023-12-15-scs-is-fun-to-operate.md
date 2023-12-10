@@ -1,22 +1,24 @@
 ---
 layout: post
-title:  "Pedaling towards Release 5"
+title:  "SCS is fun to operate - how we think, R6 will look like"
 category: tech
 author:
   - "Felix Kronlage-Dammers"
-  - "Kurt Garloff"
 avatar:
   - "fkr.jpg"
-  - "kgarloff.jpg"
 about:
   - "fkr"
-  - "garloff"
 ---
 
-## Pedaling towards Release 5 - an overview of our outcomes
+## Our R6 outcomes 
 
-To align the development efforts of our community we started thinking in *Outcomes* when looking at the development cycle.
-This outlines our direction much better than talking about the next features that are planned and worked on.
+To align the development efforts of our community we started talking about *Outcomes* when looking at the development cycle.
+We've started with this in the R4 cycle and even though we never published them for R5 - we did have them for R5 as well ;)
+The idea of these outcomes is to outline what our (development) work does that enables our users (Operators, Integrators and End-Users)
+in the end to gain more value from SCS. This outlines our direction much better than talking about the next features that are planned
+and worked on. Furthermore the outcomes assist us in our development work to assure that each single epic and story we work on
+actually pays into the greater idea.
+
 SCS delivers building blocks for digital sovereign cloud infrastructure.  But we also change the way infrastructure is operated.
 
 #### Working with outcomes on github
@@ -31,9 +33,8 @@ An [overall board](https://github.com/orgs/SovereignCloudStack/projects/6/views/
 While the S in SCS (at least the first ;) stands for *Sovereign* it could also stand for *Standardized*.
 SCS standardizes. Creating Standards within the community, reaching out to surrounding communities, working with upstream as well as other players in our ecosystem to make sure we don’t “just reinvent the wheel” or stew in their own juice is a fair share of our work within the project.
 
-Alongside the standardization work that has happened in the container and IaaS teams with [tender 10](https://scs.community/tenders/lot10) an importan tender package just kicked off and the work of this tender will play a significant role throughout the Release 5 cycle.
-
-https://input.scs.community/tqKlv1Z_Srmi5e5o76CxhQ?view
+Alongside the standardization work that has happened in the container and IaaS teams with [tender 10](https://scs.community/tenders/lot10) an important tender package was kicked off in the beginning of the R5 cycle. Through the work in the SIG Standardization a lot of the topics have gained paced in the last months, yet this is one of the major topics for the R6 cycle.
+The [joint-efforts](https://scs.community/2023/11/27/joint-standardization/) with [Alasca](https://alasca.cloud) emphasises this even more.
 
 
 ### [SCS is understandable](https://github.com/orgs/SovereignCloudStack/projects/6/views/22)
@@ -51,17 +52,12 @@ For the R4 development cycle one of the outcomes we proclaimed was *SCS enables 
 Transparency is one of the core values embedded in our project - yet we want to make sure our development efforts throughout the R5 cycles are actively working towards being transparent. This ranges from our development culture (which needs to be transparent not only to be trustworthy but also to lower the barrier to join the community), to the open operations movement and all the way to technical items such as [SBOMs](https://en.wikipedia.org/wiki/Software_supply_chain) for our complete stack.
 Transparent projects can be audited easily and trust can be built up more easily.
 
-
 ### [SCS is continuously built and tested](https://github.com/orgs/SovereignCloudStack/projects/6/views/21)
 
-Throughout the R4 cycle the work on our own [zuul](https://zuul-ci.org) have begun. During the R4 retro the topic came up in va
-
-The R3 cycle has - once again ;) - shown how important a very good continuous integration is. With SCS we want to enable operators to keep their environments constantly up to date with confidence. The fact that two of our operators were able to directly upgrade to Release 3 shows that we’re on the right track.
 
 ### [SCS is opinionated](https://github.com/orgs/SovereignCloudStack/projects/6/views/29)
 
 While the SCS projects provides a modular stack and stronlgy works towards interoperability, we want to be opinionated in our reference implementation. Being opinionated on that level leads to focus and avoids having to many loose ends. 
 A very good example for this is how we addressed the need to monitoring
-
 
 
