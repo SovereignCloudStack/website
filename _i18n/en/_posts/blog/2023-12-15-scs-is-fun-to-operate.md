@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SCS is fun to operate - how we think, R6 will look like"
+title:  "SCS is efficient to operate - how we think, R6 will look like"
 category: tech
 author:
   - "Felix Kronlage-Dammers"
@@ -13,13 +13,15 @@ about:
 ## Our R6 outcomes 
 
 To align the development efforts of our community we started talking about *Outcomes* when looking at the development cycle.
+
 We've started with this in the R4 cycle and even though we never published them for R5 - we did have them for R5 as well ;)
 The idea of these outcomes is to outline what our (development) work does that enables our users (Operators, Integrators and End-Users)
 in the end to gain more value from SCS. This outlines our direction much better than talking about the next features that are planned
 and worked on. Furthermore the outcomes assist us in our development work to assure that each single epic and story we work on
 actually pays into the greater idea.
 
-SCS delivers building blocks for digital sovereign cloud infrastructure.  But we also change the way infrastructure is operated.
+SCS delivers building blocks for digital sovereign cloud infrastructure.  We change the way infrastructure is operated and by doing
+this we want to enable operators to become more efficient and be able to scale better.
 
 #### Working with outcomes on github
 
@@ -36,6 +38,7 @@ SCS standardizes. Creating Standards within the community, reaching out to surro
 Alongside the standardization work that has happened in the container and IaaS teams with [tender 10](https://scs.community/tenders/lot10) an important tender package was kicked off in the beginning of the R5 cycle. Through the work in the SIG Standardization a lot of the topics have gained paced in the last months, yet this is one of the major topics for the R6 cycle.
 The [joint-efforts](https://scs.community/2023/11/27/joint-standardization/) with [ALASCA](https://alasca.cloud) emphasises this even more.
 
+### [SCS is fullstack]( )
 
 ### [SCS is understandable](https://github.com/orgs/SovereignCloudStack/projects/6/views/22)
 
@@ -47,9 +50,10 @@ In the last half year the [documentation page](https://docs.scs.community) alrea
 For the R4 development cycle one of the outcomes we proclaimed was *SCS enables Operators with an excellent toolbox*. An excellent toolbox is part of what is needed for operating cloud infrastructure as a commodity. Looking at what we’ve done in the past eight months this outcome however is much too narrow. 
 *SCS enables* - on a variety of levels and not just operators, but also integrators, developers and most important consumers of infrastructure built upon SCS who want to run on top of fully digital sovereign infrastructure.
 
+
 ### [SCS is transparent](https://github.com/orgs/SovereignCloudStack/projects/6/views/30)
 
-Transparency is one of the core values embedded in our project - yet we want to make sure our development efforts throughout the R5 cycles are actively working towards being transparent. This ranges from our development culture (which needs to be transparent not only to be trustworthy but also to lower the barrier to join the community), to the open operations movement and all the way to technical items such as [SBOMs](https://en.wikipedia.org/wiki/Software_supply_chain) for our complete stack.
+Transparency is one of the core values embedded in our project - yet we want to make sure our development efforts throughout the R6 cycle are actively working towards being transparent. This ranges from our development culture (which needs to be transparent not only to be trustworthy but also to lower the barrier to join the community), to the open operations movement, the future of the SCS project and all the way to technical items such as [SBOMs](https://en.wikipedia.org/wiki/Software_supply_chain) for our complete stack.
 Transparent projects can be audited easily and trust can be built up more easily.
 
 ### [SCS is continuously built and tested](https://github.com/orgs/SovereignCloudStack/projects/6/views/21)
