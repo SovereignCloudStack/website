@@ -38,18 +38,14 @@ SCS standardizes. Creating Standards within the community, reaching out to surro
 Alongside the standardization work that has happened in the container and IaaS teams with [tender 10](https://scs.community/tenders/lot10) an important tender package was kicked off in the beginning of the R5 cycle. Through the work in the SIG Standardization a lot of the topics have gained paced in the last months, yet this is one of the major topics for the R6 cycle.
 The [joint-efforts](https://scs.community/2023/11/27/joint-standardization/) with [ALASCA](https://alasca.cloud) emphasises this even more.
 
-### [SCS is fullstack]( )
-
 ### [SCS is understandable](https://github.com/orgs/SovereignCloudStack/projects/6/views/22)
 
-In the last half year the [documentation page](https://docs.scs.community) already came to life and with the efforts of the SIG Documentation it is not just a pile of documents but has a concept to it. However in order for SCS to be understandable more than just awesome docs are needed. Collecting feedback from SCS integrators just as much as people and organizations that have their first touchpoint with SCS plays an important role to assure SCS is continously becoming more understandable. 
-
+In the last year the [documentation page](https://docs.scs.community) came to life and is already very good in being the guide for the first steps into the SCS world. Due to the efforts of the SIG Documentation it is not just a pile of documents but has a solid concept. However in order for SCS to be understandable more than just awesome docs are needed. Collecting feedback from SCS integrators just as much as people and organizations that have their first touchpoint with SCS plays an important role to assure SCS is continously becoming more understandable. Furthermore deployment guides and architectural blueprints will be added.
 
 ### [SCS enables](https://github.com/orgs/SovereignCloudStack/projects/6/views/20)
 
 For the R4 development cycle one of the outcomes we proclaimed was *SCS enables Operators with an excellent toolbox*. An excellent toolbox is part of what is needed for operating cloud infrastructure as a commodity. Looking at what we’ve done in the past eight months this outcome however is much too narrow. 
 *SCS enables* - on a variety of levels and not just operators, but also integrators, developers and most important consumers of infrastructure built upon SCS who want to run on top of fully digital sovereign infrastructure.
-
 
 ### [SCS is transparent](https://github.com/orgs/SovereignCloudStack/projects/6/views/30)
 
