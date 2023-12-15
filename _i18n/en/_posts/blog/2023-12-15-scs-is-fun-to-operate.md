@@ -57,7 +57,6 @@ Transparent projects can be audited easily and trust can be built up more easily
 
 ### [SCS is opinionated](https://github.com/orgs/SovereignCloudStack/projects/6/views/29)
 
-While the SCS projects provides a modular stack and stronlgy works towards interoperability, we want to be opinionated in our reference implementation. Being opinionated on that level leads to focus and avoids having to many loose ends. 
-A very good example for this is how we addressed the need to monitoring
+While the SCS projects provides a modular stack and stronlgy works towards interoperability, we want to be opinionated in our reference implementation. Being opinionated on that level leads to focus and avoids having to many loose ends. Good examples for this is how we address verticals suchs as our IAM or observability stacks.
 
 
