@@ -54,13 +54,19 @@ With [Cluster-Stacks](https://github.com/sovereignCloudStack/cluster-stacks) the
 Throughout the R6 development cycle Cluster-Stacks are taken from a technical preview to be available on top of the IaaS reference implementation as well.
 
 Early in the R6 development cycle the [software defined networking tender VP04](https://scs.community/tenders/lot4) was kicked of. As part of this work we want to make sure that
-networking not only scales superior in the IaaS reference implementation but also enable intercloud connectivity between
+networking not only scales superior in the IaaS reference implementation but also enable inter-cloud connectivity between
 workloads on all layers.
+
+Through github the [list of network-related epics and user stories](https://github.com/SovereignCloudStack/issues/issues?q=is%3Aopen+is%3Aissue+label%3ASCS-VP04) that are part of VP04 can be viewed.
 
 ### [SCS is transparent](https://github.com/orgs/SovereignCloudStack/projects/6/views/30)
 
 Transparency is one of the core values embedded in our project - yet we want to make sure our development efforts throughout the R6 cycle are actively working towards being transparent. This ranges from our development culture (which needs to be transparent not only to be trustworthy but also to lower the barrier to join the community), to the open operations movement, the future of the SCS project and all the way to technical items such as [SBOMs](https://en.wikipedia.org/wiki/Software_supply_chain) for our complete stack.
 Transparent projects can be audited easily and trust can be built up more easily.
+
+Another important factor that plays into transparency is being transparent about security aspects, incidents and proactively pursuing providing a secure reference implementation. 
+
+For our status page initiative an initial MVP was done in the R5 development cycle. In the R6 development cycle we [finalize](https://github.com/SovereignCloudStack/issues/issues?q=is%3Aopen+is%3Aissue+label%3Astatus-page) what we’ve evaluated with the MVP and are going to ship a modern status page application. The release of the status page application (which itself is divided into [frontend](https://github.com/SovereignCloudStack/status-page-web), [backend](github.com/sovereignCloudStack/status-page-api) as well as the [OpenAPI spec](https://github.com/SovereignCloudStack/status-page-openapi) and a [repository holding the deployment logic](https://github.com/SovereignCloudStack/status-page-deployment)) is de-coupled from the SCS Releases.
 
 ### [SCS is continuously built and tested](https://github.com/orgs/SovereignCloudStack/projects/6/views/21)
 
