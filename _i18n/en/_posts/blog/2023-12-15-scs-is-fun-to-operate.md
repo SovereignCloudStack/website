@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SCS is efficient to operate - how we think, R6 will look like"
+title:  "SCS is efficient to operate - R6 will enable you even better”
 category: tech
 author:
   - "Felix Kronlage-Dammers"
@@ -12,16 +12,12 @@ about:
 
 ## Our R6 outcomes 
 
-To align the development efforts of our community we started talking about *Outcomes* when looking at the development cycle.
+To align the development efforts of our community we started talking about *outcomes* when looking at the development cycle.
 
 We've started with this in the R4 cycle and even though we never published them for R5 - we did have them for R5 as well ;)
-The idea of these outcomes is to outline what our (development) work does that enables our users (Operators, Integrators and End-Users)
-in the end to gain more value from SCS. This outlines our direction much better than talking about the next features that are planned
-and worked on. Furthermore the outcomes assist us in our development work to assure that each single epic and story we work on
-actually pays into the greater idea.
+The idea of these outcomes is to outline what our (development) work does that enables our users (Operators, Integrators and End-Users) in the end to gain more value from SCS. This outlines our direction much better than talking about the next features that are planned and worked on. Furthermore the outcomes assist us in our development work to assure that each single epic and story we work on actually pays into the greater idea.
 
-SCS delivers building blocks for digital sovereign cloud infrastructure.  We change the way infrastructure is operated and by doing
-this we want to enable operators to become more efficient and be able to scale better.
+SCS delivers building blocks for digital sovereign cloud infrastructure.  We change the way infrastructure is operated and by doing this we want to enable operators to become more efficient and be able to scale better.
 
 #### Working with outcomes on github
 
@@ -34,18 +30,32 @@ An [overall board](https://github.com/orgs/SovereignCloudStack/projects/6/views/
 
 While the S in SCS (at least the first ;) stands for *Sovereign* it could also stand for *Standardized*.
 SCS standardizes. Creating Standards within the community, reaching out to surrounding communities, working with upstream as well as other players in our ecosystem to make sure we don’t “just reinvent the wheel” or stew in their own juice is a fair share of our work within the project.
+The recent [joint-efforts](https://scs.community/2023/11/27/joint-standardization/) with [ALASCA](https://alasca.cloud) emphasise this even more.
 
-Alongside the standardization work that has happened in the container and IaaS teams with [tender 10](https://scs.community/tenders/lot10) an important tender package was kicked off in the beginning of the R5 cycle. Through the work in the SIG Standardization a lot of the topics have gained paced in the last months, yet this is one of the major topics for the R6 cycle.
-The [joint-efforts](https://scs.community/2023/11/27/joint-standardization/) with [ALASCA](https://alasca.cloud) emphasises this even more.
+Alongside the standardization work that has happened in the container and IaaS teams the [tender 10](https://scs.community/tenders/lot10), an important tender package for the standardization work, was kicked off in the beginning of the R5 cycle. Through the work in the SIG Standardization a lot of the topics have gained paced in the last months, yet this is one of the major topics for the R6 cycle.
+
+Two issues summarize the current efforts quite well:
+
+* [Missing IaaS Standards](https://github.com/SovereignCloudStack/standards/issues/285)
+* [SCS K8s cluster standardization](https://github.com/sovereigncloudstack/issues/issues/181)
 
 ### [SCS is understandable](https://github.com/orgs/SovereignCloudStack/projects/6/views/22)
 
-In the last year the [documentation page](https://docs.scs.community) came to life and is already very good in being the guide for the first steps into the SCS world. Due to the efforts of the SIG Documentation it is not just a pile of documents but has a solid concept. However in order for SCS to be understandable more than just awesome docs are needed. Collecting feedback from SCS integrators just as much as people and organizations that have their first touchpoint with SCS plays an important role to assure SCS is continously becoming more understandable. Furthermore deployment guides and architectural blueprints will be added.
+In the last year the [documentation page](https://docs.scs.community) came to life and is already very good in being the guide for the first steps into the SCS world. Due to the efforts of the SIG Documentation it is not just a pile of documents but has a solid concept. However in order for SCS to be understandable more than just awesome docs are needed. Collecting feedback from SCS integrators just as much as people and organisations that have their first touchpoint with SCS plays an important role to assure SCS is continuously becoming more understandable. Furthermore deployment guides and architectural blueprints will be added.
+
+For the IaaS reference implementation a solid test of the existing documentation will be that the SCS lab environment will be built up following that documentation.
 
 ### [SCS enables](https://github.com/orgs/SovereignCloudStack/projects/6/views/20)
 
 For the R4 development cycle one of the outcomes we proclaimed was *SCS enables Operators with an excellent toolbox*. An excellent toolbox is part of what is needed for operating cloud infrastructure as a commodity. Looking at what we’ve done in the past eight months this outcome however is much too narrow. 
 *SCS enables* - on a variety of levels and not just operators, but also integrators, developers and most important consumers of infrastructure built upon SCS who want to run on top of fully digital sovereign infrastructure.
+
+With [Cluster-Stacks](https://github.com/sovereignCloudStack/cluster-stacks) the V2 KaaS Reference Implementation we want to optimise configuration of kubernetes clusters. Through better packaging, integrated testing and bundled configuration SCS-based kubernetes clusters can be individualised much easier.
+Throughout the R6 development cycle Cluster-Stacks are taken from a technical preview to be available on top of the IaaS reference implementation as well.
+
+Early in the R6 development cycle the [software defined networking tender VP04](https://scs.community/tenders/lot4) was kicked of. As part of this work we want to make sure that
+networking not only scales superior in the IaaS reference implementation but also enable intercloud connectivity between
+workloads on all layers.
 
 ### [SCS is transparent](https://github.com/orgs/SovereignCloudStack/projects/6/views/30)
 
@@ -57,6 +67,6 @@ Transparent projects can be audited easily and trust can be built up more easily
 
 ### [SCS is opinionated](https://github.com/orgs/SovereignCloudStack/projects/6/views/29)
 
-While the SCS projects provides a modular stack and stronlgy works towards interoperability, we want to be opinionated in our reference implementation. Being opinionated on that level leads to focus and avoids having to many loose ends. Good examples for this is how we address verticals suchs as our IAM or observability stacks.
+While the SCS projects provides a modular stack and strongly works towards interoperability, we want to be opinionated in our reference implementation. Being opinionated on that level leads to focus and avoids having to many loose ends. Good examples for this is how we address verticals such as our IAM or observability stacks.
 
 
