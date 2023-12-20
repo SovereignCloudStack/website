@@ -59,6 +59,8 @@ workloads on all layers.
 
 Through github the [list of network-related epics and user stories](https://github.com/SovereignCloudStack/issues/issues?q=is%3Aopen+is%3Aissue+label%3ASCS-VP04) that are part of VP04 can be viewed.
 
+With our work on the [domain manager role](https://github.com/SovereignCloudStack/issues/issues/184) we’re addressing a topic that has been a hurdle for public clouds and self management by customers. Lot’s of public clouds, built on top of OpenStack, have developed their own ways to work around the missing possibility of domain management.
+
 ### [SCS is transparent](https://github.com/orgs/SovereignCloudStack/projects/6/views/30)
 
 Transparency is one of the core values embedded in our project - yet we want to make sure our development efforts throughout the R6 cycle are actively working towards being transparent. This ranges from our development culture (which needs to be transparent not only to be trustworthy but also to lower the barrier to join the community), to the open operations movement, the future of the SCS project and all the way to technical items such as [SBOMs](https://en.wikipedia.org/wiki/Software_supply_chain) for our complete stack.
@@ -80,5 +82,5 @@ While the SCS projects provides a modular stack and strongly works towards inter
 ### SCS charters new territory
 
 While a lot of our activities involves working upstream with the various communities doing our part of ensuring the components that SCS is build upon are staying healthy, we do want to push the boundaries of what is possible further and see where we can find ways to provide better cloud infrastructure. This does mean to sail into unchartered waters - sometimes having to turn around, hit rock bottom or actually find a new cool passage.
-Endeavours like the evaluation of [building community SONiC]( ) images or revisiting the topic of cloud observability and testing.
+Endeavours like the evaluation of [building community SONiC](https://github.com/SovereignCloudStack/issues/issues?q=is%3Aopen+is%3Aissue+label%3ASCS-VP04+sonic) images, revisiting the topic of cloud observability and testing and engaging into the discussion about discoverability of flavours and functionality of OpenStack clouds.
 
