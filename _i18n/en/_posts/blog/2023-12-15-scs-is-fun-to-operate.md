@@ -47,11 +47,11 @@ For the IaaS reference implementation a solid test of the existing documentation
 
 ### [SCS enables](https://github.com/orgs/SovereignCloudStack/projects/6/views/20)
 
-For the R4 development cycle one of the outcomes we proclaimed was *SCS enables Operators with an excellent toolbox*. An excellent toolbox is part of what is needed for operating cloud infrastructure as a commodity. Looking at what we’ve done in the past eight months this outcome however is much too narrow. 
-*SCS enables* - on a variety of levels and not just operators, but also integrators, developers and most important consumers of infrastructure built upon SCS who want to run on top of fully digital sovereign infrastructure.
+For the R4 development cycle one of the outcomes we proclaimed was *SCS enables Operators with an excellent toolbox*. An excellent toolbox is part of what is needed for operating cloud infrastructure as a commodity. Looking at what we’ve done in the past year this outcome however is much too narrow.
+*SCS enables* - on a variety of levels and not just operators, but also integrators, developers and most important consumers of cloud infrastructure built upon SCS who want to run on top of fully digital sovereign infrastructure.
 
-With [Cluster-Stacks](https://github.com/sovereignCloudStack/cluster-stacks) the V2 KaaS Reference Implementation we want to optimise configuration of kubernetes clusters. Through better packaging, integrated testing and bundled configuration SCS-based kubernetes clusters can be individualised much easier.
-Throughout the R6 development cycle Cluster-Stacks are taken from a technical preview to be available on top of the IaaS reference implementation as well.
+With [Cluster-Stacks](https://github.com/sovereignCloudStack/cluster-stacks), the V2 KaaS Reference Implementation, we provide an opinionated optimised configuration of kubernetes clusters. Through better packaging, integrated testing and bundled configuration SCS-based kubernetes clusters can be individualised much easier.
+Throughout the R6 development cycle Cluster-Stacks are taken from a technical preview to be [functional and available on top of the IaaS reference implementation](https://github.com/SovereignCloudStack/issues/milestone/8) as well.
 
 Early in the R6 development cycle the [software defined networking tender VP04](https://scs.community/tenders/lot4) was kicked of. As part of this work we want to make sure that
 networking not only scales superior in the IaaS reference implementation but also enable inter-cloud connectivity between
@@ -70,9 +70,15 @@ For our status page initiative an initial MVP was done in the R5 development cyc
 
 ### [SCS is continuously built and tested](https://github.com/orgs/SovereignCloudStack/projects/6/views/21)
 
+With [our zuul](https://zuul.scs.community) in place (thanks to the efforts throughout the R5 development cycle) it is now time to shift a lot of our test runs from github actions to the zuul instance.
+As part of the [tender VP01](https://scs.community/tenders/lot1) the test coverage of the foundations the IaaS reference implementation builds upon is continuously being extended.
 
 ### [SCS is opinionated](https://github.com/orgs/SovereignCloudStack/projects/6/views/29)
 
 While the SCS projects provides a modular stack and strongly works towards interoperability, we want to be opinionated in our reference implementation. Being opinionated on that level leads to focus and avoids having to many loose ends. Good examples for this is how we address verticals such as our IAM or observability stacks.
 
+### SCS charters new territory
+
+While a lot of our activities involves working upstream with the various communities doing our part of ensuring the components that SCS is build upon are staying healthy, we do want to push the boundaries of what is possible further and see where we can find ways to provide better cloud infrastructure. This does mean to sail into unchartered waters - sometimes having to turn around, hit rock bottom or actually find a new cool passage.
+Endeavours like the evaluation of [building community SONiC]( ) images or revisiting the topic of cloud observability and testing.
 
