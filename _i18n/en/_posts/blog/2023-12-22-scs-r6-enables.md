@@ -13,15 +13,15 @@ about:
 ## Our R6 outcomes 
 
 To better align the development efforts within our community we started working with *outcomes*.
-We've started with this in the R4 cycle and even though we never published the outcomes for R5 - we [did have them for R5](https://github.com/SovereignCloudStack/website/pull/662) as well ;)
+We began with this in the R4 cycle and even though we never published the outcomes for R5 - we [did have them for R5](https://github.com/SovereignCloudStack/website/pull/662) as well ;)
 
-The idea of these outcomes is to outline what our (development) work does that enables our users (Operators, Integrators and End-Users) in the end to gain more value from SCS. This outlines our direction much better than talking about the next features that are planned and worked on. Furthermore, the outcomes assist us in our development work to ensure that every single epic and story we work on actually pays into the greater idea. 
+These outcomes intend to outline what our development work aims to enable our users (Operators, Integrators and End-Users) to gain more value from SCS. This outlines our direction much better than talking about the next features that are planned and worked on. Furthermore, the outcomes assist us in our development work to ensure that every single epic and story we work on actually pays into the greater idea.
 
 SCS delivers building blocks for digital sovereign cloud infrastructure.  We change the way infrastructure is operated and by doing this we want to enable operators to become more efficient and be able to scale better.
 
 #### Working with outcomes on GitHub
 
-The outcomes allow us to look through various angles on our development efforts. Each outcome is reflected through a label within our GitHub repositories so that issues and pull requests can be labeled accordingly. Furthermore in the projects view we've added various filtered views to be able to quickly see which issues and working items play into which outcomes.
+The outcomes allow us to look from various angles on our development efforts. Each outcome is reflected through a label within our GitHub repositories so that issues and pull requests can be labeled accordingly. Furthermore in the projects view we've added various filtered views to be able to quickly see which issues and working items play into which outcomes.
 
 An [overall board](https://github.com/orgs/SovereignCloudStack/projects/6/views/28) summarizes all of them.
 
@@ -43,7 +43,7 @@ Two issues summarize the current efforts quite well:
 
 In the last year the [documentation page](https://docs.scs.community) came to life and is already very good in being the guide for the first steps into the SCS world. Due to the efforts of the SIG Documentation, it is not just a pile of documents but has a solid concept. However, for SCS to be understandable more than just awesome docs are needed. Collecting feedback from SCS integrators just as much as people and organizations that have their first touchpoint with SCS plays an important role in ensuring SCS is continuously becoming more understandable. Furthermore, deployment guides and architectural blueprints will be added.
 
-For the IaaS reference implementation, a solid test of the existing documentation will be that the SCS lab environment will be built up following that documentation.
+The planned SCS lab environment will be built up following these documentation guidelines (this refers to the IaaS reference implementation). This will be a comprehensive examination of the validity and usability of this documentation.
 
 ### [SCS enables](https://github.com/orgs/SovereignCloudStack/projects/6/views/20)
 
@@ -67,7 +67,7 @@ With our work on the [domain manager role](https://github.com/SovereignCloudStac
 Transparency is one of the core values embedded in our project - yet we want to make sure our development efforts throughout the R6 cycle are actively working towards being transparent. This ranges from our development culture (which needs to be transparent not only to be trustworthy but also to lower the barrier to join the community) to the open operations movement, the future of the SCS project, and all the way to technical items such as [SBOMs](https://en.wikipedia.org/wiki/Software_supply_chain) for our complete stack.
 Transparent projects can be audited easily and trust can be built up more easily.
 
-Another important factor that plays into transparency is being transparent about security aspects, and incidents and proactively pursuing providing a secure reference implementation. 
+Another important factor that plays into transparency is being transparent about security aspects, and incidents and proactively pursuing providing a secure reference implementation.
 
 For our status page initiative, an initial MVP was done in the R5 development cycle. In the R6 development cycle we [finalize](https://github.com/SovereignCloudStack/issues/issues?q=is%3Aopen+is%3Aissue+label%3Astatus-page) what we’ve evaluated with the MVP and are going to ship a modern status page application. The release of the status page application (which itself is divided into [frontend](https://github.com/SovereignCloudStack/status-page-web), [backend](https://github.com/sovereignCloudStack/status-page-api) as well as the [OpenAPI spec](https://github.com/SovereignCloudStack/status-page-openapi) and a [repository holding the deployment logic](https://github.com/SovereignCloudStack/status-page-deployment)) is de-coupled from the SCS Releases.
 
