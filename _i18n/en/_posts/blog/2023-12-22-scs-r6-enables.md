@@ -73,7 +73,7 @@ For our status page initiative, an initial MVP was done in the R5 development cy
 
 ### [SCS is continuously built and tested](https://github.com/orgs/SovereignCloudStack/projects/6/views/21)
 
-With [our zuul](https://zuul.scs.community) in place (thanks to the efforts throughout the R5 development cycle) it is now time to shift a lot of our test runs from GitHub actions to the zuul instance.
+With [our Zuul](https://zuul.scs.community) in place (thanks to the efforts throughout the R5 development cycle) it is now time to shift a lot of our test runs from GitHub actions to the Zuul instance.
 As part of the [tender VP01](https://scs.community/tenders/lot1) the test coverage of the foundations the IaaS reference implementation builds upon is continuously being extended.
 
 ### [SCS is opinionated](https://github.com/orgs/SovereignCloudStack/projects/6/views/29)
