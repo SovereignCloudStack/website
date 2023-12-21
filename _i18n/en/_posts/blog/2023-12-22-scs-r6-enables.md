@@ -19,7 +19,7 @@ The idea of these outcomes is to outline what our (development) work does that e
 
 SCS delivers building blocks for digital sovereign cloud infrastructure.  We change the way infrastructure is operated and by doing this we want to enable operators to become more efficient and be able to scale better.
 
-#### Working with outcomes on github
+#### Working with outcomes on GitHub
 
 The outcomes allow us to look through various angles on our development efforts. Each outcome is reflected through a label within our GitHub repositories so that issues and pull requests can be labeled accordingly. Furthermore in the projects view we've added various filtered views to be able to quickly see which issues and working items play into which outcomes.
 
