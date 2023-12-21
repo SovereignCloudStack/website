@@ -50,7 +50,7 @@ For the IaaS reference implementation, a solid test of the existing documentatio
 For the R4 development cycle one of the outcomes we proclaimed was *SCS enables Operators with an excellent toolbox*. An excellent toolbox is part of what is needed for operating cloud infrastructure as a commodity. Looking at what we’ve done in the past year this outcome however is much too narrow.
 *SCS enables* - on a variety of levels and not just operators, but also integrators, developers, and most importantly consumers of cloud infrastructure built upon SCS who want to run on top of fully digital sovereign infrastructure.
 
-With [Cluster-Stacks](https://github.com/sovereignCloudStack/cluster-stacks), the V2 KaaS Reference Implementation, we provide an opinionated optimized configuration of Kubernetes clusters. Through better packaging, integrated testing, and bundled configuration SCS-based Kubernetes clusters can be individualized much easier.
+With [Cluster Stacks](https://github.com/sovereignCloudStack/cluster-stacks), the V2 KaaS reference implementation, we provide an opinionated optimized configuration of Kubernetes clusters. Through better packaging, integrated testing, and bundled configuration SCS-based Kubernetes clusters can be individualized much easier.
 Throughout the R6 development cycle Cluster Stacks are taken from a technical preview to be [functional and available on top of the IaaS reference implementation](https://github.com/SovereignCloudStack/issues/milestone/8) as well.
 The Cluster Stacks can already be tried out in a [demo](https://github.com/SovereignCloudStack/cluster-stacks-demo). Although this is based on the non production ready provider Docker, the usage is the same for every provider.
 
