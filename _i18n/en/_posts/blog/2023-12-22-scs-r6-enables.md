@@ -30,7 +30,7 @@ An [overall board](https://github.com/orgs/SovereignCloudStack/projects/6/views/
 
 While the S in SCS (at least the first ;)) stands for *Sovereign* it could also stand for *Standardized*.
 SCS standardizes. Creating Standards within the community, reaching out to surrounding communities, and working with upstream as well as other players in our ecosystem to make sure we don’t “just reinvent the wheel” or stew in their own juice is a fair share of our work within the project.
-The recent [joint-efforts](https://scs.community/2023/11/27/joint-standardization/) with [ALASCA](https://alasca.cloud) emphasise this even more.
+The recent [joint-efforts](https://scs.community/2023/11/27/joint-standardization/) with [ALASCA](https://alasca.cloud) emphasize this even more.
 
 Alongside the standardization work that has happened in the container and IaaS teams the [tender 10](https://scs.community/tenders/lot10), an important tender package for the standardization work, was kicked off at the beginning of the R5 cycle. Through the work in the SIG Standardization, a lot of the topics have gained pace in the last months, yet this is one of the major topics for the R6 cycle.
 
