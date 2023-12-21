@@ -12,10 +12,10 @@ about:
 
 ## Our R6 outcomes 
 
-To align the development efforts of our community we started talking about *outcomes* when looking at the development cycle.
+To better align the development efforts within our community we started working with *outcomes*.
+We've started with this in the R4 cycle and even though we never published the outcomes for R5 - we [did have them for R5](https://github.com/SovereignCloudStack/website/pull/662) as well ;)
 
-We've started with this in the R4 cycle and even though we never published them for R5 - we did have them for R5 as well ;)
-The idea of these outcomes is to outline what our (development) work does that enables our users (Operators, Integrators and End-Users) in the end to gain more value from SCS. This outlines our direction much better than talking about the next features that are planned and worked on. Furthermore the outcomes assist us in our development work to assure that each single epic and story we work on actually pays into the greater idea.
+The idea of these outcomes is to outline what our (development) work does that enables our users (Operators, Integrators and End-Users) in the end to gain more value from SCS. This outlines our direction much better than talking about the next features that are planned and worked on. Furthermore, the outcomes assist us in our development work to ensure that every single epic and story we work on actually pays into the greater idea. 
 
 SCS delivers building blocks for digital sovereign cloud infrastructure.  We change the way infrastructure is operated and by doing this we want to enable operators to become more efficient and be able to scale better.
 
