@@ -12,7 +12,7 @@ With Release 5, the Sovereign Cloud Stack has published a technical preview of t
 SCS is thus creating a decentralized and user-oriented alternative to the often non-transparent and non cross-compatible commercial "Managed Kubernetes" offerings.
 
 ### Kubernetes - More difficult than it seems
-Operating a Kubernetes cluster is in principle not difficult. However, simple Kubernetes clusters generally do not meet the requirements for production operation in terms of stability, security and reliability. A Kubernetes cluster in a production environment requires extensive configuration with regard to important core applications and node images to be, for example, protected against cyber attacks. In practice, a lack of knowledge often has the consequence that companies use unsecured clusters for real workloads, which are at risk from the rapidly increasing number of cyber attacks.
+Operating a Kubernetes cluster is in principle not difficult. However, simple Kubernetes clusters generally do not meet the requirements for production operation in terms of stability, security and reliability. A Kubernetes cluster in a production environment requires extensive configuration with regard to important core applications and node images to be, for example, to better protected against security incidents. In practice, a lack of knowledge often has the consequence that companies use unsecured clusters for real workloads, which results in a significant security risk.
 Another frequent problem is the missing test infrastructure, without which updates to production clusters are prone to errors. As a result, clusters are updated only once a year as forced by a no longer supported Kubernetes version.
 
 ### Proprietary and intransparent Solutions
