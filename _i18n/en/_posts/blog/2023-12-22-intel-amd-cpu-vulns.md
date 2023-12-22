@@ -4,10 +4,10 @@ title: "Delving into the Technical Depths of Intel-SA-00950 and AMD Cachewarp Vu
 author:
   - "David Rodríguez"
 avatar:
-  - ""
+  - "rodriguez"
 about:
-  - ""
-image: ""
+  - "rodriguez"
+image: "blog/chip-scalpel.png"
 ---
 
 ## The Evolving Landscape of Security Vulnerabilities
