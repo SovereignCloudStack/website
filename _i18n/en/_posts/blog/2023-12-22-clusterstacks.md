@@ -6,9 +6,6 @@ authors:
 - "Sven Batista Steinbach"
 - "Jan Schoone"
 - "Alexander Diab"
-avatar:
-image:
-about:
 ---
 ## Cluster Stacks
 With Release 5, the Sovereign Cloud Stack has published a technical preview of the "Cluster Stacks" - a framework that simplifies the productive operation of Kubernetes clusters from the user's perspective and offers transparency regarding the configuration and composition of the cluster's core components.

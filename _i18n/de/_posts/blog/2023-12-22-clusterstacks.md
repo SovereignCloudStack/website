@@ -6,9 +6,6 @@ authors:
 - "Sven Batista Steinbach"
 - "Jan Schoone"
 - "Alexander Diab"
-avatar:
-image:
-about:
 ---
 ## Cluster Stacks
 
