@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cluster Stacks"
-authors: 
+author: 
 - "Janis Kemper"
 - "Sven Batista Steinbach"
 - "Jan Schoone"
