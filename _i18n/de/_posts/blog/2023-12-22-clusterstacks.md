@@ -22,7 +22,7 @@ Diese Lösungen sind in der Regel so spezifisch in Konfiguration und der Auswahl
 Je nach Angebot können mehr oder weniger Zuständigkeiten beim Nutzer liegen. Dies kann dazu führen, dass bei dem einen Angebot bestimmte Sicherheitseinstellungen oder wichtige Komponenten schon eingebaut sind, beim anderen aber nicht. Ein Nutzer muss sich daher bei jedem Wechsel eines Anbieters intensiv mit den Details des Produkts auseinandersetzen, um dann die richtigen Konsequenzen ziehen zu können und die noch fehlenden Einstellungen selbst umzusetzen und fehlende Komponenten zu installieren.
 
 ## Cluster Stacks - die Lösung für produktionsreifes und einfaches Kubernetes
-Hier setzen die Cluster Stacks von SCS an und schaffen eine Lösung, in der Aufbau eines Clusters auch bei einer "Managed"-Lösung transparent bzw. vollständig open-source ist und sich Nutzer in einer Community zusammenschließen können, um die gemanagte Lösung gemeinsam mit den Anbietern zu verbessern. Sie basiert auf dem open-source Kubernetes-Projekt "Cluster-API", welches es ermöglicht, schnell und einfach sichere Cluster zu erstellen und zu betreiben - auch auf verschiedenen Providern.
+Hier setzen die Cluster Stacks von SCS an und schaffen eine Lösung, in der Aufbau eines Clusters auch bei einer "Managed"-Lösung transparent bzw. vollständig open-source ist und sich Nutzer in einer Community zusammenschließen können, um die gemanagte Lösung gemeinsam mit den Anbietern zu verbessern. Wie die erste Version der SCS KaaS Referenzimplementierung basiert Sie auf dem open-source Kubernetes-Projekt "Cluster-API", welches es ermöglicht, schnell und einfach sichere Cluster zu erstellen und zu betreiben - auch auf verschiedenen Providern.
 Die Cluster Stacks sind ein Konzept, welches alle wichtigen Komponenten eines Kubernetes-Clusters zusammen denkt. Die drei Hauptkomponenten sind dabei
 1. Konfiguration von Kubernetes (z.B. Kubeadm),
 2. grundlegende Applikationen,
@@ -37,3 +37,4 @@ Im Rahmen des SCS-Projekts werden Cluster Stacks für ausgewählte Provider bere
 ## Ausblick
 Der Release R5 enthält einen Technical Preview der Cluster Stacks, des dazugehörigen Operators, sowie eine [Demo](https://github.com/SovereignCloudStack/cluster-stacks-demo), mithilfe derer Nutzer schon jetzt Cluster lokal mithilfe von Docker starten können.
 In den kommenden Wochen wird eine OpenStack-Schnittstelle für OpenStack veröffentlicht, sodass die Cluster Stacks auf "echter" Cloud-Infrastruktur genutzt werden können.
+Für den Release R6 ist ein Migrationspfad von der V1 der SCS KaaS Referenimplementierung zu Cluster Stacks vorgesehen.

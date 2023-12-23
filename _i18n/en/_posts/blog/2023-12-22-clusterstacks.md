@@ -21,7 +21,7 @@ These solutions are usually so specific in terms of configuration and component 
 Depending on the service, the user may have more or less responsibility. This can mean that certain security settings or important components are already built into one service but lacking in another one. Every time a user switches providers, they must therefore take a close look at the details of the product so that they can draw the right conclusions and implement the missing settings and install the missing components themselves.
 
 ### Cluster Stacks - The solution for production-ready and simple Kubernetes
-This is where the cluster stacks from SCS come in and create a solution in which the structure of a cluster is transparent or completely open-source, even with a "managed" solution, and users can join together in a community to improve the managed solution together with the providers. It is based on the open-source Kubernetes project "Cluster API", which makes it possible to create and operate secure clusters quickly and easily - even on different providers.
+This is where the cluster stacks from SCS come in and create a solution in which the structure of a cluster is transparent or completely open-source, even with a "managed" solution, and users can join together in a community to improve the managed solution together with the providers. Like the V1 of the SCS KaaS reference implementation it is based on the open-source Kubernetes project "Cluster API", which makes it possible to create and operate secure clusters quickly and easily - even on different providers.
 Cluster stacks are a concept that combines all the important components of a Kubernetes cluster. The three main components are:
 1. Configuration of Kubernetes (e.g. Kubeadm),
 2. Core Applications, 
@@ -36,5 +36,5 @@ As part of the SCS project, cluster stacks are configured for selected providers
 ### Outlook 
 The R5 release contains a technical preview of the cluster stacks and the associated operator, as well as a [demo](https://github.com/SovereignCloudStack/cluster-stacks-demo), which allows users to start clusters locally using Docker.
 An OpenStack interface for OpenStack will be released in the coming weeks so that the cluster stacks can be used on "real" cloud infrastructure.
-
+For the release R6 a migration path taking existing installations from the V1 SCS KaaS reference implementation to Cluster Stacks is planned.
 
