@@ -14,5 +14,5 @@ SOURCE:https://scs.community{{employee.url}}.vcf
 REV:{% last_modified_at %Y-%m-%dT%H:%M:%SZ %}
 TZ:{{employee.timezone}}
 KIND:individual
-{% if employee.avatar %}PHOTO;ENCODING=BASE64;TYPE=JPEG:{{ employee.avatar | base64 }}{% endif %}
+PHOTO;ENCODING=BASE64;TYPE=JPEG:{{ employee.avatar | base64 }}
 END:VCARD
