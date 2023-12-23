@@ -12,7 +12,7 @@ linkedin: https://www.linkedin.com/in/nadja-schieber-a68579270/
 matrix: https://matrix.to/#/@nadjas:matrix.org
 github: https://github.com/nadja234
 mail: schieber@osb-alliance.com
-phone: +49-30-206539-211
+#phone: +49-30-206539-211
 street: Pariser Platz 6a
 city: Berlin
 state: Berlin
