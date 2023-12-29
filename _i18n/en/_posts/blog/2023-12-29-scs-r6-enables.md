@@ -1,7 +1,6 @@
 ---
 layout: post
-title:  "SCS is efficient to operate - R6 will enable you even better”
-category: tech
+title: "SCS enables - SCS is efficient to operate: Outcomes for R6"
 author:
   - "Felix Kronlage-Dammers"
 avatar:
