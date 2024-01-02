@@ -4,9 +4,9 @@ title: "Delving into the Technical Depths of Intel-SA-00950 and AMD Cachewarp Vu
 author:
   - "David Rodríguez"
 avatar:
-  - "rodriguez"
+  - "90n20"
 about:
-  - "rodriguez"
+  - "90n20"
 image: "blog/chip-scalpel.png"
 ---
 
