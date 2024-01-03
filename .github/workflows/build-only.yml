@@ -26,4 +26,4 @@ jobs:
         jekyll_env: development
         pre_build_commands: "apk add --update vips uglify-js"
         build_only: true
-        jekyll_build_options: "--config _config.yml,_config.staging.yml"
+        jekyll_build_options: "--config _config.yml,_config.staging.yml --verbose --trace"
