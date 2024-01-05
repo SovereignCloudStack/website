@@ -34,6 +34,7 @@ permalink: /signatures
 Ein Projekt der <a href="https://osb-alliance.com">Open Source Business Alliance</a> - Bundesverband für digitale Souveränität e.V.<br />
 <br />
 Tel.: <a href="tel:{{employee.phone}}">{{employee.phone}}</a><br />
+Mail: <a href="mailto:{{employee.mail}}">{{employee.mail}}</a><br />
 {% if employee.matrix %}Matrix: @{{employee.matrix | split: '@' | last }} at <a href="https://matrix.to/#/#scs-community:matrix.org">#scs-community</a> <br />{% endif %}
 <br />
 Pariser Platz 6a, 10117 Berlin<br />
@@ -71,6 +72,7 @@ Sovereign Cloud Stack — standardized, built and operated by many<br />
 Ein Projekt der Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.<br />
 <br />
 Tel.: {{employee.phone}} {% if employee.matrix %}\| Matrix: @{{employee.matrix | split: '@' | last }} at #scs-community:matrix.org{% endif %}<br />
+Mail: <a href="mailto:{{employee.mail}}">{{employee.mail}}</a><br />
 <hr>
 <!-- End Short Signature {{employee.firstname}} -->
 {% endfor %}

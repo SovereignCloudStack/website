@@ -2,10 +2,10 @@
 layout: post
 title: "Cluster Stacks"
 author:
-  - “Janis Kemper”
-  - “Sven Batista Steinbach”
-  - “Jan Schoone”
-  - “Alexander Diab”
+  - "Janis Kemper"
+  - "Sven Batista Steinbach"
+  - "Jan Schoone"
+  - "Alexander Diab"
 avatar:
   - "jkemper.jpeg"
   - "avatar-syself.jpeg"
