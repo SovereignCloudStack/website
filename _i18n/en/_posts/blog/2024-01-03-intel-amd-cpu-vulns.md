@@ -50,9 +50,9 @@ The following Intel processor families and models are affected by Intel-SA-00950
 
 The Intel-SA-00950 vulnerability is considered to be of high severity, with a CVSS score of 8.8 (High). This means that it is very serious and could have a significant impact on affected systems.  
 
-Exploiting the vulnerability is moderately difficult due to the specific conditions that need to be met and the failure modes that have to be triggered and abused. Moreover, an attacker would need to have local access to the affected system and be able to run custom code. Additionally, the exploit would need to be carefully crafted to avoid detection by security measures.
+Exploiting the vulnerability to access protected data is difficult due to the specific conditions that need to be met and the failure modes that have to be triggered and abused. An attacker would need to have local access to the affected system and be able to run custom code. This however is the case for IaaS cloud customers.
 
-However, the risk increases on shared environments, such as cloud, becasue of it's DoS potential. On this scenarios, where a single node usually hosts more than one client virtual machine, it could be possible to spawn a VM and run the exploit code on it, producing a crash on the underlaying node itself and affecting all customers.
+Exploiting the vulnerability to cause a host crash is not very difficult and is thus a significant risk for shared environments, such as SCS clouds. It allows evil cloud customers to cause a denial of service (DoS), affecting not just the customer's own virtual machine (VM), but also the also all other VMs on this host (hypervisor), including those from other customers. While this DoS attack will be noticed by the cloud operator (and can be attributed to the customer if performed repeatedly), it can cause major pain to the cloud operator and its customers. 
 
 As per the date of writing this post, the vulnerability is not believed to be actively exploited in the wild.
 
