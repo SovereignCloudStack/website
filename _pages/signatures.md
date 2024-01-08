@@ -40,9 +40,7 @@ Mail: <a href="mailto:{{employee.mail}}">{{employee.mail}}</a><br />
 Pariser Platz 6a, 10117 Berlin<br />
 <br />
 Vorstandsvorsitzender: Peter H. Ganten, Univention GmbH<br />
-Stellvertretende Vorsitzende:<br />
-Hong Phuc Dang<br />
-Timo Levi, Deutsche Telekom AG<br />
+Stellvertretender Vorsitzender: Timo Levi, Deutsche Telekom AG<br />
 Finanzvorstand: Diego Calvo de Nó, Proventa AG<br />
 <br />
 Ehrenvorsitzender: Dr. Karl Heinz Strassemeyer<br />
