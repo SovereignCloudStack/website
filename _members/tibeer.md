@@ -1,5 +1,4 @@
 ---
-hide: true
 author_slug: tibeer
 redirect_from:
    - /members/tibeer

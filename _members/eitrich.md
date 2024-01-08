@@ -1,6 +1,5 @@
 ---
 author_slug: eitrich
-hide: true
 redirect_from:
    - /members/itrich
 title: Eduard Itrich

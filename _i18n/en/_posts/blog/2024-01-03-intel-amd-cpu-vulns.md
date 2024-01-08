@@ -48,13 +48,11 @@ The following Intel processor families and models are affected by Intel-SA-00950
 
 ### Severity Classification and Exploit Difficulty
 
-The Intel-SA-00950 vulnerability is considered to be of high severity, with a CVSS score of 8.8 (High). This means that it is very serious and could have a significant impact on affected systems.  
+The Intel-SA-00950 vulnerability is considered to be of high severity, with a CVSS score of 8.8 (High). This means that the vulnerability is considered to be very serious and could have a significant impact on affected systems.
 
-Exploiting the vulnerability to access protected data is difficult due to the specific conditions that need to be met and the failure modes that have to be triggered and abused. An attacker would need to have local access to the affected system and be able to run custom code. This however is the case for IaaS cloud customers.
+However, it is true that exploiting it is considered to be moderately difficult due to the specific conditions that need to be met. An attacker would need to have access to the affected system and be able to run custom code. Additionally, the exploit would need to be carefully crafted to avoid detection by security measures.
 
-Exploiting the vulnerability to cause a host crash is not very difficult and is thus a significant risk for shared environments, such as SCS clouds. It allows evil cloud customers to cause a denial of service (DoS), affecting not just the customer's own virtual machine (VM), but also the also all other VMs on this host (hypervisor), including those from other customers. While this DoS attack will be noticed by the cloud operator (and can be attributed to the customer if performed repeatedly), it can cause major pain to the cloud operator and its customers. 
-
-As per the date of writing this post, the vulnerability is not believed to be actively exploited in the wild.
+Additionaly, as per the date of writing this post, the vulnerability is not believed to be actively exploited in the wild.
 
 ## AMD Cachewarp Vulnerabilities: Compromising Encrypted Virtual Machines
 
@@ -117,8 +115,3 @@ Intel-SA-00950 and AMD Cachewarp vulnerabilities highlight the importance of vig
 * [Reptar](https://lock.cmpxchg8b.com/reptar.html)
 * [AMD CacheWarp](https://cachewarpattack.com/)
 * [AMD CacheWarp Proof-of-concept implementation](https://github.com/cispa/CacheWarp)
-
-## Version history
-
-* Initial Publication, v1.0, 2024-01-03, 13:05 CEST.
-* Improvements, Intel-SA-00950 Severity, v1.1, 2024-01-05, 12:30 CEST.
