@@ -4,7 +4,7 @@ layout: employee
 
 lastname: Kronlage-Dammers
 firstname: Felix
-role: Product Owner Iaas & Operations Sovereign Cloud Stack
+role: Product Owner IaaS & Operations Sovereign Cloud Stack
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
 avatar: employees/Kronlage-Dammers.jpg

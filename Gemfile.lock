@@ -122,7 +122,7 @@ GEM
     minitest (5.20.0)
     mutex_m (0.2.0)
     namae (1.1.1)
-    nokogiri (1.15.5-x86_64-linux)
+    nokogiri (1.16.0-x86_64-linux)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
