@@ -1,6 +1,6 @@
 - name: "pluscloud open"
   image: "logo-pluscloud-open.svg"
-  link: "https://www.plusserver.com/produkte/pluscloud-open"
+  link: "https://www.plusserver.com/produkt/pluscloud-open/"
 - name: "Betacloud"
   image: "logo-betacloud.png"
   link: "https://www.betacloud.de/"

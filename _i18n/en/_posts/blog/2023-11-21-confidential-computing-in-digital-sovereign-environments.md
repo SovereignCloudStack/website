@@ -92,21 +92,32 @@ Looking forward a lot of the interesting parts are happening upwards from the Ia
 
 Eclipse XFSC (Cross Federation Services Components) develops the software components necessary to set up a federated system that interconnects several participants in a data and service infrastructure with each other, aiming to develop new data-driven services and innovative products. Such ecosystems consist of joined interconnected data and infrastructure ecosystems, aggregated in so-called Federations that are individually orchestrated and operated with the help of Federation Services, part of Gaia-X.
 
-It consists of several components (mainly microservices) enabling federations in data ecosystems and providing interoperability across federations.
+The XFSC serves as the essential toolbox, comprising the minimal technical services necessary for establishing a cloud-based data infrastructure within Federations. It serves the critical purpose of enabling operational functionality.
 
-These services empower federations to authenticate and authorize participants in a federation, for example via credential validation, and cover technology functionalities to ensure a consistent level of trust between all Participants of a federation.
+In facilitating the construction of trust and interoperability, XFSC guarantees data sovereignty and compliance across federated catalogs and within each individual Federation. Notably, XFSC is crafted as open-source code, diverging from a centralized distribution model. This design allows for customization, empowering the development of applications and services tailored to the unique requirements of each Federation.
+
+This diagram illustrates the federation's architecture and its fundamental components. Currently, the setup serves a dual purpose for both providers and federators. However, it has the flexibility to be divided into separate Argo CD environments if needed.
 
 * Authentication & Authorization Service (AAS)
 * Personal Credential Manager (PCM)
 * Organization Credential Manager (OCM)
-* Trust Services (TRU)
+* Trust Services (TSA)
 * Notarization Service (NOT)
+* Federated Catalogue (CAT)
+* Compliance Service
+* Self Description Wizard
+* Portal (POR)
 
 <figure class="figure mx-auto d-block" style="width:100%">
     {% asset 'blog/cc/xfsc-architecture.png' class="figure-img w-100" alt="XFSC Architecture Overview"%}
     <figcaption>XFSC Architecture Overview</figcaption>
 </figure>
 
-The architectural overview shows the various microservices involved in the XFSC. Confidential Computing for the Organizational Credential Manager (OCM) allows one to attest to the running code of OCM before sending secrets. It enables one to keep secrets confidential while processing further activities in XFSC.
+The architectural overview illustrates the diverse microservices comprising the XFSC. Leveraging Confidential Computing could enhance the security of both the execution environment and credential storage.
 
 In a follow up blogpost, and once we have the SGX-enabled OpenStack up and running, we will be diving into the depth of actually moving the OCM and other services to a SGX-backed system.
+
+## Version history
+
+* Minor update on 2023-12-10:
+    - Paragraph on the XFSC was rephrased and updated with feedback from the XFSC team.
