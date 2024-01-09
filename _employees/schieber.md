@@ -7,7 +7,7 @@ lastname: Schieber
 role: Researcher Open Source Governance
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
-# avatar: employees/Schieber.jpg
+# avatar: employees/schieber.jpg
 avatar: images/default-avatar.jpg
 linkedin: https://www.linkedin.com/in/nadja-schieber-a68579270/
 matrix: https://matrix.to/#/@nadjas:matrix.org
