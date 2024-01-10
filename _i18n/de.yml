@@ -11,6 +11,8 @@ nav:
   use: "SCS nutzen"
   opensource: "Open Source"
   partners: "Servicepartner"
+  members: "Community Mitglieder"
+  employees: "Mitarbeitende"
   news: "Neuigkeiten"
   security: "Sicherheitshinweise und Empfehlungen"
   jobs: "Offene Stellen"
@@ -28,6 +30,7 @@ home:
     prev: "Zurück"
     next: "Vor"
   partner: "Partner"
+  member: "Mitglied"
   provider: "Cloud Angebote auf Basis von Sovereign Cloud Stack"
   supporter: "Unterstützende Unternehmen und Organisationen"
 quotes:
