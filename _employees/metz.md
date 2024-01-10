@@ -7,9 +7,9 @@ lastname: Metz
 role: Public Outreach Manager
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
-# avatar: employees/metz.jpg
+# avatar: employees/Metz.jpg
 avatar: images/default-avatar.jpg
-linkedin: https://www.linkedin.com/in/regina-metz-zzzzz/
+#linkedin: https://www.linkedin.com/in/regina-metz-zzzzz/
 matrix: https://matrix.to/#/@regina_metz:matrix.org
 github: https://github.com/reginametz
 mail: metz@osb-alliance.com
