@@ -1,1 +1,1 @@
-../../../en/_posts/blog/2023-12-27-scs-r6-enables.md
+../../../en/_posts/blog/2023-12-29-scs-r6-enables.md
