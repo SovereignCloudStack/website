@@ -29,7 +29,7 @@ realization in the testbed to OpenTofu version 1.6.0.
 
 The migration was very simple: from our point of view, OpenTofu can be described as a drop-in replacement for Terraform with a clear conscience.
 
-With today's integrated code version, we have made some detailed improvements to the installation of the i
+With today's integrated code version, we have made some detailed improvements to the installation of the
 dependencies and the [documentation](https://docs.osism.tech/testbed/) of the testbed.
 It is now only necessary to install `make`, `wireguard` and `python-virtualenv` on the testbed user's computer.
 All other dependencies such as OpenTofu and Ansible are now installed or managed according to the status of the Git-BRanch.
