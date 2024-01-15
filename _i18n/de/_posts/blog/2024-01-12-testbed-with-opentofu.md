@@ -1,6 +1,6 @@
 
 [OSISM](https://osism.github.io/) ist als Referenzimplementierung für die Infrastructure-as-a-Service-Schicht im Projekt Sovereign Cloud Stack (SCS) bekannt.
-Das [OSISM-Testbed](https://github.com/osism/testbed) wird daher im SCS-Projekt verwendet, um die Infrastructure-as-a-Service-Schicht zu demonstrieren, zu testen und weiterzuentwickeln.
+Das [OSISM Testbed](https://github.com/osism/testbed) wird daher im SCS-Projekt verwendet, um die Infrastructure-as-a-Service-Schicht zu demonstrieren, zu testen und weiterzuentwickeln.
 
 Die Entwicklung von OSISM und SCS bringt aufgrund ihres verteilten Charakters der Systemachitektur eine Vielzahl von Herausforderungen mit sich,
 die sich auf verschiedene Ebenen erstrecken können. Neben dem rein funktionalen Testen von Infrastrukturkomponenten, wie es z.B. mit
