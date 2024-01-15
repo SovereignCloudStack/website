@@ -32,7 +32,7 @@ The migration was very simple: from our point of view, OpenTofu can be described
 With today's integrated code version, we have made some detailed improvements to the installation of the
 dependencies and the [documentation](https://docs.osism.tech/testbed/) of the testbed.
 It is now only necessary to install `make`, `wireguard` and `python-virtualenv` on the testbed user's computer.
-All other dependencies such as OpenTofu and Ansible are now installed or managed according to the status of the Git-BRanch.
+All other dependencies such as OpenTofu and Ansible are now installed or managed according to the status of the Git-branch.
 In this way, we ensure that testbed users will have less effort in the future when managing the tools and
 ensure that the testbed is used with the right tools in the right versions.
 

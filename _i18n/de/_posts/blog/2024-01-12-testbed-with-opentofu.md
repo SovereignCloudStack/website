@@ -32,7 +32,7 @@ Die Migration gestaltete sich sehr einfach: OpenTofu kann aus unserer Sicht gute
 Mit dem heute integrierten Code-Stand haben wir noch einige Detailverbesserungen bei der Installation der
 Abhängigkeiten bzw. der [Dokumentation](https://docs.osism.tech/testbed/) des Testbeds vorgenommen.
 So ist es jetzt nur noch notwendig `make`, `wireguard` und `python-virtualenv` auf dem Rechner des Testbed-Benutzers zu installieren.
-Alle anderen Abhängigkeiten wie OpenTofu aber auch Ansible werden nun passend zum Stand des Git-BRanch installiert bzw. verwaltet.
+Alle anderen Abhängigkeiten wie OpenTofu aber auch Ansible werden nun passend zum Stand des Git-Branch installiert bzw. verwaltet.
 Auf diese Weise erreichen wir, dass die Testbed-Nutzer in Zukunft weniger Aufwand bei der Verwaltung der Tools haben und
 dass für das Testbed sichergestellt ist, dass es mit den richtigen Tools in den richtigen Versionen genutzt wird.
 
