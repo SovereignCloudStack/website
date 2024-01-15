@@ -10,7 +10,8 @@ operated in a cluster mode. In this way, some [non-functional](https://en.wikipe
 implementation issues can be simulated, developed and verified in the testbed.
 
 Virtual machines, network and storage based on OpenStack are used as the basis or to provide the testbed.
-As SCS also virtualizes systems itself, the OpenStack environment must provide the capabilities for nested virtualization.
+The testbed can thus basically operate an SCS system for testing and development purposes in an Openstack Cloud environment.
+(As SCS also virtualizes systems itself, the OpenStack environment must provide the capabilities for nested virtualization.)
 
 The SCS testbed previously used Terraform to automatically set up and manage the basis for the required infrastructure components.
 Terraform was previously published under the Mozilla Public License v2.0 and was therefore a good fit for OSIS in terms of its terms of use and openness.

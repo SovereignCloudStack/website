@@ -10,7 +10,8 @@ in einem Cluster-Modus betrieben werden. Auf diese Weise können auch einige [ni
 Implementierungsfragen im Testbed simuliert, entwickelt und verifiziert werden.
 
 Als Basis bzw. zur Bereitstellung des Testbeds werden virtuelle Maschinen, Netzwerk und Storage auf Basis von OpenStack verwendet.
-Da SCS prinzipbedingt auch selbst Systeme virtualisiert, muss die OpenStack Umgebung die Fähigkeiten zur Nested Virtualization bereitstellen.
+Das Testbed kann damit grundsätzlich in einer Openstack Cloud Umgebung ein SCS System System zu Test- und Entwickungszwecken betreiben.
+(Da SCS prinzipbedingt auch selbst Systeme virtualisiert, muss die OpenStack Umgebung die Fähigkeiten zur Nested Virtualization bereitstellen.)
 
 Das SCS Testbed nutzte bisher Terraform, um die Basis für die benötigten Infrastrukturkomponenten automatisiert aufzubauen bzw. zu verwalten.
 Terraform wurde bisher unter der Mozilla Public License v2.0 veröffentlicht und passte daher von den Nutzungsbedingungen bzw.
