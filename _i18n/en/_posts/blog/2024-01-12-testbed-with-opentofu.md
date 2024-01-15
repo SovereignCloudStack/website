@@ -4,8 +4,8 @@ The [OSISM testbed](https://github.com/osism/testbed) is therefore used in the S
 
 The development of OSISM and SCS presents a number of challenges due to the distributed nature of the system architecture,
 which can extend to different levels. In addition to the purely functional testing of infrastructure components, as is possible with
-[Cloud in a box](https://docs.scs.community/docs/iaas/guides/deploy-guide/examples/cloud-in-a-box) (each component exists exactly once), it is therefore also very useful to test the various components in a scenario.
-components in a scenario that is more similar to a productive setup by operating the various components in a cluster mode.
+[Cloud in a box](https://docs.scs.community/docs/iaas/guides/deploy-guide/examples/cloud-in-a-box) (each component exists exactly once),
+it is therefore also very useful to test the various components in a scenario that is more similar to a productive setup by operating them in a cluster setup.
 operated in a cluster mode. In this way, some [non-functional](https://en.wikipedia.org/wiki/Non-functional_requirement) configuration and implementation issues can also be
 implementation issues can be simulated, developed and verified in the testbed.
 
