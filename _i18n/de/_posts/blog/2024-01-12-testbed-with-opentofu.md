@@ -15,7 +15,7 @@ Das Testbed kann damit grundsätzlich in einer Openstack Cloud Umgebung ein SCS 
 
 Das SCS Testbed nutzte bisher Terraform, um die Basis für die benötigten Infrastrukturkomponenten automatisiert aufzubauen bzw. zu verwalten.
 Terraform wurde bisher unter der Mozilla Public License v2.0 veröffentlicht und passte daher von den Nutzungsbedingungen bzw.
-hinsichtlich seiner Offenheit gut zum OSISM bzw. SCS Projekt.
+hinsichtlich seiner Offenheit gut zum OSISM- und SCS-Projekt.
 
 Mit der [Ankündigung](https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license) vom 10. August 2023 hat Hashicorp bekannt gegeben, dass sich dies in Zukunft ändern wird - zukünftige
 Versionen werden zumindest in relevanten Teilen unter der Business Source License v1.1 zur Verfügung gestellt.

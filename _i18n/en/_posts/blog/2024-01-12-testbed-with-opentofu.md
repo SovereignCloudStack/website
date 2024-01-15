@@ -14,8 +14,8 @@ The testbed can thus basically operate an SCS system for testing and development
 (As SCS also virtualizes systems itself, the OpenStack environment must provide the capabilities for nested virtualization.)
 
 The SCS testbed previously used Terraform to automatically set up and manage the basis for the required infrastructure components.
-Terraform was previously published under the Mozilla Public License v2.0 and was therefore a good fit for OSIS in terms of its terms of use and openness.
-and its openness to the OSISM and SCS project.
+Terraform was previously published under the Mozilla Public License v2.0 and was therefore a good fit with its terms of use and openness
+to the OSISM and SCS project.
 
 With the [announcement](https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license) of August 10, 2023, Hashicorp has announced that this will change in the future - future
 versions will be made available under the Business Source License v1.1, at least in relevant parts.
