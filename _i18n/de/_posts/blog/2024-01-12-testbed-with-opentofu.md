@@ -1,3 +1,13 @@
+---
+layout: post
+title: "Opensource - Testbed nutzt jetzt OpenTofu"
+author:
+  - "Marc Schöchlin"
+avatar:
+  - "scoopex.jpg"
+about:
+  - "scoopex"
+---
 
 [OSISM](https://osism.github.io/) ist als Referenzimplementierung für die Infrastructure-as-a-Service-Schicht im Projekt Sovereign Cloud Stack (SCS) bekannt.
 Das [OSISM Testbed](https://github.com/osism/testbed) wird daher im SCS-Projekt verwendet, um die Infrastructure-as-a-Service-Schicht zu demonstrieren, zu testen und weiterzuentwickeln.
