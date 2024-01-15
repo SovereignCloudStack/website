@@ -4,6 +4,7 @@ layout: employee
 
 lastname: Pataky
 firstname: Dominik
+avatar: employees/Pataky.jpg
 role: Product Owner Operations & Security Sovereign Cloud Stack
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
