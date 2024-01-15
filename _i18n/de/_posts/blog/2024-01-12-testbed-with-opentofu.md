@@ -4,7 +4,7 @@ Das [OSISM Testbed](https://github.com/osism/testbed) wird daher im SCS-Projekt 
 
 Die Entwicklung von OSISM und SCS bringt aufgrund ihres verteilten Charakters der Systemachitektur eine Vielzahl von Herausforderungen mit sich,
 die sich auf verschiedene Ebenen erstrecken können. Neben dem rein funktionalen Testen von Infrastrukturkomponenten, wie es z.B. mit
-[Cloud-In-A-Box](https://docs.scs.community/docs/iaas/guides/deploy-guide/examples/cloud-in-a-box) möglich ist (jede Komponente existiert genau einmal), ist es daher auch sehr sinnvoll, die verschiedenen
+[Cloud in a Box](https://docs.scs.community/docs/iaas/guides/deploy-guide/examples/cloud-in-a-box) möglich ist (jede Komponente existiert genau einmal), ist es daher auch sehr sinnvoll, die verschiedenen
 Komponenten in einem Szenario zu testen, das einem produktiven Setup ähnlicher ist, indem die verschiedenen Komponenten
 in einem Cluster-Modus betrieben werden. Auf diese Weise können auch einige [nicht-funktionale](https://en.wikipedia.org/wiki/Non-functional_requirement) Konfigurations- und
 Implementierungsfragen im Testbed simuliert, entwickelt und verifiziert werden.
