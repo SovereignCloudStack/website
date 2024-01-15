@@ -19,7 +19,7 @@ hinsichtlich seiner Offenheit gut zum OSISM- und SCS-Projekt.
 
 Mit der [Ankündigung](https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license) vom 10. August 2023 hat Hashicorp bekannt gegeben, dass sich dies in Zukunft ändern wird - zukünftige
 Versionen werden zumindest in relevanten Teilen unter der Business Source License v1.1 zur Verfügung gestellt.
-Da wir ein sehr großes Interesse daran haben, dass unser Projekt auf ernsthaften Open Source Komponenten aufbaut,
+Da wir ein sehr großes Interesse daran haben, dass unser Projekt auf ernsthaften [Open Source Komponenten aufbaut](https://github.com/SovereignCloudStack/standards/blob/main/Drafts/OSS-Health.md),
 war absehbar, dass wir hier eine sinnvolle Alternative finden müssen die unseren Anforderungen entspricht.
 
 Glücklicherweise hat sich schon am 2. September 2023 die Gründung eines Terraform Forks ergeben, der unter dem Dach
