@@ -24,7 +24,7 @@ war absehbar, dass wir hier eine sinnvolle Alternative finden müssen die unsere
 
 Glücklicherweise hat sich schon am 2. September 2023 die Gründung eines Terraform Forks ergeben, der unter dem Dach
 der Linux Foundation unter den Lizenzbedingungen der Mozilla Public License 2 weiterentwickelt wird.
-Mit dem ersten offiziellen und stabilen Release von [OpenTofu](https://opentofu.org/] stellt OSISM bzw. SCS nun seine Infrastructure-as-Code
+Mit dem ersten offiziellen und stabilen Release von [OpenTofu](https://opentofu.org/] stellt OSISM und SCS nun seine Infrastructure-as-Code
 Realisierung im Testbed auf OpenTofu in der Version 1.6.0 um.
 
 Die Migration gestaltete sich sehr einfach: OpenTofu kann aus unserer Sicht guten Gewissens als DropIn Replacement für Terraform bezeichnet werden.
