@@ -1,5 +1,5 @@
 
-OSISM is known as the reference implementation for the Infrastructure-as-a-Service layer in the Sovereign Cloud Stack (SCS) project.
+[OSISM](https://osism.github.io/) is known as the reference implementation for the Infrastructure-as-a-Service layer in the Sovereign Cloud Stack (SCS) project.
 The [OSISM testbed](https://github.com/osism/testbed) is therefore used in the SCS project to demonstrate, test and further develop the Infrastructure-as-a-Service layer.
 
 The development of OSISM and SCS presents a number of challenges due to the distributed nature of the system architecture,
