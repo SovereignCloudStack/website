@@ -17,7 +17,7 @@ The SCS testbed previously used Terraform to automatically set up and manage the
 Terraform was previously published under the Mozilla Public License v2.0 and was therefore a good fit for OSIS in terms of its terms of use and openness.
 and its openness to the OSISM and SCS project.
 
-With the announcement of August 10, 2023, Hashicorp has announced that this will change in the future - future
+With the [announcement](https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license) of August 10, 2023, Hashicorp has announced that this will change in the future - future
 versions will be made available under the Business Source License v1.1, at least in relevant parts.
 As we have a very strong interest in ensuring that our project is based on serious open source components,
 it was foreseeable that we would have to find a sensible alternative that meets our requirements.
