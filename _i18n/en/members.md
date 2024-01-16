@@ -9,3 +9,6 @@ On this page you will find the list of contributors who have decided to <a href=
 we are of course happy to welcome anyone who decides to do so.
 
 The SCS project welcomes anyone who would like to share individual information (e.g. just the Matrix account) or extensive information.
+
+A general overview of all people involved in the project can be found in the [member list](https://github.com/orgs/SovereignCloudStack/people
+) of the Github organization.
