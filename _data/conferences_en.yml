@@ -1,10 +1,3 @@
-- date: "2023-10-17"
-  event: "EclipseCon 2023"
-  title: "Open Cloud Services and an Open Cloud Computing Stack: a full stack combination from infrastructure to application provision ([see also](https://www.eclipsecon.org/2023/sessions/open-cloud-services-and-open-cloud-computing-stack-full-stack-combination))"
-  details: "Alexander Diab"
-  slides: "20231017-eclipsecon-2023-scs-xpanse-osba9.pdf"
-  link: "https://www.youtube.com/watch?v=6InnOvfn2Kk&list=PLy7t4z5SYNaSKkhAYBHBNVcsun-twUoXZ&index=75"
-
 - date: "2023-02-23"
   event: "ALASCA Tech-Talks #2"
   title: "Standardization in the SCS community"
