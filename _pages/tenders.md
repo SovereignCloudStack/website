@@ -63,8 +63,6 @@ redirect_from:
           <span class="text-decoration-line-through">SCS-VP{{lot.number_vh81 | prepend: '00' | slice: -2, 2 }}{%- if lot.retry -%}-{{lot.retry}}{%- endif -%}</span>
         {%- elsif lot.state == "cancelled" -%}
           <span class="fst-italic">{% t tenders.filter.cancelled %}</span>
-        {%- elsif lot.state == "cancelled" -%}
-          <span class="text-decoration-line-through">SCS-VP{{lot.number_vh81 | prepend: '00' | slice: -2, 2 }}{%- if lot.retry -%}-{{lot.retry}}{%- endif -%}</span>
         {%- elsif lot.contracting_portal -%}
           <a style="font-weight: bold;" href="{{lot.contracting_portal}}">SCS-VP{{lot.number_vh81 | prepend: '00' | slice: -2, 2 }}{%- if lot.retry -%}-{{lot.retry}}{%- endif -%}</a>
         {%- else -%}
