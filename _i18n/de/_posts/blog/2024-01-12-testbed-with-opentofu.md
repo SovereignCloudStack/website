@@ -20,7 +20,7 @@ Auf diese Weise können auch einige [nicht-funktionale](https://en.wikipedia.org
 Implementierungsfragen im Testbed simuliert, entwickelt und verifiziert werden.
 
 Als Basis bzw. zur Bereitstellung des Testbeds werden virtuelle Maschinen, Netzwerk und Storage auf Basis von OpenStack verwendet.
-Das Testbed kann damit grundsätzlich in einer Openstack Cloud Umgebung ein SCS System System zu Test- und Entwickungszwecken betreiben.
+Das Testbed kann damit grundsätzlich in einer beliebigen Openstack Cloud Umgebung ein SCS System System zu Test- und Entwickungszwecken betreiben.
 (Da SCS prinzipbedingt auch selbst Systeme virtualisiert, muss die OpenStack Umgebung die Fähigkeiten zur Nested Virtualization bereitstellen.)
 
 Das SCS Testbed nutzte bisher Terraform, um die Basis für die benötigten Infrastrukturkomponenten automatisiert aufzubauen bzw. zu verwalten.
@@ -37,15 +37,15 @@ der Linux Foundation unter den Lizenzbedingungen der Mozilla Public License 2 we
 Mit dem ersten offiziellen und stabilen Release von [OpenTofu](https://opentofu.org/] stellt OSISM und SCS nun seine Infrastructure-as-Code
 Realisierung im Testbed auf OpenTofu in der Version 1.6.0 um.
 
-Die Migration gestaltete sich sehr einfach: OpenTofu kann aus unserer Sicht guten Gewissens als DropIn Replacement für Terraform bezeichnet werden.
+Die Migration gestaltete sich sehr einfach: OpenTofu kann aus unserer Sicht guten Gewissens und wenig überschend als DropIn Replacement für Terraform bezeichnet werden.
 
 Mit dem heute integrierten Code-Stand haben wir noch einige Detailverbesserungen bei der Installation der
 Abhängigkeiten bzw. der [Dokumentation](https://docs.osism.tech/testbed/) des Testbeds vorgenommen.
 So ist es jetzt nur noch notwendig `make`, `wireguard` und `python-virtualenv` auf dem Rechner des Testbed-Benutzers zu installieren.
-Alle anderen Abhängigkeiten wie OpenTofu aber auch Ansible werden nun passend zum Stand des Git-Branch installiert bzw. verwaltet.
+Alle anderen Abhängigkeiten wie OpenTofu aber auch Ansible werden nun passend zum Stand des Git-Branch installiert und aktualisiert.
 Auf diese Weise erreichen wir, dass die Testbed-Nutzer in Zukunft weniger Aufwand bei der Verwaltung der Tools haben und
-dass für das Testbed sichergestellt ist, dass es mit den richtigen Tools in den richtigen Versionen genutzt wird.
+dass für das Testbed sichergestellt ist, dass es mit den richtigen Tools in den richtigen Versionen genutzt werden.
 
-Abschließend möchte ich noch einmal meine Begeisterung für OpenSource im Zusammenhang mit Terraform zum Ausdruck bringen.
+Ich möchte and dieser Stelle ein weiteres Mal meine Begeisterung für OpenSource im Zusammenhang mit Terraform zum Ausdruck bringen.
 Die bisherige Offenheit von Terraform und das Engagement der Community haben hier dafür gesorgt, dass wir mit geringem
 Aufwand auf ein alternatives und zukunftssicheres Produkt migrieren können.
