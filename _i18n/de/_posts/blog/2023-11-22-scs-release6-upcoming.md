@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2023-11-22-scs-release6-upcoming.md

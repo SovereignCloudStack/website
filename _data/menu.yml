@@ -11,9 +11,14 @@
       link: /contribute/
     - title: nav.partners
       link: /partners/
+    - title: nav.employees
+      link: /employees/
 
 - title: nav.news
   link: /news/
+
+- title: nav.events
+  link: /events/
 
 - title: nav.jobs
   link: /jobs/

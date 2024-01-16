@@ -7,14 +7,6 @@ The website is automatically build every 15 minutes or on every push to `main` a
 
 ## Locations
 
-Orientation for newbies:
-
-* [Place for adding further employees](https://github.com/SovereignCloudStack/website/tree/main/_employees)
-* [Place for adding further community profiles](https://github.com/SovereignCloudStack/website/tree/main/_members)
-* [Place for adding further partners](https://github.com/SovereignCloudStack/website/tree/main/_partners)
-* [Place for adding further supporting partners](https://github.com/SovereignCloudStack/website/blob/main/_data/supporter.yml)
-* [Place for adding further providers](https://github.com/SovereignCloudStack/website/blob/main/_data/provider.yml)
-
 Published sites:
 
 * [The productive SCS site](https://scs.community/)
@@ -37,35 +29,25 @@ The description is a little more detailed than it needs to be, as it aims also t
    git checkout main
    git pull
    git checkout -b feat/<name of your branch> # not not use spaces
-   ``` 
+   ```
 2. Make your changes with the tool of your choice
-   <details>
-   <summary>Example: Edit content with Visual Studio Code (use what you like the most)</summary>
-     - Download and install [Visual Studio Code](https://code.visualstudio.com/) Development Environment on your workstation
-     - Install the [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) Extension
-       - Preferences -> Extensions
-     - Add search extension: "Markdown All in One"
-     - Add spellcheck extension "Code Spell Checker"
-     - Select the extension and hit the button "Install"
-   - Open the `website` folder with Visual Studio Code
-   - Open files for editing and use the preview folder
-  </details>
-
-1. Commit and push with signoffs
+3. Commit and push with signoffs
    ```
    git status
    git diff
    git add <file> ... <file>
    git status
    git commit -s -a
-   gut push 
+   gut push
    ```
-2. Optional: Testing complexer changes
+4. Optional: Testing complexer changes
   * Set the `staging` branch to the same state like the main branch
      ```
      git checkout staging
      # check the current difference
      git diff main
+
+     # This abdondons everything on the staging branch
      git reset --hard origin/main
      # add changes of other branches
      git merge feat/<name of your branch>
@@ -73,17 +55,17 @@ The description is a little more detailed than it needs to be, as it aims also t
 
      # perform a hard overwrite of everything in the staging branch
      git push --force
-     ``` 
+     ```
   * Test the result: https://staging.scs.community/ (that takes ~15minutes)
   * Start at Step 2 if your are not satisfied
-3. Create a pull request to get the changes in the `main` branch
+5. Create a pull request to get the changes in the `main` branch
    * Open https://github.com/SovereignCloudStack/website
    * Select `Contribute` -> `Open pull request`
      * Verify that `base: main` and `compare <your branch>` is selected in the top of the pull request
      * Add a optional description
-     * `Create pull request` 
+     * `Create pull request`
    * Assign one ore more persons which can review the changes and remind the person to review the change
-4. The [reviewer](https://github.com/pulls/assigned) inspects [your](https://github.com/pulls) changes and gives feedback
+6. The [reviewer](https://github.com/pulls/assigned) inspects [your](https://github.com/pulls) changes and gives feedback
    * If there is something to todo, you can restart at step 2
    * If everything is fine the reviewer approves the merge request
    * Your changes are merged to the `main` branch and rolled out after 15 minutes
@@ -108,4 +90,28 @@ Upload the logo to `assets/images` and add a entry in `_data/supporter.yml`
 
 ### How can I add custom styling definitions (CSS code)?
 As we're using Bootstrap, please add your custom styling definitions to `assets/css/_sass/custom.css`
+
+## Testing changes on `staging` branch
+
+We're using a dedicated workflow to build a staging preview of our website that subsequently is published with GitHub Pages. To make use of this feature, simply push to `staging`. Please try to keep `staging` in sync with `main`, e.g. by deleting and recreating after testing your recent changes. The staging area can be reached via <https://sovereigncloudstack.github.io/website/>.
+
+## Testing changes locally
+
+* Clone Repo
+  ```
+  git clone git@github.com:SovereignCloudStack/website.git
+  ```
+* Start testserver
+  ```
+  docker run --privileged -it --rm -p 4000:4000 -e LC_ALL=C.UTF-8 -e LANG=C.UTF-8 -v $(pwd):/site debezium/website-builder bash
+  apk add --update vips uglify-js
+  bundle update
+  bundle install
+  jekyll serve config _config.yml,_config.dev.yml  --incremental -H 0.0.0.0
+  ```
+* Edit files, wait for 16 seconds for minor changes
+* Test the view
+  ```
+  firefox  http://127.0.0.1:4000
+  ```
 

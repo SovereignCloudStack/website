@@ -11,11 +11,14 @@ nav:
   use: "Use SCS"
   opensource: "Open source"
   partners: "Service partners"
+  members: "Community members"
+  employees: "Employees"
   news: "News"
   security: "Security Advisories"
   jobs: "Open positions"
   tenders: "Public tenders"
   docs: "Documentation"
+  events: "Events"
   contribute: "Contribute to SCS"
   summit2023: "Join us for our first SCS Summit on 23rd and 24th of May 2023 in Berlin."
 footer:
@@ -27,6 +30,7 @@ home:
     prev: "Previous"
     next: "Next"
   partner: "Partners"
+  member: "Member"
   provider: "Cloud services based on Sovereign Cloud Stack"
   supporter: "Supporting companies and organizations"
 quotes:
@@ -51,6 +55,12 @@ tiles:
     title: "Tenders"
     body: "Important building blocks will be awarded to companies through open tenders, which will be continously published on this page."
     action: "Apply &raquo;"
+  events:
+    title: "Events"
+    body: "Events that are (co)organized by the SCS Team as well as important events with contributions from SCS."
+    action: "More details"
+events:
+  title: "Events"
 news:
   announcements: "Own Announcements"
   blog: "Community Blog"
@@ -65,6 +75,7 @@ news:
     title: "Conference Contributions"
     slides: "Slides"
   read_more: "Read more..."
+  events_link: "See also our events page."
 tenders:
   name: "Name"
   description: "Description"
@@ -129,6 +140,9 @@ jobs:
   cmte:
     title: "Cloud Monitoring and Test Engineer (d/f/m)"
     short_description: "Be part of a small central remote team at the Open Source Business Alliance and make a significant contribution to the quality of our digital sovereignty enabling SCS."
+  public-outreach:
+    title: "Public Outreach Manager (d/f/m)"
+    short_description: "Be part of a small central remote team at the OSB Alliance and coordinate the communication of SCS progress and results on events and publications."
   unknown:
     title: "Nothing suitable in the list?"
     short_description: "We're looking for motivated people rather than gap fillers. You would like to join our team, but can't identify with any of the open positions advertised here? Contact us, we are looking forward to meeting you!"

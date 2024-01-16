@@ -9,13 +9,14 @@ avatar:
   - "bitkeks.png"
 about:
   - "garloff"
+  - "bitkeks"
 image: "blog/cpu/downfall.png"
 ---
 
 ## Summary
 
 A new set of hardware CPU speculation vulnerabilities were uncovered in
-July/August 2023. They do create risks for information disclosure for 
+July/August 2023. They do create risks for information disclosure for
 providers and users of SCS clouds. This blog article explains the issues,
 the associated risks and how these can be mitigated by providers and users.
 
@@ -366,6 +367,6 @@ to public cloud SCS offerings.
 
 * [Downfall and Zenbleed: Googlers helping secure the ecosystem ](https://security.googleblog.com/2023/08/downfall-and-zenbleed-googlers-helping.html)
 * [Collide+Power, Downfall, and Inception: New Side-Channel Attacks Affecting Modern CPUs](https://thehackernews.com/2023/08/collidepower-downfall-and-inception-new.html)
-* [LWN on Downfall and Inception](https://lwn.net/Articles/940783/) 
+* [LWN on Downfall and Inception](https://lwn.net/Articles/940783/)
 * [Phoronix update on Inception mitigation](https://www.phoronix.com/news/Linux-x86-bugs-AMD-SRSO)
 * [iX article on Meltdown & Spectre from 2018](https://www.heise.de/select/ix/2018/2/1517770391119975) (German language)

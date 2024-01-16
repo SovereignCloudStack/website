@@ -11,11 +11,14 @@ nav:
   use: "SCS nutzen"
   opensource: "Open Source"
   partners: "Servicepartner"
+  members: "Community Mitglieder"
+  employees: "Mitarbeitende"
   news: "Neuigkeiten"
   security: "Sicherheitshinweise und Empfehlungen"
   jobs: "Offene Stellen"
   tenders: "Ausschreibungen"
   docs: "Dokumentation"
+  events: "Veranstaltungen"
   contribute: "Zu SCS beitragen"
   summit2023: "Unser erster SCS Summit findet am 23. and 24. Mai 2023 in Berlin statt."
 footer:
@@ -27,6 +30,7 @@ home:
     prev: "Zurück"
     next: "Vor"
   partner: "Partner"
+  member: "Mitglied"
   provider: "Cloud Angebote auf Basis von Sovereign Cloud Stack"
   supporter: "Unterstützende Unternehmen und Organisationen"
 quotes:
@@ -51,6 +55,12 @@ tiles:
     title: "Ausschreibungen"
     body: "Wichtige Bausteine sollen über offene Ausschreibungen an Unternehmen vergeben werden, welche hier regelmäßig veröffentlich werden."
     action: "Bewerben &raquo;"
+  events:
+    title: "Veranstaltungen"
+    body: "Veranstaltungen, die durch das SCS Team (mit)organisiert werden sowie die wichtigsten Veranstaltungen, an denen SCS aktiv teilnimmt."
+    action: "Details"
+events:
+  title: "Veranstaltungen"
 news:
   announcements: "Eigene Ankündigungen"
   blog: "Community-Blog"
@@ -64,6 +74,7 @@ news:
     title: "Konferenzbeiträge"
     slides: "Folien"
   read_more: "Weiterlesen..."
+  events_link: "Mehr auf unserer Veranstaltungsseite."
 tenders:
   name: "Name"
   description: "Beschreibung"
@@ -128,6 +139,9 @@ jobs:
   cmte:
     title: "Cloud Monitoring und Test Ingenieur (d/w/m)"
     short_description: "Werde Teil eines kleinen zentralen remote Teams bei der Open Source Business Alliance und leiste einen wichtigen Beitrag zur Qualität des digitale Souveränität ermöglichenden SCS."
+  public-outreach:
+    title: "Public Outreach Manager (d/w/m)"
+    short_description: "Werde Teil eines kleinen zentralen remote Teams bei der OSB Alliance und koordiniere die Kommunikation der SCS Projektergebnisse auf Veranstaltungen und in Publikationen."
   unknown:
     title: "Nichts passendes dabei?"
     short_description: "Wir suchen nach motivierten Menschen statt Lückenfüllern. Du hast Lust am Projekt mitzuwirken, kannst dich aber mit keiner der hier ausgeschriebenen Stellen identifizieren? Kontaktiere uns, wir freuen uns darauf dich kennenzulernen!"

@@ -7,7 +7,7 @@ redirect_from:
 image: "po-ops.jpg"
 short_description: jobs.po-ops.short_description
 location: "Remote / Berlin"
-published: true
+published: false
 ---
 
 {% tf jobs/po-ops.md %}
