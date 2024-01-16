@@ -64,7 +64,7 @@
         {% if employee.location.latitude and employee.location.longitude %}
             icon = L.divIcon({
                 className: 'custom-div-icon',
-                html: "<div style='background-color:#0f5fe1;' class='marker-pin'></div><img class='marker-pin-icon' src='{% asset '{{employee.avatar}}' @path %}' alt='{% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}'>",
+                html: "<div style='background-color:#0f5fe1;' class='marker-pin'></div><img class='marker-pin-icon' src='{% if employee.avatar %}{% asset '{{employee.avatar}}' @path %}{% else %}{% asset 'SCS_logo.png' @path %} {%endif%}' alt='{% if employee.academic %}{{employee.academic}} {% endif %}{{employee.firstname}} {{employee.lastname}}'>",
                 iconSize: [40, 56],
                 iconAnchor: [20, 56],
                 popupAnchor: [-7, -30]
