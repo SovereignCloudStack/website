@@ -4,5 +4,5 @@ layout: default
 
 number: 7
 number_vh81: 6b
-state: upcoming # open, upcoming or closed
+state: cancelled # open, upcoming or closed
 ---
