@@ -10,3 +10,5 @@ Auf dieser Seite finden Sie die Übersicht der Mitwirkenden, die sich entschiede
 Hier finden Sie neben den Kontaktdaten auch wissenswerte Informationen über den Hintergrund der jeweiligen Person.
 
 Das SCS Projekt freut sich über jeden der der einzelne Informationen (z.B. auch nur den Matrix Account) oder auch umfangreiche Informationen teilen möchte.
+
+Eine generelle Übersicht aller Personen die am Projekt beteiligt sind, findet sich über die [Member List](https://github.com/orgs/SovereignCloudStack/people) der Github Organisation.
