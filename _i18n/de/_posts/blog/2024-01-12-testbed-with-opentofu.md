@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Opensource - Testbed nutzt jetzt OpenTofu"
+title: "Opensource - Testbed verwendet jetzt OpenTofu"
 author:
   - "Marc Schöchlin"
 avatar:
