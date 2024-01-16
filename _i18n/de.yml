@@ -107,6 +107,7 @@ tenders:
     open: "Laufend"
     upcoming: "Ausstehend"
     closed: "Abgeschlossen"
+    cancelled: "Gestrichen"
 jobs:
   apply: "Jetzt bewerben"
   community-manager:
