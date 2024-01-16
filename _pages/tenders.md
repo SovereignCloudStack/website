@@ -14,6 +14,7 @@ redirect_from:
 <button class="btn btn-sm rounded-pill bg-secondary text-light" id="open">{% t tenders.filter.open %}</button>
 <button class="btn btn-sm rounded-pill bg-secondary text-light" id="upcoming">{% t tenders.filter.upcoming %}</button> 
 <button class="btn btn-sm rounded-pill bg-secondary text-light" id="closed">{% t tenders.filter.closed %}</button> 
+<button class="btn btn-sm rounded-pill bg-secondary text-light" id="cancelled">{% t tenders.filter.canceled %}</button> 
 
 <div class="table-responsive text-center">
 <table>
@@ -55,6 +56,8 @@ redirect_from:
       </td>
       <td>
         {%- if lot.state == "closed" -%}
+          <span class="text-decoration-line-through">SCS-VP{{lot.number_vh81 | prepend: '00' | slice: -2, 2 }}{%- if lot.retry -%}-{{lot.retry}}{%- endif -%}</span>
+        {%- elif lot.state == "cancelled" -%}
           <span class="text-decoration-line-through">SCS-VP{{lot.number_vh81 | prepend: '00' | slice: -2, 2 }}{%- if lot.retry -%}-{{lot.retry}}{%- endif -%}</span>
         {%- elsif lot.contracting_portal -%}
           <a style="font-weight: bold;" href="{{lot.contracting_portal}}">SCS-VP{{lot.number_vh81 | prepend: '00' | slice: -2, 2 }}{%- if lot.retry -%}-{{lot.retry}}{%- endif -%}</a>
