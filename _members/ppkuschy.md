@@ -1,7 +1,5 @@
 ---
 author_slug: ppkuschy
-redirect_from:
-   - /members/ppkuschy
 title: Paul-Philipp Kuschy
 layout: community
 lastname: Kuschy
