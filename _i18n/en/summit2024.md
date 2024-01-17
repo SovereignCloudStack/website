@@ -14,6 +14,6 @@ We are particularly pleased that our Summit will be combined with the kick-off o
 
 ## Contact us
 
-If you need any further information, please contact [Bianca](https://scs.community/hollery) or [Alexander](https://scs.community/diab) – they’ll be happy to help you.
+If you need any further information, please contact [Regina](https://scs.community/metz) or [Alexander](https://scs.community/diab) – they’ll be happy to help you.
 
-{% include summit2023/contact.html %}
+{% include summit2024/contact.html %}
