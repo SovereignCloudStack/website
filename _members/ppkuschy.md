@@ -1,5 +1,6 @@
 ---
 author_slug: ppkuschy
+hide: true
 redirect_from:
    - /members/ppkuschy
 title: Paul-Philipp Kuschy
