@@ -14,6 +14,6 @@ Wir freuen uns besonders, dass unser Summit mit dem Auftakt der OpenInfra Day Ro
 
 ## Kontakt
 
-Gerne helfen Ihnen [Bianca](https://scs.community/hollery) oder [Alexander](https://scs.community/diab) bei Ihren Fragen weiter.
+Gerne helfen Ihnen [Regina](https://scs.community/metz) oder [Alexander](https://scs.community/diab) bei Ihren Fragen weiter.
 
-{% include summit2023/contact.html %}
+{% include summit2024/contact.html %}
