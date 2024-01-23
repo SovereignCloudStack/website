@@ -1,3 +1,10 @@
+- date: "2023-10-07"
+  event: "Mercedes-Benz FOSS Con 2023"
+  title: "Standardizing an open source cloud computing stack – benefits and drawbacks"
+  details: "Alexander Diab"
+  slides: "202310-07-MBFOSS-adiab-03.pdf"
+  link: "https://opensource.mercedes-benz.com/convention/"
+
 - date: "2023-10-17"
   event: "EclipseCon 2023"
   title: "Open Cloud Services and an Open Cloud Computing Stack: A full stack combination from infrastructure to application provision"
