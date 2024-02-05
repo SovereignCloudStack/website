@@ -53,7 +53,7 @@ Virtual Extensible LAN (VXLAN) and Generic Network Virtualization Encapsulation 
 
 ## Physical network
 
-The physical network layer in the SDN stack of OpenStack is crucial as it provides the foundational infrastructure over which all virtualized network functions operate. This layer typically involves various hardware vendors who supply the physical networking equipment such as switches, routers, and other networking hardware. These devices are essential for the actual data transmission and routing in a physical setup. Network Operating Systems (NOS) are also a key component of the physical network layer. NOS is the software running on the network devices, enabling them to perform networking functions and interact with higher-level SDN controllers and applications. In OpenStack, the ML2 (Modular Layer 2) plugin in Neutron plays a vital role in the physical network layer. ML2 provides an abstraction layer that supports multiple networking mechanisms in a pluggable manner, allowing Neutron to interface with various types of networking hardware and technologies. This plugin architecture ensures that Neutron can work with a wide range of physical networking equipment and configurations, thus enabling flexibility and scalability in the physical network infrastructure of an OpenStack-based SDN deployment.
+The physical network layer is crucial as it provides the foundational infrastructure over which all virtualized network functions operate. This layer typically involves various hardware vendors who supply the physical networking equipment such as switches, routers, and other networking hardware. These devices are essential for the actual data transmission and routing in a physical setup. Network Operating Systems (NOS) are also a key component of the physical network layer. NOS is the software running on the network devices, enabling them to perform networking functions and interact with higher-level SDN controllers and applications. In OpenStack, the ML2 (Modular Layer 2) plugin in Neutron plays a vital role in the physical network layer. ML2 provides an abstraction layer that supports multiple networking mechanisms in a pluggable manner, allowing Neutron to interface with various types of networking hardware and technologies. This plugin architecture ensures that Neutron can work with a wide range of physical networking equipment and configurations, thus enabling flexibility and scalability in the physical network infrastructure of an OpenStack-based SDN deployment.
 
 ## Bare metal hosts
 
@@ -69,7 +69,11 @@ Below we will take a closer look into a common network designs used for Openstac
 
 ## VLANs
 
-![](https://input.scs.community/uploads/0a5e9ce4-a248-4883-855e-671f3b252629.png)
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="{% asset "blog/VLANs_network_design.png" @path %}">
+    {% asset 'blog/VLANs_network_design.png' class="figure-img w-100" %}
+  </a>
+</figure>
 
 VLANs is the most simple and common design for very small users that are starting to use Openstack. 
 
@@ -89,7 +93,11 @@ Users have the option to either pre-provision all VLANs ahead of time, so that w
 
 ## Network-centric SDN
 
-![](https://input.scs.community/uploads/d5809a20-4b31-44bb-9247-1cad2692cfb3.png)
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="{% asset "blog/Network_centric_network_design.png" @path %}">
+    {% asset 'blog/Network_centric_network_design.png' class="figure-img w-100" %}
+  </a>
+</figure>
 
 This network design employs a more network centric approach by implementing most of the SDN functionalities within the physical network devices. The key point is that some kind of tunneling protocol like VXLAN or Geneve is used to encapsulate user network packets and transport them over the network. In a spine-leaf topology, the leaf or ToR will terminate VXLAN endpoints. For the control plane BGP (EVPN) is used to transmit addressing information between switches.
 
@@ -108,11 +116,15 @@ On the server side, a regular VLAN is provisioned to the ToR switch for each ten
 
 ## Server-centric SDN
 
-![](https://input.scs.community/uploads/4be35939-f402-4618-9d87-a0abadee9823.png)
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="{% asset "blog/Server_centric_network_design.png" @path %}">
+    {% asset 'blog/Server_centric_network_design.png' class="figure-img w-100" %}
+  </a>
+</figure>
 
 With the server-centric network design, SDN software features are implemented on the servers and not on the network equipment. Tunneling protocols like VXLAN have terminating endpoints on the servers and the addresses for those endpoints are discovered via control plane protocols like BGP/EVPN. Also encap/decap and crypto processing are done on the server as well.
 
-This kind of design greatly reduces reliance on the network to carry out SDN related tasks. The underlay must be Layer 3 and run BGP in order to enable server-centric SDN. There are no further requirements for the underlay. This makes it simple and allows scale.
+This kind of design greatly reduces reliance on the network to carry out SDN related tasks. The underlay must be Layer 3 and run BGP in order to enable server-centric SDN. There are no further requirements for the underlay.
 
 Because of the limited involvement of the underlay network, this design scales very well. The downside, however, is the datapath processing in done on the server. Example of such processing is VXLAN encapsulation/decapsulation. If no DPU or SmartNIC exists on the server, this logic runs on the CPU, which can negatively impact its performance. Therefore the use of DPU/SmartNICs is very much needed.
 
@@ -131,10 +143,14 @@ Because of the limited involvement of the underlay network, this design scales v
 
 ## Hybrid - SDN on both servers and switches
 
-![](https://input.scs.community/uploads/c6534aa1-99c2-4841-bfd9-8321e9dae5a4.png)
-
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="{% asset "blog/Hybrid_network_design.png" @path %}">
+    {% asset 'blog/Hybrid_network_design.png' class="figure-img w-100" %}
+  </a>
+</figure>
 
 A variation of the server-centric design, the hybrid network support bare metal nodes, which are allocated to single users. Since the user has full access to the OS of the server, the SDN functionality cannot be deployed along side applications, since it is managed by the service provider. Therefore we need to run SDN on some network switches connected to bare metal servers and on other places run SDN directly on the server if they only host VMs. For SDN we have two options:
+
 - dedicated customer switch, attached to a single bare metal node
 - a DPU card attached at the bare metal node
 
@@ -149,6 +165,12 @@ In our pursuit to enhance the scalability and performance of SDN networking with
 For scenarios that utilize a "VXLAN on Servers" network design, we emphasize the use of SmartNICs and Data Processing Units (DPUs) to significantly improve the data plane performance characteristics of the network.
 
 ### SmartNICs and DPUs
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="{% asset "blog/nvidia-bluefield-3-dpu-3c33-d.jpg" @path %}">
+    {% asset 'blog/nvidia-bluefield-3-dpu-3c33-d.jpg' class="figure-img w-100" %}
+  </a>
+</figure>
 
 SmartNICs and DPUs play a crucial role in boosting packet processing speeds within the network. SmartNICs are particularly advantageous for virtual machines (VMs), offering tunneling encapsulation/decapsulation and encryption features essential for SDN protocols. By offloading routing and SDN protocol tasks to the server, SmartNICs enhance CPU performance and offer cost-saving benefits. 
 
