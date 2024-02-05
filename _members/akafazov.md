@@ -11,7 +11,7 @@ linkedin: https://www.linkedin.com/in/angelkafazov/
 github: https://github.com/akafazov
 matrix: https://matrix.to/#/@akafazov:matrix.org
 mail: akafazov@daiteap.com
-avatar: akafazov.png
+avatar: akafazov.jpg
 bio: |
     Angel is a software engineer with an interest in cloud, networking, and cloud-native technologies.
 ---
