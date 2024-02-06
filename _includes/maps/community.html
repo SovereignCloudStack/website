@@ -71,7 +71,7 @@
             });
             var marker = L.marker([{{training.location.latitude}}, {{training.location.longitude}}], { icon: icon });
             marker.bindPopup("<a href='{{training.link}}' target='_blank'><b>{{training.name}}</b></a>")
-            supporter.addLayer(marker);
+            training.addLayer(marker);
         {% endif %}
     {% endfor %}
     var employees = L.featureGroup.subGroup(markerClusters);
