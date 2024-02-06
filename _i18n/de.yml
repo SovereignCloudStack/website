@@ -152,6 +152,7 @@ map:
   employees: "Projektmanagement"
   community: "SCS Community"
   supporter: "Unterstützende Unternehmen"
+  training: "Trainingspartner"
 calendar:
   edit: "Bearbeiten"
   join: "Meeting betreten"

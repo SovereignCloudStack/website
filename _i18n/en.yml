@@ -153,6 +153,7 @@ map:
   employees: "Project Management"
   community: "SCS Community"
   supporter: "Supporting organizations"
+  training: "Training partners"
 calendar:
   edit: "edit"
   join: "Join meeting"
