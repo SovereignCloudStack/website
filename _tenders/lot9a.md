@@ -4,5 +4,5 @@ layout: default
 
 number: 12
 number_vh81: 9a
-state: upcoming # open, upcoming or closed
+state: cancelled # open, upcoming or closed
 ---
