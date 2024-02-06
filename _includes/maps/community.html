@@ -59,6 +59,21 @@
             supporter.addLayer(marker);
         {% endif %}
     {% endfor %}
+    var training = L.featureGroup.subGroup(markerClusters);
+    {%- for training in site.data.training -%}
+        {% if training.location.latitude and training.location.longitude %}
+            icon = L.divIcon({
+                className: 'custom-div-icon',
+                html: "<div style='background-color:#50c3a5;' class='marker-pin'></div><img class='marker-pin-icon' src='{% asset '{{training.avatar}}' @path %}' alt='{{ training.name }}'>",
+                iconSize: [40, 56],
+                iconAnchor: [20, 56],
+                popupAnchor: [-7, -30]
+            });
+            var marker = L.marker([{{training.location.latitude}}, {{training.location.longitude}}], { icon: icon });
+            marker.bindPopup("<a href='{{training.link}}' target='_blank'><b>{{training.name}}</b></a>")
+            supporter.addLayer(marker);
+        {% endif %}
+    {% endfor %}
     var employees = L.featureGroup.subGroup(markerClusters);
     {%- for employee in site.employees -%}
         {% if employee.location.latitude and employee.location.longitude %}
@@ -76,8 +91,10 @@
     {% endfor %}
     markerClusters.addTo(communitymap);
     supporter.addTo(communitymap);
+    training.addTo(communitymap);
     employees.addTo(communitymap);
     control.addOverlay(employees, '{% t map.employees %}');
     control.addOverlay(supporter, '{% t map.supporter %}');
+    control.addOverlay(training, '{% t map.training %}');
     control.addTo(communitymap);
 </script>
