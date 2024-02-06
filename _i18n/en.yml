@@ -109,6 +109,7 @@ tenders:
     open: "Open"
     upcoming: "Upcoming"
     closed: "Closed"
+    cancelled: "Cancelled"
 jobs:
   apply: "Apply now"
   community-manager:
