@@ -1,6 +1,6 @@
 - name: "Linux Hotel"
   image: "logo-linuxhotel.svg"
-  avatar: "avatar-linuthotel.png"
+  avatar: "avatar-linuxhotel.png"
   link: "https://www.linuxhotel.de/course/scs-osism-de/"
   location:
     latitude: 51.4311
