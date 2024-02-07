@@ -33,7 +33,7 @@ When OpenStack grows its network must scale with it. There are several aspects w
 
 ## SDN stack
 
-In this section we will take a look at the more software components needed to implement SDN in Openstack.
+In this section we will take a look at more software components needed to implement SDN in OpenStack.
 
 ### Neutron
 
