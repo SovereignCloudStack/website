@@ -25,7 +25,7 @@ On top of this physical network, also called underlay, all Software Defined Netw
 
 # Overview of SDN in Openstack
 
-Software Defined Networking (SDN) refers to a networking concept where software-based controllers and APIs are used to direct network traffic rather than the networking hardware. In Openstack, SDN networks are used to create and manage user networks for virtual machines and containers on top of physical network infrastructure. Both types of networks are also referred to as underlay (physical) and overlay (SDN). Larger use cases (hyperscalers) and increased number of containerized workloads put stress on the SDN stack.
+Software-defined Networking (SDN) refers to a networking concept where software-based controllers and APIs are used to direct network traffic rather than the networking hardware. In OpenStack, SDN networks are used to create and manage user networks for virtual machines and containers on top of physical network infrastructure. Both types of networks are also referred to as underlay (physical) and overlay (SDN). Larger use cases (hyperscalers) and an increased number of containerized workloads put stress on the SDN stack.
 
 Openstack Neutron is the main component responsible for networking. It heavily leverages open-source technologies like OVN/OVS and also communicates with the underlay network in order to provide higher level network services to users. ML2 is the Neutron plugin which is responsible for communication with the physical network and it can have multiple drivers each supporting particular hardware/vendor devices. The SDN stack in is distributed where some components run on dedicated network nodes, network devices and on the servers as well. 
 
