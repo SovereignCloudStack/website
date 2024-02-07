@@ -133,7 +133,7 @@ Because of the limited involvement of the underlay network, this design scales v
 - very scalable
 - very efficient datapath routing (ingress/egress)
 - simple network underlay
-- no network orchestration in Openstack
+- no network orchestration in OpenStack
 
 ### Cons
 
