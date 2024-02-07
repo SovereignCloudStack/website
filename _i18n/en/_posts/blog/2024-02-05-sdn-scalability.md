@@ -65,7 +65,7 @@ Incorporating SmartNICs and DPUs into bare metal hosts within an OpenStack envir
 
 # Common network designs
 
-Below we will take a closer look into a common network designs used for Openstack deployments.
+Below we will take a closer look into a common network designs used for OpenStack deployments.
 
 ## VLANs
 
