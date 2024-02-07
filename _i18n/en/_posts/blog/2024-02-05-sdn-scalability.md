@@ -106,7 +106,7 @@ On the server side, a regular VLAN is provisioned to the ToR switch for each ten
 ### Pros
 
 - This kind of network is more scalable, easily handling up to 1000 OpenStack tenants. It is also more stable and resilient to change, because of the smaller blast radius.
-- Since all SDN is offloaded to the physical equipment, server CPUs are not doing any VXLAN encap/decap and are free to server the users. Heavy dataplane processing is done on dedicated network hardware, which has been designed for the job. So no SmartNICs or DPUs are needed on the servers, which is more cost efficient.
+- Since all SDN is offloaded to the physical equipment, server CPUs are not doing any VXLAN encap/decap and are free to serve the users. Heavy dataplane processing is done on dedicated network hardware, which has been designed for the job. So no SmartNICs or DPUs are needed on the servers, which is more cost efficient.
 
 ### Cons
 
