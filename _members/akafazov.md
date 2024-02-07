@@ -4,7 +4,7 @@ title: Angel Kafazov
 layout: community
 lastname: Kafazov
 firstname: Angel
-role: Software Engineer
+role: Software Architect
 company: Daiteap
 companylink: https://www.daiteap.com/
 linkedin: https://www.linkedin.com/in/angelkafazov/
@@ -13,5 +13,5 @@ matrix: https://matrix.to/#/@akafazov:matrix.org
 mail: akafazov@daiteap.com
 avatar: akafazov.jpg
 bio: |
-    Angel is a software engineer with an interest in cloud, networking, and cloud-native technologies.
+    Angel is a software architect with an interest in cloud, networking, and cloud-native technologies.
 ---
