@@ -75,7 +75,7 @@ Below we will take a closer look into a common network designs used for OpenStac
   </a>
 </figure>
 
-VLANs is the most simple and common design for very small users that are starting to use Openstack. 
+VLANs is the most simple and common design for very small deployments that are starting to use OpenStack. 
 
 This type of network leverages VLANs between network switches and server for the SDN traffic. User workload like VMs and containers on the server are bound to a VLAN usually with OVS. Neutron orchestrates the process of creation and management of user networks both on the network plane (underlay network) and on the servers. ML2 plugin and drivers are used to talk to the network devices and OVN/OVS control plane on the server.
 
