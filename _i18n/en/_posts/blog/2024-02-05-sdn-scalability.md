@@ -9,7 +9,7 @@ about:
   - "akafazov"
 ---
 
-# The Data-Center network
+# The data center network
 
 <figure class="figure mx-auto d-block" style="width:50%">
   <a href="{% asset "blog/dc-network-architectures.png" @path %}">
@@ -17,55 +17,55 @@ about:
   </a>
 </figure>
 
-A modern data center network typically uses a 2-tier spine-leaf network architecture. A more traditional 3-tier architecture is less popular.
+A modern data center network typically uses a 2-tier spine-leaf network architecture. More traditional 3-tier architectures are becoming less popular.
 
-In a spine-leaf network, all servers in a rack a connected to a single TOR (top of rack) or Leaf switch. Any of the leaf switches are connected to all spine switches in the layer above, which connect the different racks. There are no connections between the leaf switches, nor between the spine switches on the same tier. This kind of network facilitates scalability by being simpler and much easier to support.
+In a spine-leaf network, within a rack all servers are connected to a one or two TOR (top of rack) or Leaf switches. All leaf switches are connected to all spine switches in the layer above. There are no direct connections between leaf or spine switches on the same tier. This kind of network facilitates scalability by being simple and much easy to support.
 
-On top of this physical network, also called underlay, all Software Defined Networking (SDN) features are built on top of. The SDN is the virtual network managed by end users and connects VMs, containers, and sometimes physical servers. The SDN is entirely virtualized and must be designed and implemented with the physical topology in mind in order to achieve the desired performance, functionality, and scalability requirements.
+On top of this physical network, also called underlay, all Software Defined Networking (SDN) features are build on top of. The SDN is the virtual network managed by end users and connects VMs, containers, and sometimes physical servers. The SDN is entirely virtualized and must be designed and implemented with the physical topology in mind to achieve the desired performance, functionality, and scalability requirements.
 
-# Overview of SDN in Openstack
+# Overview of SDN in OpenStack
 
-Software-defined Networking (SDN) refers to a networking concept where software-based controllers and APIs are used to direct network traffic rather than the networking hardware. In OpenStack, SDN networks are used to create and manage user networks for virtual machines and containers on top of physical network infrastructure. Both types of networks are also referred to as underlay (physical) and overlay (SDN). Larger use cases (hyperscalers) and an increased number of containerized workloads put stress on the SDN stack.
+Software-defined Networking (SDN) is a networking concept where software-based controllers and APIs direct network traffic rather than the networking hardware. In OpenStack, SDN networks are used to connect virtual machines and containers. The physical network is also referred to as the underlay, while SDN is called overlay. Larger operators and an increased number of containerized workloads put stress on the SDN stack.
 
-OpenStack Neutron is the main component responsible for networking. It heavily leverages open-source technologies like OVN/OVS and also communicates with the underlay network to provide higher-level network services to users. ML2 is the Neutron plugin which is responsible for communication with the physical network and it can have multiple drivers each supporting particular hardware/vendor devices. The SDN stack is distributed where some components run on dedicated network nodes, network devices, and on servers as well.
+OpenStack Neutron is the main component responsible for networking. It heavily leverages open-source technologies like OVN/OVS and communicates with the underlay network to provide higher-level network services to users. ML2 is the Neutron plugin responsible for communication with the physical network and can have multiple drivers each driver supporting particular hardware/vendor devices. The SDN stack is distributed where some components run on dedicated network nodes, network devices, and even servers.
 
-When OpenStack grows its network must scale with it. There are several aspects when we talk about SDN scalability which depends on the actual network architecture. We dive deeper below, but some important points to consider are SDN bottlenecks (OVN control plane, network node resources), support for a number of tenants and networks, and actual data-plane performance. In this post, we will explore those challenges and strategies on how to improve SDN scalability in OpenStack/SCS.
+When OpenStack traffic increases the network must scale accordingly. There are several aspects of SDN scalability and they depend on the actual network architecture. We dive deeper below, but some important points to consider are SDN bottlenecks (OVN control plane, network node resources), support for several tenants and networks, and actual data-plane performance. In this post, we will explore those challenges and strategies to improve SDN scalability in OpenStack and SCS.
 
 ## SDN stack
 
-In this section we will take a look at more software components needed to implement SDN in OpenStack.
+In this section, we will take a look at more software components needed to implement SDN in OpenStack.
 
 ### Neutron
 
-Neutron is an OpenStack project to provide “network connectivity as a service” between interface devices (e.g., vNICs) managed by other OpenStack services (e.g., nova). It implements the OpenStack Networking API. Neutron is responsible for the centralized management of tenant networks, devices, and address allocation. It orchestrates the network, and the devices by using plugins and drivers for each particular technology chosen in the stack
+Neutron is an OpenStack project to provide “network connectivity as a service” between interface devices (e.g., vNICs) managed by other OpenStack services (e.g., nova). It implements the OpenStack Networking API. Neutron is responsible for the centralized management of tenant networks, devices, and address allocation. It orchestrates the physical network, and the devices by using plugins and drivers for each particular technology chosen in the stack.
 
 ### OVN/OVS
 
-Open Virtual Network (OVN) and Open vSwitch (OVS) are integral components of Neutron's network architecture. OVN provides network virtualization, offering logical network abstractions such as logical switches and routers. It serves as a control plane for OVS, which is a high-performance, multilayer virtual switch. Together, OVN/OVS enable dynamic, programmable network setups, allowing for efficient routing, switching, and bridging of traffic in virtualized environments. Their integration with Neutron facilitates complex networking scenarios, ensuring scalability and flexibility in handling network traffic within OpenStack deployments.
+Open Virtual Network (OVN) and Open vSwitch (OVS) are integral components of Neutron's network architecture. OVN provides network virtualization, offering logical network abstractions such as logical switches and routers. It is tightly coupled with OVS, which is a high-performance, multilayer virtual switch. Together, OVN/OVS enable dynamic, programmable network setups, allowing for efficient routing, switching, and bridging of traffic in virtualized environments. Their integration with Neutron facilitates complex networking scenarios, ensuring scalability and flexibility in handling network traffic within OpenStack deployments.
 
 ### BGP/EVPN
 
-Border Gateway Protocol (BGP) and Ethernet Virtual Private Network (EVPN) are technologies used in conjunction with Neutron for advanced networking functionalities. BGP is a standardized exterior gateway protocol designed to exchange routing and reachability information among autonomous systems on the internet. EVPN extends BGP to support scalable, multi-tenant layer 2 VPN services. In Neutron, BGP/EVPN is used for efficient routing and segmentation in large-scale cloud environments. It enables more robust and flexible networking solutions by allowing for dynamic route advertisement, enhanced traffic engineering, and seamless integration with existing network infrastructures.
+Border Gateway Protocol (BGP) and Ethernet Virtual Private Network (EVPN) are technologies used for advanced networking functionalities. BGP is a standardized exterior gateway protocol designed to exchange routing and reachability information among autonomous systems on the internet. EVPN extends BGP to support scalable, multi-tenant layer 2 VPN services. In SCS, BGP/EVPN is used for efficient routing and segmentation in large-scale cloud environments. It enables more robust and flexible networking solutions by allowing dynamic route advertisement, enhanced traffic engineering, and seamless integration with existing network infrastructures.
 
 ### Tunneling protocols - VXLAN/Geneve
 
-Virtual Extensible LAN (VXLAN) and Generic Network Virtualization Encapsulation (Geneve) are network overlay protocols used in OpenStack and OVN/OVS for tunneling network traffic over existing network infrastructures. VXLAN is widely used for encapsulating Ethernet frames over a UDP tunnel, enabling layer 2 networks to extend over layer 3 networks. Geneve, a newer protocol, offers similar capabilities but with additional flexibility and extensibility. In OpenStack, VXLAN/Geneve is critical for creating isolated, multi-tenant networks over a shared physical network infrastructure. This encapsulation allows for scalable network segmentation, providing secure and efficient communication channels within cloud environments.
+Virtual Extensible LAN (VXLAN) and Generic Network Virtualization Encapsulation (Geneve) are network overlay protocols used in OpenStack and OVN/OVS for tunneling network traffic over existing network infrastructures. VXLAN is widely used for encapsulating Ethernet frames over a UDP tunnel, enabling layer 2 networks to extend over layer 3 networks. Geneve, a newer protocol, offers similar capabilities but with additional flexibility and extensibility. In SCS, VXLAN/Geneve is critical for creating isolated, multi-tenant networks over a shared physical network infrastructure. This encapsulation allows scalable network segmentation, providing secure and efficient communication channels within cloud environments.
 
 ## Physical network
 
-The physical network layer is crucial as it provides the foundational infrastructure over which all virtualized network functions operate. This layer typically involves various hardware vendors who supply the physical networking equipment such as switches, routers, and other networking hardware. These devices are essential for the actual data transmission and routing in a physical setup. Network Operating Systems (NOS) are also a key component of the physical network layer. NOS is the software running on network devices, enabling them to perform networking functions and interact with higher-level SDN controllers and applications. In OpenStack, the ML2 (Modular Layer 2) plugin in Neutron plays a vital role in the physical network layer. ML2 provides an abstraction layer that supports multiple networking mechanisms in a pluggable manner, allowing Neutron to interface with various types of networking hardware and technologies. This plugin architecture ensures that Neutron can work with a wide range of physical networking equipment and configurations, thus enabling flexibility and scalability in the physical network infrastructure of an OpenStack-based SDN deployment.
+The physical network layer is crucial as it provides the foundational infrastructure where all virtualized network functions built upon. This layer typically involves various network hardware vendors who supply the physical networking equipment such as switches, routers, and other  hardware. These devices are essential for data transmission and routing in a physical setup. Network Operating Systems (NOS) are also a component of the physical network layer. NOS is the software running on network devices, enabling them to perform networking functions and interact with higher-level SDN controllers and applications. In OpenStack Neutron,  ML2 (Modular Layer 2) plugin plays a key role in the physical network layer. ML2 provides an abstraction layer that supports multiple networking mechanisms in a pluggable manner, allowing Neutron to interface with various types of networking hardware and technologies. This plugin architecture ensures that Neutron can work with a wide range of physical networking equipment and configurations, thus enabling flexibility and scalability in the physical network infrastructure of an OpenStack-based SDN deployment.
 
 ## Bare metal hosts
 
-Bare metal hosts in the context of OpenStack and SDN play a significant role in providing high-performance, non-virtualized computing resources. These hosts are typically equipped with advanced network interface cards (NICs), such as SmartNICs and Data Processing Units (DPUs). SmartNICs are intelligent network cards that offload processing tasks that would typically be handled by the server CPU. This includes tasks such as traffic shaping, encryption/decryption, and network packet processing. The use of SmartNICs can lead to improved performance and reduced CPU load on the bare metal hosts.
+Bare metal hosts in the context of OpenStack and SDN play a significant role in providing high-performance, non-virtualized computing resources. These hosts are typically equipped with advanced network interface cards (NICs), such as SmartNICs and Data Processing Units (DPUs). SmartNICs are intelligent network cards that offload processing tasks that would typically be handled by the server CPU. These include functions like traffic shaping, encryption/decryption, and network packet processing. The use of SmartNICs can lead to improved performance and reduced CPU load on the bare metal hosts.
 
-DPUs are another key component in bare metal hosts, offering similar functionalities to SmartNICs but with additional OS they can be managed independently of the host OS by the service provider. This makes them ideal for OpenStack deployments for physical servers as SDN and core network features provided by the data center can be managed centrally without impacting the user.
+DPUs are an evolution of SmartNICs and are also very common in clouds providing physical servers to users. The difference between SmartNICs is that DPUs usually run their own OS can be managed independently of the host OS. They are more like computer within a computer. Bare metal servers are directly accessed by the users which creates a constraint on the SDN network, because it should not collide with user workloads. Offloading SDN to the DPU is the best solution for such use cases.
 
 Incorporating SmartNICs and DPUs into bare metal hosts within an OpenStack environment enhances the network's flexibility, efficiency, and performance. This setup is particularly beneficial for workloads that require high throughput, low latency, and secure network communications. As such, bare metal hosts equipped with these advanced NICs are an essential component of modern SDN architectures, particularly in environments where performance and security are critical.
 
 # Common network designs
 
-Below we will take a closer look into a common network designs used for OpenStack deployments.
+Below we dive deeper into several common network designs used for SCS/OpenStack deployments.
 
 ## VLANs
 
@@ -75,21 +75,21 @@ Below we will take a closer look into a common network designs used for OpenStac
   </a>
 </figure>
 
-VLANs is the most simple and common design for very small deployments that are starting to use OpenStack. 
+VLANs are the most simple and popular design for small operators which are just starting to use OpenStack. 
 
-This type of network leverages VLANs between network switches and servers for the SDN traffic. User workload like VMs and containers on the server are bound to a VLAN usually with OVS. Neutron orchestrates the process of creation and management of user networks both on the network plane (underlay network) and on the servers. ML2 plugin and drivers are used to talk to the network devices and OVN/OVS control plane on the server.
+This type of network leverages VLANs between network switches and servers. Each tenant network is assigned its own VLAN. User workloads like VMs and containers on the server are bound to a VLAN by OVS. Neutron orchestrates the process of creation and management of tenant networks both on the network plane (underlay network) and on the servers. It uses ML2 to provision VLANs on the network switches and delegates to OVN/OVS the binding of the virtual device to the VLAN on the server.
 
-Operators have the option to either pre-provision all VLANs ahead of time, so that when new tenant network appears it can be attached to an existing VLAN without needing to talk to the network devices again. The alternative is to use ML2 to dynamically configure new VLAN before each tenant network is created.
+Operators have the option to either pre-provision all VLANs ahead of time so that when a new tenant network appears it can be attached to an existing VLAN without needing to talk to the network devices again. The alternative is to use ML2 to dynamically configure new VLAN before each tenant network is created.
 
 ### Pros
 
-- This kind of network is easy and simple to implement. It can be further simplified by pre-provisioning all VLANs on the physical network and potentially eliminating ML2. It is a good approach for test-beds and small deployments.
+- This kind of network is easy to implement. It can be simplified even further by pre-provisioning all VLANs on the physical network thus eliminating the need for ML2. It is a good approach for test beds and small deployments.
 
 ### Cons
 
-- Most notably, VLANs for SDN don't scale well. First we have a theoretical limit of 4096 VLANs on each network switch. More realistic limit would be about 100 OpenStack tenants.
-- The approach is also very fragile. A single VM can brake the whole network, thus exposing a huge blast radius. Also, network switches are notorious for being able to persist VLAN configuration. If a switch goes down, its configuration must be replayed after boot-up which is a process leading to significant downtimes.
-- Another drawback, which we see here is the involvement of the physical network which is needed to support the SDN. For each new user network in OpenStack, new VLANs must be created and attached to. Even in pre-provisioned scenario, the VLANs must still exist in the underlay, which eventually becomes a bottleneck.
+- Most notably, VLANs don't scale well. This is due to a theoretical limit of 4096 VLANs on each network switch. A more realistic limit would be about 100 OpenStack tenants for a single cloud network.
+- The approach is also very fragile. A single VM can break the whole network, thus exposing a huge blast radius. Also, network switches are notorious for being able to persist VLAN configuration. If a switch goes down, its configuration must be replayed after boot-up which is a process leading to significant downtimes.
+- Another drawback, which we see is the involvement of the physical network to support the SDN. For each new tenant network in OpenStack, new VLANs must be provisioned. Even in the pre-provisioned scenario, the VLANs must still exist in the underlay, which eventually becomes a bottleneck.
 
 ## Network-centric SDN
 
@@ -99,20 +99,20 @@ Operators have the option to either pre-provision all VLANs ahead of time, so th
   </a>
 </figure>
 
-This network design employs a more network centric approach by implementing most of the SDN functionalities within the physical network devices. The key point is that some kind of tunneling protocol like VXLAN or Geneve is used to encapsulate user network packets and transport them over the network. In a spine-leaf topology, the leaf or ToR will terminate VXLAN endpoints. For the control plane BGP (EVPN) is used to transmit addressing information between switches.
+This network design employs a more network-centric approach by implementing most SDN functionalities within the physical network. The key point is that some kind of tunneling protocols like VXLAN or Geneve are used to encapsulate network packets and transport them over the network. In a spine-leaf topology, the leaf or ToR will terminate VXLAN endpoints. For the control plane, BGP (EVPN) is used to transmit layer 2 addressing information between switches.
 
-On the server side, a regular VLAN is provisioned to the ToR switch for each tenant network. Since not all tenant networks are needed on each ToR switch, this design scales better than pure VLANs. Also no VLANs are needed between the switches because the underlay is layer 3.
+On the server side, a regular VLAN is provisioned from the ToR switch for each tenant network. Since not all tenant networks are needed on each ToR switch, this design scales better than pure VLANs. Also, no VLANs are used between the switches if the underlay is layer 3.
 
 ### Pros
 
 - This kind of network is more scalable, easily handling up to 1000 OpenStack tenants. It is also more stable and resilient to change, because of the smaller blast radius.
-- Since all SDN is offloaded to the physical equipment, server CPUs are not doing any VXLAN encap/decap and are free to serve the users. Heavy dataplane processing is done on dedicated network hardware, which has been designed for the job. So no SmartNICs or DPUs are needed on the servers, which is more cost efficient.
+- Since all SDN is offloaded to the physical equipment, server CPUs are not doing any encapsulation/decapsulation and are free to serve the users. Heavy data plane processing is done on dedicated network hardware, which has been optimized for this task. Also, no SmartNICs or DPUs are needed on the servers, which is more cost efficient.
 
 ### Cons
 
-- Since a network centric approach is used, the network is still very much involved in the SDN. Physical device drawbacks shown before like persisting the switch configuration still apply. 
-- This approach is also more complex than pure VLANs, because it requires the network to run routing protocols like BGP and BFD. Neutron still needs to talk the to switches via ML2.
-- Importantly traffic between tenant networks (east/west and north/south) is routed via the network nodes, which can become a choke point. So while being a better for scalability, this design still has limitations for very large deployments.
+- Since this is a network-centric approach, the network is still very much involved in the SDN. Physical device limits shown before like persisting  switch configuration still apply. 
+- This approach is also more complex than pure VLANs because it requires the network to run routing protocols like BGP and BFD. Neutron still needs to talk the switches via ML2.
+- Importantly, traffic between tenant networks (east/west and north/south) is routed via the network nodes, which can become a choke point. So while being better for scalability, this design still has limitations for very large deployments.
 
 ## Server-centric SDN
 
@@ -122,11 +122,11 @@ On the server side, a regular VLAN is provisioned to the ToR switch for each ten
   </a>
 </figure>
 
-With the server-centric network design, SDN software features are implemented on the servers and not on the network equipment. Tunneling protocols like VXLAN have terminating endpoints on the servers and the addresses for those endpoints are discovered via control plane protocols like BGP/EVPN. Also encap/decap and crypto processing are done on the server as well.
+With the server-centric network design, SDN software features are implemented on the servers and not on the network equipment. Tunneling protocols like VXLAN have terminating endpoints on the servers and the addresses for those endpoints are discovered via control plane protocols like BGP/EVPN. Also, encapsulation/decapsulation and crypto processing are done on the server.
 
-This kind of design greatly reduces reliance on the network to carry out SDN related tasks. The underlay must be Layer 3 and run BGP in order to enable server-centric SDN. There are no further requirements for the underlay.
+This design reduces reliance on the physical network to carry out SDN-related tasks. The only requirement for the underlay is that it must be Layer 3 and run BGP to enable server-centric SDN. 
 
-Because of the limited involvement of the underlay network, this design scales very well. The downside, however, is the datapath processing in done on the server. Example of such processing is VXLAN encapsulation/decapsulation. If no DPU or SmartNIC exists on the server, this logic runs on the CPU, which can negatively impact its performance. Therefore the use of DPU/SmartNICs is very much needed.
+Because of the limited involvement of the physcal network, this design scales very well. The downside, however, is that datapath processing is performed on the server. An example of such processing is VXLAN encapsulation/decapsulation. If no DPU or SmartNIC exists on the server, this logic runs on the CPU, which can negatively impact its performance. It is recommended to deploy servers running SmartNICs to help with data-plane performance.
 
 ### Pros
 
@@ -149,16 +149,16 @@ Because of the limited involvement of the underlay network, this design scales v
   </a>
 </figure>
 
-A variation of the server-centric design, the hybrid network support bare metal nodes, which are allocated to single users. Since the user has full access to the OS of the server, the SDN functionality cannot be deployed along side applications, since it is managed by the service provider. Therefore we need to run SDN on some network switches connected to bare metal servers and on other places run SDN directly on the server if they only host VMs. For SDN we have two options:
+A variation of the server-centric design, the hybrid network supports bare metal nodes, which are allocated to single users. Since the user has full access to the OS of the server, the SDN functionality cannot be deployed alongside applications, since SDN is managed by the service provider. We have two valid options for deploying SDN components in such network:
 
 - dedicated customer switch, attached to a single bare metal node
-- a DPU card attached at the bare metal node
+- a DPU card attached to the bare metal node
 
-SmartNIC is not a good solution here, because it is more tightly coupled to the host node and exposed to the end user. DPUs and switches can be managed independently by the provider, so that the user does not need access to them.
+SmartNIC is not a good solution, because it is more tightly coupled to the host node and exposed to the end user. DPUs and switches can be  independently managed by the provider. This separation helps avoid collision between network infrastructure and user workloads.
 
-# Our solution
+# Solutions for better SDN scalability
 
-In our pursuit to enhance the scalability and performance of SDN networking within Sovereign Cloud Stack (SCS), we have explored several approaches. Our focus is on leveraging cutting-edge network designs and technologies such as SONiC to meet the growing demands of modern network infrastructures.
+In our pursuit to enhance the scalability and performance of SDN networking within Sovereign Cloud Stack (SCS), we have explored several approaches. We focus on leveraging cutting-edge network designs and technologies such as SONiC to meet the growing scalability demands of modern network infrastructures.
 
 ## Network design - VXLAN on Servers
 
@@ -194,5 +194,5 @@ Our efforts extend to improving the dynamic configuration of the physical networ
 
 ## SDN stack
 
-A notable challenge within the OpenStack network nodes is the bottleneck caused by the OVN (Open Virtual Network) control plane software. A promising solution is to migrate the OVN control plane to SONiC. This move would allow the OVN control plane to operate in a distributed fashion, leveraging multiple existing SONiC devices within the network for enhanced performance. However, a potential drawback is the resource intensity of OVN, which could strain the limited resources on SONiC devices. Our approach includes carefully evaluating these considerations to ensure a balanced and efficient SDN stack implementation.
+A notable challenge within the OpenStack network nodes is the bottleneck caused by the OVN (Open Virtual Network) control plane software. A potential solution is to migrate the OVN control plane to SONiC. It would allow the OVN control plane to operate in a distributed fashion, leveraging multiple existing SONiC devices within the network for enhanced performance. However, a potential drawback is the resource intensity of OVN, which could strain the limited resources on SONiC devices. Our approach includes carefully evaluating these considerations to ensure a balanced and efficient SDN stack implementation.
 
