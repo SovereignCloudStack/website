@@ -37,7 +37,7 @@ In this section we will take a look at more software components needed to implem
 
 ### Neutron
 
-Neutron is an OpenStack project to provide “network connectivity as a service” between interface devices (e.g., vNICs) managed by other OpenStack services (e.g., nova). It implements the OpenStack Networking API. Neutron is responsible for the centralized management of tenant networks, devices and address allocation. It orchestrates the network, the devices by using plugins and drivers for each particular technology chose in the stack below.
+Neutron is an OpenStack project to provide “network connectivity as a service” between interface devices (e.g., vNICs) managed by other OpenStack services (e.g., nova). It implements the OpenStack Networking API. Neutron is responsible for the centralized management of tenant networks, devices, and address allocation. It orchestrates the network, and the devices by using plugins and drivers for each particular technology chosen in the stack
 
 ### OVN/OVS
 
