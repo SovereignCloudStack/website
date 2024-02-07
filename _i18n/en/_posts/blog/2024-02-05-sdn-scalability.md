@@ -89,7 +89,7 @@ Operators have the option to either pre-provision all VLANs ahead of time, so th
 
 - Most notably, VLANs for SDN don't scale well. First we have a theoretical limit of 4096 VLANs on each network switch. More realistic limit would be about 100 OpenStack tenants.
 - The approach is also very fragile. A single VM can brake the whole network, thus exposing a huge blast radius. Also, network switches are notorious for being able to persist VLAN configuration. If a switch goes down, its configuration must be replayed after boot-up which is a process leading to significant downtimes.
-- Another drawback, which we see here is the involvement of the physical network which is needed to support the SDN. For each new user network in Openstack, new VLANs must be created and attached to. Even in pre-provisioned scenario, the VLANs must still exist in the underlay, which eventually becomes a bottleneck.
+- Another drawback, which we see here is the involvement of the physical network which is needed to support the SDN. For each new user network in OpenStack, new VLANs must be created and attached to. Even in pre-provisioned scenario, the VLANs must still exist in the underlay, which eventually becomes a bottleneck.
 
 ## Network-centric SDN
 
