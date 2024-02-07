@@ -17,7 +17,7 @@ about:
   </a>
 </figure>
 
-A modern data center network typically uses a 2-tier spine-leaf network architectures. A more traditional 3-tier architectures are less popular.
+A modern data center network typically uses a 2-tier spine-leaf network architecture. A more traditional 3-tier architecture is less popular.
 
 In a spine-leaf network, all servers in a rack a connected to a single TOR (top of rack) or Leaf switch. Any of the leaf switches are connected to all spine switches in the layer above, which connect the different racks. There are no connections between the leaf switches, nor between the spine switches on the same tier. This kind of network facilitates scalability by being simpler and much easier to support.
 
