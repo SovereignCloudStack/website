@@ -29,7 +29,7 @@ Software-defined Networking (SDN) refers to a networking concept where software-
 
 OpenStack Neutron is the main component responsible for networking. It heavily leverages open-source technologies like OVN/OVS and also communicates with the underlay network to provide higher-level network services to users. ML2 is the Neutron plugin which is responsible for communication with the physical network and it can have multiple drivers each supporting particular hardware/vendor devices. The SDN stack is distributed where some components run on dedicated network nodes, network devices, and on servers as well.
 
-When Openstack grows its network must scale with it. There are several aspects when we talk about SDN scalability which depends on the actual network architecture. We dive deeper below, but some important points to consider are SDN bottlenecks (OVN control plane, network node resources), support for number of tenants and networks, and actual dataplane performance. In this post we will explorer those challenges and strategies on how to improve SDN scalability in Openstack/SCS.
+When OpenStack grows its network must scale with it. There are several aspects when we talk about SDN scalability which depends on the actual network architecture. We dive deeper below, but some important points to consider are SDN bottlenecks (OVN control plane, network node resources), support for a number of tenants and networks, and actual data-plane performance. In this post, we will explore those challenges and strategies on how to improve SDN scalability in OpenStack/SCS.
 
 ## SDN stack
 
