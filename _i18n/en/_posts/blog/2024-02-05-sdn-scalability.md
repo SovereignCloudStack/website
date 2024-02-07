@@ -79,7 +79,7 @@ VLANs is the most simple and common design for very small deployments that are s
 
 This type of network leverages VLANs between network switches and servers for the SDN traffic. User workload like VMs and containers on the server are bound to a VLAN usually with OVS. Neutron orchestrates the process of creation and management of user networks both on the network plane (underlay network) and on the servers. ML2 plugin and drivers are used to talk to the network devices and OVN/OVS control plane on the server.
 
-Users have the option to either pre-provision all VLANs ahead of time, so that when new tenant network appears it can be attached to an existing VLAN without needing to talk to the network devices again. The alternative is to use ML2 to dynamically configure new VLAN before each tenant network is created.
+Operators have the option to either pre-provision all VLANs ahead of time, so that when new tenant network appears it can be attached to an existing VLAN without needing to talk to the network devices again. The alternative is to use ML2 to dynamically configure new VLAN before each tenant network is created.
 
 ### Pros
 
