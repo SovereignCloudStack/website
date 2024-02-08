@@ -23,9 +23,9 @@ Software-defined Networking (SDN) is a critical component of modern cloud enviro
 
 A modern data center network typically uses a 2-tier spine-leaf network architecture. More traditional 3-tier architectures are becoming less popular.
 
-In a spine-leaf network, within a rack all servers are connected to a one or two TOR (top of rack) or Leaf switches. All leaf switches are connected to all spine switches in the layer above. There are no direct connections between leaf or spine switches on the same tier. This kind of network facilitates scalability by being simple and much easy to support.
+In a spine-leaf network, all servers are connected to one or two TOR (top of rack) or Leaf switches within a rack. All leaf switches are connected to all spine switches in the layer above. There are no direct connections between leaf or spine switches on the same tier. This kind of network facilitates scalability by being simple and easy to support.
 
-On top of this physical network, also called underlay, all Software Defined Networking (SDN) features are build on top of. The SDN is the virtual network managed by end users and connects VMs, containers, and sometimes physical servers. The SDN is entirely virtualized and must be designed and implemented with the physical topology in mind to achieve the desired performance, functionality, and scalability requirements.
+On top of this physical network, also called underlay, all Software Defined Networking (SDN) features are built on top of. The SDN is the virtual network managed by end users and connects VMs, containers, and sometimes physical servers. The SDN is entirely virtualized and must be designed and implemented with the physical topology in mind to achieve the desired performance, functionality, and scalability requirements.
 
 # Overview of SDN in OpenStack
 
@@ -63,7 +63,7 @@ The physical network layer is crucial as it provides the foundational infrastruc
 
 Bare metal hosts in the context of OpenStack and SDN play a significant role in providing high-performance, non-virtualized computing resources. These hosts are typically equipped with advanced network interface cards (NICs), such as SmartNICs and Data Processing Units (DPUs). SmartNICs are intelligent network cards that offload processing tasks that would typically be handled by the server CPU. These include functions like traffic shaping, encryption/decryption, and network packet processing. The use of SmartNICs can lead to improved performance and reduced CPU load on the bare metal hosts.
 
-DPUs are an evolution of SmartNICs and are also very common in clouds providing physical servers to users. The difference between SmartNICs is that DPUs usually run their own OS can be managed independently of the host OS. They are more like computer within a computer. Bare metal servers are directly accessed by the users which creates a constraint on the SDN network, because it should not collide with user workloads. Offloading SDN to the DPU is the best solution for such use cases.
+DPUs are an evolution of SmartNICs and are also very common in clouds providing physical servers to users. The difference between SmartNICs is that DPUs usually run their own OS and can be managed independently of the host OS. They are more like computers within a computer. Bare metal servers are directly accessed by the users, which creates a constraint on the SDN network because it should not collide with user workloads. Offloading SDN to the DPU is the best solution for such use cases.
 
 Incorporating SmartNICs and DPUs into bare metal hosts within an OpenStack environment enhances the network's flexibility, efficiency, and performance. This setup is particularly beneficial for workloads that require high throughput, low latency, and secure network communications. As such, bare metal hosts equipped with these advanced NICs are an essential component of modern SDN architectures, particularly in environments where performance and security are critical.
 
@@ -79,7 +79,7 @@ Below we dive deeper into several common network designs used for SCS/OpenStack 
   </a>
 </figure>
 
-VLANs are the most simple and popular design for small operators which are just starting to use OpenStack. 
+VLANs are the simplest and most popular design for small operators that are just starting to use OpenStack. 
 
 This type of network leverages VLANs between network switches and servers. Each tenant network is assigned its own VLAN. User workloads like VMs and containers on the server are bound to a VLAN by OVS. Neutron orchestrates the process of creation and management of tenant networks both on the network plane (underlay network) and on the servers. It uses ML2 to provision VLANs on the network switches and delegates to OVN/OVS the binding of the virtual device to the VLAN on the server.
 
