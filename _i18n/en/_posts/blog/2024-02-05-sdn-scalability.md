@@ -25,7 +25,7 @@ A modern data center network typically uses a 2-tier spine-leaf network architec
 
 In a spine-leaf network, within a rack all servers are connected to a one or two TOR (top of rack) or Leaf switches. All leaf switches are connected to all spine switches in the layer above. There are no direct connections between leaf or spine switches on the same tier. This kind of network facilitates scalability by being simple and much easy to support.
 
-On top of this physical network, also called underlay, all Software Defined Networking (SDN) features are build on top of. The SDN is the virtual network managed by end users and connects VMs, containers, and sometimes physical servers. The SDN is entirely virtualized and must be designed and implemented with the physical topology in mind to achieve the desired performance, functionality, and scalability requirements.
+On top of this physical network, also called underlay, all Software Defined Networking (SDN) features are built on top of. The SDN is the virtual network managed by end users and connects VMs, containers, and sometimes physical servers. The SDN is entirely virtualized and must be designed and implemented with the physical topology in mind to achieve the desired performance, functionality, and scalability requirements.
 
 # Overview of SDN in OpenStack
 
