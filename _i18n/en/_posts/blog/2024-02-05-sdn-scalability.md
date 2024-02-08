@@ -79,7 +79,7 @@ Below we dive deeper into several common network designs used for SCS/OpenStack 
   </a>
 </figure>
 
-VLANs are the most simple and popular design for small operators which are just starting to use OpenStack. 
+VLANs are the simplest and most popular design for small operators that are just starting to use OpenStack. 
 
 This type of network leverages VLANs between network switches and servers. Each tenant network is assigned its own VLAN. User workloads like VMs and containers on the server are bound to a VLAN by OVS. Neutron orchestrates the process of creation and management of tenant networks both on the network plane (underlay network) and on the servers. It uses ML2 to provision VLANs on the network switches and delegates to OVN/OVS the binding of the virtual device to the VLAN on the server.
 
