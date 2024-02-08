@@ -9,6 +9,10 @@ about:
   - "akafazov"
 ---
 
+# Overview of SDN network scalability
+
+Software-defined Networking (SDN) is a critical component of modern cloud environments, providing the necessary flexibility and scalability to meet the demands of large-scale network infrastructures. As the size and complexity of cloud deployments continue to grow, the need for scalable and efficient SDN solutions becomes increasingly important. In this post, we explore the challenges and strategies for improving SDN scalability within Sovereign Cloud Stack (SCS) and OpenStack environments.
+
 # The data center network
 
 <figure class="figure mx-auto d-block" style="width:50%">
