@@ -1,0 +1,11 @@
+<div class="row align-items-center">
+	<h2 class="mb-5">{% t home.training %}</h2>
+	{% assign sorted = site.data.training | sort_natural: 'name' %}
+	{% for training in sorted %}
+	<div class="col-lg-3 col-sm-4 col-6 my-4">
+	<a href="{{ training.link }}" title="{{ training.name }}" target="_blank">
+		{% asset '{{ training.image }}' alt='{{training.name}}' class='mx-auto d-block' vips:format='.webp' vips:resize='150x60' %}
+	</a>
+	</div>
+	{% endfor %}
+</div>
