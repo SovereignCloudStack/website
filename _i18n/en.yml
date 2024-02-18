@@ -34,6 +34,7 @@ home:
   member: "Member"
   provider: "Cloud services based on Sovereign Cloud Stack"
   supporter: "Supporting companies and organizations"
+  training: "Training partners"
 quotes:
   gaiax: "Gaia-X — Federated Data Infrastructure"
   bmwk: "German Federal Ministry for Economic Affairs and Climate Action"
@@ -109,6 +110,7 @@ tenders:
     open: "Open"
     upcoming: "Upcoming"
     closed: "Closed"
+    cancelled: "Cancelled"
 jobs:
   apply: "Apply now"
   community-manager:
@@ -153,6 +155,7 @@ map:
   employees: "Project Management"
   community: "SCS Community"
   supporter: "Supporting organizations"
+  training: "Training partners"
 calendar:
   edit: "edit"
   join: "Join meeting"

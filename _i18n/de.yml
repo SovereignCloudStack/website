@@ -34,6 +34,7 @@ home:
   member: "Mitglied"
   provider: "Cloud Angebote auf Basis von Sovereign Cloud Stack"
   supporter: "Unterstützende Unternehmen und Organisationen"
+  training: "Trainingspartner"
 quotes:
   gaiax: "Gaia-X — Federated Data Infrastructure"
   bmwk: "Bundesministerium für Wirtschaft und Klimaschutz"
@@ -108,6 +109,7 @@ tenders:
     open: "Laufend"
     upcoming: "Ausstehend"
     closed: "Abgeschlossen"
+    cancelled: "Gestrichen"
 jobs:
   apply: "Jetzt bewerben"
   community-manager:
@@ -152,6 +154,7 @@ map:
   employees: "Projektmanagement"
   community: "SCS Community"
   supporter: "Unterstützende Unternehmen"
+  training: "Trainingspartner"
 calendar:
   edit: "Bearbeiten"
   join: "Meeting betreten"
