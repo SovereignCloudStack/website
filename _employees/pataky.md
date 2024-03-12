@@ -8,7 +8,7 @@ avatar: employees/Pataky.jpg
 role: Product Owner Operations & Security Sovereign Cloud Stack
 company: Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.
 companylink: https://osb-alliance.com
-
+phone: +49-30-206539-213
 linkedin: https://www.linkedin.com/in/dpataky/
 github: https://github.com/bitkeks
 matrix: https://matrix.to/#/@bitkeks:matrix.kptt.net

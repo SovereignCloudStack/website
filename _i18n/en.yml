@@ -20,7 +20,8 @@ nav:
   docs: "Documentation"
   events: "Events"
   contribute: "Contribute to SCS"
-  summit2023: "Join us for our first SCS Summit on 23rd and 24th of May 2023 in Berlin."
+  summit: "Join us for our SCS Summit on 14th of May 2024 in Berlin."
+  summitPage: "/summit2024/"
 footer:
   trademark: "Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners."
   imprint: "Imprint"
@@ -33,6 +34,7 @@ home:
   member: "Member"
   provider: "Cloud services based on Sovereign Cloud Stack"
   supporter: "Supporting companies and organizations"
+  training: "Training partners"
 quotes:
   gaiax: "Gaia-X — Federated Data Infrastructure"
   bmwk: "German Federal Ministry for Economic Affairs and Climate Action"
@@ -108,6 +110,7 @@ tenders:
     open: "Open"
     upcoming: "Upcoming"
     closed: "Closed"
+    cancelled: "Cancelled"
 jobs:
   apply: "Apply now"
   community-manager:
@@ -152,6 +155,7 @@ map:
   employees: "Project Management"
   community: "SCS Community"
   supporter: "Supporting organizations"
+  training: "Training partners"
 calendar:
   edit: "edit"
   join: "Join meeting"
