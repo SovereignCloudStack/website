@@ -1,3 +1,6 @@
+---
+permalink: /robots.txt
+---
 {% if jekyll.environment == "development" %}
 User-agent: *
 Disallow: /
