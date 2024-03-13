@@ -1,0 +1,8 @@
+{% if jekyll.environment == "development" %}
+User-agent: *
+Disallow: /
+{% else %}
+User-agent: *
+Disallow: /de/members/
+Disallow: /members/
+{% endif %}
