@@ -14,11 +14,11 @@ a much more technical event, with primarily English lanuage content.
 
 ### SCS Hackathons
 
-Afer successful Hackathons in Cologne (Nov 22, 2022 at [PlusServer](https://plusserver.com/))
-and in Nuremberg (Mar 2, 2023 at [Noris/Wavecon](https://wavecon.de/)) and a number of
-Workshops/Mini-Hackathons, the third full-size Hackathon is orgainzed in collaboration with
+Afer successful Hackathons in Cologne (Nov 22, 2022 at [PlusServer](https://plusserver.com/)),
+in Nuremberg (Mar 2, 2023 at [Noris/Wavecon](https://wavecon.de/)), a number of
+Workshops/Mini-Hackathons, a fully-fledged Hackathon in collaboration with
 [Alasca e.V.](https://alasca.cloud/)) on Nov 8, 2023 at [Cloud & Heat](https://cloudandheat.com/)
-premises in Dresden. [Registration](https://events.scs.community/hackathon-3/) is compulsory
-as room capacity is limited.
+premises in Dresden, the fourth Hackathon is taking place at [Gonicus](https://gonicus.de/en)
+in Arnsberg. Please [register](https://events.scs.community/hackathon-4/)!
 
 <!--TODO: ## Events with contributions from SCS-->
