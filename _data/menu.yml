@@ -13,7 +13,8 @@
       link: /partners/
     - title: nav.employees
       link: /employees/
-
+    - title: nav.members
+      link: /members/
 - title: nav.news
   link: /news/
 
