@@ -24,7 +24,7 @@ The description is a little more detailed than it needs to be, as it aims also t
 1. Create a branch based on the `main` branch
    (you can also do this using the github user interface)
    ```
-   git clone git@github.com:SovereignCloudStack/website.git # you only only the fist time
+   git clone git@github.com:SovereignCloudStack/website.git # you only need to do this the first time
    cd website
    git checkout main
    git pull
