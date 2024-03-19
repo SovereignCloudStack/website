@@ -47,13 +47,6 @@
   location:
     latitude: 54.40305
     longitude: 10.12974
-- name: "Dilossacon"
-  image: "logo-dilossacon.png"
-  avatar: "avatar-dilossacon.png"
-  link: "https://dilossacon.de/"
-  location:
-    latitude: 54.78202
-    longitude: 9.74633
 - name: "GONICUS"
   image: "logo-gonicus.png"
   avatar: "avatar-gonicus.jpg"
@@ -61,13 +54,6 @@
   location:
     latitude: 51.45483
     longitude: 7.96856
-- name: "gridscale GmbH"
-  image: "logo-gridscale.png"
-  avatar: "avatar-gridscale.jpg"
-  link: "https://gridscale.io/"
-  location:
-    latitude: 50.94750
-    longitude: 6.90560
 - name: "Open Infrastructure Foundation"
   image: "logo-oif.svg"
   avatar: "avatar-oif.png"
@@ -82,20 +68,6 @@
   location:
     latitude: 52.51689628427343
     longitude: 13.377832143343065
-- name: "Open-Xchange AG"
-  image: "logo-open-xchange.png"
-  avatar: "avatar-open-xchange.jpg"
-  link: "https://www.open-xchange.com/"
-  location:
-    latitude: 51.51673
-    longitude: 7.46502
-- name: "OVHcloud"
-  image: "logo-ovhcloud.svg"
-  avatar: "avatar-ovhcloud.jpg"
-  link: "https://www.ovhcloud.com/"
-  location:
-    latitude: 48.88945
-    longitude: 2.31341
 - name: "plusserver GmbH"
   image: "logo-plusserver.svg"
   avatar: "avatar-plusserver.jpg"
@@ -145,13 +117,6 @@
   location:
     latitude: 53.10584
     longitude: 8.86312
-- name: "LEITWERK AG"
-  image: "logo-leitwerk.svg"
-  avatar: "avatar-leitwerk.jpg"
-  link: "https://www.leitwerk.de/"
-  location:
-    latitude: 48.55080
-    longitude: 7.97115
 - name: "Wavecon GmbH"
   image: "logo-wavecon.png"
   avatar: "avatar-wavecon.png"
