@@ -12,11 +12,11 @@ mit primär englischsprachigen Inhalten und sehr viel technischerer Ausrichtung.
 
 ### SCS Hackathons
 
-Nach den erfolgreichen Hackathons in Köln (22.11.2022 bei [PlusServer](https://plusserver.com/))
-und in Nürnberg (2.3.2023 bei [Noris/Wavecon](https://wavecon.de/)) und einigen 
-Workshops/Mini-Hackathons findet der dritte große Hackathon in Kooperation mit
+Nach den erfolgreichen Hackathons in Köln (22.11.2022 bei [PlusServer](https://plusserver.com/)),
+in Nürnberg (2.3.2023 bei [Noris/Wavecon](https://wavecon.de/)), einigen 
+Workshops/Mini-Hackathons und einem großen Hackathon in Kooperation mit
 [Alasca e.V.](https://alasca.cloud/)) am 8.11. bei [Cloud & Heat](https://cloudandheat.com/)
-in Dresden statt. Eine [Anmeldung](https://events.scs.community/hackathon-3/) ist erforderlich,
-weil die Raumkapazitäten begrenzt sind.
+in Dresden, findet der vierte Hackathon am 16.4.2024 statt bei [Gonicus](https://gonicus.de)
+in Arnsberg. Um eine [Anmeldung](https://events.scs.community/hackathon-4/) wird gebeten.
 
 <!--TODO: ## Veranstaltungen mit aktiver SCS Teilnahme-->
