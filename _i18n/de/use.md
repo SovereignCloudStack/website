@@ -40,6 +40,8 @@ Am 22.3.2023 haben wir [Release 4](https://github.com/SovereignCloudStack/releas
 
 Am 20.9.2023 haben wir [Release 5](https://github.com/SovereignCloudStack/release-notes/blob/main/Release5.md) freigegeben.
 
+Am 20.3.2024 haben wir [Release 6](https://github.com/SovereignCloudStack/release-notes/blob/main/Release6.md) freigegeben.
+
 ## SCS und OSISM
 
 Für die grundlegenden Schichten bauen wir auf dem
