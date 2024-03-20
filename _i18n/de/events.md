@@ -4,11 +4,15 @@
 
 ### SCS Summits
 
-Der [SCS Summit 2023](/summit2023) war ein großer Erfolg, und daher planen wir für den 14.5.2024
-unseren [SCS Summit 2024](/summit2024) in Berlin. Die Veranstaltung wird wieder primär deutschsprachig
-sein mit Entscheidungsträgern aus Politik und Wirtschaft als primärer Zielgruppe. Am Folgetag
-findet am selben Ort ein [Open Infra Day](https://openstack.org/events/openstackdays#tab=events_tab) statt,
-mit primär englischsprachigen Inhalten und sehr viel technischerer Ausrichtung.
+Nach dem großen [Erfolg vom letzten Jahr](/summit2023) findet der nächste
+[SCS Summit 2024](/summit2024) am 14.5.2024 wieder in Berlin statt. In
+Kürze werden wir auf der Veranstaltungsseite weitere Informationen zum Programm
+und dem Veranstaltungsort veröffentlichen. Das Summit wird - wie auch letztes
+Jahr wieder größtenteils deutschsprachig sein mit Entscheidungsträgern aus
+Politik und Wirtschaft als primärer Zielgruppe. Am Folgetag findet am selben
+Ort der [Open Infra Day Germany](https://openinfra.dev/days#tab=events_tab)
+statt, mit weitestgehend englischsprachigen Inhalten und einer eher
+technischen Ausrichtung.
 
 ### SCS Hackathons
 
