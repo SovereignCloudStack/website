@@ -12,7 +12,29 @@ Published sites:
 * [The productive SCS site](https://scs.community/)
 * [The staging area](https://staging.scs.community/)
 
-## The basic editorial workflow
+## The minimal editorial workflow
+
+1. [Create a branch based on the `main` branch
+   ![Step 1](_assets/doc/step1.png)
+2. Select branch, if not already selected
+   ![Step 2](_assets/doc/step2.png)
+2. Make your changes in the branch
+   ![Step 3](_assets/doc/step3.png)
+3. Create a pull request to get the changes in the `main` branch
+   * Open https://github.com/SovereignCloudStack/website
+   * Select `Contribute` -> `Open pull request`
+     * Verify that `base: main` and `compare <your branch>` is selected in the top of the pull request
+     * Add a optional description
+     * `Create pull request`
+   * Assign one ore more persons which can review the changes and remind the person to review the change
+4. The [reviewer](https://github.com/pulls/assigned) inspects [your](https://github.com/pulls) changes and gives feedback
+   * If there is something to todo, you can restart at step 2
+   * If everything is fine the reviewer approves the merge request
+   * Your changes are merged to the `main` branch and rolled out after 15 minutes
+
+
+
+## The editorial workflow
 
 The website data is deployed by the following process:
 
