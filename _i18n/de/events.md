@@ -10,7 +10,7 @@ Kürze werden wir auf der Veranstaltungsseite weitere Informationen zum Programm
 und dem Veranstaltungsort veröffentlichen. Das Summit wird - wie auch letztes
 Jahr wieder größtenteils deutschsprachig sein mit Entscheidungsträgern aus
 Politik und Wirtschaft als primärer Zielgruppe. Am Folgetag findet am selben
-Ort der [Open Infra Day Germany](https://openinfra.dev/days#tab=events_tab)
+Ort der [Open Infra Day Germany](https://oideurope2024.openinfra.dev/#registration=1)
 statt, mit weitestgehend englischsprachigen Inhalten und einer eher
 technischen Ausrichtung.
 
