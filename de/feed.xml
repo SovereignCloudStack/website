@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://sovereigncloudstack.github.io/website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sovereigncloudstack.github.io/website/" rel="alternate" type="text/html" hreflang="de" /><updated>2024-03-21T21:03:30+00:00</updated><id>https://sovereigncloudstack.github.io/website/feed.xml</id><title type="html">Sovereign Cloud Stack</title><subtitle>Sovereign Cloud Stack combines the best of cloud computing in one unified standard. SCS is built, backed, and operated by an active open-source community worldwide. Together we put users in control of their data by enabling cloud operators through a decentralized and federated cloud stack – leveraging true digital sovereignty to foster trust in clouds.</subtitle><entry><title type="html">SCS Release 6 freigegeben</title><link href="https://sovereigncloudstack.github.io/website/release/2024/03/20/release6/" rel="alternate" type="text/html" title="SCS Release 6 freigegeben" /><published>2024-03-20T00:00:00+00:00</published><updated>2024-03-21T20:57:56+00:00</updated><id>https://sovereigncloudstack.github.io/website/release/2024/03/20/release6</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/release/2024/03/20/release6/"><![CDATA[<h1 id="souveräne-full-stack-cloud-lösung">Souveräne Full-Stack-Cloud-Lösung</h1>
+<h2 id="sovereign-cloud-stack-veröffentlicht-release-6">Sovereign Cloud Stack veröffentlicht Release 6</h2>
+
+<p><strong>Berlin, 20.03.2024</strong>: Das Sovereign-Cloud-Stack-Projekt veröffentlicht das sechste Release.</p>
+
+<p>Im Mittelpunkt von Release 6 steht die SCS Kubernetes Distribution Cluster
+Stacks, die über den Cluster Stack Operator direkt auf der IaaS
+Referenzimplementierung ausgerollt werden kann. Zur Referenzimplementierung
+gehören jetzt auch die Observability Plattform und ein erweitertes Identity und
+Access Management. Durch die Zusammenarbeit mit ALASCA e.V. wurde im Bereich
+Standardisierung eine höhere Geschwindigkeit und Reichweite bei der Erarbeitung
+umfassender offener Standards erzielt, in Einklang mit den Vorgaben der
+Deutschen Verwaltungscloudstrategie. Insgesamt bietet SCS mit Release 6 eine
+einfach zu betreibende, souveräne Full-Stack Cloud-Lösung.</p>
+
+<p>SCS stellt alle Cloud-technologischen Grundlagen bereit zur Verwirklichung
+digitaler Souveränität und zur Umsetzung von Open-Source-Strategien. Viele
+Nutzer von Cloud-Diensten aus dem öffentlichen, aber auch aus dem
+privatwirtschaftlichen Bereich und der Wissenschaft, erwarten von „Cloud“
+containerbasierte Technologie, die im besten Fall digital-souverän gehostet und
+betrieben werden kann. Dies ist jetzt noch einfacher zu erreichen: SCS bietet
+eine digital-souveräne, sichere, vollständige, standardisierte
+Open-Source-Container-Schicht als Basis für alle containerisierten Anwendungen
+an.</p>
+
+<h3 id="scs-full-stack-vereinigung-von-iaas-und-kaas-referenzimplementierung-vollzogen">SCS Full Stack: Vereinigung von IaaS und KaaS Referenzimplementierung vollzogen</h3>
+
+<p>Mit dem Release 6 wird mit den Cluster Stacks die zweite Version der Kubernetes
+as a Service Referenzimplementierung von SCS vorgestellt, die durch die
+Implementierung des Cluster Stack Operators jetzt nahtlos auf der
+Infrastructure-as-a-Service Referenz­implementierung von SCS ausgerollt werden
+kann. Die Cluster-Stacks sind vollständig mit Kubernetes Bordmitteln wie
+Operatoren umgesetzt und lösen damit die alte Implemen­tierung ab, welche die
+Cluster-API noch mit Hilfe von Skripten integriert und automatisiert hat.
+Vervollständigt werden die Cluster Stacks mit Identitäts- und
+Zugriffsmanagement und mit einer Observability Plattform, die dafür sorgen,
+dass der Stack sicherer und einfacher zu betreiben ist.</p>
+
+<p>Damit bietet SCS eine integrierte Full-Stack-Cloud-Lösung an, die eine
+skalierbare, sichere Cloud-Infrastruktur und eine Container-Plattform vereint,
+auf der nach modernsten Anforderungen entwickelt und getestet werden kann. Nach
+wie vor bietet SCS eine von vielen Beitragenden offen entwickelte und
+vollständig offene standardbasierte Software­lösung, die sich von Betreibern
+und Nutzern beeinflussen und gestalten lässt und ein hohes Maß an Transparenz
+bietet – die perfekte Grundlage, um auf allen Ebenen digital souveräne
+Innovation in Deutschland und Europa vorantreiben zu können.</p>
+
+<h3 id="zusammenarbeit-bei-der-standardisierung">Zusammenarbeit bei der Standardisierung</h3>
+
+<p>Im Herbst letzten Jahres wurde die Zusammenarbeit des SCS Projektes mit ALASCA
+e.V. nochmal vertieft. Die Weiterentwicklung von offenen Standards, wie sie
+bspw. in der Deutschen Verwaltungscloudstrategie gefordert werden, steht in
+dieser Kooperation im Vordergrund. Mit Release 6 zeigt sich, wie fruchtbar
+diese Zusammenarbeit schon jetzt ist, Beispiele für SCS Standards sind:</p>
+
+<ul>
+  <li>Neue stabile Version 4 für den Zertifikatsbereich SCS-kompatible IaaS.</li>
+  <li>Neuer Entwurf der Version 1 für den neuen Zertifikatsbereich SCS-kompatible KaaS.</li>
+</ul>
+
+<p>Für die Betreiber von SCS Cloud-Umgebungen ist es von Vorteil, dass sie mit der
+Umsetzung der Standards und der damit ermöglichten Zertifizierung ein (im
+besten Sinne) einfaches Gütekriterium haben, welches sich nicht nur auf
+Interoperabilität und Offenheit bezieht, sondern auch auf Robustheit,
+Sicherheit und Aktualität. Damit vergewissern sie nicht nur ihre Kundschaft,
+sondern genau so auch sich selbst der Qualität ihres Angebots. Für die Nutzer
+ist natürlich vor allem die Interoperabilität interessant: Sie können ihre
+Workloads auf die Clouds mehrerer Betreiber ausrollen ohne größere
+Überraschungen, was ihnen eine hohe Flexibiliät ermöglicht und in manchen
+Fällen vielleicht überhaupt erst eine Alternative zu den großen Hyperscalern
+(AWS, Google, Azure) eröffnet.</p>
+
+<h3 id="einfacher-betrieb-von-cloud-umgebungen">Einfacher Betrieb von Cloud Umgebungen</h3>
+
+<p>Insgesamt wird mit Release 6 deutlich, dass SCS Cloud-Infrastruktur effizient
+zu betreiben ist: Dies war und ist eines der zentralen Wertversprechen des
+SCS-Projekts, neben der Kontrolle und einfachen Bereitstellung für Endnutzer.
+Konsequent wurden die Betriebswerkzeuge ausgebaut um alltägliche
+Arbeitsschritte für das Betriebspersonal zu vereinfachen. Die kontinuierliche
+Standardisierung weiterer Aspekte und insbesondere auch die Umsetzung der
+Standards durch Anbieter, die nicht die IaaS-Referenzimplementierung nutzen,
+unterstreichen die Relevanz der Standardisierungs­arbeit. Mit den jüngsten
+Entwicklungen und der Veröffentlichung von Cluster-Stacks für OpenStack sind
+Bereitstellungsumgebungen von Kubernetes-Clustern einfacher und effizienter zu
+handhaben.</p>
+
+<p>In der Referenzumgebung steht jetzt auch auf der Infrastruktur­ebene eine
+standardisierte Kubernetes Umgebung bereit, in die Betreiber eigene Werkzeuge
+(z.B. zur Abrechnung oder zum Kapzitätsmanagement) einklinken können; mit dem
+Identitäts- und Zugriffs­management (IAM) aus der SCS Referenz­implementierung
+macht auch ein mitgelieferter Dienst von dieser Integrationsmöglichkeit
+Gebrauch. Auch die Erweiterung der SCS Dokumentation zahlt direkt in den
+effizienten Betrieb von SCS-Cloud-Umgebungen ein, Beispiele, Anleitungen und
+Links zu den Repositories machen den Aufbau von SCS übersichtlich, verständlich
+und effizient.</p>
+
+<h3 id="über-das-sovereign-cloud-stack-projekt">Über das Sovereign-Cloud-Stack-Projekt</h3>
+
+<p>SCS wird seit Juli 2021 durch das Bundesministerium für Wirtschaft und
+Klimaschutz (BMWK) gefördert und ist bei der Open Source Business Alliance –
+Bundesverband für digitale Souveränität e.V. beheimatet. Ein wachsendes,
+internationales Ökosystem von inzwischen über 25 Unternehmen trägt mit über 50
+Software-Entwickler:innen zum Erfolg des Sovereign Cloud Stack bei, in
+Zusammenarbeit mit Tausenden Entwickler:innen in den Upstream Communities bei
+der Open Infra Foundation, Cloud Native Compute Foundation und weiteren.
+Gemeinsam werden offene Standards für eine moderne, föderierbare
+Open-Source-Cloud- und Container-Plattform definiert und in einem offenen
+Entwicklungsprozess durch bewährte Open-Source-Komponenten implementiert.
+Gleichzeitig werden Betriebs­wissen und -praktiken transparent zugänglich
+gemacht, um die Schwierigkeiten bei der Bereitstellung von qualitativ
+hochwertigen und sicheren Cloud-Diensten auf ein Minimum zu reduzieren. Bereits
+sechs Anbieter nutzen die SCS-Technologie produktiv für den Betrieb echt
+souveräner und DSGVO-konformer Public-Cloud-Angebote. Weitere SCS-basierte
+Cloud-Infrastrukturen (Public und Private Clouds) sind im Aufbau. SCS trägt
+auch zu Gaia-X bei und liefert die Entwicklungsplattform für die Gaia-X
+Federation Services / Cross-Federation Service Components (GXFS/XFSC).</p>
+
+<h3 id="über-die-open-source-business-alliance-osb-alliance-ev">Über die Open Source Business Alliance (OSB Alliance) e.V.</h3>
+
+<p>Die Open Source Business Alliance (OSB Alliance) ist der Verband der Open
+Source Industrie in Deutschland. Sie vertritt über 200 Mitgliedsunternehmen,
+die jährlich mehr als 126 Milliarden EUR erwirtschaften. Gemeinsam mit
+wissenschaftlichen Einrichtungen und Anwenderorganisationen setzt sie sich
+dafür ein, die zentrale Bedeutung von Open Source Software und offenen
+Standards für einen erfolgreichen digitalen Wandel im öffentlichen Bewusstsein
+nachhaltig zu verankern. Zudem sollen Innovationen im Bereich Open Source
+vorangetrieben werden. Das Ziel der OSB Alliance ist es, Open Source als
+Standard in der öffentlichen Beschaffung und bei der Forschungs- und
+Wirtschaftsförderung zu etablieren. Denn Open Source und offene Standards sind
+zwingende Grundlagen für digitale Souveränität, Innovationsfähigkeit und
+Sicherheit im digitalen Wandel und damit die Antwort auf eine der größten
+Herausforderungen unserer Zeit.</p>
+
+<h3 id="weiterführende-links">Weiterführende Links:</h3>
+
+<p>Sovereign Cloud Stack: <a href="https://scs.community/">https://scs.community/</a></p>
+
+<p>Technische Dokumentation SCS: <a href="https://docs.scs.community/docs">https://docs.scs.community/docs</a></p>
+
+<p>SCS Repositories (github): <a href="https://github.com/SovereignCloudStack">https://github.com/SovereignCloudStack</a></p>
+
+<p>Release notes: <a href="https://github.com/SovereignCloudStack/release-notes">https://github.com/SovereignCloudStack/release-notes</a></p>
+
+<p>SCS Verständnis von digitaler Souveränität: <a href="https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/">https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/</a>
+ und <a href="https://link.springer.com/epdf/10.1007/s11623-022-1669-5?sharing_token=ie7xTVzv_afod07w5Y2lJfe4RwlQNchNByi7wbcMAY4yFyxh9Qw2iCtygUYjun7MI5leBYqiHZBlIeTPv8Sm1Wv8c1dEUf6ebSwnRfo99_nAYh2FgwUyIHjFyZFWv_EIOEIetr2eBSiAPrI68ptBgKxMVkNlS4udZRAhx1X-WB8=">https://link.springer.com/epdf/10.1007/s11623-022-1669-5?sharing_token=ie7xTVzv_afod07w5Y2lJfe4RwlQNchNByi7wbcMAY4yFyxh9Qw2iCtygUYjun7MI5leBYqiHZBlIeTPv8Sm1Wv8c1dEUf6ebSwnRfo99_nAYh2FgwUyIHjFyZFWv_EIOEIetr2eBSiAPrI68ptBgKxMVkNlS4udZRAhx1X-WB8=</a></p>
+
+<p>Release Blog Posts: <a href="https://scs.community/de/2023/12/27/scs-r6-enables/">https://scs.community/de/2023/12/27/scs-r6-enables/</a>
+ und <a href="https://scs.community/de/2024/02/01/road-ro-r6/">https://scs.community/de/2024/02/01/road-ro-r6/</a></p>
+
+<p>Bild-Copyright: Engin Akyurd</p>
+
+<p><strong>Kontakt</strong>:</p>
+
+<p>OSB Alliance – Bundesverband für digitale Souveränität e.V., Pariser Platz 6a, 10117 Berlin</p>]]></content><author><name>[&quot;Sovereign Cloud Stack&quot;]</name></author><category term="release" /><summary type="html"><![CDATA[Souveräne Full-Stack-Cloud-Lösung Sovereign Cloud Stack veröffentlicht Release 6]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/six.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/six.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sovereign Cloud Stack Security Advisory OVN (CVE-2024-2182)</title><link href="https://sovereigncloudstack.github.io/website/security/2024/03/15/cve-2024-2182/" rel="alternate" type="text/html" title="Sovereign Cloud Stack Security Advisory OVN (CVE-2024-2182)" /><published>2024-03-15T00:00:00+00:00</published><updated>2024-03-21T20:57:56+00:00</updated><id>https://sovereigncloudstack.github.io/website/security/2024/03/15/cve-2024-2182</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/security/2024/03/15/cve-2024-2182/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>Multiple versions of OVN (Open Virtual Network) are vulnerable to
+crafted BFD packets potentially causing denial of service.</p>
+
+<p>OVN supports configuration of gateway chassis and high-availability
+chassis groups (via the Gateway_Chassis and HA_Chassis_Group tables in
+the OVN_Northbound database).  These group cluster nodes (chassis)
+together and provide high availability to them.  OVN logical switch and
+router ports can be configured to reference such groups.  In this case
+the traffic forwarding decision is influenced by the liveness of the
+chassis listed in the group.</p>
+
+<p>In such scenarios OVN automatically enables the OVS Bidirectional
+Forwarding Detection (BFD) functionality to monitor the health of remote
+nodes and tunnels between them.</p>
+
+<p>BFD packets are transmitted in-band in tunnels that connect OVN chassis,
+along with other traffic.  And, by default, OVS will process any BFD
+packets received on a tunnel port with BFD enabled.  That makes it
+possible for a VM or container connected to an OVN logical switch port
+to send BFD packets that will be tunneled to another node and processed
+by OVS, potentially changing the BFD state and affecting the forwarding
+decisions.</p>
+
+<p>The vulnerability has been assigned <a href="https://www.cve.org/CVERecord?id=CVE-2024-2182">CVE-2024-2182</a>.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>The <a href="https://scs.community/">Sovereign Cloud Stack</a> reference
+implementation (by <a href="https://osism.tech/">OSISM</a>) comes with and utilizes 
+OVN. The upcoming Release 6 of the SCS reference implementation will
+not be vulnerable to this as Release 6 will contain the OVN <a href="https://www.ovn.org/en/releases/changelog_v24.03.1/">version 24.03.1</a>.</p>
+
+<p>A way to determine if BFD will be used is to issue the following
+commands on the node that runs the OVN central components:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker exec -it ovn_nb_db ovn-nbctl --columns name,gateway_chassis list logical_router_port
+</code></pre></div></div>
+
+<p>If the above command returns more than a single gateway chassis
+reference for a given port that means OVS BFD has been automatically
+enabled.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker exec -it ovn_nb_db ovn-nbctl --columns name,ha_chassis list ha_chassis_group
+</code></pre></div></div>
+
+<p>The same applies if the above command returns groups that contain more
+than one chassis.</p>
+
+<p>In any case, operators of OpenStack platforms are advised to deploy fixed versions.</p>
+
+<h2 id="mitigation-and-fixes">Mitigation and Fixes</h2>
+
+<p>For any version of OVN, in order to prevent the issue, an ACL (Access
+Control List) rule can be added to drop BFD packets originated from
+logical ports.</p>
+
+<p>For example, the following shell script would configure ACLs on all
+existing OVN logical switches:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  for sw in $(docker exec -it ovn_nb_db ovn-nbctl --bare --columns name list logical_switch); do
+      docker exec -it ovn_nb_db ovn-nbctl acl-add $sw from-lport 32767 'udp &amp;&amp; udp.dst == 3784' drop
+  done
+</code></pre></div></div>
+
+<p>We do not recommend attempting to mitigate the vulnerability this way
+because this will also drop legitimate BFD traffic originated by the
+workloads connected to logical switch ports, e.g., BFD sessions
+established with external entities.</p>
+
+<p>For the currently maintained version SCS R5 (OSISM 6.0.x), OVN has been updated to <a href="https://www.ovn.org/en/releases/changelog_v23.06.3/">23.06.3</a>.
+Updated images have been built by <a href="https://osism.tech/">OSISM</a> and are available to be installed.</p>
+
+<p>To install the fixed OVN images, set <code class="language-plaintext highlighter-rouge">ovn_tag: "2023.1"</code> in the configuration repository in <code class="language-plaintext highlighter-rouge">environments/kolla/configuration.yml</code>.
+Afterwards run <code class="language-plaintext highlighter-rouge">osism apply -a upgrade ovn</code>.</p>
+
+<p>This will deploy the latest OVN images for OSISM 6.0.x series (SCS R5, using OpenStack 2023.1 (Antelope)), pulling OVN 23.06.3.
+This only replaces the OVN image and no service interruption is to be expected.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.1, 2024-03-14, 23:45 CET.</li>
+</ul>]]></content><author><name>[&quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sovereign Cloud Stack Security Advisory Open vSwitch (CVE-2023-3966)</title><link href="https://sovereigncloudstack.github.io/website/security/2024/02/20/cve-2023-3966/" rel="alternate" type="text/html" title="Sovereign Cloud Stack Security Advisory Open vSwitch (CVE-2023-3966)" /><published>2024-02-20T00:00:00+00:00</published><updated>2024-03-21T20:57:56+00:00</updated><id>https://sovereigncloudstack.github.io/website/security/2024/02/20/cve-2023-3966</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/security/2024/02/20/cve-2023-3966/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>Multiple versions of Open vSwitch are vulnerable to crafted Geneve
+packets causing invalid memory accesses and potential denial of service.
+Triggering the vulnerability requires that Open vSwitch has flow hardware
+offload with Linux TC flower enabled (other_config:hw-offload=true).
+It is not enabled by default.</p>
+
+<p>The issue is caused by insufficient validation of Geneve metadata
+fields in the offload path.  Open vSwitch versions 2.12 and newer are
+affected.</p>
+
+<p>The vulnerability has been assigned <a href="https://www.cve.org/CVERecord?id=CVE-2023-3966">CVE-2023-3966</a>.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>The <a href="https://scs.community/">Sovereign Cloud Stack</a> reference
+implementation (by <a href="https://osism.tech/">OSISM</a>) comes with and utilizes 
+Open vSwitch. While hardware offloading is not enabled by default most
+environments will have it enabled.</p>
+
+<p>The current state of configuration can be checked with this command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dragon@manager:~$ docker exec -it openvswitch_vswitchd ovs-vsctl get Open_vSwitch . other_config:hw-offload
+ovs-vsctl: no key "hw-offload" in Open_vSwitch record "." column other_config
+</code></pre></div></div>
+
+<p>If hardware offloading is enabled the output differs:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dragon@manager:~$ docker exec -it openvswitch_vswitchd ovs-vsctl get Open_vSwitch . other_config:hw-offload
+"true"
+</code></pre></div></div>
+
+<p>This is typically enabled through <code class="language-plaintext highlighter-rouge">openvswitch_hw_offload: "yes"</code> in the host vars or <code class="language-plaintext highlighter-rouge">configuration.yml</code>.</p>
+
+<p>In any case, operators of OpenStack platforms are advised to deploy fixed versions.</p>
+
+<h2 id="mitigation-and-fixes">Mitigation and Fixes</h2>
+
+<p>For any version of Open vSwitch, disabling flow hardware offload will
+prevent the issue (setting other_config:hw-offload=false and reboot
+the system).  We do not recommend attempting to mitigate the vulnerability
+this way because it may impact the overall system throughput.</p>
+
+<p>By default, flow hardware offload support is not enabled.</p>
+
+<p>Open vSwitch has been updated to <a href="https://www.openvswitch.org/releases/NEWS-3.1.4.txt">version 3.1.4</a>.
+Updated images have been built by <a href="https://osism.tech/">OSISM</a> and are available to be installed.</p>
+
+<p>Set <code class="language-plaintext highlighter-rouge">openvswitch_tag: "2023.1"</code> in the configuration repository in <code class="language-plaintext highlighter-rouge">environments/kolla/configuration.yml</code>.
+Afterwards run <code class="language-plaintext highlighter-rouge">osism apply -a upgrade openvswitch</code>.</p>
+
+<p>This will deploy the latest openvswitch images for OSISM 6.0.x series (SCS R5, using OpenStack Antelope), pulling openvswitch 3.1.4.
+This only replaces the Open vSwitch image. Open vSwitch only runs on the data and network plane.
+Connections may be interrupted when restarting openvswitch-vswitchd. If this is to be avoided workloads should
+be live migrated and the update should by done node by node.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.1, 2024-02-15, 23:45 CET.</li>
+  <li>Initial published version, v0.2, 2024-02-20, 12:00 CET.</li>
+</ul>]]></content><author><name>[&quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SDN scalability improvements</title><link href="https://sovereigncloudstack.github.io/website/2024/02/09/sdn-scalability/" rel="alternate" type="text/html" title="SDN scalability improvements" /><published>2024-02-09T00:00:00+00:00</published><updated>2024-03-21T20:57:56+00:00</updated><id>https://sovereigncloudstack.github.io/website/2024/02/09/sdn-scalability</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/2024/02/09/sdn-scalability/"><![CDATA[<h1 id="overview-of-sdn-network-scalability">Overview of SDN network scalability</h1>
+
+<p>Software-defined Networking (SDN) is a critical component of modern cloud environments, providing the necessary flexibility and scalability to meet the demands of large-scale network infrastructures. As the size and complexity of cloud deployments continue to grow, the need for scalable and efficient SDN solutions becomes increasingly important. In this post, we explore the challenges and strategies for improving SDN scalability within Sovereign Cloud Stack (SCS) and OpenStack environments.</p>
+
+<h1 id="the-data-center-network">The data center network</h1>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/dc-network-architectures-9ce41bf73ef654366c35b856f83c46b7919b13e55e65819bd9a832cbb70629b6f4bf5dd57a77ba9e8bbfdeca4a70a8a06f8a885939f7d9061fed7e9d9472d730.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/dc-network-architectures-9ce41bf73ef654366c35b856f83c46b7919b13e55e65819bd9a832cbb70629b6f4bf5dd57a77ba9e8bbfdeca4a70a8a06f8a885939f7d9061fed7e9d9472d730.png" />
+  </a>
+</figure>
+
+<p>A modern data center network typically uses a 2-tier spine-leaf network architecture. More traditional 3-tier architectures are becoming less popular.</p>
+
+<p>In a spine-leaf network, all servers are connected to one or two TOR (top of rack) or Leaf switches within a rack. All leaf switches are connected to all spine switches in the layer above. There are no direct connections between leaf or spine switches on the same tier. This kind of network facilitates scalability by being simple and easy to support.</p>
+
+<p>On top of this physical network, also called underlay, all Software Defined Networking (SDN) features are built on top of. The SDN is the virtual network managed by end users and connects VMs, containers, and sometimes physical servers. The SDN is entirely virtualized and must be designed and implemented with the physical topology in mind to achieve the desired performance, functionality, and scalability requirements.</p>
+
+<h1 id="overview-of-sdn-in-openstack">Overview of SDN in OpenStack</h1>
+
+<p>Software-defined Networking (SDN) is a networking concept where software-based controllers and APIs direct network traffic rather than the networking hardware. In OpenStack, SDN networks are used to connect virtual machines and containers. The physical network is also referred to as the underlay, while SDN is called overlay. Larger operators and an increased number of containerized workloads put stress on the SDN stack.</p>
+
+<p>OpenStack Neutron is the main component responsible for networking. It heavily leverages open-source technologies like OVN/OVS and communicates with the underlay network to provide higher-level network services to users. ML2 is the Neutron plugin responsible for communication with the physical network and can have multiple drivers each driver supporting particular hardware/vendor devices. The SDN stack is distributed where some components run on dedicated network nodes, network devices, and even servers.</p>
+
+<p>When OpenStack traffic increases the network must scale accordingly. There are several aspects of SDN scalability and they depend on the actual network architecture. We dive deeper below, but some important points to consider are SDN bottlenecks (OVN control plane, network node resources), support for several tenants and networks, and actual data-plane performance. In this post, we will explore those challenges and strategies to improve SDN scalability in OpenStack and SCS.</p>
+
+<h2 id="sdn-stack">SDN stack</h2>
+
+<p>In this section, we will take a look at more software components needed to implement SDN in OpenStack.</p>
+
+<h3 id="neutron">Neutron</h3>
+
+<p>Neutron is an OpenStack project to provide “network connectivity as a service” between interface devices (e.g., vNICs) managed by other OpenStack services (e.g., nova). It implements the OpenStack Networking API. Neutron is responsible for the centralized management of tenant networks, devices, and address allocation. It orchestrates the physical network, and the devices by using plugins and drivers for each particular technology chosen in the stack.</p>
+
+<h3 id="ovnovs">OVN/OVS</h3>
+
+<p>Open Virtual Network (OVN) and Open vSwitch (OVS) are integral components of Neutron’s network architecture. OVN provides network virtualization, offering logical network abstractions such as logical switches and routers. It is tightly coupled with OVS, which is a high-performance, multilayer virtual switch. Together, OVN/OVS enable dynamic, programmable network setups, allowing for efficient routing, switching, and bridging of traffic in virtualized environments. Their integration with Neutron facilitates complex networking scenarios, ensuring scalability and flexibility in handling network traffic within OpenStack deployments.</p>
+
+<h3 id="bgpevpn">BGP/EVPN</h3>
+
+<p>Border Gateway Protocol (BGP) and Ethernet Virtual Private Network (EVPN) are technologies used for advanced networking functionalities. BGP is a standardized exterior gateway protocol designed to exchange routing and reachability information among autonomous systems on the internet. EVPN extends BGP to support scalable, multi-tenant layer 2 VPN services. In SCS, BGP/EVPN is used for efficient routing and segmentation in large-scale cloud environments. It enables more robust and flexible networking solutions by allowing dynamic route advertisement, enhanced traffic engineering, and seamless integration with existing network infrastructures.</p>
+
+<h3 id="tunneling-protocols---vxlangeneve">Tunneling protocols - VXLAN/Geneve</h3>
+
+<p>Virtual Extensible LAN (VXLAN) and Generic Network Virtualization Encapsulation (Geneve) are network overlay protocols used in OpenStack and OVN/OVS for tunneling network traffic over existing network infrastructures. VXLAN is widely used for encapsulating Ethernet frames over a UDP tunnel, enabling layer 2 networks to extend over layer 3 networks. Geneve, a newer protocol, offers similar capabilities but with additional flexibility and extensibility. In SCS, VXLAN/Geneve is critical for creating isolated, multi-tenant networks over a shared physical network infrastructure. This encapsulation allows scalable network segmentation, providing secure and efficient communication channels within cloud environments.</p>
+
+<h2 id="physical-network">Physical network</h2>
+
+<p>The physical network layer is crucial as it provides the foundational infrastructure on which all virtualized network functions are built upon. This layer typically involves various network hardware vendors who supply the physical networking equipment such as switches, routers, and other hardware. These devices are essential for data transmission and routing in a physical setup. Network Operating Systems (NOS) are also a component of the physical network layer. NOS is the software running on network devices, enabling them to perform networking functions and interact with higher-level SDN controllers and applications. In OpenStack Neutron, the ML2 (Modular Layer 2) plugin plays a key role in the physical network layer. ML2 provides an abstraction layer that supports multiple networking mechanisms in a pluggable manner, allowing Neutron to interface with various types of networking hardware and technologies. This plugin architecture ensures that Neutron can work with a wide range of physical networking equipment and configurations, thus enabling flexibility and scalability in the physical network infrastructure of an OpenStack-based SDN deployment.</p>
+
+<h2 id="bare-metal-hosts">Bare metal hosts</h2>
+
+<p>Bare metal hosts in the context of OpenStack and SDN play a significant role in providing high-performance, non-virtualized computing resources. These hosts are typically equipped with advanced network interface cards (NICs), such as SmartNICs and Data Processing Units (DPUs). SmartNICs are intelligent network cards that offload processing tasks that would typically be handled by the server CPU. These include functions like traffic shaping, encryption/decryption, and network packet processing. The use of SmartNICs can lead to improved performance and reduced CPU load on the bare metal hosts.</p>
+
+<p>DPUs are an evolution of SmartNICs and are also very common in clouds providing physical servers to users. The difference between SmartNICs is that DPUs usually run their own OS and can be managed independently of the host OS. They are more like computers within a computer. Bare metal servers are directly accessed by the users, which creates a constraint on the SDN network because it should not collide with user workloads. Offloading SDN to the DPU is the best solution for such use cases.</p>
+
+<p>Incorporating SmartNICs and DPUs into bare metal hosts within an OpenStack environment enhances the network’s flexibility, efficiency, and performance. This setup is particularly beneficial for workloads that require high throughput, low latency, and secure network communications. As such, bare metal hosts equipped with these advanced NICs are an essential component of modern SDN architectures, particularly in environments where performance and security are critical.</p>
+
+<h1 id="common-network-designs">Common network designs</h1>
+
+<p>Below we dive deeper into several common network designs used for SCS/OpenStack deployments.</p>
+
+<h2 id="vlans">VLANs</h2>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/VLANs_network_design-9430b0fb97b59353f0da0437cbba988c5299541ce868b42302c5efaadd71c50843b5ec7eee40eb7ac1756baa1820eb32945a5e5e2757167a66cd87f6d33532f2.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/VLANs_network_design-9430b0fb97b59353f0da0437cbba988c5299541ce868b42302c5efaadd71c50843b5ec7eee40eb7ac1756baa1820eb32945a5e5e2757167a66cd87f6d33532f2.png" />
+  </a>
+</figure>
+
+<p>VLANs are the simplest and most popular design for small operators that are just starting to use OpenStack.</p>
+
+<p>This type of network leverages VLANs between network switches and servers. Each tenant network is assigned its own VLAN. User workloads like VMs and containers on the server are bound to a VLAN by OVS. Neutron orchestrates the process of creation and management of tenant networks both on the network plane (underlay network) and on the servers. It uses ML2 to provision VLANs on the network switches and delegates to OVN/OVS the binding of the virtual device to the VLAN on the server.</p>
+
+<p>Operators have the option to either pre-provision all VLANs ahead of time so that when a new tenant network appears it can be attached to an existing VLAN without needing to talk to the network devices again. The alternative is to use ML2 to dynamically configure new VLAN before each tenant network is created.</p>
+
+<h3 id="pros">Pros</h3>
+
+<ul>
+  <li>This kind of network is easy to implement. It can be simplified even further by pre-provisioning all VLANs on the physical network thus eliminating the need for ML2. It is a good approach for test beds and small deployments.</li>
+</ul>
+
+<h3 id="cons">Cons</h3>
+
+<ul>
+  <li>Most notably, VLANs don’t scale well. This is due to a theoretical limit of 4096 VLANs on each network switch. A more realistic limit would be about 100 OpenStack tenants for a single cloud network. This is a more practical limit based on real world experience.</li>
+  <li>The approach is also very fragile. A single VM can break the whole network, thus exposing a huge blast radius. Also, network switches are notorious for being able to persist VLAN configuration. If a switch goes down, its configuration must be replayed after boot-up which is a process leading to significant downtimes.</li>
+  <li>Another drawback, which we see is the involvement of the physical network to support the SDN. For each new tenant network in OpenStack, new VLANs must be provisioned. Even in the pre-provisioned scenario, the VLANs must still exist in the underlay, which eventually becomes a bottleneck.</li>
+</ul>
+
+<h2 id="network-centric-sdn">Network-centric SDN</h2>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/Network_centric_network_design-c715b0fbbb492816b154013ff2f11334e494c5953b8a542c3fa8ee621f0f4325222e6bc52b886afea45a50b1a56d41ed5dbb41a4c9c44cf1e79dc797f8f8db0f.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/Network_centric_network_design-c715b0fbbb492816b154013ff2f11334e494c5953b8a542c3fa8ee621f0f4325222e6bc52b886afea45a50b1a56d41ed5dbb41a4c9c44cf1e79dc797f8f8db0f.png" />
+  </a>
+</figure>
+
+<p>This network design employs a more network-centric approach by implementing most SDN functionalities within the physical network. The key point is that some kind of tunneling protocols like VXLAN or Geneve are used to encapsulate network packets and transport them over the network. In a spine-leaf topology, the leaf or ToR will terminate VXLAN endpoints. For the control plane, BGP (EVPN) is used to transmit layer 2 addressing information between switches.</p>
+
+<p>On the server side, a regular VLAN is provisioned from the ToR switch for each tenant network. Since not all tenant networks are needed on each ToR switch, this design scales better than pure VLANs. Also, no VLANs are used between the switches if the underlay is layer 3.</p>
+
+<h3 id="pros-1">Pros</h3>
+
+<ul>
+  <li>This kind of network is more scalable, easily handling up to 1000 OpenStack tenants. It is also more stable and resilient to change, because of the smaller blast radius.</li>
+  <li>Since all SDN is offloaded to the physical equipment, server CPUs are not doing any encapsulation/decapsulation and are free to serve the users. Heavy data plane processing is done on dedicated network hardware, which has been optimized for this task. Also, no SmartNICs or DPUs are needed on the servers, which is more cost efficient.</li>
+</ul>
+
+<h3 id="cons-1">Cons</h3>
+
+<ul>
+  <li>Since this is a network-centric approach, the network is still very much involved in the SDN. Physical device limits shown before like persisting  switch configuration still apply.</li>
+  <li>This approach is also more complex than pure VLANs because it requires the network to run routing protocols like BGP and BFD. Neutron still needs to talk the switches via ML2.</li>
+  <li>Importantly, traffic between tenant networks (east/west and north/south) is routed via the network nodes, which can become a choke point. So while being better for scalability, this design still has limitations for very large deployments.</li>
+</ul>
+
+<h2 id="server-centric-sdn">Server-centric SDN</h2>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/Server_centric_network_design-96746e887fb08b7561b28fb4c02704408bd2ff27c8c9c3f45962651d9ebe77cebd89fe4c3d93cfce6395b09bdc693a4507c077bb1cc14f2fa0505ded0ab5354f.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/Server_centric_network_design-96746e887fb08b7561b28fb4c02704408bd2ff27c8c9c3f45962651d9ebe77cebd89fe4c3d93cfce6395b09bdc693a4507c077bb1cc14f2fa0505ded0ab5354f.png" />
+  </a>
+</figure>
+
+<p>With the server-centric network design, SDN software features are implemented on the servers and not on the network equipment. Tunneling protocols like VXLAN have terminating endpoints on the servers and the addresses for those endpoints are discovered via control plane protocols like BGP/EVPN. Also, encapsulation/decapsulation and crypto processing are done on the server.</p>
+
+<p>This design reduces reliance on the physical network to carry out SDN-related tasks. The only requirement for the underlay is that it must be Layer 3 and run BGP to enable server-centric SDN.</p>
+
+<p>Because of the limited involvement of the physcal network, this design scales very well. The downside, however, is that datapath processing is performed on the server. An example of such processing is VXLAN encapsulation/decapsulation. If no DPU or SmartNIC exists on the server, this logic runs on the CPU, which can negatively impact its performance. It is recommended to deploy servers running SmartNICs to help with data-plane performance.</p>
+
+<h3 id="pros-2">Pros</h3>
+
+<ul>
+  <li>very scalable</li>
+  <li>very efficient datapath routing (ingress/egress)</li>
+  <li>simple network underlay</li>
+  <li>no network orchestration in OpenStack</li>
+</ul>
+
+<h3 id="cons-2">Cons</h3>
+
+<ul>
+  <li>complex server</li>
+  <li>might require SmartNICs and DPUs to offload server CPU</li>
+  <li>must run routing protocols in the server</li>
+</ul>
+
+<h2 id="hybrid---sdn-on-both-servers-and-switches">Hybrid - SDN on both servers and switches</h2>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/Hybrid_network_design-d5e1db2780c792238b93fef53249f32e3b8b2627e27c3299c96cdce815645da53c86d2b3cf122c142339079e293190a0213e971b2b95b146a3e330af5fc8229f.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/Hybrid_network_design-d5e1db2780c792238b93fef53249f32e3b8b2627e27c3299c96cdce815645da53c86d2b3cf122c142339079e293190a0213e971b2b95b146a3e330af5fc8229f.png" />
+  </a>
+</figure>
+
+<p>A variation of the server-centric design, the hybrid network supports bare metal nodes, which are allocated to single users. Since the user has full access to the OS of the server, the SDN functionality cannot be deployed alongside applications, since SDN is managed by the service provider. We have two valid options for deploying SDN components in such network:</p>
+
+<ul>
+  <li>dedicated customer switch, attached to a single bare metal node</li>
+  <li>a DPU card attached to the bare metal node</li>
+</ul>
+
+<p>SmartNIC is not a good solution, because it is more tightly coupled to the host node and exposed to the end user. DPUs and switches can be  independently managed by the provider. This separation helps avoid collision between network infrastructure and user workloads.</p>
+
+<h1 id="solutions-for-better-sdn-scalability">Solutions for better SDN scalability</h1>
+
+<p>In our pursuit to enhance the scalability and performance of SDN networking within Sovereign Cloud Stack (SCS), we have explored several approaches. We focus on leveraging cutting-edge network designs and technologies such as SONiC to meet the growing scalability demands of modern network infrastructures.</p>
+
+<h2 id="network-design---vxlan-on-servers">Network design - VXLAN on Servers</h2>
+
+<p>For scenarios that utilize a “VXLAN on Servers” network design, we emphasize the use of SmartNICs and Data Processing Units (DPUs) to significantly improve the data plane performance characteristics of the network.</p>
+
+<h3 id="smartnics-and-dpus">SmartNICs and DPUs</h3>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/nvidia-bluefield-3-dpu-3c33-d-988a0e4115231e7a53f7f4407009c976ac1f5b7d9d280e07dcd5114193b847329aa94e5fb6639adb8278da09c41d17e6854cbb2e0479df2be17806f6bb2df0ef.jpg">
+    <img class="figure-img w-100" src="/website/assets/images/blog/nvidia-bluefield-3-dpu-3c33-d-988a0e4115231e7a53f7f4407009c976ac1f5b7d9d280e07dcd5114193b847329aa94e5fb6639adb8278da09c41d17e6854cbb2e0479df2be17806f6bb2df0ef.jpg" />
+  </a>
+</figure>
+
+<p>SmartNICs and DPUs play a crucial role in boosting packet processing speeds within the network. SmartNICs are particularly advantageous for virtual machines (VMs), offering tunneling encapsulation/decapsulation and encryption features essential for SDN protocols. By offloading routing and SDN protocol tasks to the server, SmartNICs enhance CPU performance and offer cost-saving benefits.</p>
+
+<p>On the other hand, DPUs are ideally suited for environments where bare metal servers are directly accessed by end-users. Representing the next evolutionary step beyond SmartNICs, DPUs offer the distinct advantage of being managed independently by the network operator, separate from user control. Within SCS, we provide the essential infrastructure and configuration capabilities, enabling users to effortlessly set up and manage SmartNIC and DPU features on their networks.</p>
+
+<h2 id="network-design---vxlan-on-switches">Network design - VXLAN on Switches</h2>
+
+<p>When SDN protocols are implemented directly on network switches, our approach involves exploring the use of SONiC alongside enhancements in tooling and automation to scale effectively.</p>
+
+<h3 id="sonic">SONiC</h3>
+
+<p>Our strategy includes bolstering support for SONiC, a powerful open-source network operating system that enables network scalability and flexibility.</p>
+
+<h3 id="tooling---automating-sonic-rollout-and-configuration">Tooling - Automating SONIC rollout and configuration</h3>
+
+<p>We are committed to enhancing tooling, configuration, and documentation to facilitate the adoption of this network architecture in SCS. This includes improvements in OSISM and Kolla Ansible, along with the integration of Netbox. Netbox serves as the source of truth, allowing for the generation of initial roll-out configurations for OSISM and Kolla Ansible. Additionally, we aim to integrate observability and monitoring for SONiC-based network equipment into SCS, leveraging SONiC’s existing observability features.</p>
+
+<h2 id="physical-network-1">Physical network</h2>
+
+<p>Our efforts extend to improving the dynamic configuration of the physical network from OpenStack. This involves exploring the existing ML2/network-generic-switch driver and expanding its capabilities to support VXLAN and Geneve. We are also examining other drivers/plugins and the potential for developing a new SCS plugin for Neutron. Enhancements related to SCS in SONiC can be packaged independently and installed atop any commercial or community version of SONiC.</p>
+
+<h2 id="sdn-stack-1">SDN stack</h2>
+
+<p>A notable challenge within the OpenStack network nodes is the bottleneck caused by the OVN (Open Virtual Network) control plane software. A potential solution is to migrate the OVN control plane to SONiC. It would allow the OVN control plane to operate in a distributed fashion, leveraging multiple existing SONiC devices within the network for enhanced performance. However, a potential drawback is the resource intensity of OVN, which could strain the limited resources on SONiC devices. Our approach includes carefully evaluating these considerations to ensure a balanced and efficient SDN stack implementation.</p>]]></content><author><name>[&quot;Angel Kafazov&quot;]</name></author><summary type="html"><![CDATA[Overview of SDN network scalability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS R6 release candidates - plan your testing!</title><link href="https://sovereigncloudstack.github.io/website/2024/02/01/road-ro-r6/" rel="alternate" type="text/html" title="SCS R6 release candidates - plan your testing!" /><published>2024-02-01T00:00:00+00:00</published><updated>2024-03-21T20:57:56+00:00</updated><id>https://sovereigncloudstack.github.io/website/2024/02/01/road-ro-r6</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/2024/02/01/road-ro-r6/"><![CDATA[<h2 id="roadmap-to-scs-release-6">Roadmap to SCS release 6</h2>
+
+<p>The <a href="https://scs.community/">Sovereign Cloud Stack</a> project is developed continuously.
+Continuous testing ensures that the latest code remains usable most of the time.
+To better serve our cloud provider partners that have limited appetite for change
+and are not very tolerant against occasional breakage, we publish releases.</p>
+
+<p>Every 6 months, there is a new major release – this is the time where major
+improvements get integrated and where we move to the latest proven versions of the
+many upstream projects we work on and contribute to. This is also where we occasionally
+have to introduce breaking changes – obviously something that we don’t do easily and
+that we carefully communicate by deprecation announcements well ahead of time.</p>
+
+<p>In between those major releases we publish several minor releases that bring incremental
+improvements as well as bug and security fixes.</p>
+
+<h2 id="sidenote-scs-standards-releases">Sidenote: SCS Standards releases</h2>
+
+<p>The technologies used in SCS allow for very flexible configuration. This is great!
+On the flip side, platforms composed of a very similar set of technologies can look
+very different to users and applications, resulting in extra effort to get accustomed
+to each platform and sometimes significant effort to automate workloads, especially
+if these want to achieve high availability. The SCS project aims to provide a high
+degree of portability between SCS-compatible platforms by defining standards.
+These are built on top of existing upstream standards and define further aspects
+of platform behavior that application developers and operators need.</p>
+
+<p>The SCS software release does obviously implement all the SCS Standards by default;
+however the standards can also be fulfilled by independent implementations. The release
+cycle of standards is not tightly coupled with the software release. This would
+only be needed if a new implementation is required to meet new standards. While
+this can happen, it is an exception.</p>
+
+<p>The SCS project is currently finalizing a new set of standard scopes: The version 4
+of our <a href="https://docs.scs.community/standards">SCS-compatible standards</a> on the IaaS
+layer and the first version of SCS standards
+on the Container (Kubernetes) layer. We encourage software developers, DevOps Teams
+and Providers alike to look at the
+<a href="https://github.com/SovereignCloudStack/standards/">ongoing work</a>, provide
+feedback and contribute to the
+<a href="https://docs.scs.community/standards/scs-0001-v1-sovereign-cloud-standards">standardization process</a>.</p>
+
+<p>With this out of the way, let’s turn back to our upcoming release.</p>
+
+<h2 id="release-candidates">Release Candidates</h2>
+
+<p>While our CI pipelines do nightly verification of the built software, we
+encourage our cloud service provider partners to do additional testing, especially
+ahead of a release. There are always issues that are specific to the setups and
+configurations of our partners that can not always be found in our nightly pipelines.
+In the end, upgrading test and staging platforms ahead of a release also provides
+our partners with the experience and confidence in the release and the upgrade process,
+so we can not only produce high quality releases, but also have our partners upgrade their
+production platforms quickly.</p>
+
+<p>After discussion with our partners, for R6, we have determined to create a more
+formal release candidate cadence and a more formalized test results collection
+than we used to, reflecting the increasing size of our provider ecosystem as well
+as the increasing size of our larger partners’ environments.</p>
+
+<p>Extending our <a href="https://scs.community/tech/2023/11/22/scs-release6-upcoming/">previous announcement</a>
+of the R6 release, we have come up with the following schedule for release candidates:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R6 RC</th>
+      <th>ETA</th>
+      <th>notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RC0</td>
+      <td>2024-02-07</td>
+      <td>aka 7.0.0a</td>
+    </tr>
+    <tr>
+      <td>RC1</td>
+      <td>2024-02-21</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>RC2</td>
+      <td>2024-03-06</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>RC3</td>
+      <td>2024-03-13</td>
+      <td>may not be needed and be skipped</td>
+    </tr>
+    <tr>
+      <td>RCx</td>
+      <td>2024-03-1y</td>
+      <td>if needed in order to retest</td>
+    </tr>
+    <tr>
+      <td>final</td>
+      <td>2024-03-20</td>
+      <td>aka 7.0.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note that with the first release candidate (RC0), the large features have
+all been completed, been integrated and must be working. We still
+work on improving documentation, increasing test coverage and of course
+on fixing bugs.
+We may grant a small number of exceptions to this rule for so-called late
+features to be complete after RC0 (typically with RC1) and we will
+make these transparent to our testers to avoid wasting effort.</p>
+
+<h2 id="late-features-high-level-view">Late features (high level view)</h2>
+
+<p>The focus for RC0 is to test the upgrade on the IaaS layer, where OSISM has
+integrated the new OpenStack version 2023.2 (aka Bobcat). We have some
+work pending in the IAM area and on the container layer where we have the
+exciting new technology with Cluster Stacks. Both can be tested already,
+but will receive a few more changes until RC1. One of the areas of R6 where
+we may not achieve 100% completion is to cover all cases where Kubernetes
+Clusters are migrated from the old cluster-API based K8s-as-a-Service
+solution (KaaS v1) to the new cluster stacks (also built on top of cluster-API).
+Expect improvements here until later release candidates and
+read the release notes to understand which scenarios are covered and which
+ones may not be covered by full automation yet when we finalize R6.</p>
+
+<p>The high level goals for R6 are documented in the
+<a href="https://scs.community/2023/12/29/scs-r6-enables/">R6 outcomes</a> blog article.
+A more fine-grained list of features is collected in the R6 release notes that
+will get more and more complete over the next weeks.</p>
+
+<h2 id="matrix">Matrix</h2>
+
+<p>The development teams are very focused to respond quickly to issues reported
+against our release candidates. We’d like to ask testers to open issues in
+github against the relevant repositories as usual. To facilitate quick and
+more interactive communication, we also invite testers and developers to
+join the <a href="https://matrix.to/#/#scs-r6-releng:matrix.org">SCS | Release Engineering and Testing R6 Matrix room</a> to stay atop of
+announcements, reports and responses that come in.</p>]]></content><author><name>[&quot;Kurt Garloff&quot;]</name></author><summary type="html"><![CDATA[Roadmap to SCS release 6]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/blog/roadmap-r6.png" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/blog/roadmap-r6.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Opensource - Testbed verwendet jetzt OpenTofu</title><link href="https://sovereigncloudstack.github.io/website/2024/01/12/testbed-with-opentofu/" rel="alternate" type="text/html" title="Opensource - Testbed verwendet jetzt OpenTofu" /><published>2024-01-12T00:00:00+00:00</published><updated>2024-03-21T20:57:56+00:00</updated><id>https://sovereigncloudstack.github.io/website/2024/01/12/testbed-with-opentofu</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/2024/01/12/testbed-with-opentofu/"><![CDATA[<p><a href="https://osism.github.io/">OSISM</a> ist als Referenzimplementierung für die Infrastructure-as-a-Service-Schicht im Projekt Sovereign Cloud Stack (SCS) bekannt.
+Das <a href="https://github.com/osism/testbed">OSISM Testbed</a> wird daher im SCS-Projekt verwendet, um die Infrastructure-as-a-Service-Schicht zu demonstrieren, zu testen und weiterzuentwickeln.</p>
+
+<p>Die Entwicklung von OSISM und SCS bringt aufgrund ihres verteilten Charakters der Systemachitektur eine Vielzahl von Herausforderungen mit sich,
+die sich auf verschiedene Ebenen erstrecken können. Neben dem rein funktionalen Testen von Infrastrukturkomponenten, wie es z.B. mit
+<a href="https://docs.scs.community/docs/iaas/guides/deploy-guide/examples/cloud-in-a-box">Cloud in a Box</a> möglich ist (jede Komponente existiert genau einmal), ist es daher auch sehr sinnvoll,
+die verschiedenen Komponenten in einem Szenario zu testen, das einem produktiven Setup ähnlicher ist, indem diese in einem Cluster-Modus betrieben werden.
+Auf diese Weise können auch einige <a href="https://en.wikipedia.org/wiki/Non-functional_requirement">nicht-funktionale</a> Konfigurations- und
+Implementierungsfragen im Testbed simuliert, entwickelt und verifiziert werden.</p>
+
+<p>Als Basis bzw. zur Bereitstellung des Testbeds werden virtuelle Maschinen, Netzwerk und Storage auf Basis von OpenStack verwendet.
+Das Testbed kann damit grundsätzlich in einer beliebigen Openstack Cloud Umgebung ein SCS System System zu Test- und Entwickungszwecken betreiben.
+(Da SCS prinzipbedingt auch selbst Systeme virtualisiert, muss die OpenStack Umgebung die Fähigkeiten zur Nested Virtualization bereitstellen.)</p>
+
+<p>Das SCS Testbed nutzte bisher Terraform, um die Basis für die benötigten Infrastrukturkomponenten automatisiert aufzubauen bzw. zu verwalten.
+Terraform wurde bisher unter der Mozilla Public License v2.0 veröffentlicht und passte daher von den Nutzungsbedingungen bzw.
+hinsichtlich seiner Offenheit gut zum OSISM- und SCS-Projekt.</p>
+
+<p>Mit der <a href="https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license">Ankündigung</a> vom 10. August 2023 hat Hashicorp bekannt gegeben, dass sich dies in Zukunft ändern wird - zukünftige
+Versionen werden zumindest in relevanten Teilen unter der Business Source License v1.1 zur Verfügung gestellt.
+Da wir ein sehr großes Interesse daran haben, dass unser Projekt auf ernsthaften <a href="https://github.com/SovereignCloudStack/standards/blob/main/Drafts/OSS-Health.md">Open Source Komponenten aufbaut</a>,
+war absehbar, dass wir hier eine sinnvolle Alternative finden müssen die unseren Anforderungen entspricht.</p>
+
+<p>Glücklicherweise hat sich schon am 2. September 2023 die Gründung eines Terraform Forks ergeben, der unter dem Dach
+der Linux Foundation unter den Lizenzbedingungen der Mozilla Public License 2 weiterentwickelt wird.
+Mit dem ersten offiziellen und stabilen Release von [OpenTofu](https://opentofu.org/] stellt OSISM und SCS nun seine Infrastructure-as-Code
+Realisierung im Testbed auf OpenTofu in der Version 1.6.0 um.</p>
+
+<p>Die Migration gestaltete sich sehr einfach: OpenTofu kann aus unserer Sicht guten Gewissens und wenig überschend als DropIn Replacement für Terraform bezeichnet werden.</p>
+
+<p>Mit dem heute integrierten Code-Stand haben wir noch einige Detailverbesserungen bei der Installation der
+Abhängigkeiten bzw. der <a href="https://docs.osism.tech/testbed/">Dokumentation</a> des Testbeds vorgenommen.
+So ist es jetzt nur noch notwendig <code class="language-plaintext highlighter-rouge">make</code>, <code class="language-plaintext highlighter-rouge">wireguard</code> und <code class="language-plaintext highlighter-rouge">python-virtualenv</code> auf dem Rechner des Testbed-Benutzers zu installieren.
+Alle anderen Abhängigkeiten wie OpenTofu aber auch Ansible werden nun passend zum Stand des Git-Branch installiert und aktualisiert.
+Auf diese Weise erreichen wir, dass die Testbed-Nutzer in Zukunft weniger Aufwand bei der Verwaltung der Tools haben und
+dass für das Testbed sichergestellt ist, dass es mit den richtigen Tools in den richtigen Versionen genutzt werden.</p>
+
+<p>Ich möchte and dieser Stelle ein weiteres Mal meine Begeisterung für OpenSource im Zusammenhang mit Terraform zum Ausdruck bringen.
+Die bisherige Offenheit von Terraform und das Engagement der Community haben hier dafür gesorgt, dass wir mit geringem
+Aufwand auf ein alternatives und zukunftssicheres Produkt migrieren können.</p>]]></content><author><name>[&quot;Marc Schöchlin&quot;]</name></author><summary type="html"><![CDATA[OSISM ist als Referenzimplementierung für die Infrastructure-as-a-Service-Schicht im Projekt Sovereign Cloud Stack (SCS) bekannt. Das OSISM Testbed wird daher im SCS-Projekt verwendet, um die Infrastructure-as-a-Service-Schicht zu demonstrieren, zu testen und weiterzuentwickeln.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS enables - SCS is efficient to operate: Outcomes for R6</title><link href="https://sovereigncloudstack.github.io/website/de/2023/12/27/scs-r6-enables/" rel="alternate" type="text/html" title="SCS enables - SCS is efficient to operate: Outcomes for R6" /><published>2023-12-27T00:00:00+00:00</published><updated>2024-03-21T20:57:56+00:00</updated><id>https://sovereigncloudstack.github.io/website/de/2023/12/27/scs-r6-enables</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/de/2023/12/27/scs-r6-enables/"><![CDATA[<h2 id="our-r6-outcomes">Our R6 outcomes</h2>
+
+<p>To better align the development efforts within our community we started working with <em>outcomes</em>.
+We began with this in the R4 cycle and even though we never published the outcomes for R5 - we <a href="https://github.com/SovereignCloudStack/website/pull/662">did have them for R5</a> as well ;)</p>
+
+<p>These outcomes intend to outline what our development work aims to enable our users (Operators, Integrators and End-Users) to gain more value from SCS. This outlines our direction much better than talking about the next features that are planned and worked on. Furthermore, the outcomes assist us in our development work to ensure that every single epic and story we work on actually pays into the greater idea.</p>
+
+<p>SCS delivers building blocks for digital sovereign cloud infrastructure.  We change the way infrastructure is operated and by doing this we want to enable operators to become more efficient and be able to scale better.</p>
+
+<h4 id="working-with-outcomes-on-github">Working with outcomes on GitHub</h4>
+
+<p>The outcomes allow us to look from various angles on our development efforts. Each outcome is reflected through a label within our GitHub repositories so that issues and pull requests can be labeled accordingly. Furthermore in the projects view we’ve added various filtered views to be able to quickly see which issues and working items play into which outcomes.</p>
+
+<p>An <a href="https://github.com/orgs/SovereignCloudStack/projects/6/views/28">overall board</a> summarizes all of them.</p>
+
+<h3 id="scs-is-standardized"><a href="https://github.com/orgs/SovereignCloudStack/projects/6/views/23">SCS is standardized</a></h3>
+
+<p>While the S in SCS (at least the first ;)) stands for <em>Sovereign</em> it could also stand for <em>Standardized</em>.
+SCS standardizes. Creating Standards within the community, reaching out to surrounding communities, and working with upstream as well as other players in our ecosystem to make sure we don’t “just reinvent the wheel” or stew in their own juice is a fair share of our work within the project.
+The recent <a href="https://scs.community/2023/11/27/joint-standardization/">joint-efforts</a> with <a href="https://alasca.cloud">ALASCA</a> emphasize this even more.</p>
+
+<p>Alongside the standardization work that has happened in the container and IaaS teams the <a href="https://scs.community/tenders/lot10">tender 10</a>, an important tender package for the standardization work, was kicked off at the beginning of the R5 cycle. Through the work in the SIG Standardization, a lot of the topics have gained pace in the last months, yet this is one of the major topics for the R6 cycle.</p>
+
+<p>Two issues summarize the current efforts quite well:</p>
+
+<ul>
+  <li><a href="https://github.com/SovereignCloudStack/standards/issues/285">Missing IaaS Standards</a></li>
+  <li><a href="https://github.com/sovereigncloudstack/issues/issues/181">SCS K8s cluster standardization</a></li>
+</ul>
+
+<h3 id="scs-is-understandable"><a href="https://github.com/orgs/SovereignCloudStack/projects/6/views/22">SCS is understandable</a></h3>
+
+<p>In the last year the <a href="https://docs.scs.community">documentation page</a> came to life and is already very good in being the guide for the first steps into the SCS world. Due to the efforts of the SIG Documentation, it is not just a pile of documents but has a solid concept. However, for SCS to be understandable more than just awesome docs are needed. Collecting feedback from SCS integrators just as much as people and organizations that have their first touchpoint with SCS plays an important role in ensuring SCS is continuously becoming more understandable. Furthermore, deployment guides and architectural blueprints will be added.</p>
+
+<p>The planned SCS lab environment will be built up following these documentation guidelines (this refers to the IaaS reference implementation). This will be a comprehensive examination of the validity and usability of this documentation.</p>
+
+<h3 id="scs-enables"><a href="https://github.com/orgs/SovereignCloudStack/projects/6/views/20">SCS enables</a></h3>
+
+<p>For the R4 development cycle one of the outcomes we proclaimed was <em>SCS enables Operators with an excellent toolbox</em>. An excellent toolbox is part of what is needed for operating cloud infrastructure as a commodity. Looking at what we’ve done in the past year this outcome however is much too narrow.
+<em>SCS enables</em> - on a variety of levels and not just operators, but also integrators, developers, and most importantly consumers of cloud infrastructure built upon SCS who want to run on top of fully digital sovereign infrastructure.</p>
+
+<p>With <a href="https://github.com/sovereignCloudStack/cluster-stacks">Cluster Stacks</a>, the V2 KaaS reference implementation, we provide an opinionated optimized configuration of Kubernetes clusters. Through better packaging, integrated testing, and bundled configuration SCS-based Kubernetes clusters can be individualized much easier.
+Throughout the R6 development cycle Cluster Stacks are taken from a technical preview to be <a href="https://github.com/SovereignCloudStack/issues/milestone/8">functional and available on top of the IaaS reference implementation</a> as well. An overview to Cluster Stacks can be found <a href="https://scs.community/2023/12/23/clusterstacks/">in this blog post</a>.
+The Cluster Stacks can already be tried out in a <a href="https://github.com/SovereignCloudStack/cluster-stacks-demo">demo</a>. Although this is based on the non production ready provider Docker, the usage is the same for every provider.</p>
+
+<p>Early in the R6 development cycle, the <a href="https://scs.community/tenders/lot4">software defined networking tender VP04</a> was kicked of. As part of this work, we want to make sure that
+networking not only scales superior in the IaaS reference implementation but also enables inter-cloud connectivity between
+workloads on all layers.</p>
+
+<p>Through GitHub, the <a href="https://github.com/SovereignCloudStack/issues/issues?q=is%3Aopen+is%3Aissue+label%3ASCS-VP04">list of network-related epics and user stories</a> that are part of VP04 can be viewed.</p>
+
+<p>With our work on the <a href="https://github.com/SovereignCloudStack/issues/issues/184">domain manager role</a> we’re addressing a topic that has been a hurdle for public clouds and self-management by customers. Lots of public clouds, built on top of OpenStack, have developed their own ways to work around the missing possibility of domain management.</p>
+
+<h3 id="scs-is-transparent"><a href="https://github.com/orgs/SovereignCloudStack/projects/6/views/30">SCS is transparent</a></h3>
+
+<p>Transparency is one of the core values embedded in our project - yet we want to make sure our development efforts throughout the R6 cycle are actively working towards being transparent. This ranges from our development culture (which needs to be transparent not only to be trustworthy but also to lower the barrier to join the community) to the open operations movement, the future of the SCS project, and all the way to technical items such as <a href="https://en.wikipedia.org/wiki/Software_supply_chain">SBOMs</a> for our complete stack.
+Transparent projects can be audited easily and trust can be built up more easily.</p>
+
+<p>Another important factor that plays into transparency is being transparent about security aspects, and incidents and proactively pursuing providing a secure reference implementation.</p>
+
+<p>For our status page initiative, an initial MVP was done in the R5 development cycle. In the R6 development cycle we <a href="https://github.com/SovereignCloudStack/issues/issues?q=is%3Aopen+is%3Aissue+label%3Astatus-page">finalize</a> what we’ve evaluated with the MVP and are going to ship a modern status page application. The release of the status page application (which itself is divided into <a href="https://github.com/SovereignCloudStack/status-page-web">frontend</a>, <a href="https://github.com/sovereignCloudStack/status-page-api">backend</a> as well as the <a href="https://github.com/SovereignCloudStack/status-page-openapi">OpenAPI spec</a> and a <a href="https://github.com/SovereignCloudStack/status-page-deployment">repository holding the deployment logic</a>) is de-coupled from the SCS Releases.</p>
+
+<h3 id="scs-is-continuously-built-and-tested"><a href="https://github.com/orgs/SovereignCloudStack/projects/6/views/21">SCS is continuously built and tested</a></h3>
+
+<p>With <a href="https://zuul.scs.community">our Zuul</a> in place (thanks to the efforts throughout the R5 development cycle) it is now time to shift a lot of our test runs from GitHub actions to the Zuul instance.
+As part of the <a href="https://scs.community/tenders/lot1">tender VP01</a> the test coverage of the foundations the IaaS reference implementation builds upon is continuously being extended.</p>
+
+<h3 id="scs-is-opinionated"><a href="https://github.com/orgs/SovereignCloudStack/projects/6/views/29">SCS is opinionated</a></h3>
+
+<p>While the SCS projects provide a modular stack and strongly work towards interoperability, we want to be opinionated in our reference implementation. Being opinionated on that level leads to focus and avoids having too many loose ends. Good examples of this is how we address verticals such as our IAM or observability stacks.</p>
+
+<h3 id="scs-charters-new-territory">SCS charters new territory</h3>
+
+<p>While a lot of our activities involve working upstream with the various communities doing our part of ensuring the components that SCS is built upon are staying healthy, we do want to push the boundaries of what is possible further and see where we can find ways to provide better cloud infrastructure. This does mean to sail into unchartered waters - sometimes having to turn around, hit rock bottom or actually find a new cool passage.
+Endeavors like the evaluation of <a href="https://github.com/SovereignCloudStack/issues/issues?q=is%3Aopen+is%3Aissue+label%3ASCS-VP04+sonic">building community SONiC</a> images, revisiting the topic of cloud observability and testing and engaging into the discussion about the discoverability of flavors and functionality of OpenStack clouds.</p>]]></content><author><name>[&quot;Felix Kronlage-Dammers&quot;]</name></author><summary type="html"><![CDATA[Our R6 outcomes]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Cluster Stacks</title><link href="https://sovereigncloudstack.github.io/website/2023/12/23/clusterstacks/" rel="alternate" type="text/html" title="Cluster Stacks" /><published>2023-12-23T00:00:00+00:00</published><updated>2024-03-21T20:57:56+00:00</updated><id>https://sovereigncloudstack.github.io/website/2023/12/23/clusterstacks</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/2023/12/23/clusterstacks/"><![CDATA[<h2 id="cluster-stacks">Cluster Stacks</h2>
+
+<p>Der Sovereign Cloud Stack hat mit dem Release 5 eine Technical Preview der “Cluster Stacks” veröffentlicht - einem Framework, welches den Produktivbetrieb von Kubernetes-Clustern aus Nutzerperspektive vereinfacht sowie Transparenz bezüglich der Konfiguration und Zusammenstellung der Kernkomponenten der Cluster bietet.
+Damit schafft SCS eine dezentrale und anwenderorientierte Alternative zu den häufig intransparenten und untereinander inkompatiblen kommerziellen “Managed Kubernetes”-Angeboten.</p>
+
+<h2 id="kubernetes---schwieriger-als-gedacht">Kubernetes - schwieriger als gedacht</h2>
+
+<p>Einen Kubernetes-Cluster zu betreiben ist grundsätzlich nicht schwierig. Einfache Kubernetes-Cluster erfüllen allerdings in der Regel nicht die Anforderungen für einen Produktivbetrieb in Bezug auf Stabilität, Sicherheit und Verlustfreiheit. Ein Kubernetes-Cluster in einer Produktionsumgebung muss aufwändig konfiguriert werden, etwa in Bezug auf wichtige Kern-Applikationen und Node-Images, um zum Beispiel besser abgesichert zu sein. Fehlendes Wissen führt in der Praxis häufig dazu, dass Unternehmen nicht abgesicherte Cluster für echte Workloads verwenden, was ein großes Sicherheitsrisiko darstellt.</p>
+
+<p>Ein anderes Problem ist die häufig fehlende Test-Infrastruktur, ohne die Updates von Produktions-Clustern fehleranfällig sind. In der Folge werden Cluster oft nur einmal im Jahr gezwungenermaßen geupdatet, da die genutzte Kubernetes-Version nicht mehr unterstützt wird.</p>
+
+<h2 id="proprietäre-und-intransparente-lösungen">Proprietäre und intransparente Lösungen</h2>
+
+<p>Viele Anwender greifen daher entweder auf einen “Managed Kubernetes”-Service eines Infrastruktur-Anbieters, oder, wenn sie die Kubernetes-Umgebung selbst betreiben, auf ein kommerzielles und damit meistens einhergehend proprietäres Produkt (z.B. OpenShift) zurück.
+Diese Lösungen sind in der Regel so spezifisch in Konfiguration und der Auswahl der Komponenten, dass ein Wechsel extrem aufwändig und ressourcenintensiv ist. Dazu ist eine gehostete “Managed”-Lösung häufig intransparent in Bezug auf Aufbau und Funktion - was eine zusätzliche Abhängigkeit erzeugt. Es ist selten verständlich, wie Cluster aufgebaut sind und welche Schritte ein Kunde noch selbstständig durchführen muss, um ein Cluster sicher und produktionsreif zu betreiben. Da diese Schritte bei jedem Anbieter anders aussehen, sind Migrationen oder das Nutzen mehrerer Anbieter entsprechend schwierig.
+Je nach Angebot können mehr oder weniger Zuständigkeiten beim Nutzer liegen. Dies kann dazu führen, dass bei dem einen Angebot bestimmte Sicherheitseinstellungen oder wichtige Komponenten schon eingebaut sind, beim anderen aber nicht. Ein Nutzer muss sich daher bei jedem Wechsel eines Anbieters intensiv mit den Details des Produkts auseinandersetzen, um dann die richtigen Konsequenzen ziehen zu können und die noch fehlenden Einstellungen selbst umzusetzen und fehlende Komponenten zu installieren.</p>
+
+<h2 id="cluster-stacks---die-lösung-für-produktionsreifes-und-einfaches-kubernetes">Cluster Stacks - die Lösung für produktionsreifes und einfaches Kubernetes</h2>
+
+<p>Hier setzen die Cluster Stacks von SCS an und schaffen eine Lösung, in der Aufbau eines Clusters auch bei einer “Managed”-Lösung transparent bzw. vollständig open-source ist und sich Nutzer in einer Community zusammenschließen können, um die gemanagte Lösung gemeinsam mit den Anbietern zu verbessern. Wie die erste Version der SCS KaaS Referenzimplementierung basiert Sie auf dem open-source Kubernetes-Projekt “Cluster-API”, welches es ermöglicht, schnell und einfach sichere Cluster zu erstellen und zu betreiben - auch auf verschiedenen Providern.</p>
+
+<p>Die Cluster Stacks sind ein Konzept, welches alle wichtigen Komponenten eines Kubernetes-Clusters zusammen denkt. Die drei Hauptkomponenten sind dabei</p>
+<ol>
+  <li>Konfiguration von Kubernetes (z.B. Kubeadm),</li>
+  <li>grundlegende Applikationen,</li>
+  <li>Node Images.
+Diese drei Elemente werden in Cluster Stacks zusammengefasst und als Ganzes getestet. Nur wenn alles zusammen funktioniert und ein Upgrade von der vorherigen Version möglich ist, wird ein Cluster Stack released und seine Funktion somit gesichert. Die häufigen Probleme bei Updates von Kubernetes-Clustern gibt, werden so vermieden.
+Außerdem vereinfacht der <a href="https://github.com/SovereignCloudStack//cluster-stack-operator">SCS Cluster Stack Operator</a> das Benutzen der <a href="https://github.com/SovereignCloudStack//cluster-stacks">Cluster Stacks</a>. Zusammen mit der Cluster-API können so über simple API-Aufrufe neue, produktionsreife Cluster erstellt oder bestehende upgedatet werden.</li>
+</ol>
+
+<h2 id="cluster-stacks-als-framework">Cluster Stacks als Framework</h2>
+
+<p>Die Cluster Stacks sind ein Konzept, welches für alle Provider offen steht und auf Basis der Cluster-API die Möglichkeit schafft, Cluster zu erstellen und zu verwalten. Dabei kann auf bestehende Cluster Stacks zurückgegriffen werden oder es können eigene erstellt werden, um z.B. weitere Provider zu unterstützen oder bestimmte Anforderungen hinzuzufügen.
+Im Rahmen des SCS-Projekts werden Cluster Stacks für ausgewählte Provider bereitgestellt und garantieren so einen SCS-standardisierten Einsatz von Kubernetes. Abgesehen davon, dass Cluster-API als Technologie vorausgesetzt wird, haben die Cluster Stacks keine Abhängigkeiten.</p>
+
+<h2 id="ausblick">Ausblick</h2>
+
+<p>Der Release R5 enthält einen Technical Preview der Cluster Stacks, des dazugehörigen Operators, sowie eine <a href="https://github.com/SovereignCloudStack/cluster-stacks-demo">Demo</a>, mithilfe derer Nutzer schon jetzt Cluster lokal mithilfe von Docker starten können.
+In den kommenden Wochen wird eine OpenStack-Schnittstelle für OpenStack veröffentlicht, sodass die Cluster Stacks auf “echter” Cloud-Infrastruktur genutzt werden können.
+Für den Release R6 ist ein Migrationspfad von der V1 der SCS KaaS Referenimplementierung zu Cluster Stacks vorgesehen.</p>]]></content><author><name>[&quot;Janis Kemper&quot;, &quot;Sven Batista Steinbach&quot;, &quot;Jan Schoone&quot;, &quot;Alexander Diab&quot;]</name></author><summary type="html"><![CDATA[Cluster Stacks]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS observability and monitoring - An opinionated proposal</title><link href="https://sovereigncloudstack.github.io/website/tech/2023/12/06/mvp-monitoring/" rel="alternate" type="text/html" title="SCS observability and monitoring - An opinionated proposal" /><published>2023-12-06T00:00:00+00:00</published><updated>2024-03-21T20:57:56+00:00</updated><id>https://sovereigncloudstack.github.io/website/tech/2023/12/06/mvp-monitoring</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/tech/2023/12/06/mvp-monitoring/"><![CDATA[<p>We’re excited to announce that our Minimum Viable Product (MVP) for extending the monitoring from the IaaS layer to a solution that covers observability and monitoring full-stack has achieved a presentable and viable state. MVP aims to provide a global
+monitoring view of various SCS layers and components, including KaaS, IaaS, and actively
+used services within the SCS community such as Jitsi, HedgeDoc, Nextcloud, Harbor container
+registry, and more. The global view is made possible by the Observer monitoring solution
+we’ve designed. The Observer enables the collection, storage, and visualization of metrics
+from the SCS infrastructure.</p>
+
+<p>While the Observer monitoring solution is currently part of the MVP, our vision is to evolve
+it into an SCS product in future versions, once it reaches the required stability. Monitoring
+of the KaaS layer, monitoring of the IaaS layer, and monitoring of infrastructure services
+are illustrative examples of how this Observer monitoring solution can be utilized. Furthermore,
+the stack employed for observing the KaaS layer and infrastructure services is also designed to
+evolve into an SCS product in future stable versions.</p>
+
+<h2 id="the-architecture">The architecture</h2>
+
+<p>The diagram below provides a high-level overview of the architecture implemented in our MVP.
+To explore the code and detailed documentation, head over to the <a href="https://github.com/sovereignCloudStack/k8s-observability">k8s-observability</a> repository.
+If you’re keen on delving deeper, check out the repository’s README and try setting up your
+own MVP deployment locally using KinD.</p>
+
+<p>Furthermore, we’ve deployed the MVP publicly, offering handy and well-organized dashboards
+that showcase metrics gathered from the SCS infrastructure. Be sure to check out the upcoming
+blog section for the Observer (Grafana UI) links. It’s a must-see!</p>
+
+<p>To enhance your experience, we’ve made the monitoring of the KaaS layer more interactive.
+You can create your own Kubernetes cluster and observe how it gets registered and
+visualized in the Observer. <a href="#monitoring-of-the-kaas-layer">It’s worth giving it a try!</a></p>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/mvp_monitoring_architecture-943664a3a18ae79aa5d3aed3edc0f63cc198de734497f4246c51b3bdf81978e7ced339bc2b40ac13310ad41004264333ab43d80e87eb9b693b96f80ee43da541.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/mvp_monitoring_architecture-943664a3a18ae79aa5d3aed3edc0f63cc198de734497f4246c51b3bdf81978e7ced339bc2b40ac13310ad41004264333ab43d80e87eb9b693b96f80ee43da541.png" />
+  </a>
+</figure>
+
+<p>The SCS Monitoring MVP is developed on the foundation of the <a href="https://github.com/dNationCloud/kubernetes-monitoring">dNation monitoring solution</a>.</p>
+
+<p><em>Disclaimer: Please be aware that the MVP demo URLs referenced in the sections below are
+expected to be unavailable within the next couple of months. We appreciate your understanding.</em></p>
+
+<h2 id="monitoring-of-the-kaas-layer">Monitoring of the KaaS Layer</h2>
+
+<p>As mentioned earlier, we aim to showcase how the Observer monitors the CSP KaaS offering.
+To make this demonstration interactive, we’ve developed a KaaS mock service, allowing
+you to easily create a Kubernetes cluster.</p>
+
+<p>The KaaS mock service is accessible through <a href="http://213.131.230.7:8080/kaas">Swagger UI</a>.</p>
+
+<p>Don’t hesitate to <a href="http://213.131.230.7:8080/kaas#/Clusters/create_cluster_api_clusters__post">create</a> your own Kubernetes cluster
+within approximately three minutes. You’ll find it displayed on the dedicated <a href="http://213.131.230.73:30000/d/kaas-monitoring/kaas-monitoring">Observer high-level dashboard</a>.
+For a deeper exploration of metrics, simply drill down and click on the cluster you created.
+Feel free to experiment, such as triggering monitoring <a href="http://213.131.230.73:30001/#/alerts">alerts</a> by initiating actions like destroying specific components 😎.</p>
+
+<p>Please note that there is a restriction of a maximum of 10 clusters, as the KaaS mock
+service operates on a single VM. Additionally, it’s important to keep in mind that this
+monitoring solution isn’t real-time, meaning it doesn’t react immediately to your actions.
+However, you can typically expect a response within a few minutes.</p>
+
+<h2 id="monitoring-of-the-iaas-layer">Monitoring of the IaaS Layer</h2>
+
+<p>To highlight the Observer’s capability in monitoring the IaaS layer, we utilized the <a href="https://docs.scs.community/docs/iaas/guides/deploy-guide/examples/testbed">OSISM testbed</a>
+deployment as a demonstration within this MVP. The OSISM testbed has been patched,
+enabling the Observer to scrape metrics via the Thanos sidecar.
+Explore the dedicated <a href="http://213.131.230.73:30000/d/testbed/iaas-monitoring">Observer high-level dashboard</a> for a list of alerts
+present in our OSISM testbed and access links to dashboards we copied (and made functional) from the testbed Grafana.</p>
+
+<h2 id="monitoring-of-infrastructure-services">Monitoring of Infrastructure Services</h2>
+
+<p>To demonstrate the Observer’s capability in monitoring CSP infrastructure services deployed
+on top of the IaaS layer, we chose to monitor key SCS infrastructure elements such as the
+SCS Observer cluster itself, the SCS Harbor Kubernetes cluster, and various endpoints
+of SCS services regularly used by the SCS community, including the SCS webpage, SCS docs page, SCS Jitsi instance,
+SCS HedgeDoc, and more.
+Explore the <a href="http://213.131.230.73:30000/d/monitoring/infrastructure-services-monitoring">high-level infrastructure dashboard</a>, drill down,
+and click on the service you want to investigate deeper.</p>
+
+<p>For example, dive into detailed Harbor metrics by following this path: <a href="http://213.131.230.73:30000/d/monitoring/infrastructure-services-monitoring">infrastructure dashboard</a> -&gt; <a href="http://213.131.230.73:30000/d/e1b111ecbb5185e637d5a7eef26e850f/kubernetes-monitoring-harbor?refresh=10s&amp;var-datasource=PC96415006F908B67&amp;var-cluster=harbor-cluster">harbor cluster</a> -&gt; scroll to the bottom and click on the <a href="http://213.131.230.73:30000/d/harbor/harbor?var-job=harbor&amp;refresh=10s&amp;var-datasource=PC96415006F908B67&amp;var-cluster=harbor-cluster">harbor app dashboard</a>.</p>
+
+<p>🔍 Happy monitoring!</p>]]></content><author><name>[&quot;Matej Feder&quot;]</name></author><category term="tech" /><summary type="html"><![CDATA[We’re excited to announce that our Minimum Viable Product (MVP) for extending the monitoring from the IaaS layer to a solution that covers observability and monitoring full-stack has achieved a presentable and viable state. MVP aims to provide a global monitoring view of various SCS layers and components, including KaaS, IaaS, and actively used services within the SCS community such as Jitsi, HedgeDoc, Nextcloud, Harbor container registry, and more. The global view is made possible by the Observer monitoring solution we’ve designed. The Observer enables the collection, storage, and visualization of metrics from the SCS infrastructure.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Zusammenarbeit bei Cloud Standards</title><link href="https://sovereigncloudstack.github.io/website/2023/11/27/joint-standardization/" rel="alternate" type="text/html" title="Zusammenarbeit bei Cloud Standards" /><published>2023-11-27T00:00:00+00:00</published><updated>2024-03-21T20:57:56+00:00</updated><id>https://sovereigncloudstack.github.io/website/de/2023/11/27/joint-standardization</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/2023/11/27/joint-standardization/"><![CDATA[<h2 id="zusammenarbeit-bei-cloud-standards">Zusammenarbeit bei Cloud Standards</h2>
+<h3 id="sovereign-cloud-stack-und-alasca-ev--gemeinsam-für-gute-standards">Sovereign Cloud Stack und ALASCA e.V. – gemeinsam für gute Standards</h3>
+
+<p>Das Sovereign Cloud Stack (SCS) Projekt entwickelt gemeinsam mit einer
+Community aus Cloudanbietern, Nutzern und Partnern offene Standards zur
+Bereitstellung von Cloud- und Containerinfrastruktur. Diese wird als
+vollständig offen entwickelte produktionsreife Softwareimplementierung
+angeboten und mit einer breiten Wissensbasis für den zuverlässigen Betrieb
+ergänzt. Durch den vereinfachten Betrieb hochmoderner Cloud-Infrastruktur soll
+ein breites interoperables Ökosystem aus Angeboten entstehen, welches es
+Nutzern vereinfacht, mehr digitale Souveränität – also mehr Selbstbestimmheit
+im Digitalen zu erlangen. SCS ist ein Projekt der OSB Alliance - Bundesverband
+für digitale Souveränität e.V. und wird durch das BMWK (Bundesministerium für
+Wirtschaft und Klimaschutz) gefördert. SCS trägt auch zur Realisierung von
+Gaia-X und der Deutschen Verwaltungscloud (DVC) bei und setzt die dort
+entwickelten Rahmenbedingungen als modulare Open-Source-Lösung in der
+Referenzimplementierung technisch um.</p>
+
+<p>Nachdem SCS und der ALASCA e.V. bereits Anfang 2023 in einer gemeinsamen
+Absichtserklärung ihre künftig verstärkte
+<a href="https://scs.community/de/2023/01/16/collaboration-of-alasca-and-scs/">Zusammenarbeit</a>
+verkündet hatten, wurde im Bereich der SCS-Standardisierung in den vergangenen
+Monaten intensiv zusammengearbeitet.</p>
+
+<p>Die Special Interest Group für die Standardisierungsaktivität des SCS wird
+zukünftig gemeinsam von ALASCA und dem SCS-Projektteam gesteuert und durch Dr.
+Matthias Büchse von Cloud&amp;Heat Technologies koordiniert. Durch die engere Zusammenarbeit
+mit ALASCA und aufbauend auf den bereits entwickelten Standards soll erreicht
+werden, dass die SCS-Standards eine breitere Adaption erfahren und in den
+ALASCA-Technologiestack, insbesondere bestehend aus dem
+Cloud-Lifecyclemanagement-Werkzeug Yaook, eingebunden werden. Durch die
+Bereitstellung einer zweiten standardkonformen Implementierung auf Basis von
+Yaook wird die Allgemeingültigkeit der SCS-Standards für offene
+Cloud-Infrastrukturen weiter fundiert. Die breitere Aufstellung ist für die
+Qualität der Weiterentwicklung der Standards wichtig und sichert auch die
+langfristige Kontinuität der SCS-Standardisierungsaktivitäten. Die Special
+Interest Group ist offen für alle Cloud Provider und Integratoren, die
+entsprechend SCS-konforme Angebote im Markt machen und zu den Standards
+beitragen wollen.</p>
+
+<p>Für ALASCA bietet die stärkere Zusammenarbeit bei der Weiterentwicklung der
+Standards ebenfalls einen signifikanten Mehrwert. Als Verein strebt ALASCA auf
+Basis von Open-Source-Software wie auch von zugehöriger Kompetenzvermittlung
+an, Forschungs-, Ausbildungs- oder auch generell öffentlichen Einrichtungen,
+privatwirtschaftlichen Unternehmen wie auch Privatpersonen einen
+digital-souveränen Aufbau und Betrieb eigener Cloud-Infrastrukturen zu
+ermöglichen. Mit den SCS-Standards erhält diese Bestrebung ein einmaliges
+Fundament, das die von ALASCA vorangetriebene Open-Source-Software aufwertet.
+Zudem wird mit diesem Schritt die ALASCA-Community durch die zusätzliche
+Unterstützung aus der SCS-Community heraus deutlich gestärkt.</p>]]></content><author><name>[&quot;Kurt Garloff&quot;, &quot;Marius Feldmann&quot;]</name></author><summary type="html"><![CDATA[Zusammenarbeit bei Cloud Standards Sovereign Cloud Stack und ALASCA e.V. – gemeinsam für gute Standards]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/de/Handshake_SCS_ALASCA.png" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/de/Handshake_SCS_ALASCA.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

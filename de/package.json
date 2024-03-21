@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@fullcalendar/common": "^5.11.4",
+    "@fullcalendar/icalendar": "^5.11.5",
+    "apexcharts": "^3.48.0",
+    "bootstrap": "^5.3.3",
+    "fork-awesome": "^1.2.0",
+    "fullcalendar": "^5.11.4",
+    "jquery": "^3.7.1",
+    "lato-font": "^3.0.0",
+    "leaflet": "^1.9.4",
+    "leaflet.featuregroup.subgroup": "^1.0.2",
+    "leaflet.markercluster": "^1.5.3",
+    "lightslider": "^1.1.6",
+    "pygments-rouge-css": "^0.1.0",
+    "replace": "^1.2.2"
+  },
+  "scripts": {
+    "postinstall": "npm exec replace 'url' 'asset_url' node_modules/lato-font/scss/internal/_mixins.scss"
+  }
+}
