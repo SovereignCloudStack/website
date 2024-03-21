@@ -9,7 +9,7 @@ After [last year's great success](/summit2023), the next [SCS Summit
 publish further information about the program and the venue on the event page
 shortly. As last year, the summit will again be largely in German, focused on
 decision makers from politics and business. On the following day, the [Open
-Infra Day Germany](https://openinfra.dev/days#tab=events_tab) will take place
+Infra Day Germany](https://oideurope2024.openinfra.dev/#registration=1) will take place
 at the same venue, with primarily English language content and a more
 technical focus.
 
