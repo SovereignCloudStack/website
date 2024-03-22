@@ -1,19 +1,32 @@
-# Save the Date: Sovereign Cloud Stack Summit 14. Mai 2024
+# 2.Sovereign Cloud Stack Summit 14. Mai 2024 in Berlin
+
 
 Liebe Freunde und Interessierte an SCS,
 
-wir freuen uns, Ihnen mitteilen zu können, dass die nächste Ausgabe des Sovereign Cloud Stack Summit in Berlin am Dienstag, den 14. Mai 2024 stattfinden wird. Seien Sie dabei, wenn wir unsere Reise zu einem sichereren, dezentralisierten und souveränen Cloud-Ökosystem fortsetzen.
+die SCS Community ist im vergangenen Jahr kräftig gewachsen, es sind viele neue Produktionsumgebungen auf Basis von SCS entstanden und am 20. März konnten wir planmäßig das 6. Release veröffentlichen.
+Seien Sie in Berlin dabei, wenn SCS Nutzende aus verschiedensten Anwendungsfeldern ihre Erfahrungen teilen und berichten, warum sie sich für digital souveräne Cloud-Technologie mit SCS entschieden haben und erfahren Sie, wie die Zukunft des SCS Projektes aussehen wird.
 
-Freuen Sie sich auf ein spannendes Programm mit Vorträgen, Podiumsdiskussionen, Workshops rund um SCS-Entwicklungen und Nutzererfahrungen und Networking-Möglichkeiten, die die Zukunft des Sovereign Cloud Stack gestalten werden. Das Programm des Summits wird im Laufe der nächsten Monate bekannt gegeben, besuchen Sie also regelmäßig unsere Website oder abonnieren Sie unseren [Community Digest](https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/), um sich auf dem Laufenden zu halten.
+Registrieren Sie sich [hier](https://events.scs.community/scs-summit-2024/)
 
-Merken Sie sich diesen Termin vor. Wir freuen uns auf Ihre Teilnahme! Lassen Sie uns gemeinsam SCS weiterentwickeln - eine Plattform, die von Vielen standardisiert, entwickelt und betrieben wird.
+und freuen Sie sich mit uns auf spannende Vorträge und Diskussionen:
 
-Wir freuen uns besonders, dass unser Summit mit dem Auftakt der OpenInfra Day Roadshow kombiniert wird. Der [OpenInfra Day Germany 2024](https://openinfra.dev/days) findet am Mittwoch, den 15. Mai 2024 in den gleichen Räumlichkeiten wie unser Summit statt. Nutzen Sie die einmalige Gelegenheit, am ersten Tag SCS, unsere Partner und unsere Community kennenzulernen, und am zweiten Tag in die Welt der Open-Source-Community-Arbeit einzutauchen. Wir laden Sie herzlich dazu ein.
+* Der Leiter des Referats für Digitalisierung und Industrie 4.0 im Bundesministerium für Wirtschaft und Klimaschutz, Ernst Stöckl-Pukall, wird die Veranstaltung mit einem Grußwort eröffnen.
+* Ann Cathrin Riedel, Geschäftsführerin von NExT e.V. und Mitglied des Digitalbeirats des Bundesministeriums für Digitales und Verkehr, wird in einer Keynote die Bedeutung von offenen und digital souveränen Infrastrukturen für Freiheit und Demokratie herausarbeiten.
+* Einige unserer größten Partner und Cloud Service Provider werden darüber sprechen, warum sie sich für SCS als Technologie entschieden haben - und welche Rolle die Themen Implementierung und Zertifizierung dabei gespielt haben. Hier freuen wir uns auf Impulse unter anderem von Christian Schmitz, Director Open Source bei der Plusserver GmbH, und von Jens Plogsties, CTO der Syseleven GmbH.
+* Wir stellen die Bayerische Schulcloud vor - das bis dato größte SCS-Anwendungsprojekt und eines der größten Europäischen Cloudprojekte überhaupt.
+* Viola Heeger vom Tagesspiegel wird mit Ulrich Ahle, CEO von Gaia-X, und Jörg Kremer, Leiter Föderales IT-Architekturmanagement der FITKO, über die Bedeutung von Standards und standardisierter Technologie für die Föderierbarkeit von Digitalisierungsprojekten in öffentlicher Verwaltung und Privatwirtschaft in einem Europäischen Kontext diskutieren.
+* Dirk Schrödter, Minister für Digitalisierung und Chef der Staatskanzlei des Landes Schleswig-Holstein, wird erläutern, warum im nördlichsten Bundesland "Open Souce First" gilt und SCS Grundlage für Cloudanwendungen, wie z.B. beim Call for Concepts zum Landesprogramm Offene Innovationen (DigitalHub.SH), ist.
+* Die Product Owner von SCS werden verschiedene technische Aspekte und Komponenten von SCS vorstellen und erklären.
+* Schließlich wird der Vorstandsvorsitzende der OSB Alliance und CEO der Univention GmbH, Peter Ganten, einen Ausblick zur Zukunft von SCS geben.
 
-[Hier](https://scs.community/summit2023) finden Sie die Präsentationen und Vorträge des Summit 2023.
+
+Wir freuen uns besonders, dass unser Summit mit dem Auftakt der OpenInfra Day Roadshow kombiniert wird. Der [OpenInfra Day Germany 2024](https://oideurope2024.openinfra.dev/#registration=1) findet am Mittwoch, den 15. Mai 2024 in den gleichen Räumlichkeiten wie unser Summit statt. Nutzen Sie die einmalige Gelegenheit, am ersten Tag SCS, unsere Partner und unsere Community kennenzulernen, und am zweiten Tag in die Welt der Open-Source-Community-Arbeit einzutauchen.
+
+Das Programm des Summits wird im Laufe der nächsten Wochen immer weiter aktualisiert, besuchen Sie also regelmäßig unsere Website oder abonnieren Sie unseren [Community Digest](https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/), um sich auf dem Laufenden zu halten.
+
 
 ## Kontakt
 
-Gerne helfen Ihnen [Regina](https://scs.community/metz) oder [Alexander](https://scs.community/diab) bei Ihren Fragen weiter.
+Bei Fragen helfen Ihnen [Regina](https://scs.community/metz) oder [Alexander](https://scs.community/diab) gern weiter.
 
 {% include summit2024/contact.html %}
