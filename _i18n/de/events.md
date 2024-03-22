@@ -4,11 +4,15 @@
 
 ### SCS Summits
 
-Der [SCS Summit 2023](/summit2023) war ein großer Erfolg, und daher planen wir für den 14.5.2024
-unseren [SCS Summit 2024](/summit2024) in Berlin. Die Veranstaltung wird wieder primär deutschsprachig
-sein mit Entscheidungsträgern aus Politik und Wirtschaft als primärer Zielgruppe. Am Folgetag
-findet am selben Ort ein [Open Infra Day](https://openstack.org/events/openstackdays#tab=events_tab) statt,
-mit primär englischsprachigen Inhalten und sehr viel technischerer Ausrichtung.
+Nach dem großen [Erfolg vom letzten Jahr](/summit2023) findet der nächste
+[SCS Summit 2024](/summit2024) am 14.5.2024 wieder in Berlin statt. In
+Kürze werden wir auf der Veranstaltungsseite weitere Informationen zum Programm
+und dem Veranstaltungsort veröffentlichen. Das Summit wird - wie auch letztes
+Jahr wieder größtenteils deutschsprachig sein mit Entscheidungsträgern aus
+Politik und Wirtschaft als primärer Zielgruppe. Am Folgetag findet am selben
+Ort der [Open Infra Day Germany](https://oideurope2024.openinfra.dev/#registration=1)
+statt, mit weitestgehend englischsprachigen Inhalten und einer eher
+technischen Ausrichtung.
 
 ### SCS Hackathons
 
@@ -17,6 +21,6 @@ in Nürnberg (2.3.2023 bei [Noris/Wavecon](https://wavecon.de/)), einigen
 Workshops/Mini-Hackathons und einem großen Hackathon in Kooperation mit
 [Alasca e.V.](https://alasca.cloud/)) am 8.11. bei [Cloud & Heat](https://cloudandheat.com/)
 in Dresden, findet der vierte Hackathon am 16.4.2024 statt bei [Gonicus](https://gonicus.de)
-in Arnsberg. Um eine [Anmeldung](https://events.scs.community/hackathon-4/) wird gebeten.
+in Arnsberg. Um eine [Anmeldung](https://events.scs.community/4hackathon/) wird gebeten.
 
 <!--TODO: ## Veranstaltungen mit aktiver SCS Teilnahme-->
