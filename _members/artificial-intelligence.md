@@ -1,5 +1,5 @@
 ---
-author_slug: Sven Kieske
+author_slug: artificial-intelligence
 title: Sven Kieske
 layout: community
 lastname: Kieske
@@ -10,6 +10,7 @@ companylink: https://osism.tech/
 github: https://github.com/artificial-intelligence
 matrix: https://matrix.to/#/@kieske.osism.tech:regio.chat
 mail: kieske@osism.tech
+avatar: skieske.jpg
 bio: |
     Sven is a Senior Cloud Engineer working on upstream maintenance of Openstack project Kolla-Ansible and all
     related open source projects in the OpenInfra ecosystem. He has a background in
