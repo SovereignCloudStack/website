@@ -21,6 +21,6 @@ in Nürnberg (2.3.2023 bei [Noris/Wavecon](https://wavecon.de/)), einigen
 Workshops/Mini-Hackathons und einem großen Hackathon in Kooperation mit
 [Alasca e.V.](https://alasca.cloud/)) am 8.11. bei [Cloud & Heat](https://cloudandheat.com/)
 in Dresden, findet der vierte Hackathon am 16.4.2024 statt bei [Gonicus](https://gonicus.de)
-in Arnsberg. Um eine [Anmeldung](https://events.scs.community/hackathon-4/) wird gebeten.
+in Arnsberg. Um eine [Anmeldung](https://events.scs.community/4hackathon/) wird gebeten.
 
 <!--TODO: ## Veranstaltungen mit aktiver SCS Teilnahme-->
