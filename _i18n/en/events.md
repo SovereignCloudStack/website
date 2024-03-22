@@ -20,6 +20,6 @@ in Nuremberg (Mar 2, 2023 at [Noris/Wavecon](https://wavecon.de/)), a number of
 Workshops/Mini-Hackathons, a fully-fledged Hackathon in collaboration with
 [Alasca e.V.](https://alasca.cloud/)) on Nov 8, 2023 at [Cloud & Heat](https://cloudandheat.com/)
 premises in Dresden, the fourth Hackathon is taking place at [Gonicus](https://gonicus.de/en)
-in Arnsberg. Please [register](https://events.scs.community/hackathon-4/)!
+in Arnsberg. Please [register](https://events.scs.community/4hackathon/)!
 
 <!--TODO: ## Events with contributions from SCS-->
