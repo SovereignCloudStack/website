@@ -13,9 +13,9 @@ avatar: mbuechse.jpg
 bio: |
     Matthias is a Research & Development Software Engineer with Cloud&Heat Technologies in Dresden.
     He has been contributing to the efforts of standardization and certification since April 2023. When, in
-    November 2023,
-    [Sovereign Cloud Stack and ALASCA e.V. joined forces](https://scs.community/2023/11/27/joint-standardization/)
-    on this very topic, he took on the role of coordinating the Special Interest Group _Standardization/Certification_,
+    November 2023, Sovereign Cloud Stack and ALASCA e.V. joined forces on this very topic
+    (see https://scs.community/2023/11/27/joint-standardization/),
+    he took on the role of coordinating the Special Interest Group Standardization/Certification.
     In addition, he is a regular visitor at Team IaaS.
     
     Matthias has a background in programming and software development—mostly in Python, but also Go,
