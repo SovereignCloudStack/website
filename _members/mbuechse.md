@@ -8,7 +8,7 @@ role: R&D Software Engineer
 company: Cloud&Heat Technologies
 companylink: https://www.cloudandheat.com/
 github: https://github.com/mbuechse
-mail: matthias@cloudandheat.com
+mail: matthias.buechse@cloudandheat.com
 avatar: mbuechse.jpg
 bio: |
     Matthias is a Research & Development Software Engineer with Cloud&Heat Technologies in Dresden.
