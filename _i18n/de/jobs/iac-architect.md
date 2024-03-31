@@ -1,6 +1,6 @@
 Die [Open Source Business Alliance - Bundesverband für digitale Souveränität e.V. (OSB Alliance)](https://osb-alliance.de/)
 sucht für ihr vom 
-[German Federal Ministry for Economic Affairs and Energy (BMWi)](https://bmwi.de/) gefördertes Projekt 
+[Bundesministerium für Wirtschaft und Energie (BMWi)](https://bmwi.de/) gefördertes Projekt 
 [Sovereign Cloud Stack (SCS)](https://scs.community/) einen
 # Infra-as-Code Architekt (d/w/m)
 (Remote oder Berlin-Zentrum)
@@ -21,16 +21,16 @@ für digitale Souveränität, Flexibilität und Sicherheit im digitalen Wandel u
 damit als Antwort auf eine der größten Herausforderungen unserer Zeit.
 
 Mit dem Projekt Sovereign Cloud Stack (SCS) trägt die OSB Alliance zur
-Verwirk­lichung der Ziele der ”Digitalstrategie Deutschland” der
+Verwirklichung der Ziele der ”Digitalstrategie Deutschland” der
 Bundesregierung und des europäischen Vorhabens Gaia-X bei, indem es eine offene
 Cloud-Infrastruktur der nächsten Generation entwickelt.
 
 Das Projekt wird von einem kleinen Team in der OSB Alliance mit mehrjähriger
 Förderung durch das Bundesministerium für Wirtschaft und Klimaschutz (BMWK)
-vorangetrieben. Die ausge­schriebene Position gehört zu diesem zentralen Team.
+vorangetrieben. Die ausgeschriebene Position gehört zu diesem zentralen Team.
 Zusätzlich zu diesem Team gibt es zahlreiche Entwickler:innen aus verschiedenen
 Unternehmen und Institutionen Europas, die zu SCS beitragen – einige von ihnen
-werden durch das Projekt finanziert, andere, weil ihre Arbeit­geber:innen daran
+werden durch das Projekt finanziert, andere, weil ihre Arbeitgeber:innen daran
 interessiert sind, SCS erfolgreich zu machen.
 
 Das Projekt SCS zielt darauf ab, einen vollständigen, modularen, sicheren und
@@ -40,7 +40,7 @@ Netzwerktechnologie, Betriebswerkzeuge für die automatisierte Bereitstellung,
 Protokollierung, Überwachung, Alarmierung, Trendanalyse, Identitäts- und
 Berechtigungsmanagement, eine Infrastructure-as-a-Service-Schicht sowie eine
 Container(Platform)-as-a-Service-Schicht. Der Stack ermöglicht es Anwendern
-(Entwicklungs­teams), ihren eigenen Kubernetes-Cluster über standardisierte
+(Entwicklungsteams), ihren eigenen Kubernetes-Cluster über standardisierte
 APIs zu erstellen und zu steuern und liefert Standardbausteine, die für den
 Aufbau und die Verwaltung von Container-Anwendungen verwendet werden können.
 Der Stack erfüllt hohe Sicherheitsstandards und wird mit Werkzeugen und
@@ -59,14 +59,14 @@ Plattformen sicherstellt und so ein Netzwerk föderierbarer, kompatibler Clouds
 etabliert. 
 
 SCS trägt zu dem europäischen Vorhaben Gaia-X bei, indem es als Referenz für
-die Entwicklungs­arbeit dient und Implementierungen bietet, die Node-Provider
+die Entwicklungsarbeit dient und Implementierungen bietet, die Node-Provider
 als Ganzes oder in Teilen nutzen können, um eine föderierte, souveräne
 Infrastruktur zu schaffen, die die Basis für ein Ökosystem für souveräne Daten
 bildet.
 
 ## Über die Rolle
 
-**Als Infra-as-Code Engineer wirst Du**
+**Als Infra-as-Code Architekt wirst Du**
 
 * Initiativen vorantreiben, welche eine konsistente Beschreibung der SCS APIs schaffen,
 * an Werkzeugen arbeiten, um Nutzern konsistente und bequeme Nutzungsmöglichkeiten der APIs verschaffen,
@@ -74,11 +74,11 @@ bildet.
 * sicherstellen, dass Schnittstellen und Werkzeuge kontinuierlich getestet werden und nötigenfalls zur Testinfrastruktur (basierend auf zuul) beitragen,
 * dazu beitragen, dass wir Transparenz und Absicherung für unsere Software Lieferketten verbessern,
 * dazu beitragen, dass die Föderierungskonzepte auch für Nutzer konsistent nutzbar sind,
-* mit den Upstream Communitites arbeiten, um sicherzustellen, dass unsere Arbeit abgestimmt ist und somit die Fragmentierung reduziert,
-* mit Cloudbetreibern und Nutzern interagieren, um sicherzustellen, dass unsere Arbeit zu ihren Befürfnissen passt,
-* eng mit dem SCS Projektteam und den Auftrsgnehmern im SCS Projekt zusammenarbeiten.
+* mit den Upstream Communities arbeiten, um sicherzustellen, dass unsere Arbeit abgestimmt ist und somit die Fragmentierung reduziert,
+* mit Cloudbetreibern und Nutzern interagieren, um sicherzustellen, dass unsere Arbeit zu ihren Bedürfnissen passt,
+* eng mit dem SCS Projektteam und den Auftragnehmern im SCS Projekt zusammenarbeiten.
 
-**We erwarten, dass Du**
+**Wir erwarten, dass Du**
 
 * praktische Erfahrung als Nutzer der OpenStack Cloud Computing Plattform hast,
 * bereits Code für OpenStack Dienste oder Werkzeuge entwickelt hast,

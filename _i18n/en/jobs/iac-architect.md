@@ -11,7 +11,7 @@ is looking for a
 
 The Open Source Business Alliance - Bundesverband für digitale Souveränität
 e.V. (OSB Alliance) represents more than 200 member companies of the open
-source economy, which in Germany together generate more than 126 billion euros
+source economy, which in Germany together generate more than 126 billion Euros
 annually. Together with scientific institutions and user organisations, the
 association works to anchor the central importance of open source software and
 open standards for a digitally sovereign society in the public consciousness.
@@ -60,7 +60,7 @@ basis for a sovereign data ecosystem.
 
 ## About the role
 
-**As a Infra-as-Code Engineer, you will**
+**As a Infra-as-Code Architect, you will**
 
 * drive efforts to ensure a consistent description of SCS APIs exists,
 * work on tooling that uses these APIs to provide a consistent and convenient user experience,
@@ -68,7 +68,7 @@ basis for a sovereign data ecosystem.
 * ensure that these are automatically tested and contribute to our test infrastructure (based on zuul) as needed,
 * contribute to improve transparency and security on our supply chain,
 * contribute to expose our federation concepts consistently to users,
-* work with the upstream communitites to ensure that our work is aligned with them and thus contributes to reduce the fragmentation,
+* work with the upstream communities to ensure that our work is aligned with them and thus contributes to reduce the fragmentation,
 * interact with operators and users to ensure that our work reflects their needs,
 * collaborate closely with the SCS project team and the contractors of the SCS project.
 
@@ -76,7 +76,7 @@ basis for a sovereign data ecosystem.
 
 * practical experience in using OpenStack cloud computing platforms,
 * hands-on experience developing code for OpenStack services and/or tooling,
-* a track record of successfully working with and contributing to upstream Open Source communitites,
+* a track record of successfully working with and contributing to upstream Open Source communities,
 * an openness to study the logic of kubernetes APIs and API extensions,
 * experience with the continuous integration and automation framework zuul,
 * familiarity with open source development tools and platforms such as Git, Gerrit, GitHub and the associated workflows,
@@ -86,7 +86,7 @@ basis for a sovereign data ecosystem.
 
 * are used to working openly, sharing your ongoing work with a broad community, accepting constructive criticism, and are willing to work on defining and refining your chosen approach in interaction with the community and to reach (what is known as) „lazy consensus“,
 * are also willing to study and understand the work of others and supporting them with constructive feedback,
-* have an understanding of the needs ot developers of cloud-native applications.
+* have an understanding of the needs of developers of cloud-native applications.
 
 **We offer**
 
