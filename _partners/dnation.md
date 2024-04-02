@@ -10,7 +10,7 @@ description: "The letter 'd' in our name stands for Development and DevOps, as w
 
 We have deep understanding of cloud technologies, especially OpenStack and Kubernetes, because we have been operating Kubernetes clusters ourselves (not using 3rd party managed services), adding functionality to Kubernetes via programming operators (written in Python and Go), extending OpenStack functionality via programming modules and improving manageability of OpenStack in the scope of SCS project."
 offerings:
-  installation: We install SCS complaint OpenStack, Kubernetes and OpenShift clusters, including bare metal option.
+  installation: We install SCS compliant OpenStack and Kubernetes as well as OpenShift clusters, including bare metal option.
   managed services: We are managing for our customers OpenStack, Kubernetes and OpenShift clusters (IaaS, PaaS and SaaS layers).
   operations: Installations delivered to our customers are covered by 8/5 or 24/7 Service Level Agreements (SLAs).
   training: We share our knowledge acquired by installation, operation and development of OpenStack and Kubernetes in form of trainings.
