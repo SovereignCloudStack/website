@@ -71,7 +71,7 @@ bildet.
 * Initiativen vorantreiben, welche eine konsistente Beschreibung der SCS APIs schaffen,
 * an Werkzeugen arbeiten, um Nutzern konsistente und bequeme Nutzungsmöglichkeiten der APIs verschaffen,
 * sicherstellen, dass es für diese Werkzeuge gute Dokumentation gibt,
-* sicherstellen, dass Schnittstellen und Werkzeuge kontinuierlich getestet werden und nötigenfalls zur Testinfrastruktur (basierend auf zuul) beitragen,
+* sicherstellen, dass Schnittstellen und Werkzeuge kontinuierlich getestet werden und nötigenfalls zur Testinfrastruktur (basierend auf Zuul) beitragen,
 * dazu beitragen, dass wir Transparenz und Absicherung für unsere Software Lieferketten verbessern,
 * dazu beitragen, dass die Föderierungskonzepte auch für Nutzer konsistent nutzbar sind,
 * mit den Upstream Communities arbeiten, um sicherzustellen, dass unsere Arbeit abgestimmt ist und somit die Fragmentierung reduziert,
