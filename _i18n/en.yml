@@ -143,6 +143,9 @@ jobs:
   cmte:
     title: "Cloud Monitoring and Test Engineer (d/f/m)"
     short_description: "Be part of a small central remote team at the Open Source Business Alliance and make a significant contribution to the quality of our digital sovereignty enabling SCS."
+  iaca:
+    title: "Infrastructure-as-Code Architect (d/f/m)"
+    short_description: "Be part of a small central remote team at the Open Source Business Alliance and make a significant contribution by working on IaC tooling, automation and security of our digital sovereignty enabling SCS."
   public-outreach:
     title: "Public Outreach Manager (d/f/m)"
     short_description: "Be part of a small central remote team at the OSB Alliance and coordinate the communication of SCS progress and results on events and publications."
