@@ -145,7 +145,7 @@ Die Cloud kann als Private Cloud durch eine gut ausgebildete
 IT Abteilung bereitgestellt werden oder auch als Public Cloud
 durch einen Cloud Provider. Wir vernetzen beide Gruppen.
 
-We haben arbeiten an Plänen für optimierte Szenarien für
+Wir arbeiten an Plänen für optimierte Szenarien für
 far-edge Clouds in einem Folgeprojekt ("SCS-2").
 
 ## Sovereign Cloud Stack und Gaia-X
