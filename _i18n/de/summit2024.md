@@ -1,4 +1,4 @@
-# 2.Sovereign Cloud Stack Summit 14. Mai 2024 in Berlin
+# 2. Sovereign Cloud Stack Summit 14. Mai 2024 in Berlin
 
 
 Liebe Freunde und Interessierte an SCS,
