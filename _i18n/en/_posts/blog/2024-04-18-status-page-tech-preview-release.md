@@ -8,7 +8,7 @@ avatar:
   - "avatar-gonicus.jpg"
 ---
 
-Now matter how thorough your preparation and processes, services experiencing limited capabilities and straight-out outages *will* be part your business of being a cloud provider.
+No matter how thorough your preparation and processes, services experiencing limited capabilities and straight-out outages *will* be part your business of being a cloud provider.
 
 To define and manage these incidents, the SCS project so far provided an [OpenAPI definition](https://github.com/SovereignCloudStack/status-page-openapi) as well as an [implementation](https://github.com/SovereignCloudStack/status-page-api) for a status API server, acting as a repository to collect any incidents that impact the components of your SCS setup. And while its REST interface is certainly comprehensive, fiddling around with HTTP calls and JSON results is not exactly a process one can consider *"customer-friendly"*.
 
