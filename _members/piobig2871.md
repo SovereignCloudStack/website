@@ -13,5 +13,5 @@ mail: piotrbigos@protonmail.com
 avatar: piobig2871.jpeg
 bio: Piotr is a Software Developer working on a Cloud/Container platform health monitoring.
   He has a background in tests, development and performance tuning. 
-  Always focused on the speed, precision of meassurements and details about crafting modern software from a boarder perspective. 
+  Always focused on the speed, precision of measurements and details about crafting modern software from a boarder perspective. 
 ---
