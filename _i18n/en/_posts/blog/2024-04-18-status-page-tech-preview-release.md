@@ -18,8 +18,8 @@ For the last few months, we've therefore been working on our first release of ou
 
 <figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
     {% asset 'blog/status-page-tech-preview-release/default-view.png' class="figure-img w-100 mx-auto" %}
+    <figcaption>SCS Status Page default view</figcaption>
 </figure>
-<p class="fw-semibold text-center">SCS Status Page default view</p>
 
 If you've ever seen a status page before, the page design will surely be familiar to you immediately. However for our technical preview we've implemented a few things not commonly seen in the status pages we've encountered in our research.
 
@@ -27,15 +27,15 @@ The first is dedicated support for a colorblind mode. Up to roughly 9% of all hu
 
 <figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
     {% asset 'blog/status-page-tech-preview-release/default-view-cb.png' class="figure-img w-100 mx-auto" %}
+    <figcaption>SCS Status Page default view with colors optimized for the color blind</figcaption>
 </figure>
-<p class="fw-semibold text-center">SCS Status Page default view with colors optimized for the color blind</p>
 
 The second feature is a different view mode. While the default bar view is fine for most people (and familiar to anyone who's ever had to deal with one of the many other status pages), there are people for whom the fine motor control to click on one of the little boxes representing a day in the bar view is simply not achievable. For these people (and everyone who simply likes tables), we have added a table view, listing the status and active incidents for every single day in one simple table per component.
 
 <figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
     {% asset 'blog/status-page-tech-preview-release/table-view.png' class="figure-img w-100 mx-auto" %}
+    <figcaption>SCS Status Page table view with non-incident days filtered out</figcaption>
 </figure>
-<p class="fw-semibold text-center">SCS Status Page table view with non-incident days filtered out</p>
 
 And because the tables for your SCS system would hopefully mostly feature days without ongoing incidents, making your tables long and boring, we've added an option to remove all such days, giving you a much shorter, easily digestable table view of how your SCS environment has been doing.
 
