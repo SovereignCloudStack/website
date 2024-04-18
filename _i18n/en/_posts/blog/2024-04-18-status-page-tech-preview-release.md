@@ -17,7 +17,7 @@ To define and manage these incidents, the SCS project so far provided an [OpenAP
 For the last few months, we've therefore been working on our first release of our Status Page, the web frontend to our status API server. The status page takes the API server's REST interface and provides a web view that your customers and employees can just look at in their browser—no curl calls or similar necessary.
 
 <figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
-    {% asset '_assets/images/blog/status-page-tech-preview-release/default-view.png' class="figure-img w-100 mx-auto" %}
+    {% asset 'blog/status-page-tech-preview-release/default-view.png' class="figure-img w-100 mx-auto" %}
 </figure>
 <p class="fw-semibold text-center">SCS Status Page default view</p>
 
@@ -26,14 +26,14 @@ If you've ever seen a status page before, this page design will surely be immedi
 The first is dedicated support for a colorblind mode. Up to roughly 9% of all humans have some form of color blindness and we wanted to make sure that our status page is properly visible to everyone with sufficient sight. Our implementation therefore ships with a default set of colors optimized to be seen by people with range of color vision deficiencies. These colors are, of course, customizable by your organization (and might by customizable by the user in some future release, but that is of yet uncertain), but should provide a decent experience to everyone.
 
 <figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
-    {% asset '_assets/images/blog/status-page-tech-preview-release/default-view-cb.png' class="figure-img w-100 mx-auto" %}
+    {% asset 'blog/status-page-tech-preview-release/default-view-cb.png' class="figure-img w-100 mx-auto" %}
 </figure>
 <p class="fw-semibold text-center">SCS Status Page default view with colors optimized for the color blind</p>
 
 The second feature is a different view mode. While the default bar view is fine for most people (and familiar to anyone who's ever had to deal with one of the many other status pages), there are people for whom the fine motor control to click on one of the little boxes representing a day in the bar view is simply not achievable. For these people (and everyone who simply likes tables), we have added a table view, listing the status and active incidents for every single day in one simple table per component.
 
 <figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
-    {% asset '_assets/images/blog/status-page-tech-preview-release/table-view.png' class="figure-img w-100 mx-auto" %}
+    {% asset 'blog/status-page-tech-preview-release/table-view.png' class="figure-img w-100 mx-auto" %}
 </figure>
 <p class="fw-semibold text-center">SCS Status Page table view with non-incident days filtered out</p>
 
