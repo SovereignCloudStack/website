@@ -21,7 +21,7 @@ For the last few months, we've therefore been working on our first release of ou
 </figure>
 <p class="fw-semibold text-center">SCS Status Page default view</p>
 
-If you've ever seen a status page before, this page design will surely be immediately familiar to you. We have, however, implemented for our technical preview a few things not commonly seen in the status pages we've encountered in our research.
+If you've ever seen a status page before, the page design will surely be familiar to you immediately. However for our technical preview we've implemented a few things not commonly seen in the status pages we've encountered in our research.
 
 The first is dedicated support for a colorblind mode. Up to roughly 9% of all humans have some form of color blindness and we wanted to make sure that our status page is properly visible to everyone with sufficient sight. Our implementation therefore ships with a default set of colors optimized to be seen by people with range of color vision deficiencies. These colors are, of course, customizable by your organization (and might by customizable by the user in some future release, but that is of yet uncertain), but should provide a decent experience to everyone.
 
