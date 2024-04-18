@@ -12,7 +12,7 @@ No matter how thorough your preparation and processes, services experiencing lim
 
 To define and manage these incidents, the SCS project so far provided an [OpenAPI definition](https://github.com/SovereignCloudStack/status-page-openapi) as well as an [implementation](https://github.com/SovereignCloudStack/status-page-api) for a status API server, acting as a repository to collect any incidents that impact the components of your SCS setup. And while its REST interface is certainly comprehensive, fiddling around with HTTP calls and JSON results is not exactly a process one can consider *"customer-friendly"*.
 
-## The SCS Status Page is now available as a Technical Preview
+## The SCS Status Page is available as a Technical Preview now
 
 For the last few months, we've therefore been working on our first release of our Status Page, the web frontend to our status API server. The status page takes the API server's REST interface and provides a web view that your customers and employees can just look at in their browser—no curl calls or similar necessary.
 
