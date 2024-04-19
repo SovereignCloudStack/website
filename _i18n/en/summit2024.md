@@ -20,7 +20,11 @@ and join us for exciting presentations and discussions:
 
 We are particularly pleased that our Summit will be combined with the kick-off of the OpenInfra Day Roadshow. [OpenInfra Day Germany 2024](https://oideurope2024.openinfra.dev/#registration=1) will take place on May 15, 2024 at the same venue as our Summit. Take advantage of this unique opportunity to meet SCS, our partners and our community on the first day, and dive into the world of open source community work on the second day. We cordially invite you to join us.
 
-The program will be updated online in the coming weeks. So check our website regularly or subcribe our [SCS Digest](https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/) to stay up to date.
+The program will be updated online in the coming weeks. So check our website regularly or subcribe our [SCS Digest](https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/) to stay up to date. Please note, that the program will be in german.
+
+## Location
+
+The SCS Summit 2024 will take place in Berlin-Mitte in the [Villa Elisabeth](https://www.elisabeth.berlin/de/kulturorte/villa-elisabeth) (near S Nordbahnhof).
 
 ## Contact us
 
