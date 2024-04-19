@@ -45,7 +45,7 @@ Now, this is a *technical preview*, so not all work we want to be included in ou
 
 ## The Future of the Status Page
 
-For the moment (and our first complete release), the status page is a tool to purely view the status of your SCS environment. We have, however, a whole mountain of plans and ideas to implement in the future, chief amongst them the ability to create and update incidents and impacts for authenticated users, turning the status page into *the* tool to interact with the status API server. Additionally, we plan to extend the API specification, API server and frontend to schedule and display pre-planned maintenance sessions, allowing you to inform your users of expected outages well beforehand.
+For the moment (and our first complete release), the status page is limited to just displaying the incident data of your status API server. We have, however, a whole mountain of plans and ideas to implement in the future, chief amongst them the ability to create and update incidents and impacts for authenticated users, turning the status page into *the* tool to interact with the status API server. Additionally, we plan to extend the API specification, API server and frontend to schedule and display pre-planned maintenance sessions, allowing you to inform your users of expected outages well beforehand.
 
 Alongside actual incident management, we want to add a notification service to server and frontend, allowing you to subscribe to push messages or e-mail notifications; or consume any updates to your SCS status at your own pace using RSS.
 
