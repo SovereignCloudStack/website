@@ -53,7 +53,7 @@ And many, many ideas more, such as additional facilities for disabled users (e. 
 
 ## Get Involved!
 
-You can find the Git repository of the status page [on GitHub](https://github.com/SovereignCloudStack/status-page-web). The README file includes instructions on how to construct a container image from the sources and how to configure the status page according to your needs/status API server setup. You have no status API server yet? Not a problem—the status page repo comes with some example data included and you can set a flag to make the status page use that, allowing you to try out the page on its own.
+You can find the Git repository of the status page [on GitHub](https://github.com/SovereignCloudStack/status-page-web). The [README](https://github.com/SovereignCloudStack/status-page-web/blob/main/README.md) file includes instructions on how to construct a container image from the sources and how to configure the status page according to your needs/status API server setup. You have no status API server yet? Not a problem—the status page repo comes with some example data included and you can set a flag to make the status page use that, allowing you to try out the page on its own.
 
 We'd love it if you had a look and informed us of any issues you encountered with the page! Whether these are with the setup, the page itself or any requirements you have that you do not see fulfilled either right now or within the scope of our planned future enhancements—tell us about it by [opening an issue on our repository](https://github.com/SovereignCloudStack/status-page-web/issues/new). And there is also a [Matrix room](https://matrix.to/#/#scs-status-page-app:matrix.org) for the status page project.
 
