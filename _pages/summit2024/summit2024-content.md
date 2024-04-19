@@ -64,7 +64,7 @@ $(document).ready(function() {
 </style>
 
 <figure class="figure mx-auto d-block" style="width:100%">
-    {% asset 'summit2024/banner.png' class="figure-img w-100" %}
+    {% asset 'summit2024/bannersummit24.png' class="figure-img w-100" %}
 </figure>
 
 {% tf summit2024.md %}
