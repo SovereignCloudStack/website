@@ -25,6 +25,10 @@ Wir freuen uns besonders, dass unser Summit mit dem Auftakt der OpenInfra Day Ro
 Das Programm des Summits wird im Laufe der nächsten Wochen immer weiter aktualisiert, besuchen Sie also regelmäßig unsere Website oder abonnieren Sie unseren [Community Digest](https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/), um sich auf dem Laufenden zu halten.
 Bitte beachten Sie, dass das Programm deutschsprachig sein wird.
 
+## Sprecherinnen und Sprecher
+
+{% include summit2024/speakers.html %}
+
 ## Zeitplan
 
 <div class="container my-4">
