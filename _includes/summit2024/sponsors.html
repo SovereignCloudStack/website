@@ -8,7 +8,7 @@
     {% endfor %}
 </div>
 <div class="row align-items-center justify-content-center">
-    {% for sponsor in site.data.summit2023.sponsors.silver %}
+    {% for sponsor in site.data.summit2024.sponsors.silver %}
 	<div class="col-4 col-lg-2 p-3 p-lg-1">
         <a href="{{sponsor.url}}" title="{{sponsor.name}}" target="_blank">
             {% asset '{{sponsor.logo}}' alt='{{sponsor.name}}' class='mx-auto d-block' style="width: 100%; object-fit: contain;" %}
@@ -17,7 +17,7 @@
     {% endfor %}
 </div>
 <div class="row align-items-center justify-content-center">
-    {% for sponsor in site.data.summit2023.sponsors.bronze %}
+    {% for sponsor in site.data.summit2024.sponsors.bronze %}
 	<div class="col-4 col-lg-2 p-3 p-lg-1">
         <a href="{{sponsor.url}}" title="{{sponsor.name}}" target="_blank">
             {% asset '{{sponsor.logo}}' alt='{{sponsor.name}}' class='mx-auto d-block' style="width: 100%; object-fit: contain;" %}
