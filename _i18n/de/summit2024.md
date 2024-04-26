@@ -66,7 +66,7 @@ Bitte beachten Sie, dass das Programm deutschsprachig sein wird.
                             href="#session-{{ forloop.index }}" class="link-unstyled"><i
                                 class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em;"></i></a>
                     </h3>
-                    <div class="desc pb-2">{{talk.description}}</div>
+                    <div class="desc pb-2"><b>{{talk.description}}</b></div>
                     <div class="desc pb-2">{{talk.abstract}}</div>
                     {% if talk.slides %}
 			<div class="desc pb-2"><a href="{{talk.slides}}">Folien</a></div>
