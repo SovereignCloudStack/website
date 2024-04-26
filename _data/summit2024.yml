@@ -3,10 +3,6 @@ speakers:
     title: Leiter des Referates „Digitalisierung, Industrie 4.0“ im Bundesministerium für Wirtschaft und Klimaschutz
     avatar: summit2024/speaker/stoeckl-pukall.jpg
     shortbio: "Der studierte Diplom-Volkswirt aus München arbeitete in früheren Positionen im Bundesministerium für Wirtschaft und Klimaschutz u. a. in den Bereichen maritime Wirtschaft und Exportfinanzierung. Ebenfalls war er Wirtschaftsreferent an der Deutschen-Botschaft in Neu-Delhi. Als Leiter des Referates für Digitalisierung und Industrie 4.0 in der Industrieabteilung des BMWK ist er heute für die Digitalisierung der Industrie und für die Plattform Industrie 4.0 zuständig. Ebenfalls verantwortet er mehrere Forschungs- und Förderprogramme, z. B. Manufacturing-X oder das europäische Cloud-IPCEI."
-  - name: Ann-Cathrin Riedel
-    title: Gründungsdirektor der Bundesagentur für Sprunginnovationen (SPRIND GmbH)
-    avatar: summit2024/speaker/riedel.jpg
-    shortbio: "Ann Cathrin Riedel ist Geschäftsführerin von NExT e.V., dem Expert:innen Netzwerk für die digitale Transformation der Verwaltung. Davor verantwortete sie die internationale Digitalpolitik bei der Friedrich-Naumann-Stiftung für die Freiheit. Sie ist Vorsitzende von LOAD e.V. – Verein für liberale Netzpolitik. Im Jahr 2022 wurde sie in den Digitalbeirat zur Umsetzung der Digitalstrategie der Bundesregierung beim Bundesministerium für Digitalisierung und Verkehr und in den Digitalrat des Landes Sachsen-Anhalt berufen. Des Weiteren begleitet sie die Arbeit des Co:Lab – Denklabor & Kollaborationsplattform für Gesellschaft & Digitalisierung e.V., des Digital Autonomy Hub und des Projekts Plattform//Demokratie als Beirätin. Sie war als Sachverständige zu digitalpolitischen Themen im Deutschen Bundestag und Berliner Abgeordnetenhaus. Das Capital Magazin zeichnete sie 2020 als Top 40 unter 40 in der Kategorie „Wissenschaft und Gesellschaft“ aus, im Jahr 2023 wurde sie als Young Leader der Atlantik Brücke ernannt. In ihren Funktionen publiziert und spricht sie regelmäßig über Digitalisierung, Gesellschaft, Demokratie und Geopolitik – unter anderem in ihrem prämierten Newsletter „Ann Cathrin’s Digital Digest."
   - name: Miriam Seyffarth
     title: Leiterin Politische Kommunikation, Open Source Business Alliance e.V.
     avatar: summit2024/speaker/seyffarth.jpg
@@ -25,7 +21,7 @@ speakers:
     title: CTO SysEleven GmbH
     avatar: summit2024/speaker/plogsties.jpeg
     shortbio: "Jens Plogsties ist derzeit als Chief Technology Officer (CTO) bei SysEleven tätig und verantwortlich für den Technologie-Stack und die Produktdefinition des Unternehmens. Mit einem Hintergrund in Informationstechnik und mobiler Kommunikation hat Jens etwa 30 Jahre lang verschiedene hochmoderne Infrastrukturprojekte geleitet. Seine Expertise erstreckt sich über mehr als ein Jahrzehnt in der Entwicklung und Betrieb von auf Open Source basierenden Cloud-Stacks. Im Laufe seiner Karriere hat Jens maßgeblich dazu beigetragen, innovative Umgebungen aufzubauen, die Site Reliability Engineering (SRE)-Teams befähigen, Cloud-Funktionen zu entwickeln, Open-Source-Komponenten nahtlos zu integrieren und unternehmensfähige öffentliche und private Cloud-Stacks zu verwalten. Abseits seiner beruflichen Bestrebungen ist Jens tief in das Familienleben eingebunden und navigiert durch die Herausforderungen und Freuden der Erziehung von drei Kindern. Darüber hinaus pflegt er seine Leidenschaft für handgemachte Musik."
-  - name: Johan Bizer
+  - name: Johann Bizer
     title: CEO Dataport AöR
     avatar: summit2024/speaker/bizer.jpg
     shortbio: "Dr. Johann Bizer ist seit November 2011 Vorsitzender des Vorstands von Dataport und verantwortlich für den Bereich Ressourcen. Seit 2004 war er stellvertretender Landesbeauftragter für den Datenschutz beim Unabhängigen Landeszentrum für Datenschutz (ULD) in Schleswig-Holstein, bevor er 2008 seine Aufgabe als Vorstandsmitglied bei Dataport antrat. Seit November 2011 ist Dr. Johann Bizer Mitglied im Vorstand der Bundesarbeitsgemeinschaft der kommunalen IT-Dienstleister Vitako."
@@ -61,7 +57,7 @@ speakers:
     avatar: summit2024/speaker/schroedter.jpg
     shortbio: "Dirk Schrödter, geboren 1978, ist seit dem Jahr 2017 Chef der Staatskanzlei des Landes Schleswig-Holstein. Seit 2022 ist er zudem Minister für Digitalisierung und Medienpolitik in Schleswig-Holstein. Zuvor arbeitete er für das Finanzministerium des Landes Schleswig-Holstein und verantwortete die Finanzplanung und Budgetplanung sowie die föderalen Finanzbeziehungen."
   - name: Andreas Reckert-Lodde
-    title: Interims-Geschäftsführer Zendis
+    title: Interims-Geschäftsführer ZenDiS
     avatar: summit2024/speaker/reckert-lodde.png
     shortbio: "Andreas Reckert-Lodde gründete 2022 das Zentrum für Digitale Souveränität der Öffentlichen Verwaltung (ZenDiS) und ist Interim-Geschäftsführer von ZenDiS. Vor der Gründung von ZenDiS trieb er im Bundesministerium des Innern das Projekt IT-Konsolidierung Bund und das Thema Digitale Souveränität der öffentlichen Verwaltung voran. Er studierte Elektrotechnik mit Schwerpunkt Nachrichten- und Kommunikationstechnik an der FH Münster und absolvierte danach den Master of Disaster Management and Risk Governance an der Universität Bonn."
   - name: Kurt Garloff
