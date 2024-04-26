@@ -22,6 +22,72 @@ We are particularly pleased that our Summit will be combined with the kick-off o
 
 The program will be updated online in the coming weeks. So check our website regularly or subcribe our [SCS Digest](https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/) to stay up to date. Please note, that the program will be in german.
 
+## Schedule
+
+<div class="container my-4">
+    <!-- Nav tabs -->
+    <ul class="schedule-nav nav nav-pills nav-justified" id="schedule-tab" role="tablist">
+        <li class="nav-item me-2">
+            <a class="nav-link active" id="tab-day-1" data-bs-toggle="tab" href="#day-1" role="tab"
+                aria-controls="day-1" aria-selected="true">
+                <span class="heading">Day 1</span>
+                <span class="meta d-none d-lg-block">(Tuesday, May 14)</span>
+            </a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="schedule-tab-content tab-content mt-5">
+        {% for i in (1..2) %}
+        <div class="tab-pane fade {% if i == 1 %}show active{% endif %}" id="day-{{i}}" role="tabpanel"
+            aria-labelledby="day-{{i}}">
+            {% for talk in site.data.summit2024-talks %}
+            {% if i == talk.day %}
+            <div class="item item-talk">
+                <div class="meta">
+                    <h4 class="time">{{talk.start}} – {{talk.end}}</h4>
+                    <div class="profile mt-3">
+                        <div class="d-flex justify-content-center">{% assign post = talk %}{% include news/blog_avatars.html %}</div>
+                        <div class="name mt-2">
+                        {{talk.speaker | join: ", "}}
+                        </div>
+                    </div>
+                    <!--//profile-->
+                </div>
+                <!--//meta-->
+                <div class="content">
+		    {% if talk.title_en %}
+                    <h3 class="title mb-2">{{talk.title_en}}<a data-tab-destination="day-{{i}}"
+                            href="#session-{{ forloop.index }}" class="link-unstyled">
+		    {% else %}
+                    <h3 class="title mb-2">{{talk.title}}<a data-tab-destination="day-{{i}}"
+                            href="#session-{{ forloop.index }}" class="link-unstyled">
+                    {% endif %}
+			<i class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em;"></i></a>
+                    </h3>
+                    <div class="location mb-2 text-muted"><i class="fa fa-map-marker me-2"
+                            aria-hidden="true"></i>{{talk.location}}</div>
+                    {% if talk.description_en %}
+                    <div class="desc pb-2">{{talk.description_en}}</div>
+		    {% else %}
+                    <div class="desc pb-2">{{talk.description}}</div>
+                    {% endif %}
+                    {% if talk.slides %}
+			<div class="desc pb-2"><a href="{{talk.slides}}">Slides</a></div>
+		    {% endif %}
+                    {% if talk.video %}
+			<div class="desc pb-2"><a href="{{talk.video}}">Video</a></div>
+		    {% endif %}
+		</div>
+                <!--//content-->
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
 ## Location
 
 The SCS Summit 2024 will take place in Berlin-Mitte in the [Villa Elisabeth](https://www.elisabeth.berlin/de/kulturorte/villa-elisabeth) (near S Nordbahnhof).
