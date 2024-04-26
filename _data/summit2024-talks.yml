@@ -1,0 +1,260 @@
+- title: "Registrierung"
+  day: 1
+  start: "08:00"
+  end: "09:30"
+  location: "Villa Elisabeth"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: ""
+
+- title: "Begrüßung durch das SCS Team"
+  day: 1
+  start: "09:30"
+  end: "09:40"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Manuela Urban, COO SCS, OSB Alliance e.V.; Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. "
+
+- title: "Grußwort des Bundesministeriums für Wirtschaft und Klimaschutz"
+  day: 1
+  start: "09:40"
+  end: "09:55"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Ernst Stöckl-Pukall, Leiter Referat Digitalisierung & Industrie 4.0, Bundesministerium für Wirtschaft und Klimaschutz"
+
+- title: "Keynote: Die Bedeutung von offenen Infrastrukturen für Freiheit und Demokratie"
+  day: 1
+  start: "09:55"
+  end: "10:15"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Ann-Cathrin Riedel, Geschäftsführerin von NExT e.V. und Mitglied des Digitalbeirats des Bundesministeriums für Digitales und Verkehr"
+
+- title: "Keynote: Die Bedeutung von Open Source für Digitale Souveränität, Innovation, Freiheit und Demokratie"
+  day: 1
+  start: "10:15"
+  end: "10:30"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Peter Ganten, Vorstandsvorsitzender der Open Source Business Alliance e.V."
+
+- title: "(PlusCloudOpen : 3 Jahre SCS Betrieb - störungsfrei und sicher)"
+  day: 1
+  start: "10:30"
+  end: "10:45"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Christian Schmitz, Director Open Source, plusserver gmbh"
+  
+- title: "Steigerung der Energieeffizienz von SCS-basierten Clouds mit Open Hardware"
+  day: 1
+  start: "10:45"
+  end: "11:00"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG"
+
+- title: "Schlüsselrolle von Open Source: Souveräne Cloud-Services für Datensicherheit und -integrität"
+  day: 1
+  start: "11:00"
+  end: "11:15"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Jens Plogsties, CTO SysEleven GmbH"
+
+- title: "(Dataport : Der Aufbau einer digital souveränen Cloudumgebung)"
+  day: 1
+  start: "11:15"
+  end: "11:30"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Johan Bizer, CEO Dataport AöR"
+
+- title: "Panel: SCS als Multifunktionstool für unterschiedlichste Nutzungsszenarien: Möglichkeiten, Grenzen und Erfahrungen aus der Praxis"
+  day: 1
+  start: "11:30"
+  end: "12:15"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Johan Bizer, CEO Dataport AöR; Jens Plogsties, CTO SysEleven GmbH; Christian Schmitz, Director Open Source, plusserver gmbh; Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG; Jens Plogsties, CTO SysEleven GmbH;"
+
+- title: "Mittagspause"
+  day: 1
+  start: "12:15"
+  end: "13:15"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: ""
+
+- title: "SCS & dNation: Together we aim towards digitally sovereign Europe (sponsored) "
+  day: 1
+  start: "13:15"
+  end: "13:25"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Martin Pilka, Co-founder & CEO dNation"
+
+- title: "SCS wird eine integrierte turnkey Lösung"
+  day: 1
+  start: "13:25"
+  end: "13:55"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Kurt Garloff, CTO SCS, OSB Alliance e.V.; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung; Dominik Pataky, Product Owner SCS Operations; Jan Schoone, Product Owner SCS KaaS Referenzimplementierung"
+
+- title: "Syseleven (sponsored)"
+  day: 1
+  start: "13:55"
+  end: "14:05"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: ""
+
+- title: "(Eine offene Schulcloud für 5 Millionen Nutzer basierend auf SCS)"
+  day: 1
+  start: "14:05"
+  end: "14:30"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "David Walter, Head of Customer Experience, CISO & DPO at ownCloud"
+
+- title: "SCS in Zeiten des rasenden Stillstandes"
+  day: 1
+  start: "14:30"
+  end: "15:00"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  location: "BBAW"
+  description: "Holger Müller, Director Cloud Public Sector, SVA GmbH"
+
+- title: "CO2 Monitoring in SCS - Mythos oder bald erlebbare Realität?"
+  day: 1
+  start: "15:00"
+  end: "15:20"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Lena Hoffmann, Referentin Politik & Wissenschaft bei der Gesellschaft für Informatik e.V. (GI); Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG"
+
+- title: "B1 Systems (sponsored)"
+  day: 1
+  start: "15:20"
+  end: "15:30"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: ""
+
+- title: "Pause"
+  day: 1
+  start: "15:30"
+  end: "16:00"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: ""
+
+- title: "openDesk auf SCS - ein digital souveräner Arbeitsplatz für die öffentliche Verwaltung"
+  day: 1
+  start: "16:00"
+  end: "16:25"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Andreas Reckert-Lodde, Interims-Geschäftsführer Zendis; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
+
+- title: "Plusserver (sponsored)"
+  day: 1
+  start: "16:25"
+  end: "16:35"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: ""
+
+- title: "Gespräch über die europäische Perspektive digital souveräner Infrastrukturen"
+  day: 1
+  start: "16:35"
+  end: "17:15"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Viola Heeger, Redakteurin Tagessspiegel Background Digitalisierung & KI; Ulrich Ahle, Chief Executive Officer, Gaia-X European Association for Data and Cloud AISBL; Jörg Kremer, Leitung | Abteilung Föderale IT-Architekturmanagement, Projekte und Standards bei der FITKO (föderale IT-Kooperation)"
+
+- title: "Schleswig-Holsteins Weg in die Digitale Souveränität"
+  day: 1
+  start: "17:15"
+  end: "17:40"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Dirk Schrödter, Minister für Digitalisierung und Chef der Staatskanzlei des Landes Schleswig-Holstein"
+
+- title: "Die Zukunft von SCS"
+  day: 1
+  start: "17:40"
+  end: "18:00"
+  location: "BBAW"
+  speaker:
+  avatar:
+    - "SCS_logo.png"
+  description: "Peter Ganten, Vorstandsvorsitzender der Open Source Business Alliance e.V.; Kurt Garloff, CTO SCS, OSB Alliance e.V.; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
+
+- title: "Abschluss und Verabschiedung"
+  day: 1
+  start: "18:00"
+  end: "18:10"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: "Manuela Urban, COO SCS, OSB Alliance e.V.; Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
+
+- title: "Ausklang bei Essen und Getränken"
+  day: 1
+  start: "18:10"
+  end: "22:30"
+  location: "BBAW"
+  speaker: ""
+  avatar:
+    - "SCS_logo.png"
+  description: ""
+
