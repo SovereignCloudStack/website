@@ -1,6 +1,6 @@
 - title: "Registrierung"
   day: 1
-  start: "08:00"
+  start: "08:30"
   end: "09:30"
   location: "Villa Elisabeth"
   speaker: ""
@@ -105,7 +105,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Johan Bizer, CEO Dataport AöR; Jens Plogsties, CTO SysEleven GmbH; Christian Schmitz, Director Open Source, plusserver gmbh; Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG; Jens Plogsties, CTO SysEleven GmbH;"
+  description: "Johann Bizer, CEO Dataport AöR; Jens Plogsties, CTO SysEleven GmbH; Christian Schmitz, Director Open Source, plusserver gmbh; Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG; Jens Plogsties, CTO SysEleven GmbH;"
   abstract: ""
 
 - title: "Mittagspause"
@@ -215,7 +215,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Andreas Reckert-Lodde, Interims-Geschäftsführer Zendis; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
+  description: "Andreas Reckert-Lodde, Interims-Geschäftsführer ZenDiS; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
   abstract: "Die Digitalisierung der Öffentlichen Verwaltung in Deutschland und Europa voranzubringen und dabei souverän zu gestalten, ist eine komplexe und herausfordernde Aufgabe. Das ZenDis (Zentrum Digitale Souveränität) unterstützt die Öffentliche Verwaltung bei dieser Aufgabe mit zwei seiner wichtigsten Projekte: die Software-Plattform Open CoDE und der digitale Arbeitsplatz openDesk. Wird openDesk als SaaS-Lösung auf SCS betrieben, garantiert das die digitale Souveränität seiner Office Anwendungen auch in der Cloud. Wir zeigen, wie weit dieses Projekt bereits umgesetzt ist – und dass digital souveräne, funktionale Software für die Öffentliche Verwaltung keine Zukunftsmusik ist, sondern heute schon Realität."
 
 - title: "Plusserver (sponsored)"
