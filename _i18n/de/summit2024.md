@@ -65,6 +65,7 @@ Bitte beachten Sie, dass das Programm deutschsprachig sein wird.
                     <div class="location mb-2 text-muted"><i class="fa fa-map-marker me-2"
                             aria-hidden="true"></i>{{talk.location}}</div>
                     <div class="desc pb-2">{{talk.description}}</div>
+                    <div class="desc pb-2">{{talk.abstract}}</div>
                     {% if talk.slides %}
 			<div class="desc pb-2"><a href="{{talk.slides}}">Folien</a></div>
 		    {% endif %}
