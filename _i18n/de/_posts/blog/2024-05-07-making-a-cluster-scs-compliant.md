@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2024-05-07-making-a-cluster-scs-compliant.md
