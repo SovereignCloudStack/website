@@ -13,7 +13,7 @@
   day: 1
   start: "09:30"
   end: "09:40"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -24,7 +24,7 @@
   day: 1
   start: "09:40"
   end: "09:55"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -35,7 +35,7 @@
   day: 1
   start: "09:55"
   end: "10:15"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -46,7 +46,7 @@
   day: 1
   start: "10:15"
   end: "10:30"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -57,7 +57,7 @@
   day: 1
   start: "10:30"
   end: "10:45"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -68,7 +68,7 @@
   day: 1
   start: "10:45"
   end: "11:00"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -79,7 +79,7 @@
   day: 1
   start: "11:00"
   end: "11:15"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -90,7 +90,7 @@
   day: 1
   start: "11:15"
   end: "11:30"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -101,7 +101,7 @@
   day: 1
   start: "11:30"
   end: "12:15"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -112,7 +112,7 @@
   day: 1
   start: "12:15"
   end: "13:15"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -123,7 +123,7 @@
   day: 1
   start: "13:15"
   end: "13:25"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -134,7 +134,7 @@
   day: 1
   start: "13:25"
   end: "13:55"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -145,7 +145,7 @@
   day: 1
   start: "13:55"
   end: "14:05"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -156,7 +156,7 @@
   day: 1
   start: "14:05"
   end: "14:30"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -170,7 +170,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   description: "Holger Müller, Director Cloud Public Sector, SVA GmbH"
   abstract: "Wahr ist, dass das Thema Digitale Souveränität und damit einhergehend das Thema Open Source noch nie so omnipräsent wie heute in meinen Gesprächen mit Entscheidern speziell aus der Öffentlichen Hand war.  Wahr ist aber auch, dass ich nie zuvor so oft von den gleichen Kunden gehört habe, dass es Ihnen zunehmend schwer fällt, die anwachsende Komplexität und Verflechtung von Problemlagen zu beherrschen, und noch nie so viele Projekte gar nicht erst gestartet wurden u.a. wegen des zunehmenden Fachkräftemangels allerorts. In meinem Vortrag möchte ich Anregungen geben, wie der SCS speziell an Relevanz bei Entscheidern gewinnen kann und wie wir als IT-Dienstleister die Kunden dabei unterstützen können, die gewünschten Mehrwerte auch zu erreichen."
 
@@ -178,7 +178,7 @@
   day: 1
   start: "15:00"
   end: "15:20"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -189,7 +189,7 @@
   day: 1
   start: "15:20"
   end: "15:30"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -200,7 +200,7 @@
   day: 1
   start: "15:30"
   end: "16:00"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -211,7 +211,7 @@
   day: 1
   start: "16:00"
   end: "16:25"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -222,7 +222,7 @@
   day: 1
   start: "16:25"
   end: "16:35"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -233,7 +233,7 @@
   day: 1
   start: "16:35"
   end: "17:15"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -244,7 +244,7 @@
   day: 1
   start: "17:15"
   end: "17:40"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -255,7 +255,7 @@
   day: 1
   start: "17:40"
   end: "18:00"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker:
   avatar:
     - "SCS_logo.png"
@@ -266,7 +266,7 @@
   day: 1
   start: "18:00"
   end: "18:10"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
@@ -277,7 +277,7 @@
   day: 1
   start: "18:10"
   end: "22:30"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
