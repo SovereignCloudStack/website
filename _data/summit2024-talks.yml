@@ -5,7 +5,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  location: "BBAW"
+  location: "Villa Elisabeth"
   description: ""
 
 - title: "Begrüßung durch das SCS Team"
@@ -25,7 +25,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "stoeckl-pukall.jpg"
+    - "summit2024/speaker/stoeckl-pukall.jpg"
   description: "Ernst Stöckl-Pukall, Leiter Referat Digitalisierung & Industrie 4.0, Bundesministerium für Wirtschaft und Klimaschutz"
 
 - title: "Keynote: Die Bedeutung von offenen Infrastrukturen für Freiheit und Demokratie"
@@ -35,7 +35,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "riedel.jpg"
+    - "summit2024/speaker/riedel.jpg"
   description: "Ann-Cathrin Riedel, Geschäftsführerin von NExT e.V. und Mitglied des Digitalbeirats des Bundesministeriums für Digitales und Verkehr"
   abstract: "Demokratien und freiheitliche Gesellschaften sind global unter Druck. Gerade in dieser Situation braucht es offene, transparente, souveräne und kollaborative Infrastrukturen. Denn sie bieten nicht nur technische sondern auch gesellschaftliche Mehrwerte. Der Blick über den (europäischen) Tellerrand zeigt, dass diese Fragen globalpolitisch viele Menschen bewegen und dass Open-Source-Initiativen eine zentrale Rolle spielen im Kampf um Freiheit und Demokratie."
 
@@ -46,7 +46,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "ganten.jpg"
+    - "summit2024/speaker/ganten.jpg"
   description: "Peter Ganten, Vorstandsvorsitzender der Open Source Business Alliance e.V."
   abstract: "In einer Welt voller Gatekeeper und Abhängigkeiten von einzelnen Anbietern sichert Open Source Software die Gestaltungs- und Innovationsfähigkeit von Staat, Wirtschaft und Gesellschaft. Denn um in der digitalen Welt Freiheit, Innovations- und Wertschöpfungsfähigkeit zu sichern, müssen wir IT-Systeme kontrollieren und mit unseren eigenen Ideen voranbringen und gestalten können. Open Source macht dies jederzeit und unabhängig von Dritten möglich. Das Sovereign Cloud Stack Projekt ist eine wichtige Basis dafür, auf der unterschiedlichste Lösungen und Konzepte frei, offen und kooperativ entwickelt und betrieben werden können."
 
@@ -57,7 +57,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "schmitz.jpg"
+    - "summit2024/speaker/schmitz.jpg"
   description: "Christian Schmitz, Director Open Source, plusserver gmbh"
   abstract: 
   
@@ -68,7 +68,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "streit.jpeg"
+    - "summit2024/speaker/streit.jpeg"
   description: "Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG"
   abstract: "Viele Kunden sind sich der Bedeutung von ressourcenschonenden IT-Lösungen bewusst. Gleichzeitig wächst auch das Interesse an freier Hardware und Software. In diesem Impulsvortrag zeigen wir, wie sich Open Hardware und das SCS Framework für einen klimafreundlichen Betrieb von IT-Hardware kombinieren lassen und wie beide Konzepte Möglichkeiten bieten, neue und offene Nutzungskonzepte zu erproben. Als langjähriger Verfechter von Open Software und Open Hardware haben wir beides für unsere Open Cloud unter dem SCS-Konzept zusammengeführt, um eine offene, nachhaltige Cloud-Alternative aus Deutschland anzubieten."
 
@@ -79,7 +79,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "plogsties.jpeg"
+    - "summit2024/speaker/plogsties.jpeg"
   description: "Jens Plogsties, CTO SysEleven GmbH"
   abstract: "In diesem Vortrag wird die entscheidende Rolle von OpenSource-Lösungen und souveränen Cloud-Services für die sichere Verarbeitung sensibler Daten beleuchtet. Wir präsentieren, wie der von SCS (Sovereign Cloud Stack) definierte Standard erfolgreich in unser Public Cloud-Angebot integriert wurde, um den Schutz und die Integrität sensibler Informationen zu gewährleisten. Die Teilnehmer erhalten Einblicke in die technischen und strategischen Herausforderungen, die während der Implementierung bewältigt wurden, sowie die daraus resultierenden Vorteile für Kunden, für die Datensicherheit und Datensouveränität wertvoll ist. Abschließend diskutieren wir, wie diese Integration zur Schaffung einer vertrauenswürdigen und sicheren Cloud-Umgebung beiträgt, die den strengsten Datenschutzanforderungen gerecht wird. Dieser Vortrag veranschaulicht, wie innovative OpenSource-Technologien und dedizierte Sicherheitsstandards die Landschaft der Cloud-Dienste transformieren können."
 
@@ -90,7 +90,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "bizer.jpg"
+    - "summit2024/speaker/bizer.jpg"
   description: "Johan Bizer, CEO Dataport AöR"
   abstract: 
 
@@ -122,7 +122,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "pilka.png"
+    - "summit2024/speaker/pilka.png"
   description: "Martin Pilka, Co-founder & CEO dNation"
   abstract: 
 
@@ -155,7 +155,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "walter.jpg"
+    - "summit2024/speaker/walter.jpg"
   description: "David Walter, Head of Customer Experience, CISO & DPO at ownCloud"
   abstract: "Dieser Vortrag stellt den Sovereign Cloud Stack (SCS) als zentrales Element von ownCloud Infinite Scale vor, mit bis zu 6300 Schulen und 5 Millionen Nutzern. Es wird erläutert, wie der SCS dazu beiträgt, die Skalierung und Sicherheit der Plattform gewährleistet, wobei die Performancenforderungen von hundertausenden concurrent Usern bewältigt werden müssen. Mit einer Anwendungsverfügbarkeit von zuletzt 100% ist SCS das Rückrat moderner Pädagogik und Hochtechnologie made in Germany."
 
@@ -165,20 +165,20 @@
   end: "15:00"
   speaker: ""
   avatar:
-    - "mueller.jpg"
+    - "summit2024/speaker/mueller.jpg"
   location: "BBAW"
   description: "Holger Müller, Director Cloud Public Sector, SVA GmbH"
   abstract: "Wahr ist, dass das Thema Digitale Souveränität und damit einhergehend das Thema Open Source noch nie so omnipräsent wie heute in meinen Gesprächen mit Entscheidern speziell aus der Öffentlichen Hand war.  Wahr ist aber auch, dass ich nie zuvor so oft von den gleichen Kunden gehört habe, dass es Ihnen zunehmend schwer fällt, die anwachsende Komplexität und Verflechtung von Problemlagen zu beherrschen, und noch nie so viele Projekte gar nicht erst gestartet wurden u.a. wegen des zunehmenden Fachkräftemangels allerorts. In meinem Vortrag möchte ich Anregungen geben, wie der SCS speziell an Relevanz bei Entscheidern gewinnen kann und wie wir als IT-Dienstleister die Kunden dabei unterstützen können, die gewünschten Mehrwerte auch zu erreichen."
 
-- title: "CO2 Monitoring in SCS - Mythos oder bald erlebbare Realität?"
+- title: ""CO2 Monitoring in SCS - Mythos oder bald erlebbare Realität?""
   day: 1
   start: "15:00"
   end: "15:20"
   location: "BBAW"
   speaker: ""
   avatar:
-    - "hoffmann.jpg"
-    - "streit.jpeg.jpg"
+    - "summit2024/speaker/hoffmann.jpg"
+    - "summit2024/speaker/streit.jpeg.jpg"
   description: "Lena Hoffmann, Referentin Politik & Wissenschaft bei der Gesellschaft für Informatik e.V. (GI); Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG"
   abstract: "Im Vortrag der Gesellschaft für Informatik gemeinsam mit der ScaleUpTechnologies GmbH & Co. KG wird die Notwendigkeit betont, digitale Technologien hinsichtlich ihrer Umweltauswirkungen objektiv zu bewerten. Der Mangel an Standardisierung im Bereich der Software-Ressourcenmessung wird als eine der Hauptherausforderungen identifiziert. Der ITK-Sektor, der bedeutende CO2-Emissionen verursacht, erfordert innovative Ansätze zur Reduzierung dieser Emissionen. Das Projekt ECO:DIGIT begegnet diesen Herausforderungen durch die Entwicklung eines standardisierten virtuellen Prüfstands. Als Teil der Referenzimplementierung des Sovereign Cloud Stacks (SCS) ermöglicht dieser Ansatz eine vergleichbare Bewertung digitaler Technologien und unterstützt effektives Umweltmanagement."
 
@@ -210,7 +210,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "reckert-lodde.png"
+    - "summit2024/speaker/reckert-lodde.png"
   description: "Andreas Reckert-Lodde, Interims-Geschäftsführer Zendis; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
   abstract: "Die Digitalisierung der Öffentlichen Verwaltung in Deutschland und Europa voranzubringen und dabei souverän zu gestalten, ist eine komplexe und herausfordernde Aufgabe. Das ZenDis (Zentrum Digitale Souveränität) unterstützt die Öffentliche Verwaltung bei dieser Aufgabe mit zwei seiner wichtigsten Projekte: die Software-Plattform Open CoDE und der digitale Arbeitsplatz openDesk. Wird openDesk als SaaS-Lösung auf SCS betrieben, garantiert das die digitale Souveränität seiner Office Anwendungen auch in der Cloud. Wir zeigen, wie weit dieses Projekt bereits umgesetzt ist – und dass digital souveräne, funktionale Software für die Öffentliche Verwaltung keine Zukunftsmusik ist, sondern heute schon Realität."
 
@@ -221,7 +221,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "eberhard.jpg"
+    - "summit2024/speaker/eberhard.jpg"
   description: ""
   abstract: 
 
@@ -232,9 +232,9 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "heeger.jpg"
-    - "ahle.jpg"
-    - "kremer.jpg"
+    - "summit2024/speaker/heeger.jpg"
+    - "summit2024/speaker/ahle.jpg"
+    - "summit2024/speaker/remer.jpg"
   description: "Viola Heeger, Redakteurin Tagessspiegel Background Digitalisierung & KI; Ulrich Ahle, Chief Executive Officer, Gaia-X European Association for Data and Cloud AISBL; Jörg Kremer, Leitung | Abteilung Föderale IT-Architekturmanagement, Projekte und Standards bei der FITKO (föderale IT-Kooperation)"
   abstract: 
 
@@ -245,7 +245,7 @@
   location: "BBAW"
   speaker: ""
   avatar:
-    - "schroedter.jpg"
+    - "summit2024/speaker/schroedter.jpg"
   description: "Dirk Schrödter, Minister für Digitalisierung und Chef der Staatskanzlei des Landes Schleswig-Holstein"
   abstract: "Schleswig-Holstein geht bei der Schaffung digitaler Souveränität in der öffentlichen Verwaltung voran. Wir werden als erstes Land auf freie Open-Source-Systeme umsteigen und den digital-souveränen IT-Arbeitsplatz für die Landesverwaltung einführen. Dazu haben wir eine klare Schrittfolge entwickelt, die vom Einsatz von Office-Anwendungen bis hin zur Telefonie reicht."
 
@@ -256,7 +256,7 @@
   location: "BBAW"
   speaker:
   avatar:
-    - "ganten.jpg"
+    - "summit2024/speaker/ganten.jpg"
   description: "Peter Ganten, Vorstandsvorsitzender der Open Source Business Alliance e.V.; Kurt Garloff, CTO SCS, OSB Alliance e.V.; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
   abstract: 
 
