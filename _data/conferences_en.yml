@@ -1,3 +1,10 @@
+- date: "2024-04-24"
+  event: "2024 OCP Regional Summit"
+  title: "Open Networking in the Sovereign Cloud Stack Project"
+  details: "Marc Schöchlin"
+  slides: "20240424-OCP-Regional-Summit-Open_Networking_in_the_Sovereign_Cloud_Stack_Project.pdf"
+  link: "https://www.opencompute.org/summit/regional-summit"
+
 - date: "2023-10-07"
   event: "Mercedes-Benz FOSS Con 2023"
   title: "Standardizing an open source cloud computing stack – benefits and drawbacks"
