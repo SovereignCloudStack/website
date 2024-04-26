@@ -2,10 +2,10 @@
   day: 1
   start: "08:00"
   end: "09:30"
+  location: "Villa Elisabeth"
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  location: "Villa Elisabeth"
   description: ""
 
 - title: "Begrüßung durch das SCS Team"
