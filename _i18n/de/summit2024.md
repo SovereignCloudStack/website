@@ -62,8 +62,6 @@ Bitte beachten Sie, dass das Programm deutschsprachig sein wird.
                             href="#session-{{ forloop.index }}" class="link-unstyled"><i
                                 class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em;"></i></a>
                     </h3>
-                    <div class="location mb-2 text-muted"><i class="fa fa-map-marker me-2"
-                            aria-hidden="true"></i>{{talk.location}}</div>
                     <div class="desc pb-2">{{talk.description}}</div>
                     <div class="desc pb-2">{{talk.abstract}}</div>
                     {% if talk.slides %}
