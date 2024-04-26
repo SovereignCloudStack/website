@@ -53,7 +53,7 @@
   description: "Peter Ganten, Vorstandsvorsitzender der Open Source Business Alliance e.V."
   abstract: "In einer Welt voller Gatekeeper und Abhängigkeiten von einzelnen Anbietern sichert Open Source Software die Gestaltungs- und Innovationsfähigkeit von Staat, Wirtschaft und Gesellschaft. Denn um in der digitalen Welt Freiheit, Innovations- und Wertschöpfungsfähigkeit zu sichern, müssen wir IT-Systeme kontrollieren und mit unseren eigenen Ideen voranbringen und gestalten können. Open Source macht dies jederzeit und unabhängig von Dritten möglich. Das Sovereign Cloud Stack Projekt ist eine wichtige Basis dafür, auf der unterschiedlichste Lösungen und Konzepte frei, offen und kooperativ entwickelt und betrieben werden können."
 
-- title: "(PlusCloudOpen : 3 Jahre SCS Betrieb - störungsfrei und sicher)"
+- title: "Komplexe KI oder öffentliches Großprojekt? SCS macht es möglich!"
   day: 1
   start: "10:30"
   end: "10:45"
@@ -86,7 +86,7 @@
   description: "Jens Plogsties, CTO SysEleven GmbH"
   abstract: "In diesem Vortrag wird die entscheidende Rolle von OpenSource-Lösungen und souveränen Cloud-Services für die sichere Verarbeitung sensibler Daten beleuchtet. Wir präsentieren, wie der von SCS (Sovereign Cloud Stack) definierte Standard erfolgreich in unser Public Cloud-Angebot integriert wurde, um den Schutz und die Integrität sensibler Informationen zu gewährleisten. Die Teilnehmer erhalten Einblicke in die technischen und strategischen Herausforderungen, die während der Implementierung bewältigt wurden, sowie die daraus resultierenden Vorteile für Kunden, für die Datensicherheit und Datensouveränität wertvoll ist. Abschließend diskutieren wir, wie diese Integration zur Schaffung einer vertrauenswürdigen und sicheren Cloud-Umgebung beiträgt, die den strengsten Datenschutzanforderungen gerecht wird. Dieser Vortrag veranschaulicht, wie innovative OpenSource-Technologien und dedizierte Sicherheitsstandards die Landschaft der Cloud-Dienste transformieren können."
 
-- title: "(Dataport : Der Aufbau einer digital souveränen Cloudumgebung)"
+- title: "SCS bei Dataport"
   day: 1
   start: "11:15"
   end: "11:30"
@@ -152,7 +152,7 @@
   description: ""
   abstract: ""
 
-- title: "(Eine offene Schulcloud für 5 Millionen Nutzer basierend auf SCS)"
+- title: "Eine offene Schulcloud für 5 Millionen Nutzer basierend auf SCS"
   day: 1
   start: "14:05"
   end: "14:30"
