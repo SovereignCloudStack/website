@@ -5,7 +5,7 @@
   location: "Villa Elisabeth"
   speaker: ""
   avatar:
-    - summit2024/empty.png
+    - "empty.png"
   description: ""
   abstract: ""
 
