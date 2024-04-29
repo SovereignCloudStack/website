@@ -66,6 +66,7 @@ speakers:
   - name: Kurt Garloff
     title: CTO Sovereign Cloud Stack, Open Source Business Alliance e.V.
     avatar: summit2024/speaker/garloff.webp
+    shortbio: "Noch als Student und wissenschaftlicher Angestellter in der Physik in Dortmund, Wuppertal und Eindhoven begann Kurt an und mit Linux zu arbeiten, mit ersten Beiträgen zum SCSI Speichersystem Mitte der 90er. Sein nachuniversitäres Leben verbrachte er in der Open-Source-Welt, als Kernelentwickler, Leiter der SUSE Labs (Kernel, Compiler, X11, Security), und in technischen und geschäftlichen Leitungsfunktionen bei SUSE. Seit 2011 arbeitet er an Open Source Clouds, bei der Deutschen Telekom, als Freelancer, bei T-Systems (als Chefarchitekt der OTC) und diente im Board der Open Infra Foundation. Seit Ende 2019 verfolgt er die Idee des Sovereign Cloud Stacks, was in ein öffentlich gefördertes Projekt mündete, das er technisch leitet. Er schreibt immer mal wieder gerne Code (dieser Tage meistens in Python) oder tested zumindest denjeniger seines Projekts und seiner Kolleg:inn:en. Seine Freizeit verbringt er mit seiner Familie, beim Laufsport oder mit Tischtennis."
   - name: Felix Kronlage-Dammers
     title: Product Owner IaaS & Operations Sovereign Cloud Stack, Open Source Business Alliance e.V.
     avatar: summit2024/speaker/kronlage-dammers.webp
