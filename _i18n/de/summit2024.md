@@ -24,8 +24,7 @@ Bitte beachten Sie, dass das Programm deutschsprachig sein wird.
         <li class="nav-item me-2">
             <a class="nav-link active" id="tab-day-1" data-bs-toggle="tab" href="#day-1" role="tab"
                 aria-controls="day-1" aria-selected="true">
-                <span class="heading">Tag 1</span>
-                <span class="meta d-none d-lg-block">(Dienstag, 14. Mai)</span>
+                <span class="meta d-none d-lg-block">Dienstag, 14. Mai</span>
             </a>
         </li>
     </ul>
