@@ -38,12 +38,6 @@ Bitte beachten Sie, dass das Programm deutschsprachig sein wird.
             <div class="item item-talk">
                 <div class="meta">
                     <h4 class="time">{{talk.start}} – {{talk.end}}</h4>
-                    <div class="profile mt-3">
-                        <div class="d-flex justify-content-center">{% assign post = talk %}{% include news/blog_avatars.html %}</div>
-                        <div class="name mt-2">
-                        {{talk.speaker | join: ", "}}
-                        </div>
-                    </div>
                     <!--//profile-->
                 </div>
                 <!--//meta-->
