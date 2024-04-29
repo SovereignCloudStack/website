@@ -17,7 +17,8 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Manuela Urban, COO SCS, OSB Alliance e.V.; Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. "
+  description: "Manuela Urban, COO SCS, OSB Alliance e.V."
+  description2: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. "
   abstract: ""
 
 - title: "Grußwort des Bundesministeriums für Wirtschaft und Klimaschutz"
@@ -105,7 +106,10 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Johann Bizer, CEO Dataport AöR; Jens Plogsties, CTO SysEleven GmbH; Christian Schmitz, Director Open Source, plusserver gmbh; Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG;"
+  description: "Johann Bizer, CEO Dataport AöR"
+  description2: "Jens Plogsties, CTO SysEleven GmbH"
+  description3: "Christian Schmitz, Director Open Source, plusserver gmbh"
+  description4: "Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG;"
   abstract: ""
 
 - title: "Mittagspause"
@@ -138,7 +142,10 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Kurt Garloff, CTO & Product Owner IAM; Felix Kronlage-Dammers, Product Owner IaaS; Dominik Pataky, Product Owner Operations & Security; Jan Schoone, Product Owner Container & KaaS"
+  description: "Kurt Garloff, CTO & Product Owner IAM"
+  description2: "Felix Kronlage-Dammers, Product Owner IaaS"
+  description3: "Dominik Pataky, Product Owner Operations & Security"
+  description4: "Jan Schoone, Product Owner Container & KaaS"
   abstract: ""
 
 - title: "Syseleven (sponsored)"
@@ -216,7 +223,8 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Andreas Reckert-Lodde, Interims-Geschäftsführer ZenDiS; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
+  description: "Andreas Reckert-Lodde, Interims-Geschäftsführer ZenDiS"
+  description2: "Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
   abstract: "Die Digitalisierung der Öffentlichen Verwaltung in Deutschland und Europa voranzubringen und dabei souverän zu gestalten, ist eine komplexe und herausfordernde Aufgabe. Das ZenDis (Zentrum Digitale Souveränität) unterstützt die Öffentliche Verwaltung bei dieser Aufgabe mit zwei seiner wichtigsten Projekte: die Software-Plattform Open CoDE und der digitale Arbeitsplatz openDesk. Wird openDesk als SaaS-Lösung auf SCS betrieben, garantiert das die digitale Souveränität seiner Office Anwendungen auch in der Cloud. Wir zeigen, wie weit dieses Projekt bereits umgesetzt ist – und dass digital souveräne, funktionale Software für die Öffentliche Verwaltung keine Zukunftsmusik ist, sondern heute schon Realität."
 
 - title: "Datenhoheit in der Cloud - Sicherheit und Souveränität mit der pluscloud open (sponsored)"
@@ -238,7 +246,9 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Viola Heeger, Redakteurin Tagessspiegel Background Digitalisierung & KI; Ulrich Ahle, Chief Executive Officer, Gaia-X European Association for Data and Cloud AISBL; Jörg Kremer, Leitung | Abteilung Föderale IT-Architekturmanagement, Projekte und Standards bei der FITKO (föderale IT-Kooperation)"
+  description: "Viola Heeger, Redakteurin Tagessspiegel Background Digitalisierung & KI"
+  description2: "Ulrich Ahle, Chief Executive Officer, Gaia-X European Association for Data and Cloud AISBL"
+  description3: "Jörg Kremer, Leitung | Abteilung Föderale IT-Architekturmanagement, Projekte und Standards bei der FITKO (föderale IT-Kooperation)"
   abstract: ""
 
 - title: "Schleswig-Holsteins Weg in die Digitale Souveränität"
@@ -261,6 +271,8 @@
   avatar:
     - "SCS_logo.png"
   description: "Peter Ganten, Vorstandsvorsitzender der Open Source Business Alliance e.V.; Kurt Garloff, CTO SCS, OSB Alliance e.V.; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
+  description2: "Kurt Garloff, CTO SCS, OSB Alliance e.V."
+  description3: "Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
   abstract: ""
 
 - title: "Abschluss und Verabschiedung"
@@ -271,7 +283,8 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Manuela Urban, COO SCS, OSB Alliance e.V.; Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
+  description: "Manuela Urban, COO SCS, OSB Alliance e.V."
+  description2: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
   abstract: ""
 
 - title: "Ausklang bei Essen und Getränken"
