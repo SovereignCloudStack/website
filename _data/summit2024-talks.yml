@@ -146,7 +146,7 @@
   description2: "Felix Kronlage-Dammers, Product Owner IaaS"
   description3: "Dominik Pataky, Product Owner Operations & Security"
   description4: "Jan Schoone, Product Owner Container & KaaS"
-  abstract: ""
+  abstract: "Der Sovereign Cloud Stack liefert ein souveränes Komplettpaket: Infrastructure-as-a-Service mit einer Implementierung von OpenStack, Kubernetes-as-a-Service mit SCS Cluster Stacks sowie ein föderiertes Identity- und Access Management, und einer integrierten Observability-Lösung. Über allem steht dabei die gemeinsame Standardisierung von Schnittstellen und Komponenten, so dass auch andere Technologien und innovative Lösungsansätze im SCS zum Einsatz kommen können. Gemeinsam werden wir als Product Owners aufzeigen, wie der Weg von einzelnen Vergabepaketen zu einer integrierten, schlüsselfertigen Lösung aussieht."
 
 - title: "Syseleven (sponsored)"
   day: 1
