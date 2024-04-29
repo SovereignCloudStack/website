@@ -128,7 +128,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Dipl.-Ing. Martin Pilka, CEO, dNation - MAKING CLOUD EASY"
-  abstract: ""
+  abstract: "Martin Pilka, CEO of dNation company which won 3 SCS tenders will explain how active participation in SCS ecosystem helped his company to have more control over their sensitive business data and thus become more digitally sovereign."
 
 - title: "SCS als integrierte Turnkey-Lösung"
   day: 1
@@ -218,7 +218,7 @@
   description: "Andreas Reckert-Lodde, Interims-Geschäftsführer ZenDiS; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
   abstract: "Die Digitalisierung der Öffentlichen Verwaltung in Deutschland und Europa voranzubringen und dabei souverän zu gestalten, ist eine komplexe und herausfordernde Aufgabe. Das ZenDis (Zentrum Digitale Souveränität) unterstützt die Öffentliche Verwaltung bei dieser Aufgabe mit zwei seiner wichtigsten Projekte: die Software-Plattform Open CoDE und der digitale Arbeitsplatz openDesk. Wird openDesk als SaaS-Lösung auf SCS betrieben, garantiert das die digitale Souveränität seiner Office Anwendungen auch in der Cloud. Wir zeigen, wie weit dieses Projekt bereits umgesetzt ist – und dass digital souveräne, funktionale Software für die Öffentliche Verwaltung keine Zukunftsmusik ist, sondern heute schon Realität."
 
-- title: "Datenhoheit in der Cloud - Sicherheit und Souveränität mit der pluscloud open"
+- title: "Datenhoheit in der Cloud - Sicherheit und Souveränität mit der pluscloud open (sponsored)"
   day: 1
   start: "16:25"
   end: "16:35"
@@ -226,7 +226,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Robert Eberhard, Product Owner for pluscloud open, Plusserver GmbH"
+  description: "Robert Eberhard, Product Owner for pluscloud open, plusserver GmbH"
   abstract: "Was bedeutet eigentlich Datenhoheit und wie können wir diese mithilfe einer Open-Source-Lösung wie dem SCS sicherstellen? In seinem Vortrag erörtert Robert Eberhard diese Fragestellung am Beispiel der pluscloud open und geht dabei auch auf die Vorteile ein, die sich in Bezug auf die Sicherheit ergeben."
 
 - title: "Gespräch über die europäische Perspektive digital souveräner Infrastrukturen"
@@ -276,7 +276,7 @@
 - title: "Ausklang bei Essen und Getränken"
   day: 1
   start: "18:10"
-  end: "22:30"
+  end: "22:00"
   location: "Villa Elisabeth"
   speaker: ""
   avatar:
