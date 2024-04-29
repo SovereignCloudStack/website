@@ -9,7 +9,7 @@
   description: ""
   abstract: ""
 
-- title: "Begrüßung durch das SCS Team"
+- title: "Begrüßung durch das SCS-Team"
   day: 1
   start: "09:30"
   end: "09:40"
@@ -130,7 +130,7 @@
   description: "Martin Pilka, Co-founder & CEO dNation"
   abstract: ""
 
-- title: "SCS wird eine integrierte turnkey Lösung"
+- title: "SCS als integrierte Turnkey-Lösung"
   day: 1
   start: "13:25"
   end: "13:55"
@@ -138,7 +138,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Kurt Garloff, CTO SCS, OSB Alliance e.V.; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung; Dominik Pataky, Product Owner SCS Operations; Jan Schoone, Product Owner SCS KaaS Referenzimplementierung"
+  description: "Kurt Garloff, CTO & Product Owner IAM; Felix Kronlage-Dammers, Product Owner IaaS; Dominik Pataky, Product Owner Operations & Security; Jan Schoone, Product Owner Container & KaaS"
   abstract: ""
 
 - title: "Syseleven (sponsored)"
