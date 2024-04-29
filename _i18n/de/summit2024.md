@@ -54,6 +54,8 @@ Bitte beachten Sie, dass das Programm deutschsprachig sein wird.
                     </h3>
                     <div class="desc pb-2"><b>{{talk.description}}</b></div>
                     <div class="desc pb-2"><b>{{talk.description2}}</b></div>
+                    <div class="desc pb-2"><b>{{talk.description3}}</b></div>
+                    <div class="desc pb-2"><b>{{talk.description4}}</b></div>
                     <div class="desc pb-2"><i>{{talk.abstract}}</i></div>
                     {% if talk.slides %}
 			<div class="desc pb-2"><a href="{{talk.slides}}">Folien</a></div>
