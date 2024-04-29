@@ -17,7 +17,8 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Manuela Urban, COO SCS, OSB Alliance e.V.; Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. "
+  description: "Manuela Urban, COO SCS, OSB Alliance e.V."
+  description2: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V. "
   abstract: ""
 
 - title: "Grußwort des Bundesministeriums für Wirtschaft und Klimaschutz"
@@ -105,7 +106,10 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Johann Bizer, CEO Dataport AöR; Jens Plogsties, CTO SysEleven GmbH; Christian Schmitz, Director Open Source, plusserver gmbh; Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG;"
+  description: "Johann Bizer, CEO Dataport AöR"
+  description2: "Jens Plogsties, CTO SysEleven GmbH"
+  description3: "Christian Schmitz, Director Open Source, plusserver gmbh"
+  description4: "Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG;"
   abstract: ""
 
 - title: "Mittagspause"
@@ -127,8 +131,8 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Martin Pilka, Co-founder & CEO dNation"
-  abstract: ""
+  description: "Dipl.-Ing. Martin Pilka, CEO, dNation - MAKING CLOUD EASY"
+  abstract: "Martin Pilka, CEO of dNation company which won 3 SCS tenders will explain how active participation in SCS ecosystem helped his company to have more control over their sensitive business data and thus become more digitally sovereign."
 
 - title: "SCS als integrierte Turnkey-Lösung"
   day: 1
@@ -138,7 +142,10 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Kurt Garloff, CTO & Product Owner IAM; Felix Kronlage-Dammers, Product Owner IaaS; Dominik Pataky, Product Owner Operations & Security; Jan Schoone, Product Owner Container & KaaS"
+  description: "Kurt Garloff, CTO & Product Owner IAM"
+  description2: "Felix Kronlage-Dammers, Product Owner IaaS"
+  description3: "Dominik Pataky, Product Owner Operations & Security"
+  description4: "Jan Schoone, Product Owner Container & KaaS"
   abstract: "Der Sovereign Cloud Stack liefert ein souveränes Komplettpaket: Infrastructure-as-a-Service mit einer Implementierung von OpenStack, Kubernetes-as-a-Service mit SCS Cluster Stacks sowie ein föderiertes Identity- und Access Management, und einer integrierten Observability-Lösung. Über allem steht dabei die gemeinsame Standardisierung von Schnittstellen und Komponenten, so dass auch andere Technologien und innovative Lösungsansätze im SCS zum Einsatz kommen können. Gemeinsam werden wir als Product Owners aufzeigen, wie der Weg von einzelnen Vergabepaketen zu einer integrierten, schlüsselfertigen Lösung aussieht."
 
 - title: "Syseleven (sponsored)"
@@ -172,7 +179,7 @@
     - "SCS_logo.png"
   location: "Villa Elisabeth"
   description: "Holger Müller, Director Cloud Public Sector, SVA GmbH"
-  abstract: "Wahr ist, dass das Thema Digitale Souveränität und damit einhergehend das Thema Open Source noch nie so omnipräsent wie heute in meinen Gesprächen mit Entscheidern speziell aus der Öffentlichen Hand war.  Wahr ist aber auch, dass ich nie zuvor so oft von den gleichen Kunden gehört habe, dass es Ihnen zunehmend schwer fällt, die anwachsende Komplexität und Verflechtung von Problemlagen zu beherrschen, und noch nie so viele Projekte gar nicht erst gestartet wurden u.a. wegen des zunehmenden Fachkräftemangels allerorts. In meinem Vortrag möchte ich Anregungen geben, wie der SCS speziell an Relevanz bei Entscheidern gewinnen kann und wie wir als IT-Dienstleister die Kunden dabei unterstützen können, die gewünschten Mehrwerte auch zu erreichen."
+  abstract: "Wahr ist, dass das Thema Digitale Souveränität und damit einhergehend das Thema Open Source noch nie so omnipräsent wie heute in meinen Gesprächen mit Entscheidern speziell aus der öffentlichen Hand war.  Wahr ist aber auch, dass ich nie zuvor so oft von den gleichen Kunden gehört habe, dass es Ihnen zunehmend schwer fällt, die anwachsende Komplexität und Verflechtung von Problemlagen zu beherrschen, und noch nie so viele Projekte gar nicht erst gestartet wurden u.a. wegen des zunehmenden Fachkräftemangels allerorts. In meinem Vortrag möchte ich Anregungen geben, wie der SCS speziell an Relevanz bei Entscheidern gewinnen kann und wie wir als IT-Dienstleister die Kunden dabei unterstützen können, die gewünschten Mehrwerte auch zu erreichen."
 
 - title: "CO2 Monitoring in SCS - Mythos oder bald erlebbare Realität?"
   day: 1
@@ -183,6 +190,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Lena Hoffmann, Referentin Politik & Wissenschaft bei der Gesellschaft für Informatik e.V. (GI); Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG"
+  description2: "Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG"
   abstract: "Im Vortrag der Gesellschaft für Informatik gemeinsam mit der ScaleUpTechnologies GmbH & Co. KG wird die Notwendigkeit betont, digitale Technologien hinsichtlich ihrer Umweltauswirkungen objektiv zu bewerten. Der Mangel an Standardisierung im Bereich der Software-Ressourcenmessung wird als eine der Hauptherausforderungen identifiziert. Der ITK-Sektor, der bedeutende CO2-Emissionen verursacht, erfordert innovative Ansätze zur Reduzierung dieser Emissionen. Das Projekt ECO:DIGIT begegnet diesen Herausforderungen durch die Entwicklung eines standardisierten virtuellen Prüfstands. Als Teil der Referenzimplementierung des Sovereign Cloud Stacks (SCS) ermöglicht dieser Ansatz eine vergleichbare Bewertung digitaler Technologien und unterstützt effektives Umweltmanagement."
 
 - title: "B1 Systems (sponsored)"
@@ -215,10 +223,11 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Andreas Reckert-Lodde, Interims-Geschäftsführer ZenDiS; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
+  description: "Andreas Reckert-Lodde, Interims-Geschäftsführer ZenDiS"
+  description2: "Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
   abstract: "Die Digitalisierung der Öffentlichen Verwaltung in Deutschland und Europa voranzubringen und dabei souverän zu gestalten, ist eine komplexe und herausfordernde Aufgabe. Das ZenDis (Zentrum Digitale Souveränität) unterstützt die Öffentliche Verwaltung bei dieser Aufgabe mit zwei seiner wichtigsten Projekte: die Software-Plattform Open CoDE und der digitale Arbeitsplatz openDesk. Wird openDesk als SaaS-Lösung auf SCS betrieben, garantiert das die digitale Souveränität seiner Office Anwendungen auch in der Cloud. Wir zeigen, wie weit dieses Projekt bereits umgesetzt ist – und dass digital souveräne, funktionale Software für die Öffentliche Verwaltung keine Zukunftsmusik ist, sondern heute schon Realität."
 
-- title: "Datenhoheit in der Cloud - Sicherheit und Souveränität mit der pluscloud open"
+- title: "Datenhoheit in der Cloud - Sicherheit und Souveränität mit der pluscloud open (sponsored)"
   day: 1
   start: "16:25"
   end: "16:35"
@@ -226,7 +235,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Robert Eberhard, Product Owner for pluscloud open, Plusserver GmbH"
+  description: "Robert Eberhard, Product Owner for pluscloud open, plusserver GmbH"
   abstract: "Was bedeutet eigentlich Datenhoheit und wie können wir diese mithilfe einer Open-Source-Lösung wie dem SCS sicherstellen? In seinem Vortrag erörtert Robert Eberhard diese Fragestellung am Beispiel der pluscloud open und geht dabei auch auf die Vorteile ein, die sich in Bezug auf die Sicherheit ergeben."
 
 - title: "Gespräch über die europäische Perspektive digital souveräner Infrastrukturen"
@@ -237,7 +246,9 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Viola Heeger, Redakteurin Tagessspiegel Background Digitalisierung & KI; Ulrich Ahle, Chief Executive Officer, Gaia-X European Association for Data and Cloud AISBL; Jörg Kremer, Leitung | Abteilung Föderale IT-Architekturmanagement, Projekte und Standards bei der FITKO (föderale IT-Kooperation)"
+  description: "Viola Heeger, Redakteurin Tagessspiegel Background Digitalisierung & KI"
+  description2: "Ulrich Ahle, Chief Executive Officer, Gaia-X European Association for Data and Cloud AISBL"
+  description3: "Jörg Kremer, Leitung | Abteilung Föderale IT-Architekturmanagement, Projekte und Standards bei der FITKO (föderale IT-Kooperation)"
   abstract: ""
 
 - title: "Schleswig-Holsteins Weg in die Digitale Souveränität"
@@ -260,6 +271,8 @@
   avatar:
     - "SCS_logo.png"
   description: "Peter Ganten, Vorstandsvorsitzender der Open Source Business Alliance e.V.; Kurt Garloff, CTO SCS, OSB Alliance e.V.; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
+  description2: "Kurt Garloff, CTO SCS, OSB Alliance e.V."
+  description3: "Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
   abstract: ""
 
 - title: "Abschluss und Verabschiedung"
@@ -270,13 +283,14 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Manuela Urban, COO SCS, OSB Alliance e.V.; Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
+  description: "Manuela Urban, COO SCS, OSB Alliance e.V."
+  description2: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
   abstract: ""
 
 - title: "Ausklang bei Essen und Getränken"
   day: 1
   start: "18:10"
-  end: "22:30"
+  end: "22:00"
   location: "Villa Elisabeth"
   speaker: ""
   avatar:
