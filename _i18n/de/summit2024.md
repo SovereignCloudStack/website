@@ -10,7 +10,6 @@ Registrieren Sie sich [hier](https://events.scs.community/scs-summit-2024/)
 
 Wir freuen uns besonders, dass unser Summit mit dem Auftakt der OpenInfra Day Roadshow kombiniert wird. Der [OpenInfra Day Germany 2024](https://oideurope2024.openinfra.dev/#registration=1) findet am Mittwoch, den 15. Mai 2024 in den gleichen Räumlichkeiten wie unser Summit statt. Nutzen Sie die einmalige Gelegenheit, am ersten Tag SCS, unsere Partner und unsere Community kennenzulernen, und am zweiten Tag in die Welt der Open-Source-Community-Arbeit einzutauchen.
 
-Das Programm des Summits wird im Laufe der nächsten Wochen immer weiter aktualisiert, besuchen Sie also regelmäßig unsere Website oder abonnieren Sie unseren [Community Digest](https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/), um sich auf dem Laufenden zu halten.
 Bitte beachten Sie, dass das Programm deutschsprachig sein wird.
 
 ## Sprecherinnen und Sprecher
