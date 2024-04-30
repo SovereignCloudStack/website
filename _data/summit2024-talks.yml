@@ -87,7 +87,7 @@
   description: "Jens Plogsties, CTO SysEleven GmbH"
   abstract: "In diesem Vortrag wird die entscheidende Rolle von OpenSource-Lösungen und souveränen Cloud-Services für die sichere Verarbeitung sensibler Daten beleuchtet. Wir präsentieren, wie der von SCS (Sovereign Cloud Stack) definierte Standard erfolgreich in unser Public Cloud-Angebot integriert wurde, um den Schutz und die Integrität sensibler Informationen zu gewährleisten. Die Teilnehmer erhalten Einblicke in die technischen und strategischen Herausforderungen, die während der Implementierung bewältigt wurden, sowie die daraus resultierenden Vorteile für Kunden, für die Datensicherheit und Datensouveränität wertvoll ist. Abschließend diskutieren wir, wie diese Integration zur Schaffung einer vertrauenswürdigen und sicheren Cloud-Umgebung beiträgt, die den strengsten Datenschutzanforderungen gerecht wird. Dieser Vortrag veranschaulicht, wie innovative OpenSource-Technologien und dedizierte Sicherheitsstandards die Landschaft der Cloud-Dienste transformieren können."
 
-- title: "SCS bei Dataport"
+- title: "Der Aufbau einer digital souveränen Cloud-Umgebung bei Dataport"
   day: 1
   start: "11:15"
   end: "11:30"
