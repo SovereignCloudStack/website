@@ -24,7 +24,7 @@
 - title: "Grußwort des Bundesministeriums für Wirtschaft und Klimaschutz"
   day: 1
   start: "09:40"
-  end: "09:55"
+  end: "09:50"
   location: "Villa Elisabeth"
   speaker: ""
   avatar:
@@ -34,8 +34,8 @@
 
 - title: "Keynote: Die Bedeutung von offenen Infrastrukturen für Freiheit und Demokratie"
   day: 1
-  start: "09:55"
-  end: "10:15"
+  start: "09:50"
+  end: "10:10"
   location: "Villa Elisabeth"
   speaker: ""
   avatar:
@@ -43,9 +43,9 @@
   description: "Ann-Cathrin Riedel, Geschäftsführerin von NExT e.V. und Mitglied des Digitalbeirats des Bundesministeriums für Digitales und Verkehr"
   abstract: "Demokratien und freiheitliche Gesellschaften sind global unter Druck. Gerade in dieser Situation braucht es offene, transparente, souveräne und kollaborative Infrastrukturen. Denn sie bieten nicht nur technische sondern auch gesellschaftliche Mehrwerte. Der Blick über den (europäischen) Tellerrand zeigt, dass diese Fragen globalpolitisch viele Menschen bewegen und dass Open-Source-Initiativen eine zentrale Rolle spielen im Kampf um Freiheit und Demokratie."
 
-- title: "Keynote: Die Bedeutung von Open Source für Digitale Souveränität, Innovation, Freiheit und Demokratie"
+- title: "Die Bedeutung von Open Source für Digitale Souveränität, Innovation, Freiheit und Demokratie"
   day: 1
-  start: "10:15"
+  start: "10:10"
   end: "10:30"
   location: "Villa Elisabeth"
   speaker: ""
