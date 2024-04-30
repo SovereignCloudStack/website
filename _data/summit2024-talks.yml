@@ -24,7 +24,7 @@
 - title: "Grußwort des Bundesministeriums für Wirtschaft und Klimaschutz"
   day: 1
   start: "09:40"
-  end: "09:55"
+  end: "09:50"
   location: "Villa Elisabeth"
   speaker: ""
   avatar:
@@ -34,8 +34,8 @@
 
 - title: "Keynote: Die Bedeutung von offenen Infrastrukturen für Freiheit und Demokratie"
   day: 1
-  start: "09:55"
-  end: "10:15"
+  start: "09:50"
+  end: "10:10"
   location: "Villa Elisabeth"
   speaker: ""
   avatar:
@@ -43,9 +43,9 @@
   description: "Ann-Cathrin Riedel, Geschäftsführerin von NExT e.V. und Mitglied des Digitalbeirats des Bundesministeriums für Digitales und Verkehr"
   abstract: "Demokratien und freiheitliche Gesellschaften sind global unter Druck. Gerade in dieser Situation braucht es offene, transparente, souveräne und kollaborative Infrastrukturen. Denn sie bieten nicht nur technische sondern auch gesellschaftliche Mehrwerte. Der Blick über den (europäischen) Tellerrand zeigt, dass diese Fragen globalpolitisch viele Menschen bewegen und dass Open-Source-Initiativen eine zentrale Rolle spielen im Kampf um Freiheit und Demokratie."
 
-- title: "Keynote: Die Bedeutung von Open Source für Digitale Souveränität, Innovation, Freiheit und Demokratie"
+- title: "Die Bedeutung von Open Source für Digitale Souveränität, Innovation, Freiheit und Demokratie"
   day: 1
-  start: "10:15"
+  start: "10:10"
   end: "10:30"
   location: "Villa Elisabeth"
   speaker: ""
@@ -87,7 +87,7 @@
   description: "Jens Plogsties, CTO SysEleven GmbH"
   abstract: "In diesem Vortrag wird die entscheidende Rolle von OpenSource-Lösungen und souveränen Cloud-Services für die sichere Verarbeitung sensibler Daten beleuchtet. Wir präsentieren, wie der von SCS (Sovereign Cloud Stack) definierte Standard erfolgreich in unser Public Cloud-Angebot integriert wurde, um den Schutz und die Integrität sensibler Informationen zu gewährleisten. Die Teilnehmer erhalten Einblicke in die technischen und strategischen Herausforderungen, die während der Implementierung bewältigt wurden, sowie die daraus resultierenden Vorteile für Kunden, für die Datensicherheit und Datensouveränität wertvoll ist. Abschließend diskutieren wir, wie diese Integration zur Schaffung einer vertrauenswürdigen und sicheren Cloud-Umgebung beiträgt, die den strengsten Datenschutzanforderungen gerecht wird. Dieser Vortrag veranschaulicht, wie innovative OpenSource-Technologien und dedizierte Sicherheitsstandards die Landschaft der Cloud-Dienste transformieren können."
 
-- title: "SCS bei Dataport"
+- title: "Der Aufbau einer digital souveränen Cloud-Umgebung bei Dataport"
   day: 1
   start: "11:15"
   end: "11:30"
@@ -96,7 +96,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Johan Bizer, CEO Dataport AöR"
-  abstract: ""
+  abstract: "Ein digitaler Staat ist handlungsfähig, krisenfest und damit vertrauenswürdig, wenn seine IT-gestützten Verwaltungsservices digital souverän erbracht werden. Dataport baut deshalb souveräne Cloud-Infrastrukturen für die Verwaltung auf und setzt dabei auch auf Open Source."
 
 - title: "Panel: SCS als Multifunktionstool für unterschiedlichste Nutzungsszenarien: Möglichkeiten, Grenzen und Erfahrungen aus der Praxis"
   day: 1
