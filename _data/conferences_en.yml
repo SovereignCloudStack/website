@@ -5,6 +5,13 @@
   slides: "20240424-OCP-Regional-Summit-Open_Networking_in_the_Sovereign_Cloud_Stack_Project.pdf"
   link: "https://www.opencompute.org/summit/regional-summit"
 
+- date: "2024-04-22"
+  event: "Open Operations Meetup"
+  title: "Cloud Interconnect"
+  details: "Angel Kafazov, Bozhidar Ignatov"
+  slides: "20240422-SCS-Cloud-Interconnectivity.pdf"
+  link: "https://www.meetup.com/open-operations-meetup/events/300324062/"
+
 - date: "2023-10-07"
   event: "Mercedes-Benz FOSS Con 2023"
   title: "Standardizing an open source cloud computing stack – benefits and drawbacks"
