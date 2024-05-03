@@ -60,7 +60,7 @@ We thank [plusserver](https://www.plusserver.com/), who will provide us with eno
 
 ## Social Media
 
-Please help us to spread the word about this great event and make the public aware of the awesome momentum within our community. You can use the above banner for your social media accounts or posts to raise awareness about  your participation among your audience. Don't forget to tag your posts with #SCSCH2022 and leave a mention for [@Sovereign Cloud Stack](https://www.linkedin.com/showcase/sovereigncloudstack), [@sovereigncloudstack@fosstodon.org](https://fosstodon.org/@sovereigncloudstack), and/or [@scs_osballiance](https://twitter.com/scs_osballiance). Thank you!
+Please help us to spread the word about this great event and make the public aware of the awesome momentum within our community. You can use the above banner for your social media accounts or posts to raise awareness about  your participation among your audience. Don't forget to tag your posts with #SCSCH2022 and leave a mention for [@Sovereign Cloud Stack](https://www.linkedin.com/showcase/sovereigncloudstack), [@SCS@social.osb-alliance.de](https://social.osb-alliance.de/@SCS), and/or [@scs_osballiance](https://twitter.com/scs_osballiance). Thank you!
 
 
 Don't hesitate to reach out if you should have any other questions or feedback. We are already looking forward to welcoming you next week!
