@@ -47,6 +47,7 @@ While OSISM 7.0.3 does not yet bring a fix for the leaking of octavia ports that
 Alongside this bugfix the next minor release of OSISM brings the following noteworthy items to the table:
 
 * During the preparation of the upgrades of the regions of the PCO a bug ([osism/issues#937](https://github.com/osism/issues/issues/973)) has been noticed which leads to a delay of up to 2 minutes between the necessary container stops and starts. This is due to a bug in the service units of all Kolla services. The bug is fixed in the current release. To avoid the delay during an upgrade, a fix must be applied in advance for all srvice units from Kolla: `$ osism apply fix-gh937`.
+* The `ceph_cluster_fsid` parameter is now generated automatically. It can be removed from `environments/configuration.yml`. The automatically generated `ceph_clusterfs_fsid` parameter is set to the value of the `fsid` parameter from `environments/ceph/configuration.yml`.
 * Versions not yet pinned in the manager environment of the configuration repository (Ansible collections, `osism/cfg-generics`, ..) are now automatically pinned during synchronisation with gilt overlay. This also applies to the osism update manager script.
 * The Docker version and the Docker CLI version can now also be managed via `osism/cfg-generics`. It is recommended to pin the Docker version in `environments/configuration.yml`.
 * Monitoring services are now activated by default for the internal Kubernetes cluster.
