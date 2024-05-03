@@ -51,9 +51,8 @@ Alongside this bugfix the next minor release of OSISM brings the following notew
 * Versions not yet pinned in the manager environment of the configuration repository (Ansible collections, `osism/cfg-generics`, ..) are now automatically pinned during synchronisation with gilt overlay. This also applies to the osism update manager script.
 * The Docker version and the Docker CLI version can now also be managed via `osism/cfg-generics`. It is recommended to pin the Docker version in `environments/configuration.yml`.
 * Monitoring services are now activated by default for the internal Kubernetes cluster.
-* Kubernetes Cluster API for the 1.30 series is available. They are now provided directly with `osism manage image clusterapi`. This means that Kubernetes Cluster API images are now available for series 1.27, 1.28, 1.29 and 1.30.
-* All Ansible collections have been prepared for use with Ubuntu 24.04. It is currently not recommended to upgrade existing clusters to Ubuntu 24.04 or to install new clusters with Ubuntu 24.04. There will be a note in the release notes from which Ubuntu 24.04 can be used.
+* Kubernetes Cluster API images for the Kubernetes (K8s) 1.30 series is available. They are now provided directly with `osism manage image clusterapi`. This means that K8s Cluster API images are now available for series 1.27, 1.28, 1.29 and 1.30.
 
-This list is by far not complete, a complete list is part of the release notes are available on [releases.osism.tech](https://release.osism.tech/notes/7.html).
+This list only mentions the highlights; a complete list is part of the release notes which are available on [releases.osism.tech](https://release.osism.tech/notes/7.html).
 
 Important note: The OpenStack service images for Octavia and Nova have been rebuilt. Upgrades of the Octavia and Nova services are recommended. No upgrades of other OpenStack and associated infrastructure services such as MariaDB or RabbitMQ are required.
