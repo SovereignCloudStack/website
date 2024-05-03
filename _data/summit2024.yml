@@ -1,4 +1,8 @@
 speakers:
+  - name: Ann-Cathrin Riedel
+    title: Gründungsdirektor der Bundesagentur für Sprunginnovationen (SPRIND GmbH)
+    avatar: summit2024/speaker/riedel.jpg
+    shortbio: "Ann Cathrin Riedel ist Geschäftsführerin von NExT e.V., dem Expert:innen Netzwerk für die digitale Transformation der Verwaltung. Davor verantwortete sie die internationale Digitalpolitik bei der Friedrich-Naumann-Stiftung für die Freiheit. Sie ist Vorsitzende von LOAD e.V. – Verein für liberale Netzpolitik. Im Jahr 2022 wurde sie in den Digitalbeirat zur Umsetzung der Digitalstrategie der Bundesregierung beim Bundesministerium für Digitalisierung und Verkehr und in den Digitalrat des Landes Sachsen-Anhalt berufen. Des Weiteren begleitet sie die Arbeit des Co:Lab – Denklabor & Kollaborationsplattform für Gesellschaft & Digitalisierung e.V., des Digital Autonomy Hub und des Projekts Plattform//Demokratie als Beirätin. Sie war als Sachverständige zu digitalpolitischen Themen im Deutschen Bundestag und Berliner Abgeordnetenhaus. Das Capital Magazin zeichnete sie 2020 als Top 40 unter 40 in der Kategorie „Wissenschaft und Gesellschaft“ aus, im Jahr 2023 wurde sie als Young Leader der Atlantik Brücke ernannt. In ihren Funktionen publiziert und spricht sie regelmäßig über Digitalisierung, Gesellschaft, Demokratie und Geopolitik – unter anderem in ihrem prämierten Newsletter „Ann Cathrin’s Digital Digest."
   - name: Ernst Stöckl-Pukall
     title: Leiter des Referates „Digitalisierung, Industrie 4.0“ im Bundesministerium für Wirtschaft und Klimaschutz
     avatar: summit2024/speaker/stoeckl-pukall.jpg
@@ -25,11 +29,11 @@ speakers:
     title: CEO Dataport AöR
     avatar: summit2024/speaker/bizer.jpg
     shortbio: "Dr. Johann Bizer ist seit November 2011 Vorsitzender des Vorstands von Dataport und verantwortlich für den Bereich Ressourcen. Seit 2004 war er stellvertretender Landesbeauftragter für den Datenschutz beim Unabhängigen Landeszentrum für Datenschutz (ULD) in Schleswig-Holstein, bevor er 2008 seine Aufgabe als Vorstandsmitglied bei Dataport antrat. Seit November 2011 ist Dr. Johann Bizer Mitglied im Vorstand der Bundesarbeitsgemeinschaft der kommunalen IT-Dienstleister Vitako."
-  - name: Martin Pilka
-    title: Co-founder & CEO dNation
+  - name: Dipl.-Ing Martin Pilka
+    title: CEO, dNation - MAKING CLOUD EASY
     avatar: summit2024/speaker/pilka.jpeg
   - name: Robert Eberhard
-    title: Product Owner pluscloud open bei der Plusserver GmbH
+    title: Product Owner pluscloud open bei der plusserver GmbH
     avatar: summit2024/speaker/eberhard.jpg
   - name: David Walter
     title: Head of Customer Experience, CISO & DPO at ownCloud
@@ -89,14 +93,14 @@ sponsors:
       logo: summit2024/partner/plusserver.png
       url: https://plusserver.com
     - name: Syseleven GmbH
-      logo: summit2024/partner/syseleven.svg
+      logo: summit2024/partner/syseleven.png
       url: https://www.syseleven.de/
   silver:
     - name: OSISM GmbH
       logo: summit2024/partner/osism.png
       url: https://osism.tech/
     - name: Proventa GmbH
-      logo: summit2024/partner/proventa.svg
+      logo: summit2024/partner/proventa.png
       url: https://proventa.de/
   bronze: 
     - name: Scale Up Technologies GmbH

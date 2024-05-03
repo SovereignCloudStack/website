@@ -10,8 +10,7 @@ Registrieren Sie sich [hier](https://events.scs.community/scs-summit-2024/)
 
 Wir freuen uns besonders, dass unser Summit mit dem Auftakt der OpenInfra Day Roadshow kombiniert wird. Der [OpenInfra Day Germany 2024](https://oideurope2024.openinfra.dev/#registration=1) findet am Mittwoch, den 15. Mai 2024 in den gleichen Räumlichkeiten wie unser Summit statt. Nutzen Sie die einmalige Gelegenheit, am ersten Tag SCS, unsere Partner und unsere Community kennenzulernen, und am zweiten Tag in die Welt der Open-Source-Community-Arbeit einzutauchen.
 
-Das Programm des Summits wird im Laufe der nächsten Wochen immer weiter aktualisiert, besuchen Sie also regelmäßig unsere Website oder abonnieren Sie unseren [Community Digest](https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/), um sich auf dem Laufenden zu halten.
-Bitte beachten Sie, dass das Programm deutschsprachig sein wird.
+Bitte beachten Sie, dass das Programm deutschsprachig sein wird. Einen detaillierten Zeitplan finden Sie weiter unten auf dieser Seite.
 
 ## Sprecherinnen und Sprecher
 
@@ -25,8 +24,7 @@ Bitte beachten Sie, dass das Programm deutschsprachig sein wird.
         <li class="nav-item me-2">
             <a class="nav-link active" id="tab-day-1" data-bs-toggle="tab" href="#day-1" role="tab"
                 aria-controls="day-1" aria-selected="true">
-                <span class="heading">Tag 1</span>
-                <span class="meta d-none d-lg-block">(Dienstag, 14. Mai)</span>
+                <span class="meta d-none d-lg-block">Dienstag, 14. Mai</span>
             </a>
         </li>
     </ul>
@@ -40,12 +38,6 @@ Bitte beachten Sie, dass das Programm deutschsprachig sein wird.
             <div class="item item-talk">
                 <div class="meta">
                     <h4 class="time">{{talk.start}} – {{talk.end}}</h4>
-                    <div class="profile mt-3">
-                        <div class="d-flex justify-content-center">{% assign post = talk %}{% include news/blog_avatars.html %}</div>
-                        <div class="name mt-2">
-                        {{talk.speaker | join: ", "}}
-                        </div>
-                    </div>
                     <!--//profile-->
                 </div>
                 <!--//meta-->
@@ -55,6 +47,9 @@ Bitte beachten Sie, dass das Programm deutschsprachig sein wird.
                                 class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em;"></i></a>
                     </h3>
                     <div class="desc pb-2"><b>{{talk.description}}</b></div>
+                    <div class="desc pb-2"><b>{{talk.description2}}</b></div>
+                    <div class="desc pb-2"><b>{{talk.description3}}</b></div>
+                    <div class="desc pb-2"><b>{{talk.description4}}</b></div>
                     <div class="desc pb-2"><i>{{talk.abstract}}</i></div>
                     {% if talk.slides %}
 			<div class="desc pb-2"><a href="{{talk.slides}}">Folien</a></div>
