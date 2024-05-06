@@ -1,0 +1,124 @@
+---
+layout: post
+title: "Costs of making an Openstack cluster SCS-compliant"
+author:
+  - "Hannes Baum"
+  - "Martin Morgenstern"
+avatar:
+  - "martinmo.jpg"
+about:
+  - "martinmo"
+---
+
+For our work in the SCS standards repository and the SCS teams requiring standardized documents, we wanted to test out
+the process of making an Openstack cluster SCS-compliant. This would also give us insight about the costs of making a
+cluster compliant, both from a time and possibly money perspective. This blog post provides the results of our findings
+and shows the process we went through.
+
+## Creating a cluster
+
+Our focus in this test was on the Openstack cluster and therefore the IaaS standards, simply because IaaS already provided
+a reference "SCS Compatible IaaS" at the point in the time this project was started. In the future, a similar test and
+post for KaaS is planned.
+
+We deployed our Openstack cluster using [Yaook]() with [Yaook Kubernetes]() as a base for [Yaook Operator]().
+This setup uses a Kubernetes cluster as a base to handle upgrades and maintenance (e.g. node evacuation or config insertion)
+of the Openstack cluster on top of it. The Kubernetes cluster is deployed with all relevant features like LoadBalancer,
+Ingress, StorageClass and more.
+This test setup is represented in the following visualization.
+
+The biggest problem with this test setup was the additional virtualization. "Yaook Kubernetes" was set up on VMs created
+in our default Openstack instance, which then hosted the Openstack created with the "Yaook Operator", essentially creating
+an Openstack-in-Openstack deployment.
+The standards required by the SCS could still be applied to this setup, but not all of them could be tested with
+the available test scripts.
+
+Besides this test setup we also created a productive setup (with a slight delay), which additionally uses [Yaook Bare Metal]()
+to deploy and manage server hardware, including rollout and configuration of operating systems, networks and disks.
+This setup helped us identify additional problems with our configuration in general and allowed us to test applying
+the standards on a setup without an additional layer of virtualization.
+In the end, this setup was migrated to another physical location and will provide the first SCS-compliant cluster of
+Cloud&Heat Technologies GmbH built with [Yaook]().
+
+In the end, using Yaook for this kind of deployment allowed us to quickly set up an Openstack cluster and
+focus on the adoption of SCS standards in this cluster.
+
+## Required standards
+
+As it was already explained above, the main effort leading to this post was focused on the Iaas standards, mainly because
+it was clearer which standards needed to be applied from the "SCS Compatible IaaS" (we switched from v3 to v4 during this
+work since the versions changed midway through). While it is true that all standards in the "Stable" state theoretically
+need to be complied to, some of these standards don't have tests yet and/or are not featured in the "Compatible" label,
+and are therefore not checked yet.
+
+The standards relevant for IaaS, and therefore our Openstack deployment, can be found under the numbers "SCS-0100-vX" and
+counting in the [Standards repository](https://github.com/SovereignCloudStack/standards).
+Higher versions take precedence, except if the newest version is still in the "Draft" state.
+Looking through the repository as well as the ["SCS Compatible IaaS"](https://github.com/SovereignCloudStack/standards/blob/main/Tests/scs-compatible-iaas.yaml) document provides the relevant documents
+and information required to make a cluster compliant.
+
+At the moment of writing this blog post, the following standards are required, if an Openstack instance should be SCS-compliant:
+* SCS-0100-v3 "Flavor Naming" Standard
+* SCS-0101-v1 "Entropy" Standard
+* SCS-0102-v1 "Image" Metadata Standard
+* SCS-0103-v1 "Standard Flavors and Properties" Standard
+* SCS-0104-v1 "Standard Images" Standard
+* SCS-0110-v1 "SSD Flavors" Standard (enhances SCS-100-v3)
+
+## Achieving compliance
+
+After figuring out the relevant standard documents, the information required to achieve compliance needed to be extracted.
+The focus here was on analyzing the document for the keywords mentioned in [SCS-0001-v1 Sovereign Cloud Standards](https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0001-v1-sovereign-cloud-standards.md).
+This provided all expected values, configurations and pre-configurable setups relevant for the Openstack cluster.
+Another source besides the standard documents were the tests provided for them. For example "SCS-0104-v1 Standard Images"
+doesn't provide a set of standard images, since they could change over time due to new requirements and the SCS didn't
+want to change their standard document every time. Instead, the test provides a YAML file with the required images as well
+as additional meta information; the exact make-up of this file is defined in the standard.
+
+Without going too much in-depth (since most of this can be found in the standards themselves), the following points need
+to be achieved in order to provide an SCS-compliant Openstack cluster:
+
+* Flavors must follow a naming schema defined by "SCS-0100-v3 Flavor Naming" if they start with `SCS-`. This naming schema
+  also requires the underlying assignments (like core count, RAM, etc.) to be aligned with it.
+* VMs must provide enough entropy for cryptographic operations.
+* Images should be labelled with plain `Distribution Version` names and provide relevant metadata, so called `properties`.
+  These `properties` are defined by "SCS-0102-v1 Image metadata", some of which are also mandatory.
+* SCS-0103-v1 defines a list of mandatory and recommended flavors, which also follow the flavor naming scheme.
+  It also requires additional properties, so-called `extra specs`. to be defined in order to indicate an SCS flavor.
+  SCS-0110-v1 adds to this, since it requires two additional flavors with local SSDs or NVMEs as mandatory flavors.
+* SCS-0104-v1 defines a YAML file containing a list of mandatory and recommended images as well as metadata like their sources.
+
+Adopting most of the standards could (in our case) easily be done with the ["osism-flavor-manager"](https://github.com/osism/openstack-flavor-manager) and the
+["osism-image-manager"](https://github.com/osism/openstack-image-manager), which both offer options to create SCS-compliant flavors and images with the correct names
+and relevant meta information. "osism-flavor-manager" can do this fully automatic, whereas the "osism-image-manager" requires
+a file containing the necessary information; this is nonetheless easier than doing this work manually, since only one
+file needs to be maintained and up-to-date with the standards.
+Making all flavors compliant could possibly require a bit more work, if part of the host infrastructure doesn't use only
+SSDs, which are required for two specific flavors. In this case, the compute hosts need to set properties to show that
+they provide SSDs and the flavor needs to have a requirement for this.
+More information about this can be found in the [Openstack docs](https://docs.openstack.org/nova/latest/admin/aggregates.html#example-specify-compute-hosts-with-ssds).
+Lastly, the entropy standard shouldn't require too much work, since modern Linux kernels (which are used by the
+standard images mentioned in SCS-0104-v1) provide enough entropy even in a VM. Additionally, CPUs must provide specific
+CPU instructions if not enough entropy is available, which shouldn't be filtered by the hypervisor.
+The only part maybe requiring additional work is setting the attribute `hw_rng_model`, which isn't mandatory.
+
+## But at what cost?
+
+A relevant question we had with this was the cost of adopting all these standards for an Openstack cluster.
+Based on the work time after the cluster setup and without debugging, since this part would be minimized on a second
+or third attempt at this, we estimated around 4-6 man-hours for a minimal, freshly installed cluster. Doing this multiple
+times could reduce this time even further so something like 1-3 man-hours.
+
+Now it is important to mention, that we had nearly ideal circumstances, since there was neither hardware missing nor
+the additional costs associated with adopting an older cluster which already contained data.
+If an older cluster needs to be adopted to the standards, it would be necessary to add metadata to existing images, possibly
+change their names and (if desired) change flavor names to the SCS naming schema. This would require significantly more time
+to do; we estimate this with around 0.2-1 man-hours per image or flavor. If this needed to be done more often or multiple
+times, some form of automation would be recommended, but this would also incur some upfront man-hour cost.
+Additional costs could come up if no SSDs were provided for the cluster. This would require a hardware upgrade, incurring
+cost for hardware (120-200€ per Terabyte), server downtime as well as man-hours. The actual costs here are hard to estimate
+and would probably change from case to case.
+
+Nonetheless, it is to mention that in most cases, SCS-compliance should be easily achievable for most Openstack clusters
+without having too much overhead in adoption costs. This could obviously change in the future with the arrival of
+additional standards.
