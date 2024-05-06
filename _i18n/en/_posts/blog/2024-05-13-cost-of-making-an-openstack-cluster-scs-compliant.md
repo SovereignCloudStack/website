@@ -11,26 +11,28 @@ the process of making an OpenStack cluster SCS-compliant. This would also give u
 SCS standards, in terms of both time and money. This blog post provides the results of our findings
 and shows the process we went through.
 
-## Creating a cluster
+## Where we started from
 
-Our focus in this test was on the OpenStack cluster and therefore the IaaS standards, simply because IaaS already provided
-a reference "SCS Compatible IaaS" at the point in the time this project was started. In the future, a similar test and
-post for KaaS is planned.
+Our focus in this evaluation was on OpenStack clusters and therefore the IaaS standards, simply because IaaS already provided
+a reference "SCS Compatible IaaS" at the time we started (in the future, a similar evaluation and blog post for the KaaS layer
+is planned).
 
-We deployed our OpenStack cluster using [Yaook]() with [Yaook Kubernetes]() as a base for [Yaook Operator]().
-This setup uses a Kubernetes cluster as a base to handle upgrades and maintenance (e.g. node evacuation or config insertion)
-of the OpenStack cluster on top of it. The Kubernetes cluster is deployed with all relevant features like `LoadBalancer`,
-`Ingress`, `StorageClass` and more.
+For the purpose of our evaluation, we set up two OpenStack clusters with [Yaook]() ("Yet Another OpenStack On Kubernetes"):
+a virtualized test setup in our OpenStack cloud – i.e., OpenStack in OpenStack – and a bare-metal production setup.
+
+Yaook is a lifecycle management tool for OpenStack which leverages a Kubernetes cluster (provided by [Yaook K8s]()) to deploy
+and manage OpenStack components by means of the [Yaook Operator]().
+At the time of writing, a vanilla Yaook deployment is not SCS compliant and, as such, it is the ideal playground for our evaluation.
+Even better: the lessons we learned while adopting IaaS standards in these deployments can be easily transferred to other OpenStack
+deployments which do not use Yaook.
 This test setup is represented in the following visualization.
 
-The biggest problem with this test setup was the additional virtualization. "Yaook Kubernetes" was set up on VMs created
-in our default OpenStack instance, which then hosted the OpenStack created with the "Yaook Operator", essentially creating
-an OpenStack-in-OpenStack deployment.
+The virtualized test setup was tricky to handle, which is not surprising, after all it is a nested OpenStack deployment.
 The standards required by the SCS could still be applied to this setup, but not all of them could be tested with
 the available test scripts.
 
-Besides this virtualized OpenStack deployment we also set up a bare-metal production deployment, which uses [Yaook Bare Metal]()
-to deploy and manage server hardware, including rollout and configuration of operating systems, networks and disks.
+For the bare-metal production deployment we used [Yaook Bare Metal]() to deploy and manage server hardware, including rollout
+and configuration of operating systems, networks and disks.
 This setup helped us identify additional problems with our configuration in general and allowed us to test applying
 the standards on a setup without an additional layer of virtualization.
 In the end, this setup was moved to another physical location and will provide the first SCS-compliant cluster of
@@ -41,7 +43,7 @@ focus on the adoption of SCS standards in this cluster.
 
 ## Required standards
 
-As it was already explained above, the main effort leading to this post was focused on the Iaas standards, mainly because
+As it was already explained above, the main effort leading to this post was focused on the IaaS standards, mainly because
 it was clearer which standards needed to be applied from the "SCS Compatible IaaS" (we switched from v3 to v4 during this
 work since the versions changed midway through). While it is true that all standards in the "Stable" state theoretically
 need to be complied to, some of these standards don't have tests yet and/or are not featured in the "Compatible" label,
