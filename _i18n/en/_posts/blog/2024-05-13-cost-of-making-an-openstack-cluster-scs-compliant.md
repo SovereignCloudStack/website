@@ -69,10 +69,11 @@ At the moment of writing this blog post, the following standards are required, i
 After figuring out the relevant standard documents, the information required to achieve compliance needed to be extracted.
 The focus here was on analyzing the document for the keywords mentioned in [SCS-0001-v1 Sovereign Cloud Standards](https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0001-v1-sovereign-cloud-standards.md).
 This provided all expected values, configurations and pre-configurable setups relevant for the OpenStack cluster.
-Another source besides the standard documents were the tests provided for them. For example "SCS-0104-v1 Standard Images"
+
+Another source besides the standard documents were the tests provided for them. For example, "SCS-0104-v1 Standard Images"
 doesn't provide a set of standard images, since they could change over time due to new requirements and the SCS didn't
 want to change their standard document every time. Instead, the test provides a YAML file with the required images as well
-as additional meta information; the exact make-up of this file is defined in the standard.
+as additional meta information; the exact schema of this file is defined in the standard.
 
 Without going too much in-depth (since most of this can be found in the standards themselves), the following points need
 to be achieved in order to provide an SCS-compliant OpenStack cluster:
@@ -87,14 +88,17 @@ to be achieved in order to provide an SCS-compliant OpenStack cluster:
   SCS-0110-v1 adds to this, since it requires two additional flavors with local SSDs or NVMEs as mandatory flavors.
 * SCS-0104-v1 defines a YAML file containing a list of mandatory and recommended images as well as metadata like their sources.
 
-Adopting most of the standards could (in our case) easily be done with the ["osism-flavor-manager"](https://github.com/osism/openstack-flavor-manager) and the
-["osism-image-manager"](https://github.com/osism/openstack-image-manager), which both offer options to create SCS-compliant flavors and images with the correct names
-and relevant meta information. "osism-flavor-manager" can do this fully automatic, whereas the "osism-image-manager" requires
+Luckily, most of these standards could (in our case) be easily adopted with the help of the [osism-flavor-manager](https://github.com/osism/openstack-flavor-manager) and the
+[osism-image-manager](https://github.com/osism/openstack-image-manager), which both offer options to create SCS-compliant flavors and images with the correct names
+and relevant meta information. *osism-flavor-manager* can do this fully automatic, whereas the *osism-image-manager* requires
 a file containing the necessary information; this is nonetheless easier than doing this work manually, since only one
 file needs to be maintained and up-to-date with the standards.
-Making all flavors compliant could possibly require a bit more work, if part of the host infrastructure doesn't use only
-SSDs, which are required for two specific flavors. In this case, the compute hosts need to set properties to show that
-they provide SSDs and the flavor needs to have a requirement for this.
+
+Making all flavors compliant requires a bit more work if not all of the compute hosts have local SSD storage.
+Local SSD storage is required by the two mandatory flavors `SCS-4V-16-100s` and `SCS-2V-4-20s`.
+If this is the case, one needs to group the compute hosts with SSDs into an aggregate, mark that aggregate with a corresponding property,
+and bind the two SSD flavors to this aggregate via `aggregate_instance_extra_specs`.
+Without this additional configuration, workload might be scheduled to non-SSD-capable hosts.
 More information about this can be found in the [OpenStack docs](https://docs.openstack.org/nova/latest/admin/aggregates.html#example-specify-compute-hosts-with-ssds).
 
 Lastly, the entropy standard shouldn't require too much work, since modern Linux kernels (which are used by the
