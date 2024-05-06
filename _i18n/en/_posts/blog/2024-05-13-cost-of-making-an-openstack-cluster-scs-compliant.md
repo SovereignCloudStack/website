@@ -4,10 +4,6 @@ title: "Costs of making an Openstack cluster SCS-compliant"
 author:
   - "Hannes Baum"
   - "Martin Morgenstern"
-avatar:
-  - "martinmo.jpg"
-about:
-  - "martinmo"
 ---
 
 For our work in the SCS standards repository and the SCS teams requiring standardized documents, we wanted to test out
