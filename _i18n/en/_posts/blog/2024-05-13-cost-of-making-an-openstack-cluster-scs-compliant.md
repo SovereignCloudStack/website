@@ -6,10 +6,14 @@ author:
   - "Martin Morgenstern"
 ---
 
+TODO(martinmo): introduction needs work – more "catchy"
+
 For our work in the SCS standards repository and the SCS teams requiring standardized documents, we wanted to test out
 the process of making an OpenStack cluster SCS-compliant. This would also give us insight about the costs of adopting
 SCS standards, in terms of both time and money. This blog post provides the results of our findings
 and shows the process we went through.
+
+TODO(martinmo): write a small outline
 
 ## Where we started from
 
@@ -27,7 +31,9 @@ Yaook is a lifecycle management tool for OpenStack which leverages a Kubernetes 
 At the time of writing, a vanilla Yaook deployment is not SCS compliant and, as such, it is the ideal playground for our evaluation.
 Even better: the lessons we learned while adopting IaaS standards in these deployments can be easily transferred to other OpenStack
 deployments which do not use Yaook.
-This test setup is represented in the following visualization.
+This test setup is represented in the following visualization:
+
+TODO(cah-hbaum): insert graphics
 
 The virtualized test setup was tricky to handle, which is not surprising, after all it is a nested OpenStack deployment.
 The standards required by the SCS could still be applied to this setup, but not all of them could be tested with
@@ -44,6 +50,8 @@ In retrospective, using Yaook for this kind of deployment allowed us to quickly 
 focus on the adoption of SCS standards in this cluster.
 
 ## Required standards
+
+TODO: explain scopes
 
 As it was already explained above, the main effort leading to this post was focused on the IaaS standards, mainly because
 it was clearer which standards needed to be applied from the "SCS Compatible IaaS" (we switched from v3 to v4 during this
@@ -103,6 +111,8 @@ and bind the two SSD flavors to this aggregate via `aggregate_instance_extra_spe
 Without this additional configuration, workload might be scheduled to non-SSD-capable hosts.
 More information about this can be found in the [OpenStack docs](https://docs.openstack.org/nova/latest/admin/aggregates.html#example-specify-compute-hosts-with-ssds).
 
+TODO(martinmo/cah-hbaum): include specific steps (e.g. running osism-image-manager)
+
 Lastly, the entropy standard shouldn't require too much work, since modern Linux kernels (which are used by the
 standard images mentioned in SCS-0104-v1) provide enough entropy even in a VM. Additionally, CPUs must provide specific
 CPU instructions if not enough entropy is available, which shouldn't be filtered by the hypervisor.
@@ -128,3 +138,5 @@ and would probably change from case to case.
 Nonetheless, it is to mention that in most cases, SCS-compliance should be easily achievable for most OpenStack clusters
 without having too much overhead in adoption costs. This could obviously change in the future with the arrival of
 additional standards.
+
+TODO(martinmo): conclusion/summary and outlook (e.g., KaaS layer)
