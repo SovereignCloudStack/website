@@ -51,13 +51,13 @@ focus on the adoption of SCS standards in this cluster.
 
 ## Required standards
 
-TODO: explain scopes
-
 As it was already explained above, the main effort leading to this post was focused on the IaaS standards, mainly because
-it was clearer which standards needed to be applied from the *SCS Compatible IaaS* scope (we switched from v3 to v4 during this
-work since the versions changed midway through). While it is true that all *stable* standards theoretically
-need to be complied to, some of them don't have tests yet and/or are not featured in the "Compatible" label,
-and are therefore not checked yet.
+it was clearer which standards needed to be applied from the *SCS Compatible IaaS* scope.
+This is a certification scope, which combines multiple SCS standards to provide a common ground for certification of a CSP.
+These scopes can have multiple versions, which move forward with updated and/or new standards. Older scopes deprecate
+after some time, which gives CSPs time to update, but also keep the technology moving forward.
+While it is true that all *stable* standards theoretically need to be complied to, some of them don't have tests
+yet and/or are not featured in a scope, and are therefore not checked by most CSPs yet.
 
 The standards relevant for IaaS, and therefore our OpenStack deployment, can be found under the numbers "SCS-0100-vX" and
 counting in the [Standards repository](https://github.com/SovereignCloudStack/standards).
@@ -113,7 +113,7 @@ More information about this can be found in the [OpenStack docs](https://docs.op
 
 Installing all necessary images and flavors requires only a few commands:
 
-```
+```bash
 python3 -m pip install openstack-image-manager
 openstack-image-manager --cloud $CLOUD_NAME --images images.yaml
 
@@ -123,7 +123,7 @@ openstack-flavor-manager --cloud $CLOUD_NAME --recommended
 
 Both commands require `$CLOUD_NAME` to be set, which points to the cloud to be used by the manager applications.
 The `images.yaml` contains all images with their metadata, sources and properties to be installed by the image-manager;
-we provide our example [here](LINK).
+we provide our example [here](https://github.com/SovereignCloudStack/standards/blob/do-not-merge/scs-compliant-yaook/Informational/images.yaml).
 
 Lastly, the entropy standard shouldn't require too much work, since modern Linux kernels (which are used by the
 standard images mentioned in SCS-0104-v1) provide enough entropy even in a VM. Additionally, CPUs must provide specific
