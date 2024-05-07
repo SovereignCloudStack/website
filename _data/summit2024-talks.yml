@@ -40,7 +40,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Ann-Cathrin Riedel, Geschäftsführerin von NExT e.V. und Mitglied des Digitalbeirats des Bundesministeriums für Digitales und Verkehr"
+  description: "Ann Cathrin Riedel, Geschäftsführerin von NExT e.V. und Mitglied des Digitalbeirats des Bundesministeriums für Digitales und Verkehr"
   abstract: "Demokratien und freiheitliche Gesellschaften sind global unter Druck. Gerade in dieser Situation braucht es offene, transparente, souveräne und kollaborative Infrastrukturen. Denn sie bieten nicht nur technische sondern auch gesellschaftliche Mehrwerte. Der Blick über den (europäischen) Tellerrand zeigt, dass diese Fragen globalpolitisch viele Menschen bewegen und dass Open-Source-Initiativen eine zentrale Rolle spielen im Kampf um Freiheit und Demokratie."
 
 - title: "Die Bedeutung von Open Source für Digitale Souveränität, Innovation, Freiheit und Demokratie"
@@ -189,7 +189,7 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Lena Hoffmann, Referentin Politik & Wissenschaft bei der Gesellschaft für Informatik e.V. (GI); Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG"
+  description: "Lena Hoffmann, Referentin Politik & Wissenschaft bei der Gesellschaft für Informatik e.V. (GI)"
   description2: "Christoph Streit, Geschäftsführer der ScaleUp Technologies GmbH & Co. KG"
   abstract: "Im Vortrag der Gesellschaft für Informatik gemeinsam mit der ScaleUpTechnologies GmbH & Co. KG wird die Notwendigkeit betont, digitale Technologien hinsichtlich ihrer Umweltauswirkungen objektiv zu bewerten. Der Mangel an Standardisierung im Bereich der Software-Ressourcenmessung wird als eine der Hauptherausforderungen identifiziert. Der ITK-Sektor, der bedeutende CO2-Emissionen verursacht, erfordert innovative Ansätze zur Reduzierung dieser Emissionen. Das Projekt ECO:DIGIT begegnet diesen Herausforderungen durch die Entwicklung eines standardisierten virtuellen Prüfstands. Als Teil der Referenzimplementierung des Sovereign Cloud Stacks (SCS) ermöglicht dieser Ansatz eine vergleichbare Bewertung digitaler Technologien und unterstützt effektives Umweltmanagement."
 
