@@ -4,6 +4,8 @@ title: "Costs of making an OpenStack cluster SCS-compliant"
 author:
   - "Hannes Baum"
   - "Martin Morgenstern"
+avatar:
+  - "avatar-candh.jpg"
 ---
 
 TODO(martinmo): introduction needs work – more "catchy"
