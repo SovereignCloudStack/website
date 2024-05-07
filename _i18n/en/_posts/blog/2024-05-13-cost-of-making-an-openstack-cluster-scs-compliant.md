@@ -54,9 +54,9 @@ focus on the adoption of SCS standards in this cluster.
 TODO: explain scopes
 
 As it was already explained above, the main effort leading to this post was focused on the IaaS standards, mainly because
-it was clearer which standards needed to be applied from the "SCS Compatible IaaS" (we switched from v3 to v4 during this
-work since the versions changed midway through). While it is true that all standards in the "Stable" state theoretically
-need to be complied to, some of these standards don't have tests yet and/or are not featured in the "Compatible" label,
+it was clearer which standards needed to be applied from the *SCS Compatible IaaS* scope (we switched from v3 to v4 during this
+work since the versions changed midway through). While it is true that all *stable* standards theoretically
+need to be complied to, some of them don't have tests yet and/or are not featured in the "Compatible" label,
 and are therefore not checked yet.
 
 The standards relevant for IaaS, and therefore our OpenStack deployment, can be found under the numbers "SCS-0100-vX" and
@@ -67,12 +67,12 @@ and information required to make a cluster compliant.
 
 At the moment of writing this blog post, the following standards are required, if an OpenStack instance should be SCS-compliant:
 
-* SCS-0100-v3 "Flavor Naming" Standard
-* SCS-0101-v1 "Entropy" Standard
-* SCS-0102-v1 "Image" Metadata Standard
-* SCS-0103-v1 "Standard Flavors and Properties" Standard
-* SCS-0104-v1 "Standard Images" Standard
-* SCS-0110-v1 "SSD Flavors" Standard (enhances SCS-100-v3)
+* [SCS-0100-v3](https://docs.scs.community/standards/scs-0100-v3-flavor-naming) *Flavor Naming* Standard
+* [SCS-0101-v1](https://docs.scs.community/standards/scs-0101-v1-entropy) *Entropy* Standard
+* [SCS-0102-v1](https://docs.scs.community/standards/scs-0102-v1-image-metadata) *Image Metadata* Standard
+* [SCS-0103-v1](https://docs.scs.community/standards/scs-0103-v1-standard-flavors) *Standard Flavors and Properties* Standard
+* [SCS-0104-v1](https://docs.scs.community/standards/scs-0104-v1-standard-images) *Standard Images* Standard
+* [SCS-0110-v1](https://docs.scs.community/standards/scs-0110-v1-ssd-flavors) *SSD Flavors* Decision Record (enhances SCS-100-v3)
 
 ## Achieving compliance
 
