@@ -17,11 +17,13 @@ Our focus in this evaluation was on OpenStack clusters and therefore the IaaS st
 a reference "SCS Compatible IaaS" at the time we started (in the future, a similar evaluation and blog post for the KaaS layer
 is planned).
 
-For the purpose of our evaluation, we set up two OpenStack clusters with [Yaook]() ("Yet Another OpenStack On Kubernetes"):
-a virtualized test setup in our OpenStack cloud – i.e., OpenStack in OpenStack – and a bare-metal production setup.
+For the purpose of our evaluation, we set up two OpenStack clusters with [Yaook](https://docs.yaook.cloud/concepts/overview.html)
+("Yet Another OpenStack On Kubernetes"): a virtualized test setup in our OpenStack cloud – i.e., OpenStack in OpenStack – and a
+bare-metal production setup.
 
-Yaook is a lifecycle management tool for OpenStack which leverages a Kubernetes cluster (provided by [Yaook K8s]()) to deploy
-and manage OpenStack components by means of the [Yaook Operator]().
+Yaook is a lifecycle management tool for OpenStack which leverages a Kubernetes cluster (provided by
+[Yaook K8s](https://yaook.gitlab.io/k8s/)) to deploy and manage OpenStack components by means of the
+[Yaook Operator](https://docs.yaook.cloud/handbook/user-guide.html#introduction-to-yaook-operator).
 At the time of writing, a vanilla Yaook deployment is not SCS compliant and, as such, it is the ideal playground for our evaluation.
 Even better: the lessons we learned while adopting IaaS standards in these deployments can be easily transferred to other OpenStack
 deployments which do not use Yaook.
@@ -31,12 +33,12 @@ The virtualized test setup was tricky to handle, which is not surprising, after 
 The standards required by the SCS could still be applied to this setup, but not all of them could be tested with
 the available test scripts.
 
-For the bare-metal production deployment we used [Yaook Bare Metal]() to deploy and manage server hardware, including rollout
-and configuration of operating systems, networks and disks.
+For the bare-metal production deployment we used [Yaook Bare Metal](https://gitlab.com/yaook/metal-controller) to deploy and
+manage server hardware, including rollout and configuration of operating systems, networks and disks.
 This setup helped us identify additional problems with our configuration in general and allowed us to test applying
 the standards on a setup without an additional layer of virtualization.
 In the end, this setup was moved to another physical location and will provide the first SCS-compliant cluster of
-Cloud&Heat Technologies GmbH built with [Yaook]().
+Cloud&Heat Technologies GmbH built with Yaook.
 
 In retrospective, using Yaook for this kind of deployment allowed us to quickly set up an OpenStack cluster and
 focus on the adoption of SCS standards in this cluster.
