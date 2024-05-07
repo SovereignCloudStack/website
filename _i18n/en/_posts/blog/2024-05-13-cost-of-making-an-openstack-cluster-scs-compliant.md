@@ -31,9 +31,9 @@ Yaook is a lifecycle management tool for OpenStack which leverages a Kubernetes 
 At the time of writing, a vanilla Yaook deployment is not SCS compliant and, as such, it is the ideal playground for our evaluation.
 Even better: the lessons we learned while adopting IaaS standards in these deployments can be easily transferred to other OpenStack
 deployments which do not use Yaook.
-This test setup is represented in the following visualization:
+This test setup is represented in the following visualization provided in the Yaook documentation:
 
-TODO(cah-hbaum): insert graphics
+![Yaook Architecture Overview](https://docs.yaook.cloud/_images/overview.drawio.svg "Yaook Architecture Overview")
 
 The virtualized test setup was tricky to handle, which is not surprising, after all it is a nested OpenStack deployment.
 The standards required by the SCS could still be applied to this setup, but not all of them could be tested with
@@ -104,14 +104,26 @@ and relevant meta information. *osism-flavor-manager* can do this fully automati
 a file containing the necessary information; this is nonetheless easier than doing this work manually, since only one
 file needs to be maintained and up-to-date with the standards.
 
-Making all flavors compliant requires a bit more work if not all of the compute hosts have local SSD storage.
+Making all flavors compliant requires a bit more work if not all the compute hosts have local SSD storage.
 Local SSD storage is required by the two mandatory flavors `SCS-4V-16-100s` and `SCS-2V-4-20s`.
 If this is the case, one needs to group the compute hosts with SSDs into an aggregate, mark that aggregate with a corresponding property,
 and bind the two SSD flavors to this aggregate via `aggregate_instance_extra_specs`.
 Without this additional configuration, workload might be scheduled to non-SSD-capable hosts.
 More information about this can be found in the [OpenStack docs](https://docs.openstack.org/nova/latest/admin/aggregates.html#example-specify-compute-hosts-with-ssds).
 
-TODO(martinmo/cah-hbaum): include specific steps (e.g. running osism-image-manager)
+Installing all necessary images and flavors requires only a few commands:
+
+```
+python3 -m pip install openstack-image-manager
+openstack-image-manager --cloud $CLOUD_NAME --images images.yaml
+
+python3 -m pip install openstack-flavor-manager
+openstack-flavor-manager --cloud $CLOUD_NAME --recommended
+```
+
+Both commands require `$CLOUD_NAME` to be set, which points to the cloud to be used by the manager applications.
+The `images.yaml` contains all images with their metadata, sources and properties to be installed by the image-manager;
+we provide our example [here](LINK).
 
 Lastly, the entropy standard shouldn't require too much work, since modern Linux kernels (which are used by the
 standard images mentioned in SCS-0104-v1) provide enough entropy even in a VM. Additionally, CPUs must provide specific
