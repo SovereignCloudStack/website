@@ -14,6 +14,8 @@ the process of making a vanilla OpenStack cluster SCS-compliant.
 In this blog post, we want to share the results of our findings and the process we went through.
 Rest assured – it is actually quite easy to adopt our standards!
 
+TODO(martinmo): check/replace vague wording like "would", "could", etc
+
 ## Where we started from
 
 Our focus in this evaluation was on OpenStack clusters and therefore the IaaS standards, because for the IaaS layer we already
@@ -27,26 +29,18 @@ bare-metal production setup.
 Yaook is a lifecycle management tool for OpenStack which leverages a Kubernetes cluster (provided by
 [Yaook K8s](https://yaook.gitlab.io/k8s/)) to deploy and manage OpenStack components by means of the
 [Yaook Operator](https://docs.yaook.cloud/handbook/user-guide.html#introduction-to-yaook-operator).
-At the time of writing, a vanilla Yaook deployment is not SCS compliant and, as such, it is the ideal playground for our evaluation.
-Even better: the lessons we learned while adopting IaaS standards in these deployments can be easily transferred to other OpenStack
-deployments which do not use Yaook.
+For the bare-metal production deployment we additionally used [Yaook Bare Metal](https://gitlab.com/yaook/metal-controller) to deploy
+and manage server hardware, including rollout and configuration of operating systems, networks and disks.
+
 This test setup is represented in the following visualization provided in the Yaook documentation:
+
+TODO(martinmo): move picture to _assets
 
 ![Yaook Architecture Overview](https://docs.yaook.cloud/_images/overview.drawio.svg "Yaook Architecture Overview")
 
-The virtualized test setup was tricky to handle, which is not surprising, after all it is a nested OpenStack deployment.
-The standards required by the SCS could still be applied to this setup, but not all of them could be tested with
-the available test scripts.
-
-For the bare-metal production deployment we used [Yaook Bare Metal](https://gitlab.com/yaook/metal-controller) to deploy and
-manage server hardware, including rollout and configuration of operating systems, networks and disks.
-This setup helped us identify additional problems with our configuration in general and allowed us to test applying
-the standards on a setup without an additional layer of virtualization.
-In the end, this setup was moved to another physical location and will provide the first SCS-compliant cluster of
-Cloud&Heat Technologies GmbH built with Yaook.
-
-In retrospective, using Yaook for this kind of deployment allowed us to quickly set up an OpenStack cluster and
-focus on the adoption of SCS standards in this cluster.
+At the time of writing, a vanilla Yaook deployment is not SCS compliant and, as such, it is the ideal playground for our evaluation.
+Even better: the lessons we learned while adopting IaaS standards in these deployments can be easily transferred to other OpenStack
+deployments which do not use Yaook.
 
 ## Required standards
 
@@ -72,6 +66,8 @@ scope](https://docs.scs.community/standards/scs-compatible-iaas) which are relev
 
 ## Achieving compliance
 
+### In theory
+
 After figuring out the relevant standard documents, the information required to achieve compliance needed to be extracted.
 The focus here was on analyzing the document for the keywords mentioned in [SCS-0001-v1 Sovereign Cloud Standards](https://docs.scs.community/standards/scs-0001-v1-sovereign-cloud-standards).
 This provided all expected values, configurations and pre-configurable setups relevant for the OpenStack cluster.
@@ -95,18 +91,13 @@ to be achieved in order to provide an SCS-compliant OpenStack cluster:
   *SCS-0110-v1* adds to this, since it requires two additional flavors with local SSDs or NVMEs as mandatory flavors.
 * *SCS-0104-v1* defines a YAML file containing a list of mandatory and recommended images as well as metadata like their sources.
 
+### In practice
+
 Luckily, most of these standards could (in our case) be easily adopted with the help of the [osism-flavor-manager](https://github.com/osism/openstack-flavor-manager) and the
 [osism-image-manager](https://github.com/osism/openstack-image-manager), which both offer options to create SCS-compliant flavors and images with the correct names
 and relevant meta information. *osism-flavor-manager* can do this fully automatic, whereas the *osism-image-manager* requires
 a file containing the necessary information; this is nonetheless easier than doing this work manually, since only one
 file needs to be maintained and up-to-date with the standards.
-
-Making all flavors compliant requires a bit more work if not all the compute hosts have local SSD storage.
-Local SSD storage is required by the two mandatory flavors `SCS-4V-16-100s` and `SCS-2V-4-20s`.
-If this is the case, one needs to group the compute hosts with SSDs into an aggregate, mark that aggregate with a corresponding property,
-and bind the two SSD flavors to this aggregate via `aggregate_instance_extra_specs`.
-Without this additional configuration, workload might be scheduled to non-SSD-capable hosts.
-More information about this can be found in the [OpenStack docs](https://docs.openstack.org/nova/latest/admin/aggregates.html#example-specify-compute-hosts-with-ssds).
 
 Installing all necessary images and flavors requires only a few commands:
 
@@ -121,6 +112,15 @@ openstack-flavor-manager --cloud $CLOUD_NAME --recommended
 Both commands require `$CLOUD_NAME` to be set, which points to the cloud to be used by the manager applications.
 The `images.yaml` contains all images with their metadata, sources and properties to be installed by the image-manager;
 we provide our example [here](https://github.com/SovereignCloudStack/standards/blob/do-not-merge/scs-compliant-yaook/Informational/images.yaml).
+
+Making all flavors compliant requires a bit more work if not all the compute hosts have local SSD storage.
+Local SSD storage is required by the two mandatory flavors `SCS-4V-16-100s` and `SCS-2V-4-20s`.
+If this is the case, one needs to group the compute hosts with SSDs into an aggregate, mark that aggregate with a corresponding property,
+and bind the two SSD flavors to this aggregate via `aggregate_instance_extra_specs`.
+Without this additional configuration, workload might be scheduled to non-SSD-capable hosts.
+More information about this can be found in the [OpenStack docs](https://docs.openstack.org/nova/latest/admin/aggregates.html#example-specify-compute-hosts-with-ssds).
+
+TODO(martinmo): specific steps for aggregates
 
 Lastly, the entropy standard shouldn't require too much work, since modern Linux kernels (which are used by the
 standard images mentioned in SCS-0104-v1) provide enough entropy even in a VM. Additionally, CPUs must provide specific
@@ -147,5 +147,20 @@ and would probably change from case to case.
 Nonetheless, it is to mention that in most cases, SCS-compliance should be easily achievable for most OpenStack clusters
 without having too much overhead in adoption costs. This could obviously change in the future with the arrival of
 additional standards.
+
+## Conclusion and outlook
+
+In retrospective, using Yaook for this kind of deployment allowed us to quickly set up an OpenStack cluster and
+focus on the adoption of SCS standards in this cluster.
+The virtualized test setup was tricky to handle, which is not surprising, after all it is a nested OpenStack deployment.
+The standards required by the SCS could still be applied to this setup, but not all of them could be tested with
+the available test scripts.
+
+This setup helped us identify additional problems with our configuration in general and allowed us to test applying
+the standards on a setup without an additional layer of virtualization.
+In the end, this setup was moved to another physical location and will provide the first SCS-compliant cluster of
+Cloud&Heat Technologies GmbH built with Yaook.
+
+For the future ...
 
 TODO(martinmo): conclusion/summary and outlook (e.g., KaaS layer)
