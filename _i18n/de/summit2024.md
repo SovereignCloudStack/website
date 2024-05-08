@@ -12,6 +12,10 @@ Wir freuen uns besonders, dass unser Summit mit dem Auftakt der OpenInfra Day Ro
 
 Bitte beachten Sie, dass das Programm deutschsprachig sein wird. Einen detaillierten Zeitplan finden Sie weiter unten auf dieser Seite.
 
+## Veranstaltungsort
+
+Der SCS Summit 2024 findet in der [Villa Elisabeth](https://www.elisabeth.berlin/de/kulturorte/villa-elisabeth), Invalidenstraße 3 in 10115 Berlin-Mitte, statt (Nähe S Nordbahnhof).
+
 ## Sprecherinnen und Sprecher
 
 {% include summit2024/speakers.html %}
@@ -67,10 +71,6 @@ Bitte beachten Sie, dass das Programm deutschsprachig sein wird. Einen detaillie
     </div>
 </div>
 
-
-## Veranstaltungsort
-
-Der SCS Summit 2024 findet in der [Villa Elisabeth](https://www.elisabeth.berlin/de/kulturorte/villa-elisabeth), Invalidenstraße 3 in 10115 Berlin-Mitte, statt (Nähe S Nordbahnhof).
 
 ## Sponsoren
 
