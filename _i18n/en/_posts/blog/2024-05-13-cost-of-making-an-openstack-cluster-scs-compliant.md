@@ -34,9 +34,11 @@ and manage server hardware, including rollout and configuration of operating sys
 
 This test setup is represented in the following visualization provided in the Yaook documentation:
 
-TODO(martinmo): move picture to _assets
-
-![Yaook Architecture Overview](https://docs.yaook.cloud/_images/overview.drawio.svg "Yaook Architecture Overview")
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="{% asset "blog/yaook_architecture_overview.svg" @path %}">
+    {% asset 'blog/yaook_architecture_overview.svg' class="figure-img w-100" %}
+  </a>
+</figure>
 
 At the time of writing, a vanilla Yaook deployment is not SCS compliant and, as such, it is the ideal playground for our evaluation.
 Even better: the lessons we learned while adopting IaaS standards in these deployments can be easily transferred to other OpenStack
