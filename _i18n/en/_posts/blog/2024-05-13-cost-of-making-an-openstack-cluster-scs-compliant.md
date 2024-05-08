@@ -12,7 +12,7 @@ Have you ever wondered how much effort it would take to adopt SCS standards in y
 We wanted to know this too, and as part of our work in the SCS standards team, we evaluated
 the process of making a vanilla OpenStack cluster SCS-compliant.
 In this blog post, we want to share the results of our findings and the process we went through.
-Rest assured – it is actually quite easy to adopt our standards!
+Rest assured – it is actually quite easy to adopt SCS standards!
 
 TODO(martinmo): check/replace vague wording like "would", "could", etc
 
@@ -84,8 +84,8 @@ to be achieved in order to provide an SCS-compliant OpenStack cluster:
 * Flavors must follow a naming schema defined by *SCS-0100-v3 Flavor Naming* if they start with `SCS-`. This naming schema
   also requires the underlying assignments (like core count, RAM, etc.) to be aligned with it.
 * To fulfill *SCS-0101-v1*, VMs must provide enough entropy for cryptographic operations.
-* Images should be labeled with plain `Distribution Version` names and provide relevant metadata, so called `properties`.
-  These `properties` are defined by *SCS-0102-v1 Image metadata*, some of which are also mandatory.
+* Images should be labeled with plain `Distribution Version` names and provide relevant metadata, so called *properties*.
+  These *properties* are defined by *SCS-0102-v1 Image metadata*, some of which are also mandatory.
 * *SCS-0103-v1* defines a list of mandatory and recommended flavors, which also follow the flavor naming scheme.
   It requires additional properties, so-called *extra specs* to be defined in order to indicate an SCS flavor.
   *SCS-0110-v1* adds to this, since it requires two additional flavors with local SSDs or NVMEs as mandatory flavors.
@@ -93,7 +93,7 @@ to be achieved in order to provide an SCS-compliant OpenStack cluster:
 
 ### In practice
 
-Luckily, most of these standards could (in our case) be easily adopted with the help of the OSISM [openstack-flavor-manager](https://github.com/osism/openstack-flavor-manager) and
+Luckily, most of these standards can be easily adopted with the help of the OSISM tools [openstack-flavor-manager](https://github.com/osism/openstack-flavor-manager) and
 [openstack-image-manager](https://github.com/osism/openstack-image-manager), which both offer options to create SCS-compliant flavors and images with the correct names
 and relevant meta information. *openstack-flavor-manager* can do this fully automatic, whereas the *openstack-image-manager* requires
 a file containing the necessary information; this is nonetheless easier than doing this work manually, since only one
