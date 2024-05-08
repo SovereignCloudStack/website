@@ -93,9 +93,9 @@ to be achieved in order to provide an SCS-compliant OpenStack cluster:
 
 ### In practice
 
-Luckily, most of these standards could (in our case) be easily adopted with the help of the [osism-flavor-manager](https://github.com/osism/openstack-flavor-manager) and the
-[osism-image-manager](https://github.com/osism/openstack-image-manager), which both offer options to create SCS-compliant flavors and images with the correct names
-and relevant meta information. *osism-flavor-manager* can do this fully automatic, whereas the *osism-image-manager* requires
+Luckily, most of these standards could (in our case) be easily adopted with the help of the OSISM [openstack-flavor-manager](https://github.com/osism/openstack-flavor-manager) and
+[openstack-image-manager](https://github.com/osism/openstack-image-manager), which both offer options to create SCS-compliant flavors and images with the correct names
+and relevant meta information. *openstack-flavor-manager* can do this fully automatic, whereas the *openstack-image-manager* requires
 a file containing the necessary information; this is nonetheless easier than doing this work manually, since only one
 file needs to be maintained and up-to-date with the standards.
 
