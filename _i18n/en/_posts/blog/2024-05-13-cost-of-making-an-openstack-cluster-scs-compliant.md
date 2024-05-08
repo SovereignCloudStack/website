@@ -99,28 +99,38 @@ and relevant meta information. *openstack-flavor-manager* can do this fully auto
 a file containing the necessary information; this is nonetheless easier than doing this work manually, since only one
 file needs to be maintained and up-to-date with the standards.
 
-Installing all necessary images and flavors requires only a few commands:
+First of all, install the tools:
 
 ```bash
-python3 -m pip install openstack-image-manager
-openstack-image-manager --cloud $CLOUD_NAME --images images.yaml
+pip install openstack-image-manager openstack-flavor-manager
+```
 
-python3 -m pip install openstack-flavor-manager
+Assuming that you have admin credentials for your OpenStack cloud (e.g., via `~/.config/openstack/clouds.yaml`),
+installing all necessary images and flavors requires only a few commands:
+
+```bash
+openstack-image-manager --cloud $CLOUD_NAME --images images.yaml
 openstack-flavor-manager --cloud $CLOUD_NAME --recommended
 ```
 
-Both commands require `$CLOUD_NAME` to be set, which points to the cloud to be used by the manager applications.
-The `images.yaml` contains all images with their metadata, sources and properties to be installed by the image-manager;
-we provide our example [here](https://github.com/SovereignCloudStack/standards/blob/do-not-merge/scs-compliant-yaook/Informational/images.yaml).
+Of course, you'll need to replace `$CLOUD_NAME` with your actual cloud name from your `clouds.yaml`.
+The `images.yaml` contains all images with their metadata, sources and properties to be installed by *openstack-image-manager*.
+We provide an [example `images.yaml`](https://github.com/SovereignCloudStack/standards/blob/do-not-merge/scs-compliant-yaook/Informational/images.yaml) that you can use.
 
-Making all flavors compliant requires a bit more work if not all the compute hosts have local SSD storage.
+Making all flavors compliant requires a bit more work if only a subset of your compute hosts have local SSD storage.
 Local SSD storage is required by the two mandatory flavors `SCS-4V-16-100s` and `SCS-2V-4-20s`.
-If this is the case, one needs to group the compute hosts with SSDs into an aggregate, mark that aggregate with a corresponding property,
-and bind the two SSD flavors to this aggregate via `aggregate_instance_extra_specs`.
-Without this additional configuration, workload might be scheduled to non-SSD-capable hosts.
-More information about this can be found in the [OpenStack docs](https://docs.openstack.org/nova/latest/admin/aggregates.html#example-specify-compute-hosts-with-ssds).
+If this is the case, one needs to configure the nova scheduler to support host aggregates and group the compute hosts
+with SSDs into an aggregate as described in the [OpenStack docs](https://docs.openstack.org/nova/latest/admin/aggregates.html#example-specify-compute-hosts-with-ssds).
 
-TODO(martinmo): specific steps for aggregates
+Assuming that you have created such an aggregate with the property `ssd=true`, you can bind the two SSD flavors 
+to it as follows:
+
+```bash
+openstack flavor set --property aggregate_instance_extra_specs:ssd=true SCS-2V-4-20s
+openstack flavor set --property aggregate_instance_extra_specs:ssd=true SCS-4V-16-100s
+```
+
+Without this additional configuration, workload might be scheduled to non-SSD-capable hosts.
 
 Lastly, the entropy standard shouldn't require too much work, since modern Linux kernels (which are used by the
 standard images mentioned in SCS-0104-v1) provide enough entropy even in a VM. Additionally, CPUs must provide specific
