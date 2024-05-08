@@ -14,8 +14,6 @@ the process of making a vanilla OpenStack cluster SCS-compliant.
 In this blog post, we want to share the results of our findings and the process we went through.
 Rest assured – it is actually quite easy to adopt SCS standards!
 
-TODO(martinmo): check/replace vague wording like "would", "could", etc
-
 ## Where we started from
 
 Our focus in this evaluation was on OpenStack clusters and therefore the IaaS standards, because for the IaaS layer we already
@@ -159,23 +157,21 @@ Additional costs could come up if no SSDs were provided for the cluster. This wo
 cost for hardware (120-200€ per Terabyte), server downtime as well as man-hours. The actual costs here are hard to estimate
 and would probably change from case to case.
 
-Nonetheless, it is to mention that in most cases, SCS-compliance should be easily achievable for most OpenStack clusters
+Nonetheless, it is to mention that in most cases, SCS compliance should be easily achievable for most OpenStack clusters
 without having too much overhead in adoption costs. This could obviously change in the future with the arrival of
 additional standards.
 
 ## Conclusion and outlook
 
-In retrospective, using Yaook for this kind of deployment allowed us to quickly set up an OpenStack cluster and
-focus on the adoption of SCS standards in this cluster.
-The virtualized test setup was tricky to handle, which is not surprising, after all it is a nested OpenStack deployment.
-The standards required by the SCS could still be applied to this setup, but not all of them could be tested with
-the available test scripts.
+In summary, it was pretty straightforward to adopt the current SCS standards of the IaaS layer and now we have a prime
+example that you can achieve this even if you do not use the SCS reference implementation.
 
-This setup helped us identify additional problems with our configuration in general and allowed us to test applying
-the standards on a setup without an additional layer of virtualization.
+Overall, using Yaook for our evaluation allowed us to quickly set up an OpenStack cluster and focus on the adoption of
+SCS standards in this cluster, albeit the nested virtualized test setup was a bit tricky to handle.
+As a result of our efforts, we were able to collect valuable feedback which we used to improve general configuration,
+our conformance test scripts and some of the involved tooling.
 In the end, this setup was moved to another physical location and will provide the first SCS-compliant cluster of
 Cloud&Heat Technologies GmbH built with Yaook.
 
-For the future ...
-
-TODO(martinmo): conclusion/summary and outlook (e.g., KaaS layer)
+Of course, work doesn't end here: in the future, we will need to keep up with the evolving standards.
+And of course, we won't stop at the IaaS layer: stay tuned for another blog post for the KaaS layer!
