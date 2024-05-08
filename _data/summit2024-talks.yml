@@ -224,7 +224,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Andreas Reckert-Lodde, Interims-Geschäftsführer ZenDiS"
-  description2: "Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
+  description2: "Felix Kronlage-Dammers, Product Owner SCS IaaS"
   abstract: "Die Digitalisierung der Öffentlichen Verwaltung in Deutschland und Europa voranzubringen und dabei souverän zu gestalten, ist eine komplexe und herausfordernde Aufgabe. Das ZenDis (Zentrum Digitale Souveränität) unterstützt die Öffentliche Verwaltung bei dieser Aufgabe mit zwei seiner wichtigsten Projekte: die Software-Plattform Open CoDE und der digitale Arbeitsplatz openDesk. Wird openDesk als SaaS-Lösung auf SCS betrieben, garantiert das die digitale Souveränität seiner Office Anwendungen auch in der Cloud. Wir zeigen, wie weit dieses Projekt bereits umgesetzt ist – und dass digital souveräne, funktionale Software für die Öffentliche Verwaltung keine Zukunftsmusik ist, sondern heute schon Realität."
 
 - title: "Datenhoheit in der Cloud - Sicherheit und Souveränität mit der pluscloud open (sponsored)"
@@ -272,7 +272,7 @@
     - "SCS_logo.png"
   description: "Peter Ganten, Vorstandsvorsitzender der Open Source Business Alliance e.V.; Kurt Garloff, CTO SCS, OSB Alliance e.V.; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
   description2: "Kurt Garloff, CTO SCS, OSB Alliance e.V."
-  description3: "Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
+  description3: "Felix Kronlage-Dammers, Product Owner SCS IaaS"
   abstract: ""
 
 - title: "Abschluss und Verabschiedung"
