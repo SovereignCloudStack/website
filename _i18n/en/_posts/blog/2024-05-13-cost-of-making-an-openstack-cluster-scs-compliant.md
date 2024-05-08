@@ -119,8 +119,8 @@ We provide an [example `images.yaml`](https://github.com/SovereignCloudStack/sta
 
 Making all flavors compliant requires a bit more work if only a subset of your compute hosts have local SSD storage.
 Local SSD storage is required by the two mandatory flavors `SCS-4V-16-100s` and `SCS-2V-4-20s`.
-If this is the case, one needs to configure the nova scheduler to support host aggregates and group the compute hosts
-with SSDs into an aggregate as described in the [OpenStack docs](https://docs.openstack.org/nova/latest/admin/aggregates.html#example-specify-compute-hosts-with-ssds).
+If this is the case, one needs to configure the nova scheduler to support host aggregates and [group the compute hosts
+with SSDs into an aggregate as described in the OpenStack docs](https://docs.openstack.org/nova/latest/admin/aggregates.html#example-specify-compute-hosts-with-ssds).
 
 Assuming that you have created such an aggregate with the property `ssd=true`, you can bind the two SSD flavors 
 to it as follows:
@@ -132,10 +132,13 @@ openstack flavor set --property aggregate_instance_extra_specs:ssd=true SCS-4V-1
 
 Without this additional configuration, workload might be scheduled to non-SSD-capable hosts.
 
-Lastly, the entropy standard shouldn't require too much work, since modern Linux kernels (which are used by the
-standard images mentioned in SCS-0104-v1) provide enough entropy even in a VM. Additionally, CPUs must provide specific
-CPU instructions if not enough entropy is available, which shouldn't be filtered by the hypervisor.
-The only part maybe requiring additional work is setting the attribute `hw_rng_model`, which isn't mandatory.
+Lastly, the entropy standard doesn't require any work as long as you only provide VM images with Linux kernels version 5.18 and newer.
+This is the case for all the standard images mentioned in *SCS-0104-v1* (which we have already configured above), and as such,
+VMs spawned from them will have enough entropy.
+Otherwise, you'll need to ensure sufficient entropy is available by some other means, e.g., with special CPU instructions such as
+`RDSEED`/`RDRAND`.
+The details are out of scope for this blog post, but the [*SCS-0101-v1* standard](https://docs.scs.community/standards/scs-0101-v1-entropy/)
+lists some possible implementation approaches as a starting point.
 
 ## But at what cost?
 
