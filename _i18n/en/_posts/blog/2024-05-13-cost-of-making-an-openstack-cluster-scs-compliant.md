@@ -8,19 +8,16 @@ avatar:
   - "avatar-candh.jpg"
 ---
 
-TODO(martinmo): introduction needs work – more "catchy"
-
-For our work in the SCS standards repository and the SCS teams requiring standardized documents, we wanted to test out
-the process of making an OpenStack cluster SCS-compliant. This would also give us insight about the costs of adopting
-SCS standards, in terms of both time and money. This blog post provides the results of our findings
-and shows the process we went through.
-
-TODO(martinmo): write a small outline
+Have you ever wondered how much effort it would take to adopt SCS standards in your OpenStack cloud?
+We wanted to know this too, and as part of our work in the SCS standards team, we evaluated
+the process of making a vanilla OpenStack cluster SCS-compliant.
+In this blog post, we want to share the results of our findings and the process we went through.
+Rest assured – it is actually quite easy to adopt our standards!
 
 ## Where we started from
 
-Our focus in this evaluation was on OpenStack clusters and therefore the IaaS standards, simply because IaaS already provided
-a reference "SCS Compatible IaaS" at the time we started (in the future, a similar evaluation and blog post for the KaaS layer
+Our focus in this evaluation was on OpenStack clusters and therefore the IaaS standards, because for the IaaS layer we already
+had a reference *SCS Compatible IaaS* scope at the time we started (in the future, a similar evaluation and blog post for the KaaS layer
 is planned).
 
 For the purpose of our evaluation, we set up two OpenStack clusters with [Yaook](https://docs.yaook.cloud/concepts/overview.html)
@@ -54,20 +51,17 @@ focus on the adoption of SCS standards in this cluster.
 ## Required standards
 
 As it was already explained above, the main effort leading to this post was focused on the IaaS standards, mainly because
-it was clearer which standards needed to be applied from the *SCS Compatible IaaS* scope.
-This is a certification scope, which combines multiple SCS standards to provide a common ground for certification of a CSP.
+it was clearer which standards needed to be fulfilled for *SCS Compatible IaaS* scope.
+In the SCS standardization framework, a *scope* groups multiple SCS standards for a certain layer (e.g., IaaS) to provide
+a common ground for certification of a cloud service provider (CSP).
 These scopes can have multiple versions, which move forward with updated and/or new standards. Older scopes deprecate
 after some time, which gives CSPs time to update, but also keep the technology moving forward.
 While it is true that all *stable* standards theoretically need to be complied to, some of them don't have tests
 yet and/or are not featured in a scope, and are therefore not checked by most CSPs yet.
 
-The standards relevant for IaaS, and therefore our OpenStack deployment, can be found under the numbers "SCS-0100-vX" and
-counting in the [Standards repository](https://github.com/SovereignCloudStack/standards).
-Higher versions take precedence, except if the newest version is still in the "Draft" state.
-Looking through the repository as well as the ["SCS Compatible IaaS"](https://github.com/SovereignCloudStack/standards/blob/main/Tests/scs-compatible-iaas.yaml) document provides the relevant documents
-and information required to make a cluster compliant.
-
-At the moment of writing this blog post, the following standards are required, if an OpenStack instance should be SCS-compliant:
+In particular, we focused on *SCS Compatible IaaS v4*, which is the effective scope at the time of writing.
+The [SCS documentation website](https://docs.scs.community/) lists the [currently effective standards for this
+scope](https://docs.scs.community/standards/scs-compatible-iaas) which are relevant for our OpenStack deployment:
 
 * [SCS-0100-v3](https://docs.scs.community/standards/scs-0100-v3-flavor-naming) *Flavor Naming* Standard
 * [SCS-0101-v1](https://docs.scs.community/standards/scs-0101-v1-entropy) *Entropy* Standard
@@ -79,26 +73,27 @@ At the moment of writing this blog post, the following standards are required, i
 ## Achieving compliance
 
 After figuring out the relevant standard documents, the information required to achieve compliance needed to be extracted.
-The focus here was on analyzing the document for the keywords mentioned in [SCS-0001-v1 Sovereign Cloud Standards](https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0001-v1-sovereign-cloud-standards.md).
+The focus here was on analyzing the document for the keywords mentioned in [SCS-0001-v1 Sovereign Cloud Standards](https://docs.scs.community/standards/scs-0001-v1-sovereign-cloud-standards).
 This provided all expected values, configurations and pre-configurable setups relevant for the OpenStack cluster.
 
-Another source besides the standard documents were the tests provided for them. For example, "SCS-0104-v1 Standard Images"
+Another source besides the standard documents were the tests provided for them. For example, *SCS-0104-v1 Standard Images*
 doesn't provide a set of standard images, since they could change over time due to new requirements and the SCS didn't
-want to change their standard document every time. Instead, the test provides a YAML file with the required images as well
+want to change their standard document every time. Instead, the test provides a [YAML file with the required
+images](https://github.com/SovereignCloudStack/standards/blob/main/Tests/iaas/scs-0104-v1-images.yaml) as well
 as additional meta information; the exact schema of this file is defined in the standard.
 
 Without going too much in-depth (since most of this can be found in the standards themselves), the following points need
 to be achieved in order to provide an SCS-compliant OpenStack cluster:
 
-* Flavors must follow a naming schema defined by "SCS-0100-v3 Flavor Naming" if they start with `SCS-`. This naming schema
+* Flavors must follow a naming schema defined by *SCS-0100-v3 Flavor Naming* if they start with `SCS-`. This naming schema
   also requires the underlying assignments (like core count, RAM, etc.) to be aligned with it.
-* VMs must provide enough entropy for cryptographic operations.
+* To fulfill *SCS-0101-v1*, VMs must provide enough entropy for cryptographic operations.
 * Images should be labeled with plain `Distribution Version` names and provide relevant metadata, so called `properties`.
-  These `properties` are defined by "SCS-0102-v1 Image metadata", some of which are also mandatory.
-* SCS-0103-v1 defines a list of mandatory and recommended flavors, which also follow the flavor naming scheme.
-  It requires additional properties, so-called `extra specs` to be defined in order to indicate an SCS flavor.
-  SCS-0110-v1 adds to this, since it requires two additional flavors with local SSDs or NVMEs as mandatory flavors.
-* SCS-0104-v1 defines a YAML file containing a list of mandatory and recommended images as well as metadata like their sources.
+  These `properties` are defined by *SCS-0102-v1 Image metadata*, some of which are also mandatory.
+* *SCS-0103-v1* defines a list of mandatory and recommended flavors, which also follow the flavor naming scheme.
+  It requires additional properties, so-called *extra specs* to be defined in order to indicate an SCS flavor.
+  *SCS-0110-v1* adds to this, since it requires two additional flavors with local SSDs or NVMEs as mandatory flavors.
+* *SCS-0104-v1* defines a YAML file containing a list of mandatory and recommended images as well as metadata like their sources.
 
 Luckily, most of these standards could (in our case) be easily adopted with the help of the [osism-flavor-manager](https://github.com/osism/openstack-flavor-manager) and the
 [osism-image-manager](https://github.com/osism/openstack-image-manager), which both offer options to create SCS-compliant flavors and images with the correct names
