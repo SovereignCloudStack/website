@@ -70,7 +70,7 @@ Bitte beachten Sie, dass das Programm deutschsprachig sein wird. Einen detaillie
 
 ## Veranstaltungsort
 
-Der SCS Summit 2024 findet in Berlin-Mitte in der [Villa Elisabeth](https://www.elisabeth.berlin/de/kulturorte/villa-elisabeth) statt (Nähe S Nordbahnhof).
+Der SCS Summit 2024 findet in der [Villa Elisabeth](https://www.elisabeth.berlin/de/kulturorte/villa-elisabeth), Invalidenstraße 3 in 10115 Berlin-Mitte, statt (Nähe S Nordbahnhof).
 
 ## Sponsoren
 
