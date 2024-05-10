@@ -51,10 +51,10 @@ Der SCS Summit 2024 findet in der [Villa Elisabeth](https://www.elisabeth.berlin
                                 class="fa fa-link ms-2 text-muted" aria-hidden="true" style="font-size: .7em;"></i></a>
                     </h3>
                     <div class="desc pb-2"><b>{{ talk.description }}</b></div>
-                    {% if talk.description2 }<div class="desc pb-2"><b>{{ talk.description2 }}</b></div>{% endif %}
-                    {% if talk.description3 }<div class="desc pb-2"><b>{{ talk.description3 }}</b></div>{% endif %}
-                    {% if talk.description4 }<div class="desc pb-2"><b>{{ talk.description4 }}</b></div>{% endif %}
-                    {% if talk.description5 }<div class="desc pb-2"><b>{{ talk.description5 }}</b></div>{% endif %}
+                    {% if talk.description2 %}<div class="desc pb-2"><b>{{ talk.description2 }}</b></div>{% endif %}
+                    {% if talk.description3 %}<div class="desc pb-2"><b>{{ talk.description3 }}</b></div>{% endif %}
+                    {% if talk.description4 %}<div class="desc pb-2"><b>{{ talk.description4 }}</b></div>{% endif %}
+                    {% if talk.description5 %}<div class="desc pb-2"><b>{{ talk.description5 }}</b></div>{% endif %}
                     <div class="desc pb-2"><i>{{ talk.abstract }}</i></div>
                     {% if talk.slides %}
                     <div class="desc pb-2"><a href="{{ talk.slides }}">Folien</a></div>
