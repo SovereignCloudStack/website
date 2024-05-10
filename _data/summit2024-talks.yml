@@ -64,7 +64,7 @@
     - "SCS_logo.png"
   description: "Christian Schmitz, Director Open Source, plusserver gmbh"
   abstract: "Der Erfolg des SCS als softwarebasierte Basisinfrastruktur für moderne Clouds steht in direktem Zusammenhang mit der Erfüllung verschiedener komplexer Anforderungen moderner Workloads. Als Beispiel für komplexe Anforderungen steht auf der einen Seite die Fähigkeit, modernste Applikationen für Künstliche Intelligenz zu betreiben. Auf der anderen Seite werden die Anforderungen großer öffentlicher Infrastrukturen an Skalierbarkeit und  Digitalisierung thematisiert. Beide  Beispiele werden aus praktischer Sicht sowohl im Rückspiegel als auch in der Windschutzscheibe betrachtet - welche Rolle hat der SCS hier bereits gespielt und welche Rolle wird er in Zukunft spielen?"
-  
+
 - title: "Steigerung der Energieeffizienz von SCS-basierten Clouds mit Open Hardware"
   day: 1
   start: "10:45"
@@ -142,10 +142,11 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Kurt Garloff, CTO & Product Owner IAM"
+  description: "Kurt Garloff, CTO SCS & Product Owner IAM"
   description2: "Felix Kronlage-Dammers, Product Owner IaaS"
   description3: "Dominik Pataky, Product Owner Operations & Security"
   description4: "Jan Schoone, Product Owner Container & KaaS"
+  description5: "Marc Schöchlin, Site Reliability Engineer"
   abstract: "Der Sovereign Cloud Stack liefert ein souveränes Komplettpaket: Infrastructure-as-a-Service mit einer Implementierung von OpenStack, Kubernetes-as-a-Service mit SCS Cluster Stacks sowie ein föderiertes Identity- und Access Management, und einer integrierten Observability-Lösung. Über allem steht dabei die gemeinsame Standardisierung von Schnittstellen und Komponenten, so dass auch andere Technologien und innovative Lösungsansätze im SCS zum Einsatz kommen können. Gemeinsam werden wir als Product Owners aufzeigen, wie der Weg von einzelnen Vergabepaketen zu einer integrierten, schlüsselfertigen Lösung aussieht."
 
 - title: "Syseleven (sponsored)"
