@@ -144,14 +144,14 @@ lists some possible implementation approaches as a starting point.
 
 A relevant question we had with this was the cost of adopting all these standards for an OpenStack cluster.
 Based on the work time after the cluster setup and without debugging, since this part would be minimized on a second
-or third attempt at this, we estimated around 4-6 man-hours for a minimal, freshly installed cluster. Doing this multiple
-times could reduce this time even further so something like 1-3 man-hours.
+or third attempt at this, we estimated around 4-6 person-hours for a minimal, freshly installed cluster. Doing this multiple
+times could reduce this time even further so something like 1-3 person-hours.
 
 Now it is important to mention, that we had nearly ideal circumstances, since there was neither hardware missing nor
 the additional costs associated with adopting an older cluster which already contained data.
 If an older cluster needs to be adopted to the standards, it would be necessary to add metadata to existing images, possibly
-change their names and (if desired) change flavor names to the SCS naming schema. This would require significantly more time
-to do; we estimate this with around 0.2-1 man-hours per image or flavor. If this needed to be done more often or multiple
+change their names and (if desired) change flavor names to the SCS naming schema or better add the `SCS-` flavors as additional flavors to avoid breaking users of the previously existing flavors. This would require significantly more time
+to do; we estimate this with around 0.2-1 person-hours per image or flavor. If this needed to be done more often or multiple
 times, some form of automation would be recommended, but this would also incur some upfront man-hour cost.
 Additional costs could come up if no SSDs were provided for the cluster. This would require a hardware upgrade, incurring
 cost for hardware (120-200€ per Terabyte), server downtime as well as man-hours. The actual costs here are hard to estimate
@@ -159,7 +159,7 @@ and would probably change from case to case.
 
 Nonetheless, it is to mention that in most cases, SCS compliance should be easily achievable for most OpenStack clusters
 without having too much overhead in adoption costs. This could obviously change in the future with the arrival of
-additional standards.
+additional standards. Also, OpenStack setups that diverge from the vanilla upstream configurations significantly may cause additional effort to get into compliance.
 
 ## Conclusion and outlook
 
