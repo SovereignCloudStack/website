@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2024-05-13-cost-of-making-an-openstack-cluster-scs-compliant.md
