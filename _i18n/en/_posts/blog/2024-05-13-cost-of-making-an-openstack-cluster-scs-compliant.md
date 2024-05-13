@@ -38,7 +38,7 @@ This test setup is represented in the following visualization provided in the Ya
   </a>
 </figure>
 
-At the time of writing, a vanilla Yaook deployment is not SCS compliant and, as such, it is the ideal playground for our evaluation.
+At the time of writing, a vanilla Yaook deployment is not SCS-compliant and, as such, it is the ideal playground for our evaluation.
 Even better: the lessons we learned while adopting IaaS standards in these deployments can be easily transferred to other OpenStack
 deployments which do not use Yaook.
 
