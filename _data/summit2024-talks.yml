@@ -142,11 +142,11 @@
   speaker: ""
   avatar:
     - "SCS_logo.png"
-  description: "Kurt Garloff, CTO SCS & Product Owner IAM"
-  description2: "Felix Kronlage-Dammers, Product Owner IaaS"
-  description3: "Dominik Pataky, Product Owner Operations & Security"
-  description4: "Jan Schoone, Product Owner Container & KaaS"
-  description5: "Marc Schöchlin, Site Reliability Engineer"
+  description: "Kurt Garloff, CTO SCS & Product Owner IAM, OSB Alliance e.V."
+  description2: "Felix Kronlage-Dammers, Product Owner IaaS, OSB Alliance e.V."
+  description3: "Dominik Pataky, Product Owner Operations & Security, OSB Alliance e.V."
+  description4: "Jan Schoone, Product Owner Container & KaaS, OSB Alliance e.V."
+  description5: "Marc Schöchlin, Site Reliability Engineer, OSB Alliance e.V."
   abstract: "Der Sovereign Cloud Stack liefert ein souveränes Komplettpaket: Infrastructure-as-a-Service mit einer Implementierung von OpenStack, Kubernetes-as-a-Service mit SCS Cluster Stacks sowie ein föderiertes Identity- und Access Management, und einer integrierten Observability-Lösung. Über allem steht dabei die gemeinsame Standardisierung von Schnittstellen und Komponenten, so dass auch andere Technologien und innovative Lösungsansätze im SCS zum Einsatz kommen können. Gemeinsam werden wir als Product Owners aufzeigen, wie der Weg von einzelnen Vergabepaketen zu einer integrierten, schlüsselfertigen Lösung aussieht."
 
 - title: "Syseleven (sponsored)"
@@ -225,7 +225,7 @@
   avatar:
     - "SCS_logo.png"
   description: "Andreas Reckert-Lodde, Interims-Geschäftsführer ZenDiS"
-  description2: "Felix Kronlage-Dammers, Product Owner SCS IaaS"
+  description2: "Felix Kronlage-Dammers, Product Owner SCS IaaS, OSB Alliance e.V."
   abstract: "Die Digitalisierung der Öffentlichen Verwaltung in Deutschland und Europa voranzubringen und dabei souverän zu gestalten, ist eine komplexe und herausfordernde Aufgabe. Das ZenDis (Zentrum Digitale Souveränität) unterstützt die Öffentliche Verwaltung bei dieser Aufgabe mit zwei seiner wichtigsten Projekte: die Software-Plattform Open CoDE und der digitale Arbeitsplatz openDesk. Wird openDesk als SaaS-Lösung auf SCS betrieben, garantiert das die digitale Souveränität seiner Office Anwendungen auch in der Cloud. Wir zeigen, wie weit dieses Projekt bereits umgesetzt ist – und dass digital souveräne, funktionale Software für die Öffentliche Verwaltung keine Zukunftsmusik ist, sondern heute schon Realität."
 
 - title: "Datenhoheit in der Cloud - Sicherheit und Souveränität mit der pluscloud open (sponsored)"
@@ -271,10 +271,10 @@
   speaker:
   avatar:
     - "SCS_logo.png"
-  description: "Peter Ganten, Vorstandsvorsitzender der Open Source Business Alliance e.V.; Kurt Garloff, CTO SCS, OSB Alliance e.V.; Felix Kronlage-Dammers, Product Owner SCS IaaS Referenzimplementierung"
+  description: "Peter Ganten, Vorstandsvorsitzender der Open Source Business Alliance e.V."
   description2: "Kurt Garloff, CTO SCS, OSB Alliance e.V."
-  description3: "Felix Kronlage-Dammers, Product Owner SCS IaaS"
-  abstract: ""
+  description3: "Felix Kronlage-Dammers, Product Owner SCS IaaS, OSB Alliance e.V."
+  abstract: "In der Projektphase von SCS wurde einiges erreicht. Sie neigt sich zum Ende. Aber es geht weiter. Wie genau berichten die Vortragenden."
 
 - title: "Abschluss und Verabschiedung"
   day: 1
