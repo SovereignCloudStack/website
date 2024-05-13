@@ -154,10 +154,10 @@ change their names and (if desired) change flavor names to the SCS naming schema
 to do; we estimate this with around 0.2-1 person-hours per image or flavor. If this needed to be done more often or multiple
 times, some form of automation would be recommended, but this would also incur some upfront person-hour cost.
 Additional costs could come up if no SSDs were provided for the cluster. This would require a hardware upgrade, incurring
-cost for hardware (120-200€ per Terabyte), server downtime as well as person-hours. The actual costs here are hard to estimate
+cost for hardware (120-200€ per Terabyte at the time of writing this blog post), server downtime as well as person-hours. The actual costs here are hard to estimate
 and would probably change from case to case.
 
-Nonetheless, it is to mention that in most cases, SCS compliance should be easily achievable for most OpenStack clusters
+Nonetheless, it is worth to mention that in most cases, SCS compliance should be easily achievable for most OpenStack clusters
 without having too much overhead in adoption costs. This could obviously change in the future with the arrival of
 additional standards. Also, OpenStack setups that diverge from the vanilla upstream configurations significantly may cause additional effort to get into compliance.
 
