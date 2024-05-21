@@ -6,15 +6,23 @@ Liebe Freunde und Interessierte an SCS,
 die SCS Community ist im vergangenen Jahr kräftig gewachsen, es sind viele neue Produktionsumgebungen auf Basis von SCS entstanden und am 20. März konnten wir planmäßig das 6. Release veröffentlichen.
 Seien Sie in Berlin dabei, wenn SCS Nutzende aus verschiedensten Anwendungsfeldern ihre Erfahrungen teilen und berichten, warum sie sich für digital souveräne Cloud-Technologie mit SCS entschieden haben und erfahren Sie, wie die Zukunft des SCS Projektes aussehen wird.
 
-Registrieren Sie sich [hier](https://events.scs.community/scs-summit-2024/)
-
 Wir freuen uns besonders, dass unser Summit mit dem Auftakt der OpenInfra Day Roadshow kombiniert wird. Der [OpenInfra Day Germany 2024](https://oideurope2024.openinfra.dev/#registration=1) findet am Mittwoch, den 15. Mai 2024 in den gleichen Räumlichkeiten wie unser Summit statt. Nutzen Sie die einmalige Gelegenheit, am ersten Tag SCS, unsere Partner und unsere Community kennenzulernen, und am zweiten Tag in die Welt der Open-Source-Community-Arbeit einzutauchen.
 
 Bitte beachten Sie, dass das Programm deutschsprachig sein wird. Einen detaillierten Zeitplan finden Sie weiter unten auf dieser Seite.
 
+## DANKE!
+
+Der 2. SCS Summit ist vorbei. Danke an alle, die dabei waren -  auf, vor und hinter der Bühne.
+
+Wir haben gesehen, was gemeinsam schon erreicht wurde, was die Pläne für die Zukunft sind, und dass es immer mehr werden, die mithelfen, digitale Souveränität zu verwirklichen!
+Auf der Bühne wurde eindrucksvoll berichtet und diskutiert, welche Bedeutung digitale Souveränität für Freiheit, Demokratie, Handlungsfähigkeit, Innovationskraft und Krisenstabilität hat, wie digitale Souveränität konkret geschaffen wird und welche Rolle Open Source dabei spielt.
+
+Für alle, die nicht dabei sein konnten oder die einen Vortrag gern noch einmal hören wollen, werden in Kürze hier die Videos und Präsentationen verfügbar sein.
+
+
 ## Veranstaltungsort
 
-Der SCS Summit 2024 findet in der [Villa Elisabeth](https://www.elisabeth.berlin/de/kulturorte/villa-elisabeth), Invalidenstraße 3 in 10115 Berlin-Mitte, statt (Nähe S Nordbahnhof).
+Der SCS Summit 2024 fand in der [Villa Elisabeth](https://www.elisabeth.berlin/de/kulturorte/villa-elisabeth), Invalidenstraße 3 in 10115 Berlin-Mitte, statt (Nähe S Nordbahnhof).
 
 ## Sprecherinnen und Sprecher
 
