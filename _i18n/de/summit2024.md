@@ -14,7 +14,7 @@ Bitte beachten Sie, dass das Programm deutschsprachig sein wird. Einen detaillie
 
 Der 2. SCS Summit ist vorbei. Danke an alle, die dabei waren -  auf, vor und hinter der Bühne.
 
-Wir haben gesehen, was gemeinsam schon erreicht wurde, was die Pläne für die Zukunft sind, und dass es immer mehr werden, die mithelfen, Digitale Souveränität zu verwirklichen!
+Wir haben gesehen, was gemeinsam schon erreicht wurde, was die Pläne für die Zukunft sind, und dass es immer mehr werden, die mithelfen, digitale Souveränität zu verwirklichen!
 Auf der Bühne wurde eindrucksvoll berichtet und diskutiert, welche Bedeutung digitale Souveränität für Freiheit, Demokratie, Handlungsfähigkeit, Innovationskraft und Krisenstabilität hat, wie digitale Souveränität konkret geschaffen wird und welche Rolle Open Source dabei spielt.
 
 Für alle, die nicht dabei sein konnten oder die einen Vortrag gern noch einmal hören wollen, werden in Kürze hier die Videos und Präsentationen verfügbar sein.
