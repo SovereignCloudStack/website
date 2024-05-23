@@ -4,14 +4,15 @@
 
 ### SCS Summits
 
-After [last year's great success](/summit2023), the next [SCS Summit
-2024](/summit2024) will take place again in Berlin on May 14, 2024. We will
-publish further information about the program and the venue on the event page
-shortly. As last year, the summit will again be largely in German, focused on
-decision makers from politics and business. On the following day, the [Open
-Infra Day Germany](https://oideurope2024.openinfra.dev/#registration=1) will take place
-at the same venue, with primarily English language content and a more
-technical focus.
+Our SCS Summit took place for the second time on May 14, 2024 in Berlin. In the Villa Elisabeth in Berlin Mitte, we were able to experience what has already been achieved together in the SCS community, what the plans for the future look like and, above all, that there are more and more people who are in the process of realizing digital sovereignty.
+Take a look back at the past two years and the exciting presentations and discussions and join us next year when the SCS Summit enters its third round - 
+
+Save the Date: May 8, 2025
+
+[Review 2024](/summit2024)
+
+[Review 2023](/summit2023)
+
 
 ### SCS Hackathons
 
@@ -19,7 +20,7 @@ Afer successful Hackathons in Cologne (Nov 22, 2022 at [PlusServer](https://plus
 in Nuremberg (Mar 2, 2023 at [Noris/Wavecon](https://wavecon.de/)), a number of
 Workshops/Mini-Hackathons, a fully-fledged Hackathon in collaboration with
 [Alasca e.V.](https://alasca.cloud/)) on Nov 8, 2023 at [Cloud & Heat](https://cloudandheat.com/)
-premises in Dresden, the fourth Hackathon is taking place at [Gonicus](https://gonicus.de/en)
-in Arnsberg. Please [register](https://events.scs.community/4hackathon/)!
+premises in Dresden, the fourth Hackathon took place at [Gonicus](https://gonicus.de/en)
+in Arnsberg.
 
 <!--TODO: ## Events with contributions from SCS-->
