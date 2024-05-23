@@ -1,13 +1,10 @@
 # 2. Sovereign Cloud Stack Summit May 14, 2024 in Berlin
 
-Dear friends of SCS and interested observers,
+The SCS community has grown strongly in the past year, many new production environments based on SCS have been created and on March 20 we were able to publish the 6th release as planned.
 
-the SCS community has grown strongly in the past year, many new production environments based on SCS have been created and on March 20 we were able to publish the 6th release as planned.
-Join us in Berlin when SCS users from a wide range of application areas share their experiences and tell us why they have opted for digitally sovereign cloud technology with SCS and find out what the future of the SCS project will look like. 
+On May 14, 2024, SCS users from various fields of application, people interested in SCS and decision-makers from politics and business met in Berlin for the second time to report on their experiences and exchange views on why they have opted for digitally sovereign cloud technology with SCS. 
 
-Register [here](https://events.scs.community/scs-summit-2024/)
-
-and join us for exciting presentations and discussions: 
+Here is a short excerpt from the program
 
 * Ernst Stöckl-Pukall, Head of the Department for Digitalization and Industry 4.0 at the Federal Ministry for Economic Affairs and Climate Protection, will open the event with a welcome address.
 * Ann Cathrin Riedel, Managing Director of NExT e.V. and member of the Digital Advisory Board of the Federal Ministry for Digital and Transport, will give a keynote speech highlighting the importance of open and digitally sovereign infrastructures for freedom and democracy.
@@ -18,13 +15,13 @@ and join us for exciting presentations and discussions:
 * The product owners of SCS will present and explain various technical aspects and components of SCS.
 * Finally, the Chairman of the OSB Alliance and CEO of Univention GmbH, Peter Ganten, will give an outlook on the future of SCS.
 
-We are particularly pleased that our Summit will be combined with the kick-off of the OpenInfra Day Roadshow. [OpenInfra Day Germany 2024](https://oideurope2024.openinfra.dev/#registration=1) will take place on May 15, 2024 at the same venue as our Summit. Take advantage of this unique opportunity to meet SCS, our partners and our community on the first day, and dive into the world of open source community work on the second day. We cordially invite you to join us.
+We are particularly pleased that our Summit was combined with the kick-off of the OpenInfra Day Roadshow. [OpenInfra Day Germany 2024](https://oideurope2024.openinfra.dev/germany/) took place on May 15, 2024 at the same venue as our Summit. It was a unique opportunity to meet SCS, our partners and our community on the first day, and dive into the world of open source community work on the second day.
 
-Please note, that the program will be in German. The full agenda can be viewed in the [German version](https://scs.community/de/summit2024/) of this page.
+Please note, that the program was held in German. The full agenda can be viewed in the [German version](https://scs.community/de/summit2024/) of this page.
 
 ## Location
 
-The SCS Summit 2024 will take place at [Villa Elisabeth](https://www.elisabeth.berlin/de/kulturorte/villa-elisabeth), Invalidenstraße 3 in 10115 Berlin-Mitte, (near S Nordbahnhof).
+The SCS Summit 2024 took place at [Villa Elisabeth](https://www.elisabeth.berlin/de/kulturorte/villa-elisabeth), Invalidenstraße 3 in 10115 Berlin-Mitte, (near S Nordbahnhof).
 
 ## Contact us
 
