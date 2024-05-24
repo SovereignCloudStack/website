@@ -31,7 +31,7 @@ layer this were:
   [OSISM issue #925](https://github.com/osism/issues/issues/925). An upstream fix exists and a backport
   is already underway.
 
-Quickly after the initial release OSISM released [7.0.1](https://release.osism.tech/notes/7.html#id2) that
+Quickly after the initial release OSISM released [7.0.1](https://osism.tech/docs/release-notes/osism-7#701-20240327) that
 contained a bugfixes for two of these issues:
 
 * Backport of [https://review.opendev.org/c/openstack/octavia/+/896995](https://review.opendev.org/c/openstack/octavia/+/896995) to fix errors when deleting LB with broken amphorae.
@@ -54,6 +54,6 @@ Alongside this bugfix the next minor release of OSISM brings the following notew
 * Kubernetes Cluster API for the 1.30 series is available. They are now provided directly with `osism manage image clusterapi`. This means that Kubernetes Cluster API images are now available for series 1.27, 1.28, 1.29 and 1.30.
 * All Ansible collections have been prepared for use with Ubuntu 24.04. It is currently not recommended to upgrade existing clusters to Ubuntu 24.04 or to install new clusters with Ubuntu 24.04. There will be a note in the release notes from which Ubuntu 24.04 can be used.
 
-This list is by far not complete, a complete list is part of the release notes are available on [releases.osism.tech](https://release.osism.tech/notes/7.html).
+This list is by far not complete, a complete list is part of the release notes are available [here](https://osism.tech/docs/release-notes/osism-7).
 
 Important note: The OpenStack service images for Octavia and Nova have been rebuilt. Upgrades of the Octavia and Nova services are recommended. No upgrades of other OpenStack and associated infrastructure services such as MariaDB or RabbitMQ are required.
