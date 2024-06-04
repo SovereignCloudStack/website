@@ -15,7 +15,11 @@ fi
 
 set -x
 echo $PATH
+
+userdel jekyll
 adduser  -u $USER_ID -D -h /site build
+
+chown -R build /site
 
 su -c "sh -s" - build <<'EOF'
 set -x
