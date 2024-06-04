@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Costs of making an OpenStack cluster SCS-compliant"
+title: "Demystifying Gaia-X Credentials"
 author:
-  - "Hannes Baum"
-  - "Martin Morgenstern"
+  - "Anja Strunk"
+  - "Markus Hentsch"
 avatar:
   - "avatar-candh.jpg"
 ---
