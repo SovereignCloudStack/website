@@ -142,7 +142,7 @@
   description: ""
   abstract: ""
 
-- title: "SCS & dNation: Together we aim towards digitally sovereign Europe (sponsored) "
+- title: "SCS & dNation: Together we aim towards digitally sovereign Europe (sponsored)"
   day: 1
   start: "13:15"
   end: "13:25"
@@ -170,7 +170,7 @@
   description4: "Jan Schoone, Product Owner Container & KaaS, OSB Alliance e.V."
   description5: "Marc Schöchlin, Site Reliability Engineer, OSB Alliance e.V."
   abstract: "Der Sovereign Cloud Stack liefert ein souveränes Komplettpaket: Infrastructure-as-a-Service mit einer Implementierung von OpenStack, Kubernetes-as-a-Service mit SCS Cluster Stacks sowie ein föderiertes Identity- und Access Management, und einer integrierten Observability-Lösung. Über allem steht dabei die gemeinsame Standardisierung von Schnittstellen und Komponenten, so dass auch andere Technologien und innovative Lösungsansätze im SCS zum Einsatz kommen können. Gemeinsam werden wir als Product Owners aufzeigen, wie der Weg von einzelnen Vergabepaketen zu einer integrierten, schlüsselfertigen Lösung aussieht."
-  slides: "summit2024_11_garloff_SCS-Turnkey-Solution.pdf.pdf"
+  slides: "summit2024_11_garloff_SCS-Turnkey-Solution.pdf"
 #  video: "https://TODO.soon"
 
 

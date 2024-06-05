@@ -39,7 +39,7 @@ Die archivierte Seite mit dem gesamten Programm finden Sie unter: <https://scs.c
 				</div>
 				<div class="d-flex w-25 flex-column justify-content-start text-end position-relative">
 					{% if talk.slides %}
-						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{{talk.slides}}" target="_blank">
+						<a class="mt-1 text-decoration-none text-secondary stretched-link" href="{% asset '{{talk.slides}}' @path %}" target="_blank">
 							<i class="fa fa-download my-auto"></i> <small>Slides</small>
 						</a>
 					{% endif %}
