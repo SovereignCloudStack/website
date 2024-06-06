@@ -14,6 +14,8 @@ avatar:
 
 We recommend reading the Gaia-X's own blog post on ["Gaia-X and Verifiable Credentials / Presentations"](https://gaia-x.eu/news-press/gaia-x-and-verifiable-credentials-presentations/) to get familiar with the idea and concepts behind **Verifiable Credentials** and **Verifiable Presentations**.
 
+The process described in this blog post is for the most part an example realization of [how to become a Gaia-X conformant user](https://docs.gaia-x.eu/policy-rules-committee/policy-rules-conformity-document/23.10/Process/) as documented by Gaia-X.
+
 ### Desired Goal
 
 A provider wants to publish Gaia-X Credentials containing proven claims about their identity and offerings conforming to the Gaia-X Framework.
@@ -27,9 +29,19 @@ Finally, the Gaia-X Compliance Service of the GXDCH will verify the Verifiable P
   </a>
 </figure>
 
+Most Verifiable Credentials included in the Verifiable Presentation are self-signed by the provider.
+One exception to this is the Verifiable Credential for the Legal Registration Number (LRN) of the provider which instead is signed by the GXDCH involving a dedicated Gaia-X Notary Service API for verifying the LRN and attesting its validity.
+
+The specific set of Verifiable Credentials a provider includes in their Verifiable Presentation may vary depending on what kind of proven claims the provider wants to present.
+For the purpose of this blog post we will focus on a very common and basic use case of Verifiable Presentations containing the following Verifiable Credentials:
+
+1. The **Legal Registration Number** (LRN) belonging to the provider.
+2. The **Participant** credential representing the provider as a legal person identified by the LRN.
+3. The signed Gaia-X **Terms & Conditions** which the provider pledges to adhere to.
+
 ### Required Identity Assets for Credential Creation
 
-In order to successfully create Verifiable Credentials for the Gaia-X Compliance, the following assets are necessary on the provider side:
+In order to successfully create Verifiable Credentials for the Gaia-X Compliance as illustrated above, the following assets are necessary on the provider side:
 
 1. A DNS record and server for hosting the Gaia-X related identity assets.
 2. A public/private key pair compatible with JSON Web Signatures (JWS) and a corresponding X.509 certificate chain containing the public key.
@@ -48,10 +60,10 @@ The relations between those parts are as follows:
 - the private key of the public/private key pair will be used by the provider to locally sign Verifiable Credentials
 - the public key of the public/private key pair will be used by other parties to verify the signature of provider-signed Verifiable Credentials
 - the public key is hosted by the provider as part of the DID JSON and certificate chain files
-- the DID JSON contains both the public key for signature validation as well as a URL reference to the full X.509 certificate chain for its public key
+- the DID JSON contains both the public key for signature validation as well as a URL reference to the full X.509 certificate chain for the public key
 - the path to the DID is encoded in the "proof" section of the Verifiable Credential
 
-Using the DID and the certificate chain including the public key hosted by the provider, a consumer is able to verify the signature of a Verifiable Credential of the provider by resolving the DID reference and retrieving the certificate:
+Using the DID and the certificate chain including the public key hosted by the provider, a consumer will be able to verify the signature of a Verifiable Credential issued by the provider by resolving the DID reference and retrieving the certificate:
 
 <figure class="figure mx-auto d-block" style="width:50%">
   <a href="{% asset "blog/gx-credentials/gx-credentials-verification.png" @path %}">
