@@ -197,10 +197,18 @@ A corresponding request body to the current version of the Notarization API woul
 }
 ```
 
+Note: It is not mandatory to use the `/.well-known/` directory here.
+In contrast to the DID document, webserver, path and filename can be arbitrary here as long as we host the resulting Verifiable Credential at this address later on.
+This is true for all the Verifiable Credentials that we will create in the following sections.
+
 The Notarization API supports different types of Legal Registration Numbers, including VAT ID which our example uses.
 
 In the response to this request we receive our first Verifiable Credential from the Notarization API in JSON format.
 We will put this file on our webserver at the path we specified during the request, i.e. `mydomain.com/.well-known/lrn.json`.
+
+The Verifiable Credential that we received contains a DID reference to the DID document of the Gaia-X Notarization Service which in turn will reference a X.509 certificate that can be used to validate the signature of the Verifiable Credential.
+Refer to the appendix section at the bottom of this blog post for a Python code snippet for validating the signature.
+
 Based on this LRN credential we can proceed with our first self-signed Verifiable Credential next: the Participant.
 
 ### Step 4: Verifiable Credential for Participant
@@ -268,14 +276,118 @@ As a result, the structure shown above will be extended by a "proof" section con
 ```
 
 To make the identifier references valid, we will place the signed JSON at `mydomain.com/.well-known/participant.json` on our webserver.
+Other Gaia-X Participants may now retrieve this Verifiable Credential along with our DID document and its referenced X.509 certificate chain in order to validate the signature of our credential as illustrated in the figures of the introductory sections.
 
 ### Step 5: Verifiable Credential for Terms & Conditions
 
 The second Verifiable Credential that we will sign ourselves will be the Gaia-X Terms & Conditions which we pledge to adhere to as a participant in the Gaia-X Trust Framework.
 
+The mandatory Terms & Conditions text can be found at https://registry.lab.gaia-x.eu/v1-staging/api/trusted-shape-registry/v1/shapes/jsonld/trustframework within the `gx:GaiaXTermsAndConditionsShape`.
+A resulting credential JSON using example values may look like this:
+
+```json
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://w3id.org/security/suites/jws-2020/v1",
+    "https://registry.lab.gaia-x.eu/v1-staging/api/trusted-shape-registry/v1/shapes/jsonld/trustframework#"
+  ],
+  "type": "VerifiableCredential",
+  "issuanceDate": "2024-01-01T00:00:00.000000",
+  "credentialSubject": {
+    "type": "gx:GaiaXTermsAndConditions",
+    "gx:termsAndConditions": "The PARTICIPANT signing the Self-Description agrees as follows:\n- to update its descriptions about any changes, be it technical, organizational, or legal - especially but not limited to contractual in regards to the indicated attributes present in the descriptions.\n\nThe keypair used to sign Verifiable Credentials will be revoked where Gaia-X Association becomes aware of any inaccurate statements in regards to the claims which result in a non-compliance with the Trust Framework and policy rules defined in the Policy Rules and Labelling Document (PRLD).",
+    "id": "https://mydomain.com/.well-known/gx-terms-and-cs.json"
+  },
+  "issuer": "did:web:mydomain.com",
+  "id": "https://mydomain.com/.well-known/gx-terms-and-cs.json"
+}
+```
+
+The structure and content of the credential is slightly different but the process is the same as for the Participant Verifiable Credential.
+In short:
+
+1. Sign the JSON using the `privkey.pem`.
+2. Extend the JSON by a "proof" section containing the JSON Web Signature (JWS).
+3. Publish the resulting Verifiable Credential as JSON at `mydomain.com/.well-known/gx-terms-and-cs.json`.
+
+Once again, other Gaia-X Participants may now retrieve this signed credential and validate its signature using our DID reference and the resulting public key.
+
 ### Step 6: Building the Verifiable Presentation for the Compliance API
 
-<!-- TODO -->
+Here is a recap of the assets we created so far:
+
+1. Our public/private key pair, the X.509 certificate and DID document.
+2. A Verifiable Credential attesting our Legal Registration Number (LRN), signed by the Gaia-X Notarization Service.
+3. A self-signed Verifiable Credential describing our identity as Participant, referencing our LRN credential.
+4. A self-signed Verifiable Credential for the Gaia-X Terms & Conditions we pledge to adhere to.
+
+Using this minimal set of credentials we can now build a Verifiable Presentation for ourselves and submit it to the [Gaia-X Compliance API](https://compliance.lab.gaia-x.eu/v1-staging/docs).
+The Verifiable Presentation will act as our [Gaia-X Self-Description](https://docs.gaia-x.eu/technical-committee/architecture-document/22.10/self-description/).
+
+The process is pretty straightforward and only requires us to assemble all desired Verifiable Credentials in a Verifiable Presentation structure:
+
+```json
+{
+  "@context": "https://www.w3.org/2018/credentials/v1",
+  "type": "VerifiablePresentation",
+  "verifiableCredential": [
+    {
+      // signed LRN credential
+    },
+    {
+      // signed Participant credential
+    },
+    {
+      // signed Terms & Conditions credential
+    }
+  ]
+}
+```
+
+The JSON objects within the `verifiableCredential` list are the full signed JSON structures (including the "proof" section) as individually created in the previous steps.
+They are omitted and replaced by placeholders here for readability.
+
+We simply send this request body to `https://compliance.lab.gaia-x.eu/v1-staging/api/credential-offers` and as a response we receive yet another Verifiable Credential, assumed that the Gaia-X Compliance Service can successfully validate the signature of each individual credential contained in the Verifiable Presentation.
+
+This time, the received credential does not contain the whole input structure again, which would include the full JSON representation of all Verifiable Credentials included in the Verifiable Presentation.
+Instead, credentials are only referenced by their subject ID and a hash of their content as received by the Gaia-X Compliance Service:
+
+```json
+{
+    ...
+    "credentialSubject": [
+        {
+            "type": "gx:compliance",
+            "id": "https://mydomain.com/.well-known/lrn.json",
+            "gx:integrity": "sha256-<hash>",
+            ...
+            "gx:type": "gx:legalRegistrationNumber"
+        },
+        {
+            "type": "gx:compliance",
+            "id": "https://mydomain.com/.well-known/gx-terms-and-cs.json",
+            "gx:integrity": "sha256-<hash>",
+            ...
+            "gx:type": "gx:GaiaXTermsAndConditions"
+        },
+        {
+            "type": "gx:compliance",
+            "id": "https://mydomain.com/.well-known/participant.json",
+            "gx:integrity": "sha256-<hash>",
+            ...
+            "gx:type": "gx:LegalParticipant"
+        }
+    ],
+    "proof": {
+        ...
+    }
+}
+```
+(output truncated for readability)
+
+This Verifiable Credential attests the compliance of our Verifiable Presentation and its included credentials.
+We can now share the Verifiable Presentation as our Self-Description along with this Verifiable Credential.
 
 ## Appendix
 
@@ -328,4 +440,70 @@ def sign_credential(credential):
     }
 
     return credential
+```
+
+### Python code for verifying signed Verifiable Credentials
+
+The following code snippet illustrates how to validate the JSON Web Signature (JWS) of a given Verifiable Credential.
+The code is loosely based on [this example implementation from a Gaia-X workshop](https://gitlab.com/gaia-x/lab/workshops/gaia-x-101/-/blob/e0b01980eead64c0a20fec4643659b4c9d9f3331/utils.py) that was published and licensed under the [Eclipse Public License - v 2.0](https://gitlab.com/gaia-x/lab/workshops/gaia-x-101/-/blob/e0b01980eead64c0a20fec4643659b4c9d9f3331/LICENSE).
+
+```python
+import requests
+import json
+from hashlib import sha256
+from jwcrypto import jwk, jws
+from pyld import jsonld
+
+
+def verify_credential(credential_json_str, cert_url):
+    """
+    credential_json_str : the signed Verifiable Credential as JSON string.
+
+    cert_url : the URL to the signature verification certificate usually
+    encoded as the x5u attribute of the issuer's did.json document.
+    """
+
+    verifiable_credential = json.loads(credential_json_str)
+
+    # Retrieve the registry certificate which serves as the verification
+    # public key (JWK) for the JWS later
+    reg_cert_response = requests.get(cert_url)
+    if reg_cert_response.status_code != 200:
+        raise Exception(
+            f"Unable to retrieve verification certificate "
+            f"from: {cert_url}"
+        )
+    verification_cert_pem = reg_cert_response.text.encode('UTF-8')
+    verification_key = jwk.JWK.from_pem(verification_cert_pem)
+
+    # The proof object is part of the credential response, however
+    # it resembles JWS data applicable to the response without the
+    # proof object. Hence, we need to strip the proof object from
+    # the response.
+    proof = verifiable_credential.pop("proof")
+
+    # The remaining structure is the actual credential data that
+    # JWS was created for. The signature was applied to its
+    # normalized and hashed form, which we need to recreate here
+    # in order to verify the signature.
+    # See: https://w3c.github.io/vc-data-integrity/#how-it-works
+    normalized_credential = jsonld.normalize(
+        verifiable_credential,
+        {'algorithm': 'URDNA2015', 'format': 'application/n-quads'}
+    )
+    hashed_credential = sha256(normalized_credential.encode('utf-8'))
+
+    # Instantiate a JWS object based on the jws attribute of the
+    # proof object, which contains a base64 representation of the JWS.
+    received_jws_token = jws.JWS()
+    received_jws_token.deserialize(proof["jws"])
+
+    # Finally, use the verification key (Gaia X registry public cert)
+    # and the hashed credential (which is the JWS' detached payload)
+    # in conjunction with the JWS token to verify the credential.
+    # This method will throw an exception if verification fails.
+    received_jws_token.verify(
+        verification_key,
+        detached_payload=hashed_credential.hexdigest()
+    )
 ```
