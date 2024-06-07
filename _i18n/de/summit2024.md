@@ -62,7 +62,7 @@ Der SCS Summit 2024 fand in der [Villa Elisabeth](https://www.elisabeth.berlin/d
                     {% if talk.description5 %}<div class="desc pb-2"><b>{{ talk.description5 }}</b></div>{% endif %}
                     <div class="desc pb-2"><i>{{ talk.abstract }}</i></div>
                     {% if talk.slides %}
-                    <div class="desc pb-2"><a href="{{% asset talk.slides @path %}}">Folien</a></div>
+                    <div class="desc pb-2"><a href="{% asset '{{talk.slides}}' @path %}">Folien</a></div>
                     {% endif %}
                     {% if talk.video %}
                     <div class="desc pb-2"><a href="{{ talk.video }}">Video</a></div>
