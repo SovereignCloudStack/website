@@ -27,7 +27,7 @@
         <div class="carousel__track">
           <ul>
             {% for item in page.carousels[number].images %}
-            <li class="carousel__slide" style="background-image: url('{% asset "{{ include.dir }}/{{ item.image }}" %}');"></li>
+            <li class="carousel__slide" style="background-image: url('{% asset "{{ include.dir }}/{{ item.image }}" vips:resize='{{ include.height }}{{ include.unit }}x' %}');"></li>
             {% endfor %}
           </ul>
         </div>
