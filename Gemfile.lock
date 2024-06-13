@@ -63,8 +63,12 @@ GEM
     extras (0.3.0)
       forwardable-extended (~> 2.5)
     fastimage (2.3.1)
+    ffi (1.17.0)
     ffi (1.17.0-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
+    google-protobuf (4.27.0)
+      bigdecimal
+      rake (>= 13)
     google-protobuf (4.27.0-x86_64-linux)
       bigdecimal
       rake (>= 13)
@@ -120,10 +124,14 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
+    mini_portile2 (2.8.7)
     minitest (5.23.1)
     mutex_m (0.2.0)
     namae (1.2.0)
       racc (~> 1.7)
+    nokogiri (1.16.5)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.16.5-x86_64-linux)
       racc (~> 1.4)
     pathutil (0.16.2)
@@ -145,6 +153,9 @@ GEM
     ruby-vips (2.2.1)
       ffi (~> 1.12)
     safe_yaml (1.0.5)
+    sass-embedded (1.77.4)
+      google-protobuf (>= 3.25, < 5.0)
+      rake (>= 13)
     sass-embedded (1.77.4-x86_64-linux-gnu)
       google-protobuf (>= 3.25, < 5.0)
     sassc (2.4.0)
@@ -163,6 +174,7 @@ GEM
     webrick (1.8.1)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES

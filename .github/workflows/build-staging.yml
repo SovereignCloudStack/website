@@ -21,6 +21,7 @@ jobs:
     - uses: helaili/jekyll-action@v2
       id: build
       with:
+        bundler_version: "2.5.11"
         jekyll_src: "."
         jekyll_env: development
         pre_build_commands: "apk add --update vips uglify-js"
