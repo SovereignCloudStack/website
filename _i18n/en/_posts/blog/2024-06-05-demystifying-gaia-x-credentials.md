@@ -10,7 +10,7 @@ avatar:
 
 ## Generating compliant Verifiable Credentials using the GXDCH
 
-<!-- TODO: figure showing the trust anchors on high level like https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/trust_anchors/ -->
+This blog post will introduce the requirements and detailed technical process of creating and obtaining Verifiable Credentials (VC for short) within the context of Gaia-X and using the Gaia-X Digital Clearing House (GXDCH) to assert compliance.
 
 We recommend reading the Gaia-X's own blog post on ["Gaia-X and Verifiable Credentials / Presentations"](https://gaia-x.eu/news-press/gaia-x-and-verifiable-credentials-presentations/) to get familiar with the idea and concepts behind **Verifiable Credentials** and **Verifiable Presentations**.
 
@@ -20,6 +20,8 @@ This blog post will refer to the latest stable Gaia-X release which is codenamed
 Details of the process described here might change in future Gaia-X releases. Please consult the corresponding documentation.
 
 ### Desired Goal
+
+<!-- TODO: figure showing the trust anchors on high level like https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/trust_anchors/ -->
 
 A provider wants to publish Gaia-X Credentials containing proven claims about their identity and offerings conforming to the Gaia-X Framework.
 To achieve this, the provider assembles a Verifiable Presentation that contains several Verifiable Credentials which in total will both represent and prove the provider's identity and offerings.
@@ -131,9 +133,8 @@ Some notes about the did:web method used here:
 - When no path segments are specified after the domain name (using colon delimiters), this method defaults to `.well-known/` on the webserver.
 - The resulting URL will be used to look up `did.json` on the webserver, this filename is hardcoded.
 
-To generate the DID document, the SCS DID generator can be utilized.
-Specify the `x509CertificateChain.pem` certificate chain file as input for the verification methods.
-<!-- TODO: link to the SCS DID generator -->
+To generate the DID document, the [SCS DID creator](https://github.com/SovereignCloudStack/scs-did-creator/) can be utilized.
+Specify the URL to `x509CertificateChain.pem` certificate chain file as input for the verification methods.
 
 Make sure to double check that you don't accidentally reference your private key in the DID document!
 In the context of your key pair, only the public key and a reference to the X.509 certificate chain should be part of this document.
@@ -162,6 +163,8 @@ If done correctly, the DID document should contain our public key and the URL of
 
 This file is to be placed as `/.well-known/did.json` on the webserver, e.g. `mydomain.com/.well-known/did.json`.
 As a result it will be accessible using the DID reference `did:web:mydomain.com` which we will be using when creating Verifiable Credentials in the following steps.
+
+**Important:** Each `verificationMethod` entry in the DID document receives a unique `id` field. When creating Verifiable Credentials referencing the DID document, their `proof.verificationMethod` value must exactly match one of the `id`s within `verificationMethod` of the DID document! This includes the `#`-prefixed appendix (`did:web:mydomain.com#JWK2020-RSA` in this example).
 
 ### Step 3: Verifiable Credential for Legal Registration Number (LRN)
 
@@ -386,8 +389,8 @@ Instead, credentials are only referenced by their subject ID and a hash of their
 ```
 (output truncated for readability)
 
-This Verifiable Credential attests the compliance of our Verifiable Presentation and its included credentials.
-We can now share the Verifiable Presentation as our Self-Description along with this Verifiable Credential.
+This final Verifiable Credential is the Gaia-X Compliance VC and attests the compliance of our Verifiable Presentation and its included credentials.
+We can now share the Verifiable Presentation as our Self-Description along with this Gaia-X Compliance VC.
 
 ## Appendix
 
