@@ -10,13 +10,13 @@ avatar:
 
 ## Generating compliant Verifiable Credentials using the GXDCH
 
-This blog post will introduce the requirements and detailed technical process of creating and obtaining Verifiable Credentials (VC for short) within the context of Gaia-X and using the Gaia-X Digital Clearing House (GXDCH) to assert compliance.
+This blog post will introduce the requirements and detailed technical process of creating and obtaining Verifiable Credentials (VC for short) for Gaia-X Self-Descriptions and using the Gaia-X Digital Clearing House (GXDCH) to assert compliance.
 
-We recommend reading the Gaia-X's own blog post on ["Gaia-X and Verifiable Credentials / Presentations"](https://gaia-x.eu/news-press/gaia-x-and-verifiable-credentials-presentations/) to get familiar with the idea and concepts behind **Verifiable Credentials** and **Verifiable Presentations**.
+We recommend reading the Gaia-X's own blog post on [Gaia-X and Verifiable Credentials / Presentations](https://gaia-x.eu/news-press/gaia-x-and-verifiable-credentials-presentations/) to get familiar with the idea and concepts behind **Verifiable Credentials** and **Verifiable Presentations**.
 
 The process described in this blog post is for the most part an example realization of [how to become a Gaia-X conformant user](https://docs.gaia-x.eu/policy-rules-committee/policy-rules-conformity-document/23.10/Process/) as documented by Gaia-X.
 
-This blog post will refer to the latest stable Gaia-X release which is codenamed "Tagus" (at the time of writing) and the corresponding [Gaia-X Trust Framework 22.10 release](https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/).
+This blog post will refer to the latest stable Gaia-X release at the time of writing (which is 22.10 - codenamed "Tagus") and the corresponding [Gaia-X Trust Framework 22.10 release](https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/).
 Details of the process described here might change in future Gaia-X releases. Please consult the corresponding documentation.
 
 ### Terminology
@@ -39,9 +39,7 @@ A Verifiable Presentation representing a CSP and their offerings as a form of se
 
 ### Desired Goal
 
-<!-- TODO: figure showing the trust anchors on high level like https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/trust_anchors/ -->
-
-This blog post will discuss the following use case.
+This blog post will be based on the following use case:
 
 A provider wants to publish Gaia-X Credentials containing proven claims about their identity and offerings conforming to the Gaia-X Framework and achieve Gaia-X compliance.
 To achieve this, the provider assembles a Verifiable Presentation that contains several Verifiable Credentials which in total will both represent and prove the provider's identity and offerings as a form of self-description.
@@ -235,7 +233,7 @@ We will put this file on our webserver at the path we specified during the reque
 The Verifiable Credential that we received contains a DID reference to the DID document of the Gaia-X Notarization Service which in turn will reference a X.509 certificate chain of the Notarization Service that can be used to validate the signature of the Verifiable Credential.
 Refer to the appendix section at the bottom of this blog post for a Python code snippet for validating the signature.
 
-In contrast to the figures above, the issuer is the GXDCH and the provider itself is just the holder of this Verifiable Credential:
+In contrast to the figures above, the issuer is the GXDCH and the provider itself is just the holder  of this Verifiable Credential:
 
 <figure class="figure mx-auto d-block" style="width:50%">
   <a href="{% asset "blog/gx-credentials/gx-lrn-credential-creation.png" @path %}">
@@ -421,7 +419,21 @@ Instead, credentials are only referenced by their subject ID and a hash of their
 (output truncated for readability)
 
 This final Verifiable Credential is the Gaia-X Compliance VC and attests the compliance of our Verifiable Presentation and its included credentials.
-We can now share the Verifiable Presentation as our Self-Description along with this Gaia-X Compliance VC.
+We can now share the Verifiable Presentation as our Self-Description along with this Gaia-X Compliance VC as proof.
+
+### Summary
+
+In this blog post we introduced the basic concepts of Verifiable Credentials and Verifiable Presentations used by participants of the Gaia-X Trust Framework.
+We presented the requirements and basic steps for getting started with creating Verifiable Credentials as a provider.
+Based on this foundation, a Verifiable Presentation was constructed in a step-by-step fashion consisting of an example set of credentials for submission to the Gaia-X Compliance Service.
+At each step we made sure to point out the crucial details of properly linking and providing the required identity assets in compliance to the Gaia-X framework.
+At the final step we submitted the Verifiable Presentation to the Gaia-X Compliance Service and received our Gaia-X Compliance VC.
+
+By adding further credentials about service offerings to the Verifiable Presentation this process can easily be extended to create complete Gaia-X Self-Descriptions as a provider.
+For SCS cloud infrastructures, this will be covered by the [SCS gx-credential-generator](https://github.com/SovereignCloudStack/gx-credential-generator) tool which is able to automatically generate the full set of Gaia-X Credentials including all applicable service offerings based on a SCS infrastructure.
+In conjunction with the [SCS DID creator](https://github.com/SovereignCloudStack/scs-did-creator/) this will make most manual steps in this process unnecessary for SCS-compliant infrastructures.
+
+The created Self-Description can later be registered in the [Federated Catalogues of Gaia-X](https://docs.gaia-x.eu/technical-committee/architecture-document/22.10/federation_service/#federated-catalogue) to make them discoverable for consumers within the Gaia-X ecosystem.
 
 ## Appendix
 
