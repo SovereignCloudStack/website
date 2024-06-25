@@ -24,11 +24,14 @@ Details of the process described here might change in future Gaia-X releases. Pl
 Gaia-X regulates descriptions of Cloud Service Providers (CSPs) and their services as **Gaia-X Credentials**. The credential format is defined in the [Identity and Access Management (22.10 Release)](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/) documentation of Gaia-X.
 
 The term **Gaia-X Credential** refers to a **Verifiable Credential** in the context of Gaia-X.
-It is based on [W3C Verifiable Credentials Data Model v1.1](https://www.w3.org/TR/vc-data-model/) but follows some more specialized restrictions specific to Gaia-X:
+It is based on [W3C Verifiable Credentials Data Model v1.1](https://www.w3.org/TR/vc-data-model/) but follows some more specialized restrictions specific to Gaia-X.
+Those are described in the [Credential format documentation](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/).
+Notable key aspects are:
 
 - The serialization format is [JSON-LD](https://json-ld.org/).
 - The verification method type is [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) entailing [JSON Web Signature](https://datatracker.ietf.org/doc/html/rfc7515) as proof value.
-- Claims MUST use the [Gaia-X Onotology](https://gitlab.com/gaia-x/technical-committee/service-characteristics-working-group/service-characteristics) in their context.
+- Claims [MUST use](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#namespace-bindings-and-contexts) the [Gaia-X Onotology](https://gitlab.com/gaia-x/technical-committee/service-characteristics-working-group/service-characteristics) in their context.
+- Any `id` fields of Verifiable Credentials (including their `credentialSubject.id`) [MUST be unique](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#identifiers).
 
 **Gaia-X Self-Descriptions** on the other hand [are described as follows](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#self-description-format-and-structure):
 
@@ -198,17 +201,42 @@ The Clearing House has a dedicated API for this: the Notarization API.
 You can use the [Gaia-X Wizard](https://wizard.lab.gaia-x.eu/legalRegistrationNumber) for creating the Verifiable Credential or use the Notarization API directly.
 
 There is a notable quirk about the process here that needs some explanation before we go on.
-When requesting a LRN Verifiable Credential a **credential subject identifier** must be provided.
-This corresponds to "Credential subject ID" in the Gaia-X Wizard or the "id" request body field when using the API.
-In addition to that a **Verifiable Credential identifier** will need to be specified as well.
+When requesting a LRN Verifiable Credential a **Verifiable Credential identifier** must be provided.
 This corresponds to "Verifiable Credential ID" in the Gaia-X Wizard or the "vcid" path parameter of the API.
-Under normal circumstances, both will be the full URL to our LRN Verifiable Credential.
-However, we are just about to even receive this Verifiable Credential and as such we don't have it yet.
-Hence, the process can seem a bit unintuitive.
+In addition to that a **credential subject identifier** will need to be specified as well.
+This corresponds to "Credential subject ID" in the Gaia-X Wizard or the "id" request body field when using the API.
+Below is a visualization of this structure:
 
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="{% asset "blog/gx-credentials/gx-lrn-credential-structure.png" @path %}">
+    {% asset 'blog/gx-credentials/gx-lrn-credential-structure.png' class="figure-img w-100" %}
+  </a>
+</figure>
+
+Instead of using a identifier that is only valid locally within a Verifiable Presentation (more on that later) we can opt for both identifiers to contain the URL to hosted instance of our LRN Verifiable Credential.
+For the purpose of demonstration, we will do that next but keep in mind that this is optional for Verifiable Credentials as the [Gaia-X documentation on identifiers](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#identifiers) states:
+
+> It is up to the issuer to decide if the @id is a resolvable URI or not.
+
+Strictly speaking, we are not the issuer this time around (the GXDCH is) but since the Notarization API allows us to specify those identifiers, we will keep that responsibility nonetheless and have the choice here.
+
+We are just about to receive the Verifiable Credential and as such we don't have the URL to it yet that we want to use in the identifiers, so the process can seem a bit unintuitive.
 The solution is to prematurely specify the URL where we *intend* to put the Verifiable Credential, in our example this will be `https://mydomain.com/.well-known/lrn.json`.
 The link is not actually validated by the Notarization API as it only issues the Verifiable Credential itself.
-A corresponding request body to the Tagus release version of the Notarization API would look like this:
+To adhere to the requirement of keeping identifiers unique, we can use a trick to attach arbitrary anchors to the URL in order to keep both identifiers different while still resolving to the same URL:
+
+- Verifiable Credential identifier: `https://mydomain.com/.well-known/lrn.json`
+- Credential subject identifier: `https://mydomain.com/.well-known/lrn.json#subject`
+
+A corresponding request body to the Tagus release version of the Notarization API would look as follows.
+
+Request URL:
+
+```
+POST https://registrationnumber.notary.lab.gaia-x.eu/v1/registrationNumberVC?vcid=https://mydomain.com/.well-known/lrn.json#subject
+```
+
+Request Body:
 
 ```json
 {
@@ -233,7 +261,7 @@ We will put this file on our webserver at the path we specified during the reque
 The Verifiable Credential that we received contains a DID reference to the DID document of the Gaia-X Notarization Service which in turn will reference a X.509 certificate chain of the Notarization Service that can be used to validate the signature of the Verifiable Credential.
 Refer to the appendix section at the bottom of this blog post for a Python code snippet for validating the signature.
 
-In contrast to the figures above, the issuer is the GXDCH and the provider itself is just the holder  of this Verifiable Credential:
+In contrast to the figures above, the issuer is the GXDCH and the provider itself is just the holder of this Verifiable Credential:
 
 <figure class="figure mx-auto d-block" style="width:50%">
   <a href="{% asset "blog/gx-credentials/gx-lrn-credential-creation.png" @path %}">
@@ -251,12 +279,21 @@ The [Participant in the Gaia-X Trust Framework](https://docs.gaia-x.eu/policy-ru
 
 In case of a Legal Person (our case), the Legal Registration Number is required which we just acquired the Verifiable Credential for in the previous step.
 
-Since the Participant Verifiable Credential will be the first credential that we sign ourselves in this process, we will need two additional key assets that we prepared in earlier steps:
+Since the Participant Verifiable Credential will be the first credential that we sign ourselves in this process, we will need three additional key assets that we prepared in earlier steps:
 
 1. The `privkey.pem`, our private key for signing the credential.
 2. The `did:web:` reference pointing to our hosted DID document, which in turn points to our hosted certificate chain.
+3. The credential subject identifier of our LRN Verifiable Credential to reference to.
 
-This time we are going to create the Verifiable Credential ourselves.
+The LRN credential's `credentialSubject.id` value will need to be specified within `credentialSubject.gx:legalRegistrationNumber.id` of the Participant Verifiable Credential:
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="{% asset "blog/gx-credentials/gx-participant-lrn-reference" @path %}">
+    {% asset 'blog/gx-credentials/gx-participant-lrn-reference' class="figure-img w-100" %}
+  </a>
+</figure>
+
+This time we are going to create and sign the Verifiable Credential ourselves.
 Here is how it could look like:
 
 ```json
@@ -273,11 +310,11 @@ Here is how it could look like:
   "issuer": "did:web:mydomain.com",
   "issuanceDate": "2024-01-01T00:00:00.000000",
   "credentialSubject": {
-    "id": "https://mydomain.com/.well-known/participant.json",
+    "id": "https://mydomain.com/.well-known/participant.json#subject",
     "type": "gx:LegalParticipant",
     "gx:legalName": "My Company Ltd.",
     "gx:legalRegistrationNumber": {
-      "id": "https://mydomain.com/.well-known/lrn.json"
+      "id": "https://mydomain.com/.well-known/lrn.json#subject"
     },
     "gx:headquarterAddress": {
       "gx:countrySubdivisionCode": "DE-BE"
@@ -289,11 +326,12 @@ Here is how it could look like:
 }
 ```
 
-Note that similar to the LRN Verifiable Credential we are once again specifying a URL that does not exist yet: `https://mydomain.com/.well-known/participant.json`.
+Note that similar to the LRN Verifiable Credential we are once again specifying a URL that does not exist yet for this credential's identifiers: `https://mydomain.com/.well-known/participant.json`.
 We will place this very credential there once we signed it.
+Furthermore, we are using the same anchor method (`#subject`) to keep identifiers unique as already explained for the LRN credential earlier.
 
 To sign the Verifiable Credential we need to add a JSON Web Signature (JWS) to it.
-Please the appendix at the bottom of this blog post for an example Python implementation utilizing the `jwcrypto` library.
+Please refer to the appendix at the bottom of this blog post for an example Python implementation utilizing the `jwcrypto` library.
 As a result, the structure shown above will be extended by a "proof" section containing the signature like this:
 
 ```json
@@ -329,7 +367,7 @@ A resulting credential JSON using example values may look like this:
   "credentialSubject": {
     "type": "gx:GaiaXTermsAndConditions",
     "gx:termsAndConditions": "The PARTICIPANT signing the Self-Description agrees as follows:\n- to update its descriptions about any changes, be it technical, organizational, or legal - especially but not limited to contractual in regards to the indicated attributes present in the descriptions.\n\nThe keypair used to sign Verifiable Credentials will be revoked where Gaia-X Association becomes aware of any inaccurate statements in regards to the claims which result in a non-compliance with the Trust Framework and policy rules defined in the Policy Rules and Labelling Document (PRLD).",
-    "id": "https://mydomain.com/.well-known/gx-terms-and-cs.json"
+    "id": "https://mydomain.com/.well-known/gx-terms-and-cs.json#subject"
   },
   "issuer": "did:web:mydomain.com",
   "id": "https://mydomain.com/.well-known/gx-terms-and-cs.json"
