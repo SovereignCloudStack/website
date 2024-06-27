@@ -8,8 +8,6 @@ avatar:
   - "avatar-candh.jpg"
 ---
 
-## Generating compliant Verifiable Credentials using the GXDCH
-
 This blog post will introduce the requirements and detailed technical process of creating and obtaining Verifiable Credentials (VC for short) for Gaia-X Self-Descriptions and using the Gaia-X Digital Clearing House (GXDCH) to assert compliance.
 
 We recommend reading the Gaia-X's own blog post on [Gaia-X and Verifiable Credentials / Presentations](https://gaia-x.eu/news-press/gaia-x-and-verifiable-credentials-presentations/) to get familiar with the idea and concepts behind **Verifiable Credentials** and **Verifiable Presentations**.
@@ -19,7 +17,7 @@ The process described in this blog post is for the most part an example realizat
 This blog post will refer to the latest stable Gaia-X release at the time of writing (which is 22.10 - codenamed "Tagus") and the corresponding [Gaia-X Trust Framework 22.10 release](https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/).
 Details of the process described here might change in future Gaia-X releases. Please consult the corresponding documentation.
 
-### Terminology
+## Terminology
 
 Gaia-X regulates descriptions of Cloud Service Providers (CSPs) and their services as **Gaia-X Credentials**. The credential format is defined in the [Identity and Access Management (22.10 Release)](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/) documentation of Gaia-X.
 
@@ -40,7 +38,7 @@ Notable key aspects are:
 A **Verifiable Presentation** contains or references one or more Verifiable Credentials.
 A Verifiable Presentation representing a CSP and their offerings as a form of self-description is usually submitted to the Compliance Service of the Gaia-X Digital Clearing House (GXDCH), resulting in a Gaia-X Credential that attests the compliance.
 
-### Desired Goal
+## Desired Goal
 
 This blog post will be based on the following use case:
 
@@ -67,11 +65,11 @@ For the purpose of this blog post we will focus on a very common and basic use c
 2. The **Participant** credential representing the provider as a legal person identified by the LRN.
 3. The signed Gaia-X **Terms & Conditions** which the provider pledges to adhere to.
 
-### Required Identity Assets for Credential Creation
+## Required Identity Assets for Credential Creation
 
 In order to successfully create Verifiable Credentials for the Gaia-X Compliance as illustrated above, the following assets are necessary on the provider side:
 
-1. A DNS record and server for hosting the Gaia-X related identity assets.
+1. A DNS record and web server for hosting the Gaia-X related identity assets.
 2. A public/private key pair compatible with JSON Web Signatures (JWS) and a corresponding X.509 certificate chain containing the public key.
     - the X.509 certificate chain needs to be hosted publicly
 3. A Decentralized Identifier (DID) for the DNS record.
@@ -99,6 +97,13 @@ Using the DID and the certificate chain including the public key hosted by the p
   </a>
 </figure>
 
+## Creating a compliant Verifiable Presentation step-by-step
+
+The following sections of this blog post will guide through the individual steps of creating the necessary identity assets, basic Verifiable Credentials and finally the Verifiable Presentation.
+
+The steps will require an up and running web server with a registered DNS record where files can be served from.
+This server and its DNS record will be referred to as `mydomain.com` for the explanations below.
+
 ### Step 1: Preparing the public/private key pair
 
 For the purpose of this blog post we will be using Let's Encrypt for generating the public/private key pair and X.509 certificate chain.
@@ -106,7 +111,7 @@ This makes the process very quick and easy and we can focus on the more interica
 Note that for the Gaia-X production release, a X.509 certificate chain originating from one of the [Gaia-X Trust Anchors](https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/trust_anchors/#list-of-defined-trust-anchors) will be required, which excludes Let's Encrypt as it does not offer EV SSL certificates.
 For testing this process, we can use the "v1-staging" Gaia-X API intended for development and testing purposes, which is a bit more lenient in this regard and will accept Let's Encrypt certificates.
 
-Please refer to the official [Certbot ACME client documentation](https://certbot.eff.org/instructions) on how to get started with Let's Encrypt on a webserver.
+Please refer to the official [Certbot ACME client documentation](https://certbot.eff.org/instructions) on how to get started with Let's Encrypt on a web server.
 Using Certbot to perform the key generation and certificate issuance results in the following files:
 
 - `privkey.pem`
@@ -133,14 +138,14 @@ curl -s \
     https://crt.sh/?d=96BCEC06264976F37460779ACF28C5A7CFE8A3C0AAE11A8FFCEE05C0BDDF08C6 \
     | tee -a /srv/.well-known/x509CertificateChain.pem
 ```
-(this example assumes `/srv/` is the path your webserver serves files from)
+(this example assumes `/srv/` is the path your web server serves files from)
 
 The `crt.sh` URL to the ISRG Root X1 certificate in this example was retrieved from [Mozilla's index of included CA certificates](https://wiki.mozilla.org/CA/Included_Certificates).
 
-Host the `x509CertificateChain.pem` on the webserver accordingly.
+Host the `x509CertificateChain.pem` on the web server accordingly.
 It will be required for the next step.
 
-If the webserver is not configured for HTTPS yet, these key files may be used for its TLS configuration as well.
+If the web server is not configured for HTTPS yet, these key files may be used for its TLS configuration as well.
 
 ### Step 2: Creating the Decentralized Identifier (DID) document
 
@@ -153,8 +158,8 @@ The [`did:web` method](https://w3c-ccg.github.io/did-method-web/) specified in t
 Some notes about the `did:web` method used here:
 
 - HTTPS (TLS) is mandatory for the `did:web` method and is automatically chosen.
-- When no path segments are specified after the domain name (using colon delimiters), this method defaults to `.well-known/` on the webserver.
-- The resulting URL will be used to look up `did.json` on the webserver, this filename is hardcoded.
+- When no path segments are specified after the domain name (using colon delimiters), this method defaults to `.well-known/` on the web server.
+- The resulting URL will be used to look up `did.json` on the web server, this filename is hardcoded.
 
 To generate the DID document, the [SCS DID creator](https://github.com/SovereignCloudStack/scs-did-creator/) can be utilized.
 Specify the URL to `x509CertificateChain.pem` certificate chain file as input for the verification methods.
@@ -185,7 +190,7 @@ If done correctly, the DID document should contain our public key and the URL of
 ```
 (contents truncated for readability)
 
-This file is to be placed as `/.well-known/did.json` on the webserver, e.g. `mydomain.com/.well-known/did.json`.
+This file is to be placed as `/.well-known/did.json` on the web server, e.g. `mydomain.com/.well-known/did.json`.
 As a result it will be accessible using the DID reference `did:web:mydomain.com` which we will be using when creating Verifiable Credentials in the following steps.
 
 **Important:** Each `verificationMethod` entry in the DID document receives a unique `id` field. When creating Verifiable Credentials referencing the DID document, their `proof.verificationMethod` value must exactly match one of the `id`s within `verificationMethod` of the DID document! This includes the `#`-prefixed appendix (`did:web:mydomain.com#JWK2020-RSA` in this example).
@@ -250,13 +255,13 @@ Request Body:
 ```
 
 Note: It is not mandatory to use the `/.well-known/` directory here.
-In contrast to the DID document, webserver, path and filename can be arbitrary here as long as we host the resulting Verifiable Credential at this address later on.
+In contrast to the DID document, web server, path and filename can be arbitrary here as long as we host the resulting Verifiable Credential at this address later on.
 This is true for all the Verifiable Credentials that we will create in the following sections.
 
 The Notarization API supports different types of Legal Registration Numbers, including VAT ID which our example uses.
 
 In the response to this request we receive our first Verifiable Credential from the Notarization API in JSON format.
-We will put this file on our webserver at the path we specified during the request, i.e. `mydomain.com/.well-known/lrn.json`.
+We will put this file on our web server at the path we specified during the request, i.e. `mydomain.com/.well-known/lrn.json`.
 
 The Verifiable Credential that we received contains a DID reference to the DID document of the Gaia-X Notarization Service which in turn will reference a X.509 certificate chain of the Notarization Service that can be used to validate the signature of the Verifiable Credential.
 Refer to the appendix section at the bottom of this blog post for a Python code snippet for validating the signature.
@@ -345,7 +350,7 @@ As a result, the structure shown above will be extended by a "proof" section con
 }
 ```
 
-To make the identifier references valid, we will place the signed JSON at `mydomain.com/.well-known/participant.json` on our webserver.
+To make the identifier references valid, we will place the signed JSON at `mydomain.com/.well-known/participant.json` on our web server.
 Other Gaia-X Participants may now retrieve this Verifiable Credential along with our DID document and its referenced X.509 certificate chain in order to validate the signature of our credential as illustrated in the figures of the introductory sections.
 
 ### Step 5: Verifiable Credential for Terms & Conditions
@@ -459,7 +464,7 @@ Instead, credentials are only referenced by their subject ID and a hash of their
 This final Verifiable Credential is the Gaia-X Compliance VC and attests the compliance of our Verifiable Presentation and its included credentials.
 We can now share the Verifiable Presentation as our Self-Description along with this Gaia-X Compliance VC as proof.
 
-### Summary
+## Summary
 
 In this blog post we introduced the basic concepts of Verifiable Credentials and Verifiable Presentations used by participants of the Gaia-X Trust Framework.
 We presented the requirements and basic steps for getting started with creating Verifiable Credentials as a provider.
@@ -473,9 +478,9 @@ In conjunction with the [SCS DID creator](https://github.com/SovereignCloudStack
 
 The created Self-Description can later be registered in the [Federated Catalogues of Gaia-X](https://docs.gaia-x.eu/technical-committee/architecture-document/22.10/federation_service/#federated-catalogue) to make them discoverable for consumers within the Gaia-X ecosystem.
 
-## Appendix
+# Appendix
 
-### Python code for signing Verifiable Credentials
+## Python code for signing Verifiable Credentials
 
 The following code snippet illustrates how to build a signed Verifiable Credential using the `jwcrypto` library and the assets introduced in this blog post.
 The code is loosely based on [this example implementation from a Gaia-X workshop](https://gitlab.com/gaia-x/lab/workshops/gaia-x-101/-/blob/e0b01980eead64c0a20fec4643659b4c9d9f3331/utils.py) that was published and licensed under the [Eclipse Public License - v 2.0](https://gitlab.com/gaia-x/lab/workshops/gaia-x-101/-/blob/e0b01980eead64c0a20fec4643659b4c9d9f3331/LICENSE).
@@ -526,7 +531,7 @@ def sign_credential(credential):
     return credential
 ```
 
-### Python code for verifying signed Verifiable Credentials
+## Python code for verifying signed Verifiable Credentials
 
 The following code snippet illustrates how to validate the JSON Web Signature (JWS) of a given Verifiable Credential.
 The code is loosely based on [this example implementation from a Gaia-X workshop](https://gitlab.com/gaia-x/lab/workshops/gaia-x-101/-/blob/e0b01980eead64c0a20fec4643659b4c9d9f3331/utils.py) that was published and licensed under the [Eclipse Public License - v 2.0](https://gitlab.com/gaia-x/lab/workshops/gaia-x-101/-/blob/e0b01980eead64c0a20fec4643659b4c9d9f3331/LICENSE).
