@@ -261,7 +261,46 @@ This is true for all the Verifiable Credentials that we will create in the follo
 The Notarization API supports different types of Legal Registration Numbers, including VAT ID which our example uses.
 
 In the response to this request we receive our first Verifiable Credential from the Notarization API in JSON format.
-We will put this file on our web server at the path we specified during the request, i.e. `mydomain.com/.well-known/lrn.json`.
+Below is an example of how such a Verifiable Credential will look like based on the request data above.
+
+```json
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1",
+        "https://w3id.org/security/suites/jws-2020/v1"
+    ],
+    "type": [
+        "VerifiableCredential"
+    ],
+    "id": "https://mydomain.com/.well-known/lrn.json",
+    "issuer": "did:web:registration.lab.gaia-x.eu:v1",
+    "issuanceDate": "2024-06-25T14:38:38.898Z",
+    "credentialSubject": {
+        "@context": "https://registry.lab.gaia-x.eu/development/api/trusted-shape-registry/v1/shapes/jsonld/trustframework#",
+        "type": "gx:legalRegistrationNumber",
+        "id": "https://mydomain.com/.well-known/lrn.json#subject",
+        "gx:vatID": "DE123456789",
+        "gx:vatID-countryCode": "DE"
+    },
+    "evidence": [
+        {
+            "gx:evidenceURL": "http://ec.europa.eu/taxation_customs/vies/services/checkVatService",
+            "gx:executionDate": "2024-06-25T14:38:38.898Z",
+            "gx:evidenceOf": "gx:vatID"
+        }
+    ],
+    "proof": {
+        "type": "JsonWebSignature2020",
+        "created": "2024-06-25T14:38:38.916Z",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:web:registration.lab.gaia-x.eu:v1#X509-JWK2020",
+        "jws": "<signature>"
+    }
+}
+```
+(the JWS signature field has been replaced by the placeholder `<signature>` for readability)
+
+We will put this JSON file on our web server at the path we specified during the request, i.e. `mydomain.com/.well-known/lrn.json`.
 
 The Verifiable Credential that we received contains a DID reference to the DID document of the Gaia-X Notarization Service which in turn will reference a X.509 certificate chain of the Notarization Service that can be used to validate the signature of the Verifiable Credential.
 Refer to the appendix section at the bottom of this blog post for a Python code snippet for validating the signature.
