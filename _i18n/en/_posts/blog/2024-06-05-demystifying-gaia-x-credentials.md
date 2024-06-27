@@ -309,7 +309,7 @@ Below is an example of how such a Verifiable Credential will look like based on 
 ```
 (the JWS signature field has been replaced by the placeholder `<signature>` for readability)
 
-We will put this JSON file on our web server at the path we specified during the request, i.e. `mydomain.com/.well-known/lrn.json`.
+We will put this JSON file on our web server at the path we specified during the request, i.e., `mydomain.com/.well-known/lrn.json`.
 
 The Verifiable Credential that we received contains a DID reference to the DID document of the Gaia-X Notarization Service which in turn will reference a X.509 certificate chain of the Notarization Service that can be used to validate the signature of the Verifiable Credential.
 Refer to the appendix section at the bottom of this blog post for a Python code snippet for validating the signature.
