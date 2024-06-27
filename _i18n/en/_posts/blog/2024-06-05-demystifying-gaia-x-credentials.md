@@ -19,8 +19,11 @@ Details of the process described here might change in future Gaia-X releases. Pl
 
 ## Terminology
 
-Gaia-X regulates descriptions of Cloud Service Providers (CSPs) and their services as **Gaia-X Credentials**. The credential format is defined in the [Identity and Access Management (22.10 Release)](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/) documentation of Gaia-X.
+It is important to clarify some terms and concepts used throughout this blog post before moving on.
 
+#### Gaia-X Credentials / Verifiable Credentials
+
+Gaia-X regulates descriptions of Cloud Service Providers (CSPs) and their services as **Gaia-X Credentials**.
 The term **Gaia-X Credential** refers to a **Verifiable Credential** in the context of Gaia-X.
 It is based on [W3C Verifiable Credentials Data Model v1.1](https://www.w3.org/TR/vc-data-model/) but follows some more specialized restrictions specific to Gaia-X.
 Those are described in the [Credential format documentation](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/).
@@ -31,12 +34,18 @@ Notable key aspects are:
 - Claims [MUST use](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#namespace-bindings-and-contexts) the [Gaia-X Onotology](https://gitlab.com/gaia-x/technical-committee/service-characteristics-working-group/service-characteristics) in their context.
 - Any `id` fields of Verifiable Credentials (including their `credentialSubject.id`) [MUST be unique](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#identifiers).
 
+In this blog post, the term Verifiable Credential is used interchangeably with Gaia-X Credential.
+
+#### Gaia-X Self-Descriptions / Verifiable Presentations
+
 **Gaia-X Self-Descriptions** on the other hand [are described as follows](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#self-description-format-and-structure):
 
 > Gaia-X Self-Description documents are Verifiable Presentations following the [W3C Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/).
 
 A **Verifiable Presentation** contains or references one or more Verifiable Credentials.
 A Verifiable Presentation representing a CSP and their offerings as a form of self-description is usually submitted to the Compliance Service of the Gaia-X Digital Clearing House (GXDCH), resulting in a Gaia-X Credential that attests the compliance.
+
+In this blog post, the term Verifiable Presentation is used interchangeably with Gaia-X Self-Description.
 
 ## Desired Goal
 
