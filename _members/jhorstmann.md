@@ -1,5 +1,5 @@
 ---
-author_slug: janhorstmann
+author_slug: jhorstmann
 title: Jan Horstmann
 layout: community
 lastname: Horstmann
