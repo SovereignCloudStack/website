@@ -1,0 +1,2412 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://sovereigncloudstack.github.io/website/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sovereigncloudstack.github.io/website/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-07-11T09:52:00+00:00</updated><id>https://sovereigncloudstack.github.io/website/feed.xml</id><title type="html">Sovereign Cloud Stack</title><subtitle>Sovereign Cloud Stack combines the best of cloud computing in one unified standard. SCS is built, backed, and operated by an active open-source community worldwide. Together we put users in control of their data by enabling cloud operators through a decentralized and federated cloud stack – leveraging true digital sovereignty to foster trust in clouds.</subtitle><entry><title type="html">Mechanism to provide node local storage in the OpenStack block storage service</title><link href="https://sovereigncloudstack.github.io/website/2024/07/10/local-block-storage-via-dm-clone/" rel="alternate" type="text/html" title="Mechanism to provide node local storage in the OpenStack block storage service" /><published>2024-07-10T00:00:00+00:00</published><updated>2024-07-11T09:47:18+00:00</updated><id>https://sovereigncloudstack.github.io/website/2024/07/10/local-block-storage-via-dm-clone</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/2024/07/10/local-block-storage-via-dm-clone/"><![CDATA[<h1 id="motivation">Motivation</h1>
+
+<p>Currently there is node local storage in OpenStack in the form of nova ephemeral storage. As its name implies it is ephemeral in the sense that it is bound to the lifecycle of an instance. However, managing compute resources in a cloud native way usually requires storage to be decoupled from compute. Thus, there is a general benefit in making node local storage available in the block storage service.</p>
+
+<p>There are multiple circumstances where node local storage may be desired or required by cloud operators or users.</p>
+<ul>
+  <li>When built using open source software it would be a low-cost solution, thus facilitating adoption on small scales, where proprietary or even just dedicated storage solutions would be deemed to expensive.</li>
+  <li>While being inherently not highly available above node level, local storage could be useful where IO performance is required and high available storage incurs too much latency through inter-node connections.</li>
+  <li>Dedicated and especially highly available storage solutions can be very complex and increase failure domain, thus requiring special operational knowledge. In a risk-averse environment occasional small scale failures might be more tolerable than rare, but large-scale incidents.</li>
+</ul>
+
+<h1 id="architecture-of-an-openstack-cloud-with-node-local-storage-via-block-storage-service">Architecture of an OpenStack cloud with node local storage via block storage service</h1>
+
+<p>From a cloud architectural perspective offering node local storage via block storage service requires a volume service on every compute node to manage volumes, so that they may be accessed by local instances. Since many storage volumes may be mapped to one (or possibly more) instances and could be remapped to other instances, a mechanism is needed to transparently migrate storage volumes to the compute node of the instance they are going to be attached to.
+Live-migration of instances additionally requires storage volumes to be accessible on both the source and the destination node. However consistent writing from two nodes simultaneously is not a requirement.</p>
+
+<h1 id="proposal-for-a-migration-mechanism-using-the-device-mapper-clone-target">Proposal for a migration mechanism using the device-mapper clone target</h1>
+
+<p>One possible candidate for transparent storage volume migration is the Linux kernel’s device-mapper dm-clone<sup id="fnref:dm_clone" role="doc-noteref"><a href="#fn:dm_clone" class="footnote" rel="footnote">1</a></sup> target. A device-mapper target which allows to create copies of block devices in the background, while being able to access and use the destination device transparently. The nature of the source device is irrelevant, i.e. it can be a local device or a device accessible via network by any means of transport, thus allowing to clone remote storage volumes.
+Setup of a clone target requires a meta data device to keep track of where individual data blocks reside. Initially everything will point to the source device, once a block is copied or written on the destination device the meta data will be updated to point to the new location. This way all writes on the destination device will be local, albeit incurring a slight performance penalty due to the update of the meta data table. The data transferal is kept rather simple, there is no prioritisation of often read blocks and copying will be retried indefinitely until completion. The page cache or other caches will usually alleviate the performance penalty of the former, while the latter allows to complete the migration even after connectivity to the source device was temporarily interrupted.
+The process of copying data is called <code class="language-plaintext highlighter-rouge">hydration</code> in the <code class="language-plaintext highlighter-rouge">dm-clone</code> targets terminology. The <code class="language-plaintext highlighter-rouge">clone</code> target may be created with hydration to be started immediately or stopped. Copying may be started and stopped at any time by sending a message to the device-mapper target.
+Once the migration is complete the clone target may be replaced by a linear target with a short suspend/resume cycle leading to a small spike in IO latency. Afterwards the meta data device may be discarded.</p>
+
+<p>The dm-clone target however lacks a means to specify device offsets. A feature needed to construct complex targets spanning multiple devices as the device-mapper’s <code class="language-plaintext highlighter-rouge">linear</code> target offers and is most prominently used by the <code class="language-plaintext highlighter-rouge">lvm2</code> project. Therefore, in order to provide the most flexibility, it is proposed to use the <code class="language-plaintext highlighter-rouge">dm-clone</code> target stacked on top of device-mapper targets provided by <code class="language-plaintext highlighter-rouge">lvm2</code>. This implies, that after migration a linear target will be stacked on top of the linear <code class="language-plaintext highlighter-rouge">lvm2</code> target.</p>
+
+<h2 id="notes-on-multi-attachments">Notes on multi-attachments</h2>
+
+<p>Since writes are always handled locally to the node they occur on, no actual multi-attachments can be supported using the device-mapper <code class="language-plaintext highlighter-rouge">clone</code> target. However, multi-attachments on two nodes for the same instance are a prerequisite for live migration of instances with attached volumes<sup id="fnref:live_migration" role="doc-noteref"><a href="#fn:live_migration" class="footnote" rel="footnote">2</a></sup>. In this scenario writes only occur on either the source node or the destination node after successful live migration. With these preconditions it is possible to attach the volume in the described manner on the destination node. The hydration must however only be started once the device is detached on the source, since otherwise writes on the source might be masked on the destination node by blocks which have been transferred before. This implies that hydration may only start once there are no further attachments.
+In case of a failed live migration the detachment of the volume on the destination needs to include a clean-up of the created device-mapper targets.</p>
+
+<h1 id="failure-modes">Failure modes</h1>
+
+<p>By definition node local storage is not highly available above node level. Thus, any application making use of this driver needs to be able to either tolerate or mitigate outages. Proper processes need to be in place to restore lost nodes or recover their data if they cannot be restored and data has not been replicated on the application level.</p>
+
+<p>Additional to the common risk of failure while data is at rest on a single node (i.e. not in the process of being migrated), the proposed mechanism introduces failure modes while data is in transit (i.e. during the process of being migrated).
+Naturally for a given risk of failure of a single node, the risk is doubled during the time frame of data migration between two nodes. Additionally network partitions or failure may occur, thus increasing the risk further. The overall risk may be reduced by reducing the time frame of migration through increased network bandwidth.
+In case of the source being unreachable either by node or network failure, data may not be read leading to read IO errors on the destination node, which will be further handled by the filesystem in use. According to the <a href="https://docs.kernel.org/admin-guide/device-mapper/dm-clone.html">dm-clone documentation</a> it will try to transfer data indefinitely, so the situation can be fixed by re-exposing the source and remounting the filesystem on the user side.
+Failure of or on the destination node will naturally lead to immediate unavailability of the data and potentially also of its consuming workload. Recovery includes detection of volumes with in-progress migrations. This could be done by tracking migration state externally or simply by checking for the existence of meta data volumes. Reconstruction of the clone target could then be done by connecting the corresponding source and re-creating the device-mapper clone target. Once hydration is re-enabled the migration process will continue.</p>
+
+<h1 id="security-impact">Security impact</h1>
+
+<p>A cinder-volume service is required on each compute node. The service requires access to the cinder database, thus requiring database credentials to be stored on the compute node.</p>
+
+<h1 id="implementation-of-volume-driver-actions">Implementation of volume driver actions</h1>
+
+<p>The following is a proposal for a cinder driver leveraging the <code class="language-plaintext highlighter-rouge">dm-clone</code> target to transfer local storage volumes.</p>
+
+<h2 id="volume-state-diagram">Volume state diagram</h2>
+
+<p>The diagram shows how the <code class="language-plaintext highlighter-rouge">status</code> and <code class="language-plaintext highlighter-rouge">migration_status</code> of the volumes involved change when certain API Calls are made. Two parts may not be immediately obvious:</p>
+<ul>
+  <li>When <code class="language-plaintext highlighter-rouge">initialize_connection</code> is called for a <code class="language-plaintext highlighter-rouge">reserved</code> volume the IP address in the provided connector object needs to be resolved to a host running the volume-service with this driver as backend.
+For the special case that it is the volume-service holding the volume a connector object of type <code class="language-plaintext highlighter-rouge">local</code> is directly returned and the volume may be attached.
+For the general case of the volume being on a remote volume-service a new volume object is created and used to create a volume on the remote service, which from the <code class="language-plaintext highlighter-rouge">migration_status</code> can infer that a <code class="language-plaintext highlighter-rouge">dm-clone</code> target is required. Using the <code class="language-plaintext highlighter-rouge">_name_id</code> attribute the volume identities are immediately switched, so that the volume which is going to be attached resolves to the volume on the remote volume-service and vice versa (a concept already employed during volume migrations<sup id="fnref:vol_migration" role="doc-noteref"><a href="#fn:vol_migration" class="footnote" rel="footnote">3</a></sup>). The volume may then be attached. After hydration finishes, the source volume is deleted.</li>
+  <li>For live-migration scenarios the same instance is allowed to attach a volume a second time on a different host. The same mechanism as described above is used to setup a volume and a <code class="language-plaintext highlighter-rouge">dm-clone</code> target on the destination host, but the hydration will not be enabled immediately.
+When a connection is terminated and it is local to the volume-service it means that the volume on the destination host of the live-migration is detached. In this case everything is rolled back to the initial state.
+If the termination is from the remote host it means the source volume is disconnected and the instance is now running on the destination. In this case the hydration is enabled and the connection is terminated on the source host.</li>
+</ul>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/local-block-storage-via-dm-clone-volume-states-diagram-9f03d0883cb15de94edcaa795013e9e44698352c1a258f03ab31fd0ebcfa227a815e0f574e79dc1fcf38e5a1f0d3b1bc92e3e14881de1ed2817b63ec4687a4db.svg">
+    <img class="figure-img w-100" src="/website/assets/images/blog/local-block-storage-via-dm-clone-volume-states-diagram-9f03d0883cb15de94edcaa795013e9e44698352c1a258f03ab31fd0ebcfa227a815e0f574e79dc1fcf38e5a1f0d3b1bc92e3e14881de1ed2817b63ec4687a4db.svg" />
+  </a>
+</figure>
+
+<h2 id="driver-methods">Driver methods</h2>
+
+<p>This chapter outlines the necessary actions required in each driver method<sup id="fnref:driver_ref" role="doc-noteref"><a href="#fn:driver_ref" class="footnote" rel="footnote">4</a></sup>.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">create_volume</code>
+    <ul>
+      <li>Create a local <code class="language-plaintext highlighter-rouge">lvm2</code> logical volume.</li>
+      <li>If <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">maintenance</code> and <code class="language-plaintext highlighter-rouge">migration_status</code> is <code class="language-plaintext highlighter-rouge">starting</code>/<code class="language-plaintext highlighter-rouge">migrating</code>
+        <ul>
+          <li>Find the target volume with <code class="language-plaintext highlighter-rouge">migration_status</code> <code class="language-plaintext highlighter-rouge">target:UUID</code></li>
+          <li>Attach the source volume by initiating a connection to the target on the source</li>
+          <li>Create a metadata device using <code class="language-plaintext highlighter-rouge">lvm2</code> volumes on a configurable and preferably fast storage device</li>
+          <li>Create a <code class="language-plaintext highlighter-rouge">clone</code> target target for the new volume referencing the metadata, source and destination device with hydration disabled. (Disabling the hydration should allow a limited form of multi-attachment which is required for live migration. See notes on multi-attachments)</li>
+          <li>If <code class="language-plaintext highlighter-rouge">migration_status</code> is <code class="language-plaintext highlighter-rouge">migrating</code>
+            <ul>
+              <li>Enable hydration</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">validate_connector</code>
+    <ul>
+      <li>Map connector <code class="language-plaintext highlighter-rouge">ip</code> to a suitable volume host or fail</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">initialize_connection</code>
+    <ul>
+      <li>If connector IP is from the same host
+        <ul>
+          <li>Add a device-mapper <code class="language-plaintext highlighter-rouge">linear</code> target stacked on top of the <code class="language-plaintext highlighter-rouge">lvm2</code> volume. At this point this is just for consistency.</li>
+          <li>return <code class="language-plaintext highlighter-rouge">local</code> connector</li>
+        </ul>
+      </li>
+      <li>If connector IP is from a different host
+        <ul>
+          <li>If volume <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">reserved</code>
+            <ul>
+              <li>Create new volume object (<code class="language-plaintext highlighter-rouge">status</code>: <code class="language-plaintext highlighter-rouge">maintenance</code>, <code class="language-plaintext highlighter-rouge">migration_status</code>: <code class="language-plaintext highlighter-rouge">migrating</code>)</li>
+            </ul>
+          </li>
+          <li>If volume <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">in-use</code>
+            <ul>
+              <li>Create new volume object (<code class="language-plaintext highlighter-rouge">status</code>: <code class="language-plaintext highlighter-rouge">maintenance</code>, <code class="language-plaintext highlighter-rouge">migration_status</code>: <code class="language-plaintext highlighter-rouge">starting</code>)</li>
+            </ul>
+          </li>
+          <li>Set volume’s <code class="language-plaintext highlighter-rouge">migration_status</code> to <code class="language-plaintext highlighter-rouge">target:UUID</code>, where <code class="language-plaintext highlighter-rouge">UUID</code> is the UUID of the new volume</li>
+          <li>RPC to <code class="language-plaintext highlighter-rouge">create_volume</code> on destination with new volume object</li>
+          <li>Switch each volumes identity by setting <code class="language-plaintext highlighter-rouge">_name_id</code> to the other volume’s UUID</li>
+          <li>return <code class="language-plaintext highlighter-rouge">local</code> connector for volume</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">terminate_connection</code>
+    <ul>
+      <li>If volume <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">reserved</code> and <code class="language-plaintext highlighter-rouge">migration_status</code> is <code class="language-plaintext highlighter-rouge">target:UUID</code>
+        <ul>
+          <li>Revert volume identities of this and target volume by setting <code class="language-plaintext highlighter-rouge">_name_id</code> to the other volume’s UUID</li>
+          <li>Remove <code class="language-plaintext highlighter-rouge">clone</code> target on the local volume</li>
+          <li>Remove the metadata device if it exists</li>
+          <li>Close initiator to the source volume target</li>
+          <li>RPC to <code class="language-plaintext highlighter-rouge">remove_export</code> on source</li>
+          <li>Call <code class="language-plaintext highlighter-rouge">delete_volume</code> on the local volume</li>
+          <li>Reset <code class="language-plaintext highlighter-rouge">migration_status</code> to <code class="language-plaintext highlighter-rouge">None</code> on the other volume</li>
+        </ul>
+      </li>
+      <li>If volume <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">in-use</code> and <code class="language-plaintext highlighter-rouge">migration_status</code> is <code class="language-plaintext highlighter-rouge">target:UUID</code>
+        <ul>
+          <li>If <code class="language-plaintext highlighter-rouge">ip</code> in <code class="language-plaintext highlighter-rouge">connector</code> is of the local service, i.e. the volume on the destination of a live-migration is disconnected (live-migration aborted)
+            <ul>
+              <li>Revert volume identities of this and target volume by setting <code class="language-plaintext highlighter-rouge">_name_id</code> to the other volume’s UUID</li>
+              <li>Remove <code class="language-plaintext highlighter-rouge">clone</code> target on the local volume</li>
+              <li>Remove the metadata device if it exists</li>
+              <li>Close initiator to the source volume target</li>
+              <li>RPC to <code class="language-plaintext highlighter-rouge">remove_export</code> on source</li>
+              <li>Call <code class="language-plaintext highlighter-rouge">delete_volume</code> on the local volume</li>
+              <li>Call <code class="language-plaintext highlighter-rouge">delete_volume</code> on the local volume</li>
+              <li>Reset <code class="language-plaintext highlighter-rouge">migration_status</code> to <code class="language-plaintext highlighter-rouge">None</code> on the other volume</li>
+            </ul>
+          </li>
+          <li>If <code class="language-plaintext highlighter-rouge">ip</code> in <code class="language-plaintext highlighter-rouge">connector</code> is of a remote service, i.e. the volume on the source of a live-migration is disconnected (live-migration successful)
+            <ul>
+              <li>Find the source volume according to the UUID in <code class="language-plaintext highlighter-rouge">migration_status</code> <code class="language-plaintext highlighter-rouge">target:UUID</code></li>
+              <li>Set <code class="language-plaintext highlighter-rouge">migration_status</code> of the source volume to <code class="language-plaintext highlighter-rouge">migrating</code></li>
+              <li>enable hydration</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>If volume <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">detaching</code>
+        <ul>
+          <li>Remove the linear target on the volume</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">delete_volume</code>
+    <ul>
+      <li>Delete the <code class="language-plaintext highlighter-rouge">lvm2</code> volume itself</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="required-periodic-jobs-on-each-volume-service">Required periodic jobs on each volume service</h2>
+
+<p>A finished hydration does not trigger any actions, so a periodic check is required to clean up afterwards.</p>
+
+<ul>
+  <li>For volumes of this host in <code class="language-plaintext highlighter-rouge">migration_status</code> <code class="language-plaintext highlighter-rouge">target:UUID</code>, check the state of the <code class="language-plaintext highlighter-rouge">clone</code> target for completed hydration
+    <ul>
+      <li>Set <code class="language-plaintext highlighter-rouge">migration_status</code> to <code class="language-plaintext highlighter-rouge">completing</code></li>
+      <li>Load a <code class="language-plaintext highlighter-rouge">linear</code> target</li>
+      <li>Remove the metadata device</li>
+      <li>Close initiator to the source volume target</li>
+      <li>RPC to <code class="language-plaintext highlighter-rouge">remove_export</code> for the source volume</li>
+      <li>RPC to <code class="language-plaintext highlighter-rouge">delete_volume</code> for the source volume</li>
+      <li>Set <code class="language-plaintext highlighter-rouge">migration_status</code> to <code class="language-plaintext highlighter-rouge">success</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="tasks-required-on-startup-of-the-volume-service">Tasks required on startup of the volume service</h2>
+
+<p>This describes tasks which are required on startup of a volume-service.</p>
+
+<ul>
+  <li>For volumes with <code class="language-plaintext highlighter-rouge">status</code> <code class="language-plaintext highlighter-rouge">in-use</code> and <code class="language-plaintext highlighter-rouge">migration_status</code> <code class="language-plaintext highlighter-rouge">None</code>
+    <ul>
+      <li>Ensure there is  a linear device-mapper target on top of the <code class="language-plaintext highlighter-rouge">lvm2</code> volume</li>
+    </ul>
+  </li>
+  <li>For volumes with <code class="language-plaintext highlighter-rouge">migration_status</code> <code class="language-plaintext highlighter-rouge">target:UUID</code>
+    <ul>
+      <li>Find the source volume according to the UUID in <code class="language-plaintext highlighter-rouge">migration_status</code> <code class="language-plaintext highlighter-rouge">target:UUID</code></li>
+      <li>RPC to <code class="language-plaintext highlighter-rouge">create_export</code> on remote host for the source volume</li>
+      <li>Attach the source volume by initiating a connection to the target on the source</li>
+      <li>Create a <code class="language-plaintext highlighter-rouge">clone</code> target on top of the new volume referencing the metadata, source and destination device</li>
+      <li>If <code class="language-plaintext highlighter-rouge">migration_status</code> of the source volume is <code class="language-plaintext highlighter-rouge">migrating</code>
+        <ul>
+          <li>enable hydration</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>For volumes with <code class="language-plaintext highlighter-rouge">status</code> <code class="language-plaintext highlighter-rouge">maintenance</code> and <code class="language-plaintext highlighter-rouge">migrations_status</code> <code class="language-plaintext highlighter-rouge">starting</code> or <code class="language-plaintext highlighter-rouge">migrating</code>
+    <ul>
+      <li>Ensure the volume is exported</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="demo-setup">Demo setup</h1>
+
+<p>The following commands may be used to showcase the creation and transferal using the mechanisms described above.</p>
+
+<ul>
+  <li>Create two virtual machines with an additional disk</li>
+</ul>
+
+<p>On both nodes:</p>
+
+<ul>
+  <li>Create an <code class="language-plaintext highlighter-rouge">lvm</code> physical volume on the additional device, e.g.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pvcreate /dev/sdb
+</code></pre></div>    </div>
+  </li>
+  <li>Create a volume group on the physical volume, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vgcreate vg0 /dev/sdb
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>On the first node:</p>
+
+<ul>
+  <li>Create a demo volume on the volume group, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lvcreate --size 5G -n volume-1234 vg0
+</code></pre></div>    </div>
+  </li>
+  <li>Add a linear device-mapper target on top of the <code class="language-plaintext highlighter-rouge">lv</code>, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup create volume-1234-handle --table "0 10477568 linear /dev/vg0/volume-1234 0"
+</code></pre></div>    </div>
+  </li>
+  <li>Optionally: Add some random data, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkfs.xfs /dev/mapper/volume-1234-handle
+mount /dev/mapper/volume-1234-handle /mnt
+dd if=/dev/random of=/mnt/foo bs=1M count=1024
+sync
+sha256sum /mnt/foo
+umount /mnt
+</code></pre></div>    </div>
+  </li>
+  <li>Export the target via iSCSI, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tgtadm --lld iscsi --op new --mode target --tid 1 -T iqn.2024-04.tech.osism:volume-1234
+tgtadm --lld iscsi --mode logicalunit --op new --tid 1 --lun 1 -b /dev/mapper/volume-1234-handle
+tgtadm --lld iscsi --mode logicalunit --op update --tid 1 --lun 1 --params readonly=1
+tgtadm --lld iscsi --mode target --op bind --tid 1 -I ALL
+tgtadm --lld iscsi --mode target --op show
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>On the second node:</p>
+
+<ul>
+  <li>Create a volume to hold the data, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lvcreate --size 5G -n volume-1234 vg0
+</code></pre></div>    </div>
+  </li>
+  <li>Add a linear device-mapper target on top of the <code class="language-plaintext highlighter-rouge">lv</code>, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup create volume-1234-handle --table "0 10477568 linear /dev/vg0/volume-1234 0"
+</code></pre></div>    </div>
+  </li>
+  <li>Create a logical volume to hold the <code class="language-plaintext highlighter-rouge">dm-clone</code> metadata, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lvcreate --size 1G -n volume-1234-meta vg0
+</code></pre></div>    </div>
+  </li>
+  <li>Initiate the iSCSI connection, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iscsiadm -m discovery -t sendtargets -p 192.168.122.60
+iscsiadm -m node --login --targetname iqn.2024-04.tech.osism:volume-1234
+</code></pre></div>    </div>
+  </li>
+  <li>Load a <code class="language-plaintext highlighter-rouge">dm-clone</code> target instead of the linear target, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup suspend volume-1234-handle
+dmsetup load volume-1234-handle --table "0 10477568 clone /dev/vg0/volume-1234-meta /dev/vg0/volume-1234 /dev/sdc 8 1 no_hydration"
+dmsetup resume volume-1234-handle
+</code></pre></div>    </div>
+  </li>
+  <li>Start using the <code class="language-plaintext highlighter-rouge">dm-clone</code> target immediately, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mount /dev/mapper/volume-1234-handle /mnt
+dd if=/dev/random of=/mnt/bar bs=1M count=1024
+sha256sum /mnt/foo
+sha256sum /mnt/bar
+</code></pre></div>    </div>
+  </li>
+  <li>Enable hydration of the <code class="language-plaintext highlighter-rouge">dm-clone</code> target, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup message volume-1234-handle 0 enable_hydration
+</code></pre></div>    </div>
+  </li>
+  <li>Check the status of the <code class="language-plaintext highlighter-rouge">dm-clone</code> target:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup status
+</code></pre></div>    </div>
+  </li>
+  <li>Once all extends are local, load a linear target again, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup suspend volume-1234-handle
+dmsetup load volume-1234-handle --table "0 10477568 linear /dev/vg0/volume-1234 0"
+dmsetup resume volume-1234-handle
+</code></pre></div>    </div>
+  </li>
+  <li>Remove the metadata <code class="language-plaintext highlighter-rouge">lv</code>, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lvremove -y vg0/volume-1234-meta
+</code></pre></div>    </div>
+  </li>
+  <li>Terminate the iSCSI connection, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iscsiadm -m node --logout --targetname iqn.2024-04.tech.osism:volume-1234
+iscsiadm -m node --op=delete
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>On the first node:</p>
+
+<ul>
+  <li>
+    <p>Stop the iSCSI export, e.g.:
+```
+tgtadm –lld iscsi –mode target –op unbind –tid 1 -I ALL
+tgtadm –lld iscsi –mode logicalunit –op delete –tid 1 –lun 1</p>
+  </li>
+  <li>Remove the linear device mapper target, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup remove volume-1234-handle
+</code></pre></div>    </div>
+  </li>
+  <li>Remove the source <code class="language-plaintext highlighter-rouge">lv</code>, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lvremove -y vg0/volume-1234
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="benchmarks-of-the-demo-setup">Benchmarks of the demo setup</h2>
+
+<p>The following benchmarks show the influence of the meta data device on the random 4k write speed. The test setup is a virtual machine with virtio-scsi disks backend by raw files. The clone is setup between local <code class="language-plaintext highlighter-rouge">lvm2</code> devices.
+The local benchmarks show a drop to about one third of the base line 4k random write IOPS when using an <code class="language-plaintext highlighter-rouge">lvm2</code> volume on the source disk as metadata device. For comparison, putting the metadata on a ZRAM device yields no measurable drop in 4k random write performance.
+The benchmarks on a remote node where the source is exported via ISCSI and the meta data is written to a ZRAM device shows no drop in random 4k write IOPS as it would be expected since only local storage is involved. The random 4k read IOPS show a sharp drop due to being remote over the ISCSI protocol.</p>
+
+<p>Note that due to its ephemeral nature a ZRAM device is not recommended for production use cases. It is used here to show case the influence of the meta data device speed. However, the results show that production setups would probably benefit from using dedicated NVMes for meta data storage.</p>
+
+<h3 id="baseline">Baseline</h3>
+
+<p>Benchmarks of the source volume locally</p>
+
+<h4 id="random-4k-writes">Random 4k writes</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com01:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randwrite -runtime=60 -filename=/dev/mapper/vg0-volume--1234
+test: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [w(1)][100.0%][w=5465KiB/s][w=1366 IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=3240: Sat Jun  1 15:58:06 2024
+  write: IOPS=1375, BW=5502KiB/s (5634kB/s)(322MiB/60001msec); 0 zone resets
+    slat (usec): min=4, max=259, avg=11.65, stdev= 7.09
+    clat (usec): min=312, max=8516, avg=714.14, stdev=164.99
+     lat (usec): min=317, max=8523, avg=725.93, stdev=167.56
+    clat percentiles (usec):
+     |  1.00th=[  359],  5.00th=[  424], 10.00th=[  644], 20.00th=[  668],
+     | 30.00th=[  685], 40.00th=[  701], 50.00th=[  717], 60.00th=[  725],
+     | 70.00th=[  742], 80.00th=[  766], 90.00th=[  799], 95.00th=[  832],
+     | 99.00th=[ 1106], 99.50th=[ 1450], 99.90th=[ 1795], 99.95th=[ 1958],
+     | 99.99th=[ 7570]
+   bw (  KiB/s): min= 5240, max= 5712, per=100.00%, avg=5505.12, stdev=100.03, samples=119
+   iops        : min= 1310, max= 1428, avg=1376.28, stdev=25.01, samples=119
+  lat (usec)   : 500=5.98%, 750=67.98%, 1000=24.66%
+  lat (msec)   : 2=1.33%, 4=0.02%, 10=0.03%
+  cpu          : usr=0.34%, sys=1.57%, ctx=165058, majf=0, minf=10
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=0,82529,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+  WRITE: bw=5502KiB/s (5634kB/s), 5502KiB/s-5502KiB/s (5634kB/s-5634kB/s), io=322MiB (338MB), run=60001-60001msec
+</code></pre></div></div>
+
+<h4 id="random-4k-reads">Random 4k reads</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com01:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randread -runtime=60 -filename=/dev/mapper/vg0-volume--1234
+test: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [r(1)][100.0%][r=111MiB/s][r=28.3k IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=13731: Sat Jun  1 16:29:11 2024
+  read: IOPS=27.3k, BW=107MiB/s (112MB/s)(5120MiB/47966msec)
+    slat (usec): min=2, max=110, avg= 3.68, stdev= 1.45
+    clat (nsec): min=301, max=1126.9k, avg=32586.49, stdev=12584.72
+     lat (usec): min=21, max=1130, avg=36.32, stdev=13.66
+    clat percentiles (usec):
+     |  1.00th=[   23],  5.00th=[   24], 10.00th=[   26], 20.00th=[   28],
+     | 30.00th=[   29], 40.00th=[   30], 50.00th=[   32], 60.00th=[   33],
+     | 70.00th=[   35], 80.00th=[   36], 90.00th=[   39], 95.00th=[   43],
+     | 99.00th=[   63], 99.50th=[   74], 99.90th=[  277], 99.95th=[  306],
+     | 99.99th=[  355]
+   bw (  KiB/s): min=95432, max=131840, per=100.00%, avg=109325.39, stdev=8206.01, samples=95
+   iops        : min=23858, max=32960, avg=27331.35, stdev=2051.50, samples=95
+  lat (nsec)   : 500=0.01%, 750=0.01%
+  lat (usec)   : 4=0.01%, 10=0.01%, 20=0.01%, 50=97.63%, 100=2.15%
+  lat (usec)   : 250=0.08%, 500=0.14%, 750=0.01%
+  lat (msec)   : 2=0.01%
+  cpu          : usr=3.58%, sys=16.91%, ctx=1310726, majf=0, minf=12
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=1310720,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=107MiB/s (112MB/s), 107MiB/s-107MiB/s (112MB/s-112MB/s), io=5120MiB (5369MB), run=47966-47966msec
+</code></pre></div></div>
+
+<h3 id="benchmark-of-a-local-clone-with-metadata-on-lvm2-volume">Benchmark of a local clone with metadata on <code class="language-plaintext highlighter-rouge">lvm2</code> volume</h3>
+
+<h4 id="random-4k-writes-1">Random 4k writes</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com01:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randwrite -runtime=60 -filename=/dev/mapper/volume-1234-clone-handle
+test: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [w(1)][100.0%][w=2094KiB/s][w=523 IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=3118: Sat Jun  1 15:54:49 2024
+  write: IOPS=519, BW=2080KiB/s (2130kB/s)(122MiB/60002msec); 0 zone resets
+    slat (usec): min=2, max=277, avg= 5.80, stdev= 6.91
+    clat (usec): min=1576, max=14149, avg=1915.57, stdev=279.42
+     lat (usec): min=1579, max=14269, avg=1921.53, stdev=280.86
+    clat percentiles (usec):
+     |  1.00th=[ 1696],  5.00th=[ 1745], 10.00th=[ 1762], 20.00th=[ 1795],
+     | 30.00th=[ 1827], 40.00th=[ 1844], 50.00th=[ 1876], 60.00th=[ 1909],
+     | 70.00th=[ 1926], 80.00th=[ 1975], 90.00th=[ 2040], 95.00th=[ 2147],
+     | 99.00th=[ 3064], 99.50th=[ 3326], 99.90th=[ 3916], 99.95th=[ 8586],
+     | 99.99th=[ 9634]
+   bw (  KiB/s): min= 2008, max= 2176, per=100.00%, avg=2080.94, stdev=33.12, samples=119
+   iops        : min=  502, max=  544, avg=520.24, stdev= 8.28, samples=119
+  lat (msec)   : 2=85.54%, 4=14.36%, 10=0.09%, 20=0.01%
+  cpu          : usr=0.08%, sys=0.51%, ctx=31572, majf=0, minf=9
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=0,31199,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+  WRITE: bw=2080KiB/s (2130kB/s), 2080KiB/s-2080KiB/s (2130kB/s-2130kB/s), io=122MiB (128MB), run=60002-60002msec
+</code></pre></div></div>
+
+<h4 id="random-4k-reads-1">Random 4k reads</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com01:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randread -runtime=60 -filename=/dev/mapper/volume-1234-handle
+test: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [r(1)][100.0%][r=104MiB/s][r=26.6k IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=15863: Mon Jun  3 05:57:42 2024
+  read: IOPS=27.2k, BW=106MiB/s (111MB/s)(5116MiB/48142msec)
+    slat (usec): min=2, max=123, avg= 3.73, stdev= 1.40
+    clat (nsec): min=271, max=882821, avg=32723.17, stdev=11044.33
+     lat (usec): min=20, max=886, avg=36.51, stdev=12.17
+    clat percentiles (usec):
+     |  1.00th=[   23],  5.00th=[   28], 10.00th=[   29], 20.00th=[   29],
+     | 30.00th=[   30], 40.00th=[   33], 50.00th=[   34], 60.00th=[   34],
+     | 70.00th=[   35], 80.00th=[   35], 90.00th=[   36], 95.00th=[   37],
+     | 99.00th=[   47], 99.50th=[   69], 99.90th=[  273], 99.95th=[  285],
+     | 99.99th=[  318]
+   bw (  KiB/s): min=104464, max=117576, per=100.00%, avg=108874.50, stdev=2902.41, samples=96
+   iops        : min=26116, max=29394, avg=27218.67, stdev=725.57, samples=96
+  lat (nsec)   : 500=0.01%
+  lat (usec)   : 10=0.01%, 20=0.01%, 50=99.18%, 100=0.62%, 250=0.05%
+  lat (usec)   : 500=0.14%, 1000=0.01%
+  cpu          : usr=3.01%, sys=18.29%, ctx=1309719, majf=0, minf=13
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=1309696,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=106MiB/s (111MB/s), 106MiB/s-106MiB/s (111MB/s-111MB/s), io=5116MiB (5365MB), run=48142-48142msec
+</code></pre></div></div>
+
+<h3 id="benchmark-of-a-local-clone-with-metadata-on-zram">Benchmark of a local clone with metadata on ZRAM</h3>
+
+<h4 id="random-4k-writes-2">Random 4k writes</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com01:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randwrite -runtime=60 -filename=/dev/mapper/volume-1234-handle
+test: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [w(1)][100.0%][w=4960KiB/s][w=1240 IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=13608: Sat Jun  1 16:14:04 2024
+  write: IOPS=1478, BW=5913KiB/s (6055kB/s)(346MiB/60001msec); 0 zone resets
+    slat (nsec): min=1923, max=208986, avg=3724.87, stdev=4766.17
+    clat (usec): min=344, max=10388, avg=671.61, stdev=237.71
+     lat (usec): min=347, max=10470, avg=675.43, stdev=239.08
+    clat percentiles (usec):
+     |  1.00th=[  375],  5.00th=[  392], 10.00th=[  396], 20.00th=[  412],
+     | 30.00th=[  441], 40.00th=[  717], 50.00th=[  750], 60.00th=[  775],
+     | 70.00th=[  799], 80.00th=[  824], 90.00th=[  865], 95.00th=[  906],
+     | 99.00th=[ 1156], 99.50th=[ 1500], 99.90th=[ 1926], 99.95th=[ 2024],
+     | 99.99th=[ 7832]
+   bw (  KiB/s): min= 4624, max= 9728, per=100.00%, avg=5924.30, stdev=1891.50, samples=119
+   iops        : min= 1156, max= 2432, avg=1481.08, stdev=472.87, samples=119
+  lat (usec)   : 500=34.29%, 750=16.58%, 1000=47.48%
+  lat (msec)   : 2=1.60%, 4=0.04%, 10=0.02%, 20=0.01%
+  cpu          : usr=0.35%, sys=0.72%, ctx=90151, majf=0, minf=10
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=0,88703,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+  WRITE: bw=5913KiB/s (6055kB/s), 5913KiB/s-5913KiB/s (6055kB/s-6055kB/s), io=346MiB (363MB), run=60001-60001msec
+</code></pre></div></div>
+
+<h4 id="random-4k-reads-2">Random 4k reads</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com01:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randread -runtime=60 -filename=/dev/mapper/volume-1234-handle
+test: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [r(1)][100.0%][r=119MiB/s][r=30.5k IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=13734: Sat Jun  1 16:30:16 2024
+  read: IOPS=31.1k, BW=122MiB/s (128MB/s)(5116MiB/42051msec)
+    slat (usec): min=2, max=156, avg= 3.76, stdev= 1.55
+    clat (nsec): min=271, max=2064.1k, avg=28045.10, stdev=10645.06
+     lat (usec): min=18, max=2068, avg=31.85, stdev=11.88
+    clat percentiles (usec):
+     |  1.00th=[   22],  5.00th=[   23], 10.00th=[   25], 20.00th=[   27],
+     | 30.00th=[   28], 40.00th=[   28], 50.00th=[   28], 60.00th=[   29],
+     | 70.00th=[   29], 80.00th=[   29], 90.00th=[   30], 95.00th=[   32],
+     | 99.00th=[   40], 99.50th=[   43], 99.90th=[  273], 99.95th=[  285],
+     | 99.99th=[  326]
+   bw (  KiB/s): min=119528, max=132216, per=100.00%, avg=124645.90, stdev=2967.37, samples=84
+   iops        : min=29882, max=33054, avg=31161.51, stdev=741.82, samples=84
+  lat (nsec)   : 500=0.01%
+  lat (usec)   : 10=0.01%, 20=0.01%, 50=99.66%, 100=0.16%, 250=0.05%
+  lat (usec)   : 500=0.13%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 4=0.01%
+  cpu          : usr=4.25%, sys=19.24%, ctx=1309700, majf=0, minf=13
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=1309696,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=122MiB/s (128MB/s), 122MiB/s-122MiB/s (128MB/s-128MB/s), io=5116MiB (5365MB), run=42051-42051msec
+</code></pre></div></div>
+
+<h3 id="benchmarks-of-a-clone-on-a-remote-node-with-source-disk-exported-via-iscsi-and-meta-data-on-zram">Benchmarks of a clone on a remote node with source disk exported via ISCSI and meta data on ZRAM</h3>
+
+<h4 id="random-4k-writes-3">Random 4k writes</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com02:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randwrite -runtime=60 -filename=/dev/mapper/volume-1234-handle
+test: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [w(1)][100.0%][w=4828KiB/s][w=1207 IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=13249: Mon Jun  3 06:22:28 2024
+  write: IOPS=1252, BW=5008KiB/s (5129kB/s)(293MiB/60001msec); 0 zone resets
+    slat (usec): min=2, max=156, avg= 4.12, stdev= 4.86
+    clat (usec): min=592, max=11421, avg=793.32, stdev=166.41
+     lat (usec): min=594, max=11551, avg=797.55, stdev=168.01
+    clat percentiles (usec):
+     |  1.00th=[  668],  5.00th=[  693], 10.00th=[  709], 20.00th=[  725],
+     | 30.00th=[  742], 40.00th=[  758], 50.00th=[  775], 60.00th=[  791],
+     | 70.00th=[  807], 80.00th=[  832], 90.00th=[  873], 95.00th=[  906],
+     | 99.00th=[ 1369], 99.50th=[ 1598], 99.90th=[ 1975], 99.95th=[ 2278],
+     | 99.99th=[ 7832]
+   bw (  KiB/s): min= 4784, max= 5360, per=100.00%, avg=5012.24, stdev=114.56, samples=119
+   iops        : min= 1196, max= 1340, avg=1253.06, stdev=28.64, samples=119
+  lat (usec)   : 750=34.40%, 1000=63.55%
+  lat (msec)   : 2=1.96%, 4=0.06%, 10=0.03%, 20=0.01%
+  cpu          : usr=0.30%, sys=0.71%, ctx=75869, majf=0, minf=10
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=0,75126,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+  WRITE: bw=5008KiB/s (5129kB/s), 5008KiB/s-5008KiB/s (5129kB/s-5129kB/s), io=293MiB (308MB), run=60001-60001msec
+</code></pre></div></div>
+
+<h4 id="random-4k-reads-3">Random 4k reads</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com02:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randread -runtime=60 -filename=/dev/mapper/volume-1234-handle
+test: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [r(1)][100.0%][r=28.9MiB/s][r=7398 IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=13270: Mon Jun  3 06:24:09 2024
+  read: IOPS=8113, BW=31.7MiB/s (33.2MB/s)(1902MiB/60001msec)
+    slat (usec): min=2, max=118, avg= 4.32, stdev= 1.97
+    clat (usec): min=15, max=1580, avg=118.39, stdev=57.89
+     lat (usec): min=20, max=1626, avg=122.77, stdev=58.94
+    clat percentiles (usec):
+     |  1.00th=[   22],  5.00th=[   23], 10.00th=[   25], 20.00th=[  109],
+     | 30.00th=[  120], 40.00th=[  126], 50.00th=[  130], 60.00th=[  135],
+     | 70.00th=[  139], 80.00th=[  143], 90.00th=[  153], 95.00th=[  161],
+     | 99.00th=[  202], 99.50th=[  253], 99.90th=[  889], 99.95th=[ 1123],
+     | 99.99th=[ 1303]
+   bw (  KiB/s): min=22160, max=142592, per=100.00%, avg=32493.65, stdev=20557.03, samples=119
+   iops        : min= 5540, max=35648, avg=8123.41, stdev=5139.26, samples=119
+  lat (usec)   : 20=0.01%, 50=15.38%, 100=3.30%, 250=80.80%, 500=0.32%
+  lat (usec)   : 750=0.06%, 1000=0.05%
+  lat (msec)   : 2=0.08%
+  cpu          : usr=1.16%, sys=6.48%, ctx=486795, majf=0, minf=13
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=486792,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=31.7MiB/s (33.2MB/s), 31.7MiB/s-31.7MiB/s (33.2MB/s-33.2MB/s), io=1902MiB (1994MB), run=60001-60001msec
+</code></pre></div></div>
+
+<h1 id="references">References</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:dm_clone" role="doc-endnote">
+      <p>https://docs.kernel.org/admin-guide/device-mapper/dm-clone.html <a href="#fnref:dm_clone" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:live_migration" role="doc-endnote">
+      <p>https://specs.openstack.org/openstack/nova-specs/specs/pike/approved/cinder-new-attach-apis.html <a href="#fnref:live_migration" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:vol_migration" role="doc-endnote">
+      <p>https://docs.openstack.org/cinder/latest/contributor/migration.html <a href="#fnref:vol_migration" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:driver_ref" role="doc-endnote">
+      <p>https://docs.openstack.org/cinder/latest/contributor/drivers.html <a href="#fnref:driver_ref" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>[&quot;Jan Horstmann&quot;]</name></author><summary type="html"><![CDATA[Motivation]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS Security Advisory on arbitrary file access through QCOW2 external data file (CVE-2024-32498)</title><link href="https://sovereigncloudstack.github.io/website/security/2024/07/02/cve-2024-32498/" rel="alternate" type="text/html" title="SCS Security Advisory on arbitrary file access through QCOW2 external data file (CVE-2024-32498)" /><published>2024-07-02T00:00:00+00:00</published><updated>2024-07-11T09:47:18+00:00</updated><id>https://sovereigncloudstack.github.io/website/security/2024/07/02/cve-2024-32498</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/security/2024/07/02/cve-2024-32498/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>OpenStack supports users to upload custom VM images in a number of formats
+to be used for creating Virtual Machines. The simplest is a raw copy of a harddisk,
+while other formats such as QCOW2 and VMDK are more advanced in being compressed
+and allowing for embedding additional information. They also support referencing
+other files. The latter feature needs to be controlled by OpenStack to avoid
+exposing sensitive files. OpenStack thus disallows such external references
+for customer images. Or at least, it meant to.</p>
+
+<p>Martin Kaesberger has reported that the protection for QCOW2 was incomplete
+and allowed for an external datafile to slip through.</p>
+
+<p>By creating a QCOW2 file with this feature and registering it with the
+OpenStack image service, files from the host system within the Cinder, Nova and
+Glance containers can be exposed. This way, sensitive information can be
+exfiltrated (Information Disclosure).</p>
+
+<p>The vulnerability has been assigned <a href="https://cve.report/CVE-2024-32498">CVE-2024-32498</a>.</p>
+
+<p>This issue is similar in its effects to a VMDK specific vulnerability
+<a href="https://scs.community/de/security/2023/01/24/cve-2022-47951/">CVE-2022-47951</a>
+that was addressed 18 months ago.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>The <a href="https://scs.community/">Sovereign Cloud Stack</a> reference implementation
+(by <a href="https://osism.tech/">OSISM</a>) runs these services in containers and thus
+most files from the hypervisor’s file system are not directly accessible from
+inside the container via this vulnerability. However, this depends on the
+service inside the container. Some services have access to data from the
+hypervisor or they contain sensitive data themselves (e.g. credentials to
+connect to other services), and thus they are accessible by a potential
+attacker. They have also access to log files from the services which may
+expose sensitive data.</p>
+
+<p><em>To abuse this vulnerability, the attacker must be an authenticated
+user of the platform.</em></p>
+
+<p>We are able to reproduce this issue on unpatched platforms using the SCS
+reference implementation. The exploit consists in registering an offending
+QCOW2 file and then creating a volume from it which will leak information
+from a referenced file in the Cinder container on the host system.</p>
+
+<!--TODO: Search for ways to exploit this-->
+<p>Information that can be accessed this way are keys for database access or
+for talking to the storage system. While neither database nor storage are
+reachable by cloud users, the exposure of these secrets removes these
+protections for defense-in-depth. A single further exploit would now
+immediately lead to a massive privilege escalation.
+We have not found a way to use the exposed data to <em>directly</em> gain privileges
+(such as admin access to the IaaS cloud layer), but we can not exclude that
+highly skilled attackers can.</p>
+
+<p>In any case, this vulnerability is very severe and operators of OpenStack
+platforms are advised to deploy fixed versions as soon as possible.</p>
+
+<h2 id="embargo">Embargo</h2>
+
+<p>The issue has been reported to the OpenStack Vulnerability Management Team in
+private. The reporters and upstream developers have worked together to address
+the issue with fixes and an embargo date
+has been set to Tuesday, 2024-07-02, 15:00 UTC (17:00 CEST). At this point in
+time, the patches will get merged and the OpenStack Security Advisory
+<!--TODO: Fix reference!-->
+(<a href="https://security.openstack.org/ossa/OSSA-2024-001.html">OSSA-2024-001</a>) will
+be published. The issue is tracked in OpenStack issue
+<a href="https://bugs.launchpad.net/nova/+bug/2059809">#2059809</a>, which should become
+publically accessible after the lift of the embargo and the publication
+of this advisory.</p>
+
+<p>Under the used responsible disclosure approach, the information was shared with
+a select group of trustable users of OpenStack, so they can prepare updates and
+protect their user data in time for the publication.</p>
+
+<p>The reference implementation for the IaaS layer of Sovereign Cloud Stack
+is provided by the OSISM project – the OSISM team normally builds the
+artifacts in a completely public process. To avoid waiting for a few
+hours to have all image builds (nova-compute, glance-api and cinder-volume
+containers) completed and tested after the disclosure date,
+the OSISM project has built private images beforehand which we have tested
+to protect against all known scenarios in which these image files are used.
+These images were handed to our SCS operators a few hours ahead of time
+(without a detailed description) to allow them to protect their infrastructure.</p>
+
+<h2 id="mitigation-and-fixes">Mitigation and Fixes</h2>
+
+<p>A temporary workaround would be to disallow QCOW2 image registrations.
+Note however that images can also be created from volumes, not just via
+customer upload and volume snapshots with a QCOW2 signature might be
+misdetected as QCOW2 images prior to the fixes.</p>
+
+<p>There are patches from the upstream OpenStack developers available. They work
+by analyzing the QCOW2 images and refusing their usage if datafiles are being
+used. Such images will no longer be accepted and thus can no longer be used to
+exfiltrate sensitive files. The mitigation does <em>not</em> apply upon upload of
+such images (the Glance service just stores the image file without looking at
+it unless conversion is enabled), but upon usage. The mitigation thus applies
+to Glance, Cinder and Nova and protects against the conversion of offending
+images (Glance) and their use when creating VMs (Nova) or volumes (Cinder).</p>
+
+<p>We are able to confirm that the previously successful attacks are addressed
+by the fixes. QCOW2 files with datafile references are no longer converted
+by the image service (Glance) nor will existing images with such properties be
+used by the compute service (Nova) nor the Block Storage Service (Cinder).</p>
+
+<p>Instructions to install the fixed containers (hotfix on top of
+<a href="https://osism.tech/de/docs/release-notes/">OSISM 7.0.x</a>):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+# Override images in your configuration repository:
+cat &gt;environments/kolla/images.yml &lt;&lt;EOT
+---
+my_registry_kolla: osism.harbor.regio.digital
+my_namespace: osism-20240702
+
+cinder_tag: build-20240702-stable-20232
+cinder_volume_image: "{{ my_registry_kolla }}/{{ my_namespace }}/cinder-volume"
+cinder_scheduler_image: "{{ my_registry_kolla }}/{{ my_namespace }}/cinder-scheduler"
+cinder_backup_image: "{{ my_registry_kolla }}/{{ my_namespace }}/cinder-backup"
+cinder_api_image: "{{ my_registry_kolla }}/{{ my_namespace }}/cinder-api"
+
+glance_api_tag: build-20240702-stable-20232
+glance_api_image: "{{ my_registry_kolla }}/{{ my_namespace }}/glance-api"
+
+nova_tag: build-20240702-stable-20232
+nova_libvirt_tag: build-20240702-stable-20232
+nova_super_conductor_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-super-conductor"
+nova_libvirt_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-libvirt"
+nova_ssh_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-ssh"
+nova_novncproxy_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-novncproxy"
+nova_spicehtml5proxy_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-spicehtml5proxy"
+nova_serialproxy_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-serialproxy"
+nova_conductor_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-conductor"
+nova_compute_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-compute"
+nova_compute_ironic_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-compute-ironic"
+nova_scheduler_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-scheduler"
+nova_api_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-api"
+EOT
+# Pull new containers, not used yet
+for cont in glance cinder nova; do
+  osism apply -a pull $cont
+done
+# Deploy and restart containers, the fixes will become effective now
+for cont in glance cinder nova; do
+  osism apply -a refresh-containers $cont
+done
+</code></pre></div></div>
+
+<p>If you are not on R6 (OSISM 7.0.x), replace <code class="language-plaintext highlighter-rouge">stable-20232</code> with the version you are on 
+(e.g. <code class="language-plaintext highlighter-rouge">stable-20231</code> if you are on R5 (OSISM 6.x).</p>
+
+<p>This will cause new images to be downloaded and started on the hosts.
+The deployment will have the following user-visible effects:</p>
+<ul>
+  <li>The glance-API will be unavailable for some seconds</li>
+  <li>Volume control operations (e.g. creating a new volume) and the cinder API will
+be unavailable for some seconds.</li>
+  <li>VM (compute service) operations and the nova API will not be available for
+some seconds.</li>
+</ul>
+
+<p>Most users won’t notice this. Please note that running workloads will not be
+affected at all.</p>
+
+<p>Soon after the disclosure date, OSISM will publish an official 7.0.6 release
+containing the updated containers (nova-compute, glance-api, cinder-volume)
+as well as a fix for octavia-api. Please refer to the the
+<a href="https://osism.tech/docs/release-notes/osism-7/">OSISM release notes</a>.
+You can upgrade from this hotfix to 7.0.6 using the regular upgrade mechanism.</p>
+
+<h2 id="have-my-systems-been-compromised">Have my systems been compromised?</h2>
+
+<p>Providers that are unable to patch this issue on the day of the release
+need to consider the possibility of having been attacked. In this case,
+passwords/keys for internal communication should be considered to be
+leaked and will need to be rotated to reestablish the defense-in-depth
+lines. We recommend providers check for suspicious image operations
+(QCOW2 image registrations, snapshots with QCOW2 signature) in their logs
+for the time after the embargo lift.
+In particular, every image that has been uploaded should be investigated
+for the datafile property; it should be assumed that images that have been
+registered and removed again contain the exploit.</p>
+
+<h2 id="patch-status-of-scs-clouds">Patch status of SCS clouds</h2>
+
+<p>Our publically known providers of SCS IaaS platforms have all been
+notified and started to deploy the updated images which we were able
+to provide them privately a few hours ahead of time (without sharing
+all the details on the issue). We expect them to have completed the
+rollout at the time this gets public.
+Please refer to their communication for precise information on the
+patch status.</p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>The authors would like to thank Martin Kaesberger, the OpenStack developers and
+reviewers, testers and the OpenStack Vulnerability Management Team for the
+responsible reporting, careful analysis, fixing, testing and professional
+handling of the issue and the OSISM team for providing the fixed containers.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.1, 2024-06-24, 08:45 CEST.</li>
+  <li>Adjusted approach to patch provisioning, v0.2, 2024-06-24, 11:45 CEST.</li>
+  <li>Wording fixes, update disclosure date and details on patch provisioning
+and its working, v0.3, 2024-07-01, 08:15 CEST.</li>
+  <li>Remove list of SCS providers, v0.4, 2024-07-02, 08:30 CEST.</li>
+  <li>Add detailed hotfix deployment instructions, v0.5, 2024-07-02, 14:30 CEST.</li>
+  <li>Added correct OSSA reference, v0.6, 2024-07-02, 16:00 CEST.</li>
+  <li>Ready for publication (no change), v1.0, 2024-07-02, 17:00 CEST.</li>
+  <li>Move install instructions into the right section, v1.1, 2024-07-02, 18:00 CEST</li>
+  <li>Escape jinja templates in markdown (images.yml), v1.2, 2024-07-02, 18:45 CEST</li>
+</ul>]]></content><author><name>[&quot;Kurt Garloff&quot;, &quot;Christian Berendt&quot;, &quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Review of the 2nd Sovereign Cloud Stack Summit</title><link href="https://sovereigncloudstack.github.io/website/2024/05/14/scs-summit2024/" rel="alternate" type="text/html" title="Review of the 2nd Sovereign Cloud Stack Summit" /><published>2024-05-14T00:00:00+00:00</published><updated>2024-07-11T09:47:18+00:00</updated><id>https://sovereigncloudstack.github.io/website/2024/05/14/scs-summit2024</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/2024/05/14/scs-summit2024/"><![CDATA[<div class="carousel__holder">
+    <div id="carousel0" class="carousel">
+        
+          <input class="carousel__activator" type="radio" name="carousel0" id="0a" checked="checked" />
+        
+          <input class="carousel__activator" type="radio" name="carousel0" id="0b" />
+        
+          <input class="carousel__activator" type="radio" name="carousel0" id="0c" />
+        
+          <input class="carousel__activator" type="radio" name="carousel0" id="0d" />
+        
+          <input class="carousel__activator" type="radio" name="carousel0" id="0e" />
+        
+          <input class="carousel__activator" type="radio" name="carousel0" id="0f" />
+        
+          <input class="carousel__activator" type="radio" name="carousel0" id="0g" />
+        
+          <input class="carousel__activator" type="radio" name="carousel0" id="0h" />
+        
+          <input class="carousel__activator" type="radio" name="carousel0" id="0i" />
+        
+          <input class="carousel__activator" type="radio" name="carousel0" id="0j" />
+        
+          <input class="carousel__activator" type="radio" name="carousel0" id="0k" />
+        
+          <input class="carousel__activator" type="radio" name="carousel0" id="0l" />
+        
+        
+          
+          
+          
+          
+          <div class="carousel__controls">
+              <label class="carousel__control carousel__control--backward" for="0l"></label>
+              <label class="carousel__control carousel__control--forward" for="0b"></label>
+          </div>
+        
+          
+          
+          
+          
+          <div class="carousel__controls">
+              <label class="carousel__control carousel__control--backward" for="0a"></label>
+              <label class="carousel__control carousel__control--forward" for="0c"></label>
+          </div>
+        
+          
+          
+          
+          
+          <div class="carousel__controls">
+              <label class="carousel__control carousel__control--backward" for="0b"></label>
+              <label class="carousel__control carousel__control--forward" for="0d"></label>
+          </div>
+        
+          
+          
+          
+          
+          <div class="carousel__controls">
+              <label class="carousel__control carousel__control--backward" for="0c"></label>
+              <label class="carousel__control carousel__control--forward" for="0e"></label>
+          </div>
+        
+          
+          
+          
+          
+          <div class="carousel__controls">
+              <label class="carousel__control carousel__control--backward" for="0d"></label>
+              <label class="carousel__control carousel__control--forward" for="0f"></label>
+          </div>
+        
+          
+          
+          
+          
+          <div class="carousel__controls">
+              <label class="carousel__control carousel__control--backward" for="0e"></label>
+              <label class="carousel__control carousel__control--forward" for="0g"></label>
+          </div>
+        
+          
+          
+          
+          
+          <div class="carousel__controls">
+              <label class="carousel__control carousel__control--backward" for="0f"></label>
+              <label class="carousel__control carousel__control--forward" for="0h"></label>
+          </div>
+        
+          
+          
+          
+          
+          <div class="carousel__controls">
+              <label class="carousel__control carousel__control--backward" for="0g"></label>
+              <label class="carousel__control carousel__control--forward" for="0i"></label>
+          </div>
+        
+          
+          
+          
+          
+          <div class="carousel__controls">
+              <label class="carousel__control carousel__control--backward" for="0h"></label>
+              <label class="carousel__control carousel__control--forward" for="0j"></label>
+          </div>
+        
+          
+          
+          
+          
+          <div class="carousel__controls">
+              <label class="carousel__control carousel__control--backward" for="0i"></label>
+              <label class="carousel__control carousel__control--forward" for="0k"></label>
+          </div>
+        
+          
+          
+          
+          
+          <div class="carousel__controls">
+              <label class="carousel__control carousel__control--backward" for="0j"></label>
+              <label class="carousel__control carousel__control--forward" for="0l"></label>
+          </div>
+        
+          
+          
+          
+          
+          <div class="carousel__controls">
+              <label class="carousel__control carousel__control--backward" for="0k"></label>
+              <label class="carousel__control carousel__control--forward" for="0a"></label>
+          </div>
+        
+        <div class="carousel__track">
+          <ul>
+            
+            <li class="carousel__slide" style="background-image: url('/website/assets/images/summit2024/recap/01_willkommen-845ca03eadd4e2ef8c88658ab2631e6d869ca875652954b0017f4078fb6e0b8afbbb119fa89e790ebe033c8114c6063ee9449999394fba0049fc4587f6641507.jpg');"></li>
+            
+            <li class="carousel__slide" style="background-image: url('/website/assets/images/summit2024/recap/02_foyer-6f35e0388a9cd91771b27cad9e37dbd23764d4e04bf7941c29653ded6342a52397cb1277cf6c686621b9c7399fd40f34ca854f5e7cc494756f85c6999515cc7b.jpg');"></li>
+            
+            <li class="carousel__slide" style="background-image: url('/website/assets/images/summit2024/recap/03_keynote_peter_ganten_2-4ea7b8ab8d6a10fbb046278e3aa74099d1d44d6a29bdfdc0722818d1e9b7c0e919e2bf8584079e4d56477765d65a39cf633f4c709a3179e88851b12f6d3ad960.jpeg');"></li>
+            
+            <li class="carousel__slide" style="background-image: url('/website/assets/images/summit2024/recap/04_ernst_stoeckl-pukall_1-91ea2ffcdcbaaf8d49c339c5fe333e90619af525648be9fbc0865dc4c8091d53d4ad9e857b7554df04c853b19969026d28be63c7db804591159862af940cda78.jpeg');"></li>
+            
+            <li class="carousel__slide" style="background-image: url('/website/assets/images/summit2024/recap/05_keynote_ann-cathrin_riedel_1-9b190985766399fbf439c3994d1daf1647f6bf97a8fb0210d52fcb54ec2914c6584c939c671558f8972f667f9abe623a088aa640ddce8fe049a76b39491b1c9e.jpg');"></li>
+            
+            <li class="carousel__slide" style="background-image: url('/website/assets/images/summit2024/recap/06_panel_vormittag-0283db6abcb559058a0bc3045e2cf2f1836a8519021fb658b9c38e88b1b65116e765dee69177d1c612fc46d3540bb5dc1dd638ae37e1bc426a0a773e9785ca73.jpg');"></li>
+            
+            <li class="carousel__slide" style="background-image: url('/website/assets/images/summit2024/recap/07_andreas_reckert-lodde-57eed3d9f19f2c13f156352395a560363a3357123247947f7f9c3a8444ed0294208fe6b04aeb4bf0550cece40556795f686a3694ef0fa8858b1b4901ffa841e0.jpeg');"></li>
+            
+            <li class="carousel__slide" style="background-image: url('/website/assets/images/summit2024/recap/08_opendesk-scs-f3545534bf250bcc5f36e93f5a9544e77b4396e6453c6051acc93d367e7af2a41e3190ad18a6db6873ff1e4cd9f00b2b5c27745927ebea6850575b1dcd38c158.jpg');"></li>
+            
+            <li class="carousel__slide" style="background-image: url('/website/assets/images/summit2024/recap/09_publikum-8ebce3f477b11cce534ffc46e6f62f39de9430f04458b61a192e705a470222a4a255f6ab595011b7e5c3187739ac4cdb20f8b93bd0298221b84565a6c09d45b6.jpg');"></li>
+            
+            <li class="carousel__slide" style="background-image: url('/website/assets/images/summit2024/recap/10_kurt_garloff-103dfbf7e134631bce3ebebba2009a4889eda6db4043d7ae3114d7eb07ed30a925492359537df88d7dc0a584591e75d186f85b7f1cfec88cbcaf923e705f9105.jpg');"></li>
+            
+            <li class="carousel__slide" style="background-image: url('/website/assets/images/summit2024/recap/11_sh_setzt_auf_scs-4434bf266c2638872415e23e73e1b858f52b3631e7a101972ebad47bbd6256df60ece3eae223d6e95e4c8464d1b9ee72225df521aa963f9b21a9e03d29f962ee.jpeg');"></li>
+            
+            <li class="carousel__slide" style="background-image: url('/website/assets/images/summit2024/recap/19_zukunft_scs-17b8d216ce16737ac77666403c255807f884286d3e77f4c85b9a33a2d2a71ff64864ef92f90ec50579581ed7123ba4b07d4d9db3fac69a692a764d2ea2a9aabd.jpg');"></li>
+            
+          </ul>
+        </div>
+        <div class="carousel__indicators">
+            
+              <label class="carousel__indicator" for="0a"></label>
+            
+              <label class="carousel__indicator" for="0b"></label>
+            
+              <label class="carousel__indicator" for="0c"></label>
+            
+              <label class="carousel__indicator" for="0d"></label>
+            
+              <label class="carousel__indicator" for="0e"></label>
+            
+              <label class="carousel__indicator" for="0f"></label>
+            
+              <label class="carousel__indicator" for="0g"></label>
+            
+              <label class="carousel__indicator" for="0h"></label>
+            
+              <label class="carousel__indicator" for="0i"></label>
+            
+              <label class="carousel__indicator" for="0j"></label>
+            
+              <label class="carousel__indicator" for="0k"></label>
+            
+              <label class="carousel__indicator" for="0l"></label>
+            
+        </div>
+    </div>
+</div>
+
+<style>
+.carousel__holder {width: 100%; position: relative; padding-bottom: 40%; margin: 1rem 0 1rem;}
+.carousel {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  position: absolute;
+  padding: 0;
+}
+.carousel__controls,
+.carousel__activator {
+  display: none;
+}
+
+.carousel__activator:nth-of-type(1):checked ~ .carousel__track {
+  -webkit-transform: translateX(-000%);
+          transform: translateX(-000%);
+}
+.carousel__activator:nth-of-type(1):checked ~ .carousel__slide:nth-of-type(1) {
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.carousel__activator:nth-of-type(1):checked ~ .carousel__controls:nth-of-type(1) {
+  display: block;
+  opacity: 1;
+}
+.carousel__activator:nth-of-type(1):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(1) {
+  opacity: 1;
+}
+
+.carousel__activator:nth-of-type(2):checked ~ .carousel__track {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.carousel__activator:nth-of-type(2):checked ~ .carousel__slide:nth-of-type(2) {
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.carousel__activator:nth-of-type(2):checked ~ .carousel__controls:nth-of-type(2) {
+  display: block;
+  opacity: 1;
+}
+.carousel__activator:nth-of-type(2):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(2) {
+  opacity: 1;
+}
+
+.carousel__activator:nth-of-type(3):checked ~ .carousel__track {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+.carousel__activator:nth-of-type(3):checked ~ .carousel__slide:nth-of-type(3) {
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.carousel__activator:nth-of-type(3):checked ~ .carousel__controls:nth-of-type(3) {
+  display: block;
+  opacity: 1;
+}
+.carousel__activator:nth-of-type(3):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(3) {
+  opacity: 1;
+}
+
+.carousel__activator:nth-of-type(4):checked ~ .carousel__track {
+  -webkit-transform: translateX(-300%);
+          transform: translateX(-300%);
+}
+.carousel__activator:nth-of-type(4):checked ~ .carousel__slide:nth-of-type(4) {
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.carousel__activator:nth-of-type(4):checked ~ .carousel__controls:nth-of-type(4) {
+  display: block;
+  opacity: 1;
+}
+.carousel__activator:nth-of-type(4):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(4) {
+  opacity: 1;
+}
+
+.carousel__activator:nth-of-type(5):checked ~ .carousel__track {
+  -webkit-transform: translateX(-400%);
+          transform: translateX(-400%);
+}
+.carousel__activator:nth-of-type(5):checked ~ .carousel__slide:nth-of-type(5) {
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.carousel__activator:nth-of-type(5):checked ~ .carousel__controls:nth-of-type(5) {
+  display: block;
+  opacity: 1;
+}
+.carousel__activator:nth-of-type(5):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(5) {
+  opacity: 1;
+}
+
+.carousel__activator:nth-of-type(6):checked ~ .carousel__track {
+  -webkit-transform: translateX(-500%);
+          transform: translateX(-500%);
+}
+.carousel__activator:nth-of-type(6):checked ~ .carousel__slide:nth-of-type(6) {
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.carousel__activator:nth-of-type(6):checked ~ .carousel__controls:nth-of-type(6) {
+  display: block;
+  opacity: 1;
+}
+.carousel__activator:nth-of-type(6):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(6) {
+  opacity: 1;
+}
+
+.carousel__activator:nth-of-type(7):checked ~ .carousel__track {
+  -webkit-transform: translateX(-600%);
+          transform: translateX(-600%);
+}
+.carousel__activator:nth-of-type(7):checked ~ .carousel__slide:nth-of-type(7) {
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.carousel__activator:nth-of-type(7):checked ~ .carousel__controls:nth-of-type(7) {
+  display: block;
+  opacity: 1;
+}
+.carousel__activator:nth-of-type(7):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(7) {
+  opacity: 1;
+}
+
+.carousel__activator:nth-of-type(8):checked ~ .carousel__track {
+  -webkit-transform: translateX(-700%);
+          transform: translateX(-700%);
+}
+.carousel__activator:nth-of-type(8):checked ~ .carousel__slide:nth-of-type(8) {
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.carousel__activator:nth-of-type(8):checked ~ .carousel__controls:nth-of-type(8) {
+  display: block;
+  opacity: 1;
+}
+.carousel__activator:nth-of-type(8):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(8) {
+  opacity: 1;
+}
+
+.carousel__activator:nth-of-type(9):checked ~ .carousel__track {
+  -webkit-transform: translateX(-800%);
+          transform: translateX(-800%);
+}
+.carousel__activator:nth-of-type(9):checked ~ .carousel__slide:nth-of-type(9) {
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.carousel__activator:nth-of-type(9):checked ~ .carousel__controls:nth-of-type(9) {
+  display: block;
+  opacity: 1;
+}
+.carousel__activator:nth-of-type(9):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(9) {
+  opacity: 1;
+}
+
+.carousel__activator:nth-of-type(10):checked ~ .carousel__track {
+  -webkit-transform: translateX(-900%);
+          transform: translateX(-900%);
+}
+.carousel__activator:nth-of-type(10):checked ~ .carousel__slide:nth-of-type(10) {
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.carousel__activator:nth-of-type(10):checked ~ .carousel__controls:nth-of-type(10) {
+  display: block;
+  opacity: 1;
+}
+.carousel__activator:nth-of-type(10):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(10) {
+  opacity: 1;
+}
+
+.carousel__activator:nth-of-type(11):checked ~ .carousel__track {
+  -webkit-transform: translateX(-1000%);
+          transform: translateX(-1000%);
+}
+.carousel__activator:nth-of-type(11):checked ~ .carousel__slide:nth-of-type(11) {
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.carousel__activator:nth-of-type(11):checked ~ .carousel__controls:nth-of-type(11) {
+  display: block;
+  opacity: 1;
+}
+.carousel__activator:nth-of-type(11):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(11) {
+  opacity: 1;
+}
+
+.carousel__activator:nth-of-type(12):checked ~ .carousel__track {
+  -webkit-transform: translateX(-1100%);
+          transform: translateX(-1100%);
+}
+.carousel__activator:nth-of-type(12):checked ~ .carousel__slide:nth-of-type(12) {
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.carousel__activator:nth-of-type(12):checked ~ .carousel__controls:nth-of-type(12) {
+  display: block;
+  opacity: 1;
+}
+.carousel__activator:nth-of-type(12):checked ~ .carousel__indicators .carousel__indicator:nth-of-type(12) {
+  opacity: 1;
+}
+
+
+.carousel__control {
+  height: 30px;
+  width: 30px;
+  margin-top: -15px;
+  top: 50%;
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  border-width: 5px 5px 0 0;
+  border-style: solid;
+  border-color: #fafafa;
+  opacity: 0.35;
+  opacity: 1;
+  outline: 0;
+  z-index: 3;
+}
+.carousel__control:hover {
+  opacity: 1;
+}
+.carousel__control--backward {
+  left: 20px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+.carousel__control--forward {
+  right: 20px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.carousel__indicators {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+.carousel__indicator {
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  display: inline-block;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0.35;
+  margin: 0 2.5px 0 2.5px;
+}
+.carousel__indicator:hover {
+  opacity: 0.75;
+}
+.carousel__track {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  transition: -webkit-transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
+}
+.carousel__track .carousel__slide {
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.carousel__track .carousel__slide:nth-of-type(1) {
+  -webkit-transform: translateX(000%);
+          transform: translateX(000%);
+}
+
+.carousel__track .carousel__slide:nth-of-type(2) {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.carousel__track .carousel__slide:nth-of-type(3) {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+
+.carousel__track .carousel__slide:nth-of-type(4) {
+  -webkit-transform: translateX(300%);
+          transform: translateX(300%);
+}
+
+.carousel__track .carousel__slide:nth-of-type(5) {
+  -webkit-transform: translateX(400%);
+          transform: translateX(400%);
+}
+
+.carousel__track .carousel__slide:nth-of-type(6) {
+  -webkit-transform: translateX(500%);
+          transform: translateX(500%);
+}
+
+.carousel__track .carousel__slide:nth-of-type(7) {
+  -webkit-transform: translateX(600%);
+          transform: translateX(600%);
+}
+
+.carousel__track .carousel__slide:nth-of-type(8) {
+  -webkit-transform: translateX(700%);
+          transform: translateX(700%);
+}
+
+.carousel__track .carousel__slide:nth-of-type(9) {
+  -webkit-transform: translateX(800%);
+          transform: translateX(800%);
+}
+
+.carousel__track .carousel__slide:nth-of-type(10) {
+  -webkit-transform: translateX(900%);
+          transform: translateX(900%);
+}
+
+.carousel__track .carousel__slide:nth-of-type(11) {
+  -webkit-transform: translateX(1000%);
+          transform: translateX(1000%);
+}
+
+.carousel__track .carousel__slide:nth-of-type(12) {
+  -webkit-transform: translateX(1100%);
+          transform: translateX(1100%);
+}
+
+
+.carousel--scale .carousel__slide {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+.carousel__slide {
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+}
+.carousel__slide .overlay {height: 100%;}
+.carousel--thumb .carousel__indicator {
+  height: 30px;
+  width: 30px;
+}
+.carousel__indicator {
+  background-color: #fafafa;
+}
+
+.carousel__slide:nth-of-type(1),
+.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(1) {
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__slide:nth-of-type(2),
+.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(2) {
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__slide:nth-of-type(3),
+.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(3) {
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__slide:nth-of-type(4),
+.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(4) {
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__slide:nth-of-type(5),
+.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(5) {
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__slide:nth-of-type(6),
+.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(6) {
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__slide:nth-of-type(7),
+.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(7) {
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__slide:nth-of-type(8),
+.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(8) {
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__slide:nth-of-type(9),
+.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(9) {
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__slide:nth-of-type(10),
+.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(10) {
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__slide:nth-of-type(11),
+.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(11) {
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__slide:nth-of-type(12),
+.carousel--thumb .carousel__indicators .carousel__indicator:nth-of-type(12) {
+  background-size: cover;
+  background-position: center;
+}
+
+</style>
+
+<script>
+  function isVisible(el) {
+        while (el) {
+            if (el === document) {
+                return true;
+            }
+
+            var $style = window.getComputedStyle(el, null);
+
+            if (!el) {
+                return false;
+            } else if (!$style) {
+                return false;
+            } else if ($style.display === 'none') {
+                return false;
+            } else if ($style.visibility === 'hidden') {
+                return false;
+            } else if (+$style.opacity === 0) {
+                return false;
+            } else if (($style.display === 'block' || $style.display === 'inline-block') &&
+                $style.height === '0px' && $style.overflow === 'hidden') {
+                return false;
+            } else {
+                return $style.position === 'fixed' || isVisible(el.parentNode);
+            }
+        }
+  }
+  
+  setInterval(function(){
+    var j=0;
+    var elements = document.querySelectorAll('#carousel0 .carousel__control--forward');
+    for(i=(elements.length - 1);i>-1;i--) {
+      if(isVisible(elements[i])) j=i;
+    }
+    elements[j].click();
+  },5000);
+  
+</script>
+
+<p>On May 14, 2024, the time had come again: The 2nd Sovereign Cloud Stack Summit took place at Villa Elisabeth in Berlin. The landmarked and spacious building and the adjacent beautiful park provided the perfect backdrop for this important event for us. As soon as we entered the venue, it was clear that this was going to be a special day.</p>
+
+<h2 id="a-varied-and-top-class-program">A varied and top-class program</h2>
+
+<p>With at least 200 visitors, our summit was very well attended. It was fascinating to see how many people were interested in the latest developments in the Sovereign Cloud Stack and used our get-together to exchange ideas intensively and enthusiastically.</p>
+
+<p>The <a href="https://scs.community/de/summit2024/">program</a> itself was super diverse and varied. Numerous top-class presentations and exciting speakers ensured a day full of informative and inspiring moments. It was impressive to see how much interest and goodwill there was from all sides - a clear sign that the Sovereign Cloud Stack is hitting the nerve of the times.</p>
+
+<p>If you weren’t able to be there or simply want to remind yourself of some of the content,
+we have made sure that you can find the videos of the presentations and also the presentation slides on the <a href="https://scs.community/de/summit2024/">conference page</a> and also soon on <a href="https://www.youtube.com/@sovereigncloudstack">Youtube</a>.</p>
+
+<p>The catering was also great: delicious food and attentive staff, who always endeavored to provide us with the best possible service, rounded off the experience. This also contributed significantly to the positive atmosphere of the event.</p>
+
+<h2 id="diversity-and-networking-at-a-high-level">Diversity and networking at a high level</h2>
+
+<p>It was particularly pleasing to meet so many different discussion partners from a wide range of sectors. The support for the Sovereign Cloud Stack was therefore evident on many levels:</p>
+
+<ul>
+  <li><strong>Political support</strong>: A clear commitment to the importance and future viability of the project.</li>
+  <li><strong>Cloud providers</strong>: Some are already using the reference implementation of the Sovereign Cloud Stack, others adapted the standards.</li>
+  <li><strong>Companies</strong>: SCS as a sustainable, sovereign and future-proof basis for private clouds.</li>
+  <li>Government bodies and administrative organizations**: SCS as a decisive foundation for the much-needed digitization of the public sector</li>
+</ul>
+
+<p>This broad backing clearly shows that the Sovereign Cloud Stack has arrived in the cloud community and enjoys trust at many levels.</p>
+
+<h2 id="a-look-into-the-future">A look into the future</h2>
+
+<p>During the summit, the importance and future of the Sovereign Cloud Stack after the funding period was also presented(<a href="slides/22_ganten_Zukunft-SCS-20240514.pdf">Slides</a> and <a href="TODO">Video</a>) and discussed. The high level of trust that the project has already earned was clearly noticeable. It was fantastic to meet so many familiar faces from the Sovereign Cloud Stack ecosystem and share progress.</p>
+
+<p>We are already looking forward to the next Summit, which is expected to take place on Thursday, May 8, 2025. We are working intensively on our own observations and the positive feedback we have received. Our aim is to put on an even better and more interesting event next year.</p>
+
+<h2 id="your-feedback-is-needed">Your feedback is needed!</h2>
+
+<p>We are very interested in your opinion, ideas for improvement and, of course, constructive criticism. Please send your feedback by email to <a href="mailto:scs@osb-alliance.com">scs@osb-alliance.com</a>. This will enable us to further develop the Sovereign Cloud Stack Summit and continue to establish the event as an outstanding event in the cloud community in the future.</p>
+
+<p>Thanks to everyone who made this day so special, first and foremost Regina, Alex, Friederike, Bianca and Miriam and Marius.</p>
+
+<p>We would also like to thank you for your interest and participation: Thank you for being there! See you next year!</p>
+
+<p><strong>Your Sovereign Cloud Stack Team</strong></p>]]></content><author><name>[&quot;Marc Schöchlin&quot;]</name></author><summary type="html"><![CDATA[]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Costs of making an OpenStack cluster SCS-compliant</title><link href="https://sovereigncloudstack.github.io/website/2024/05/13/cost-of-making-an-openstack-cluster-scs-compliant/" rel="alternate" type="text/html" title="Costs of making an OpenStack cluster SCS-compliant" /><published>2024-05-13T00:00:00+00:00</published><updated>2024-07-11T09:47:18+00:00</updated><id>https://sovereigncloudstack.github.io/website/2024/05/13/cost-of-making-an-openstack-cluster-scs-compliant</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/2024/05/13/cost-of-making-an-openstack-cluster-scs-compliant/"><![CDATA[<p>Have you ever wondered how much effort it would take to adopt SCS standards in your OpenStack cloud?
+We wanted to know this too, and as part of our work in the SCS standards team, we evaluated
+the process of making a vanilla OpenStack cluster SCS-compliant.
+In this blog post, we want to share the results of our findings and the process we went through.
+Rest assured – it is actually quite easy to adopt SCS standards!</p>
+
+<h2 id="where-we-started-from">Where we started from</h2>
+
+<p>Our focus in this evaluation was on OpenStack clusters and therefore the IaaS standards, because for the IaaS layer we already
+had a reference <em>SCS Compatible IaaS</em> scope at the time we started (in the future, a similar evaluation and blog post for the KaaS layer
+is planned).</p>
+
+<p>For the purpose of our evaluation, we set up two OpenStack clusters with <a href="https://docs.yaook.cloud/concepts/overview.html">Yaook</a>
+(“Yet Another OpenStack On Kubernetes”): a virtualized test setup in our OpenStack cloud – i.e., OpenStack in OpenStack – and a
+bare-metal production setup.</p>
+
+<p>Yaook is a lifecycle management tool for OpenStack which leverages a Kubernetes cluster (provided by
+<a href="https://yaook.gitlab.io/k8s/">Yaook K8s</a>) to deploy and manage OpenStack components by means of the
+<a href="https://docs.yaook.cloud/handbook/user-guide.html#introduction-to-yaook-operator">Yaook Operator</a>.
+For the bare-metal production deployment we additionally used <a href="https://gitlab.com/yaook/metal-controller">Yaook Bare Metal</a> to deploy
+and manage server hardware, including rollout and configuration of operating systems, networks and disks.</p>
+
+<p>This test setup is represented in the following visualization provided in the Yaook documentation:</p>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/yaook_architecture_overview-7963a774d72e1bdfa90c587e964f2bd18ec27bae430dd932dd62c6713274fa565cedd3a1cc527707cf165a6ef5f3f256d6fca08948c245710d95adcdd1ecadb9.svg">
+    <img class="figure-img w-100" src="/website/assets/images/blog/yaook_architecture_overview-7963a774d72e1bdfa90c587e964f2bd18ec27bae430dd932dd62c6713274fa565cedd3a1cc527707cf165a6ef5f3f256d6fca08948c245710d95adcdd1ecadb9.svg" />
+  </a>
+</figure>
+
+<p>At the time of writing, a vanilla Yaook deployment is not SCS-compliant and, as such, it is the ideal playground for our evaluation.
+Even better: the lessons we learned while adopting IaaS standards in these deployments can be easily transferred to other OpenStack
+deployments which do not use Yaook.</p>
+
+<h2 id="required-standards">Required standards</h2>
+
+<p>As it was already explained above, the main effort leading to this post was focused on the IaaS standards, mainly because
+it was clearer which standards needed to be fulfilled for <em>SCS Compatible IaaS</em> scope.
+In the SCS standardization framework, a <em>scope</em> groups multiple SCS standards for a certain layer (e.g., IaaS) to provide
+a common ground for certification of a cloud service provider (CSP).
+These scopes can have multiple versions, which move forward with updated and/or new standards. Older scopes deprecate
+after some time, which gives CSPs time to update, but also keep the technology moving forward.
+While it is true that all <em>stable</em> standards theoretically need to be complied to, some of them don’t have tests
+yet and/or are not featured in a scope, and are therefore not checked by most CSPs yet.</p>
+
+<p>In particular, we focused on <em>SCS Compatible IaaS v4</em>, which is the effective scope at the time of writing.
+The <a href="https://docs.scs.community/">SCS documentation website</a> lists the <a href="https://docs.scs.community/standards/scs-compatible-iaas">currently effective standards for this
+scope</a> which are relevant for our OpenStack deployment:</p>
+
+<ul>
+  <li><a href="https://docs.scs.community/standards/scs-0100-v3-flavor-naming">SCS-0100-v3</a> <em>Flavor Naming</em> Standard</li>
+  <li><a href="https://docs.scs.community/standards/scs-0101-v1-entropy">SCS-0101-v1</a> <em>Entropy</em> Standard</li>
+  <li><a href="https://docs.scs.community/standards/scs-0102-v1-image-metadata">SCS-0102-v1</a> <em>Image Metadata</em> Standard</li>
+  <li><a href="https://docs.scs.community/standards/scs-0103-v1-standard-flavors">SCS-0103-v1</a> <em>Standard Flavors and Properties</em> Standard</li>
+  <li><a href="https://docs.scs.community/standards/scs-0104-v1-standard-images">SCS-0104-v1</a> <em>Standard Images</em> Standard</li>
+  <li><a href="https://docs.scs.community/standards/scs-0110-v1-ssd-flavors">SCS-0110-v1</a> <em>SSD Flavors</em> Decision Record (enhances SCS-100-v3)</li>
+</ul>
+
+<h2 id="achieving-compliance">Achieving compliance</h2>
+
+<h3 id="in-theory">In theory</h3>
+
+<p>After figuring out the relevant standard documents, the information required to achieve compliance needed to be extracted.
+The focus here was on analyzing the document for the keywords mentioned in <a href="https://docs.scs.community/standards/scs-0001-v1-sovereign-cloud-standards">SCS-0001-v1 Sovereign Cloud Standards</a>.
+This provided all expected values, configurations and pre-configurable setups relevant for the OpenStack cluster.</p>
+
+<p>Another source besides the standard documents were the tests provided for them. For example, <em>SCS-0104-v1 Standard Images</em>
+doesn’t provide a set of standard images, since they could change over time due to new requirements and the SCS didn’t
+want to change their standard document every time. Instead, the test provides a <a href="https://github.com/SovereignCloudStack/standards/blob/main/Tests/iaas/scs-0104-v1-images.yaml">YAML file with the required
+images</a> as well
+as additional meta information; the exact schema of this file is defined in the standard.</p>
+
+<p>Without going too much in-depth (since most of this can be found in the standards themselves), the following points need
+to be achieved in order to provide an SCS-compliant OpenStack cluster:</p>
+
+<ul>
+  <li>Flavors must follow a naming schema defined by <em>SCS-0100-v3 Flavor Naming</em> if they start with <code class="language-plaintext highlighter-rouge">SCS-</code>. This naming schema
+also requires the underlying assignments (like core count, RAM, etc.) to be aligned with it.</li>
+  <li>To fulfill <em>SCS-0101-v1</em>, VMs must provide enough entropy for cryptographic operations.</li>
+  <li>Images should be labeled with plain <code class="language-plaintext highlighter-rouge">Distribution Version</code> names and provide relevant metadata, so called <em>properties</em>.
+These <em>properties</em> are defined by <em>SCS-0102-v1 Image metadata</em>, some of which are also mandatory.</li>
+  <li><em>SCS-0103-v1</em> defines a list of mandatory and recommended flavors, which also follow the flavor naming scheme.
+It requires additional properties, so-called <em>extra specs</em> to be defined in order to indicate an SCS flavor.
+<em>SCS-0110-v1</em> adds to this, since it requires two additional flavors with local SSDs or NVMEs as mandatory flavors.</li>
+  <li><em>SCS-0104-v1</em> defines a YAML file containing a list of mandatory and recommended images as well as metadata like their sources.</li>
+</ul>
+
+<h3 id="in-practice">In practice</h3>
+
+<p>Luckily, most of these standards can be easily adopted with the help of the OSISM tools <a href="https://github.com/osism/openstack-flavor-manager">openstack-flavor-manager</a> and
+<a href="https://github.com/osism/openstack-image-manager">openstack-image-manager</a>, which both offer options to create SCS-compliant flavors and images with the correct names
+and relevant meta information. <em>openstack-flavor-manager</em> can do this fully automatic, whereas the <em>openstack-image-manager</em> requires
+a file containing the necessary information; this is nonetheless easier than doing this work manually, since only one
+file needs to be maintained and up-to-date with the standards.</p>
+
+<p>First of all, install the tools:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>openstack-image-manager openstack-flavor-manager
+</code></pre></div></div>
+
+<p>Assuming that you have admin credentials for your OpenStack cloud (e.g., via <code class="language-plaintext highlighter-rouge">~/.config/openstack/clouds.yaml</code>),
+installing all necessary images and flavors requires only a few commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openstack-image-manager <span class="nt">--cloud</span> <span class="nv">$CLOUD_NAME</span> <span class="nt">--images</span> images.yaml
+openstack-flavor-manager <span class="nt">--cloud</span> <span class="nv">$CLOUD_NAME</span> <span class="nt">--recommended</span>
+</code></pre></div></div>
+
+<p>Of course, you’ll need to replace <code class="language-plaintext highlighter-rouge">$CLOUD_NAME</code> with your actual cloud name from your <code class="language-plaintext highlighter-rouge">clouds.yaml</code>.
+The <code class="language-plaintext highlighter-rouge">images.yaml</code> contains all images with their metadata, sources and properties to be installed by <em>openstack-image-manager</em>.
+We provide an <a href="https://github.com/SovereignCloudStack/standards/blob/do-not-merge/scs-compliant-yaook/Informational/images.yaml">example <code class="language-plaintext highlighter-rouge">images.yaml</code></a> that you can use.</p>
+
+<p>Making all flavors compliant requires a bit more work if only a subset of your compute hosts have local SSD storage.
+Local SSD storage is required by the two mandatory flavors <code class="language-plaintext highlighter-rouge">SCS-4V-16-100s</code> and <code class="language-plaintext highlighter-rouge">SCS-2V-4-20s</code>.
+If this is the case, one needs to configure the nova scheduler to support host aggregates and <a href="https://docs.openstack.org/nova/latest/admin/aggregates.html#example-specify-compute-hosts-with-ssds">group the compute hosts
+with SSDs into an aggregate as described in the OpenStack docs</a>.</p>
+
+<p>Assuming that you have created such an aggregate with the property <code class="language-plaintext highlighter-rouge">ssd=true</code>, you can bind the two SSD flavors 
+to it as follows:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openstack flavor <span class="nb">set</span> <span class="nt">--property</span> aggregate_instance_extra_specs:ssd<span class="o">=</span><span class="nb">true </span>SCS-2V-4-20s
+openstack flavor <span class="nb">set</span> <span class="nt">--property</span> aggregate_instance_extra_specs:ssd<span class="o">=</span><span class="nb">true </span>SCS-4V-16-100s
+</code></pre></div></div>
+
+<p>Without this additional configuration, workload might be scheduled to non-SSD-capable hosts.</p>
+
+<p>Lastly, the entropy standard doesn’t require any work as long as you only provide VM images with Linux kernels version 5.18 and newer.
+This is the case for all the standard images mentioned in <em>SCS-0104-v1</em> (which we have already configured above), and as such,
+VMs spawned from them will have enough entropy.
+Otherwise, you’ll need to ensure sufficient entropy is available by some other means, e.g., with special CPU instructions such as
+<code class="language-plaintext highlighter-rouge">RDSEED</code>/<code class="language-plaintext highlighter-rouge">RDRAND</code>.
+The details are out of scope for this blog post, but the <a href="https://docs.scs.community/standards/scs-0101-v1-entropy/"><em>SCS-0101-v1</em> standard</a>
+lists some possible implementation approaches as a starting point.</p>
+
+<h2 id="but-at-what-cost">But at what cost?</h2>
+
+<p>A relevant question we had with this was the cost of adopting all these standards for an OpenStack cluster.
+Based on the work time after the cluster setup and without debugging, since this part would be minimized on a second
+or third attempt at this, we estimated around 4-6 person-hours for a minimal, freshly installed cluster. Doing this multiple
+times could reduce this time even further so something like 1-3 person-hours.</p>
+
+<p>Now it is important to mention, that we had nearly ideal circumstances, since there was neither hardware missing nor
+the additional costs associated with adopting an older cluster which already contained data.
+If an older cluster needs to be adopted to the standards, it would be necessary to add metadata to existing images, possibly
+change their names and (if desired) change flavor names to the SCS naming schema or better add the <code class="language-plaintext highlighter-rouge">SCS-</code> flavors as additional flavors to avoid breaking users of the previously existing flavors. This would require significantly more time
+to do; we estimate this with around 0.2-1 person-hours per image or flavor. If this needed to be done more often or multiple
+times, some form of automation would be recommended, but this would also incur some upfront person-hour cost.
+Additional costs could come up if no SSDs were provided for the cluster. This would require a hardware upgrade, incurring
+cost for hardware (120-200€ per Terabyte at the time of writing this blog post), server downtime as well as person-hours. The actual costs here are hard to estimate
+and would probably change from case to case.</p>
+
+<p>Nonetheless, it is worth to mention that in most cases, SCS compliance should be easily achievable for most OpenStack clusters
+without having too much overhead in adoption costs. This could obviously change in the future with the arrival of
+additional standards. Also, OpenStack setups that diverge from the vanilla upstream configurations significantly may cause additional effort to get into compliance.</p>
+
+<h2 id="conclusion-and-outlook">Conclusion and outlook</h2>
+
+<p>In summary, it was pretty straightforward to adopt the current SCS standards of the IaaS layer and now we have a prime
+example that you can achieve this even if you do not use the SCS reference implementation.</p>
+
+<p>Overall, using Yaook for our evaluation allowed us to quickly set up an OpenStack cluster and focus on the adoption of
+SCS standards in this cluster, albeit the nested virtualized test setup was a bit tricky to handle.
+As a result of our efforts, we were able to collect valuable feedback which we used to improve general configuration,
+our conformance test scripts and some of the involved tooling.
+In the end, this setup was moved to another physical location and will provide the first SCS-compliant cluster of
+Cloud&amp;Heat Technologies GmbH built with Yaook.</p>
+
+<p>Of course, work doesn’t end here: in the future, we will need to keep up with the evolving standards.
+And of course, we won’t stop at the IaaS layer: stay tuned for another blog post for the KaaS layer!</p>]]></content><author><name>[&quot;Hannes Baum&quot;, &quot;Martin Morgenstern&quot;]</name></author><summary type="html"><![CDATA[Have you ever wondered how much effort it would take to adopt SCS standards in your OpenStack cloud? We wanted to know this too, and as part of our work in the SCS standards team, we evaluated the process of making a vanilla OpenStack cluster SCS-compliant. In this blog post, we want to share the results of our findings and the process we went through. Rest assured – it is actually quite easy to adopt SCS standards!]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Incremental efforts - OSISM 7.0.3 released</title><link href="https://sovereigncloudstack.github.io/website/tech/2024/05/03/incremental-efforts-osism-703/" rel="alternate" type="text/html" title="Incremental efforts - OSISM 7.0.3 released" /><published>2024-05-03T00:00:00+00:00</published><updated>2024-07-11T09:47:18+00:00</updated><id>https://sovereigncloudstack.github.io/website/tech/2024/05/03/incremental-efforts-osism-703</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/tech/2024/05/03/incremental-efforts-osism-703/"><![CDATA[<h2 id="incremental-efforts">Incremental efforts</h2>
+
+<p>One of the goals of the SCS project is enabling quick minor releases so that improvements
+and benefits reach the operators as well as their customers faster.</p>
+
+<p>With the <a href="https://scs.community/release/2024/03/20/release6/">Release 6</a> earlier this year we did
+note a <a href="https://github.com/SovereignCloudStack/release-notes/blob/main/Release6.md#list-of-known-issues--restrictions-in-r6">few known issues</a>
+that the release contains. On the <a href="https://github.com/SovereignCloudStack/release-notes/blob/main/Release6.md#iaas-1">Infrastructure-as-a-Service</a>
+layer this were:</p>
+
+<ul>
+  <li>Creating loadbalancers in Cloud-in-a-Box installations fails with the
+error message that the VIP subnet does not exist. <a href="https://github.com/osism/issues/issues/890">OSISM #890</a></li>
+  <li>When using <code class="language-plaintext highlighter-rouge">--provider ovn</code> with a loadbalancer health-monitor, we leak ports <code class="language-plaintext highlighter-rouge">ovn-lb-hm-$SUBNETID</code> in all
+but the VIP subnet, if we clean up the LB members before the health-monitor. This is tracked as
+<a href="https://github.com/osism/issues/issues/921">OSISM issue #921</a>. Deleting the health-monitor before the
+members or using <code class="language-plaintext highlighter-rouge">openstack loadbalancer delete --cascade</code> avoids this issue.</li>
+  <li>With amphora loadbalancers, we can end up in situations that LB deletion does no longer work due to
+a failover or a failed creation of the vrrp port. This is tracked in
+<a href="https://github.com/osism/issues/issues/925">OSISM issue #925</a>. An upstream fix exists and a backport
+is already underway.</li>
+</ul>
+
+<p>Quickly after the initial release OSISM released <a href="https://osism.tech/docs/release-notes/osism-7#701-20240327">7.0.1</a> that
+contained a bugfixes for two of these issues:</p>
+
+<ul>
+  <li>
+    <p>Backport of <a href="https://review.opendev.org/c/openstack/octavia/+/896995">https://review.opendev.org/c/openstack/octavia/+/896995</a> to fix errors when deleting LB with broken amphorae.</p>
+  </li>
+  <li>
+    <p>Bugfix for <a href="https://github.com/osism/issues/issues/890">OSISM#890</a> (octavia (ovn) does not find existing subnet) by enabling the use of the custom CA for octavia user session queries with the following PR: https://github.com/osism/container-images-kolla/pull/412</p>
+  </li>
+</ul>
+
+<p>A plethora of fixes and additions were done since the 7.0.2 release a few weeks ago - as such today 7.0.3 was released by the OSISM team.</p>
+
+<h2 id="osism-703">OSISM 7.0.3</h2>
+
+<p>While OSISM 7.0.3 does not yet bring a fix for the leaking of octavia ports that was reported in <a href="https://github.com/osism/issues/issues/921">OSISM#921</a> since this is pending some upstream work, it does bring a fix for a <a href="https://bugs.launchpad.net/octavia/+bug/2057751">bug when creating a fully-populated LB with allowed_cidr</a>.</p>
+
+<p>Alongside this bugfix the next minor release of OSISM brings the following noteworthy items to the table:</p>
+
+<ul>
+  <li>During the preparation of the upgrades of the regions of the PCO a bug (<a href="https://github.com/osism/issues/issues/973">osism/issues#937</a>) has been noticed which leads to a delay of up to 2 minutes between the necessary container stops and starts. This is due to a bug in the service units of all Kolla services. The bug is fixed in the current release. To avoid the delay during an upgrade, a fix must be applied in advance for all srvice units from Kolla: <code class="language-plaintext highlighter-rouge">$ osism apply fix-gh937</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">ceph_cluster_fsid</code> parameter is now generated automatically. It can be removed from <code class="language-plaintext highlighter-rouge">environments/configuration.yml</code>. The automatically generated <code class="language-plaintext highlighter-rouge">ceph_clusterfs_fsid</code> parameter is set to the value of the <code class="language-plaintext highlighter-rouge">fsid</code> parameter from <code class="language-plaintext highlighter-rouge">environments/ceph/configuration.yml</code>.</li>
+  <li>Versions not yet pinned in the manager environment of the configuration repository (Ansible collections, <code class="language-plaintext highlighter-rouge">osism/cfg-generics</code>, ..) are now automatically pinned during synchronisation with gilt overlay. This also applies to the osism update manager script.</li>
+  <li>The Docker version and the Docker CLI version can now also be managed via <code class="language-plaintext highlighter-rouge">osism/cfg-generics</code>. It is recommended to pin the Docker version in <code class="language-plaintext highlighter-rouge">environments/configuration.yml</code>.</li>
+  <li>Monitoring services are now activated by default for the internal Kubernetes cluster.</li>
+  <li>Kubernetes Cluster API for the 1.30 series is available. They are now provided directly with <code class="language-plaintext highlighter-rouge">osism manage image clusterapi</code>. This means that Kubernetes Cluster API images are now available for series 1.27, 1.28, 1.29 and 1.30.</li>
+  <li>All Ansible collections have been prepared for use with Ubuntu 24.04. It is currently not recommended to upgrade existing clusters to Ubuntu 24.04 or to install new clusters with Ubuntu 24.04. There will be a note in the release notes from which Ubuntu 24.04 can be used.</li>
+</ul>
+
+<p>This list is by far not complete, a complete list is part of the release notes are available <a href="https://osism.tech/docs/release-notes/osism-7">here</a>.</p>
+
+<p>Important note: The OpenStack service images for Octavia and Nova have been rebuilt. Upgrades of the Octavia and Nova services are recommended. No upgrades of other OpenStack and associated infrastructure services such as MariaDB or RabbitMQ are required.</p>]]></content><author><name>[&quot;Felix Kronlage-Dammers&quot;]</name></author><category term="tech" /><summary type="html"><![CDATA[Incremental efforts]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS Status Page - Technical Preview Released</title><link href="https://sovereigncloudstack.github.io/website/tech/2024/04/30/status-page-tech-preview-release/" rel="alternate" type="text/html" title="SCS Status Page - Technical Preview Released" /><published>2024-04-30T00:00:00+00:00</published><updated>2024-07-11T09:47:18+00:00</updated><id>https://sovereigncloudstack.github.io/website/tech/2024/04/30/status-page-tech-preview-release</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/tech/2024/04/30/status-page-tech-preview-release/"><![CDATA[<p>No matter how thorough your preparation and processes, services experiencing limited capabilities and straight-out outages <em>will</em> be part your business of being a cloud provider.</p>
+
+<p>To define and manage these incidents, the SCS project so far provided an <a href="https://github.com/SovereignCloudStack/status-page-openapi">OpenAPI definition</a> as well as an <a href="https://github.com/SovereignCloudStack/status-page-api">implementation</a> for a status API server, acting as a repository to collect any incidents that impact the components of your SCS setup. And while its REST interface is certainly comprehensive, fiddling around with HTTP calls and JSON results is not exactly a process one can consider <em>“customer-friendly”</em>.</p>
+
+<h2 id="the-scs-status-page-is-available-as-a-technical-preview-now">The SCS Status Page is available as a Technical Preview now</h2>
+
+<p>For the last few months, we’ve therefore been working on our first release of our Status Page, the web frontend to our status API server. The status page takes the API server’s REST interface and provides a web view that your customers and employees can just look at in their browser—no curl calls or similar necessary.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100" alt="an image of the status page in the default view, where a bar graph of colored boxes represents the overall state of a component on the associated day" src="/website/assets/images/blog/status-page-tech-preview-release/default-view-c5f9804021efa17b69a2a80735719a6459c0a28d387180b6ab79d71e0a5dcbf02133b9cc62b228d8301cc556f1dbfec54d1c8cf6a83aaed3937d33777db4c356.png" />
+    <figcaption>SCS Status Page default view</figcaption>
+</figure>
+
+<p>If you’ve ever seen a status page before, the page design will surely be familiar to you immediately. However for our technical preview we’ve implemented a few things not commonly seen in the status pages we’ve encountered in our research.</p>
+
+<p>The first is dedicated support for a colorblind mode. Up to roughly 9% of all humans have some form of color blindness and we wanted to make sure that our status page is properly visible to everyone with sufficient sight. Our implementation therefore ships with a default set of colors optimized to be seen by people with range of color vision deficiencies. These colors are, of course, customizable by your organization (and might by customizable by the user in some future release, but that is of yet uncertain), but should provide a decent experience to everyone.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100" alt="an image of the status page using the color set for colorblind people" src="/website/assets/images/blog/status-page-tech-preview-release/default-view-cb-31d376d72834988bffa7e5575ccb2ce8d158cf3ed27594b4524271a7fe30cf7272a0a10694921eb30e2f1316610609803ea61251e611a4ab66b78b6372bf3830.png" />
+    <figcaption>SCS Status Page default view with colors optimized for the color blind</figcaption>
+</figure>
+
+<p>The second feature is a different view mode. While the default bar view is fine for most people (and familiar to anyone who’s ever had to deal with one of the many other status pages), there are people for whom the fine motor control to click on one of the little boxes representing a day in the bar view is simply not achievable. For these people (and everyone who simply likes tables), we have added a table view, listing the status and active incidents for every single day in one simple table per component.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100" alt="an image of the status page with incidents per day listed in a table" src="/website/assets/images/blog/status-page-tech-preview-release/table-view-bed7a7b7a6a2020dd49af154810b8f8a133af75177c01e9a31fcb133344a9a6716d95e6b4767c1b115416b8ca1608a52f859ba2cf450217dab4a618c373b4d08.png" />
+    <figcaption>SCS Status Page table view with non-incident days filtered out</figcaption>
+</figure>
+
+<p>And because the tables for your SCS system would hopefully mostly feature days without ongoing incidents, making your tables long and boring, we’ve added an option to remove all such days, giving you a much shorter, easily digestable table view of how your SCS environment has been doing.</p>
+
+<p>Now, this is a <em>technical preview</em>, so not all work we want to be included in our first full release is currently done. Theming is currently somewhat limited, the About text and imprint can only be changed directly in the sources and the implementation in the background has one or two slightly wonky spots. However, we think our implementation is far along enough to be handed over to you, to experiment with it and hopefully provide us with some feedback on how we are doing. Check <a href="#get-involved">further down below</a> to see how to get involved!</p>
+
+<h2 id="the-future-of-the-status-page">The Future of the Status Page</h2>
+
+<p>For the moment, and the scope of the first complete release, the status page frontend displays the incident data present in your status API server. We have a whole mountain of plans and ideas to implement in the future, chief amongst them the ability to create and update incidents and impacts for authenticated users, turning the status page into <em>the</em> tool to interact with the status API server. Additionally, we plan to extend the API specification, API server and frontend to schedule and display pre-planned maintenance sessions, allowing you to inform your users of expected outages well beforehand.</p>
+
+<p>Alongside actual incident management, we want to add a notification service to server and frontend, allowing you to subscribe to push messages or e-mail notifications; or consume any updates to your SCS status at your own pace using RSS.</p>
+
+<p>And many, many ideas more, such as additional facilities for disabled users (e. g. a high-contrast mode or colorblind modes specific to different types of color blindness), user-specified time ranges, customizable filter options or additional REST API endpoints. If incident management is part of your duties, make sure to have an eye on further announcements and developments on our status API and page.</p>
+
+<h2 id="get-involved">Get Involved!</h2>
+
+<p>You can find the Git repository of the status page <a href="https://github.com/SovereignCloudStack/status-page-web">on GitHub</a>. The <a href="https://github.com/SovereignCloudStack/status-page-web/blob/main/README.md">README</a> file includes instructions on how to construct a container image from the sources and how to configure the status page according to your needs/status API server setup. You have no status API server yet? Not a problem—the status page repo comes with some example data included and you can set a flag to make the status page use that, allowing you to try out the page on its own.</p>
+
+<p>We’d love it if you had a look and informed us of any issues you encountered with the page! Whether these are with the setup, the page itself or any requirements you have that you do not see fulfilled either right now or within the scope of our planned future enhancements—tell us about it by <a href="https://github.com/SovereignCloudStack/status-page-web/issues/new">opening an issue on our repository</a>. And there is also a <a href="https://matrix.to/#/#scs-status-page-app:matrix.org">Matrix room</a> for the status page project.</p>
+
+<p>And if it would please you, you can of course get involved yourself! The status page is build using Angular 2 and TypeScript and comes with a Devcontainer setup for Visual Studio Code included, which should give you everything needed for a quick and easy setup of your development environment.</p>]]></content><author><name>[&quot;Sebastian Kaupe&quot;]</name></author><category term="tech" /><summary type="html"><![CDATA[No matter how thorough your preparation and processes, services experiencing limited capabilities and straight-out outages will be part your business of being a cloud provider.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS Release 6 published</title><link href="https://sovereigncloudstack.github.io/website/release/2024/03/20/release6/" rel="alternate" type="text/html" title="SCS Release 6 published" /><published>2024-03-20T00:00:00+00:00</published><updated>2024-07-11T09:47:18+00:00</updated><id>https://sovereigncloudstack.github.io/website/release/2024/03/20/release6</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/release/2024/03/20/release6/"><![CDATA[<h1 id="sovereign-full-stack-cloud-solution">Sovereign full-stack cloud solution</h1>
+<h2 id="sovereign-cloud-stack-publishes-release-6">Sovereign Cloud Stack publishes Release 6</h2>
+
+<p><strong>Berlin, 20.03.2024</strong>: The Sovereign Cloud Stack project publishes its sixth release.</p>
+
+<p>Release 6 focuses on the SCS Kubernetes Distribution Cluster Stacks, which can
+be rolled out directly on the IaaS reference implementation via the Cluster
+Stack Operator. The reference implementation now also includes the
+Observability Platform and enhanced Identity and Access Management. The
+collaboration with ALASCA e.V. has resulted in enhanced speed and scope in the
+development of comprehensive open standards, in line with the requirements of
+the German Administrative Cloud Strategy. Overall, SCS Release 6 offers an
+easy-to-operate, sovereign full-stack cloud solution.</p>
+
+<p>SCS provides all the cloud technology foundations for realizing digital
+sovereignty and implementing open source strategies. Many users of cloud
+services from the public sector, but also from the private sector and science,
+expect “cloud” to be container-based technology that can ideally be hosted and
+operated in a digitally sovereign manner. This is now even easier to achieve:
+SCS offers a digitally sovereign, secure, complete, standardized open source
+container layer as the basis for all containerized applications.</p>
+
+<h3 id="scs-full-stack-unification-of-iaas-and-kaas-reference-implementation-completed">SCS Full Stack: Unification of IaaS and KaaS reference implementation completed</h3>
+
+<p>Release 6 introduces the Cluster Stacks, the second version of the Kubernetes
+as a Service reference implementation from SCS, which can now be seamlessly
+rolled out on the Infrastructure as a Service layer from SCS thanks to the
+implementation of the Cluster Stack Operator. The cluster stacks are fully
+implemented with Kubernetes on-board tools such as operators and thus replace
+the old implementation, which still integrated and automated the cluster API
+with the help of scripts. The cluster stacks are complemented with identity and
+access management and an observability platform which ensure that the stack is
+more secure and easier to operate.</p>
+
+<p>SCS thus offers an integrated full-stack cloud solution that combines a
+scalable, secure cloud infrastructure and a container platform that can be
+developed and tested according to the latest requirements. SCS continues to
+offer a fully open standards-based software solution developed openly by many
+contributors, which can be influenced and shaped by operators and users and
+offers a high degree of transparency - the perfect basis for driving digitally
+sovereign innovation at all levels in Germany and Europe.</p>
+
+<h3 id="cooperation-on-standardization">Cooperation on standardization</h3>
+
+<p>In the fall of last year, the cooperation between the SCS project and ALASCA
+e.V. was intensified once again. The further development of open standards, as
+called for in the German Administrative Cloud Strategy, for example, is at the
+forefront of this cooperation. Release 6 shows how fruitful this cooperation
+already is, with examples of SCS standards including</p>
+
+<ul>
+  <li>New stable version 4 for the SCS-compatible IaaS certification.</li>
+  <li>New draft version 1 for the new SCS-compatible KaaS certification.</li>
+</ul>
+
+<p>For the operators of SCS cloud environments, it is an advantage that the
+implementation of the standards and the resulting certification provides them
+with a simple quality criterion (in the best sense of the word) that relates
+not only to interoperability and openness, but also to robustness, security and
+up-to-dateness. In this way, they not only assure their customers of the
+quality of their offering, but also themselves. Of course, interoperability is
+of particular interest to users: they can roll out their workloads on the
+clouds of multiple operators without any major surprises, which gives them a
+high degree of flexibility and in some cases may be a prerequisite to open up
+an alternative to the large hyperscalers (AWS, Google, Azure).</p>
+
+<h3 id="simple-operation-of-cloud-environments">Simple operation of cloud environments</h3>
+
+<p>Overall, Release 6 makes it clear that SCS cloud infrastructure can be operated
+efficiently: this was and is one of the central value propositions of the SCS
+project, alongside control and simple provisioning for end users. The operating
+tools have been consistently expanded to simplify everyday work steps for the
+operating staff. The continuous standardization of further aspects and
+especially the implementation of the standards by providers who do not use the
+IaaS reference implementation underline the relevance of the standardization
+work. With the latest developments and the release of Cluster Stacks for
+OpenStack, deployment environments for Kubernetes clusters are easier and more
+efficient to manage.</p>
+
+<p>In the reference environment, a standardized Kubernetes environment is now also
+available at the infrastructure level, into which operators can integrate their
+own tools (e.g. for billing or capacity management); with the Identity and
+Access Management (IAM) from the SCS reference implementation, a supplied
+service also makes use of this integration option. The expansion of the SCS
+documentation also contributes directly to the efficient operation of SCS cloud
+environments; examples, instructions and links to the repositories make the
+structure of SCS clear, comprehensible and efficient.</p>
+
+<h3 id="about-the-sovereign-cloud-stack-project">About the Sovereign Cloud Stack Project</h3>
+
+<p>SCS has been funded by the German Federal Ministry of Economics and Climate
+Protection (BMWK) since July 2021 and is run by the Open Source Business
+Alliance - Bundesverband für digitale Souveränität e.V.. A growing,
+international ecosystem of now over 25 companies contributes to the success of
+the Sovereign Cloud Stack with over 50 software developers. Together, open
+standards for a modern, federatable open source cloud and container platform
+are defined and implemented in an open development process using proven open
+source components. At the same time, operational knowledge and practice is
+being made transparently available to minimize the difficulty of delivering
+high-quality and secure cloud services. Already six providers are using SCS
+technology productively to operate truly sovereign and GDPR-compliant public
+cloud offerings. Additional SCS-based cloud infrastructure (public and private
+clouds) is under construction. SCS also contributes to Gaia-X and provides the
+development platform for the Gaia-X Federation Services / Cross-Federation
+Service Components (GXFS/XFSC).</p>
+
+<h3 id="about-the-open-source-business-alliance-osb-alliance-ev">About the Open Source Business Alliance (OSB Alliance) e.V.</h3>
+
+<p>The Open Source Business Alliance (OSB Alliance) is the association of the open
+source industry in Germany. It represents over 200 member companies that
+generate more than EUR 126 billion annually in total. Together with scientific
+institutions and user organizations, it works to sustainably anchor the central
+importance of open source software and open standards for a successful digital
+transformation in the public awareness. In addition, innovations in the field
+of open source are to be promoted. The goal of the OSB Alliance is to establish
+open source as a standard in public procure­ment and in research and business
+development. After all, open source and open standards are compelling
+foundations for digital sovereignty, innovation capability and security in the
+digital transformation and thus the answer to one of the greatest challenges of
+our time.</p>
+
+<h3 id="related-links">Related links:</h3>
+
+<p>Sovereign Cloud Stack: <a href="https://scs.community/">https://scs.community/</a></p>
+
+<p>Technical Documentation SCS: <a href="https://docs.scs.community/docs">https://docs.scs.community/docs</a></p>
+
+<p>SCS Repositories (github): <a href="https://github.com/SovereignCloudStack">https://github.com/SovereignCloudStack</a></p>
+
+<p>Release notes: <a href="https://github.com/SovereignCloudStack/release-notes">https://github.com/SovereignCloudStack/release-notes</a></p>
+
+<p>SCS’s notion of digital sovereignty: <a href="https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/">https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/</a>
+ and <a href="https://link.springer.com/epdf/10.1007/s11623-022-1669-5?sharing_token=ie7xTVzv_afod07w5Y2lJfe4RwlQNchNByi7wbcMAY4yFyxh9Qw2iCtygUYjun7MI5leBYqiHZBlIeTPv8Sm1Wv8c1dEUf6ebSwnRfo99_nAYh2FgwUyIHjFyZFWv_EIOEIetr2eBSiAPrI68ptBgKxMVkNlS4udZRAhx1X-WB8=">https://link.springer.com/epdf/10.1007/s11623-022-1669-5?sharing_token=ie7xTVzv_afod07w5Y2lJfe4RwlQNchNByi7wbcMAY4yFyxh9Qw2iCtygUYjun7MI5leBYqiHZBlIeTPv8Sm1Wv8c1dEUf6ebSwnRfo99_nAYh2FgwUyIHjFyZFWv_EIOEIetr2eBSiAPrI68ptBgKxMVkNlS4udZRAhx1X-WB8=</a></p>
+
+<p>Release Blog Posts: <a href="https://scs.community/de/2023/12/27/scs-r6-enables/">https://scs.community/de/2023/12/27/scs-r6-enables/</a>
+ and <a href="https://scs.community/de/2024/02/01/road-ro-r6/">https://scs.community/de/2024/02/01/road-ro-r6/</a></p>
+
+<p>Copyright picture: Engin Akyurd</p>
+
+<p><strong>Contact:</strong></p>
+
+<p>OSB Alliance – Bundesverband für digitale Souveränität e.V., Pariser Platz 6a, 10117 Berlin, Germany</p>]]></content><author><name>[&quot;Sovereign Cloud Stack&quot;]</name></author><category term="release" /><summary type="html"><![CDATA[Sovereign full-stack cloud solution Sovereign Cloud Stack publishes Release 6]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/six.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/six.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sovereign Cloud Stack Security Advisory OVN (CVE-2024-2182)</title><link href="https://sovereigncloudstack.github.io/website/security/2024/03/15/cve-2024-2182/" rel="alternate" type="text/html" title="Sovereign Cloud Stack Security Advisory OVN (CVE-2024-2182)" /><published>2024-03-15T00:00:00+00:00</published><updated>2024-07-11T09:47:18+00:00</updated><id>https://sovereigncloudstack.github.io/website/security/2024/03/15/cve-2024-2182</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/security/2024/03/15/cve-2024-2182/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>Multiple versions of OVN (Open Virtual Network) are vulnerable to
+crafted BFD packets potentially causing denial of service.</p>
+
+<p>OVN supports configuration of gateway chassis and high-availability
+chassis groups (via the Gateway_Chassis and HA_Chassis_Group tables in
+the OVN_Northbound database).  These group cluster nodes (chassis)
+together and provide high availability to them.  OVN logical switch and
+router ports can be configured to reference such groups.  In this case
+the traffic forwarding decision is influenced by the liveness of the
+chassis listed in the group.</p>
+
+<p>In such scenarios OVN automatically enables the OVS Bidirectional
+Forwarding Detection (BFD) functionality to monitor the health of remote
+nodes and tunnels between them.</p>
+
+<p>BFD packets are transmitted in-band in tunnels that connect OVN chassis,
+along with other traffic.  And, by default, OVS will process any BFD
+packets received on a tunnel port with BFD enabled.  That makes it
+possible for a VM or container connected to an OVN logical switch port
+to send BFD packets that will be tunneled to another node and processed
+by OVS, potentially changing the BFD state and affecting the forwarding
+decisions.</p>
+
+<p>The vulnerability has been assigned <a href="https://www.cve.org/CVERecord?id=CVE-2024-2182">CVE-2024-2182</a>.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>The <a href="https://scs.community/">Sovereign Cloud Stack</a> reference
+implementation (by <a href="https://osism.tech/">OSISM</a>) comes with and utilizes 
+OVN. The upcoming Release 6 of the SCS reference implementation will
+not be vulnerable to this as Release 6 will contain the OVN <a href="https://www.ovn.org/en/releases/changelog_v24.03.1/">version 24.03.1</a>.</p>
+
+<p>A way to determine if BFD will be used is to issue the following
+commands on the node that runs the OVN central components:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker exec -it ovn_nb_db ovn-nbctl --columns name,gateway_chassis list logical_router_port
+</code></pre></div></div>
+
+<p>If the above command returns more than a single gateway chassis
+reference for a given port that means OVS BFD has been automatically
+enabled.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker exec -it ovn_nb_db ovn-nbctl --columns name,ha_chassis list ha_chassis_group
+</code></pre></div></div>
+
+<p>The same applies if the above command returns groups that contain more
+than one chassis.</p>
+
+<p>In any case, operators of OpenStack platforms are advised to deploy fixed versions.</p>
+
+<h2 id="mitigation-and-fixes">Mitigation and Fixes</h2>
+
+<p>For any version of OVN, in order to prevent the issue, an ACL (Access
+Control List) rule can be added to drop BFD packets originated from
+logical ports.</p>
+
+<p>For example, the following shell script would configure ACLs on all
+existing OVN logical switches:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  for sw in $(docker exec -it ovn_nb_db ovn-nbctl --bare --columns name list logical_switch); do
+      docker exec -it ovn_nb_db ovn-nbctl acl-add $sw from-lport 32767 'udp &amp;&amp; udp.dst == 3784' drop
+  done
+</code></pre></div></div>
+
+<p>We do not recommend attempting to mitigate the vulnerability this way
+because this will also drop legitimate BFD traffic originated by the
+workloads connected to logical switch ports, e.g., BFD sessions
+established with external entities.</p>
+
+<p>For the currently maintained version SCS R5 (OSISM 6.0.x), OVN has been updated to <a href="https://www.ovn.org/en/releases/changelog_v23.06.3/">23.06.3</a>.
+Updated images have been built by <a href="https://osism.tech/">OSISM</a> and are available to be installed.</p>
+
+<p>To install the fixed OVN images, set <code class="language-plaintext highlighter-rouge">ovn_tag: "2023.1"</code> in the configuration repository in <code class="language-plaintext highlighter-rouge">environments/kolla/configuration.yml</code>.
+Afterwards run <code class="language-plaintext highlighter-rouge">osism apply -a upgrade ovn</code>.</p>
+
+<p>This will deploy the latest OVN images for OSISM 6.0.x series (SCS R5, using OpenStack 2023.1 (Antelope)), pulling OVN 23.06.3.
+This only replaces the OVN image and no service interruption is to be expected.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.1, 2024-03-14, 23:45 CET.</li>
+</ul>]]></content><author><name>[&quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sovereign Cloud Stack Security Advisory Open vSwitch (CVE-2023-3966)</title><link href="https://sovereigncloudstack.github.io/website/security/2024/02/20/cve-2023-3966/" rel="alternate" type="text/html" title="Sovereign Cloud Stack Security Advisory Open vSwitch (CVE-2023-3966)" /><published>2024-02-20T00:00:00+00:00</published><updated>2024-07-11T09:47:18+00:00</updated><id>https://sovereigncloudstack.github.io/website/security/2024/02/20/cve-2023-3966</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/security/2024/02/20/cve-2023-3966/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>Multiple versions of Open vSwitch are vulnerable to crafted Geneve
+packets causing invalid memory accesses and potential denial of service.
+Triggering the vulnerability requires that Open vSwitch has flow hardware
+offload with Linux TC flower enabled (other_config:hw-offload=true).
+It is not enabled by default.</p>
+
+<p>The issue is caused by insufficient validation of Geneve metadata
+fields in the offload path.  Open vSwitch versions 2.12 and newer are
+affected.</p>
+
+<p>The vulnerability has been assigned <a href="https://www.cve.org/CVERecord?id=CVE-2023-3966">CVE-2023-3966</a>.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>The <a href="https://scs.community/">Sovereign Cloud Stack</a> reference
+implementation (by <a href="https://osism.tech/">OSISM</a>) comes with and utilizes 
+Open vSwitch. While hardware offloading is not enabled by default most
+environments will have it enabled.</p>
+
+<p>The current state of configuration can be checked with this command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dragon@manager:~$ docker exec -it openvswitch_vswitchd ovs-vsctl get Open_vSwitch . other_config:hw-offload
+ovs-vsctl: no key "hw-offload" in Open_vSwitch record "." column other_config
+</code></pre></div></div>
+
+<p>If hardware offloading is enabled the output differs:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dragon@manager:~$ docker exec -it openvswitch_vswitchd ovs-vsctl get Open_vSwitch . other_config:hw-offload
+"true"
+</code></pre></div></div>
+
+<p>This is typically enabled through <code class="language-plaintext highlighter-rouge">openvswitch_hw_offload: "yes"</code> in the host vars or <code class="language-plaintext highlighter-rouge">configuration.yml</code>.</p>
+
+<p>In any case, operators of OpenStack platforms are advised to deploy fixed versions.</p>
+
+<h2 id="mitigation-and-fixes">Mitigation and Fixes</h2>
+
+<p>For any version of Open vSwitch, disabling flow hardware offload will
+prevent the issue (setting other_config:hw-offload=false and reboot
+the system).  We do not recommend attempting to mitigate the vulnerability
+this way because it may impact the overall system throughput.</p>
+
+<p>By default, flow hardware offload support is not enabled.</p>
+
+<p>Open vSwitch has been updated to <a href="https://www.openvswitch.org/releases/NEWS-3.1.4.txt">version 3.1.4</a>.
+Updated images have been built by <a href="https://osism.tech/">OSISM</a> and are available to be installed.</p>
+
+<p>Set <code class="language-plaintext highlighter-rouge">openvswitch_tag: "2023.1"</code> in the configuration repository in <code class="language-plaintext highlighter-rouge">environments/kolla/configuration.yml</code>.
+Afterwards run <code class="language-plaintext highlighter-rouge">osism apply -a upgrade openvswitch</code>.</p>
+
+<p>This will deploy the latest openvswitch images for OSISM 6.0.x series (SCS R5, using OpenStack Antelope), pulling openvswitch 3.1.4.
+This only replaces the Open vSwitch image. Open vSwitch only runs on the data and network plane.
+Connections may be interrupted when restarting openvswitch-vswitchd. If this is to be avoided workloads should
+be live migrated and the update should by done node by node.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.1, 2024-02-15, 23:45 CET.</li>
+  <li>Initial published version, v0.2, 2024-02-20, 12:00 CET.</li>
+</ul>]]></content><author><name>[&quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SDN scalability improvements</title><link href="https://sovereigncloudstack.github.io/website/2024/02/09/sdn-scalability/" rel="alternate" type="text/html" title="SDN scalability improvements" /><published>2024-02-09T00:00:00+00:00</published><updated>2024-07-11T09:47:18+00:00</updated><id>https://sovereigncloudstack.github.io/website/2024/02/09/sdn-scalability</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/2024/02/09/sdn-scalability/"><![CDATA[<h1 id="overview-of-sdn-network-scalability">Overview of SDN network scalability</h1>
+
+<p>Software-defined Networking (SDN) is a critical component of modern cloud environments, providing the necessary flexibility and scalability to meet the demands of large-scale network infrastructures. As the size and complexity of cloud deployments continue to grow, the need for scalable and efficient SDN solutions becomes increasingly important. In this post, we explore the challenges and strategies for improving SDN scalability within Sovereign Cloud Stack (SCS) and OpenStack environments.</p>
+
+<h1 id="the-data-center-network">The data center network</h1>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/dc-network-architectures-9ce41bf73ef654366c35b856f83c46b7919b13e55e65819bd9a832cbb70629b6f4bf5dd57a77ba9e8bbfdeca4a70a8a06f8a885939f7d9061fed7e9d9472d730.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/dc-network-architectures-9ce41bf73ef654366c35b856f83c46b7919b13e55e65819bd9a832cbb70629b6f4bf5dd57a77ba9e8bbfdeca4a70a8a06f8a885939f7d9061fed7e9d9472d730.png" />
+  </a>
+</figure>
+
+<p>A modern data center network typically uses a 2-tier spine-leaf network architecture. More traditional 3-tier architectures are becoming less popular.</p>
+
+<p>In a spine-leaf network, all servers are connected to one or two TOR (top of rack) or Leaf switches within a rack. All leaf switches are connected to all spine switches in the layer above. There are no direct connections between leaf or spine switches on the same tier. This kind of network facilitates scalability by being simple and easy to support.</p>
+
+<p>On top of this physical network, also called underlay, all Software Defined Networking (SDN) features are built on top of. The SDN is the virtual network managed by end users and connects VMs, containers, and sometimes physical servers. The SDN is entirely virtualized and must be designed and implemented with the physical topology in mind to achieve the desired performance, functionality, and scalability requirements.</p>
+
+<h1 id="overview-of-sdn-in-openstack">Overview of SDN in OpenStack</h1>
+
+<p>Software-defined Networking (SDN) is a networking concept where software-based controllers and APIs direct network traffic rather than the networking hardware. In OpenStack, SDN networks are used to connect virtual machines and containers. The physical network is also referred to as the underlay, while SDN is called overlay. Larger operators and an increased number of containerized workloads put stress on the SDN stack.</p>
+
+<p>OpenStack Neutron is the main component responsible for networking. It heavily leverages open-source technologies like OVN/OVS and communicates with the underlay network to provide higher-level network services to users. ML2 is the Neutron plugin responsible for communication with the physical network and can have multiple drivers each driver supporting particular hardware/vendor devices. The SDN stack is distributed where some components run on dedicated network nodes, network devices, and even servers.</p>
+
+<p>When OpenStack traffic increases the network must scale accordingly. There are several aspects of SDN scalability and they depend on the actual network architecture. We dive deeper below, but some important points to consider are SDN bottlenecks (OVN control plane, network node resources), support for several tenants and networks, and actual data-plane performance. In this post, we will explore those challenges and strategies to improve SDN scalability in OpenStack and SCS.</p>
+
+<h2 id="sdn-stack">SDN stack</h2>
+
+<p>In this section, we will take a look at more software components needed to implement SDN in OpenStack.</p>
+
+<h3 id="neutron">Neutron</h3>
+
+<p>Neutron is an OpenStack project to provide “network connectivity as a service” between interface devices (e.g., vNICs) managed by other OpenStack services (e.g., nova). It implements the OpenStack Networking API. Neutron is responsible for the centralized management of tenant networks, devices, and address allocation. It orchestrates the physical network, and the devices by using plugins and drivers for each particular technology chosen in the stack.</p>
+
+<h3 id="ovnovs">OVN/OVS</h3>
+
+<p>Open Virtual Network (OVN) and Open vSwitch (OVS) are integral components of Neutron’s network architecture. OVN provides network virtualization, offering logical network abstractions such as logical switches and routers. It is tightly coupled with OVS, which is a high-performance, multilayer virtual switch. Together, OVN/OVS enable dynamic, programmable network setups, allowing for efficient routing, switching, and bridging of traffic in virtualized environments. Their integration with Neutron facilitates complex networking scenarios, ensuring scalability and flexibility in handling network traffic within OpenStack deployments.</p>
+
+<h3 id="bgpevpn">BGP/EVPN</h3>
+
+<p>Border Gateway Protocol (BGP) and Ethernet Virtual Private Network (EVPN) are technologies used for advanced networking functionalities. BGP is a standardized exterior gateway protocol designed to exchange routing and reachability information among autonomous systems on the internet. EVPN extends BGP to support scalable, multi-tenant layer 2 VPN services. In SCS, BGP/EVPN is used for efficient routing and segmentation in large-scale cloud environments. It enables more robust and flexible networking solutions by allowing dynamic route advertisement, enhanced traffic engineering, and seamless integration with existing network infrastructures.</p>
+
+<h3 id="tunneling-protocols---vxlangeneve">Tunneling protocols - VXLAN/Geneve</h3>
+
+<p>Virtual Extensible LAN (VXLAN) and Generic Network Virtualization Encapsulation (Geneve) are network overlay protocols used in OpenStack and OVN/OVS for tunneling network traffic over existing network infrastructures. VXLAN is widely used for encapsulating Ethernet frames over a UDP tunnel, enabling layer 2 networks to extend over layer 3 networks. Geneve, a newer protocol, offers similar capabilities but with additional flexibility and extensibility. In SCS, VXLAN/Geneve is critical for creating isolated, multi-tenant networks over a shared physical network infrastructure. This encapsulation allows scalable network segmentation, providing secure and efficient communication channels within cloud environments.</p>
+
+<h2 id="physical-network">Physical network</h2>
+
+<p>The physical network layer is crucial as it provides the foundational infrastructure on which all virtualized network functions are built upon. This layer typically involves various network hardware vendors who supply the physical networking equipment such as switches, routers, and other hardware. These devices are essential for data transmission and routing in a physical setup. Network Operating Systems (NOS) are also a component of the physical network layer. NOS is the software running on network devices, enabling them to perform networking functions and interact with higher-level SDN controllers and applications. In OpenStack Neutron, the ML2 (Modular Layer 2) plugin plays a key role in the physical network layer. ML2 provides an abstraction layer that supports multiple networking mechanisms in a pluggable manner, allowing Neutron to interface with various types of networking hardware and technologies. This plugin architecture ensures that Neutron can work with a wide range of physical networking equipment and configurations, thus enabling flexibility and scalability in the physical network infrastructure of an OpenStack-based SDN deployment.</p>
+
+<h2 id="bare-metal-hosts">Bare metal hosts</h2>
+
+<p>Bare metal hosts in the context of OpenStack and SDN play a significant role in providing high-performance, non-virtualized computing resources. These hosts are typically equipped with advanced network interface cards (NICs), such as SmartNICs and Data Processing Units (DPUs). SmartNICs are intelligent network cards that offload processing tasks that would typically be handled by the server CPU. These include functions like traffic shaping, encryption/decryption, and network packet processing. The use of SmartNICs can lead to improved performance and reduced CPU load on the bare metal hosts.</p>
+
+<p>DPUs are an evolution of SmartNICs and are also very common in clouds providing physical servers to users. The difference between SmartNICs is that DPUs usually run their own OS and can be managed independently of the host OS. They are more like computers within a computer. Bare metal servers are directly accessed by the users, which creates a constraint on the SDN network because it should not collide with user workloads. Offloading SDN to the DPU is the best solution for such use cases.</p>
+
+<p>Incorporating SmartNICs and DPUs into bare metal hosts within an OpenStack environment enhances the network’s flexibility, efficiency, and performance. This setup is particularly beneficial for workloads that require high throughput, low latency, and secure network communications. As such, bare metal hosts equipped with these advanced NICs are an essential component of modern SDN architectures, particularly in environments where performance and security are critical.</p>
+
+<h1 id="common-network-designs">Common network designs</h1>
+
+<p>Below we dive deeper into several common network designs used for SCS/OpenStack deployments.</p>
+
+<h2 id="vlans">VLANs</h2>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/VLANs_network_design-9430b0fb97b59353f0da0437cbba988c5299541ce868b42302c5efaadd71c50843b5ec7eee40eb7ac1756baa1820eb32945a5e5e2757167a66cd87f6d33532f2.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/VLANs_network_design-9430b0fb97b59353f0da0437cbba988c5299541ce868b42302c5efaadd71c50843b5ec7eee40eb7ac1756baa1820eb32945a5e5e2757167a66cd87f6d33532f2.png" />
+  </a>
+</figure>
+
+<p>VLANs are the simplest and most popular design for small operators that are just starting to use OpenStack.</p>
+
+<p>This type of network leverages VLANs between network switches and servers. Each tenant network is assigned its own VLAN. User workloads like VMs and containers on the server are bound to a VLAN by OVS. Neutron orchestrates the process of creation and management of tenant networks both on the network plane (underlay network) and on the servers. It uses ML2 to provision VLANs on the network switches and delegates to OVN/OVS the binding of the virtual device to the VLAN on the server.</p>
+
+<p>Operators have the option to either pre-provision all VLANs ahead of time so that when a new tenant network appears it can be attached to an existing VLAN without needing to talk to the network devices again. The alternative is to use ML2 to dynamically configure new VLAN before each tenant network is created.</p>
+
+<h3 id="pros">Pros</h3>
+
+<ul>
+  <li>This kind of network is easy to implement. It can be simplified even further by pre-provisioning all VLANs on the physical network thus eliminating the need for ML2. It is a good approach for test beds and small deployments.</li>
+</ul>
+
+<h3 id="cons">Cons</h3>
+
+<ul>
+  <li>Most notably, VLANs don’t scale well. This is due to a theoretical limit of 4096 VLANs on each network switch. A more realistic limit would be about 100 OpenStack tenants for a single cloud network. This is a more practical limit based on real world experience.</li>
+  <li>The approach is also very fragile. A single VM can break the whole network, thus exposing a huge blast radius. Also, network switches are notorious for being able to persist VLAN configuration. If a switch goes down, its configuration must be replayed after boot-up which is a process leading to significant downtimes.</li>
+  <li>Another drawback, which we see is the involvement of the physical network to support the SDN. For each new tenant network in OpenStack, new VLANs must be provisioned. Even in the pre-provisioned scenario, the VLANs must still exist in the underlay, which eventually becomes a bottleneck.</li>
+</ul>
+
+<h2 id="network-centric-sdn">Network-centric SDN</h2>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/Network_centric_network_design-c715b0fbbb492816b154013ff2f11334e494c5953b8a542c3fa8ee621f0f4325222e6bc52b886afea45a50b1a56d41ed5dbb41a4c9c44cf1e79dc797f8f8db0f.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/Network_centric_network_design-c715b0fbbb492816b154013ff2f11334e494c5953b8a542c3fa8ee621f0f4325222e6bc52b886afea45a50b1a56d41ed5dbb41a4c9c44cf1e79dc797f8f8db0f.png" />
+  </a>
+</figure>
+
+<p>This network design employs a more network-centric approach by implementing most SDN functionalities within the physical network. The key point is that some kind of tunneling protocols like VXLAN or Geneve are used to encapsulate network packets and transport them over the network. In a spine-leaf topology, the leaf or ToR will terminate VXLAN endpoints. For the control plane, BGP (EVPN) is used to transmit layer 2 addressing information between switches.</p>
+
+<p>On the server side, a regular VLAN is provisioned from the ToR switch for each tenant network. Since not all tenant networks are needed on each ToR switch, this design scales better than pure VLANs. Also, no VLANs are used between the switches if the underlay is layer 3.</p>
+
+<h3 id="pros-1">Pros</h3>
+
+<ul>
+  <li>This kind of network is more scalable, easily handling up to 1000 OpenStack tenants. It is also more stable and resilient to change, because of the smaller blast radius.</li>
+  <li>Since all SDN is offloaded to the physical equipment, server CPUs are not doing any encapsulation/decapsulation and are free to serve the users. Heavy data plane processing is done on dedicated network hardware, which has been optimized for this task. Also, no SmartNICs or DPUs are needed on the servers, which is more cost efficient.</li>
+</ul>
+
+<h3 id="cons-1">Cons</h3>
+
+<ul>
+  <li>Since this is a network-centric approach, the network is still very much involved in the SDN. Physical device limits shown before like persisting  switch configuration still apply.</li>
+  <li>This approach is also more complex than pure VLANs because it requires the network to run routing protocols like BGP and BFD. Neutron still needs to talk the switches via ML2.</li>
+  <li>Importantly, traffic between tenant networks (east/west and north/south) is routed via the network nodes, which can become a choke point. So while being better for scalability, this design still has limitations for very large deployments.</li>
+</ul>
+
+<h2 id="server-centric-sdn">Server-centric SDN</h2>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/Server_centric_network_design-96746e887fb08b7561b28fb4c02704408bd2ff27c8c9c3f45962651d9ebe77cebd89fe4c3d93cfce6395b09bdc693a4507c077bb1cc14f2fa0505ded0ab5354f.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/Server_centric_network_design-96746e887fb08b7561b28fb4c02704408bd2ff27c8c9c3f45962651d9ebe77cebd89fe4c3d93cfce6395b09bdc693a4507c077bb1cc14f2fa0505ded0ab5354f.png" />
+  </a>
+</figure>
+
+<p>With the server-centric network design, SDN software features are implemented on the servers and not on the network equipment. Tunneling protocols like VXLAN have terminating endpoints on the servers and the addresses for those endpoints are discovered via control plane protocols like BGP/EVPN. Also, encapsulation/decapsulation and crypto processing are done on the server.</p>
+
+<p>This design reduces reliance on the physical network to carry out SDN-related tasks. The only requirement for the underlay is that it must be Layer 3 and run BGP to enable server-centric SDN.</p>
+
+<p>Because of the limited involvement of the physcal network, this design scales very well. The downside, however, is that datapath processing is performed on the server. An example of such processing is VXLAN encapsulation/decapsulation. If no DPU or SmartNIC exists on the server, this logic runs on the CPU, which can negatively impact its performance. It is recommended to deploy servers running SmartNICs to help with data-plane performance.</p>
+
+<h3 id="pros-2">Pros</h3>
+
+<ul>
+  <li>very scalable</li>
+  <li>very efficient datapath routing (ingress/egress)</li>
+  <li>simple network underlay</li>
+  <li>no network orchestration in OpenStack</li>
+</ul>
+
+<h3 id="cons-2">Cons</h3>
+
+<ul>
+  <li>complex server</li>
+  <li>might require SmartNICs and DPUs to offload server CPU</li>
+  <li>must run routing protocols in the server</li>
+</ul>
+
+<h2 id="hybrid---sdn-on-both-servers-and-switches">Hybrid - SDN on both servers and switches</h2>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/Hybrid_network_design-d5e1db2780c792238b93fef53249f32e3b8b2627e27c3299c96cdce815645da53c86d2b3cf122c142339079e293190a0213e971b2b95b146a3e330af5fc8229f.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/Hybrid_network_design-d5e1db2780c792238b93fef53249f32e3b8b2627e27c3299c96cdce815645da53c86d2b3cf122c142339079e293190a0213e971b2b95b146a3e330af5fc8229f.png" />
+  </a>
+</figure>
+
+<p>A variation of the server-centric design, the hybrid network supports bare metal nodes, which are allocated to single users. Since the user has full access to the OS of the server, the SDN functionality cannot be deployed alongside applications, since SDN is managed by the service provider. We have two valid options for deploying SDN components in such network:</p>
+
+<ul>
+  <li>dedicated customer switch, attached to a single bare metal node</li>
+  <li>a DPU card attached to the bare metal node</li>
+</ul>
+
+<p>SmartNIC is not a good solution, because it is more tightly coupled to the host node and exposed to the end user. DPUs and switches can be  independently managed by the provider. This separation helps avoid collision between network infrastructure and user workloads.</p>
+
+<h1 id="solutions-for-better-sdn-scalability">Solutions for better SDN scalability</h1>
+
+<p>In our pursuit to enhance the scalability and performance of SDN networking within Sovereign Cloud Stack (SCS), we have explored several approaches. We focus on leveraging cutting-edge network designs and technologies such as SONiC to meet the growing scalability demands of modern network infrastructures.</p>
+
+<h2 id="network-design---vxlan-on-servers">Network design - VXLAN on Servers</h2>
+
+<p>For scenarios that utilize a “VXLAN on Servers” network design, we emphasize the use of SmartNICs and Data Processing Units (DPUs) to significantly improve the data plane performance characteristics of the network.</p>
+
+<h3 id="smartnics-and-dpus">SmartNICs and DPUs</h3>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/nvidia-bluefield-3-dpu-3c33-d-988a0e4115231e7a53f7f4407009c976ac1f5b7d9d280e07dcd5114193b847329aa94e5fb6639adb8278da09c41d17e6854cbb2e0479df2be17806f6bb2df0ef.jpg">
+    <img class="figure-img w-100" src="/website/assets/images/blog/nvidia-bluefield-3-dpu-3c33-d-988a0e4115231e7a53f7f4407009c976ac1f5b7d9d280e07dcd5114193b847329aa94e5fb6639adb8278da09c41d17e6854cbb2e0479df2be17806f6bb2df0ef.jpg" />
+  </a>
+</figure>
+
+<p>SmartNICs and DPUs play a crucial role in boosting packet processing speeds within the network. SmartNICs are particularly advantageous for virtual machines (VMs), offering tunneling encapsulation/decapsulation and encryption features essential for SDN protocols. By offloading routing and SDN protocol tasks to the server, SmartNICs enhance CPU performance and offer cost-saving benefits.</p>
+
+<p>On the other hand, DPUs are ideally suited for environments where bare metal servers are directly accessed by end-users. Representing the next evolutionary step beyond SmartNICs, DPUs offer the distinct advantage of being managed independently by the network operator, separate from user control. Within SCS, we provide the essential infrastructure and configuration capabilities, enabling users to effortlessly set up and manage SmartNIC and DPU features on their networks.</p>
+
+<h2 id="network-design---vxlan-on-switches">Network design - VXLAN on Switches</h2>
+
+<p>When SDN protocols are implemented directly on network switches, our approach involves exploring the use of SONiC alongside enhancements in tooling and automation to scale effectively.</p>
+
+<h3 id="sonic">SONiC</h3>
+
+<p>Our strategy includes bolstering support for SONiC, a powerful open-source network operating system that enables network scalability and flexibility.</p>
+
+<h3 id="tooling---automating-sonic-rollout-and-configuration">Tooling - Automating SONIC rollout and configuration</h3>
+
+<p>We are committed to enhancing tooling, configuration, and documentation to facilitate the adoption of this network architecture in SCS. This includes improvements in OSISM and Kolla Ansible, along with the integration of Netbox. Netbox serves as the source of truth, allowing for the generation of initial roll-out configurations for OSISM and Kolla Ansible. Additionally, we aim to integrate observability and monitoring for SONiC-based network equipment into SCS, leveraging SONiC’s existing observability features.</p>
+
+<h2 id="physical-network-1">Physical network</h2>
+
+<p>Our efforts extend to improving the dynamic configuration of the physical network from OpenStack. This involves exploring the existing ML2/network-generic-switch driver and expanding its capabilities to support VXLAN and Geneve. We are also examining other drivers/plugins and the potential for developing a new SCS plugin for Neutron. Enhancements related to SCS in SONiC can be packaged independently and installed atop any commercial or community version of SONiC.</p>
+
+<h2 id="sdn-stack-1">SDN stack</h2>
+
+<p>A notable challenge within the OpenStack network nodes is the bottleneck caused by the OVN (Open Virtual Network) control plane software. A potential solution is to migrate the OVN control plane to SONiC. It would allow the OVN control plane to operate in a distributed fashion, leveraging multiple existing SONiC devices within the network for enhanced performance. However, a potential drawback is the resource intensity of OVN, which could strain the limited resources on SONiC devices. Our approach includes carefully evaluating these considerations to ensure a balanced and efficient SDN stack implementation.</p>]]></content><author><name>[&quot;Angel Kafazov&quot;]</name></author><summary type="html"><![CDATA[Overview of SDN network scalability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
