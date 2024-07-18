@@ -46,7 +46,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency("envygeeks-rubocop", "~> 92.0")
   s.add_development_dependency("autoprefixer-rails", "~> 10.4")
   s.add_development_dependency("babel-transpiler", "~> 0.7")
-  s.add_development_dependency("mini_magick", "~> 4.2")
+  s.add_development_dependency("mini_magick", "~> 5.0")
   s.add_development_dependency("simplecov", "~> 0.16")
   s.add_development_dependency("bootstrap", "~> 5.2")
   s.add_development_dependency("ruby-vips", "~> 2")
