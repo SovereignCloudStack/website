@@ -1,0 +1,18 @@
+
+BEGIN:VCARD
+VERSION:3.0
+PROFILE:VCARD
+FN:Kurt Garloff
+N:Garloff;Kurt;;;
+ORG:Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.;
+TITLE:Kurt Garloff
+TEL;TYPE=work,pref:+49-30-206539-201
+EMAIL;TYPE=work,pref:garloff@osb-alliance.com
+ADR;TYPE=work,pref:;;Pariser Platz 6a;Berlin;Berlin;10117;Germany
+URL;TYPE=work:https://scs.community
+SOURCE:https://scs.community/garloff.vcf
+REV:2024-07-25T17:11:55Z
+TZ:Europe/Berlin
+KIND:individual
+PHOTO;ENCODING=BASE64;TYPE=JPEG:
+END:VCARD
