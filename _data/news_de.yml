@@ -1,7 +1,19 @@
+- date: "2024-07-20"
+  publisher: "Swiss IT Magazine"
+  title: "Open Source Software als Ausweg aus dem Vendor Lock-in"
+  details: "Prof. Matthias Stürmer"
+  link: "https://www.itmagazine.ch/artikel/82558/Open_Source_Software_als_Ausweg_aus_dem_Vendor_Lock-in.html"
+
+- date: "2024-07-02"
+  publisher: "cloud ahead"
+  title: "Der Freiheitskampf des Sovereign Cloud Stacks"
+  details: "Gregor Schuhmacher"
+  link: "https://www.cloudahead.de/der-freiheitskampf-des-sovereign-cloud-stacks"
+
 - date: "2024-06-05"
   publisher: "arXiv - Computer Science - Computers and Society"
   title: "Technological Perspective on Digital Sovereignty"
-  details: "Prof. Matthias Stuermer"
+  details: "Prof. Matthias Stürmer"
   link: "https://arxiv.org/abs/2406.03266"
 
 - date: "2024-05-03"
