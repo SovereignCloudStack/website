@@ -26,6 +26,12 @@
   slides: "20231017-eclipsecon-2023-scs-xpanse-osba9.pdf"
   link: "https://www.youtube.com/watch?v=6InnOvfn2Kk&list=PLy7t4z5SYNaSKkhAYBHBNVcsun-twUoXZ&index=75"
 
+- date: "2023-04-25"
+  event: "Unlock the Cloud (Eclipse Foundation)"
+  title: "Panel 1: Building technical interoperability in the cloud market: specifications, standards and open source"
+  details: "Kurt Garloff"
+  link: "https://www.eclipse.org/events/2023/unlockthecloud/"
+
 - date: "2023-02-23"
   event: "ALASCA Tech-Talks #2"
   title: "Standardization in the SCS community"
