@@ -73,7 +73,7 @@ Verdict for subject REDACTED, SCS Compatible IaaS, version v4: 28 ERRORS
 ```
 
 Let's quickly look at these results: We passed all compliance checks (some with warnings),
-except for receiving 28 errors on the 15 mandatory and 13 recoemmended flavors.
+except for receiving 28 errors on the 15 mandatory and 13 recommended flavors.
 
 ## Mandatory flavor properties
 
@@ -83,20 +83,22 @@ Let's look at the relevant section in the rendered version
 [here](https://docs.scs.community/standards/scs-0103-v1-standard-flavors#properties-extra_specs):
 We lack the `scs:name-v1`, `scs:name-v2`, `scs:cpu-type` and `scs:diskN-type` flavor properties (`extra_specs`).
 
-These properties were introduced in February 2024 and adopted for SCS compatible IaaS v4 compliance.
+These properties were introduced in February 2024 and adopted for SCS-compatible IaaS v4 compliance.
 
 The rationale for these properties is a response for requests from our partners, some of which
 dislike mandating naming conventions for flavors. The SCS standardization SIG has thus chosen
 a strategy where we work on improving discoverability and contribute to common tools.
 Medium term, this means that we can allow arbitrary names which may please marketing departments
-better, yet still provide a way for users to systematically and automatically identify the flavors
-they need by properties across all SCS compliant clouds and can express this in their IaC tooling.
+and maybe customers better, yet still provide a way for users to systematically and automatically
+identify the flavors they need by properties across all SCS compliant clouds and can express this
+in their IaC tooling.
 
 The vision is a way for users to express "please give me the flavor that most closely matches
-these minimum requirements". Requirements express things like number and kind of vCPUs,
+these minimum requirements" with common tooling.
+Requirements express things like number and kind of vCPUs,
 RAM, size and type of root disk (if any), and also optionally extra requirements such as
 support for hardware virtualization or GPU types, generation and VRAM size. Some work on
-the SDK and opentofu will be required for this, at least.
+the SDK and opentofu will be required for this in addition to better discoverability, at least.
 
 The added properties are a first step to prepare for this freedom.
 
@@ -105,11 +107,11 @@ The added properties are a first step to prepare for this freedom.
 Fresh installations of the SCS R6 (OSISM 7) reference implementation will automatically have
 all the needed properties; the OSISM flavor-manager takes care of creating the mandatory
 (and recommended) flavors and setting all needed properties. Environments that have a
-longer history need to go through some extra steps.
+longer or different history may need to go through some extra steps.
 
 ### Using OSISM flavor-manager to add missing properties (recommended)
 
-The addition of the missing properties for users of the SCS reference
+The addition of the missing properties for operators of the SCS reference
 implementation OSISM happens in two steps:
 1. Ensure your cloud is running SCS R6 (OSISM 7) or newer.
 2. Call `osism manage flavors` on the manager node.
@@ -117,12 +119,14 @@ implementation OSISM happens in two steps:
 If you are on an old version of the SCS reference implementation, step 1 will of
 course require careful testing and planning. Updating quickly to the latest SCS
 reference implementation version however is a requirement to be supported and
-be covered by security maintenance, so this is something that is overdue anyway.
+be covered by security maintenance, so this is something that is overdue anyway
+and should be planned for with high priority.
 
-Step 2 is as easy as it can be,
+Step 2 is as easy as it can be.
 To demonstrate, I (with admin power) remove the needed properties for two flavors
 on my Cloud-in-a-Box system:
 ```shell
+dragon@manager:~$ export OS_CLOUD=admin
 dragon@manager:~$ openstack flavor set --no-property SCS-8V-32 
 dragon@manager:~$ openstack flavor set --no-property SCS-4V-16
 dragon@manager:~$ openstack flavor show SCS-8V-32
@@ -170,9 +174,9 @@ standard-flavors-check: FAIL
 garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [2]$
 ```
 
-As expected.
+As expected, failure for two flavors, exit code 2.
 
-And the fix is as easy as it can get:
+And the fix is as easy as it can get and only takes a few seconds:
 ```shell
 dragon@manager:~$ osism manage flavors 
 dragon@manager:~$ openstack flavor show SCS-8V-32
@@ -195,16 +199,16 @@ dragon@manager:~$ openstack flavor show SCS-8V-32
 +----------------------------+------------------------------------------------------------------------------+
 ```
 
-With the test now passing again.
+The tests are now passing again.
 
 ### Using `flavor-add-extra-specs.py`
 
 If you have SCS R6 (OSISM 7) or later, you should use the `osism manage flavors` to fix your
-flavor properties.
+flavor properties, see above.
 
 There may be scenarios, where this does not fit, however:
 * You are not using the SCS IaaS reference implementation (OSISM) at all or your are stuck
-  with an old versions. You could still use the flavor manager, but you shy away from the
+  with an old version. You could still use the flavor manager, but you may shy away from the
   effort to extract it from its native environment.
 * You want to apply the systematic properties also to non-mandatory (and non-recommended)
   flavors, in order to provide better ways for your customers to programmatically
@@ -221,6 +225,7 @@ your thoughts.)
 
 Let's go through the steps of breaking the CiaB and having it fixed again:
 ```shell
+garloff@framekurt():/casa/src/SCS/standards/Tests/iaas [0]$ export OS_CLOUD=ciab-admin
 garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [0]$ ./standard-flavors/flavors-openstack.py -c $OS_CLOUD scs-0103-v1-flavors.yaml 
 WARNING: Missing recommended flavor 'SCS-1V-4-10'
 WARNING: Missing recommended flavor 'SCS-2V-8-20'
