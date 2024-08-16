@@ -8,11 +8,11 @@ avatar:
   - "avatar-candh.jpg"
 ---
 
-This blog post will introduce the requirements and detailed technical process of creating and obtaining Verifiable Credentials (VC for short) for Gaia-X Self-Descriptions and using the Gaia-X Digital Clearing House (GXDCH) to assert compliance.
+This blog post will introduce the requirements and detailed technical process of creating and obtaining Verifiable Credentials (VC for short) for Gaia-X Credentials and using the [Gaia-X Digital Clearing House (GXDCH)](https://gaia-x.eu/gxdch/) to assert compliance. 
 
 We recommend reading the Gaia-X's own blog post on [Gaia-X and Verifiable Credentials / Presentations](https://gaia-x.eu/news-press/gaia-x-and-verifiable-credentials-presentations/) to get familiar with the idea and concepts behind **Verifiable Credentials** and **Verifiable Presentations**.
 
-The process described in this blog post is for the most part an example realization of [how to become a Gaia-X conformant user](https://docs.gaia-x.eu/policy-rules-committee/policy-rules-conformity-document/23.10/Process/) as documented by Gaia-X.
+The process described in this blog post is for the most part an example realization of [how to become a Gaia-X conformant user](https://docs.gaia-x.eu/policy-rules-committee/policy-rules-conformity-document/23.10/Process/) as documented by Gaia-X and to publish Gaia-X complint VCs for your service offerings.
 
 This blog post will refer to the latest stable Gaia-X release at the time of writing (which is 22.10 - codenamed "Tagus") and the corresponding [Gaia-X Trust Framework 22.10 release](https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/).
 Details of the process described here might change in future Gaia-X releases. Please consult the corresponding documentation.
@@ -23,36 +23,39 @@ It is important to clarify some terms and concepts used throughout this blog pos
 
 #### Gaia-X Credentials / Verifiable Credentials
 
-Gaia-X regulates descriptions of Cloud Service Providers (CSPs) and their services as **Gaia-X Credentials**.
-The term **Gaia-X Credential** refers to a **Verifiable Credential** in the context of Gaia-X.
-It is based on [W3C Verifiable Credentials Data Model v1.1](https://www.w3.org/TR/vc-data-model/) but follows some more specialized restrictions specific to Gaia-X.
+Gaia-X regulates descriptions of Cloud Service Providers (CSPs) and their services as **Gaia-X Credentials**. A Gaia-X Credential is a set of crypographically signed claims about one or more Gaia-X entities. A Gaia-X entity is a *Participant* (including Service Conumer and Servuce Provider), a *Service Offering* and/or a *Resource*, a Service Offering is aggredated of.  
+
+The term **Gaia-X Credential** refers to a **Verifiable Credential** in the context of Gaia-X. It is based on [W3C Verifiable Credentials Data Model v1.1](https://www.w3.org/TR/vc-data-model/) but follows some more specialized restrictions specific to Gaia-X.
 Those are described in the [Credential format documentation](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/).
 Notable key aspects are:
 
 - The serialization format is [JSON-LD](https://json-ld.org/).
 - The verification method type is [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) entailing [JSON Web Signature](https://datatracker.ietf.org/doc/html/rfc7515) as proof value.
-- Claims [MUST use](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#namespace-bindings-and-contexts) the [Gaia-X Onotology](https://gitlab.com/gaia-x/technical-committee/service-characteristics-working-group/service-characteristics) in their context.
+- Claims are expressd as [Resource Description Framwork (RDF)](https://www.w3.org/TR/rdf11-concepts/) trippels and [MUST use](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#namespace-bindings-and-contexts) the [Gaia-X Onotology](https://gitlab.com/gaia-x/technical-committee/service-characteristics-working-group/service-characteristics) in their context.
 - Any `id` fields of Verifiable Credentials (including their `credentialSubject.id`) [MUST be unique](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#identifiers).
 
 In this blog post, the term Verifiable Credential is used interchangeably with Gaia-X Credential.
 
-#### Gaia-X Self-Descriptions / Verifiable Presentations
+At the time of writing this blog post, the old term **Self-Description** still circulates. Self-Description was replaced by the new term **Gaia-X Credentials** a long time ago, but not all of the latest [Gaia-X documents](https://docs.gaia-x.eu/) were updated, yet. This blog post uses the new term Gaia-X Credential, which is interchangeably with Self-Descriptions.
 
-**Gaia-X Self-Descriptions** on the other hand [are described as follows](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#self-description-format-and-structure):
+#### Gaia-X Ontology
 
-> Gaia-X Self-Description documents are Verifiable Presentations following the [W3C Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/).
+Gaia-X ontology defines a set of classes and their properties used to describe Gaia-X entites. The lastet version of Gaia-X ontology is published in Gaia-X Registry of GXDCH.  
 
-A **Verifiable Presentation** contains or references one or more Verifiable Credentials.
-A Verifiable Presentation representing a CSP and their offerings as a form of self-description is usually submitted to the Compliance Service of the Gaia-X Digital Clearing House (GXDCH), resulting in a Gaia-X Credential that attests the compliance.
 
-In this blog post, the term Verifiable Presentation is used interchangeably with Gaia-X Self-Description.
+#### Verifiable Presentations
+
+Claims about a Gaia-X entity, may spread across multiple Gaia-X Credentials. Futhermore Gaia-X Credentials can contain references to other Gaia-X Credentials. Gaia-X uses the concept of Verifiable Presentations following the [W3C Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/) to bound all claims about a Gaia-X entity.  
+
+A **Verifiable Presentation** representing a Cloud Service Provider and their offerings as a form of self-definition is usually submitted to the Compliance Service of the Gaia-X Digital Clearing House (GXDCH), resulting in a Gaia-X Credential that attests the compliance.
+
 
 ## Desired Goal
 
 This blog post will be based on the following use case:
 
 A provider wants to publish Gaia-X Credentials containing proven claims about their identity and offerings conforming to the Gaia-X Framework and achieve Gaia-X compliance.
-To achieve this, the provider assembles a Verifiable Presentation that contains several Verifiable Credentials which in total will both represent and prove the provider's identity and offerings as a form of self-description.
+To achieve this, the provider assembles a Verifiable Presentation that contains several Verifiable Credentials which in total will both represent and prove the provider's identity and offerings as a form of self-definition.
 The Verifiable Credentials, representing individual claims, are individually issued and signed either by the provider itself or an authorized third-party (such as the GXDCH), depending on their subjects.
 Finally, the Gaia-X Compliance Service of the GXDCH will verify the Verifiable Presentation's contents (including the individual Verifiable Credentials and their proofs) and issue a Verifiable Credential attesting the compliance of the Verifiable Presentation as a whole.
 
@@ -71,8 +74,10 @@ The specific set of Verifiable Credentials a provider includes in their Verifiab
 For the purpose of this blog post we will focus on a very common and basic use case of Verifiable Presentations containing the following Verifiable Credentials:
 
 1. The **Legal Registration Number** (LRN) belonging to the provider.
-2. The **Participant** credential representing the provider as a legal person identified by the LRN.
+2. The **Legal Participant** credential representing the provider as a legal person identified by the LRN.
 3. The signed Gaia-X **Terms & Conditions** which the provider pledges to adhere to.
+4. The **Service Offering** credential repesenting the provider's digital service available for order.
+
 
 ## Required Identity Assets for Credential Creation
 
