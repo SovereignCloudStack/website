@@ -18,7 +18,7 @@ mandatory flavor properties (aka `extra_specs`):
 ```shell
 garloff@kurt: ~/SCS/standards/Tests$ ./scs-compliance-check.py -a os_cloud=$OS_CLOUD -s REDACTED scs-compatible-iaas.yam
 INFO: module opc-v2022.11 missing checks or test cases
-DEBUG: Fetching flavors from cloud 'gxscs-hm'
+DEBUG: Fetching flavors from cloud 'REDACTED'
 DEBUG: Checking 28 flavor specs against 97 flavors
 WARNING: Flavor 'SCS-1V-4' found via name only, missing property 'scs:name-v2'
 ERROR: Flavor 'SCS-1V-4' violating property constraints: cpu-type: None should be 'shared-core'; name-v1: None should be 'SCS-1V:4'; nam e-v2: None should be 'SCS-1V-4'
@@ -27,10 +27,12 @@ WARNING: Flavor 'SCS-1L-1-5' found via name only, missing property 'scs:name-v2'
 ERROR: Flavor 'SCS-1L-1-5' violating property constraints: cpu-type: None should be 'crowded-core'; name-v1: None should be 'SCS-1L:1:5'
 ; name-v2: None should be 'SCS-1L-1-5'
 DEBUG: Total critical / error / info: 0 / 28 / 0
+********************************************************************************
 REDACTED SCS-compatible IaaS v4 (effective):
 - main: FAIL (4 passed, 1 failed)
-  - FAILED standard-flavors-check
-    The environment should fulfill all requirements of https://docs.scs.community/standards/scs-0103-v1-standard-flavors
+  - FAILED:
+    - standard-flavors-check:
+      > Must fulfill all requirements of https://docs.scs.community/standards/scs-0103-v1-standard-flavors
 ```
 Let's quickly look at these results: We passed all compliance checks
 except for receiving 28 errors on the 15 mandatory and 13 recommended flavors.
@@ -241,11 +243,9 @@ WARNING: Missing recommended flavor 'SCS-1L-1-5'
 standard-flavors-check: FAIL
 garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [2]$ ./flavor-naming/flavor-add-extra-specs.py 
 INFO  SCS-8V-32: Update extra_spec scs:name-v2 to SCS-8V-32
-INFO  SCS-8V-32: Update extra_spec scs:name-v3 to SCS-8V-32
 INFO  SCS-8V-32: Update extra_spec scs:name-v1 to SCS-8V:32
 INFO  SCS-8V-32: Update extra_spec scs:cpu-type to shared-core
 INFO  SCS-4V-16: Update extra_spec scs:name-v2 to SCS-4V-16
-INFO  SCS-4V-16: Update extra_spec scs:name-v3 to SCS-4V-16
 INFO  SCS-4V-16: Update extra_spec scs:name-v1 to SCS-4V:16
 INFO  SCS-4V-16: Update extra_spec scs:cpu-type to shared-core
 garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [0]$ openstack flavor show SCS-8V-32
