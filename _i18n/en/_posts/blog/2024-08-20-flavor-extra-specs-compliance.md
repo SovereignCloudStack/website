@@ -7,8 +7,10 @@ author:
 - "Matthias Büchse"
 avatar:
 - "kgarloff.jpg"
+- "mbuechse.jpg"
 about:
 - "garloff"
+- "mbuechse"
 ---
 
 ## Non-compliance with flavor spec v4
