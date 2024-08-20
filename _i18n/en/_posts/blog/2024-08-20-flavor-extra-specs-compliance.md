@@ -204,17 +204,7 @@ Let's go through the steps of breaking the CiaB and having it fixed again:
 garloff@framekurt():/casa/src/SCS/standards/Tests/iaas [0]$ export OS_CLOUD=ciab-admin
 garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [0]$ ./standard-flavors/flavors-openstack.py -c $OS_CLOUD scs-0103-v1-flavors.yaml 
 WARNING: Missing recommended flavor 'SCS-1V-4-10'
-WARNING: Missing recommended flavor 'SCS-2V-8-20'
-WARNING: Missing recommended flavor 'SCS-4V-16-50'
-WARNING: Missing recommended flavor 'SCS-8V-32-100'
-WARNING: Missing recommended flavor 'SCS-1V-2-5'
-WARNING: Missing recommended flavor 'SCS-2V-4-10'
-WARNING: Missing recommended flavor 'SCS-4V-8-20'
-WARNING: Missing recommended flavor 'SCS-8V-16-50'
-WARNING: Missing recommended flavor 'SCS-16V-32-100'
-WARNING: Missing recommended flavor 'SCS-1V-8-20'
-WARNING: Missing recommended flavor 'SCS-2V-16-50'
-WARNING: Missing recommended flavor 'SCS-4V-32-100'
+[...]
 WARNING: Missing recommended flavor 'SCS-1L-1-5'
 standard-flavors-check: PASS
 garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [0]$ openstack flavor set --no-property SCS-4V-16
@@ -246,7 +236,7 @@ WARNING: Missing recommended flavor 'SCS-1V-4-10'
 [...]
 WARNING: Missing recommended flavor 'SCS-1L-1-5'
 standard-flavors-check: FAIL
-garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [0]$ flavor-naming/flavor-add-extra-specs.py -a apply
+garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [2]$ flavor-naming/flavor-add-extra-specs.py -a apply
 INFO: Flavor SCS-8V-32: SET scs:cpu-type=shared-core
 INFO: Flavor SCS-8V-32: SET scs:name-v1=SCS-8V:32
 INFO: Flavor SCS-8V-32: SET scs:name-v2=SCS-8V-32
