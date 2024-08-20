@@ -15,6 +15,7 @@ about:
 
 Running the SCS IaaS compatible v4 checks against a cloud may reveal missing
 mandatory flavor properties (aka `extra_specs`):
+
 ```shell
 garloff@kurt: ~/SCS/standards/Tests$ ./scs-compliance-check.py -a os_cloud=$OS_CLOUD -s REDACTED scs-compatible-iaas.yaml
 INFO: module opc-v2022.11 missing checks or test cases
@@ -34,6 +35,7 @@ REDACTED SCS-compatible IaaS v4 (effective):
     - standard-flavors-check:
       > Must fulfill all requirements of https://docs.scs.community/standards/scs-0103-v1-standard-flavors
 ```
+
 Let's quickly look at these results: We passed all compliance checks
 except for receiving 28 errors on the 15 mandatory and 13 recommended flavors.
 
@@ -74,6 +76,7 @@ longer or different history may need to go through some extra steps.
 
 The addition of the missing properties for operators of the SCS reference
 implementation OSISM happens in two steps:
+
 1. Ensure your cloud is running SCS R6 (OSISM 7) or newer.
 2. Call `osism manage flavors` on the manager node.
 
@@ -86,6 +89,7 @@ this posting is overdue anyway and should be planned for with high priority.
 Step 2 is as easy as it can be.
 To demonstrate, I (with admin power) remove the needed properties for two flavors
 on my Cloud-in-a-Box system:
+
 ```shell
 dragon@manager:~$ export OS_CLOUD=admin
 dragon@manager:~$ openstack flavor set --no-property SCS-8V-32 
@@ -112,6 +116,7 @@ dragon@manager:~$ openstack flavor show SCS-8V-32
 
 The compliance test would now report two errors for those two flavors.
 (I call the test tool directly for brevity here.)
+
 ```shell
 garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [0]$ ./standard-flavors/flavors-openstack.py -c $OS_CLOUD scs-0103-v1-flavors.yaml 
 WARNING: Flavor 'SCS-4V-16' found via name only, missing property 'scs:name-v2'
@@ -138,6 +143,7 @@ garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [2]$
 As expected, failure for two flavors, exit code 2.
 
 And the fix is as easy as it can get and only takes a few seconds:
+
 ```shell
 dragon@manager:~$ osism manage flavors 
 dragon@manager:~$ openstack flavor show SCS-8V-32
@@ -168,10 +174,10 @@ If you have SCS R6 (OSISM 7) or later, you should use the `osism manage flavors`
 flavor properties, see above.
 
 There may be scenarios, where this does not fit, however:
-* You are not using the SCS IaaS reference implementation (OSISM) at all or your are stuck
+- You are not using the SCS IaaS reference implementation (OSISM) at all or your are stuck
   with an old version. You could still use the flavor manager, but you may shy away from the
   effort to extract it from its native environment.
-* You want to apply the systematic properties also to non-mandatory (and non-recommended)
+- You want to apply the systematic properties also to non-mandatory (and non-recommended)
   flavors, in order to provide better ways for your customers to programmatically
   identify flavor properties.
 
@@ -185,6 +191,7 @@ of the SCS standards repository in the
 your thoughts.)
 
 Let's go through the steps of breaking the CiaB and having it fixed again:
+
 ```shell
 garloff@framekurt():/casa/src/SCS/standards/Tests/iaas [0]$ export OS_CLOUD=ciab-admin
 garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [0]$ ./standard-flavors/flavors-openstack.py -c $OS_CLOUD scs-0103-v1-flavors.yaml 
@@ -300,6 +307,7 @@ You might end up with a name like `SCS-16T-64-200s_kvm_hwv_z4h_GNl-142`, an
 SCS flavor with 16 High Perf AMD Zen 4 SMT Threads with 64.0 GiB RAM on KVM with HW virt and SSD 200GB
 root volume and Pass-Through GPU nVidia AdaLovelace (w/ 142 SM). (This is an nVidia L40.)
 So you might create your host aggregates and create the flavor:
+
 ```shell
 garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas/flavor-naming [2]$ openstack flavor create --vcpu 16 --ram 65536 --disk 200 --property scs:name-v2=SCS-16T-64-200s_kvm_hwv_z4h_GNl-142 ai.l40.16
 +----------------------------+---------------------------------------------------+
@@ -319,7 +327,9 @@ garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas/flavor-naming [
 | vcpus                      | 16                                                |
 +----------------------------+---------------------------------------------------+
 ```
+
 You could use the tool now to fill in the additional properties:
+
 ```shell
 garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas/flavor-naming [0]$ ./flavor-add-extra-specs.py -A -a apply ai.l40.16
 INFO: Flavor ai.l40.16: SET scs:cpu-type=dedicated-thread
