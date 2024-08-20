@@ -78,7 +78,7 @@ by OSISM takes care of creating the mandatory
 (and recommended) flavors and setting all needed properties. Environments that have a
 longer or different history may need to go through some extra steps.
 
-### Using Flavor Mmanager to add missing properties (recommended)
+### Using Flavor Manager to add missing properties (recommended)
 
 The addition of the missing properties for operators of the SCS reference
 implementation OSISM happens in two steps:
