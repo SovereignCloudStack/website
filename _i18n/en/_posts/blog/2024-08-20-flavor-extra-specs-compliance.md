@@ -69,6 +69,8 @@ Requirements express things like number and kind of vCPUs,
 RAM, size and type of root disk (if any), and also optionally extra requirements such as
 support for hardware virtualization or GPU types, generation and VRAM size. Some work on
 the SDK and opentofu will be required for this in addition to better discoverability, at least.
+There is work on an [upstream OpenStack spec](https://review.opendev.org/c/openstack/publiccloud-sig/+/909387)
+for this.
 
 The added properties are a first step to prepare for this freedom.
 
