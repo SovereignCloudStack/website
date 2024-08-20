@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Getting SCS flavor properies into compliance"
+title:  "Getting SCS flavor properties into compliance"
 category: tech
 author:
 - "Kurt Garloff"
@@ -16,7 +16,7 @@ about:
 Running the SCS IaaS compatible v4 checks against a cloud may reveal missing
 mandatory flavor properties (aka `extra_specs`):
 ```shell
-garloff@kurt: ~/SCS/standards/Tests$ ./scs-compliance-check.py -a os_cloud=$OS_CLOUD -s REDACTED scs-compatible-iaas.yam
+garloff@kurt: ~/SCS/standards/Tests$ ./scs-compliance-check.py -a os_cloud=$OS_CLOUD -s REDACTED scs-compatible-iaas.yaml
 INFO: module opc-v2022.11 missing checks or test cases
 DEBUG: Fetching flavors from cloud 'REDACTED'
 DEBUG: Checking 28 flavor specs against 97 flavors
@@ -41,8 +41,8 @@ except for receiving 28 errors on the 15 mandatory and 13 recommended flavors.
 
 The test tool provides the reference to the spec that we need to fulfill:
 <https://docs.scs.community/standards/scs-0103-v1-standard-flavors>
-Let's look at the [relevant section](https://docs.scs.community/standards/scs-0103-v1-standard-flavors#properties-extra_specs):
-We lack the `scs:name-v1`, `scs:name-v2`, `scs:cpu-type` and `scs:diskN-type` flavor properties (`extra_specs`).
+Let's look at the [relevant section](https://docs.scs.community/standards/scs-0103-v1-standard-flavors/#guarantees-and-properties):
+We lack the `scs:name-v1`, `scs:name-v2`, `scs:cpu-type` and `scs:disk0-type` flavor properties (`extra_specs`).
 
 These properties were introduced in February 2024 and adopted for SCS-compatible IaaS v4 compliance.
 
