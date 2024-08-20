@@ -332,6 +332,6 @@ INFO: Flavor ai.l40.16: SET scs:disk0-type=ssd
 INFO: Processed 1 flavors, 5 changes
 ```
 
-The additional names as well as `cpu-type` and `disk0-type` have been filled in,
+The additional names as well as `scs:cpu-type` and `scs:disk0-type` have been filled in,
 as all the information was available thanks to the already set `scs:name-v2`.
 The recommended less detailed name is in `scs:name-v4`.
