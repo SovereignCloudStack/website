@@ -241,13 +241,14 @@ WARNING: Missing recommended flavor 'SCS-2V-16-50'
 WARNING: Missing recommended flavor 'SCS-4V-32-100'
 WARNING: Missing recommended flavor 'SCS-1L-1-5'
 standard-flavors-check: FAIL
-garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [2]$ ./flavor-naming/flavor-add-extra-specs.py 
-INFO  SCS-8V-32: Update extra_spec scs:name-v2 to SCS-8V-32
-INFO  SCS-8V-32: Update extra_spec scs:name-v1 to SCS-8V:32
-INFO  SCS-8V-32: Update extra_spec scs:cpu-type to shared-core
-INFO  SCS-4V-16: Update extra_spec scs:name-v2 to SCS-4V-16
-INFO  SCS-4V-16: Update extra_spec scs:name-v1 to SCS-4V:16
-INFO  SCS-4V-16: Update extra_spec scs:cpu-type to shared-core
+garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [0]$ flavor-naming/flavor-add-extra-specs.py -a apply
+INFO: Flavor SCS-8V-32: SET scs:cpu-type=shared-core
+INFO: Flavor SCS-8V-32: SET scs:name-v1=SCS-8V:32
+INFO: Flavor SCS-8V-32: SET scs:name-v2=SCS-8V-32
+INFO: Flavor SCS-4V-16: SET scs:cpu-type=shared-core
+INFO: Flavor SCS-4V-16: SET scs:name-v1=SCS-4V:16
+INFO: Flavor SCS-4V-16: SET scs:name-v2=SCS-4V-16
+INFO: Processed 16 flavors, 6 changes
 garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [0]$ openstack flavor show SCS-8V-32
 +----------------------------+------------------------------------------------------------------------------+
 | Field                      | Value                                                                        |
@@ -284,3 +285,51 @@ standard-flavors-check: PASS
 garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [0]$ 
 ```
 
+With `-a report` (or with the default `-a ask`) you could have reviewed the changes
+to the flavor properties (`extra_specs`) prior to applying them.
+
+### Bonus usage (not needed for compliance)
+
+If you define flavors outside of the SCS namespace, e.g. want to name your machine learning
+flavors `ai.N`, you would still recommended to use the
+[SCS flavor naming spec](https://docs.scs.community/standards/scs-0100-v3-flavor-naming)
+to set the flavor `extra_specs` for transparency and discoverability.
+You would go to the [flavor name generator](https://flavors.scs.community/), and enter
+all details that you guarantee that these flavors have.
+You might end up with a name like `SCS-16T-64-200s_kvm_hwv_z4h_GNl-142`, an
+SCS flavor with 16 High Perf AMD Zen 4 SMT Threads with 64.0 GiB RAM on KVM with HW virt and SSD 200GB
+root volume and Pass-Through GPU nVidia AdaLovelace (w/ 142 SM). (This is an nVidia L40.)
+So you might create your host aggregates and create the flavor:
+```shell
+garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas/flavor-naming [2]$ openstack flavor create --vcpu 16 --ram 65536 --disk 200 --property scs:name-v2=SCS-16T-64-200s_kvm_hwv_z4h_GNl-142 ai.l40.16
++----------------------------+---------------------------------------------------+
+| Field                      | Value                                             |
++----------------------------+---------------------------------------------------+
+| OS-FLV-DISABLED:disabled   | False                                             |
+| OS-FLV-EXT-DATA:ephemeral  | 0                                                 |
+| description                | None                                              |
+| disk                       | 200                                               |
+| id                         | 02571f08-afce-4820-beb9-bcd464444338              |
+| name                       | ai.l40.16                                         |
+| os-flavor-access:is_public | True                                              |
+| properties                 | scs:name-v2='SCS-16T-64-200s_kvm_hwv_z4h_GNl-142' |
+| ram                        | 65536                                             |
+| rxtx_factor                | 1.0                                               |
+| swap                       | 0                                                 |
+| vcpus                      | 16                                                |
++----------------------------+---------------------------------------------------+
+```
+You could use the tool now to fill in the additional properties:
+```shell
+garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas/flavor-naming [0]$ ./flavor-add-extra-specs.py -A -a apply ai.l40.16
+INFO: Flavor ai.l40.16: SET scs:cpu-type=dedicated-thread
+INFO: Flavor ai.l40.16: SET scs:name-v1=SCS-16T:64:200s-kvm-hwv-z4h-GNl:142
+INFO: Flavor ai.l40.16: SET scs:name-v3=SCS-16T:64:200s-GNl:142
+INFO: Flavor ai.l40.16: SET scs:name-v4=SCS-16T-64-200s_GNl-142
+INFO: Flavor ai.l40.16: SET scs:disk0-type=ssd
+INFO: Processed 1 flavors, 5 changes
+```
+
+The additional names as well as `cpu-type` and `disk0-type` have been filled in,
+as all the information was available thanks to the already set `scs:name-v2`.
+The recommended less detailed name is in `scs:name-v4`.
