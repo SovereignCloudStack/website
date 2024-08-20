@@ -6,7 +6,7 @@ author:
 - "Kurt Garloff"
 - "Matthias Büchse"
 avatar:
-- "garloff.jpg"
+- "kgarloff.jpg"
 about:
 - "garloff"
 ---
