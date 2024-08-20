@@ -195,12 +195,8 @@ There may be scenarios, where this does not fit, however:
 
 In that case, there is a tool for you that uses the OpenStack APIs to add properties
 (`extra_specs`) to existing flavors. It is available in the 
-[`feat/flavor0103-add-extras` branch](https://github.com/SovereignCloudStack/standards/tree/feat/flavor0103-add-extras)
-of the SCS standards repository in the 
-[`Tests/iaas/flavor-naming/`](https://github.com/SovereignCloudStack/standards/tree/feat/flavor0103-add-extras/Tests/iaas/flavor-naming) directory.
-(The reason it is only available in a branch is an ongoing strategic discussion in 
-[PR #645](https://github.com/SovereignCloudStack/standards/pull/645). Feel free to add
-your thoughts.)
+[`Tests/iaas/flavor-naming/`](https://github.com/SovereignCloudStack/standards/tree/main/Tests/iaas/flavor-naming)
+directory of the SCS standards repository.
 
 Let's go through the steps of breaking the CiaB and having it fixed again:
 
