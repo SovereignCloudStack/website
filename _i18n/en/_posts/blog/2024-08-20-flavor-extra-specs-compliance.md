@@ -47,7 +47,7 @@ as failing on the [SCS compliance overview](https://docs.scs.community/standards
 ## Mandatory flavor properties
 
 The test tool provides the reference to the spec that we need to fulfill:
-<https://docs.scs.community/standards/scs-0103-v1-standard-flavors>
+<https://docs.scs.community/standards/scs-0103-v1-standard-flavors>.
 Let's look at the [relevant section](https://docs.scs.community/standards/scs-0103-v1-standard-flavors/#guarantees-and-properties):
 We lack the `scs:name-v1`, `scs:name-v2`, `scs:cpu-type` and `scs:disk0-type` flavor properties (`extra_specs`).
 
