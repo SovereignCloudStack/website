@@ -276,10 +276,10 @@ to the flavor properties (`extra_specs`) prior to applying them.
 ### Bonus usage (not needed for compliance) for special flavors
 
 If you define flavors outside of the SCS namespace, e.g. want to name your machine learning
-flavors `ai.GPU.N`, you would still recommended to use the
+flavors `ai.GPU.N`, you would still be well advised to use the
 [SCS flavor naming spec](https://docs.scs.community/standards/scs-0100-v3-flavor-naming)
 to set the flavor `extra_specs` for transparency and discoverability.
-You would go to the [flavor name generator](https://flavors.scs.community/), and enter
+You would go to the [flavor name generator page](https://flavors.scs.community/), and enter
 all details that you guarantee that these flavors have.
 You might end up with a name like `SCS-16T-64-200s_kvm_hwv_z4h_GNl-142`, an
 SCS flavor with 16 High Perf AMD Zen 4 SMT Threads with 64.0 GiB RAM on KVM with HW virt and SSD 200GB
@@ -287,23 +287,26 @@ root volume and Pass-Through GPU nVidia AdaLovelace (w/ 142 SM). (This is an nVi
 So you might create your host aggregates and create the flavor:
 
 ```shell
-garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas/flavor-naming [2]$ openstack flavor create --vcpu 16 --ram 65536 --disk 200 --property scs:name-v2=SCS-16T-64-200s_kvm_hwv_z4h_GNl-142 ai.l40.16
-+----------------------------+---------------------------------------------------+
-| Field                      | Value                                             |
-+----------------------------+---------------------------------------------------+
-| OS-FLV-DISABLED:disabled   | False                                             |
-| OS-FLV-EXT-DATA:ephemeral  | 0                                                 |
-| description                | None                                              |
-| disk                       | 200                                               |
-| id                         | 02571f08-afce-4820-beb9-bcd464444338              |
-| name                       | ai.l40.16                                         |
-| os-flavor-access:is_public | True                                              |
-| properties                 | scs:name-v2='SCS-16T-64-200s_kvm_hwv_z4h_GNl-142' |
-| ram                        | 65536                                             |
-| rxtx_factor                | 1.0                                               |
-| swap                       | 0                                                 |
-| vcpus                      | 16                                                |
-+----------------------------+---------------------------------------------------+
+garloff@framekurt(ciab-admin):/casa/src/SCS/standards/Tests/iaas [0]$ openstack flavor create --vcpu 16 --ram 65536 --disk 200 \
+    --property scs:name-v2=SCS-16T-64-200s_kvm_hwv_z4h_GNl-142 --property aggregate_instance_extra_specs:gpu=True \
+    --property resources:VGPU=1 ai.l40.16
++----------------------------+------------------------------------------------------------------------------------------------+
+| Field                      | Value                                                                                          |
++----------------------------+------------------------------------------------------------------------------------------------+
+| OS-FLV-DISABLED:disabled   | False                                                                                          |
+| OS-FLV-EXT-DATA:ephemeral  | 0                                                                                              |
+| description                | None                                                                                           |
+| disk                       | 200                                                                                            |
+| id                         | f411a904-d0ff-4214-ac95-7f649c23ec72                                                           |
+| name                       | ai.l40.16                                                                                      |
+| os-flavor-access:is_public | True                                                                                           |
+| properties                 | aggregate_instance_extra_specs:gpu='True', resources:VGPU='1',                                 |
+|                            | scs:name-v2='SCS-16T-64-200s_kvm_hwv_z4h_GNl-142'                                              |
+| ram                        | 65536                                                                                          |
+| rxtx_factor                | 1.0                                                                                            |
+| swap                       | 0                                                                                              |
+| vcpus                      | 16                                                                                             |
++----------------------------+------------------------------------------------------------------------------------------------+
 ```
 
 You could use the tool now to fill in the additional properties:
