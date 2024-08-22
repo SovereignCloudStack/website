@@ -82,20 +82,6 @@
   location:
     latitude: 51.34104
     longitude: 12.37416
-- name: "Stackable GmbH"
-  image: "logo-stackable.png"
-  avatar: "avatar-stackable.jpg"
-  link: "https://www.stackable.de/"
-  location:
-    latitude: 53.59546
-    longitude: 9.73133
-- name: "StackHPC Ltd"
-  image: "logo-stackhpc.png"
-  avatar: "avatar-stackhpc.jpg"
-  link: "https://www.stackhpc.com/"
-  location:
-    latitude: 51.47556
-    longitude: -2.58270
 - name: "Syself GmbH"
   image: "logo-syself.svg"
   avatar: "avatar-syself.jpeg"
@@ -131,13 +117,6 @@
   location:
     latitude: 49.41067
     longitude: 11.13104
-- name: "Cloudical Deutschland GmbH"
-  image: "logo-cloudical.png"
-  avatar: "avatar-cloudical.png"
-  link: "https://cloudical.io/"
-  location:
-    latitude: 52.46096
-    longitude: 13.51292
 - name: "dNation"
   image: "logo-dnation.png"
   avatar: "avatar-dnation.png"
