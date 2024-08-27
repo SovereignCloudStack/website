@@ -119,12 +119,14 @@ We're using a dedicated workflow to build a staging preview of our website that 
 
 ## Testing changes locally
 
+As of August 2024, the local build is aimed at a podman-based container installation.
+
 * Clone Repo
   ```
   git clone git@github.com:SovereignCloudStack/website.git
   ```
 * Start testserver
   ```
-  ./run.sh
+  bash run-podman.sh
   ```
 
