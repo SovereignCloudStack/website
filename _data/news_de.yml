@@ -1,7 +1,25 @@
+- date: "2024-08-26"
+  publisher: "IT-Business (Vogel IT)"
+  title: "Souveräne Cloud dringend gesucht"
+  details: "Dr. Stefan Riedl"
+  link: "https://www.it-business.de/souveraene-cloud-dringend-gesucht-a-f7cbb59c68f92b01e0345ce15331f2f9/?cmp=nl-dac6cad6-25d6-418e-a3c8-fb38d98ed5b8"
+
+- date: "2024-07-20"
+  publisher: "Swiss IT Magazine"
+  title: "Open Source Software als Ausweg aus dem Vendor Lock-in"
+  details: "Prof. Matthias Stürmer"
+  link: "https://www.itmagazine.ch/artikel/82558/Open_Source_Software_als_Ausweg_aus_dem_Vendor_Lock-in.html"
+
+- date: "2024-07-02"
+  publisher: "cloud ahead"
+  title: "Der Freiheitskampf des Sovereign Cloud Stacks"
+  details: "Gregor Schuhmacher"
+  link: "https://www.cloudahead.de/der-freiheitskampf-des-sovereign-cloud-stacks"
+
 - date: "2024-06-05"
   publisher: "arXiv - Computer Science - Computers and Society"
   title: "Technological Perspective on Digital Sovereignty"
-  details: "Prof. Matthias Stuermer"
+  details: "Prof. Matthias Stürmer"
   link: "https://arxiv.org/abs/2406.03266"
 
 - date: "2024-05-03"

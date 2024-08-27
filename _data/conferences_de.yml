@@ -163,3 +163,10 @@
   details: "Peter Ganten, Kurt Garloff, Felix Kronlage-Dammers"
   slides: "summit2024/summit2024_22_ganten_Zukunft-SCS-20240514.pdf"
 
+- date: "2024-08-18"
+  event: "FrOSCon 2024"
+  title: "SCS: Projektvorstellung mit einem ehrlichen Rückblick und spannendem Ausblick"
+  details: "Kurt Garloff"
+  slides: "20240818-SCS-FrOSCon.pdf"
+  link: "https://media.ccc.de/v/froscon2024-3151-sovereign_cloud_stack_-_one_platform_standardized_built_and_operated_by_many"
+
