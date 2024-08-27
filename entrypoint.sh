@@ -1,31 +1,17 @@
 #!/bin/bash
 
-if [ "$1" = "/bin/bash" ];then
-  exec /bin/bash
-fi
+set -ex
 
-if [ -z "$TARGET_UID" ];then
-   echo "ERROR: ENVIRONMENT VARIABLE TARGET_UID IS NOT PROVIDED"
-   exit 1
-fi
-if [ -z "$TARGET_GID" ];then
-   echo "ERROR: ENVIRONMENT VARIABLE TARGET_GID IS NOT PROVIDED"
-   exit 1
-fi
+mkdir -p /tmp/jekyll-build
+mkdir -p /tmp/jekyll-vendor
 
-set -x
-echo $PATH
+bundle config path "/tmp/jekyll-vendor/vendor/bundle"
+bundle config set force_ruby_platform true
 
-userdel jekyll
-adduser  -u $USER_ID -D -h /site build
-
-chown -R build /site
-
-su -c "sh -s" - build <<'EOF'
-set -x
-umask 0077
-cd /site
-bundle update
+# Change to jekyll directory and install from Gemfile
+cd /srv/jekyll
 bundle install
-jekyll serve config _config.yml,_config.dev.yml  --incremental -H 0.0.0.0
-EOF
+
+# Run jekyll serve, which includes build. Will be browsable on http://localhost:4000
+# For more output, also add --verbose
+JEKYLL_ENV=development bundle exec jekyll serve --trace --source /srv/jekyll --destination /tmp/jekyll-build --config _config.yml,_config.dev.yml --livereload --incremental --host 0.0.0.0
