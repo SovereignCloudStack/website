@@ -23,4 +23,14 @@ Workshops/Mini-Hackathons, a fully-fledged Hackathon in collaboration with
 premises in Dresden, the fourth Hackathon took place at [Gonicus](https://gonicus.de/en)
 in Arnsberg.
 
+To look back on the technical work in the SCS project and to provide an outlook, the
+[EOF](https://events.scs.community/eof/) event has been schedule for Sep 5, 2024 in Berlin.
+We will summarize our learnings from more than 3 years of working in the project and
+pass on our knowledge.
+
+### Registrations
+
+Registrierations for all events from the SCS project are happening via our
+[events page](https://events.scs.community/).
+
 <!--TODO: ## Events with contributions from SCS-->
