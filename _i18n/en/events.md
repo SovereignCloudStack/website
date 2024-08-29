@@ -21,7 +21,7 @@ in Nuremberg (Mar 2, 2023 at [Noris/Wavecon](https://wavecon.de/)), a number of
 Workshops/Mini-Hackathons, a fully-fledged Hackathon in collaboration with
 [Alasca e.V.](https://alasca.cloud/)) on Nov 8, 2023 at [Cloud & Heat](https://cloudandheat.com/)
 premises in Dresden, the fourth Hackathon took place at [Gonicus](https://gonicus.de/en)
-in Arnsberg.
+in Arnsberg on Apr 16, 2024.
 
 To look back on the technical work in the SCS project and to provide an outlook, the
 [EOF](https://events.scs.community/eof/) event has been schedule for Sep 5, 2024 in Berlin.
@@ -30,7 +30,7 @@ pass on our knowledge.
 
 ### Registrations
 
-Registrierations for all events from the SCS project are happening via our
+Registrations for all events from the SCS project are happening via our
 [events page](https://events.scs.community/).
 
 <!--TODO: ## Events with contributions from SCS-->
