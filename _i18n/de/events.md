@@ -19,8 +19,17 @@ Save the Date: 08. Mai 2025
 Nach den erfolgreichen Hackathons in Köln (22.11.2022 bei [PlusServer](https://plusserver.com/)),
 in Nürnberg (2.3.2023 bei [Noris/Wavecon](https://wavecon.de/)), einigen 
 Workshops/Mini-Hackathons und einem großen Hackathon in Kooperation mit
-[Alasca e.V.](https://alasca.cloud/)) am 8.11. bei [Cloud & Heat](https://cloudandheat.com/)
+[Alasca e.V.](https://alasca.cloud/)) am 8.11.2023 bei [Cloud & Heat](https://cloudandheat.com/)
 in Dresden, fand der vierte Hackathon am 16.4.2024 bei [Gonicus](https://gonicus.de)
 in Arnsberg statt.
+
+Als Rück- und Ausblick auf die technische Arbeit im SCS Projekt findet am 5.9.2024 in Berlin
+das [EOF](https://events.scs.community/eof/) Event statt. Hier soll noch mal das Wissen
+aus den über 3 Jahren Projektlaufzeit zusammengefasst und weitergegeben werden.
+
+### Anmeldungen
+
+Die Registrierungen macht das SCS Projekt zentral über die
+[Events Seite](https://events.scs.community/).
 
 <!--TODO: ## Veranstaltungen mit aktiver SCS Teilnahme-->
