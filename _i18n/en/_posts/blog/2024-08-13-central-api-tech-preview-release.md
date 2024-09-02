@@ -2,7 +2,7 @@
 layout: post
 title: "SCS Central API - Technical Preview Released"
 category: "tech"
-published: false
+published: true
 author:
   - "Joshua Mühlfort"
   - "Oliver Kautz"
