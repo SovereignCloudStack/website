@@ -17,6 +17,8 @@ about:
 
 In today's rapidly evolving cloud landscape, security is paramount. As organizations increasingly rely on cloud infrastructure, the need for robust security measures is more critical than ever. This is especially relevant for users of the Sovereign Cloud Stack (SCS), particularly those in sensitive business areas and larger enterprises, where regulatory requirements often mandate regular penetration tests and security audits.
 
+To enable SCS users to run their own security tests inside their infrastructure, the SCS project conceptualized and implemented tooling for automated penetration testing. With release R7 this component is published as a tech preview and available for testing and experimenting.
+
 Adhering to frameworks such as CIS Controls (formerly CIS18) and the NIS2 Directive is crucial for ensuring that security practices meet industry standards. While automated tools cannot completely replace the need for regular manual pentests, they significantly ease the process of achieving compliance, providing a strong foundation for continuous security monitoring.
 
 Moreover, offering detailed security reports to end-customers can significantly enhance transparency, providing them with confidence in the platform's security posture. This approach not only supports compliance efforts but also builds trust, which is essential in the competitive cloud service provider (CSP) market.
