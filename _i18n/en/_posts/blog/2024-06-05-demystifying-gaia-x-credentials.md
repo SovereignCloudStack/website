@@ -8,7 +8,7 @@ avatar:
   - "avatar-candh.jpg"
 ---
 
-This blog post will introduce the requirements and detailed technical process of creating and obtaining Verifiable Credentials (VC for short) for Gaia-X Credentials and using the [Gaia-X Digital Clearing House (GXDCH)](https://gaia-x.eu/gxdch/) to assert compliance. 
+This blog post will introduce the requirements and detailed technical process of creating and obtaining Verifiable Credentials (VC for short) for Gaia-X and using the [Gaia-X Digital Clearing House (GXDCH)](https://gaia-x.eu/gxdch/) to assert compliance. 
 
 We recommend reading the Gaia-X's own blog post on [Gaia-X and Verifiable Credentials / Presentations](https://gaia-x.eu/news-press/gaia-x-and-verifiable-credentials-presentations/) to get familiar with the idea and concepts behind **Verifiable Credentials** and **Verifiable Presentations**.
 
@@ -23,7 +23,7 @@ It is important to clarify some terms and concepts used throughout this blog pos
 
 #### Gaia-X Credentials / Verifiable Credentials
 
-Gaia-X regulates descriptions of Cloud Service Providers (CSPs) and their services as **Gaia-X Credentials**. A Gaia-X Credential is a set of crypographically signed claims about one or more Gaia-X entities. A Gaia-X entity is a *Participant* (including Service Conumer and Servuce Provider), a *Service Offering* and/or a *Resource*, a Service Offering is aggredated of.  
+Gaia-X regulates descriptions of Cloud Service Providers (CSPs) and their services as **Gaia-X Credentials**. A Gaia-X Credential is a set of crypographically signed claims about one or more Gaia-X entities. A Gaia-X entity is a *Participant* (including Service Conumer and Service Provider), a *Service Offering* and/or a *Resource*, a Service Offering is aggredated of.  
 
 The term **Gaia-X Credential** refers to a **Verifiable Credential** in the context of Gaia-X. It is based on [W3C Verifiable Credentials Data Model v1.1](https://www.w3.org/TR/vc-data-model/) but follows some more specialized restrictions specific to Gaia-X.
 Those are described in the [Credential format documentation](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/).
@@ -36,11 +36,11 @@ Notable key aspects are:
 
 In this blog post, the term Verifiable Credential is used interchangeably with Gaia-X Credential.
 
-At the time of writing this blog post, the old term **Self-Description** still circulates. Self-Description was replaced by the new term **Gaia-X Credentials** a long time ago, but not all of the latest [Gaia-X documents](https://docs.gaia-x.eu/) were updated, yet. This blog post uses the new term Gaia-X Credential, which is interchangeably with Self-Descriptions.
+At the time of writing this blog post, the old term **Self-Description** still circulates. Self-Description was replaced by the new term **Gaia-X Credential** a long time ago, but not all of the latest [Gaia-X documents](https://docs.gaia-x.eu/) were updated, yet. This blog post uses the new term Gaia-X Credential, which is interchangeably with Self-Descriptions.
 
 #### Gaia-X Ontology
 
-Gaia-X ontology defines a set of classes and their properties used to describe Gaia-X entites. The lastet version of Gaia-X ontology is published in Gaia-X Registry of GXDCH.  
+Gaia-X ontology defines a set of classes and their properties used to describe Gaia-X entites. The lastet version of Gaia-X ontology is published in Gaia-X Registry of Gaia-X Digital Clearing House (GXDCH).  
 
 
 #### Verifiable Presentations
@@ -83,11 +83,11 @@ For the purpose of this blog post we will focus on a very common and basic use c
 
 In order to successfully create Verifiable Credentials for the Gaia-X Compliance as illustrated above, the following assets are necessary on the provider side:
 
-1. A DNS record and web server for hosting the Gaia-X related identity assets.
-2. A public/private key pair compatible with JSON Web Signatures (JWS) and a corresponding X.509 certificate chain containing the public key.
+1. A DNS record and web server for hosting the Gaia-X related identity assets
+2. A public/private key pair compatible with JSON Web Signatures (JWS) and a corresponding X.509 certificate chain containing the public key. GXDCH expected [EIDAS](https://en.wikipedia.org/wiki/EIDAS) or [evSSL](https://en.wikipedia.org/wiki/Extended_Validation_Certificate) certificate as trust anchor of x.509 certificate chain. Deployment endpoints of GXDCH accepts [Let's Encrypt certificates](https://letsencrypt.org/) as trust anchor, too.  
     - the X.509 certificate chain needs to be hosted publicly
-3. A Decentralized Identifier (DID) for the DNS record.
-    - the DID is a JSON file that needs to be hosted publicly
+3. A [Decentralized Identifier (DID)](https://www.w3.org/TR/did-core/) and a DID document associated with the DID. DID and DID document are linked via [DID method](https://www.w3.org/TR/did-core/#methods). This blogpost uses [did:web method](https://w3c-ccg.github.io/did-method-web/). However, Gaia-X does not make any limitations with respect to DID methods.  
+    - the DID document is a JSON file that needs to be hosted publicly at `<DNS record>/.well-known/did.json`
 
 <figure class="figure mx-auto d-block" style="width:50%">
   <a href="{% asset "blog/gx-credentials/gx-credentials-creation.png" @path %}">
