@@ -45,6 +45,8 @@ One of the challenges faced during implementation was the long runtime of certai
 
 ## Usage
 
+While the SCS team runs these tools regularly against deployed SCS test environments, the tools are meant to be set up by cloud operators (CSPs) to test the security of their own test, reference and production deployments. This way, potential misconfigurations and security issues are detected before they hit production and before evil hackers find them.
+
 To utilize the automated pentesting tools in your own pipeline, you can follow the documentation provided in the [Quickstart guide](https://docs.scs.community/docs/operating-scs/components/automated-pentesting/quickstart). This guide offers detailed instructions on how to integrate the tools into your CI/CD pipeline, ensuring that your infrastructure and applications are continuously tested for vulnerabilities in line with compliance standards such as CIS Controls and NIS2.
 
 DefectDojo can be incorporated into your security operations workflow, providing a centralized platform for vulnerability management. By integrating DefectDojo, your team can more effectively track and prioritize security issues, ensuring that they are addressed in a timely manner and that the organization remains secure and complies with relevant cybersecurity regulations.
