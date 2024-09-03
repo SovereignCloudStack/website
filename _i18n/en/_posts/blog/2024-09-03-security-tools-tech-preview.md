@@ -47,7 +47,7 @@ One of the challenges faced during implementation was the long runtime of certai
 
 To utilize the automated pentesting tools in your own pipeline, you can follow the documentation provided in the [Quickstart guide](https://docs.scs.community/docs/operating-scs/components/automated-pentesting/quickstart). This guide offers detailed instructions on how to integrate the tools into your CI/CD pipeline, ensuring that your infrastructure and applications are continuously tested for vulnerabilities in line with compliance standards such as CIS Controls and NIS2.
 
-DefectDojo can be incorporated into your security operations workflow, providing a centralized platform for vulnerability management. By integrating DefectDojo, your team can more effectively track and prioritize security issues, ensuring that they are addressed in a timely manner and that the organization remains compliant with relevant cybersecurity regulations.
+DefectDojo can be incorporated into your security operations workflow, providing a centralized platform for vulnerability management. By integrating DefectDojo, your team can more effectively track and prioritize security issues, ensuring that they are addressed in a timely manner and that the organization remains secure and complies with relevant cybersecurity regulations.
 
 For further details, refer to each specific code repository:
 - [Security Infra Scan Pipeline](https://github.com/SovereignCloudStack/security-infra-scan-pipeline)
