@@ -12,5 +12,5 @@ matrix: https://matrix.to/#/@boekhorstb1:matrix.org
 mail: boekhorstb1@b1-systems.de
 avatar: rboekhorst.jpg
 bio: |
-  Rafael is a Junior Software Developer with an interest in Software Development, Linux, OpenStack and its surrounding ecosystem.
+  Rafael is a Junior Software Developer with an interest in Open Source Software Development and Linux.
 ---
