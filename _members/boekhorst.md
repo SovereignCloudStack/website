@@ -10,7 +10,7 @@ companylink: https://osism.tech/
 github: https://github.com/boekhorstb1
 matrix: https://matrix.to/#/@boekhorstb1:matrix.org
 mail: boekhorstb1@b1-systems.de
-avatar: rateboekhorst.jpg
+avatar: rboekhorst.jpg
 bio: |
   Rafael is a Junior Software Developer with an interest in Software Development, Linux, OpenStack and its surrounding ecosystem.
 ---
