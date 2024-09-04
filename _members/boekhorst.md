@@ -1,5 +1,5 @@
 ---
-author_slug: boekhorstb1
+author_slug: boekhorst
 title: Rafael te Boekhorst
 layout: community
 lastname: Boekhorst
