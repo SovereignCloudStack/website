@@ -25,11 +25,19 @@ Moreover, offering detailed security reports to end-customers can significantly 
 
 ## Concept and methodology
 
-The Automated Pentesting component of SCS introduces a comprehensive pipeline designed to enhance security across various layers of the cloud infrastructure. For Infrastructure as a Service (IaaS), tools like Greenbone Vulnerability Management (GVM) are integrated to scan for vulnerabilities in OpenStack environments, assisting in meeting security benchmarks such as the CIS Controls. For Kubernetes as a Service (KaaS), the Trivy Operator is employed to identify vulnerabilities in container images and the Kubernetes cluster state, in alignment with NIS2 requirements for maintaining the security of critical infrastructure.
+The Automated Pentesting component of SCS introduces a comprehensive pipeline designed to enhance security across various layers of the cloud infrastructure. For Infrastructure as a Service (IaaS), tools like Greenbone Vulnerability Manager (GVM) are integrated to scan for vulnerabilities in OpenStack environments, assisting in meeting security benchmarks. For Kubernetes as a Service (KaaS), the [Trivy Operator](https://aquasecurity.github.io/trivy-operator/latest/) is employed to identify vulnerabilities in container images and the Kubernetes cluster state.
+
+At the time of writing, the IaaS security pipeline consists of the following tools:
+
+* [Naabu](https://docs.projectdiscovery.io/tools/naabu/overview), for port scanning
+* [httpx](https://docs.projectdiscovery.io/tools/httpx/overview), for HTTP scanning
+* [Nuclei](https://docs.projectdiscovery.io/tools/nuclei/overview), for template-based scans
+* [ZAP](https://www.zaproxy.org/) (Zed Attack Proxy, formerly OWASP ZAP), for passive and active vulnerability scans, and
+* [Greenbone Vulnerability Manager](https://greenbone.github.io/docs/latest/) (GVM), for in-depth scanning for CVEs and other known vulnerabilities.
 
 As this pipeline focuses primarily on dynamic testing and vulnerability management, it does not include tools specifically dedicated to Static Application Security Testing (SAST). However, some of the tools in the pipeline, such as Trivy, can be configured and customized to generate reports that resemble SAST output by analyzing container images and configurations for known vulnerabilities and security misconfigurations. This flexibility allows teams to tailor the tools to their specific security needs, though dedicated SAST tools would still be beneficial for comprehensive source code analysis.
 
-Trivy Operator’s capability to export detailed security reports is a key feature, enabling teams to have a clear understanding of the security posture of their Kubernetes clusters. Additionally, DefectDojo serves as a central platform for managing vulnerabilities across the entire stack, providing a unified view that aids in prioritizing and remediating security issues. This centralization aligns with best practices recommended by frameworks like ISO/IEC 27001 and the NIST Cybersecurity Framework (CSF).
+Trivy Operator’s capability to export detailed security reports is a key feature, enabling teams to have a clear understanding of the security posture of their Kubernetes clusters. Additionally, [DefectDojo](https://www.defectdojo.org/) serves as a central platform for managing vulnerabilities across the entire stack, providing a unified view that aids in prioritizing and remediating security issues. This centralization aligns with best practices recommended by frameworks like ISO/IEC 27001 and the NIST Cybersecurity Framework (CSF).
 
 ## Why security teams benefit from automated pentesting
 
@@ -41,13 +49,13 @@ By integrating these tools into the SCS platform, the coverage of potential weak
 
 The implementation of automated pentesting within SCS is designed to be both practical and effective. The code repositories are publicly available, allowing users to review and contribute to the development process. Pipelines have been implemented as a Proof of Concept (PoC) in Zuul, an open-source CI/CD system that is well-suited for complex workflows in large-scale cloud environments.
 
-One of the challenges faced during implementation was the long runtime of certain jobs, particularly those involving Greenbone Vulnerability Management. Efforts have been made to optimize these jobs to reduce their impact on overall pipeline performance. The export functionality of Trivy Operator reports has also been streamlined, enabling easier integration with other security tools and processes, thereby ensuring ongoing alignment with regulatory requirements like CIS Controls and the NIST CSF.
+One of the challenges faced during implementation was the long runtime of certain jobs, particularly those involving GVM. Efforts have been made to optimize these jobs to reduce their impact on overall pipeline performance. The export functionality of Trivy Operator reports has also been streamlined, enabling easier integration with other security tools and processes, as well as long-term storage in S3 or Swift.
 
 ## Usage
 
-While the SCS team runs these tools regularly against deployed SCS test environments, the tools are meant to be set up by cloud operators (CSPs) to test the security of their own test, reference and production deployments. This way, potential misconfigurations and security issues are detected before they hit production and before evil hackers find them.
+While the SCS team runs these tools regularly against deployed SCS test environments, the security pipeline is meant to be set up by cloud operators (CSPs) to test the security of their own QA, reference and production deployments. There is no dependency on external systems. This way, potential misconfigurations and security issues are detected before they hit production and before outside threat actors find them.
 
-To utilize the automated pentesting tools in your own pipeline, you can follow the documentation provided in the [Quickstart guide](https://docs.scs.community/docs/operating-scs/components/automated-pentesting/quickstart). This guide offers detailed instructions on how to integrate the tools into your CI/CD pipeline, ensuring that your infrastructure and applications are continuously tested for vulnerabilities in line with compliance standards such as CIS Controls and NIS2.
+To utilize the automated pentesting tools in your own pipeline, you can follow the documentation provided in the [Quickstart guide](https://docs.scs.community/docs/operating-scs/components/automated-pentesting/quickstart). This guide offers detailed instructions on how to integrate the tools into your CI/CD pipeline, ensuring that your infrastructure and applications are continuously tested for vulnerabilities.
 
 DefectDojo can be incorporated into your security operations workflow, providing a centralized platform for vulnerability management. By integrating DefectDojo, your team can more effectively track and prioritize security issues, ensuring that they are addressed in a timely manner and that the organization remains secure and complies with relevant cybersecurity regulations.
 
