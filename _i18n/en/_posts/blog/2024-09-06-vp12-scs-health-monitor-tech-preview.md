@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SCS Health Monitor released: What's inside and how to use it"
+title:  "SCS Health Monitor Tech Preview: What's inside and how to use it"
 category: tech
 author:
 - "Piotr Bigos"
