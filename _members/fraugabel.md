@@ -6,7 +6,7 @@ lastname: Trentau
 firstname: Katharina
 role: Software Engineer
 company: Cloud & Heat Technologies GmbH
-linkedin: https://www.linkedin.com/in/katharina-trentau-01a1a4297/
+linkedin: https://de.linkedin.com/in/katharina-trentau-01a1a4297
 companylink: https://www.cloudandheat.com
 github: https://github.com/fraugabel
 avatar: https://avatars.githubusercontent.com/u/74607275
