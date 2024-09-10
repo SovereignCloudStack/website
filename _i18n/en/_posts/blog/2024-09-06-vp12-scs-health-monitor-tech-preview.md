@@ -11,7 +11,6 @@ avatar:
 - "piobig2871.jpg"
 - "default-avatar.jpg"
 - "bitkeks.png"
-- "fraugabel.jpg"
 about:
 - "piobig2871"
 - "bitkeks"
