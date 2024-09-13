@@ -16,3 +16,6 @@
 - name: "artcodix"
   image: "logo-artcodix-cloud.svg"
   link: "https://artcodix.com"
+- name: "SysEleven"
+  image: "logo-syseleven.png"
+  link: "https://syseleven.de"

@@ -1,3 +1,14 @@
+- date: "2024-08-01"
+  publisher: "Admin Magazine (Linux New Media)"
+  title: "Sovereign Cloud Stack - a genuine alternative for Europe"
+  details: "Kurt Garloff"
+  link: "https://www.admin-magazine.com/Archive/2024/82"
+
+- date: "2024-06-04"
+  publisher: "eid.as"
+  title: "eIDAS-Testbed successfully launched"
+  link: "https://www.eid.as/news/default-5ea2dac82c/"
+
 - date: "2022-08-04"
   publisher: "the cloud report"
   title: "A 5th open paradigm - open operations"
@@ -14,7 +25,7 @@
   publisher: "the cloud report"
   title: "1/2022: Why digital sovereignty is more than mere legal compliance"
   details: "Eduard Itrich, Kurt Garloff, Felix Kronlage-Dammers"
-  link: "https://the-report.cloud/downloads"
+  link: "https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/"
 
 - date: "2021-09-09"
   publisher: "the cloud report"
