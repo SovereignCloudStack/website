@@ -591,7 +591,7 @@ However, Gaia-X Compliance Service expects value of `id` element of **credential
 
 
 <figure class="figure mx-auto d-block" style="width:50%">
-  <a href="{% asset "blog/gx-participant-so-relation-cs.png" @path %}">
+  <a href="{% asset "blog/gx-credentials/gx-participant-so-relation-cs.png" @path %}">
     {% asset 'blog/gx-credentials/gx-participant-so-relation-cs.png' class="figure-img w-100" %}
   </a>
 </figure>
