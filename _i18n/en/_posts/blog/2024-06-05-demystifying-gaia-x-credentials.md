@@ -581,8 +581,8 @@ There is a notable quirk about how Gaia-X links Gaia-X Credentials to each other
 According to [Gaia-X Credential Format](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#verifiable-credential), each Gaia-X Credential MUST have an `id` element which SHOULD be a resolvable URL. According to [W3C Verifiable Credenatial Data Model 1.1](https://www.w3.org/TR/vc-data-model/#identifiers) the `id` element acts as an identifier for credentials. It seems to be obiuos to use credential's identifier as value of `providedBy` attribute. 
 
 <figure class="figure mx-auto d-block" style="width:50%">
-  <a href="{% asset "blog/gx-credentials/gx-participant-so-relation-vc.png" @path %}">
-    {% asset 'blog/gx-credentials/gx-participant-so-relation-vc.png' class="figure-img w-100" %}
+  <a href="{% asset "blog/gx-credentials/gx-participant-so-relation-vc" @path %}">
+    {% asset 'blog/gx-credentials/gx-participant-so-relation-vc' class="figure-img w-100" %}
   </a>
 </figure>
 
@@ -591,8 +591,8 @@ However, Gaia-X Compliance Service expects value of `id` element of **credential
 
 
 <figure class="figure mx-auto d-block" style="width:50%">
-  <a href="{% asset "blog/gx-participant-so-relation-cs.png" @path %}">
-    {% asset 'blog/gx-credentials/gx-participant-so-relation-cs.png' class="figure-img w-100" %}
+  <a href="{% asset "blog/gx-participant-so-relation-cs" @path %}">
+    {% asset 'blog/gx-credentials/gx-participant-so-relation-cs' class="figure-img w-100" %}
   </a>
 </figure>
 
@@ -679,7 +679,7 @@ You may wonder, why GXDCH Compliance Service is able to verify comnpliance of ou
   "statusCode": 409
 }```
 
-This can be ascribed to the fact, that Compliance Service expectes all Verifiable Credentials as whole to be part of Verifiable Presentation. Compliance Service does not resolve any URL. Instead identifiers act as keys. Compliance Service looks for Verifiable Credential, whose credential subject's `id` matches with a given key and travers back to issuer and proof of the corresponding Verifiable Credential. This behavoiur seems to be a workaround and contradicts a bit with linked data principles. There is a discussion to clarify if this behaviour is intended, see [#78](https://gitlab.com/gaia-x/lab/compliance/gx-compliance/-/issues/78)    
+This can be ascribed to the fact, that Compliance Service expectes all Verifiable Credentials as whole to be part of Verifiable Presentation. Compliance Service does not resolve any URL. Instead identifiers act as keys. Compliance Service looks for Verifiable Credential, whose credential subject's `id` matches with a given key and travers back to issuer and proof of the corresponding Verifiable Credential. This behavoiur seems to be a workaround and contradicts a bit with linked data principles, where Verifiable Credentials are reference by resolvable URLs. There is a discussion, currently to clarify if and/or why this behaviour is intended, see [#78](https://gitlab.com/gaia-x/lab/compliance/gx-compliance/-/issues/78)    
 
 
 ## Summary
