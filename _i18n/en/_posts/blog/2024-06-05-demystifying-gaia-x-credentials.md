@@ -30,7 +30,7 @@ Those are described in the [Credential format documentation](https://docs.gaia-x
 Notable key aspects are:
 
 - The serialization format is [JSON-LD](https://json-ld.org/).
-- The verification method (= public key to verify proof) type is [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) entailing [JSON Web Signature](https://datatracker.ietf.org/doc/html/rfc7515) as proof value.
+- The verification method (= public key to verify proof) type is [JSON Web Key](https://datatracker.ietf.org/doc/html/rfc7517) entailing compacted [JSON Web Signature](https://w3c-ccg.github.io/lds-jws2020/) as embedded proof value.
 - Claims are expressd as [Resource Description Framwork (RDF)](https://www.w3.org/TR/rdf11-concepts/) trippels and [MUST use](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#namespace-bindings-and-contexts) the [Gaia-X Onotology](https://gitlab.com/gaia-x/technical-committee/service-characteristics-working-group/service-characteristics) in their context.
 - Any `id` fields of Verifiable Credentials (including their `credentialSubject.id`) [MUST be unique](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#identifiers).
 
@@ -40,14 +40,14 @@ At the time of writing, the old term **Self-Description** still circulates. Self
 
 #### Gaia-X Ontology
 
-Gaia-X ontology defines a set of classes and their properties used to describe Gaia-X entites. The lastet version of Gaia-X ontology is published in [Gaia-X Registry](https://registry.lab.gaia-x.eu/docs/#menu) of Gaia-X Digital Clearing House (GXDCH).  
+Gaia-X ontology defines a set of classes and their properties used to describe Gaia-X entites. The lastet version of Gaia-X ontology is published in [Gaia-X Registry](https://registry.lab.gaia-x.eu/docs/#menu) of GXDCH.  
 
 
 #### Verifiable Presentations
 
-Claims about a Gaia-X entity, may spread across multiple Gaia-X Credentials. Futhermore Gaia-X Credentials can contain references to other Gaia-X Credentials. Gaia-X uses the concept of Verifiable Presentations following the [W3C Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/) to bound all claims about a Gaia-X entity.  
+Claims about a Gaia-X entity may spread across multiple Gaia-X Credentials. Futhermore Gaia-X Credentials can contain references to other Gaia-X Credentials. Gaia-X uses the concept of Verifiable Presentations following the [W3C Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/) to bound all claims about a Gaia-X entity.  
 
-A **Verifiable Presentation** representing a Cloud Service Provider and their offerings as a form of self-definition is usually submitted to the Compliance Service of the Gaia-X Digital Clearing House (GXDCH), resulting in a Gaia-X Credential that attests the compliance.
+A **Verifiable Presentation** representing a Cloud Service Provider and their offerings as a form of self-definition is usually submitted to the Compliance Service of the GXDCH, resulting in a Gaia-X Credential that attests the compliance.
 
 
 ## Desired Goal
