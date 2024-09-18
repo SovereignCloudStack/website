@@ -2,8 +2,8 @@
 layout: post
 title: "Demystifying Gaia-X Credentials"
 author:
-  - "Anja Strunk"
   - "Markus Hentsch"
+  - "Anja Strunk"
 avatar:
   - "avatar-candh.jpg"
 ---
@@ -76,7 +76,7 @@ For the purpose of this blog post we will focus on a very common and basic use c
 1. The **Legal Registration Number** (LRN) belonging to the provider.
 2. The **Legal Participant** credential representing the provider as a legal person identified by the LRN.
 3. The signed Gaia-X **Terms & Conditions** which the provider pledges to adhere to.
-4. The **Service Offering** credential repesenting the provider's digital service available for order.
+4. The **Service Offering** credential representing the provider's digital service available for order.
 
 
 ## Required Identity Assets for Credential Creation
@@ -210,7 +210,7 @@ As a result it will be accessible using the DID reference `did:web:mydomain.com`
 **Important:** Each `verificationMethod` entry in the DID document receives a unique `id` field. When creating Verifiable Credentials referencing the DID document, their `proof.verificationMethod` value must exactly match one of the `id`s within `verificationMethod` of the DID document! This includes the `#`-prefixed appendix (`did:web:mydomain.com#JWK2020-RSA` in this example).
 
 
-### Step 3: Verifiable Credential for Legal Registration Number (LRN)
+### Step 3: Gaia-X Credential for Legal Registration Number (LRN)
 
 To be acknowledged as a proper participant in the Gaia-X Trust Framework we need to legally identify ourselves as a [legal person](https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/participant/#legal-person) that represents our entity (e.g. company).
 For this purpose we need a Gaia-X Credential for our Legal Registration Number (LRN) as a requirement for our Participant Gaia-X Credential later on.
@@ -221,7 +221,7 @@ The Clearing House has a dedicated API for this: the Notarization API.
 You can use the [Gaia-X Wizard](https://wizard.lab.gaia-x.eu/legalRegistrationNumber) for creating the Gaia-X Credentials or use the Notarization API directly.
 
 There is a notable quirk about the process here that needs some explanation before we go on.
-When requesting a LRN Verifiable Credential a **Verifiable Credential identifier** must be provided.
+When requesting a LRN Gaia-X Credential a **Verifiable Credential identifier** must be provided.
 This corresponds to "Verifiable Credential ID" in the Gaia-X Wizard or the "vcid" path parameter of the API.
 In addition to that a **credential subject identifier** will need to be specified as well.
 This corresponds to "Credential subject ID" in the Gaia-X Wizard or the "id" request body field when using the API.
@@ -240,9 +240,9 @@ For the purpose of demonstration, we will do that next but keep in mind that thi
 
 Strictly speaking, we are not the issuer this time around (the GXDCH is) but since the Notarization API allows us to specify those identifiers, we will keep that responsibility nonetheless and have the choice here.
 
-We are just about to receive the Verifiable Credential and as such we don't have the URL to it yet that we want to use in the identifiers, so the process can seem a bit unintuitive.
-The solution is to prematurely specify the URL where we *intend* to put the Verifiable Credential, in our example this will be `https://mydomain.com/.well-known/lrn.json`.
-The link is not actually validated by the Notarization API as it only issues the Verifiable Credential itself.
+We are just about to receive the Gaia-X Credential and as such we don't have the URL to it yet that we want to use in the identifiers, so the process can seem a bit unintuitive.
+The solution is to prematurely specify the URL where we *intend* to put the Gaia-X Credential, in our example this will be `https://mydomain.com/.well-known/lrn.json`.
+The link is not actually validated by the Notarization API as it only issues the Gaia-X Credential itself.
 To adhere to the requirement of keeping identifiers unique, we can use a trick to attach arbitrary anchors to the URL in order to keep both identifiers different while still resolving to the same URL:
 
 - Verifiable Credential identifier: `https://mydomain.com/.well-known/lrn.json`
@@ -474,10 +474,15 @@ The process is pretty straightforward and only requires us to assemble all desir
 ```
 
 The JSON objects within the `verifiableCredential` list are the full signed JSON structures (including the "proof" section) as individually created in the previous steps.
-They are omitted and replaced by placeholders here for readability. 
-Please note, there is a missmatch between Gaia-X official documentation and  implementation of GXDCH Compliance Service for Tagus release. According to [Gaia-X specification](https://gaia-x.gitlab.io/policy-rules-committee/compliance-document/Process/) Compliance Service requires a [W3C Verifiable Presentation](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-presentations) as input. A Verifiable Presentation is a set of Verifiable Credentials, whose authorship can be cryptographically verified. I.e. each Verifiable Presenation MUST contain at least one "proof" section. In constrast to that, Compliance Service accepts Verifiable Presentations without "proof" section, which is just a presenation according to W3C Verifiable Standard 1.1. This missmatch was already [reported](https://gitlab.com/gaia-x/technical-committee/identity-credentials-and-access-management-working-group/icam/-/issues/72) by community.
+They are omitted and replaced by placeholders here for readability.
 
-We simply send this request body to `https://compliance.lab.gaia-x.eu/v1-staging/api/credential-offers` and as a response we receive yet another Verifiable Credential, assumed that the Gaia-X Compliance Service can successfully validate the signature of each individual credential contained in the Verifiable Presentation.
+Please note that there is a mismatch between the Gaia-X official documentation and the implementation of the GXDCH Compliance Service for the Tagus release.
+According to the [Gaia-X specification](https://gaia-x.gitlab.io/policy-rules-committee/compliance-document/Process/), the Compliance Service requires a [W3C Verifiable Presentation](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-presentations) as input.
+A Verifiable Presentation is a set of Verifiable Credentials, whose authorship can be cryptographically verified, i.e., each Verifiable Presentation MUST contain at least one "proof" section.
+In contrast to this requirement, the Gaia-X Compliance Service accepts Verifiable Presentations without a "proof" section, which is just a presentation according to W3C Verifiable Standard 1.1.
+This mismatch was already [reported](https://gitlab.com/gaia-x/technical-committee/identity-credentials-and-access-management-working-group/icam/-/issues/72) by the community.
+
+We simply send the request body shown above to `https://compliance.lab.gaia-x.eu/v1-staging/api/credential-offers` and as a response we receive yet another Gaia-X Credential, assumed that the Gaia-X Compliance Service can successfully validate the signature of each individual credential contained in the Verifiable Presentation.
 
 This time, the received credential does not contain the whole input structure again, which would include the full JSON representation of all Gaia-X Credentials included in the Verifiable Presentation.
 Instead, credentials are only referenced by their subject ID and a hash of their content as received by the Gaia-X Compliance Service:
@@ -516,26 +521,31 @@ Instead, credentials are only referenced by their subject ID and a hash of their
 (output truncated for readability)
 
 This final Gaia-X Credential is the Gaia-X Compliance VC and attests the compliance of our Verifiable Presentation and its included credentials.
-We can now share the Verifiable Presentation along with this Gaia-X Compliance VC to proof our Gaia-X compliance as Gaia-X Legal Person.
+We can now share the Verifiable Presentation along with this Gaia-X Compliance VC to proof of our Gaia-X compliance as a Gaia-X Legal Participant.
 
+However, this Verifiable Presentation on its own is not very useful to describe any properties of the services we offer as a service provider since it mainly concerns our identity.
+Therefore, we want to create another Verifiable Presentation next which focuses on another Gaia-X class: the **Service Offering**.
+For this, we need to create a dedicated Gaia-X Credential which we can then combine with some of the existing ones into another Verifiable Presentation.
 
 ### Step 7: Gaia-X Credential for Service Offering
 
-In order to create Gaia-X Credential for an offered service, we have to repeat some stepd from above
+In order to create a Gaia-X Credential for an offered service, we can use similar steps as described above:
 
-1. Create a self-signed Gaia-X Credential for class **Service Offering**
+1. Create a self-signed Gaia-X Credential for the class **Service Offering**
 2. Build a Verifiable Presentation for the Complaince API
 
 The [Gaia-X Trust Framework](https://docs.gaia-x.eu/policy-rules-committee/trust-framework/22.10/service/) expects four mandatory attributes, which have to be attested by Gaia-X Credentials:
 
-1. `providedBy`: A resolvable link to the participant Gaia-X Credential providing the service
+1. `providedBy`: A resolvable link to the Participant Gaia-X Credential providing the service
 2. `termsAndConditions`: A resolvable link to the Terms and Conditions applying to that service.
-3. `policy`: A list of policy expressed using a DSL (e.g., Rego or ODRL) (access control, throttling, usage, retention, …)
-4. `dataAccountExport` A list of methods to export data from your user’s account out of the service
+3. `policy`: A list of policies expressed using a DSL (e.g., Rego or ODRL), inlcuding access control, throttling, usage, retention, …
+4. `dataAccountExport` A list of methods to export data from your user's account out of the service
 
-The attribute `providedBy` points to Gaia-X Credential for us as CSP. We already created it in step 4 as a Verifiable Credentials for `LegalPerson`. To refer this credential, the value of `providedBy.id` must be the id of the credential subject of Gaia-X Credential for `LegalPerson`. 
+The attribute `providedBy` points to a Gaia-X Credential representing the  CSP.
+We already created it in step 4 as a Verifiable Credentials for `LegalParticipant`. 
+To refer this credential, the value of `providedBy.id` must be the id of the credential subject of the Gaia-X Credential for `LegalParticipant`. 
 
-Here is how the whole Gaia-X Credential for your Service Offering could look like:
+Here is how the resulting Gaia-X Credential for a Service Offering could look like:
 
 ```json
 {
@@ -552,11 +562,11 @@ Here is how the whole Gaia-X Credential for your Service Offering could look lik
     "type": "gx:ServiceOffering",
     "id": "https://mydomain.com/.well-known/service-offering.json#subject",
     "gx:providedBy": {
-      "id": "https://www.cloudandheat.com/legal_person.json#subject"
+      "id": "https://mydomain.com/.well-known/participant.json#subject"
     },
     "gx:termsAndConditions": [
       {
-        "gx:URL": "https://www.mydomain.com/tandc/",
+        "gx:URL": "https://mydomain.com/tandc/",
         "gx:hash": ...
       }
     ],
@@ -573,32 +583,15 @@ Here is how the whole Gaia-X Credential for your Service Offering could look lik
 }
 ```
 
-There is a notable quirk about how Gaia-X links Gaia-X Credentials to each other, which deviate from W3C Verifiable Credential standard and needs some explanation. According to [Gaia-X Credential Format](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#verifiable-credential), each Gaia-X Credential MUST have an unique `id` element which SHOULD be a resolvable URL. According to [W3C Verifiable Credenatial Data Model 1.1](https://www.w3.org/TR/vc-data-model/#identifiers) the `id` element acts as an identifier for credentials. It seems to be obiuos to use credential's identifier as value of `providedBy` attribute. 
+Note that the link between the Service Offering Credential and the Participant Credential does not work across different documents (e.g. via URL) due to limitations of the current Gaia-X implementation, see the [corresponding appendix section](#current-limitations-when-linking-between-gaia-x-credentials) for further details.
+As a result, any referenced Gaia-X Credentials (e.g. the Participant Credential via the Service Offering's `gx:providedBy`) must be included in the Verifiable Presentation in the next step again.
 
-<figure class="figure mx-auto d-block" style="width:50%">
-  <a href="{% asset "blog/gx-credentials/gx-participant-so-relation-vc.png" @path %}">
-    {% asset 'blog/gx-credentials/gx-participant-so-relation-vc.png' class="figure-img w-100" %}
-  </a>
-</figure>
+### Step 8: Building the Service Offering Verifiable Presentation for the Compliance API
 
+Using the Gaia-X Credentials for the Service Offering and the minimal set of credentials for the CSP, we can now build a Verifiable Presentation for our service and submit it to the [Gaia-X Compliance API](https://compliance.lab.gaia-x.eu/v1-staging/docs).
 
-However, Gaia-X Compliance Service expects value of `id` element of **credential subject** instead of value of `id` element of **Verifiable Credential**. 
-
-
-<figure class="figure mx-auto d-block" style="width:50%">
-  <a href="{% asset "blog/gx-credentials/gx-participant-so-relation-cs.png" @path %}">
-    {% asset 'blog/gx-credentials/gx-participant-so-relation-cs.png' class="figure-img w-100" %}
-  </a>
-</figure>
-
- Credential subjects neither have a digital signature nor an issuer. These elements are part of verifiable credential only and are not reachable from credential subject. A verifier is not able to validate authorship or recognize tampering of referenced claims, i.e. CSP in case of `providedBy` of Service Offering Gaia-X Credential. This behaviour seemst to be wrong and was already requested to be clarified, see [#78](https://gitlab.com/gaia-x/lab/compliance/gx-compliance/-/issues/78).
-
-
-### Step 8: Building the Verifiable Presentation for the Compliance API
-
-Using credentials for service offering and the minimal set of credentials for CPS we can now build a Verifiable Presentation for our service and submit it to the [Gaia-X Compliance API](https://compliance.lab.gaia-x.eu/v1-staging/docs).
-
-The process is pretty straightforward and we alread did this for CSP. We just have to add Gaia-X Credential for our service offering to Verifiable Presentation of CSP from step 6:
+As we already did the same for our first Verifiable Presentation in step 6, this process is pretty straightforward.
+We just have to add the Gaia-X Credential for our Service Offering to the Verifiable Presentation from step 6:
 
 ```json
 {
@@ -621,7 +614,7 @@ The process is pretty straightforward and we alread did this for CSP. We just ha
 }
 ```
 
-We receive a Verifiable Credential, which attest the compliance of our service offering with Gaia-X. 
+We receive a Verifiable Credential, which attests the compliance of our Service Offering with Gaia-X: 
 
 
 ```json
@@ -664,7 +657,9 @@ We receive a Verifiable Credential, which attest the compliance of our service o
 ```
 (output truncated for readability)
 
-You may wonder, why GXDCH Compliance Service is able to verify comnpliance of our service offering, as we pointed out, that proof and issuer of CSP's verifiable credentials are lost (see step 7). In fact, GXDCH Compliance Service evalutes proof of CSP's credentials, which can be tested by tampering proof. You will receive a HTTP status code 409 (Conflict):
+At this point you may start to wonder why the GXDCH Compliance Service is able to verify the compliance of our Service Offering, when the proof and issuer of the CSP's Verifiable Credentials are lost, as we pointed out at the end of step 7 (see also the[corresponding appendix section](#current-limitations-when-linking-between-gaia-x-credentials)).
+Upon further examination, the GXDCH Compliance Service does evaluate the proof of the CSP's credentials, which can be tested by tampering with the proof.
+You will receive a HTTP status code 409 (Conflict):
 
 ```json
 {
@@ -674,16 +669,21 @@ You may wonder, why GXDCH Compliance Service is able to verify comnpliance of ou
 }
 ```
 
-This can be ascribed to the fact, that Compliance Service expectes all Verifiable Credentials to be part of Verifiable Presentation. Compliance Service does not resolve any URL. Instead identifiers act as keys. Compliance Service looks for Verifiable Credential, whose credential subject's `id` matches with a given key and travers back to issuer and proof of the corresponding Verifiable Credential. This behavoiur seems to be a workaround and contradicts a bit with linked data principles, where Verifiable Credentials are reference by resolvable URLs. There is a discussion, currently to clarify if and/or why this behaviour is intended, see [#78](https://gitlab.com/gaia-x/lab/compliance/gx-compliance/-/issues/78)    
+This can be ascribed to the fact, that the Compliance Service expects all Verifiable Credentials to be part of the Verifiable Presentation. The Compliance Service does not actually resolve any URL.
+Instead, identifiers act as keys for a local lookup in the same Verifiable Presentation.
+The Compliance Service looks for a Verifiable Credential whose credential subject's `id` matches with a given key and traverses back to issuer and proof of the corresponding Verifiable Credential.
+This behavior seems to be a workaround and contradicts a bit with linked data principles, where Verifiable Credentials are referenced by resolvable URLs.
+There is a discussion currently to clarify if and/or why this behaviour is intended, see [this issue report](https://gitlab.com/gaia-x/lab/compliance/gx-compliance/-/issues/78)    
 
 
 ## Summary
 
 In this blog post we introduced the basic concepts of Gaia-X Credentials and Verifiable Presentations used by participants of the Gaia-X Trust Framework.
-We presented the requirements and basic steps for getting started with creating Gaia-X Credentials as a provider for ourselves and our offered servives.
+We presented the requirements and basic steps for getting started with creating Gaia-X Credentials for our identity as a provider as well as our offered services.
 Based on this foundation, a Verifiable Presentation was constructed in a step-by-step fashion consisting of an example set of credentials for submission to the Gaia-X Compliance Service.
 At each step we made sure to point out the crucial details of properly linking and providing the required identity assets in compliance to the Gaia-X framework.
-At the final step we submitted the Verifiable Presentation to the Gaia-X Compliance Service and received our Gaia-X Compliance VC.
+We then submitted the Verifiable Presentation about our identity to the Gaia-X Compliance Service and received our first Gaia-X Compliance VC attesting its compliance.
+To expand on this, in the final steps we created an additional Gaia-X Credential for the Service Offering class to represent our services and built another Verifiable Presentation based on it.
 
 For SCS cloud infrastructures, the [SCS gx-credential-generator](https://github.com/SovereignCloudStack/gx-credential-generator) tool is able to automatically generate the full set of Gaia-X Credentials including all applicable service offerings based on a SCS infrastructure.
 In conjunction with the [SCS DID creator](https://github.com/SovereignCloudStack/scs-did-creator/) this will make most manual steps in this process unnecessary for SCS-compliant infrastructures.
@@ -691,6 +691,26 @@ In conjunction with the [SCS DID creator](https://github.com/SovereignCloudStack
 The created Gaia-X Credentials can later be registered in the [Federated Catalogues of Gaia-X](https://docs.gaia-x.eu/technical-committee/architecture-document/22.10/federation_service/#federated-catalogue) to make them discoverable for consumers within the Gaia-X ecosystem.
 
 # Appendix
+
+## Current limitations when linking between Gaia-X Credentials
+
+There is a notable quirk about how Gaia-X links Gaia-X Credentials to each other, which deviates from the W3C Verifiable Credential standard and needs some explanation.
+According to the [Gaia-X Credential Format](https://docs.gaia-x.eu/technical-committee/identity-credential-access-management/22.10/credential_format/#verifiable-credential), each Gaia-X Credential MUST have a unique `id` element which SHOULD be a resolvable URL.
+According to the [W3C Verifiable Credential Data Model 1.1](https://www.w3.org/TR/vc-data-model/#identifiers) the `id` element acts as an identifier for credentials.
+It seems obvious to use the credential's identifier as value of `providedBy` attribute. 
+
+However, the Gaia-X Compliance Service expects the `id` value of the nested **credential subject** instead of the top-level `id` value of the **Verifiable Credential** itself.
+Taking the Service Offering Credential as an example, the difference can be visualized like this:
+
+<figure class="figure mx-auto d-block" style="width:100%">
+  <a href="{% asset "blog/gx-credentials/gx-participant-so-relation.png" @path %}">
+    {% asset 'blog/gx-credentials/gx-participant-so-relation.png' class="figure-img w-100" %}
+  </a>
+</figure>
+
+Credential subjects neither have a digital signature nor an issuer. These elements are part of a Verifiable Credential only and are not reachable from credential subject.
+A verifier is not able to validate authorship or recognize tampering of referenced claims, i.e., of a CSP in case of the `providedBy` of Service Offering Gaia-X Credentials.
+This behaviour seems wrong and was already requested to be clarified, see [this issue report](https://gitlab.com/gaia-x/lab/compliance/gx-compliance/-/issues/78).
 
 ## Python code for signing Verifiable Credentials
 
