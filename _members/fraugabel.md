@@ -9,6 +9,7 @@ company: Cloud & Heat Technologies GmbH
 linkedin: https://www.linkedin.com/in/katharina-trentau-01a1a4297/
 companylink: https://www.cloudandheat.com
 github: https://github.com/fraugabel
+avatar: "avatar-fraugabel.png"
 bio: |
    Former Digital Artist from Berlin. BA in Mechatronics and MA in Electrotechnic / Process Informatic. Open for open source.
 ---
