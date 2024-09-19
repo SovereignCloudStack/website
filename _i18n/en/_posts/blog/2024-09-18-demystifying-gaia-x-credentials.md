@@ -680,6 +680,20 @@ This is only possible because the full credential (including proof and issuer) o
 This behavior seems to be a workaround and stands in contrast with the Linked Data principles of [JSON-LD](https://www.w3.org/TR/json-ld11/), which usually build links based on resolvable URLs.
 There is a discussion currently to clarify if and/or why this behaviour is intended, see [this issue discussion at Gaia-X](https://gitlab.com/gaia-x/lab/compliance/gx-compliance/-/issues/78).
 
+### Automated Gaia-X Credential generation for SCS infrastructures
+
+The Sovereign Cloud Stack (SCS) project is building tools to automate the process of Gaia-X Credential generation for SCS infrastructures, making most of the manual steps unnecessary.
+There are two tools that can help you automate most of the manual processes described in this blog post:
+
+1. The [scs-did-creator](https://github.com/SovereignCloudStack/scs-did-creator/).
+2. The SCS [gx-credential-generator](https://github.com/SovereignCloudStack/gx-credential-generator).
+
+The **scs-did-creator** helps creating the DID documents based on the desired key pairs and basically covers step 2 of the instructions above.
+
+The **gx-credential-generator** implements Gaia-X credential generation for CSP identity as well as OpenStack-related service offerings and covers steps 3 through 8.
+For the service offering, it includes auto-discovery for SCS infrastructures using the OpenStack API.
+An extension to also cover the Kubernetes layer of SCS infrastructures is planned for the future.
+
 ## Summary
 
 In this blog post we introduced the basic concepts of Gaia-X Credentials and Verifiable Presentations used by participants of the Gaia-X Trust Framework.
@@ -689,8 +703,7 @@ At each step we made sure to point out the crucial details of properly linking a
 We then submitted the Verifiable Presentation about our identity to the Gaia-X Compliance Service and received our first Gaia-X Compliance VC attesting its compliance.
 To expand on this, in the final steps we created an additional Gaia-X Credential for the Service Offering class to represent our services and built another Verifiable Presentation based on it.
 
-For SCS cloud infrastructures, the [SCS gx-credential-generator](https://github.com/SovereignCloudStack/gx-credential-generator) tool is able to automatically generate the full set of Gaia-X Credentials including all applicable service offerings based on a SCS infrastructure.
-In conjunction with the [SCS DID creator](https://github.com/SovereignCloudStack/scs-did-creator/) this will make most manual steps in this process unnecessary for SCS-compliant infrastructures.
+At the end we briefly presented tools developed by the SCS project to automate Gaia-X Credential generation that cover most of the manual steps described in this post.
 
 The created Gaia-X Credentials can later be registered in the [Federated Catalogues of Gaia-X](https://docs.gaia-x.eu/technical-committee/architecture-document/22.10/federation_service/#federated-catalogue) to make them discoverable for consumers within the Gaia-X ecosystem.
 
