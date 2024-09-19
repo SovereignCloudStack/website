@@ -583,7 +583,9 @@ Here is how the resulting Gaia-X Credential for a Service Offering could look li
 }
 ```
 
-Note that the link between the Service Offering Credential and the Participant Credential does not work across different documents (e.g. via URL) due to limitations of the current Gaia-X implementation, see the [corresponding appendix section](#current-limitations-when-linking-between-gaia-x-credentials) for further details.
+Note that the link between the Service Offering Credential and the Participant Credential is established through the reference of the credential subject identifier, not the credential identifier.
+See the [corresponding appendix section](#current-limitations-when-linking-between-gaia-x-credentials) for further details.
+Furthermore, as the Gaia-X Compliance Service (at the time of writing) does not resolve URL references to other credentials, we cannot simply link to the credentials we created and published in the previous steps.
 As a result, any referenced Gaia-X Credentials (e.g. the Participant Credential via the Service Offering's `gx:providedBy`) must be included in the Verifiable Presentation in the next step again.
 
 ### Step 8: Building the Service Offering Verifiable Presentation for the Compliance API
@@ -657,8 +659,8 @@ We receive a Verifiable Credential, which attests the compliance of our Service 
 ```
 (output truncated for readability)
 
-At this point you may start to wonder why the GXDCH Compliance Service is able to verify the compliance of our Service Offering, when the proof and issuer of the CSP's Verifiable Credentials are lost, as we pointed out at the end of step 7 (see also the[corresponding appendix section](#current-limitations-when-linking-between-gaia-x-credentials)).
-Upon further examination, the GXDCH Compliance Service does evaluate the proof of the CSP's credentials, which can be tested by tampering with the proof.
+At this point you may start to wonder why the GXDCH Compliance Service is able to verify the compliance of our Service Offering, when the proof and issuer of the CSP's Verifiable Credentials are effectively lost, as we pointed out at the end of step 7 (see also the[corresponding appendix section](#current-limitations-when-linking-between-gaia-x-credentials)).
+Upon further examination, the GXDCH Compliance Service does evaluate the proof of the enclosing CSP's credential, which can be tested by tampering with the proof.
 You will receive a HTTP status code 409 (Conflict):
 
 ```json
@@ -669,12 +671,14 @@ You will receive a HTTP status code 409 (Conflict):
 }
 ```
 
-This can be ascribed to the fact, that the Compliance Service expects all Verifiable Credentials to be part of the Verifiable Presentation. The Compliance Service does not actually resolve any URL.
-Instead, identifiers act as keys for a local lookup in the same Verifiable Presentation.
+This can be ascribed to the fact, that the Compliance Service expects all Verifiable Credentials to be part of the Verifiable Presentation.
+The Compliance Service does not actually resolve any URL references in the credentials.
+Instead, identifiers act as keys for a local lookup within the same Verifiable Presentation.
 The Compliance Service looks for a Verifiable Credential whose credential subject's `id` matches with a given key and traverses back to issuer and proof of the corresponding Verifiable Credential.
-This behavior seems to be a workaround and contradicts a bit with linked data principles, where Verifiable Credentials are referenced by resolvable URLs.
-There is a discussion currently to clarify if and/or why this behaviour is intended, see [this issue report](https://gitlab.com/gaia-x/lab/compliance/gx-compliance/-/issues/78)    
+This is only possible because the full credential (including proof and issuer) of the referenced subject is always part of the Verifiable Presentation due to the requirement imposed by the Compliance Service.
 
+This behavior seems to be a workaround and stands in contrast with the Linked Data principles of [JSON-LD](https://www.w3.org/TR/json-ld11/), which usually build links based on resolvable URLs.
+There is a discussion currently to clarify if and/or why this behaviour is intended, see [this issue discussion at Gaia-X](https://gitlab.com/gaia-x/lab/compliance/gx-compliance/-/issues/78).
 
 ## Summary
 
@@ -708,9 +712,10 @@ Taking the Service Offering Credential as an example, the difference can be visu
   </a>
 </figure>
 
-Credential subjects neither have a digital signature nor an issuer. These elements are part of a Verifiable Credential only and are not reachable from credential subject.
-A verifier is not able to validate authorship or recognize tampering of referenced claims, i.e., of a CSP in case of the `providedBy` of Service Offering Gaia-X Credentials.
-This behaviour seems wrong and was already requested to be clarified, see [this issue report](https://gitlab.com/gaia-x/lab/compliance/gx-compliance/-/issues/78).
+Credential subjects themselves have neither a digital signature nor an issuer.
+Only the owning Verifiable Credential has these properties but is not reachable from the credential subject in the hierarchy when traversing the RDF graph, strictly speaking.
+A verifier would not be able to properly validate authorship or recognize tampering of referenced claims, i.e., of a CSP in case of the `providedBy` of Service Offering Gaia-X Credentials.
+This behaviour seems detrimental and was already requested to be clarified, see [this issue discussion at Gaia-X](https://gitlab.com/gaia-x/lab/compliance/gx-compliance/-/issues/78).
 
 ## Python code for signing Verifiable Credentials
 
