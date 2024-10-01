@@ -1,0 +1,1 @@
+../../../en/_posts/blog/2024-09-20-demystifying-gaia-x-credentials.md
