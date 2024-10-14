@@ -49,7 +49,7 @@ This blog post uses the new term Gaia-X Credential.
 #### Verifiable Presentations
 
 Claims about a Gaia-X entity may be distributed across multiple Gaia-X Credentials.
-Furthermore, Gaia-X Credentials may contain references to other Gaia-X Credentials.+
+Furthermore, Gaia-X Credentials may contain references to other Gaia-X Credentials.
 Gaia-X uses the concept of **Verifiable Presentations** following the [W3C Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/) to combine all claims about a Gaia-X entity.  
 
 A **Verifiable Presentation** representing a Cloud Service Provider (CSP) and their offerings as a form of self-description is usually submitted to the Compliance Service of the GXDCH, resulting in a Gaia-X Credential that attests the compliance.
