@@ -3,13 +3,10 @@ layout: post
 title: "SCS-compatible IaaS: Example test and adapt"
 author:
   - "Kurt Garloff"
-  - "Dr. Matthias Büchse"
 avatar:
   - "kgarloff.jpg"
-  - "mbuechse.jpg"
 about:
   - "garloff"
-  - "mbuechse"
 ---
 
 
