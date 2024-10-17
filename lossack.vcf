@@ -1,0 +1,18 @@
+
+BEGIN:VCARD
+VERSION:3.0
+PROFILE:VCARD
+FN:Dirk Loßack
+N:Loßack;Dirk;;;
+ORG:Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.;
+TITLE:Dirk Loßack
+TEL;TYPE=work,pref:+49-30-206539-203
+EMAIL;TYPE=work,pref:lossack@osb-alliance.com
+ADR;TYPE=work,pref:;;Pariser Platz 6a;Berlin;Berlin;10117;Germany
+URL;TYPE=work:https://scs.community
+SOURCE:https://scs.community/lossack.vcf
+REV:2024-10-17T14:08:56Z
+TZ:Europe/Berlin
+KIND:individual
+PHOTO;ENCODING=BASE64;TYPE=JPEG:
+END:VCARD
