@@ -1,0 +1,11 @@
+--- openstackclient/compute/v2/server.py.orig	2021-03-20 10:17:40.000000000 +0100
++++ openstackclient/compute/v2/server.py	2023-07-03 15:59:27.301268807 +0200
+@@ -802,7 +802,7 @@ class CreateServer(command.ShowOne):
+             help=_('Create server with this flavor (name or ID)'),
+         )
+         disk_group = parser.add_mutually_exclusive_group(
+-            required=True,
++            required=False,
+         )
+         disk_group.add_argument(
+             '--image',
