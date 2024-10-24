@@ -3,6 +3,8 @@ layout: post
 title:  "Sovereign Cloud Stack (SCS) sustainable future"
 author:
   - "Lisa Reisch"
+avatar:
+  - "kgarloff.jpg"
 image: "forumscs-1-474x324.jpg"
 ---
 
