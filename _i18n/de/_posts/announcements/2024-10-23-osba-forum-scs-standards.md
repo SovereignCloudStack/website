@@ -3,6 +3,8 @@ layout: post
 title:  "Sovereign Cloud Stack (SCS) wird nachhaltig abgesichert"
 author:
   - "Lisa Reisch"
+avatar:
+  - "SCS_logo.png"
 image: "forumscs-1-474x324.jpg"
 ---
 

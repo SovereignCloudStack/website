@@ -4,7 +4,7 @@ title:  "Sovereign Cloud Stack (SCS) sustainable future"
 author:
   - "Lisa Reisch"
 avatar:
-  - "kgarloff.jpg"
+  - "SCS_logo.png"
 image: "forumscs-1-474x324.jpg"
 ---
 
