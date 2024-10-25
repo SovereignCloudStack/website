@@ -72,9 +72,9 @@ are (in alphabetical order):
 *   Yorizon GmbH
 
 The founding members of the forum SCS-Standards are members of the OSBA.
-Further companies can support the forum forum as shaping, consulting or
+Further companies can support the forum as shaping, consulting or
 supporting member. The memberships fees depends on the membership level
-as well as the company's' financial strength.
+as well as the company's' financial turnover.
 
 The founding members already started to collaborate intensively, two and
 a half months ahead of the official establishment. The founding members
