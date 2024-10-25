@@ -14,14 +14,14 @@ image: "forumscs-1-474x324.jpg"
 cloud-technological foundations to realize digital sovereignty and
 open source strategies and gives users control over their data.
 The research project, funded by the German Ministry for
-Economy and Climate Action and located at the Open Source Business
+Economic Affairs and Climate Action and carried out by the Open Source Business
 Alliance (OSBA), will be concluded as planned on 2024-12-31.
 The OSBA and 14 member companies have taken care to ensure a 
 sustainable future for the key results and to further advance the
 SCS standards.*
 
-The Sovereign Cloud Stack, funded with roughly 13.2 million Euros,
-will receive professional development and be available for the cloud
+Sovereign Cloud Stack, funded with roughly 13.2 million Euros,
+will continue to receive professional development and be available for the cloud
 market after the project phase. The OSBA and 14 of its member companies
 are founding the forum SCS-standards effective 2025-01-01. This
 consortium inside the OSBA takes responsibility for the standards
@@ -73,8 +73,8 @@ are (in alphabetical order):
 
 The founding members of the forum SCS-Standards are members of the OSBA.
 Further companies can support the forum as shaping, consulting or
-supporting member. The memberships fees depends on the membership level
-as well as the company's' financial turnover.
+supporting member. The membership fees depend on the membership level
+as well as the company's financial turnover.
 
 The founding members already started to collaborate intensively, two and
 a half months ahead of the official establishment. The founding members
