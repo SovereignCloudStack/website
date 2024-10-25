@@ -66,10 +66,10 @@ GEM
     ffi (1.17.0)
     ffi (1.17.0-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
-    google-protobuf (4.28.1)
+    google-protobuf (4.28.2)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.28.1-x86_64-linux)
+    google-protobuf (4.28.2-x86_64-linux)
       bigdecimal
       rake (>= 13)
     http_parser.rb (0.8.0)
@@ -171,7 +171,7 @@ GEM
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (2.6.0)
-    webrick (1.8.1)
+    webrick (1.8.2)
 
 PLATFORMS
   ruby
