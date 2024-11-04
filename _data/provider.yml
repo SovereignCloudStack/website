@@ -19,3 +19,6 @@
 - name: "SysEleven"
   image: "logo-syseleven.png"
   link: "https://syseleven.de"
+- name: "ScaleUp Technologies"
+  image: "logo-scaleup.svg"
+  link: "https://www.scaleuptech.com"

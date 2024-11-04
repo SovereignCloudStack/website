@@ -1,3 +1,14 @@
+- date: "2024-10-19"
+  publisher: "cloud ahead"
+  title: "Marktübersicht über souveräne Clouds 2024"
+  details: "Gregor Schumacher"
+  link: "https://www.cloudahead.de/marktuebersicht-ueber-souveraene-clouds-2024"
+
+- date: "2024-10-02"
+  publisher: "Gesellschaft für Informatik"
+  title: "Un-souveräne Delos Cloud: „Booster“ auf dem Weg in die digitale Kolonie?"
+  link: "https://gi.de/meldung/un-souveraene-delos-cloud-ein-booster-auf-dem-weg-in-die-digitale-kolonie"
+
 - date: "2024-09-23"
   publisher: "DataCenter-Insider"
   title: "Cloud Computing gibt es auch schlüsselfertig"
@@ -24,7 +35,7 @@
 - date: "2024-07-02"
   publisher: "cloud ahead"
   title: "Der Freiheitskampf des Sovereign Cloud Stacks"
-  details: "Gregor Schuhmacher"
+  details: "Gregor Schumacher"
   link: "https://www.cloudahead.de/der-freiheitskampf-des-sovereign-cloud-stacks"
 
 - date: "2024-06-05"
