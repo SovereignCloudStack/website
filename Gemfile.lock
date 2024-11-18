@@ -2,7 +2,7 @@ PATH
   remote: _gems/jekyll-assets
   specs:
     jekyll-assets (4.0.0.alpha)
-      activesupport (>= 5, < 8)
+      activesupport (>= 5, < 9)
       execjs (~> 2.7)
       extras (~> 0.2)
       fastimage (~> 2.0, >= 1.8)
@@ -23,7 +23,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.2.2)
+    activesupport (8.0.0)
       base64
       benchmark (>= 0.3)
       bigdecimal
@@ -35,10 +35,11 @@ GEM
       minitest (>= 5.1)
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
+      uri (>= 0.13.1)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     base64 (0.2.0)
-    benchmark (0.3.0)
+    benchmark (0.4.0)
     bibtex-ruby (6.1.0)
       latex-decode (~> 0.0)
       racc (~> 1.7)
@@ -174,6 +175,7 @@ GEM
     uglifier (4.2.1)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (2.6.0)
+    uri (1.0.1)
     webrick (1.8.2)
 
 PLATFORMS
