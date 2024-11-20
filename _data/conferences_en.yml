@@ -5,6 +5,13 @@
   slides: "WN4OSS_openDesk_SCS_20240711.pdf"
   link: "https://www.un.org/techenvoy/content/ospos-good-2024"
 
+- date: "2024-06-04"
+  event: "APELL Summit 2024"
+  title: "SCS: Joining forces to build open standards and free software together"
+  details: "Kurt Garloff, Felix Kronlage-Dammers"
+  slides: "APELL-SCS-202406.pdf"
+  link: "https://apell.info/2024/11/01/apell-conference-report-2024-shaping-the-future-of-open-source-in-europe/"
+
 - date: "2024-04-24"
   event: "2024 OCP Regional Summit"
   title: "Open Networking in the Sovereign Cloud Stack Project"
