@@ -2,7 +2,7 @@
   event: "ALASCA Summit 2024"
   title: "Automating Security Testing of Deployed Infrastructure"
   details: "Kurt Garloff, Dominik Pataky"
-  slides: "202410_alasca_automating-pentesting.pdf"
+  slides: "202410_alasca-automating-pentesting.pdf"
   link: "https://alasca.cloud/alasca-summit-2024-schedule/"
 
 - date: "2024-10-29"
