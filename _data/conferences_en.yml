@@ -1,3 +1,10 @@
+- date: "2024-10-30"
+  event: "ALASCA Summit 2024"
+  title: "Automating Security Testing of Deployed Infrastructure"
+  details: "Kurt Garloff, Dominik Pataky"
+  slides: "202410_alasca-automating-pentesting.pdf"
+  link: "https://alasca.cloud/alasca-summit-2024-schedule/"
+
 - date: "2024-10-29"
   event: "ALASCA Summit 2024"
   title: "SCS Standardization and Certification"
@@ -11,6 +18,13 @@
   details: "Alexander Smolianitski, Kurt Garloff"
   slides: "WN4OSS_openDesk_SCS_20240711.pdf"
   link: "https://www.un.org/techenvoy/content/ospos-good-2024"
+
+- date: "2024-06-19"
+  event: "CLoudLand 2024"
+  title: "Make standardization fun again - how we create SCS standards"
+  details: "Kurt Garloff"
+  slides: "20240619-SCS-Std-CloudLand.pdf"
+  link: "https://my.doag.org/events/cloudland/2024/agenda/#agendaId.4327"
 
 - date: "2024-06-04"
   event: "APELL Summit 2024"
@@ -46,6 +60,20 @@
   details: "Alexander Diab"
   slides: "20231017-eclipsecon-2023-scs-xpanse-osba9.pdf"
   link: "https://www.youtube.com/watch?v=6InnOvfn2Kk&list=PLy7t4z5SYNaSKkhAYBHBNVcsun-twUoXZ&index=75"
+
+- date: "2023-09-13"
+  event: "StackConf 2023"
+  title: "SCS: Building Open Source Cloud & Container Infrastructure"
+  details: "Kurt Garloff"
+  link: "https://www.youtube.com/watch?v=rkQqso-sNGI"
+  slides: "20230913-StackConf.pdf"
+
+- date: "2023-06-22"
+  event: "CloudLand 2023"
+  title: "Sovereign Cloud Stack: Converting the vision into action"
+  details: "Kurt Garloff"
+  slides: "20230622-SCS-Cloudland.pdf"
+  link: "https://my.doag.org/events/cloudland/2023/agenda/#agendaId.2593"
 
 - date: "2023-04-25"
   event: "Unlock the Cloud (Eclipse Foundation)"
