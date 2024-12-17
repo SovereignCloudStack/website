@@ -31,8 +31,8 @@ The [Open Source Business Alliance (OSBA)](https://osb-alliance.de/) is the asso
 GovStack is a global partnership that enables countries and organisations to create cost-effective, efficient and locally tailored digital public services that provide seamless access to critical tools such as health data, identity documents or digital payments. For the use of reusable and interoperable building blocks - such as digital identity, registries, consent, payment and cloud infrastructure - GovStack provides technical specifications, tools and guidance that form the basis for various digital services. GovStack is committed to product neutrality, providing open, customizable frameworks instead of offering ready-made software or promoting specific product solutions over others. By adopting this approach, GovStack ensures governments receive flexible support tailored to every phase of their digital transformation.
 
 Relatet Links
-GovStack: (https://govstack.global/)
-Sovereign Cloud Stack: (https://scs.community/)
-Technical Documentation SCS: (https://docs.scs.community/docs)
-SCS’s notion of digital sovereignty: (https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/) 
-Cloud Infrastructure Specifications: (https://govstack.gitbook.io/bb-cloud-infrastructure) 
+- GovStack: <https://govstack.global/>
+- Sovereign Cloud Stack: <https://scs.community/>
+- Technical Documentation SCS: <https://docs.scs.community/docs>
+- SCS’s notion of digital sovereignty: <https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/>
+- Cloud Infrastructure Specifications: <https://govstack.gitbook.io/bb-cloud-infrastructure>
