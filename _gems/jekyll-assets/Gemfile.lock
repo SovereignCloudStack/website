@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     jekyll-assets (4.0.0.alpha)
-      activesupport (>= 5, < 8)
+      activesupport (>= 5, < 9)
       execjs (~> 2.7)
       extras (~> 0.2)
       fastimage (~> 2.0, >= 1.8)
@@ -73,7 +73,7 @@ GEM
       sassc (~> 2.0)
     forwardable-extended (2.6.0)
     fspath (3.1.2)
-    google-protobuf (3.22.2-x86_64-linux)
+    google-protobuf (3.23.4-x86_64-linux)
     http_parser.rb (0.8.0)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)

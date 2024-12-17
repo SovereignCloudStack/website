@@ -1,3 +1,10 @@
+- date: "2024-12-05"
+  event: "OpenSource Experience"
+  details: "Kurt Garloff, Felix Kronlage-Dammers"
+  title: "Sovereign Cloud Stack: An honest review and outlook"
+  slides: "20241205-OSXP-SCS.pdf"
+  link: "https://www.opensource-experience.com/en/event"
+
 - date: "2024-10-30"
   event: "ALASCA Summit 2024"
   title: "Automating Security Testing of Deployed Infrastructure"
