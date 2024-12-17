@@ -23,7 +23,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (8.0.0.1)
+    activesupport (8.0.1)
       base64
       benchmark (>= 0.3)
       bigdecimal
@@ -127,7 +127,7 @@ GEM
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    logger (1.6.2)
+    logger (1.6.3)
     mercenary (0.4.0)
     mini_portile2 (2.8.8)
     minitest (5.25.4)
@@ -164,7 +164,7 @@ GEM
       google-protobuf (~> 4.27)
     sassc (2.4.0)
       ffi (~> 1.9)
-    securerandom (0.4.0)
+    securerandom (0.4.1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
