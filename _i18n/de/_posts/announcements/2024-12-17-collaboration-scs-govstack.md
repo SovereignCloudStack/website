@@ -22,11 +22,11 @@ SCS vervollständigt das Bild von GovStack auf praktischer Ebene – die SCS-Sof
 Die ersten Kooperationen mit Ländern haben bereits in Mauretanien, Jordanien, Dschibuti, Kenia und Somalia begonnen. In diesen Ländern unterstützt GovStack die Regierungen bei ihrer digitalen Transformation, mit der Möglichkeit für die Länder, ihre Anwendungen und Dienste in ihrer eigenen souveränen Cloud zu hosten.
 
 Relevante Links:
-GovStack: (https://govstack.global/)
-Sovereign Cloud Stack: (https://scs.community/)
-Technische Dokumentation SCS: (https://docs.scs.community/docs)
-SCS-Verständnis der digitalen Souveränität: (https://link.springer.com/epdf/10.1007/s11623-022-1669-5?sharing_token=ie7xTVzv_afod07w5Y2lJfe4RwlQNchNByi7wbcMAY4yFyxh9Qw2iCtygUYjun7MI5leBYqiHZBlIeTPv8Sm1Wv8c1dEUf6ebSwnRfo99_nAYh2FgwUyIHjFyZFWv_EIOEIetr2eBSiAPrI68ptBgKxMVkNlS4udZRAhx1X-WB8=)
-Building Block Cloud Infrastructure Specifications: (https://govstack.gitbook.io/bb-cloud-infrastructure)
+- GovStack: <https://govstack.global/>
+- Sovereign Cloud Stack: <https://scs.community/>
+- Technische Dokumentation SCS: <https://docs.scs.community/docs>
+- SCS-Verständnis der digitalen Souveränität: <https://link.springer.com/epdf/10.1007/s11623-022-1669-5?sharing_token=ie7xTVzv_afod07w5Y2lJfe4RwlQNchNByi7wbcMAY4yFyxh9Qw2iCtygUYjun7MI5leBYqiHZBlIeTPv8Sm1Wv8c1dEUf6ebSwnRfo99_nAYh2FgwUyIHjFyZFWv_EIOEIetr2eBSiAPrI68ptBgKxMVkNlS4udZRAhx1X-WB8=>
+- Building Block Cloud Infrastructure Specifications: <https://govstack.gitbook.io/bb-cloud-infrastructure>
 
 **Über den Sovereign Cloud Stack**
 SCS wird seit Juli 2021 vom Bundesministerium für Wirtschaft und Klimaschutz (BMWK) gefördert und vom Bundesverband für digitale Souveränität e.V. (Open Source Business Alliance) durch­geführt. Ein internationales Ökosystem von mittlerweile über 25 Unternehmen trägt mit über 50 Softwareentwicklern zum Erfolg des Sovereign Cloud Stack bei. Gemeinsam werden offene Stan­dards für eine moderne, föderierbare Open-Source-Cloud- und Container-Plattform definiert und in einem offenen Entwicklungsprozess unter Verwendung bewährter Open-Source-Komponenten umgesetzt. Gleichzeitig wird das Wissen und die Praxis aus dem Betrieb transparent zur Verfügung gestellt, um die Schwierigkeiten bei der Bereitstellung hochwertiger und sicherer Cloud-Dienste zu minimieren. Bereits sieben Anbieter nutzen die SCS-Technologie produktiv, um wirklich souveräne und DSGVO-konforme Public-Cloud-Angebote zu betreiben. Weitere SCS-basierte Cloud-Infrastrukturen (Public und Private Clouds) befinden sich im Aufbau. SCS ist ein Lighthouse Projekt von Gaia-X und stellt die Entwicklungsplattform für die Gaia-X Federation Services / Cross-Federation Service Components (GXFS/XFSC) bereit, außerdem trägt SCS zur Umsetzung der Deutschen Verwaltungscloud (DVC) bei.
