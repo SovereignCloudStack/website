@@ -6,7 +6,7 @@ mit SCS weiter:
 
 1. [Zahlreiche Unternehmen](https://www.sovereigncloudstack.org/network/)
    haben sich zusammengefunden und innerhalb
-   der OSBA das [Forum SCS-Standards gegründet](https://scs.community/2024/10/23/osba-forum-scs-standards/)
+   der OSBA das [Forum SCS-Standards gegründet](https://scs.community/de/2024/10/23/osba-forum-scs-standards/)
    gegründet. Das Forum hat das Ziel,
    die Standardisierungs- und Zertifizierungsarbeit für die Zertifizierungsstufen
    *SCS-compatible*, *SCS-open* und *SCS-sovereign* fortzuführen. Die Markenrechte
