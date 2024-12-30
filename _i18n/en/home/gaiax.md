@@ -1,4 +1,4 @@
-On the digital summit 2019 in Dortmund, the [GAIA-X project](https://www.data-infrastructure.eu/) was launched by the German Ministry of Economic Affairs and Climate Action (BMWK). The goal of Gaia-X is the defintion and the setup of a secure and trustworthy data infrastructure for Europe. One of the defining properties of the targeted solution is the usage of open technologies.
+On the digital summit 2019 in Dortmund, the [GAIA-X project](https://www.data-infrastructure.eu/) was launched by the German Ministry of Economic Affairs and Climate Action (BMWK). The goal of Gaia-X is the defintion and the setup of a secure and trustworthy data infrastructure for Europe. One of the defining properties of the targeted solution is the usage of open technologies. In December 2024 SCS has been endorsed as Gaia X Lighthouse Project.
 
 <blockquote>
 	<p>A strong open infrastructure ecosystem is the foundation of digital sovereignty.</p>

@@ -191,3 +191,9 @@
   slides: "20240818-SCS-FrOSCon.pdf"
   link: "https://media.ccc.de/v/froscon2024-3151-sovereign_cloud_stack_-_one_platform_standardized_built_and_operated_by_many"
 
+- date: "2024-12-11"
+  event: "Parldigi Roundtable"
+  title: "Swiss Government Cloud und Sovereign Cloud Stack"
+  details: "Gerhard Andrey, Felix Kronlage-Dammers, Kurt Garloff"
+  slides: "20241211-SGC-SCS.pdf"
+  link: "https://www.parldigi.ch/de/roundtable-swiss-government-cloud-und-sovereign-cloud-stack/"
