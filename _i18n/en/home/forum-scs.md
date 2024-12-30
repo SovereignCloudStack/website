@@ -23,7 +23,7 @@ project on 2024-12-31:
    [github](https://github.com/SovereignCloudStack) and
    [OpenCoDE](https://gitlab.opencode.de/sovereigncloudstack),
    [Matrix Chat](https://matrix.to/#/#scs-community:matrix.org),
-   [Mailing Listen](https://scs.sovereignit.de/mailman3/postorius/lists/),
+   [Mailing Lists](https://scs.sovereignit.de/mailman3/postorius/lists/),
    [nextcloud](https://scs.sovereignit.de/nextcloud/),
    [hedgedoc](https://input.scs.community/), and
    [video conferences](https://conf.scs.koeln:8443/).
