@@ -4,7 +4,7 @@
 Nach erfolgreichem Abschluss des geförderten SCS Projekts am 31.12.2024 geht es
 mit SCS weiter:
 
-1. [Zahlreiche Unternehmen](https://www.sovereigncloudstack.org/network/)
+1. [Zahlreiche Unternehmen](https://www.sovereigncloudstack.org/de/network/)
    haben sich zusammengefunden und innerhalb
    der OSBA das [Forum SCS-Standards gegründet](https://scs.community/de/2024/10/23/osba-forum-scs-standards/)
    gegründet. Das Forum hat das Ziel,
@@ -15,7 +15,7 @@ mit SCS weiter:
    beschäftigt werden können, die auch eine wirksame Koordination leisten
    können und für eine echte Weiterentwicklung sorgen. Stellenausschreibungen
    dafür finden sich auf der [OSBA Seite](https://osb-alliance.de/jobs).
-   Das Forum SCS-Standards hat eine eigene [Webseite](https://www.sovereigncloudstack.org/).
+   Das Forum SCS-Standards hat eine eigene [Webseite](https://www.sovereigncloudstack.org/de).
 2. Die SCS Community exisitiert natürlich auch jenseits der im Forum SCS-Standards
    formalisierten Standardisierungsarbeiten weiterhin. Die Weiterentwicklung
    der Software (vor allem der zahlreichen Projekte bei den Organisationen
