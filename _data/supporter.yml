@@ -179,3 +179,11 @@
   location:
     latitute: 52.50800
     longitude: 13.46712
+- name: "S7n CLoud Services GmbH"
+  image: "logo-s7n.png"
+  avatar: "avatar-s7n.png"
+  link: "https://www.garloff.de/s7n/"
+  location:
+    latitude: 50.920
+    longitude: 6.929
+
