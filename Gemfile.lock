@@ -66,7 +66,7 @@ GEM
     execjs (2.10.0)
     extras (0.3.0)
       forwardable-extended (~> 2.5)
-    fastimage (2.3.1)
+    fastimage (2.4.0)
     ffi (1.17.0)
     ffi (1.17.0-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
