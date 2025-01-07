@@ -1,4 +1,4 @@
-## Fortführung SCS nach Projektende
+## Fortführung von SCS nach Projektende
 {: .mb-3 }
 
 Nach erfolgreichem Abschluss des geförderten SCS Projekts am 31.12.2024 geht es
@@ -6,8 +6,8 @@ mit SCS weiter:
 
 1. [Zahlreiche Unternehmen](https://www.sovereigncloudstack.org/de/network/)
    haben sich zusammengefunden und innerhalb
-   der OSBA das [Forum SCS-Standards gegründet](https://scs.community/de/2024/10/23/osba-forum-scs-standards/)
-   gegründet. Das Forum hat das Ziel,
+   der OSBA das [Forum SCS-Standards gegründet](https://scs.community/de/2024/10/23/osba-forum-scs-standards/).
+   Das Forum hat das Ziel,
    die Standardisierungs- und Zertifizierungsarbeit für die Zertifizierungsstufen
    *SCS-compatible*, *SCS-open* und *SCS-sovereign* fortzuführen. Die Markenrechte
    an SCS, Sovereign Cloud Stack und dem SCS Logo verbleiben dazu in der OSBA.
@@ -37,6 +37,6 @@ Diese Webseite wird als Referenz aufrecht erhalten, aber keine neuen Inhalte
 mehr bekommen.
 
 Es gibt eine neue [Webseite](https://www.sovereigncloudstack.org/de) mit renoviertem Branding,
-die vom Forum SCS-Standards und der Community (via Project Board) gemeinsam gepflegt wird.
-Die [Docs-Seite](https://docs.scs.community/)
+die vom Forum SCS-Standards und der Community (vertreten durch das Project Board) gemeinsam
+gepflegt wird. Die [Docs-Seite](https://docs.scs.community/)
 wird weiterhin aktualisiert (und wurde bereits auf das neue Branding umgestellt).
