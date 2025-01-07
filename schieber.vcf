@@ -1,0 +1,18 @@
+
+BEGIN:VCARD
+VERSION:3.0
+PROFILE:VCARD
+FN:Nadja Schieber
+N:Schieber;Nadja;;;
+ORG:Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.;
+TITLE:Nadja Schieber
+TEL;TYPE=work,pref:+49-30-206539-210
+EMAIL;TYPE=work,pref:schieber@osb-alliance.com
+ADR;TYPE=work,pref:;;Pariser Platz 6a;Berlin;Berlin;10117;Germany
+URL;TYPE=work:https://scs.community
+SOURCE:https://scs.community/schieber.vcf
+REV:2025-01-07T18:42:13Z
+TZ:Europe/Berlin
+KIND:individual
+PHOTO;ENCODING=BASE64;TYPE=JPEG:
+END:VCARD
