@@ -5,7 +5,7 @@ The work of SCS continues after the successful completion of the funded SCS
 project on 2024-12-31:
 
 1. [Numerous companies](https://www.sovereigncloudstack.org/network/)
-   have joined forced to found the [Forum SCS-Standards gegründet](https://scs.community/2024/10/23/osba-forum-scs-standards/)
+   have joined forces to [found the forum SCS-Standards](https://scs.community/2024/10/23/osba-forum-scs-standards/)
    inside the OSBA. The forum aims to continue the work on standardization
    and certifications for the levels *SCS-compatible*, *SCS-open*, and *SCS-sovereign*.
    The trademarks for SCS, Sovereign Cloud Stack and the SCS Logo remain in the OSBA.
