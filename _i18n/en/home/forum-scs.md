@@ -12,7 +12,6 @@ project on 2024-12-31:
    The companies also contribute financially, enabling the OSBA thus to hire staff
    to ensure effective coordination and meaningful evolution happens.
    Job offers are available on the [OSBA page](https://osb-alliance.de/jobs).
-   The forum SCS-Standards has an own [web page](https://www.sovereigncloudstack.org/).
 2. Naturally, the SCS Community continues to exist beyond the formalized standardization work
    in the forum SCS-Standards. The development of the of the software (last not least
    in the github organizations [SCS](https://github.com/SovereignCloudStack)
@@ -32,3 +31,9 @@ project on 2024-12-31:
 
 This web page will be maintained as reference for the time being, but won't receive
 new content.
+
+There is a new [web site](https://www.sovereigncloudstack.org/) with a refreshed branding
+which is maintained by the forum SCS-Standards together with the Community (via the
+Project Board).
+The [docs page](https://docs.scs.community/) will continue to receive updates (and received
+the refreshed branding already).
