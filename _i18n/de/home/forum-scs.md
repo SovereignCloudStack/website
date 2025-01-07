@@ -15,14 +15,13 @@ mit SCS weiter:
    beschäftigt werden können, die auch eine wirksame Koordination leisten
    können und für eine echte Weiterentwicklung sorgen. Stellenausschreibungen
    dafür finden sich auf der [OSBA Seite](https://osb-alliance.de/jobs).
-   Das Forum SCS-Standards hat eine eigene [Webseite](https://www.sovereigncloudstack.org/de).
 2. Die SCS Community exisitiert natürlich auch jenseits der im Forum SCS-Standards
    formalisierten Standardisierungsarbeiten weiterhin. Die Weiterentwicklung
    der Software (vor allem der zahlreichen Projekte bei den Organisationen
    [SCS](https://github.com/SovereignCloudStack) und [OSISM](https://github.com/OSISM)
    auf github) findet durch die existierenden und hoffentlich
    auch durch neue Technologiepartner (siehe unten Unterstützer) statt, teilweise
-   auch in der [ALASCA](https://alasca.cloud/) Community..
+   auch in der [ALASCA](https://alasca.cloud/) Community.
    Eine Koordination erfolgt weiterhin
    über offene Interaktionen via [github](https://github.com/SovereignCloudStack) und
    [OpenCoDE](https://gitlab.opencode.de/sovereigncloudstack),
@@ -36,3 +35,8 @@ mit SCS weiter:
 
 Diese Webseite wird als Referenz aufrecht erhalten, aber keine neuen Inhalte
 mehr bekommen.
+
+Es gibt eine neue [Webseite](https://www.sovereigncloudstack.org/de) mit renoviertem Branding,
+die vom Forum SCS-Standards und der Community (via Project Board) gemeinsam gepflegt wird.
+Die [Docs-Seite](https://docs.scs.community/)
+wird weiterhin aktualisiert (und wurde bereits auf das neue Branding umgestellt).
