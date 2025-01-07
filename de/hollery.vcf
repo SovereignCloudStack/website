@@ -1,0 +1,18 @@
+
+BEGIN:VCARD
+VERSION:3.0
+PROFILE:VCARD
+FN:Bianca Hollery-Pfister
+N:Hollery-Pfister;Bianca;;;
+ORG:Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.;
+TITLE:Bianca Hollery
+TEL;TYPE=work,pref:+49-30-206539-206
+EMAIL;TYPE=work,pref:hollery@osb-alliance.com
+ADR;TYPE=work,pref:;;Pariser Platz 6a;Berlin;Berlin;10117;Germany
+URL;TYPE=work:https://scs.community
+SOURCE:https://scs.community/hollery.vcf
+REV:2025-01-07T16:58:23Z
+TZ:Europe/Berlin
+KIND:individual
+PHOTO;ENCODING=BASE64;TYPE=JPEG:
+END:VCARD
