@@ -11,6 +11,12 @@
   link: "https://www.heise.de/news/GovStack-veroeffentlicht-Spezifikationen-fuer-souveraene-Cloud-Infrastruktur-10206676.html"
 
 - date: "2024-11-29"
+  publisher: "Linux Magazin"
+  title: "OSBA finanziert Weiterentwicklung des Sovereign Cloud Stack selbst"
+  details: "Tim Schürmann"
+  link: "https://www.linux-magazin.de/ausgaben/2025/01/forum-scs-standards/"
+
+- date: "2024-11-29"
   publisher: "netzpolitik.org"
   details: "Esther Menhard"
   title: "Verwaltungsdigitalisierung: Public Money, Public Cloud?"
@@ -33,6 +39,12 @@
   title: "ScaleUp Technologies geht mit SCS-kompatibler IaaS Cloud live"
   details: "Freerk-Ole Zakfeld"
   link: "https://www.scaleuptech.com/blog/scaleup-technologies-geht-mit-scs-kompatibler-iaas-cloud-live/"
+
+- date: "2024-10-24"
+  publisher: "Linux Magazin"
+  title: "Forum SCS-Standards: OSBA will Sovereign Cloud Stack weiterentwickeln"
+  details: "Tim Schürmann"
+  link: "https://www.linux-magazin.de/news/forum-scs-standards-osba-will-sovereign-cloud-stack-weiterentwickeln/"
 
 - date: "2024-10-19"
   publisher: "cloud ahead"
