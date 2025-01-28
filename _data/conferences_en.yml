@@ -26,6 +26,12 @@
   slides: "WN4OSS_openDesk_SCS_20240711.pdf"
   link: "https://www.un.org/techenvoy/content/ospos-good-2024"
 
+- date: "2024-06-19"
+  event: "Informatik-Tag 2024 htw Hochschule für Technik und Wirtschaft Berlin"
+  title: "Sovereign Cloud Stack: Entirely Open Source for Cloud Technology & Standards"
+  details: "Dr. Manuela Urban"
+  slides: "htw-20240619-SCS-Urban_Manuela.pdf"
+
 - date: "2024-06-03"
   event: "Openinfra Day Hungary"
   title: "Sovereign cloud stack and Open Services Cloud - a powerful couple"
@@ -76,11 +82,24 @@
   link: "https://www.youtube.com/watch?v=6InnOvfn2Kk&list=PLy7t4z5SYNaSKkhAYBHBNVcsun-twUoXZ&index=75"
 
 - date: "2023-09-13"
+  event: "C4DT Conference on Trustworthy and Sovereign Cloud Computing, Lausanne"
+  title: "Sovereign Cloud Stack: Open Source and Open Operations Solutions"
+  details: "Dr. Manuela Urban"
+  link: "https://drive.switch.ch/index.php/s/0oEA3iWCn5VoBOA?path=%2FPart%202%3A%20Exploring%20latest%20technical%20solutions#/files_mediaviewer/06_manuela_urban%20(1080p).mp4"
+  slides: "EPFL-20230913-Urban_Manuela.pdf"
+
+- date: "2023-09-13"
   event: "StackConf 2023"
   title: "SCS: Building Open Source Cloud & Container Infrastructure"
   details: "Kurt Garloff"
   link: "https://www.youtube.com/watch?v=rkQqso-sNGI"
   slides: "20230913-StackConf.pdf"
+
+- date: "2023-09-03"
+  event: "OCP Experience Center Berlin Opening, Berlin"
+  title: "OSBA’s Projects SCS & ECO:DIGIT: Making the Dream of Sustainable and Sovereign Cloud Computing come true."
+  details: "Manuela Urban & Maria Bauer"
+  slides: "OSBA-SCS-ECODIGIT_Urban_Manuela_u_Bauer_Maria.pdf"
 
 - date: "2023-06-22"
   event: "CloudLand 2023"
@@ -94,6 +113,12 @@
   title: "Panel 1: Building technical interoperability in the cloud market: specifications, standards and open source"
   details: "Kurt Garloff"
   link: "https://www.eclipse.org/events/2023/unlockthecloud/"
+
+- date: "2023-03-09"
+  event: "Open Source Business Alliance Members & Products (virtual)"
+  title: "Sovereign Cloud Stack: One platform – standardized, built and operated by many. How we drive standardization & certification."
+  details: "Dr. Manuela Urban & Kurt Garloff"
+  link: "OSBA_Members&Products-20230309.pdf"
 
 - date: "2023-02-23"
   event: "ALASCA Tech-Talks #2"
