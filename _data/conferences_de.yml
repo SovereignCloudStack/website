@@ -100,6 +100,13 @@
   details: "Dominik Pataky"
   slides: "CLT2024_SCS.pdf"
 
+- date: "2024-03-20"
+  event: "FOSSGIS-Konferenz 2024, HH"
+  title: "Sovereign Cloud Stack: Offene, föderierbare Cloud-Technologie für jeden Sektor"
+  link: "https://pretalx.com/fossgis2024/talk/FHTKUF/"
+  slides: "Folien_FOSSGIS-20240320_Urban_Manuela.pdf"
+  details: "Dr. Manuela Urban"
+
 - date: "2024-05-14"
   event: "SCS Summit 2024"
   title: "Sovereign Cloud Stack Summit 2024"
@@ -184,12 +191,36 @@
   details: "Kurt Garloff"
   link: "https://scs.sovereignit.de/nextcloud/s/5nb6CfXryogYtma"
 
+- date: "2024-07-03"
+  event: "Geowebtalk des Geonetzwerk.metropoleRuhr (virtuell)"
+  title: "Sovereign Cloud Stack: Digitale Souveränität in der Cloud verwirklichen"
+  details: "Dr. Manuela Urban"
+  slides: "Geowebtalk-20240703-Urban_Manuela-Add.pdf"
+
 - date: "2024-08-18"
   event: "FrOSCon 2024"
   title: "SCS: Projektvorstellung mit einem ehrlichen Rückblick und spannendem Ausblick"
   details: "Kurt Garloff"
   slides: "20240818-SCS-FrOSCon.pdf"
   link: "https://media.ccc.de/v/froscon2024-3151-sovereign_cloud_stack_-_one_platform_standardized_built_and_operated_by_many"
+
+- date: "2024-09-12"
+  event: "bitkom Forum Open Source 2024, Erfurt"
+  title: "Sovereign Cloud Stack: Offene, standardisierte Cloud-Technologie für mehr digitale Souveränität"
+  details: "Dr. Manuela Urban"
+  slides: "bitkom-20240912-Urban_Manuela.pdf"
+
+- date: "2024-09-26"
+  event: "Informatik Festival 2024 - 54. Jahrestagung der Gesellschaft für Informatik, Wiesbaden"
+  title: "Workshop Sovereign Cloud Stack - Cloud Standards & Praxis"
+  details: "Dominik Pataky & Manuela Urban"
+  slides: "20240926-SCS-GI-INFORMATIK2024-f.pdf"
+
+- date: "2024-10-31"
+  event: "e-nrw-Kongress 2024, Neuss"
+  title: "Sovereign Cloud Stack: Digitale Souveränität in der Cloud verwirklichen"
+  details: "Dr. Manuela Urban"
+  slides: "e-nrw-20241031-f-Urban_Manuela.pdf"
 
 - date: "2024-12-11"
   event: "Parldigi Roundtable"
