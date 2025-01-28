@@ -71,10 +71,10 @@ GEM
     ffi (1.17.1)
     ffi (1.17.1-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
-    google-protobuf (4.29.3)
+    google-protobuf (3.25.5)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.29.3-x86_64-linux)
+    google-protobuf (3.25.5-x86_64-linux)
       bigdecimal
       rake (>= 13)
     http_parser.rb (0.8.0)
@@ -162,11 +162,11 @@ GEM
       ffi (~> 1.12)
       logger
     safe_yaml (1.0.5)
-    sass-embedded (1.83.4)
-      google-protobuf (~> 4.29)
+    sass-embedded (1.78.0)
+      google-protobuf (~> 3.25.5, < 3.25.6)
       rake (>= 13)
-    sass-embedded (1.83.4-x86_64-linux-gnu)
-      google-protobuf (~> 4.29)
+    sass-embedded (1.78.0-x86_64-linux-gnu)
+      google-protobuf (~> 3.25.5, < 3.25.6)
     sassc (2.4.0)
       ffi (~> 1.9)
     securerandom (0.4.1)
