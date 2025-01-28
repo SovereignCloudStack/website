@@ -12,6 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       id: checkout
+    - name: Set ownership
+      run: |
+        # this is to fix GIT not liking owner of the checkout dir
+        chown -R $(id -u):$(id -g) $PWD
     # Use GitHub Node Action to install node_modules
     - uses: actions/setup-node@v4
       with:
