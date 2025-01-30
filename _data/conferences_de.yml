@@ -104,7 +104,7 @@
   event: "FOSSGIS-Konferenz 2024, HH"
   title: "Sovereign Cloud Stack: Offene, föderierbare Cloud-Technologie für jeden Sektor"
   link: "https://pretalx.com/fossgis2024/talk/FHTKUF/"
-  #link: "https://files.fossgis.de/Konferenz/2024/fossgis_tagungsband_2024_digital.pdf"
+  links: "https://files.fossgis.de/Konferenz/2024/fossgis_tagungsband_2024_digital.pdf"
   slides: "Folien_FOSSGIS-20240320_Urban_Manuela.pdf"
   details: "Dr. Manuela Urban"
 

@@ -85,8 +85,8 @@
   event: "C4DT Conference on Trustworthy and Sovereign Cloud Computing, Lausanne"
   title: "Sovereign Cloud Stack: Open Source and Open Operations Solutions"
   details: "Dr. Manuela Urban"
-  link: "https://drive.switch.ch/index.php/s/0oEA3iWCn5VoBOA?path=%2FPart%202%3A%20Exploring%20latest%20technical%20solutions#/files_mediaviewer/06_manuela_urban%20(1080p).mp4"
-  #link: "https://drive.switch.ch/index.php/s/0oEA3iWCn5VoBOA/download?path=%2FPart%202%3A%20Exploring%20latest%20technical%20solutions&files=06_manuela_urban%20(1080p).mp4"
+  links: "https://drive.switch.ch/index.php/s/0oEA3iWCn5VoBOA?path=%2FPart%202%3A%20Exploring%20latest%20technical%20solutions#/files_mediaviewer/06_manuela_urban%20(1080p).mp4"
+  link: "https://drive.switch.ch/index.php/s/0oEA3iWCn5VoBOA/download?path=%2FPart%202%3A%20Exploring%20latest%20technical%20solutions&files=06_manuela_urban%20(1080p).mp4"
   slides: "EPFL-20230913-Urban_Manuela.pdf"
 
 - date: "2023-09-13"
