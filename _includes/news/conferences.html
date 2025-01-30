@@ -20,8 +20,14 @@
         {% if item.slides %}
           <a class="mt-1 text-decoration-none text-secondary stretched-link" href="{% asset '{{item.slides}}' @path %}" target="_blank">
             <i class="fa fa-download my-auto"></i> <small>{% t news.conference.slides %}</small>
-          </a>
+	  </a><br/>
         {% endif %}
+	{% if item.links %}
+	 {% for link in item.links %}
+	  <a class="mt-1 text-decoration-none text-secondary stretched-link" href="{link}" target="_blank">
+	   <i class="fa fa-link my-auto"></i> </a>
+	 {% endfor %}
+	{% endif %}
       </div>
     </div>
   </div>
