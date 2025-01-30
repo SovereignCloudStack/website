@@ -15,17 +15,19 @@
 	{% endif %}
         {% if item.details %}<p class="mb-1 small fw-light">— {{item.details}}</p>{% endif %}
       </div>
-      <div class="d-flex w-25 flex-column justify-content-start text-end position-relative">
+      <div class="d-flex w-20 flex-column justify-content-start text-end position-relative">
         <small>{% include date.html date=item.date %}</small>
         {% if item.slides %}
           <a class="mt-1 text-decoration-none text-secondary stretched-link" href="{% asset '{{item.slides}}' @path %}" target="_blank">
             <i class="fa fa-download my-auto"></i> <small>{% t news.conference.slides %}</small>
-	  </a><br/>
+	  </a>
         {% endif %}
 	{% if item.links %}
 	 {% for link in item.links %}
-	  <a class="mt-1 text-decoration-none text-secondary stretched-link" href="{link}" target="_blank">
-	   <i class="fa fa-link my-auto"></i> </a>
+          <div class="d-flex w-5 flex-column justify-content-start text-end position-relative">
+	   <a class="mt-1 text-decoration-none text-secondary stretched-link" href="{{link}}" target="_blank">
+	    <i class="fa fa-link my-auto"></i></a>
+	  </div>
 	 {% endfor %}
 	{% endif %}
       </div>
