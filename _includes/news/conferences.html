@@ -7,7 +7,12 @@
     <div class="d-flex w-100 justify-content-between">
       <div class="d-flex w-75 flex-column justify-content-start position-relative">
         <h5 style="font-size:.875em">{{item.event}}</h5>
-        <a href="{{item.link}}" target="_blank" class="mb-1 text-decoration-none text-body stretched-link">{{item.title}}</a>
+	{% if item.link %}
+          <a href="{{item.link}}" target="_blank" class="mb-1 text-decoration-none text-body stretched-link">
+	   <i class="fa fa-link my-auto"></i> {{item.title}}</a>
+	{% else %}
+	{{item.title}}
+	{% endif %}
         {% if item.details %}<p class="mb-1 small fw-light">— {{item.details}}</p>{% endif %}
       </div>
       <div class="d-flex w-25 flex-column justify-content-start text-end position-relative">
