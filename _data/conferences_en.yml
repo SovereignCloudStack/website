@@ -86,6 +86,7 @@
   title: "Sovereign Cloud Stack: Open Source and Open Operations Solutions"
   details: "Dr. Manuela Urban"
   link: "https://drive.switch.ch/index.php/s/0oEA3iWCn5VoBOA?path=%2FPart%202%3A%20Exploring%20latest%20technical%20solutions#/files_mediaviewer/06_manuela_urban%20(1080p).mp4"
+  #link: "https://drive.switch.ch/index.php/s/0oEA3iWCn5VoBOA/download?path=%2FPart%202%3A%20Exploring%20latest%20technical%20solutions&files=06_manuela_urban%20(1080p).mp4"
   slides: "EPFL-20230913-Urban_Manuela.pdf"
 
 - date: "2023-09-13"
@@ -118,7 +119,7 @@
   event: "Open Source Business Alliance Members & Products (virtual)"
   title: "Sovereign Cloud Stack: One platform – standardized, built and operated by many. How we drive standardization & certification."
   details: "Dr. Manuela Urban & Kurt Garloff"
-  link: "OSBA_Members&Products-20230309.pdf"
+  slides: "OSBA_Members&Products-20230309.pdf"
 
 - date: "2023-02-23"
   event: "ALASCA Tech-Talks #2"
