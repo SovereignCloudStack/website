@@ -100,8 +100,7 @@
   description: "Jens Plogsties, CTO SysEleven GmbH"
   abstract: "In diesem Vortrag wird die entscheidende Rolle von OpenSource-Lösungen und souveränen Cloud-Services für die sichere Verarbeitung sensibler Daten beleuchtet. Wir präsentieren, wie der von SCS (Sovereign Cloud Stack) definierte Standard erfolgreich in unser Public Cloud-Angebot integriert wurde, um den Schutz und die Integrität sensibler Informationen zu gewährleisten. Die Teilnehmer erhalten Einblicke in die technischen und strategischen Herausforderungen, die während der Implementierung bewältigt wurden, sowie die daraus resultierenden Vorteile für Kunden, für die Datensicherheit und Datensouveränität wertvoll ist. Abschließend diskutieren wir, wie diese Integration zur Schaffung einer vertrauenswürdigen und sicheren Cloud-Umgebung beiträgt, die den strengsten Datenschutzanforderungen gerecht wird. Dieser Vortrag veranschaulicht, wie innovative OpenSource-Technologien und dedizierte Sicherheitsstandards die Landschaft der Cloud-Dienste transformieren können."
   slides: "summit2024/summit2024_06_plogsties_SysEleven_SCS_Presentation.pdf"
-# TODO
-#  video: "https://TODO.soon"
+  video: "https://www.youtube.com/watch?v=fmt7tYeQMP0"
 
 
 - title: "Der Aufbau einer digital souveränen Cloud-Umgebung bei Dataport"
@@ -188,8 +187,7 @@
   description: ""
   abstract: ""
   slides: "summit2024/summit2024_12_syseleven_friedrich_SCS_Summit_5_Minuten_Pitch.pdf"
-  # TODO
-#  video: "https://TODO.soon"
+  video: "https://www.youtube.com/watch?v=P3SpbR06_Y4"
 
 
 - title: "Eine offene Schulcloud für 5 Millionen Nutzer basierend auf SCS"
@@ -345,7 +343,7 @@
   description: "Manuela Urban, COO SCS, OSB Alliance e.V."
   description2: "Miriam Seyffarth, Leiterin Politische Kommunikation, OSB Alliance e.V."
   abstract: ""
-#  video: "https://TODO.soon"
+  video: "https://www.youtube.com/watch?v=8IKl7qPJdRU"
 
 
 - title: "Ausklang bei Essen und Getränken"
