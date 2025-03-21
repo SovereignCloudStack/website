@@ -7,7 +7,7 @@
 Bereits zum zweiten Mal fand unser SCS Summit am 14.05.2024 in Berlin statt. In der Villa Elisabeth in Berlin Mitte konnten wir erleben, was gemeinsam in der SCS Community bereits erreicht wurde, wie die Pläne für die Zukunft aussehen und vor allem, dass es immer mehr werden, die dabei sind, Digitale Souveränität zu verwirklichen.
 Schauen Sie hier gern zurück auf die beiden vergangenen Jahre und die spannenden Vorträge und Diskussionen und seien Sie im kommenden Jahr mit dabei, wenn der SCS Summit in die dritte Runde geht - 
 
-Save the Date: 08. Mai 2025
+Save the Date: 24. September 2025
 
 [Rückblick 2024](/summit2024)
 
