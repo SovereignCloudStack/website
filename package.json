@@ -3,7 +3,7 @@
     "@fullcalendar/common": "^5.11.4",
     "@fullcalendar/icalendar": "^5.11.5",
     "apexcharts": "^3.54.1",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.3.4",
     "fork-awesome": "^1.2.0",
     "fullcalendar": "^5.11.4",
     "jquery": "^3.7.1",
