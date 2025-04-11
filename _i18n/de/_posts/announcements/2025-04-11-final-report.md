@@ -47,7 +47,7 @@ geschaffen, so dass hier auch Handlungsfähigkeit besteht. Zur Finanzierung zahl
 14 Gründungsunternehmen (mittlerweile 17) einen erhöhten Mitgliedsbeitrag.
 Die Steuerung der Standardisierung ist bewusst in einer Non-Profit Organisation
 angesiedelt, um hier die Neutralität zu gewährleisten. Dies erfolgt auch weiterhin
-in enger Zusammenarbeit mit [ALASCA e.V>](https://alasca.cloud/).
+in enger Zusammenarbeit mit [ALASCA e.V](https://alasca.cloud/).
 Die [Pressemeldung zum Forum SCS-Standards](https://www.sovereigncloudstack.org/de/announcements/osba-forum-scs-standards/)
 enthält weitere Informationen.
 
