@@ -66,6 +66,7 @@ assets:
     - _assets/
     - _assets/vendor
     - _assets/slides
+    - _assets/documents
     - _assets/fonts
     - _assets/scripts
     - _assets/css/_sass
