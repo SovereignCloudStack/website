@@ -29,7 +29,7 @@ Der Bericht besteht neben vielen Tabellen und Formblättern aus mehreren Teilen 
 Folgende Teile werden hier veröffentlicht:
 * [Teil 1: Formblatt und Kurzbericht (2S)](documents/01_Schlussbericht-Teil1.pdf)
 * [Teil 2: Erfolgskontrollbericht (20S)](documents/02_Schlussbericht-Teil2.pdf)
-* [Anhang zu Teil 2: Veröffentlichungen](documents/05_Anlage zur Liste-Veröffentlichungen.pdf)
+* [Anhang zu Teil 2: Veröffentlichungen](/assets/documents/05_Anlage_zur_Liste-Veroeffentlichungen.pdf)
 
 ## Weiter geht's
 
