@@ -29,7 +29,7 @@ Der Bericht besteht neben vielen Tabellen und Formblättern aus mehreren Teilen 
 Folgende Teile werden hier veröffentlicht:
 
 <ul>
-<li><a href="{% asset 'documents/01_Schlussbericht-Teil1.pdf' @path %}">Teil 1: Formblatt und Kurzbericht (2S.)</a></li>
+<li><a href="{% asset 'documents/01_Schlussbericht-Teil1.pdf' @path %}">Teil 1: Deckblatt und Kurzbericht (2S.)</a></li>
 <li><a href="{% asset 'documents/02_Schlussbericht-Teil2.pdf' @path %}">Teil 2: Erfolgskontrollbericht (20S.)</a></li>
 <li><a href="{% asset 'documents/05_Anlage_zur_Liste-Veroeffentlichungen.pdf' @path %}">Anhang zu Teil 2: Veröffentlichungen</a></li>
 </ul>
@@ -40,7 +40,8 @@ Die Fortführung von SCS erfolgt auf zweierlei Arten.
 
 Einerseits werden die SCS-Standards weiterentwickelt, weiter mit automatisierten
 Tests versehen, Zertifizierungen durchgeführt und die Verbreitung der Standards
-vorangetrieben. Die erfolgt in einer Gruppe innerhalb der OSBA, dem
+vorangetrieben. Die erfolgt in einer Gruppe innerhalb der 
+[OSBA](https://osb-alliance.de/), dem
 *Forum SCS-Standards*. Zu diesem Zweck hat die OSBA Stellen für Mitarbeiter:innen
 geschaffen, so dass hier auch Handlungsfähigkeit besteht. Zur Finanzierung zahlen
 14 Gründungsunternehmen (mittlerweile 17) einen erhöhten Mitgliedsbeitrag.
@@ -53,7 +54,7 @@ enthält weitere Informationen.
 Andererseits wird die SCS Software (Referenzimplementierung) weiterentwickelt.
 Neben Freiwilligen wird dies vor allem durch die Technologieunternehmen
 gewährleistet, die bereits in der Förderphase in SCS investiert haben. Sie
-bauen hierzu weiter ihre Open-Source Geschäftsmodelle aus und Finanzieren aus
+bauen hierzu weiter ihre Open-Source Geschäftsmodelle aus und finanzieren aus
 kommerziell angebotenen Dienstleistungen (wie z.B. Abonnements für Wartung und
 Support oder auch Beratung und Trainings) die Weiterentwicklung.
 Ein sichtbares Ergebnis der Weiterentwicklung ist das [Release 8 der SCS
