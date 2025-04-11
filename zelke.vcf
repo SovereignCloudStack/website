@@ -1,0 +1,18 @@
+
+BEGIN:VCARD
+VERSION:3.0
+PROFILE:VCARD
+FN:Friederike Zelke
+N:Zelke;Friederike;;;
+ORG:Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.;
+TITLE:Friederike Zelke
+TEL;TYPE=work,pref:+49-30-206539-204
+EMAIL;TYPE=work,pref:zelke@osb-alliance.com
+ADR;TYPE=work,pref:;;Pariser Platz 6a;Berlin;Berlin;10117;Germany
+URL;TYPE=work:https://scs.community
+SOURCE:https://scs.community/zelke.vcf
+REV:2025-04-11T11:05:41Z
+TZ:Europe/Berlin
+KIND:individual
+PHOTO;ENCODING=BASE64;TYPE=JPEG:
+END:VCARD
