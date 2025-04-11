@@ -31,7 +31,7 @@ Folgende Teile werden hier veröffentlicht:
 <ul>
 <li><a href="{% asset 'documents/01_Schlussbericht-Teil1.pdf' @path %}">Teil 1: Formblatt und Kurzbericht (2S.)</a></li>
 <li><a href="{% asset 'documents/02_Schlussbericht-Teil2.pdf' @path %}">Teil 2: Erfolgskontrollbericht (20S.)</a></li>
-<li><a href="{% asset 'documents/05_Anlage_zur_Liste-Veroeffentlichungen.pdf' %}">Anhang zu Teil 2: Veröffentlichungen</a></li>
+<li><a href="{% asset 'documents/05_Anlage_zur_Liste-Veroeffentlichungen.pdf' @path %}">Anhang zu Teil 2: Veröffentlichungen</a></li>
 </ul>
 
 ## Weiter geht's
