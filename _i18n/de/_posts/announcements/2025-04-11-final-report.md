@@ -42,9 +42,11 @@ Einerseits werden die SCS-Standards weiterentwickelt, weiter mit automatisierten
 Tests versehen, Zertifizierungen durchgeführt und die Verbreitung der Standards
 vorangetrieben. Die erfolgt in einer Gruppe innerhalb der 
 [OSBA](https://osb-alliance.de/), dem
-*Forum SCS-Standards*. Zu diesem Zweck hat die OSBA Stellen für Mitarbeiter:innen
-geschaffen, so dass hier auch Handlungsfähigkeit besteht. Zur Finanzierung zahlen
-14 Gründungsunternehmen (mittlerweile 17) einen erhöhten Mitgliedsbeitrag.
+*Forum SCS-Standards*. Es wurde von 14 Unternehmen gegründet, inzwischen sind es 17,
+die die Standardisierung gemeinsam finanzieren. Weitere Unternehmen und Organisationen,
+privat oder öffentlich, sind willkommen.
+Die OSBA hat hierfür Stellen für Mitarbeiter:innen geschaffen, so dass hier
+auch Handlungsfähigkeit besteht.
 Die Steuerung der Standardisierung ist bewusst in einer Non-Profit Organisation
 angesiedelt, um hier die Neutralität zu gewährleisten. Dies erfolgt auch weiterhin
 in enger Zusammenarbeit mit [ALASCA e.V](https://alasca.cloud/).
