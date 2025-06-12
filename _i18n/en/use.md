@@ -37,6 +37,8 @@ On Sep 20, 2023 we have published [Release 5](https://github.com/SovereignCloudS
 
 On Mar 20, 2024 we have published [Release 6](https://github.com/SovereignCloudStack/release-notes/blob/main/Release6.md).
 
+On Sep 11, 2024 we have published [Release 7](https://github.com/SovereignCloudStack/release-notes/blob/main/Release7.md).
+
 ## SCS and OSISM
 
 For the base layers, we heavily build on top of the
