@@ -36,7 +36,7 @@ mit SCS weiter:
 Diese Webseite wird als Referenz aufrecht erhalten, aber keine neuen Inhalte
 mehr bekommen.
 
-Es gibt eine neue [Webseite](https://www.sovereigncloudstack.org/de) mit renoviertem Branding,
+Es gibt eine **neue [Webseite](https://www.sovereigncloudstack.org/de)** mit renoviertem Branding,
 die vom Forum SCS-Standards und der Community (vertreten durch das Project Board) gemeinsam
 gepflegt wird. Die [Docs-Seite](https://docs.scs.community/)
 wird weiterhin aktualisiert (und wurde bereits auf das neue Branding umgestellt).
