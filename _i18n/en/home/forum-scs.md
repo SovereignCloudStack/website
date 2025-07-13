@@ -32,7 +32,7 @@ project on 2024-12-31:
 This web page will be maintained as reference for the time being, but won't receive
 new content.
 
-There is a new [web site](https://www.sovereigncloudstack.org/) with a refreshed branding
+There is a **new [web site](https://www.sovereigncloudstack.org/)** with a refreshed branding
 which is maintained by the forum SCS-Standards together with the Community (via the SCS
 Project Board).
 The [docs page](https://docs.scs.community/) will continue to receive updates (and received
