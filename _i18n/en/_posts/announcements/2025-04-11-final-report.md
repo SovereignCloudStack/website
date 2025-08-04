@@ -43,9 +43,11 @@ The first pillar is the evolution of the SCS standards, the development of
 compliance tests, certifications and the dissemination and adoption of the
 standards. This is driven by a group inside the
 [OSBA](https://osb-alliance.de), the *Forum SCS-Standards*.
-For this, the OSBA has created positions for employees to ensure there is meaningful
-progress. To fund it, 14 founding companies (meanwhile 17) are paying an extra
-membership fee. The standardization governance has been placed inside a
+It was founded by 14 companies, meanwhile 17, who together are providing the
+financial support for the joint standardization work. Further companies and
+organizations (private or public) are welcome to join.
+The OSBA has created positions for employees to ensure there is meaningful
+progress. The standardization governance has been placed inside a
 non-profit organization on purpose, ensuring neutrality. This continues to
 happen in close collaboration with [ALASCA e.V](https://alasca.cloud/).
 More information is available in a [press release on the Forum SCS-Standards](https://www.sovereigncloudstack.org/announcements/osba-forum-scs-standards/).
