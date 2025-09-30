@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>SCS container registry migration and upgrade | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="SCS container registry migration and upgrade | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="This blog post shows how the SCS Harbor container registry instance was migrated from one cloud service provider to another using lift and shift cloud migration. As part of the migration, several improvements were also made, such as the Harbor version upgrade, the upgrade of Harbor registry components to a highly available (HA) setup, and OCI distribution registry storage migration from persistent volume (PV) to the Swift object storage. We will describe the challenges and issues we faced during this process." />
+<meta property="og:description" content="This blog post shows how the SCS Harbor container registry instance was migrated from one cloud service provider to another using lift and shift cloud migration. As part of the migration, several improvements were also made, such as the Harbor version upgrade, the upgrade of Harbor registry components to a highly available (HA) setup, and OCI distribution registry storage migration from persistent volume (PV) to the Swift object storage. We will describe the challenges and issues we faced during this process." />
+<link rel="canonical" href="https://sovereigncloudstack.github.io/website/tech/2023/05/30/registry-migration-upgrade/" />
+<meta property="og:url" content="https://sovereigncloudstack.github.io/website/tech/2023/05/30/registry-migration-upgrade/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://sovereigncloudstack.github.io/website/website/assets/images/default-card-d32fdb798ca15ae927f00593ce64407f69c70d4011955dc94c7be76b99c474f4e673ee1a26ec53725dda80c2c331e5ad4300a43e702171cc014cd47ec6b2f94d.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-05-30T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://sovereigncloudstack.github.io/website/website/assets/images/default-card-d32fdb798ca15ae927f00593ce64407f69c70d4011955dc94c7be76b99c474f4e673ee1a26ec53725dda80c2c331e5ad4300a43e702171cc014cd47ec6b2f94d.jpg" />
+<meta property="twitter:title" content="SCS container registry migration and upgrade" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-30T08:38:05+00:00","datePublished":"2023-05-30T00:00:00+00:00","description":"This blog post shows how the SCS Harbor container registry instance was migrated from one cloud service provider to another using lift and shift cloud migration. As part of the migration, several improvements were also made, such as the Harbor version upgrade, the upgrade of Harbor registry components to a highly available (HA) setup, and OCI distribution registry storage migration from persistent volume (PV) to the Swift object storage. We will describe the challenges and issues we faced during this process.","headline":"SCS container registry migration and upgrade","image":"default-card.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://sovereigncloudstack.github.io/website/tech/2023/05/30/registry-migration-upgrade/"},"url":"https://sovereigncloudstack.github.io/website/tech/2023/05/30/registry-migration-upgrade/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://sovereigncloudstack.github.io/website/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/website/assets/vendor/jquery/jquery-9890bc3f6e101de456f751d876e987f1f4b90f5ad9df054375f77306c1afa9aa5781536b68c7a14d9653b12f5f22e6f2b3b363f583e4b1a7f079be6dfa5854d1.js" type="text/javascript"></script>
+  <script src="/website/assets/vendor/bootstrap/js/bootstrap.bundle-60934d7b67216797538563fa77a226032bb2823e090abf271dd8f8772c72643f26033fb09fde7cf02e8520dee7b9b4d583e4ae0cf81c9a492f0695e3cf85eb30.js" type="text/javascript"></script>
+  <!-- Lighbox -->
+  <script src="/website/assets/vendor/lightbox-5dc80144ffe76fd27b40a8e12589c5d0d75b711ed7a7673347d8432a0d910ed4412e58da517985a7e84118687326c43f9ecadf23563007d27225b8688ab94ccc.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/lightbox-49997aacc14bff6792a1811e3616ecba8d58e0e4598c6f84c2800946d62462c8ed8fcfdf6f10088844e274b9482ffee4fbf6d37d67f85c0f1514e993ad3b9072.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/main-ed12d9c273c732a194d0f8e3ec09afcd4282bb2b71530e644874b2d51197007ff8f26efce55b40a901be813a91f54d6b02914d44316cfa360c4d45db632323cb.css">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/pygments-css/zenburn-b9e6749823dd76c51d2a88eb53602d9218592303de1e7d1a4523c503894f18810ddd0f4062286c1dbd89a9405bfe9020d23afce2785ef82c5ea814129bd4327a.css">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/website/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/website/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/website/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/website/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<nav class="navbar navbar-light fixed-bottom" style="background-color: var(--bs-warning)">
+  <div class="container">
+    <span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Staging website – Based on commit <a href="https://github.com/SovereignCloudStack/website/commit/685a8141acabe7a4df24689815448ee259e39dda" target="_blank"><span class="badge rounded-pill bg-secondary">685a81</span></a></span>
+  </div>
+</nav>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Discover our new web page</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Discover SCS
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/website/about/">About SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/use/">Use SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/contribute/">Contribute to SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/partners/">Service partners</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/members/">Community members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/news/">
+                News
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/events/">
+                Events
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/jobs/">
+                Open positions
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/tenders/">
+                Public tenders
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Documentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/website/tech/2023/05/30/registry-migration-upgrade/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/website/de/tech/2023/05/30/registry-migration-upgrade/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/website/tech/2023/05/30/registry-migration-upgrade/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/website/de/tech/2023/05/30/registry-migration-upgrade/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" src="/website/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          One platform — standardized, built and operated by many.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" src="/website/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" src="/website/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" src="/website/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>SCS container registry migration and upgrade</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  <svg height="80" width="80">
+    
+    
+    <mask id="6429e4fe19a9">
+      <rect width="80" height="80" fill="white"/>
+    </mask>
+    <mask id="8c2f02931850">
+        <circle cx="40" cy="40" r="40" fill="white"/>
+    </mask>
+    <image x="0" y="0" height="80" width="80" xlink:href="/website/assets/9e9c91-515b5738cb41f0ae8a367ce86d71234fce607bf03b5f7f0a62c034f208563fa37f436694047daab16f814f08d843645fc38ce54ec4bf9e432d4fabd47e8fb140.webp"
+       mask="url(#8c2f02931850)" 
+    ></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Matej Feder</small>
+			<small>
+	May 30, 2023
+
+</small>
+		</div>
+	</div>
+</div>
+
+<p>This blog post shows how the SCS Harbor container registry instance was migrated 
+from one cloud service provider to another using lift and shift cloud migration.
+As part of the migration, several improvements were also made, such as the Harbor 
+version upgrade, the upgrade of Harbor registry components to a highly available (HA)
+setup, and OCI distribution registry storage migration from persistent volume (PV) to 
+the Swift object storage. We will describe the challenges and issues we faced during this 
+process.</p>
+
+<p>Note that this blog post extends the official Harbor’s docs pages: “<a href="https://goharbor.io/docs/main/administration/backup-restore/">backup-restore</a>”
+and “<a href="https://goharbor.io/docs/main/administration/upgrade/">upgrade-and-migrate</a>” 
+with up-to-date commands, explanations, and detailed descriptions of prerequisites needed
+for these maintenance tasks.</p>
+
+<h1 id="plan">Plan</h1>
+
+<p>Initially, the SCS Harbor container registry instance (https://registry.scs.community/)
+was running on the SCS infrastructure in the Kubernetes v1.18.20 cluster. This Harbor instance
+with version 2.2.4 was deployed by <a href="https://github.com/goharbor/harbor-helm">harbor-helm</a>
+chart v1.6.0. This version of harbor-helm chart is affected by <a href="https://github.com/goharbor/harbor/security/advisories/GHSA-j7jh-fmcm-xxwv">security issue</a>
+with high severity. It is possible for anyone to forge a JWT token and push/pull images
+to/from Harbor private registries without any authentication. 
+Besides the outdated registry version and the outdated version of the underlying Kubernetes
+cluster, this was another good motivation for the migration and upgrade of the SCS 
+Harbor container registry instance. 
+In addition, the Harbor deployment didn’t use the ability of Harbor to operate in the high 
+availability mode, which might be beneficial for many reasons.</p>
+
+<p>Our plan was to migrate this Harbor instance to the up-to-date SCS Kubernetes cluster
+with version 1.25.6 which was spawned on SCS-compatible infrastructure, but operated
+by a different cloud service provider. After the migration process, the upgrade to the
+latest stable version of the Harbor container registry v2.7.1 using the latest stable
+version of the harbor-helm chart v1.11.1 (that is not affected by mentioned security issue)
+was planned. The upgrade procedure also included increasing the number of replicas for
+Harbor fundamental services to &gt;=2 to achieve the <a href="https://goharbor.io/docs/main/install-config/harbor-ha-helm/">HA of Harbor components</a>. The HA mode
+for the Harbor database (Postgres) and Harbor key-value database (Redis) was not planned
+this at time. 
+Most of Harbor’s components are stateless, hence you can simply increase the number of 
+replicas to ensure that components are distributed across multiple worker nodes and are HA.
+In addition to the Harbor database and the k-v store, there are two Harbor components that are
+stateful and their state needs to be shared across their replicas: the job service and the registry.
+Harbor offers two ways to achieve the HA of these components. In the case of the job 
+service, the administrator can configure shared persistent volumes for all pods (this 
+requires persistent volume RWX support), or alternatively, the administrator can configure
+the Harbor database as a storage backend for job service instead of PVs. As the RWX 
+access mode for PVs is not currently supported, the second option was planned. 
+In the case of the registry service, the administrator can again configure shared PVs 
+for all pods, or alternatively, an external object storage could be used as a the registry 
+storage backend. Our first choice was to use object storage as a backend for image blobs 
+as the amount of data here is expected to be large and the object storage drive is a good
+option if you want to store this type of unstructured data at scale.
+See the original and planned high-level architecture diagram below:</p>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/registry_migration-6d1d43f44bfb4e09ba78810d8762e85358a92bc20ef05bbfb5ac46e5dc9fb69b9d8802cdeb639888fbc260f4fff1d8843f748031a28594326d435d1011fc6b5e.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/registry_migration-6d1d43f44bfb4e09ba78810d8762e85358a92bc20ef05bbfb5ac46e5dc9fb69b9d8802cdeb639888fbc260f4fff1d8843f748031a28594326d435d1011fc6b5e.png" />
+  </a>
+</figure>
+
+<h1 id="migration--upgrade">Migration &amp; Upgrade</h1>
+
+<p>This SCS Harbor container registry migration scenario uses the <a href="https://velero.io/">Velero</a>
+tool that allows you to move the Harbor instance as-is from one Kubernetes environment to
+another environment using the <strong>backup</strong> and <strong>restore</strong> procedures. Our clusters live in different SCS
+cloud service providers and for simplifying further references to them, let’s call them
+Cluster_A and Cluster_B. Cluster_A represents the outdated Kubernetes cluster and 
+Cluster_B represents the target Kubernetes cluster to which we wanted to migrate our
+Harbor. See the migration high-level diagram below:</p>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/registry_migration_velero-95b8c0bbeb4ef51014fe2e05fa27e13f72aa4422df488b2bf21be0b78d36734e9d4b6ed2a6af1324a88d9ffd5f0588adbc7def65e8c3936a0ddd9308b5ca6ffb.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/registry_migration_velero-95b8c0bbeb4ef51014fe2e05fa27e13f72aa4422df488b2bf21be0b78d36734e9d4b6ed2a6af1324a88d9ffd5f0588adbc7def65e8c3936a0ddd9308b5ca6ffb.png" />
+  </a>
+</figure>
+
+<h2 id="before-we-start">Before we start</h2>
+
+<h3 id="kubernetes-version">Kubernetes version</h3>
+
+<p>As Cluster_A and Cluster_B do not share the same infrastructure it is convenient to use
+a full Harbor data backup (not a snapshot) using <a href="https://restic.net/">Restic</a> integration
+in Velero. Velero with Restic requires Kubernetes version <strong>1.16</strong> or higher in both
+clusters, which we met.</p>
+
+<h3 id="s3-bucket-and-ec2-credentials">S3 bucket and EC2 credentials</h3>
+
+<p>To migrate Harbor resources and data between cloud providers we used OpenStack Swift
+object storage with S3-compatible API as a storage backend for Velero. We created an
+S3 bucket on Swift object storage and EC2 credentials that will be later used by Velero.</p>
+
+<p>The Swift object storage service does not support application credentials authentication to
+access S3 API. To authenticate in S3 API, you should generate and use the EC2 credentials
+mechanism. Note that EC2 credentials are associated with a user and are scoped only to a
+specific project. EC2 credentials are not protected by limited roles, expiration time,
+or access rules, therefore they have the same access as the user who created them.
+If you want to restrict EC2 credentials you could use application credentials for their
+creation, then EC2 credentials should inherit a (potentially) limited subset of roles
+that the creator owns (see <a href="https://opendev.org/openstack/keystone/commit/487c7276c7608fb11086b9875b0d7cc7cf594a5a">this</a> for details).</p>
+
+<p>We generated EC2 credentials, using the regular user account as follows:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>openstack ec2 credentials create
++------------+----------------------------------------------------------------------------------------------------------+
+| Field      | Value                                                                                                    |
++------------+----------------------------------------------------------------------------------------------------------+
+| access     | &lt;aws_access_key_id&gt;                                                                                      |
+| links      | <span class="o">{</span><span class="s1">'self'</span>: <span class="s1">'https://api.gx-scs.sovereignit.cloud:5000/v3/users/&lt;user_id&gt;/credentials/OS-EC2/&lt;project_id&gt;'</span><span class="o">}</span> |
+| project_id | &lt;project_id&gt;                                                                                             |
+| secret     | &lt;aws_secret_access_key&gt;                                                                                  |
+| trust_id   | None                                                                                                     |
+| user_id    | &lt;user_id&gt;                                                                                                |
++------------+----------------------------------------------------------------------------------------------------------+
+</code></pre></div></div>
+
+<p>We stored the provided S3 API credentials in the file <code class="language-plaintext highlighter-rouge">~/.aws/credentials</code>. This credential
+file is then used as an access and secret source for AWS CLI tool and also as a source 
+for Velero. A new migration bucket has been created. Note that the following command
+contains <code class="language-plaintext highlighter-rouge">endpoint-url</code> argument that points the AWS CLI to the SCS OpenStack Swift object storage API.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws <span class="nt">--endpoint-url</span> https://api.gx-scs.sovereignit.cloud:8080 s3 mb s3://velero-backup
+</code></pre></div></div>
+
+<h3 id="velero">Velero</h3>
+
+<p>Velero is an open-source tool to safely backup, restore, perform disaster recovery,
+and migrate Kubernetes cluster resources. Its server runs inside the Kubernetes cluster,
+and can be controlled via the handy <a href="https://velero.io/docs/main/basic-install/">Velero CLI tool</a>.
+If your environment is a Linux distribution you can use the following steps and install
+the Velero client from the GitHub release binaries:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://github.com/vmware-tanzu/velero/releases/download/v1.10.2/velero-v1.10.2-linux-amd64.tar.gz 
+<span class="nb">tar</span> <span class="nt">-zxvf</span> velero-v1.10.2-linux-amd64.tar.gz 
+<span class="nb">sudo mv </span>velero-v1.10.2-linux-amd64/velero /usr/local/bin/
+</code></pre></div></div>
+
+<p>Then we installed Velero server component along with the appropriate plugins, into both
+clusters (Cluster_A and Cluster_B). The following command creates a deployment called <code class="language-plaintext highlighter-rouge">velero</code> in
+the namespace called <code class="language-plaintext highlighter-rouge">velero</code>. The namespace will be created by this command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>velero <span class="nb">install</span> <span class="se">\</span>
+    <span class="nt">--kubeconfig</span> &lt;path to the kubeconfig file of Cluster_[A,B]&gt; <span class="se">\ </span>
+    <span class="nt">--features</span><span class="o">=</span>EnableAPIGroupVersions <span class="se">\</span>
+    <span class="nt">--provider</span> aws <span class="se">\</span>
+    <span class="nt">--plugins</span> velero/velero-plugin-for-aws:v1.6.1 <span class="se">\</span>
+    <span class="nt">--bucket</span> velero-backup <span class="se">\</span>
+    <span class="nt">--secret-file</span> ~/.aws/credentials <span class="se">\</span>
+    <span class="nt">--use-volume-snapshots</span><span class="o">=</span><span class="nb">false</span> <span class="se">\</span>
+    <span class="nt">--uploader-type</span><span class="o">=</span>restic <span class="se">\</span>
+    <span class="nt">--use-node-agent</span> <span class="se">\</span>
+    <span class="nt">--backup-location-config</span> <span class="nv">region</span><span class="o">=</span>RegionOne,s3ForcePathStyle<span class="o">=</span><span class="s2">"true"</span>,s3Url<span class="o">=</span>https://api.gx-scs.sovereignit.cloud:8080
+</code></pre></div></div>
+
+<p>Note that the installation command uses the bucket <code class="language-plaintext highlighter-rouge">velero-backup</code> that has been created
+a few steps earlier as well as EC2 credentials located in <code class="language-plaintext highlighter-rouge">~/.aws/credentials</code> file.
+Also, note that the <code class="language-plaintext highlighter-rouge">region</code> and <code class="language-plaintext highlighter-rouge">s3Url</code> parameters are SCS specific. 
+The <code class="language-plaintext highlighter-rouge">EnableAPIGroupVersions</code> feature has been enabled as well. It is not unusual to see the
+Kubernetes API group versions differ between clusters across several minor releases.
+Our clusters differ in 7 minor releases (Cluster_A version is 1.18.20 and Cluster_B
+version is 1.25.6) hence differences between API group versions are expected. Velero
+with “<a href="https://velero.io/docs/main/enable-api-group-versions-feature/">EnableAPIGroupVersions</a>”,
+backups all Kubernetes API group versions that are supported on the source Cluster_A.
+Then, if this feature is also enabled on Cluster_B, Velero will make the best choice
+of Kubernetes API version which is defined in the group name of both source
+Cluster_A and target Cluster_B based on API group version <a href="https://velero.io/docs/main/enable-api-group-versions-feature/">priority order</a>.
+Keep in mind that this experimental feature does not support cases when the API group
+name does not exist in the target cluster. As a good example for this case could be an
+ingress resource that API group name <code class="language-plaintext highlighter-rouge">extensions</code> is no longer served as of v1.22.
+In that case, Velero tries to restore the resource in the target cluster, and if the
+resource API group is not supported, the restore is skipped. So in some special cases,
+some resources could not be restored which may lead to some unexpected issues.
+Our plan was to upgrade the Harbor instance right after the migration work, so the
+helm upgrade procedure should ensure that missing resources will be deployed with the
+right API group versions.</p>
+
+<p>It is a good practice to configure the backup location in the Cluster_B as read-only.
+This will make sure that the backup created from Cluster_A is not deleted from the object
+store by mistake during the restore to Cluster_B. To do this we modified the <code class="language-plaintext highlighter-rouge">default</code> 
+BackupStorageLocation resource in Cluster_B:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl <span class="nt">-n</span> velero <span class="nt">--kubeconfig</span> &lt;path of Cluster_B kubeconfig&gt; edit backupstoragelocations default
+<span class="c"># Set the `accessMode` to `ReadOnly`</span>
+<span class="c"># spec:</span>
+<span class="c">#   accessMode: ReadOnly</span>
+</code></pre></div></div>
+
+<h3 id="limitations">Limitations</h3>
+
+<p>The official Harbor docs page for <a href="https://goharbor.io/docs/main/administration/backup-restore">backup and restore</a>
+contains a list of <a href="https://goharbor.io/docs/main/administration/backup-restore/#limitations">limitations</a>
+of Harbor backup/restore procedure using Velero. It is a good idea to go through this
+section to be aware of a potential impact on your Harbor instance. 
+See selected items from the list with explanations:</p>
+
+<ul>
+  <li>The key-value database (Redis) storage should not be migrated (backed up and then restored). 
+As a result, the user sessions of logged in users that are stored in Redis will be lost.
+Hence, after the migration is done, users should log in again. This data loss should
+be a low impact on our restored Harbor instance.</li>
+  <li>The upload purging process can cause backup failures. It is a background process of the
+registry that periodically removes orphaned files from the upload directories of the
+registry. This interval is by <a href="https://github.com/goharbor/harbor-helm/blob/master/values.yaml#L597">default</a>
+set to 24h. We did not want to change the registry configuration at all. So we ensured
+that the backup is performed in the middle of two rounds of purging. This background
+process starts when the registry container is initialized, therefore we checked 
+the logs of the registry container and determined when is a good time to do a backup, as follows:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl <span class="nt">--kubeconfig</span> &lt;path of Cluster_A kubeconfig&gt; logs <span class="nt">-l</span> <span class="nv">component</span><span class="o">=</span>registry <span class="nt">-c</span> registry <span class="nt">--tail</span> <span class="nt">-1</span> | <span class="nb">grep</span> <span class="nt">-i</span> purge
+<span class="nb">time</span><span class="o">=</span><span class="s2">"2023-04-17T09:02:08.320514706Z"</span> <span class="nv">level</span><span class="o">=</span>info <span class="nv">msg</span><span class="o">=</span><span class="s2">"Starting upload purge in 24h0m0s"</span> go.version<span class="o">=</span>go1.15.6 instance.id<span class="o">=</span>xxx <span class="nv">service</span><span class="o">=</span>registry <span class="nv">version</span><span class="o">=</span>v2.7.1.m 
+<span class="nb">time</span><span class="o">=</span><span class="s2">"2023-04-17T09:09:08.321004645Z"</span> <span class="nv">level</span><span class="o">=</span>info <span class="nv">msg</span><span class="o">=</span><span class="s2">"PurgeUploads starting: olderThan=2023-04-10 09:09:08.320738572 +0000 UTC m=-604379.969424455, actuallyDelete=true"</span> 
+<span class="nb">time</span><span class="o">=</span><span class="s2">"2023-04-17T09:09:08.331433127Z"</span> <span class="nv">level</span><span class="o">=</span>info <span class="nv">msg</span><span class="o">=</span><span class="s2">"Purge uploads finished.  Num deleted=0, num errors=0"</span> 
+...
+</code></pre></div></div>
+
+<h2 id="migration">Migration</h2>
+
+<p>After preparing and installing all prerequisites, we were ready to migrate SCS Harbor
+from Cluster_A to Cluster_B. The first step was to set Harbor in Cluster_A to the 
+<a href="https://goharbor.io/docs/main/administration/backup-restore/#set-harbor-to-readonly"><code class="language-plaintext highlighter-rouge">ReadOnly</code> mode</a>.
+This protected our Harbor instance from deleting repositories, artifacts, tags, and pushing images.
+This also ensured that the Harbor instance in Cluster_A will be in sync with the Harbor instance
+in Cluster_B after we restored the Harbor instance from the backup in Cluster_B.
+Then we excluded the volume of Harbor’s k-v database (Redis) from backup in Cluster_A:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl <span class="nt">-n</span> default <span class="nt">--kubeconfig</span> &lt;path of Cluster_A kubeconfig&gt; annotate pod/harbor-harbor-redis-0 backup.velero.io/backup-volumes-excludes<span class="o">=</span>data
+</code></pre></div></div>
+
+<p>The Velero backup command below successfully created a full backup of all resources in the
+given namespace including their persistent storages (besides Redis PV). It took several
+minutes as the registry used PV as a storage backend for image blobs.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>velero backup create harbor-backup <span class="nt">--kubeconfig</span> &lt;path of Cluster_A kubeconfig&gt; <span class="nt">--include-namespaces</span> default <span class="nt">--default-volumes-to-fs-backup</span> <span class="nt">--wait</span>
+</code></pre></div></div>
+
+<p>The restore procedure is as simple as the backup one, just one Velero command did the whole magic:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>velero restore create harbor-restore <span class="nt">--from-backup</span> harbor-backup <span class="nt">--kubeconfig</span> &lt;path of Cluster_B kubeconfig&gt; <span class="nt">--wait</span> 
+</code></pre></div></div>
+
+<p>After we restored the Harbor instance we realized that the ingress resource was not 
+migrated because of an API group name change (<code class="language-plaintext highlighter-rouge">extensions</code> -&gt; <code class="language-plaintext highlighter-rouge">networking.k8s.io</code>). 
+Besides this issue, we found all Harbor services up and running and after brief check
+of services logs we declared the migration work as done. 
+This new instance of the SCS container registry running in Cluster_B was not publicly 
+accessible yet as the DNS record still pointed users to the Cluster_A IP address.
+More importantly, this new instance was still running the outdated Harbor version and was still 
+affected by the security issue mentioned above. 
+The upgrade to the latest stable Harbor version should resolve all mentioned issues.
+Let’s proceed.</p>
+
+<h2 id="upgrade">Upgrade</h2>
+
+<p>Initial Harbor installation in Cluster_A used SCS <a href="https://github.com/SovereignCloudStack/k8s-harbor">k8s-harbor</a> 
+project as a source. This project has been updated before this migration and upgrade work. 
+It contains several predefined <a href="https://github.com/SovereignCloudStack/k8s-harbor/tree/main/envs">environments</a> 
+that install Harbor in various setups. It uses FluxCD for managing harbor-helm chart and
+also enables installation of dependencies like the ingress-controller, 
+cert-manager, etc. It also allows administrators to generate random secrets that 
+should override default values in productive setups. 
+The environment used for reference SCS container registry installation is called <a href="https://github.com/SovereignCloudStack/k8s-harbor/tree/main/envs/public">public</a>.</p>
+
+<p>Our plan was to upgrade Harbor from version 2.2.4 which was deployed by harbor-helm v1.6.0
+to Harbor version v2.7.1 which should be deployed by harbor-helm v1.11.1.</p>
+
+<p>Harbor recommends step-by-step upgrades when you want to upgrade Harbor across multiple 
+minor versions. Normally, Harbor helm upgrade from 2 minor versions lower should be <a href="https://github.com/goharbor/harbor-helm/issues/500#issuecomment-647029797">tested</a>. 
+The step-by-step upgrade is needed because of possible DDL changes in the Harbor database, 
+which should be performed by the Harbor core service via <a href="https://github.com/goharbor/harbor/tree/main/make/migrations/postgresql">migrations scripts</a>.</p>
+
+<p>Our planned upgrade path was faster, as we skipped several minor releases. This was tested
+multiple times on another Harbor instance, and in addition, we found a record that similar 
+upgrade path works in related harbor-helm <a href="https://github.com/goharbor/harbor-helm/issues/500#issuecomment-647032427">issue</a>.</p>
+
+<p>Upgrade path: harbor-helm v1.6.0 (Harbor v2.2.4) -&gt; harbor-helm v1.10.4 (Harbor v2.6.4) -&gt; harbor-helm v1.11.1 (Harbor v2.7.1)</p>
+
+<p>We did an upgrade using the above path from the local clone of the SCS k8s-harbor project as follows:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl <span class="nt">--kubeconfig</span> &lt;path of Cluster_B kubeconfig&gt; apply <span class="nt">-k</span> envs/public/
+</code></pre></div></div>
+
+<p>Note that the above upgrade did not set up HA mode for Harbor services, and did not set 
+up the Swift object storage for registry service yet. It just upgraded the Harbor version and 
+as a side effect, the upgrade process also deployed the missing ingress resource to the 
+Cluster_B. After the successful upgrade to harbor-helm v1.11.1 (Harbor v2.7.1) we 
+checked that everything was up and running. We then adjusted the ingress resource
+to allow us to access and test the upgraded Harbor instance on a different domain,
+other than the official https://registry.scs.community/. 
+As we configured Harbor in Cluster_A to ReadOnly when doing the backup, the restored instance
+in Cluster_B was in ReadOnly as well. In order to test the whole functionality of the new 
+instance we removed the ReadOnly mode. We tested things like creating a projects,
+creating a users, access to the created project, push/pull images using created user 
+to/from the created project, etc.</p>
+
+<h2 id="final-tuning">Final tuning</h2>
+
+<p>After that, only two things were missing. Upgrade the Harbor services to HA mode and as a 
+prerequisite to this redirect job service persistent storage from PV to Harbor database
+and also used the Swift object storage as persistent storage for registry service instead of PV.</p>
+
+<p>To achieve the above we took several actions. The first thing was to create a new object
+storage bucket in the SCS infrastructure (in the same way how we created the bucket for Velero).
+Then, we upgraded Harbor again, but with the right values that enabled HA mode and 
+adjusted the storage settings. Visit the <a href="https://github.com/SovereignCloudStack/k8s-harbor/blob/main/envs/public/harbor-config.yaml">harbor-config</a>
+file for the public environment in the k8s-harbor repository to review the config. 
+After the upgrade, Harbor services were deployed with 2 replicas, the job service
+used the Harbor database as storage, and the registry service was pointed to the 
+object storage bucket. The PV of the registry service that contained all image blobs was 
+detached. As a next action item, we spawned a helper AWS CLI pod that mounted this PV:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&gt;</span> helper-pod.yaml <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aws-cli
+spec:
+  volumes:
+    - name: registry-data
+      persistentVolumeClaim:
+        claimName: harbor-harbor-registry
+  containers:
+    - name: aws-cli
+      image: amazon/aws-cli
+      command:
+        - "sleep"
+        - "10000"
+      volumeMounts:
+        - name: registry-data
+          mountPath: /storage
+</span><span class="no">EOF
+
+</span>kubectl <span class="nt">--kubeconfig</span> &lt;path of Cluster_B kubeconfig&gt; apply <span class="nt">-f</span> helper-pod.yaml
+</code></pre></div></div>
+
+<p>Using this pod we copied all image blobs from PV to the object storage.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># create `~/.aws/credentials`file with the right secrets</span>
+<span class="c"># sync /storage directory with the bucket</span>
+kubectl <span class="nt">--kubeconfig</span> &lt;path of Cluster_B kubeconfig&gt; <span class="nb">exec</span> <span class="nt">-it</span> aws-cli <span class="nt">--</span> bash
+<span class="nb">cd</span> /storage
+aws s3 <span class="nb">sync</span> <span class="nb">.</span> s3://registry/ <span class="nt">--endpoint-url</span> https://api.gx-scs.sovereignit.cloud:8080
+</code></pre></div></div>
+
+<p>Once the sync was completed we did a test round of the whole Harbor instance again, 
+now deployed (partially) in HA mode (Harbor database and k-v store were out of scope this time).</p>
+
+<h2 id="hello-new-instance">Hello new instance</h2>
+
+<p>Finally, the new instance was in the desired state. The last steps were to configure the 
+DNS A record for DNS name <code class="language-plaintext highlighter-rouge">registry.scs.community</code> from Cluster_A IP address to 
+Cluster_B IP address. Right after that we also configured the ingress resource in 
+Cluster_B to serve the host <code class="language-plaintext highlighter-rouge">registry.scs.community</code>. 
+This final configuration caused a short outage of the SCS container registry service. 
+Besides this short outage, the SCS container registry service was up and accessible in 
+read-only mode during the whole maintenance work.</p>
+
+
+
+<h2 id="about">
+  
+    About the author
+  
+</h2>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="9b4223b921c8">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/website/assets/7829b2-847ba2c26740ad21125511b68d17b11254760f78ed5867d79fc821117b9ae44685505ac7b6df45c90035629e36bed2bc676a93d41cf3b1367dc3528e3eb443b6.webp" mask="url(#9b4223b921c8)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Matej Féder</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">Software Engineer @ <a href="https://dnation.cloud/" target="_blank">dNation</a></div>
+        <div class="mt-2">Matej is a software engineer with an interest in programming, and cloud-native technologies.
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+<div class="me-2 mb-2">
+    <a class="btn btn-mail" href="mailto:matej.feder@dnation.cloud"><i class="fa fa-envelope fa-lg"></i></a>
+</div>
+
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="https://www.linkedin.com/in/matej-feder-9bba27111/"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/matofeder"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-matrix" target="_blank" href="https://matrix.to/#/@mfeder:matrix.org"><i class="fa fa-matrix-org fa-lg"></i></a>
+</div>
+
+          <div class="ms-md-auto pe-3"><a href="/website/members/matofeder" class="btn btn-outline-primary" role="button">Community profile &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" src="/website/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Imprint" href="/website/imprint/">Imprint</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Data Protection Statement" href="/website/dataprotection/">Data Protection Statement</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>New CPU leaks (August 2023) | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="New CPU leaks (August 2023) | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Summary" />
+<meta property="og:description" content="Summary" />
+<link rel="canonical" href="https://sovereigncloudstack.github.io/website/2023/08/29/new-cpu-leaks/" />
+<meta property="og:url" content="https://sovereigncloudstack.github.io/website/2023/08/29/new-cpu-leaks/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://sovereigncloudstack.github.io/website/website/assets/images/blog/cpu/downfall-b680a175ea388da88536347831c7c06540bb375ab5e0b266877f18b1bc62d0052a95da186e2534bfafca442502ba86182341d78e20ae13090da39b309d9847f2.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-08-29T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://sovereigncloudstack.github.io/website/website/assets/images/blog/cpu/downfall-b680a175ea388da88536347831c7c06540bb375ab5e0b266877f18b1bc62d0052a95da186e2534bfafca442502ba86182341d78e20ae13090da39b309d9847f2.png" />
+<meta property="twitter:title" content="New CPU leaks (August 2023)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-30T08:38:05+00:00","datePublished":"2023-08-29T00:00:00+00:00","description":"Summary","headline":"New CPU leaks (August 2023)","image":"blog/cpu/downfall.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://sovereigncloudstack.github.io/website/2023/08/29/new-cpu-leaks/"},"url":"https://sovereigncloudstack.github.io/website/2023/08/29/new-cpu-leaks/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://sovereigncloudstack.github.io/website/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/website/assets/vendor/jquery/jquery-9890bc3f6e101de456f751d876e987f1f4b90f5ad9df054375f77306c1afa9aa5781536b68c7a14d9653b12f5f22e6f2b3b363f583e4b1a7f079be6dfa5854d1.js" type="text/javascript"></script>
+  <script src="/website/assets/vendor/bootstrap/js/bootstrap.bundle-60934d7b67216797538563fa77a226032bb2823e090abf271dd8f8772c72643f26033fb09fde7cf02e8520dee7b9b4d583e4ae0cf81c9a492f0695e3cf85eb30.js" type="text/javascript"></script>
+  <!-- Lighbox -->
+  <script src="/website/assets/vendor/lightbox-5dc80144ffe76fd27b40a8e12589c5d0d75b711ed7a7673347d8432a0d910ed4412e58da517985a7e84118687326c43f9ecadf23563007d27225b8688ab94ccc.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/lightbox-49997aacc14bff6792a1811e3616ecba8d58e0e4598c6f84c2800946d62462c8ed8fcfdf6f10088844e274b9482ffee4fbf6d37d67f85c0f1514e993ad3b9072.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/main-ed12d9c273c732a194d0f8e3ec09afcd4282bb2b71530e644874b2d51197007ff8f26efce55b40a901be813a91f54d6b02914d44316cfa360c4d45db632323cb.css">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/pygments-css/zenburn-b9e6749823dd76c51d2a88eb53602d9218592303de1e7d1a4523c503894f18810ddd0f4062286c1dbd89a9405bfe9020d23afce2785ef82c5ea814129bd4327a.css">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/website/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/website/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/website/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/website/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<nav class="navbar navbar-light fixed-bottom" style="background-color: var(--bs-warning)">
+  <div class="container">
+    <span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Staging website – Based on commit <a href="https://github.com/SovereignCloudStack/website/commit/685a8141acabe7a4df24689815448ee259e39dda" target="_blank"><span class="badge rounded-pill bg-secondary">685a81</span></a></span>
+  </div>
+</nav>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Discover our new web page</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Discover SCS
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/website/about/">About SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/use/">Use SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/contribute/">Contribute to SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/partners/">Service partners</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/members/">Community members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/news/">
+                News
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/events/">
+                Events
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/jobs/">
+                Open positions
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/tenders/">
+                Public tenders
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Documentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/website/2023/08/29/new-cpu-leaks/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/website/de/2023/08/29/new-cpu-leaks/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/website/2023/08/29/new-cpu-leaks/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/website/de/2023/08/29/new-cpu-leaks/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" src="/website/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          One platform — standardized, built and operated by many.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" src="/website/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" src="/website/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" src="/website/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>New CPU leaks (August 2023)</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  
+  
+  <svg height="80" width="80">
+    <mask id="26fb98ec7043">
+      <circle cx="40" cy="40" r="40" fill="white"/>
+      <rect x="40" y="0" width="40" height="80" fill="black" stroke="black" stroke-width="2"/>
+    </mask>
+    <mask id="1e899741074a">
+      <circle cx="40" cy="40" r="40" fill="white"/>
+      <rect x="0" y="0" width="40" height="80" fill="black" stroke="black" stroke-width="2"/>
+    </mask>
+    <image x="-20" y="0" height="80" width="80" xlink:href="/website/assets/6d8ee9-9f8be8cc33736f60cef97b709a096937121338e312e9e3ee13933b9a583c30435edcd60f7154a6d23891a4c62230e2f40cdbe49f20b0da944423849e9f37c883.webp" mask="url(#26fb98ec7043)"></image>
+    <image x="20" y="0" height="80" width="80" xlink:href="/website/assets/8b2a8a-4cd435892c72d176baef5bf6759831bc5a1e70480d080e6ec6eff4308914ce6c51b718cd83463414dd44a59ccb3357c50e278fa414fea1ad16f68755921ed754.webp" mask="url(#1e899741074a)"></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Kurt Garloff, Dominik Pataky</small>
+			<small>
+	August 29, 2023
+
+</small>
+		</div>
+	</div>
+</div>
+
+<h2 id="summary">Summary</h2>
+
+<p>A new set of hardware CPU speculation vulnerabilities were uncovered in
+July/August 2023. They do create risks for information disclosure for
+providers and users of SCS clouds. This blog article explains the issues,
+the associated risks and how these can be mitigated by providers and users.</p>
+
+<h2 id="cpu-leak-introduction-and-history">CPU leak introduction and history</h2>
+
+<p>In January 2018, a new class of hardware vulnerabilities became publicly known.</p>
+
+<p>Modern CPUs have the capability to do an amazing amount of things in parallel.
+While they are calculating the result of one operation, they are already executing
+instructions that occur afterwards. This is necessary for high performance, because
+some operations take longer than others. And more importantly, if data is not available
+in the CPU registers or caches, it may take way beyond 100 CPU cycles to get them
+from main memory (RAM). CPUs would be rather slow if they would incur many cache
+misses and then sit idle at each cache or worse translation lookaside buffer (TLB) miss.
+Good cache handling is thus part of every modern CPU design.</p>
+
+<p>Some instructions depend on results of previous instructions. The code flow does often
+depend on such results (conditional branches). If the CPU wants to execute these
+instructions despite some previous instruction whose result is needed not yet being
+complete, it can speculate on the outcomes (for example based on previous results).
+CPUs have lots of specialized hardware to do this speculation well: branch predictors,
+return stack buffers, etc.</p>
+
+<p>Nevertheless misspeculation can happen of course. When it does, the CPU needs to
+carefully rewind the state and undo everything that has happened after a mispredicted
+speculation. Results need to be discarded and the state of registers and memory
+be reinstated from before the misprediction. Failures to do so would cause unpredictable
+CPU behaviors and be very serious CPU bugs. CPU vendors are good at avoiding this.</p>
+
+<p>However, even if the official architectural state of the CPU is correctly reinstated
+after misspeculation, there may be traces from the misspeculation, such as internal
+CPU buffers and caches, the microarchitectural state, that have a different state.
+While these states should not influence the outcome of future operations, they may
+be observable, e.g. by timing effects. Authors of code that handles cryptography have
+thus learned to avoid writing code that has code paths or execution times that depend
+on keys or sensitive data. With misspeculation this however is at the mercy of the
+CPU – as misspeculation might depend on sensitive data, we may have a potential
+side-channel that can leak such data.</p>
+
+<p>A program could observe misspeculation and thus take conclusions from data in other
+parts of the same program – not normally an issue, unless the program is specifically
+designed to create sandboxes for executing untrusted code. Browsers do this for
+example to execute JavaScript code in a somewhat secure way.</p>
+
+<p>Things become more serious if microarchitectural state survives a context switch.
+When the operating system switches between processes or a hypervisor between
+virtual machines, we’d definitely like to be sure that no data can be observed.
+However, discarding all state (e.g. all internal buffers, branch history, caches,
+TLB, …) upon each context switch would result in bad context switching performance,
+so CPUs try to limit this.</p>
+
+<p>Worse, CPUs with Simultaneous MultiThreading (SMT – called HyperThreading in
+the x86 world) have two (or more) logical CPUs that share a lot of CPU core components (register files, execution units, prediction buffers, …)
+and thus microarchitectural state. One logical CPU may however execute code from
+a different process or a virtual machine from a different user than the other logical
+CPU sharing the same core. This creates a significant risk for side-channel
+leaking data and extra care from an operating system or hypervisor with context switches may not be effective.</p>
+
+<p>All these vulnerabilities share the property that they can cause data leaks.
+An attacker tricks the CPU into speculation and then observes microarchitectural
+state from a different security context. While no data can be changed and corrupted
+this way, sensitive data (e.g. encryption keys or passwords) can be leaked.
+So all of these are Information Disclosure vulnerabilities.</p>
+
+<p>When such vulnerabilities were reported, mitigating measures were developed by
+kernel developers and CPU vendors. The low-level operation of some of the more
+complex operations of CPUs is programmable by so called microcode (µcode), which
+can be updated by the BIOS or by the operating system during the boot process.
+In theory, it can also be updated later on – however, it is very
+difficult to do this in a safe way and thus unsupported for most setups.
+Some of the leaks can be fixed by µcode updates – typically at the cost
+of performance, sometimes very significantly so. So these security protecting
+features may be designed as opt-in features or may just enable new features
+that the hypervisor or kernel can then use for mitigation.</p>
+
+<p>The operating system kernel and hypervisor
+on the other hand can use extra instructions to do cleanup on context switches,
+prevent certain speculation at sensitive places or place extra instructions
+to prevent microarchictectural state from one logical CPU to influence another.
+Operating systems/hypervisors may avoid scheduling VMs from different users
+on the logical cores (group scheduling) of a shared CPU core or disable SMT
+alltogether.
+Compilers may support with placing extra instructions in identifying sensitive
+places and in placing extra instructions there. Obviously, these mitigations
+also typically come with a performance cost – also a very significant one
+for some. Operating system and hypervisor developers also tend to allow
+opt-out for these protections.</p>
+
+<p>The stream of vulnerabilities since the original Meltdown and Spectre reports
+has kept CPU vendors and OS developers busy.</p>
+
+<p>One extremely useful tool to know is the
+<a href="https://github.com/speed47/spectre-meltdown-checker">spectre-meltdown-checker.sh</a>.
+When executed (with root privileges) on a host, it checks whether your CPU
+is susceptible to various vulnerabilities and informs you about the mitigation
+status. There’s one limitation that you should be aware of:
+When running the tool inside a virtual machine, it can not comprehensively
+determine how well the hypervisor protects against these speculative data leaks
+between virtual machines.</p>
+
+<h2 id="new-cpu-leaks-julyaugust-2023">New CPU leaks July/August 2023</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Website</th>
+      <th style="text-align: left">CVE</th>
+      <th style="text-align: left">CPUs</th>
+      <th style="text-align: left">CVSS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Zenbleed</td>
+      <td style="text-align: left"><a href="https://lock.cmpxchg8b.com/zenbleed.html">lock.cmpxchg8b.com</a></td>
+      <td style="text-align: left"><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-20593">CVE-2023-20593</a></td>
+      <td style="text-align: left">AMD Zen 2 / EPYC Rome 7xx2</td>
+      <td style="text-align: left">5.5</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Inception</td>
+      <td style="text-align: left"><a href="https://comsec.ethz.ch/research/microarch/inception/">comsec.ethz.ch</a></td>
+      <td style="text-align: left"><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-20569">CVE-2023-20569</a></td>
+      <td style="text-align: left">AMD Zen 1-4 / EPYC xxx[1-4]</td>
+      <td style="text-align: left">7.5</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Downfall</td>
+      <td style="text-align: left"><a href="https://downfall.page">downfall.page</a></td>
+      <td style="text-align: left"><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-40982">CVE-2022-40982</a></td>
+      <td style="text-align: left">Intel Core Skylake (6th) to Tiger Lake (11th), Xeon 1st to 4th</td>
+      <td style="text-align: left">6.5</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">div0</td>
+      <td style="text-align: left"><a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f58d6fbcb7c848b7f2469be339bc571f2e9d245b">git.kernel.org</a></td>
+      <td style="text-align: left">-</td>
+      <td style="text-align: left">AMD Zen 1 / EPYC Naples 7xx1</td>
+      <td style="text-align: left">-</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="zenbleed-zen-2">Zenbleed (Zen 2)</h3>
+<p>This vulnerability was discovered by Tavis Ormandy from Google, is catalogued as
+CVE-2023-20593 and became public on July 25.
+The AVX vector unit of affected processors does speculatively
+execute depending on the parts of vectors registers that should have been
+cleared by <code class="language-plaintext highlighter-rouge">vzeroupper</code>. As AVX registers are used commonly for copying
+or analysing data (such as e.g. in glibc’s <code class="language-plaintext highlighter-rouge">strlen()</code> routine),
+chances that these contain valuable data such as e.g. passwords
+are significant. This vulnerability only affects AMD processors with the
+Zen 2 architecture (such as e.g. EPYC Rome or Zen 3000 desktop processors,
+Zen 4000 and confusingly also some Zen 5000U and 7020 processors which
+are also using the old Zen 2 architecture). Access to the system is
+required to exploit this vulnerability.</p>
+
+<p>The issue is described well <a href="https://lock.cmpxchg8b.com/zenbleed.html">here</a>.</p>
+
+<p>AMD has provided updated microcode to address this; while updated
+<code class="language-plaintext highlighter-rouge">linux-firmware</code> contains these microcode updates for EPYC Rome server processors,
+desktop/laptop users will need to wait for BIOS updates with updated
+AGESA versions to get the fixes. Until this happens, the Linux kernel
+since version 6.4.6, 6.1.41 and 5.15.122 does set an MSR bit that disables certain
+AVX features which causes performance degradation but avoids the issue.
+The author is not aware of performance measurements done with this
+mitigation.</p>
+
+<h3 id="inception-aka-srso-zen-1-4">Inception aka SRSO (Zen 1-4)</h3>
+<p>Researchers from ETH Zürich have found a new vulnerability in AMD Zen 1, 2, 3, 4
+processors. They abuse Phantom speculation <a href="https://www.cve.org/CVERecord?id=CVE-2022-23825">CVE-2022-23825</a>
+where these Zen processors “dream” about a branch instruction where none
+exists. The researchers are able to inject more predictions into the
+branch predictor during the misspeculation window (before the CPU
+notices that its dreaming and cleans up on awaking), so that the
+phantom speculation becomes possible to abuse. This is called
+after the inception movie where ideas are injected during a victim’s
+dream. It’s described well in their <a href="https://comsec.ethz.ch/research/microarch/inception/">publication</a>.
+The researchers have been able to create a flow where a harmless
+<code class="language-plaintext highlighter-rouge">XOR</code> instruction turns into a misspeculation to become a recursive call,
+overflowing the return stack buffer (RSB) with an attacker controlled
+value that will be speculatively jumped to upon the next <code class="language-plaintext highlighter-rouge">RET</code> instruction.
+The alternative name Speculative Return Stack Overflow (SRSO) is thus used
+as well. Inception was published on August 8 and has been assigned
+<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=2023-20569">CVE-2023-20569</a>.</p>
+
+<p>This again allows attackers to access data across contexts (such as address
+spaces, privileged modes, virtualization boundaries).</p>
+
+<p>Mitigating is hard – flushing the complete branch predictor when switching
+between untrusted contexts comes with a hefty performance penalty.
+The complete flush is only possible with Zen 1 and Zen 2 CPUs; for Zen 3
+and Zen 4, new microcode is required to do safe flushing with <code class="language-plaintext highlighter-rouge">IBPB</code>.
+This is used to protect the KVM hypervisor.</p>
+
+<p>A different approach has been taken in the Linux kernel. Channeling all
+returns there into a single location <code class="language-plaintext highlighter-rouge">__x86_return_thunk</code>, the branch predictor
+state can be ensured to have a safe (yet wrong) state. This also comes with
+<a href="https://www.phoronix.com/review/amd-inception-benchmarks">significant performance implications</a>,
+though less than using the <code class="language-plaintext highlighter-rouge">IBPB</code> instruction to flush branch predictors
+for most workloads. The performance hit is negligible for number-crunching
+workloads (which are running in user-space mode most of the time) and
+becomes bad (&gt;20%) on I/O heavy workloads.</p>
+
+<p>The fixes are included in Linux kernel 6.4.9, 6.1.44 and 5.15.125.</p>
+
+<p>Note that the fixes are being reworked currently to not interfere with
+the retbleed mitigation which they resemble. It is however believed that
+the cleanup work will not change the performance impact nor effectiveness
+of the mitigation. The first set of improvements are part of Linux 6.4.12, more are being worked on.</p>
+
+<h3 id="div-by-zero-zen-1">Div-by-Zero (Zen 1)</h3>
+
+<p>On Zen-1 CPUs, under some circumstances, doing a division by zero
+(which raises an exception) can expose the content of a previous
+division and thus leak data.
+This was reported with the <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=77245f1c3c6495521f6a3af082696ee2f8ce3921">fix</a> from Borislav Petkov from AMD. No further information
+on the discovery was reported.</p>
+
+<p>The first fix, included in above link was incomplete: While
+flushing the divider by doing an extra 0/1 division in the exception
+handler does its job, there is a time window where the exception
+handler has not yet executed. To close this, <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f58d6fbcb7c848b7f2469be339bc571f2e9d245b">a follow-up patch</a>
+added divider clearing on context switches, making sure that the
+data leakage can not happen across domains.</p>
+
+<p>The original fix was added to Linux 6.4.10, 6.1.45, 5.15.126.
+The improved fix is in 6.4.12.</p>
+
+<p>The performance impact of the mitigation is expected to be small.</p>
+
+<h3 id="downfall-intel-core-skylake-6th-to-tigerlake-11th-and-xeon-1st-to-4th">Downfall (Intel Core Skylake (6th) to TigerLake (11th) and Xeon 1st to 4th)</h3>
+
+<p>On August 8, a new vulnerability in the implementation of AVX data
+gathering on Intel processors from Core Skylake till Tigerlake and Xeon
+1st to 4th was published.
+It was found a long time ago by Daniel Moghini and disclosed to Intel.
+It was assigned <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-40982">CVE-2022-40982</a>
+and the name <a href="https://downfall.page/">Downfall</a>
+is used to describe it.</p>
+
+<p>When the AVX GATHER instructions are used to speed up access to data scattered in
+memory, affected Intel CPUs transiently expose the contents of the internal
+vector register file via speculative execution. This leads to data leakage,
+potentially affecting sensitive data (like with Zenbleed) as AVX
+is being used for <code class="language-plaintext highlighter-rouge">strlen()</code> and <code class="language-plaintext highlighter-rouge">memcpy()</code> in the glibc system library.
+AVX registers are also used by cryptographic instructions.
+Vector registers used in SGX enclaves also leak data.</p>
+
+<p>The latest Intel processors (AlderLake / Sapphire Rapids) appear not to be
+affected. A full list of affected Intel products is published by Intel as
+<a href="https://www.intel.com/content/www/us/en/developer/topic-technology/software-security-guidance/processors-affected-consolidated-product-cpu-model.html">Affected Processors: Guidance for Security Issues on Intel® Processors</a></p>
+
+<p>Intel has released updated microcode for many of the affected CPUs.
+With the fixes applied, memory access with AVX GATHER is slowed down
+significantly, as can be seen from <a href="https://www.phoronix.com/review/intel-downfall-benchmarks">benchmarks</a>.
+The impact is especially large for numbercrunching workloads which
+tend to benefit from the full set of AVX capabilities.
+A <a href="https://www.phoronix.com/news/GCC-Workaround-Intel-Downfall">patch to the GCC compiler</a>
+(version 14) allows users to avoid
+generating GATHER instructions and using GATHER scalar emulation
+instead. This should provide better performance on CPUs that are
+affected and have the microcode fix.</p>
+
+<p>On CPUs without microcode fix, the Linux kernel will switch off
+AVX completely. This negates all optimizations from these vectorization
+instructions, at a significantly higher cost to performance than
+the microcode based mitigation. Handling Downfall was added to
+the Linux kernel 6.4.9, 6.1.44, 5.15.125.</p>
+
+<h2 id="mitigation-and-scs-flavor-policy">Mitigation and SCS flavor policy</h2>
+
+<p>Linux distributors have published updated microcode (called
+<code class="language-plaintext highlighter-rouge">linux-firmware</code>, <code class="language-plaintext highlighter-rouge">intel-microcode</code>, <code class="language-plaintext highlighter-rouge">amd-microcode</code> depending
+on your distribution)) and updated kernels (which include the
+KVM hypervisor) in the past weeks.
+For the Ubuntu 22.04 LTS distribution normally used on
+SCS installations, the updates to the Intel microcode, AMD
+microcode are described in
+<a href="https://ubuntu.com/security/notices/USN-6286-1">USN-6286-1</a> and
+<a href="https://ubuntu.com/security/notices/USN-6244-1">USN-6244-1</a>.
+As of 2023-08-28, Ubuntu does seem to ship the software mitigation
+for ZenBleed and Downfall, though not yet for SRSO (Inception)
+with the 5.15.0-82 kernel built on August 14 and referenced in
+<a href="https://ubuntu.com/security/notices/USN-6300-1">USN-6300-1</a>.
+Canonical lists the kernel status for <a href="https://ubuntu.com/security/CVE-2023-20593">ZenBleed</a>,
+<a href="https://ubuntu.com/security/CVE-2023-20593">SRSO</a> and
+<a href="https://ubuntu.com/security/CVE-2023-20593">Downfall</a> as
+Pending, Needs Triage and Needs Triage, so we’ll probably
+have to wait for at least the SRSO(Inception) kernel mitigation in
+Ubuntu kernels for some more days.</p>
+
+<p>SCS requires providers of SCS-compatible IaaS to deploy fixes
+that are available upstream within a month of the availability.
+This is mandated by the
+<a href="https://docs.scs.community/standards/scs-0100-v3-flavor-naming#complete-proposal-for-systematic-flavor-naming">SCS flavor naming standard</a>
+– by not using the <code class="language-plaintext highlighter-rouge">i</code> (for insecure) suffix, they commit to
+keeping their compute hosts secured against such flaws by
+deploying the needed microcode, kernel and hypervisor fixes
+and mitigations.</p>
+
+<p>Expect for users of the latest Intel server technology, pretty
+much every server CPU is affected; expect your SCS providers to
+reboot their compute hosts soon if they have not done so yet.
+Thanks to live-migration, the impact to customers can be kept
+rather limited, but most providers still announce such events
+to their customers due to short-term performance degradation
+and increased risk of VM failure during live migrations.</p>
+
+<p>The above-mentioned spectre-meltdown-checker tool has been updated
+to test for the new vulnerabilities except for the Div-by-0 (Zen 1)
+issue, so cloud providers can use this to check whether their
+deployment of microcode and hypervisor and kernel mitigations
+have been successful.</p>
+
+<h2 id="keeping-workloads-secured">Keeping workloads secured</h2>
+
+<p>Users of cloud infrastructure are advised to keep their workloads
+up-to-date with security updates. This means installing online
+updates or redeploying workloads based on (new) images which are
+up-to-date with respect to security fixes. Cloud providers often
+provide standard Operating System images that can be a good basis
+for deployments, customizing all configuration and software
+installation by injecting user-data for cloud-init.</p>
+
+<p>On SCS-compatible clouds, the
+<a href="https://docs.scs.community/standards/scs-0102-v1-image-metadata/">SCS image metadata standard</a>
+allows users to see when the image has been built and what regular
+update intervals are to be expected.</p>
+
+<p>Of course, the cloud provider needs to do his part as well by
+udpating microcode and hypervisors/kernels on the infrastructure
+in a timely manner.
+SCS providers will need to do so; in case of doubt, ask your
+provider.</p>
+
+<h2 id="cpu-based-security-issues-outlook">CPU-based security issues: Outlook</h2>
+
+<p>We can expect that the reported CPU speculation vulnerabilities from this
+summer were not the last ones to exist and to be uncovered.</p>
+
+<p>One technology remains especially exposed to such vulnerabilities:
+The usage of SMT in hypervisor host systems. Does the hardware of your
+cloud provider use CPUs with SMT/HT? If yes, the
+potential security impact might be increased due to more simultaneous access
+to internal CPU resources (such as register files, buffers, caches, …).
+Security of sensitive workloads might therefore
+benefit from disabling SMT alltogether. The loss of performance and
+the decreased cost-benefit ratio for cloud service providers makes this
+a not-so-attractive option for cloud providers though.</p>
+
+<p>Cloud providers could offer flavors with dedicated cores, so no
+workload with a different security context can run simultaneously on
+a different thread of the same core. In SCS, flavors with a <code class="language-plaintext highlighter-rouge">C</code> CPU-suffix
+provide dedicated hardware CPU cores for your workload. Example: the
+flavor <code class="language-plaintext highlighter-rouge">SCS-4C-8</code> would create an instance with four of the host’s
+cores reserved solely for this single virtual machine. Currently, the
+SCS standard does not mandate the availability of such dedicated core
+flavors, so the support is cloud-dependant at this time.</p>
+
+<p>Short of dedicated core flavors, you need rely on your cloud provider.
+Establishing a good communication channel is a key factor in handling
+security issues in a timely manner.</p>
+
+<p>Using providers with an IaaS SCS-compatible certification and with
+official SCS flavors (without the <code class="language-plaintext highlighter-rouge">i</code> = insecure CPU-suffix) gives you an
+additional benefit: Cloud providers that offer SCS flavors have committed
+themselves to apply security patches as soon as possible.</p>
+
+<p>Using certified SCS providers is thus a reasonable protection against
+such CPU weaknesses. If you have especially high protection requirements,
+you might want to use flavors with dedicated cores or even build your own
+private cloud environment – hopefully on the same SCS technology
+that allows you the full benefit of offering a full self-service cloud
+internally and the benefit of easily connecting or even federating out
+to public cloud SCS offerings.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://security.googleblog.com/2023/08/downfall-and-zenbleed-googlers-helping.html">Downfall and Zenbleed: Googlers helping secure the ecosystem </a></li>
+  <li><a href="https://thehackernews.com/2023/08/collidepower-downfall-and-inception-new.html">Collide+Power, Downfall, and Inception: New Side-Channel Attacks Affecting Modern CPUs</a></li>
+  <li><a href="https://lwn.net/Articles/940783/">LWN on Downfall and Inception</a></li>
+  <li><a href="https://www.phoronix.com/news/Linux-x86-bugs-AMD-SRSO">Phoronix update on Inception mitigation</a></li>
+  <li><a href="https://www.heise.de/select/ix/2018/2/1517770391119975">iX article on Meltdown &amp; Spectre from 2018</a> (German language)</li>
+</ul>
+
+
+
+<h2 id="about">
+  
+    About the authors
+  
+</h2>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="55f5b766ca63">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/website/assets/dc2f4e-681b5ce9a49552a823aa099e6235efe9d24827d7bdccd9f20cc1617ff256bf665859e77b12d20a486bfc8f9ae5b70db8771e626a5b23d6c4d3ab7d8652c95745.webp" mask="url(#55f5b766ca63)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Kurt Garloff</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">CTO Sovereign Cloud Stack @ <a href="https://osb-alliance.com" target="_blank">Open Source Business Alliance</a></div>
+        <div class="mt-2">While working on Physics as student and researcher in Dortmund, Wuppertal and Eindhoven, Kurt started to work with and on Linux, with first patches to the SCSI layer in the mid 90s. He has spent his post-university life in Open Source, as kernel engineer, leader of SUSE Labs (kernel, compiler, X11, security), and engineering and business leadership at SUSE. Since 2011 he has been working on Open Source cloud software, at Deutsche Telekom, as Freelancer, at T-Systems (as chief architect for the OTC) and also has been serving on the Open Infra Foundation's board. Since 2019 he has been pushing the Sovereign Cloud Stack idea which resulted in a publically funded project that he now technically leads. He still loves to occasionally write code (mostly python these days) or at least test out code from the colleagues and project. He spends his free time with his family or with running and playing table tennis.
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+<div class="me-2 mb-2">
+    <a class="btn btn-mail" href="mailto:garloff@osb-alliance.com"><i class="fa fa-envelope fa-lg"></i></a>
+</div>
+
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="https://www.linkedin.com/in/kurt-garloff/"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/garloff"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-matrix" target="_blank" href="https://matrix.to/#/@garloff:matrix.org"><i class="fa fa-matrix-org fa-lg"></i></a>
+</div>
+
+          <div class="ms-md-auto pe-3"><a href="/website/members/garloff" class="btn btn-outline-primary" role="button">Community profile &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="1535e5a599fa">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/website/assets/52c15b-23303575e33466198a945adf8da2a9bec4090a5df7a6fcaf85843262649272061d0e352036e31d2bb0cd6fed5cd4aa711d375e244b3448fd6fcaf99ada897f87.webp" mask="url(#1535e5a599fa)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Dominik Pataky</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">PO Security and Operations Sovereign Cloud Stack @ <a href="https://osb-alliance.com" target="_blank">Open Source Business Alliance</a></div>
+        <div class="mt-2">Dominik has a background in computer science, with a specialization in networks, APIs, Linux and security. He has experience programming in Python, Go, some Rust and Java. Apart from that he is also an advocate for FOSS and open source infrastructures. His professional experience includes working in the finance sector as an information security specialist, researching a tenant-aware pod-to-pod traffic encryption layer in OpenShift and handling the implementation of regulatory compliance requirements in security-sensitive IT systems. The time as an IT freelancer provided him with a lot of insight into running a small enterprise from scratch. In the Sovereign Cloud Stack project he fills the role as the Product Owner for security and operations.
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+<div class="me-2 mb-2">
+    <a class="btn btn-mail" href="mailto:pataky@osb-alliance.com"><i class="fa fa-envelope fa-lg"></i></a>
+</div>
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-mastodon" target="_blank" href="https://infosec.exchange/@bitkeks"><i class="fa fa-mastodon fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="https://www.linkedin.com/in/dpataky"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/bitkeks"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-matrix" target="_blank" href="https://matrix.to/#/@bitkeks:matrix.kptt.net"><i class="fa fa-matrix-org fa-lg"></i></a>
+</div>
+
+          <div class="ms-md-auto pe-3"><a href="/website/members/bitkeks" class="btn btn-outline-primary" role="button">Community profile &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" src="/website/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Imprint" href="/website/imprint/">Imprint</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Data Protection Statement" href="/website/dataprotection/">Data Protection Statement</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>SCS Infrastructure KeylessGo | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="SCS Infrastructure KeylessGo | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="NBDE – Network Bound Disk Encryption" />
+<meta property="og:description" content="NBDE – Network Bound Disk Encryption" />
+<link rel="canonical" href="https://sovereigncloudstack.github.io/website/2022/08/17/osism-nbde-install/" />
+<meta property="og:url" content="https://sovereigncloudstack.github.io/website/2022/08/17/osism-nbde-install/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://sovereigncloudstack.github.io/website/website/assets/images/blog/padlock-d4787f1ae5ab367416c3ad5afd4597ae652b30e6e588c98a94032a36b5b95b07f8381a11d339b8910b3a1b449934d36f58d2c416874c8a878c4c333f4e3570b7.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://sovereigncloudstack.github.io/website/website/assets/images/blog/padlock-d4787f1ae5ab367416c3ad5afd4597ae652b30e6e588c98a94032a36b5b95b07f8381a11d339b8910b3a1b449934d36f58d2c416874c8a878c4c333f4e3570b7.jpg" />
+<meta property="twitter:title" content="SCS Infrastructure KeylessGo" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-30T08:38:05+00:00","datePublished":"2022-08-17T00:00:00+00:00","description":"NBDE – Network Bound Disk Encryption","headline":"SCS Infrastructure KeylessGo","image":"blog/padlock.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://sovereigncloudstack.github.io/website/2022/08/17/osism-nbde-install/"},"url":"https://sovereigncloudstack.github.io/website/2022/08/17/osism-nbde-install/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://sovereigncloudstack.github.io/website/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/website/assets/vendor/jquery/jquery-9890bc3f6e101de456f751d876e987f1f4b90f5ad9df054375f77306c1afa9aa5781536b68c7a14d9653b12f5f22e6f2b3b363f583e4b1a7f079be6dfa5854d1.js" type="text/javascript"></script>
+  <script src="/website/assets/vendor/bootstrap/js/bootstrap.bundle-60934d7b67216797538563fa77a226032bb2823e090abf271dd8f8772c72643f26033fb09fde7cf02e8520dee7b9b4d583e4ae0cf81c9a492f0695e3cf85eb30.js" type="text/javascript"></script>
+  <!-- Lighbox -->
+  <script src="/website/assets/vendor/lightbox-5dc80144ffe76fd27b40a8e12589c5d0d75b711ed7a7673347d8432a0d910ed4412e58da517985a7e84118687326c43f9ecadf23563007d27225b8688ab94ccc.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/lightbox-49997aacc14bff6792a1811e3616ecba8d58e0e4598c6f84c2800946d62462c8ed8fcfdf6f10088844e274b9482ffee4fbf6d37d67f85c0f1514e993ad3b9072.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/main-ed12d9c273c732a194d0f8e3ec09afcd4282bb2b71530e644874b2d51197007ff8f26efce55b40a901be813a91f54d6b02914d44316cfa360c4d45db632323cb.css">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/pygments-css/zenburn-b9e6749823dd76c51d2a88eb53602d9218592303de1e7d1a4523c503894f18810ddd0f4062286c1dbd89a9405bfe9020d23afce2785ef82c5ea814129bd4327a.css">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/website/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/website/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/website/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/website/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<nav class="navbar navbar-light fixed-bottom" style="background-color: var(--bs-warning)">
+  <div class="container">
+    <span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Staging website – Based on commit <a href="https://github.com/SovereignCloudStack/website/commit/685a8141acabe7a4df24689815448ee259e39dda" target="_blank"><span class="badge rounded-pill bg-secondary">685a81</span></a></span>
+  </div>
+</nav>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Entdecke unsere neue Webseite</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/de/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                SCS entdecken
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/website/de/about/">Über SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/de/use/">SCS nutzen</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/de/contribute/">Zu SCS beitragen</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/de/partners/">Servicepartner</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/de/members/">Community Members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/de/news/">
+                Neuigkeiten
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/de/events/">
+                Veranstaltungen
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/de/jobs/">
+                Offene Stellen
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/de/tenders/">
+                Ausschreibungen
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Dokumentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  " href="/website/2022/08/17/osism-nbde-install/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold   text-decoration-underline " href="/website/de/2022/08/17/osism-nbde-install/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  " href="/website/2022/08/17/osism-nbde-install/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold   text-decoration-underline " href="/website/de/2022/08/17/osism-nbde-install/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" src="/website/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          Eine Plattform — standardisiert, entwickelt und betrieben von Vielen.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" src="/website/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" src="/website/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" src="/website/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>SCS Infrastructure KeylessGo</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  <svg height="80" width="80">
+    
+    
+    <mask id="b4c5cd2e6909">
+      <rect width="80" height="80" fill="white"/>
+    </mask>
+    <mask id="1839b23c8dc2">
+        <circle cx="40" cy="40" r="40" fill="white"/>
+    </mask>
+    <image x="0" y="0" height="80" width="80" xlink:href="/website/assets/565470-4eb1b88720fcb12209c7880b230f082fe84308688048605fc1cb882c0929f697cb7e1b5eedf8cb2dea6fdc17992f74303971ce447a792cf9acc6812e7113a485.webp"
+       mask="url(#1839b23c8dc2)" 
+    ></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Mathias Fechner</small>
+			<small>
+	17.
+	
+	August
+	  
+	2022
+
+</small>
+		</div>
+	</div>
+</div>
+
+<h2 id="nbde--network-bound-disk-encryption">NBDE – <em>Network Bound Disk Encryption</em></h2>
+
+<figure class="figure mx-auto d-block" style="width:40%">
+  <a href="/website/assets/images/blog/clevis-tang-pin-cd2fd1fbd37f1750d08106e51e3ef84a958da871d128701ac29224baf62184977a77309e1a0c3d533dd5b0edf65aa2315ec8059cc1a35e4ce52fb247f3ed6d62.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/clevis-tang-pin-cd2fd1fbd37f1750d08106e51e3ef84a958da871d128701ac29224baf62184977a77309e1a0c3d533dd5b0edf65aa2315ec8059cc1a35e4ce52fb247f3ed6d62.png" />
+  </a>
+</figure>
+
+<blockquote>
+  <p>As an Operator i want to be sure that storage’s is encrypted, as
+a DevOps i think it is hard to integrated with Automation.</p>
+</blockquote>
+
+<p>This was the sparking intention to integrate NBDE in OSISM.</p>
+
+<p>Network Bound Disk Encryption is a method to automatically handle LUKS for
+bare metal system in location such as data centers. Its purpose is to protect
+against unauthorized access to data on storage devices in case of loss or vendor
+lifecycle management.</p>
+
+<p>The involved components Luks, Clevis and Tang in one figure:</p>
+
+<figure class="figure mx-auto d-block" style="width:70%">
+  <a href="/website/assets/images/blog/clevis_boot_procedure-1c4fa7af0f5b2e4147a688753717505733e6ee4186e3eca4b538e17d26fcfe4e119b81e191cff5309feb08b3cdce9a98f6591f36d729c615123cedc742eb4702.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/clevis_boot_procedure-1c4fa7af0f5b2e4147a688753717505733e6ee4186e3eca4b538e17d26fcfe4e119b81e191cff5309feb08b3cdce9a98f6591f36d729c615123cedc742eb4702.png" />
+  </a>
+</figure>
+
+<h3 id="jose"><a href="https://jose.readthedocs.io/">JOSE</a></h3>
+<p>is the Javascript Object Signing and Encryption Framework.
+In context of NBDE it uses an RSA based encryption preconfigure
+part to solve the hen and egg problem.</p>
+
+<h3 id="clevis"><a href="https://github.com/latchset/clevis">Clevis</a></h3>
+<p>is a JOSE based pluggable framework which automatically handles
+LUKS encryption locally inside the boot procedure and is able to
+handle network base encryption or combine it with other methods.</p>
+
+<h3 id="tang"><a href="https://github.com/latchset/tang">Tang</a></h3>
+<p>itself is a small webserver with the JOSE library. The tang protocol 
+relies on the JSON Object Signing and Encryption (JOSE) standards. In tang 
+protocol is every message a valid JOSE object.</p>
+
+<h3 id="build-a-encrypted-base-image"><a href="https://docs.osism.tech/configuration/environments/infrastructure/nbde.html#build-an-encrypted-image">Build a encrypted base image</a></h3>
+<p>As a first step, we build an image with a preconfigured LUKS encryption
+and password. Inside the images is a dropbear-ssh server preconfigured with
+a corresponding <code class="language-plaintext highlighter-rouge">authorized_key</code> file.</p>
+
+<h3 id="prebooting-step">Prebooting step</h3>
+<p>In the second step within the boot phase we now access the preconfigured ssh server
+with the particular ssh key. This part will be later removed from installation, because an co-existing
+installation is not possible.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Listening on LPF/ens3/fa:16:3e:12:77:28
+Sending on   LPF/ens3/fa:16:3e:12:77:28
+Sending on   Socket/fallback
+DHCPDISCOVER on ens3 to 255.255.255.255 port 67 interval 3 <span class="o">(</span><span class="nv">xid</span><span class="o">=</span>0xea981b1a<span class="o">)</span>
+DHCPOFFER of 10.7.8.20 from 10.7.8.1
+DHCPREQUEST <span class="k">for </span>10.7.8.20 on ens3 to 255.255.255.255 port 67 <span class="o">(</span><span class="nv">xid</span><span class="o">=</span>0x1a1b98ea<span class="o">)</span>
+DHCPACK of 10.7.8.20 from 10.7.8.1 <span class="o">(</span><span class="nv">xid</span><span class="o">=</span>0xea981b1a<span class="o">)</span>
+bound to 10.7.8.20 <span class="nt">--</span> renewal <span class="k">in </span>16380 seconds.
+
+cryptsetup: luksroot: <span class="nb">set </span>up successfully
+<span class="k">done</span><span class="nb">.</span>
+</code></pre></div></div>
+
+<h3 id="init-clevis-and-tang">Init clevis and tang</h3>
+
+<p>The second step is to install the Clevis Tang “PIN”</p>
+
+<p>That means Clevis requests a private key from Tang and signs it with a local blended key, which is new encryption key. This is used as new Luks meta information to create a keyslot in Luks table.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nv">$ </span>osism apply clevis
+
+PLAY <span class="o">[</span><span class="nb">test</span><span class="o">]</span> <span class="k">**********************************************************************************************************************************************************</span>
+
+TASK <span class="o">[</span>Gathering Facts] <span class="k">***********************************************************************************************************************************************</span>
+ok: <span class="o">[</span>10.7.8.20]
+
+TASK <span class="o">[</span>clevis : Gather variables <span class="k">for </span>each operating system] <span class="k">***********************************************************************************************************</span>
+ok: <span class="o">[</span>10.7.8.20]
+
+TASK <span class="o">[</span>clevis : Include distribution specific package tasks] <span class="k">**********************************************************************************************************</span>
+included: /ansible-collection-commons/roles/clevis/tasks/install-Debian.yml <span class="k">for </span>10.7.8.20
+
+TASK <span class="o">[</span>clevis : Wait <span class="k">for </span>apt lock] <span class="k">************************************************************************************************************************************</span>
+ok: <span class="o">[</span>10.7.8.20] <span class="o">=&gt;</span> <span class="o">(</span><span class="nv">item</span><span class="o">=</span>lock<span class="o">)</span>
+ok: <span class="o">[</span>10.7.8.20] <span class="o">=&gt;</span> <span class="o">(</span><span class="nv">item</span><span class="o">=</span>lock-frontend<span class="o">)</span>
+
+TASK <span class="o">[</span>clevis : Install clevis packages] <span class="k">******************************************************************************************************************************</span>
+changed: <span class="o">[</span>10.7.8.20]
+
+TASK <span class="o">[</span>clevis : Install tang encryption] <span class="k">******************************************************************************************************************************</span>
+included: /ansible-collection-commons/roles/clevis/tasks/create-tangcrypt.yml <span class="k">for </span>10.7.8.20
+
+TASK <span class="o">[</span>clevis : Remove dropbear ssh initramfs packages] <span class="k">***************************************************************************************************************</span>
+changed: <span class="o">[</span>10.7.8.20]
+
+TASK <span class="o">[</span>clevis : Remove dropbear artefacts] <span class="k">****************************************************************************************************************************</span>
+ok: <span class="o">[</span>10.7.8.20]
+
+TASK <span class="o">[</span>clevis : Check <span class="k">if </span>disk /dev/sda6 already <span class="nb">bind </span>to tang] <span class="k">*********************************************************************************************************</span>
+fatal: <span class="o">[</span>10.7.8.20]: FAILED! <span class="o">=&gt;</span> <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">false</span>, <span class="s2">"cmd"</span>: <span class="o">[</span><span class="s2">"clevis"</span>, <span class="s2">"luks"</span>, <span class="s2">"list"</span>, <span class="s2">"-d"</span>, <span class="s2">"/dev/sda6"</span>, <span class="s2">"-s"</span>, <span class="s2">"2"</span><span class="o">]</span>, <span class="s2">"delta"</span>: <span class="s2">"0:00:00.137538"</span>, <span class="s2">"end"</span>: <span class="s2">"2022-08-16 15:02:16.298475"</span>, <span class="s2">"msg"</span>: <span class="s2">"non-zero return code"</span>, <span class="s2">"rc"</span>: 1, <span class="s2">"start"</span>: <span class="s2">"2022-08-16 15:02:16.160937"</span>, <span class="s2">"stderr"</span>: <span class="s2">""</span>, <span class="s2">"stderr_lines"</span>: <span class="o">[]</span>, <span class="s2">"stdout"</span>: <span class="s2">""</span>, <span class="s2">"stdout_lines"</span>: <span class="o">[]}</span>
+...ignoring
+
+TASK <span class="o">[</span>clevis : Prepare clevis environment] <span class="k">***************************************************************************************************************************</span>
+changed: <span class="o">[</span>10.7.8.20]
+
+TASK <span class="o">[</span>clevis : Get adv handshake from tang server] <span class="k">*******************************************************************************************************************</span>
+changed: <span class="o">[</span>10.7.8.20]
+
+TASK <span class="o">[</span>clevis : Insert the keyfile <span class="k">for </span>luks unlock] <span class="k">*******************************************************************************************************************</span>
+changed: <span class="o">[</span>10.7.8.20]
+
+RUNNING HANDLER <span class="o">[</span>clevis : Update initramfs] <span class="k">**************************************************************************************************************************</span>
+ok: <span class="o">[</span>10.7.8.20]
+
+RUNNING HANDLER <span class="o">[</span>clevis : Enable clevis-luks-askpass.path service] <span class="k">***************************************************************************************************</span>
+ok: <span class="o">[</span>10.7.8.20]
+
+RUNNING HANDLER <span class="o">[</span>clevis : Chain tang pin] <span class="k">****************************************************************************************************************************</span>
+changed: <span class="o">[</span>10.7.8.20]
+
+RUNNING HANDLER <span class="o">[</span>clevis : Enable tang boot environment] <span class="k">**************************************************************************************************************</span>
+
+
+
+</code></pre></div></div>
+
+<p><em>What is happening within the Tang service …</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Jul 20 11:53:10 tang-server tangd[54307]: 10.7.8.20 GET /adv <span class="o">=&gt;</span> 200 <span class="o">(</span>src/tangd.c:82<span class="o">)</span>
+Jul 20 11:53:10 tang-server systemd[1]: tangd@3-10.7.8.68:1080-10.7.8.20:34082.service: Succeeded.
+
+</code></pre></div></div>
+<p><em>and get the advertisement, the reply message contains a JWS-signed JWKSet</em></p>
+
+<p><em>and on the bare metal server ?</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nv">$ </span>cryptsetup luksDump /dev/sda1
+
+2: tang <span class="s1">'{"url":"http://10.7.8.68:1080"}'</span>
+
+        Tokens:
+        0: clevis
+        Keyslot:  2
+
+</code></pre></div></div>
+
+<p>The tang protocol implements the McCallum-Relyea exchange. This process is very familiar with ssh authentication. 
+Now the “PIN” is bound to the Tang service. After reboot the server will request with the clevis-initramfs embbed client the network Tang service.
+If the Clevis Tang advertised signing JWK, short “PIN” is valid, the reboot will continue.</p>
+
+<p>The server is now booting with NBDE, see the successful Tang server logs *</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Aug 16 13:08:11 tang-server tangd[157304]: 10.7.8.20 POST /rec/ebTVn9gtMeD-RV6Ux4DeCiSpff0 <span class="o">=&gt;</span> 200 <span class="o">(</span>src/tangd.c:165<span class="o">)</span>
+Aug 16 13:08:11 tang-server systemd[1]: tangd@6-10.7.8.68:1080-10.7.8.20:40956.service: Succeeded.
+
+</code></pre></div></div>
+
+<p>In SCS stacks it is now able to activate NBDE for bare metal nodes like control, compute, network and storage nodes!</p>
+
+
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" src="/website/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS und das Logo sind geschützte Marken der Open Source Business Alliance e.V. — Sonstige Marken sind Eigentum ihrer jeweiligen Besitzer.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Impressum" href="/website/de/imprint/">Impressum</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Datenschutzerklärung" href="/website/de/dataprotection/">Datenschutzerklärung</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>

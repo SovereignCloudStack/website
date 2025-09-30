@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>SDN scalability improvements | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="SDN scalability improvements | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Overview of SDN network scalability" />
+<meta property="og:description" content="Overview of SDN network scalability" />
+<link rel="canonical" href="https://sovereigncloudstack.github.io/website/2024/02/09/sdn-scalability/" />
+<meta property="og:url" content="https://sovereigncloudstack.github.io/website/2024/02/09/sdn-scalability/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://sovereigncloudstack.github.io/website/website/assets/images/default-card-d32fdb798ca15ae927f00593ce64407f69c70d4011955dc94c7be76b99c474f4e673ee1a26ec53725dda80c2c331e5ad4300a43e702171cc014cd47ec6b2f94d.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-02-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://sovereigncloudstack.github.io/website/website/assets/images/default-card-d32fdb798ca15ae927f00593ce64407f69c70d4011955dc94c7be76b99c474f4e673ee1a26ec53725dda80c2c331e5ad4300a43e702171cc014cd47ec6b2f94d.jpg" />
+<meta property="twitter:title" content="SDN scalability improvements" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-30T08:38:05+00:00","datePublished":"2024-02-09T00:00:00+00:00","description":"Overview of SDN network scalability","headline":"SDN scalability improvements","image":"default-card.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://sovereigncloudstack.github.io/website/2024/02/09/sdn-scalability/"},"url":"https://sovereigncloudstack.github.io/website/2024/02/09/sdn-scalability/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://sovereigncloudstack.github.io/website/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/website/assets/vendor/jquery/jquery-9890bc3f6e101de456f751d876e987f1f4b90f5ad9df054375f77306c1afa9aa5781536b68c7a14d9653b12f5f22e6f2b3b363f583e4b1a7f079be6dfa5854d1.js" type="text/javascript"></script>
+  <script src="/website/assets/vendor/bootstrap/js/bootstrap.bundle-60934d7b67216797538563fa77a226032bb2823e090abf271dd8f8772c72643f26033fb09fde7cf02e8520dee7b9b4d583e4ae0cf81c9a492f0695e3cf85eb30.js" type="text/javascript"></script>
+  <!-- Lighbox -->
+  <script src="/website/assets/vendor/lightbox-5dc80144ffe76fd27b40a8e12589c5d0d75b711ed7a7673347d8432a0d910ed4412e58da517985a7e84118687326c43f9ecadf23563007d27225b8688ab94ccc.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/lightbox-49997aacc14bff6792a1811e3616ecba8d58e0e4598c6f84c2800946d62462c8ed8fcfdf6f10088844e274b9482ffee4fbf6d37d67f85c0f1514e993ad3b9072.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/main-ed12d9c273c732a194d0f8e3ec09afcd4282bb2b71530e644874b2d51197007ff8f26efce55b40a901be813a91f54d6b02914d44316cfa360c4d45db632323cb.css">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/pygments-css/zenburn-b9e6749823dd76c51d2a88eb53602d9218592303de1e7d1a4523c503894f18810ddd0f4062286c1dbd89a9405bfe9020d23afce2785ef82c5ea814129bd4327a.css">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/website/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/website/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/website/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/website/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<nav class="navbar navbar-light fixed-bottom" style="background-color: var(--bs-warning)">
+  <div class="container">
+    <span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Staging website – Based on commit <a href="https://github.com/SovereignCloudStack/website/commit/685a8141acabe7a4df24689815448ee259e39dda" target="_blank"><span class="badge rounded-pill bg-secondary">685a81</span></a></span>
+  </div>
+</nav>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Discover our new web page</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Discover SCS
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/website/about/">About SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/use/">Use SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/contribute/">Contribute to SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/partners/">Service partners</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/members/">Community members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/news/">
+                News
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/events/">
+                Events
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/jobs/">
+                Open positions
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/tenders/">
+                Public tenders
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Documentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/website/2024/02/09/sdn-scalability/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/website/de/2024/02/09/sdn-scalability/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/website/2024/02/09/sdn-scalability/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/website/de/2024/02/09/sdn-scalability/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" src="/website/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          One platform — standardized, built and operated by many.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" src="/website/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" src="/website/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" src="/website/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>SDN scalability improvements</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  <svg height="80" width="80">
+    
+    
+    <mask id="0016b8f8d5e4">
+      <rect width="80" height="80" fill="white"/>
+    </mask>
+    <mask id="f33943ec533c">
+        <circle cx="40" cy="40" r="40" fill="white"/>
+    </mask>
+    <image x="0" y="0" height="80" width="80" xlink:href="/website/assets/e78043-0ec9664c88fd10f9b647e8964045aaaad2658322ccfb8ac8f2d5e70d408b50cd91c3309671537f533914fffbd7ed12c72623342a161b989770d0c62817b9b5c9.webp"
+       mask="url(#f33943ec533c)" 
+    ></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Angel Kafazov</small>
+			<small>
+	February 09, 2024
+
+</small>
+		</div>
+	</div>
+</div>
+
+<h1 id="overview-of-sdn-network-scalability">Overview of SDN network scalability</h1>
+
+<p>Software-defined Networking (SDN) is a critical component of modern cloud environments, providing the necessary flexibility and scalability to meet the demands of large-scale network infrastructures. As the size and complexity of cloud deployments continue to grow, the need for scalable and efficient SDN solutions becomes increasingly important. In this post, we explore the challenges and strategies for improving SDN scalability within Sovereign Cloud Stack (SCS) and OpenStack environments.</p>
+
+<h1 id="the-data-center-network">The data center network</h1>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/dc-network-architectures-9ce41bf73ef654366c35b856f83c46b7919b13e55e65819bd9a832cbb70629b6f4bf5dd57a77ba9e8bbfdeca4a70a8a06f8a885939f7d9061fed7e9d9472d730.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/dc-network-architectures-9ce41bf73ef654366c35b856f83c46b7919b13e55e65819bd9a832cbb70629b6f4bf5dd57a77ba9e8bbfdeca4a70a8a06f8a885939f7d9061fed7e9d9472d730.png" />
+  </a>
+</figure>
+
+<p>A modern data center network typically uses a 2-tier spine-leaf network architecture. More traditional 3-tier architectures are becoming less popular.</p>
+
+<p>In a spine-leaf network, all servers are connected to one or two TOR (top of rack) or Leaf switches within a rack. All leaf switches are connected to all spine switches in the layer above. There are no direct connections between leaf or spine switches on the same tier. This kind of network facilitates scalability by being simple and easy to support.</p>
+
+<p>On top of this physical network, also called underlay, all Software Defined Networking (SDN) features are built on top of. The SDN is the virtual network managed by end users and connects VMs, containers, and sometimes physical servers. The SDN is entirely virtualized and must be designed and implemented with the physical topology in mind to achieve the desired performance, functionality, and scalability requirements.</p>
+
+<h1 id="overview-of-sdn-in-openstack">Overview of SDN in OpenStack</h1>
+
+<p>Software-defined Networking (SDN) is a networking concept where software-based controllers and APIs direct network traffic rather than the networking hardware. In OpenStack, SDN networks are used to connect virtual machines and containers. The physical network is also referred to as the underlay, while SDN is called overlay. Larger operators and an increased number of containerized workloads put stress on the SDN stack.</p>
+
+<p>OpenStack Neutron is the main component responsible for networking. It heavily leverages open-source technologies like OVN/OVS and communicates with the underlay network to provide higher-level network services to users. ML2 is the Neutron plugin responsible for communication with the physical network and can have multiple drivers each driver supporting particular hardware/vendor devices. The SDN stack is distributed where some components run on dedicated network nodes, network devices, and even servers.</p>
+
+<p>When OpenStack traffic increases the network must scale accordingly. There are several aspects of SDN scalability and they depend on the actual network architecture. We dive deeper below, but some important points to consider are SDN bottlenecks (OVN control plane, network node resources), support for several tenants and networks, and actual data-plane performance. In this post, we will explore those challenges and strategies to improve SDN scalability in OpenStack and SCS.</p>
+
+<h2 id="sdn-stack">SDN stack</h2>
+
+<p>In this section, we will take a look at more software components needed to implement SDN in OpenStack.</p>
+
+<h3 id="neutron">Neutron</h3>
+
+<p>Neutron is an OpenStack project to provide “network connectivity as a service” between interface devices (e.g., vNICs) managed by other OpenStack services (e.g., nova). It implements the OpenStack Networking API. Neutron is responsible for the centralized management of tenant networks, devices, and address allocation. It orchestrates the physical network, and the devices by using plugins and drivers for each particular technology chosen in the stack.</p>
+
+<h3 id="ovnovs">OVN/OVS</h3>
+
+<p>Open Virtual Network (OVN) and Open vSwitch (OVS) are integral components of Neutron’s network architecture. OVN provides network virtualization, offering logical network abstractions such as logical switches and routers. It is tightly coupled with OVS, which is a high-performance, multilayer virtual switch. Together, OVN/OVS enable dynamic, programmable network setups, allowing for efficient routing, switching, and bridging of traffic in virtualized environments. Their integration with Neutron facilitates complex networking scenarios, ensuring scalability and flexibility in handling network traffic within OpenStack deployments.</p>
+
+<h3 id="bgpevpn">BGP/EVPN</h3>
+
+<p>Border Gateway Protocol (BGP) and Ethernet Virtual Private Network (EVPN) are technologies used for advanced networking functionalities. BGP is a standardized exterior gateway protocol designed to exchange routing and reachability information among autonomous systems on the internet. EVPN extends BGP to support scalable, multi-tenant layer 2 VPN services. In SCS, BGP/EVPN is used for efficient routing and segmentation in large-scale cloud environments. It enables more robust and flexible networking solutions by allowing dynamic route advertisement, enhanced traffic engineering, and seamless integration with existing network infrastructures.</p>
+
+<h3 id="tunneling-protocols---vxlangeneve">Tunneling protocols - VXLAN/Geneve</h3>
+
+<p>Virtual Extensible LAN (VXLAN) and Generic Network Virtualization Encapsulation (Geneve) are network overlay protocols used in OpenStack and OVN/OVS for tunneling network traffic over existing network infrastructures. VXLAN is widely used for encapsulating Ethernet frames over a UDP tunnel, enabling layer 2 networks to extend over layer 3 networks. Geneve, a newer protocol, offers similar capabilities but with additional flexibility and extensibility. In SCS, VXLAN/Geneve is critical for creating isolated, multi-tenant networks over a shared physical network infrastructure. This encapsulation allows scalable network segmentation, providing secure and efficient communication channels within cloud environments.</p>
+
+<h2 id="physical-network">Physical network</h2>
+
+<p>The physical network layer is crucial as it provides the foundational infrastructure on which all virtualized network functions are built upon. This layer typically involves various network hardware vendors who supply the physical networking equipment such as switches, routers, and other hardware. These devices are essential for data transmission and routing in a physical setup. Network Operating Systems (NOS) are also a component of the physical network layer. NOS is the software running on network devices, enabling them to perform networking functions and interact with higher-level SDN controllers and applications. In OpenStack Neutron, the ML2 (Modular Layer 2) plugin plays a key role in the physical network layer. ML2 provides an abstraction layer that supports multiple networking mechanisms in a pluggable manner, allowing Neutron to interface with various types of networking hardware and technologies. This plugin architecture ensures that Neutron can work with a wide range of physical networking equipment and configurations, thus enabling flexibility and scalability in the physical network infrastructure of an OpenStack-based SDN deployment.</p>
+
+<h2 id="bare-metal-hosts">Bare metal hosts</h2>
+
+<p>Bare metal hosts in the context of OpenStack and SDN play a significant role in providing high-performance, non-virtualized computing resources. These hosts are typically equipped with advanced network interface cards (NICs), such as SmartNICs and Data Processing Units (DPUs). SmartNICs are intelligent network cards that offload processing tasks that would typically be handled by the server CPU. These include functions like traffic shaping, encryption/decryption, and network packet processing. The use of SmartNICs can lead to improved performance and reduced CPU load on the bare metal hosts.</p>
+
+<p>DPUs are an evolution of SmartNICs and are also very common in clouds providing physical servers to users. The difference between SmartNICs is that DPUs usually run their own OS and can be managed independently of the host OS. They are more like computers within a computer. Bare metal servers are directly accessed by the users, which creates a constraint on the SDN network because it should not collide with user workloads. Offloading SDN to the DPU is the best solution for such use cases.</p>
+
+<p>Incorporating SmartNICs and DPUs into bare metal hosts within an OpenStack environment enhances the network’s flexibility, efficiency, and performance. This setup is particularly beneficial for workloads that require high throughput, low latency, and secure network communications. As such, bare metal hosts equipped with these advanced NICs are an essential component of modern SDN architectures, particularly in environments where performance and security are critical.</p>
+
+<h1 id="common-network-designs">Common network designs</h1>
+
+<p>Below we dive deeper into several common network designs used for SCS/OpenStack deployments.</p>
+
+<h2 id="vlans">VLANs</h2>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/VLANs_network_design-9430b0fb97b59353f0da0437cbba988c5299541ce868b42302c5efaadd71c50843b5ec7eee40eb7ac1756baa1820eb32945a5e5e2757167a66cd87f6d33532f2.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/VLANs_network_design-9430b0fb97b59353f0da0437cbba988c5299541ce868b42302c5efaadd71c50843b5ec7eee40eb7ac1756baa1820eb32945a5e5e2757167a66cd87f6d33532f2.png" />
+  </a>
+</figure>
+
+<p>VLANs are the simplest and most popular design for small operators that are just starting to use OpenStack.</p>
+
+<p>This type of network leverages VLANs between network switches and servers. Each tenant network is assigned its own VLAN. User workloads like VMs and containers on the server are bound to a VLAN by OVS. Neutron orchestrates the process of creation and management of tenant networks both on the network plane (underlay network) and on the servers. It uses ML2 to provision VLANs on the network switches and delegates to OVN/OVS the binding of the virtual device to the VLAN on the server.</p>
+
+<p>Operators have the option to either pre-provision all VLANs ahead of time so that when a new tenant network appears it can be attached to an existing VLAN without needing to talk to the network devices again. The alternative is to use ML2 to dynamically configure new VLAN before each tenant network is created.</p>
+
+<h3 id="pros">Pros</h3>
+
+<ul>
+  <li>This kind of network is easy to implement. It can be simplified even further by pre-provisioning all VLANs on the physical network thus eliminating the need for ML2. It is a good approach for test beds and small deployments.</li>
+</ul>
+
+<h3 id="cons">Cons</h3>
+
+<ul>
+  <li>Most notably, VLANs don’t scale well. This is due to a theoretical limit of 4096 VLANs on each network switch. A more realistic limit would be about 100 OpenStack tenants for a single cloud network. This is a more practical limit based on real world experience.</li>
+  <li>The approach is also very fragile. A single VM can break the whole network, thus exposing a huge blast radius. Also, network switches are notorious for being able to persist VLAN configuration. If a switch goes down, its configuration must be replayed after boot-up which is a process leading to significant downtimes.</li>
+  <li>Another drawback, which we see is the involvement of the physical network to support the SDN. For each new tenant network in OpenStack, new VLANs must be provisioned. Even in the pre-provisioned scenario, the VLANs must still exist in the underlay, which eventually becomes a bottleneck.</li>
+</ul>
+
+<h2 id="network-centric-sdn">Network-centric SDN</h2>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/Network_centric_network_design-c715b0fbbb492816b154013ff2f11334e494c5953b8a542c3fa8ee621f0f4325222e6bc52b886afea45a50b1a56d41ed5dbb41a4c9c44cf1e79dc797f8f8db0f.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/Network_centric_network_design-c715b0fbbb492816b154013ff2f11334e494c5953b8a542c3fa8ee621f0f4325222e6bc52b886afea45a50b1a56d41ed5dbb41a4c9c44cf1e79dc797f8f8db0f.png" />
+  </a>
+</figure>
+
+<p>This network design employs a more network-centric approach by implementing most SDN functionalities within the physical network. The key point is that some kind of tunneling protocols like VXLAN or Geneve are used to encapsulate network packets and transport them over the network. In a spine-leaf topology, the leaf or ToR will terminate VXLAN endpoints. For the control plane, BGP (EVPN) is used to transmit layer 2 addressing information between switches.</p>
+
+<p>On the server side, a regular VLAN is provisioned from the ToR switch for each tenant network. Since not all tenant networks are needed on each ToR switch, this design scales better than pure VLANs. Also, no VLANs are used between the switches if the underlay is layer 3.</p>
+
+<h3 id="pros-1">Pros</h3>
+
+<ul>
+  <li>This kind of network is more scalable, easily handling up to 1000 OpenStack tenants. It is also more stable and resilient to change, because of the smaller blast radius.</li>
+  <li>Since all SDN is offloaded to the physical equipment, server CPUs are not doing any encapsulation/decapsulation and are free to serve the users. Heavy data plane processing is done on dedicated network hardware, which has been optimized for this task. Also, no SmartNICs or DPUs are needed on the servers, which is more cost efficient.</li>
+</ul>
+
+<h3 id="cons-1">Cons</h3>
+
+<ul>
+  <li>Since this is a network-centric approach, the network is still very much involved in the SDN. Physical device limits shown before like persisting  switch configuration still apply.</li>
+  <li>This approach is also more complex than pure VLANs because it requires the network to run routing protocols like BGP and BFD. Neutron still needs to talk the switches via ML2.</li>
+  <li>Importantly, traffic between tenant networks (east/west and north/south) is routed via the network nodes, which can become a choke point. So while being better for scalability, this design still has limitations for very large deployments.</li>
+</ul>
+
+<h2 id="server-centric-sdn">Server-centric SDN</h2>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/Server_centric_network_design-96746e887fb08b7561b28fb4c02704408bd2ff27c8c9c3f45962651d9ebe77cebd89fe4c3d93cfce6395b09bdc693a4507c077bb1cc14f2fa0505ded0ab5354f.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/Server_centric_network_design-96746e887fb08b7561b28fb4c02704408bd2ff27c8c9c3f45962651d9ebe77cebd89fe4c3d93cfce6395b09bdc693a4507c077bb1cc14f2fa0505ded0ab5354f.png" />
+  </a>
+</figure>
+
+<p>With the server-centric network design, SDN software features are implemented on the servers and not on the network equipment. Tunneling protocols like VXLAN have terminating endpoints on the servers and the addresses for those endpoints are discovered via control plane protocols like BGP/EVPN. Also, encapsulation/decapsulation and crypto processing are done on the server.</p>
+
+<p>This design reduces reliance on the physical network to carry out SDN-related tasks. The only requirement for the underlay is that it must be Layer 3 and run BGP to enable server-centric SDN.</p>
+
+<p>Because of the limited involvement of the physcal network, this design scales very well. The downside, however, is that datapath processing is performed on the server. An example of such processing is VXLAN encapsulation/decapsulation. If no DPU or SmartNIC exists on the server, this logic runs on the CPU, which can negatively impact its performance. It is recommended to deploy servers running SmartNICs to help with data-plane performance.</p>
+
+<h3 id="pros-2">Pros</h3>
+
+<ul>
+  <li>very scalable</li>
+  <li>very efficient datapath routing (ingress/egress)</li>
+  <li>simple network underlay</li>
+  <li>no network orchestration in OpenStack</li>
+</ul>
+
+<h3 id="cons-2">Cons</h3>
+
+<ul>
+  <li>complex server</li>
+  <li>might require SmartNICs and DPUs to offload server CPU</li>
+  <li>must run routing protocols in the server</li>
+</ul>
+
+<h2 id="hybrid---sdn-on-both-servers-and-switches">Hybrid - SDN on both servers and switches</h2>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/Hybrid_network_design-d5e1db2780c792238b93fef53249f32e3b8b2627e27c3299c96cdce815645da53c86d2b3cf122c142339079e293190a0213e971b2b95b146a3e330af5fc8229f.png">
+    <img class="figure-img w-100" src="/website/assets/images/blog/Hybrid_network_design-d5e1db2780c792238b93fef53249f32e3b8b2627e27c3299c96cdce815645da53c86d2b3cf122c142339079e293190a0213e971b2b95b146a3e330af5fc8229f.png" />
+  </a>
+</figure>
+
+<p>A variation of the server-centric design, the hybrid network supports bare metal nodes, which are allocated to single users. Since the user has full access to the OS of the server, the SDN functionality cannot be deployed alongside applications, since SDN is managed by the service provider. We have two valid options for deploying SDN components in such network:</p>
+
+<ul>
+  <li>dedicated customer switch, attached to a single bare metal node</li>
+  <li>a DPU card attached to the bare metal node</li>
+</ul>
+
+<p>SmartNIC is not a good solution, because it is more tightly coupled to the host node and exposed to the end user. DPUs and switches can be  independently managed by the provider. This separation helps avoid collision between network infrastructure and user workloads.</p>
+
+<h1 id="solutions-for-better-sdn-scalability">Solutions for better SDN scalability</h1>
+
+<p>In our pursuit to enhance the scalability and performance of SDN networking within Sovereign Cloud Stack (SCS), we have explored several approaches. We focus on leveraging cutting-edge network designs and technologies such as SONiC to meet the growing scalability demands of modern network infrastructures.</p>
+
+<h2 id="network-design---vxlan-on-servers">Network design - VXLAN on Servers</h2>
+
+<p>For scenarios that utilize a “VXLAN on Servers” network design, we emphasize the use of SmartNICs and Data Processing Units (DPUs) to significantly improve the data plane performance characteristics of the network.</p>
+
+<h3 id="smartnics-and-dpus">SmartNICs and DPUs</h3>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/nvidia-bluefield-3-dpu-3c33-d-988a0e4115231e7a53f7f4407009c976ac1f5b7d9d280e07dcd5114193b847329aa94e5fb6639adb8278da09c41d17e6854cbb2e0479df2be17806f6bb2df0ef.jpg">
+    <img class="figure-img w-100" src="/website/assets/images/blog/nvidia-bluefield-3-dpu-3c33-d-988a0e4115231e7a53f7f4407009c976ac1f5b7d9d280e07dcd5114193b847329aa94e5fb6639adb8278da09c41d17e6854cbb2e0479df2be17806f6bb2df0ef.jpg" />
+  </a>
+</figure>
+
+<p>SmartNICs and DPUs play a crucial role in boosting packet processing speeds within the network. SmartNICs are particularly advantageous for virtual machines (VMs), offering tunneling encapsulation/decapsulation and encryption features essential for SDN protocols. By offloading routing and SDN protocol tasks to the server, SmartNICs enhance CPU performance and offer cost-saving benefits.</p>
+
+<p>On the other hand, DPUs are ideally suited for environments where bare metal servers are directly accessed by end-users. Representing the next evolutionary step beyond SmartNICs, DPUs offer the distinct advantage of being managed independently by the network operator, separate from user control. Within SCS, we provide the essential infrastructure and configuration capabilities, enabling users to effortlessly set up and manage SmartNIC and DPU features on their networks.</p>
+
+<h2 id="network-design---vxlan-on-switches">Network design - VXLAN on Switches</h2>
+
+<p>When SDN protocols are implemented directly on network switches, our approach involves exploring the use of SONiC alongside enhancements in tooling and automation to scale effectively.</p>
+
+<h3 id="sonic">SONiC</h3>
+
+<p>Our strategy includes bolstering support for SONiC, a powerful open-source network operating system that enables network scalability and flexibility.</p>
+
+<h3 id="tooling---automating-sonic-rollout-and-configuration">Tooling - Automating SONIC rollout and configuration</h3>
+
+<p>We are committed to enhancing tooling, configuration, and documentation to facilitate the adoption of this network architecture in SCS. This includes improvements in OSISM and Kolla Ansible, along with the integration of Netbox. Netbox serves as the source of truth, allowing for the generation of initial roll-out configurations for OSISM and Kolla Ansible. Additionally, we aim to integrate observability and monitoring for SONiC-based network equipment into SCS, leveraging SONiC’s existing observability features.</p>
+
+<h2 id="physical-network-1">Physical network</h2>
+
+<p>Our efforts extend to improving the dynamic configuration of the physical network from OpenStack. This involves exploring the existing ML2/network-generic-switch driver and expanding its capabilities to support VXLAN and Geneve. We are also examining other drivers/plugins and the potential for developing a new SCS plugin for Neutron. Enhancements related to SCS in SONiC can be packaged independently and installed atop any commercial or community version of SONiC.</p>
+
+<h2 id="sdn-stack-1">SDN stack</h2>
+
+<p>A notable challenge within the OpenStack network nodes is the bottleneck caused by the OVN (Open Virtual Network) control plane software. A potential solution is to migrate the OVN control plane to SONiC. It would allow the OVN control plane to operate in a distributed fashion, leveraging multiple existing SONiC devices within the network for enhanced performance. However, a potential drawback is the resource intensity of OVN, which could strain the limited resources on SONiC devices. Our approach includes carefully evaluating these considerations to ensure a balanced and efficient SDN stack implementation.</p>
+
+
+
+
+<h2 id="about">
+  
+    About the author
+  
+</h2>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="792c700fa651">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/website/assets/c05b51-ce42fa55ead54ca1843c7682ff4857311f8cfcce80d06bc766a588bb5a3d5b8d9012003058211caa18ffc1511fb9933f17b430c181d879faf3a946f80e37e7ff.webp" mask="url(#792c700fa651)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Angel Kafazov</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">Software Architect @ <a href="https://www.daiteap.com/" target="_blank">Daiteap</a></div>
+        <div class="mt-2">Angel is a software architect with an interest in cloud, networking, and cloud-native technologies.
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+<div class="me-2 mb-2">
+    <a class="btn btn-mail" href="mailto:akafazov@daiteap.com"><i class="fa fa-envelope fa-lg"></i></a>
+</div>
+
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="https://www.linkedin.com/in/angelkafazov/"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/akafazov"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-matrix" target="_blank" href="https://matrix.to/#/@akafazov:matrix.org"><i class="fa fa-matrix-org fa-lg"></i></a>
+</div>
+
+          <div class="ms-md-auto pe-3"><a href="/website/members/akafazov" class="btn btn-outline-primary" role="button">Community profile &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" src="/website/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Imprint" href="/website/imprint/">Imprint</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Data Protection Statement" href="/website/dataprotection/">Data Protection Statement</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>

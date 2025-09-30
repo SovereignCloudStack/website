@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://sovereigncloudstack.github.io/website/feed/release.xml" rel="self" type="application/atom+xml" /><link href="https://sovereigncloudstack.github.io/website/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-09-30T08:43:09+00:00</updated><id>https://sovereigncloudstack.github.io/website/feed/release.xml</id><title type="html">Sovereign Cloud Stack | Release</title><subtitle>Sovereign Cloud Stack combines the best of cloud computing in one unified standard. SCS is built, backed, and operated by an active open-source community worldwide. Together we put users in control of their data by enabling cloud operators through a decentralized and federated cloud stack – leveraging true digital sovereignty to foster trust in clouds.</subtitle><entry><title type="html">Final report for funded Sovereign Cloud Stack project (German)</title><link href="https://sovereigncloudstack.github.io/website/release/2025/04/11/final-report/" rel="alternate" type="text/html" title="Final report for funded Sovereign Cloud Stack project (German)" /><published>2025-04-11T00:00:00+00:00</published><updated>2025-09-30T08:38:05+00:00</updated><id>https://sovereigncloudstack.github.io/website/release/2025/04/11/final-report</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/release/2025/04/11/final-report/"><![CDATA[<h2 id="successful-completion-of-the-funded-sovereign-cloud-stack-scs-project">Successful completion of the funded Sovereign Cloud Stack (SCS) project</h2>
+
+<p>Next to a project sketch, lots of forms and the already public articles
+and documentation, a funded project also requires a final report.
+The format of it is predefined and parts 1 and 2 are meant for publication.
+To that end, they have been handed in at the Technical Information Library
+(TIB) of the Leibniz Institute in Hanover on 2025-03-24.</p>
+
+<p>To make these documents more easily accessible to our community, we are
+publishing the report here as well, hoping that other projects can
+benefit from the gained experience in the technical domain, but particularly
+also in the way we have approached the processes and structure of the
+funded project.</p>
+
+<h2 id="final-report">Final report</h2>
+
+<p>The report consists of many tables and forms and multiple pieces of text.
+We are publishing the following parts:</p>
+
+<ul>
+<li><a href="/website/assets/documents/01_Schlussbericht-Teil1-477f22ed580eb1dddd78b04d1a29f3b2c4301eafd14320693e799af00df42e97d23107ba829b1779e9ef1cb5f264d6357230b8dcd3a1755092fffc2b8286d74e.pdf">Part 1: Cover sheet and Short report (2p.)</a></li>
+<li><a href="/website/assets/documents/02_Schlussbericht-Teil2-0f27493e1b28ed81f16ea3f8f03d3e84b84de3c2915e99331feb516971ee53eb8688f11bd827003a3e41a7f0240288b1dbcb5ffc5f4a3c105e0a6461cf47c103.pdf">Part 2: Result measurement (20p.)</a></li>
+<li><a href="/website/assets/documents/05_Anlage_zur_Liste-Veroeffentlichungen-f180c886c65cd1007c45ca84c0ebe3ed4d5d7d9d987a77ef8648df821a07e471e37e2babfca6937ec2074390273593bffb710b2515282fe3a67f0e7788d9902d.pdf">Appendix to part 2: Publication list</a></li>
+</ul>
+
+<p>Please note that the report is available in German language only.</p>
+
+<h2 id="and-on-we-go">And on we go</h2>
+
+<p>The continuation of SCS is based on two pillars.</p>
+
+<p>The first pillar is the evolution of the SCS standards, the development of
+compliance tests, certifications and the dissemination and adoption of the
+standards. This is driven by a group inside the
+<a href="https://osb-alliance.de">OSBA</a>, the <em>Forum SCS-Standards</em>.
+It was founded by 14 companies, meanwhile 17, who together are providing the
+financial support for the joint standardization work. Further companies and
+organizations (private or public) are welcome to join.
+The OSBA has created positions for employees to ensure there is meaningful
+progress. The standardization governance has been placed inside a
+non-profit organization on purpose, ensuring neutrality. This continues to
+happen in close collaboration with <a href="https://alasca.cloud/">ALASCA e.V</a>.
+More information is available in a <a href="https://www.sovereigncloudstack.org/announcements/osba-forum-scs-standards/">press release on the Forum SCS-Standards</a>.</p>
+
+<p>The other pillar is the continuation of the software engineering work on
+the SCS Software (reference implementation). Beyond volunteers, this is primarily
+driven by technology companies who have invested into SCS already during the
+funded project phase. They are expanding their open source business models
+and fund the open source software development through commercial service offers
+(such as e.g. subscriptions for maintenance and support but also consulting
+or training offers). One visible result of the evolution is the
+<a href="https://www.sovereigncloudstack.org/announcements/release8/">Release 8 of the SCS reference implementation</a>.
+Thanks to the existing usage of SCS, this is standing on solid ground.
+Also, new companies have emerged and are of course welcome.
+To deliver on the aspiration to create a large platform for Europe,
+a lot more growth of the network is desirable.</p>]]></content><author><name>[&quot;Sovereign Cloud Stack&quot;]</name></author><category term="release" /><summary type="html"><![CDATA[Successful completion of the funded Sovereign Cloud Stack (SCS) project]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/pile-3324375_1280.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/pile-3324375_1280.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">GovStack and SCS collaborate on cloud infrastructure</title><link href="https://sovereigncloudstack.github.io/website/release/2024/12/17/collaboration-scs-govstack/" rel="alternate" type="text/html" title="GovStack and SCS collaborate on cloud infrastructure" /><published>2024-12-17T00:00:00+00:00</published><updated>2025-09-30T08:38:05+00:00</updated><id>https://sovereigncloudstack.github.io/website/release/2024/12/17/collaboration-scs-govstack</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/release/2024/12/17/collaboration-scs-govstack/"><![CDATA[<h1 id="unlocking-the-power-of-cloud-infrastructure-govstacks-new-building-block-specifications-for-cloud-infrastructure">Unlocking the Power of Cloud Infrastructure: GovStack’s New Building Block Specifications for Cloud Infrastructure</h1>
+<h2 id="the-perfect-match-govstack-collaborates-with-sovereign-cloud-stack">The perfect match: GovStack collaborates with Sovereign Cloud Stack</h2>
+
+<p><strong>Berlin, 2024-12-17</strong>: The <a href="https://govstack.global/">GovStack</a> initiative provides guidelines and frameworks supporting countries in their digital transformation by provinding them with building blocks (BB) that help to provide digital services to their citizens. To this end, several working groups publish cross-cutting requirements, building blocks and technical specifications. One of the youngest building block is the <a href="https://govstack.gitbook.io/bb-cloud-infrastructure">Cloud Infrastructure Building Block Specification</a>.</p>
+
+<p>As a non-profit project <a href="https://scs.community/">Sovereign Cloud Stack (SCS)</a> was able to participate in the working group Cloud Infrastructure. The SCS project is funded by the German Federal Ministry of Economics and Climate Action (BMWK) to develop a production-ready, open source cloud infrastructure and container stack, and to provide open standards and operational knowledge. The results of the working group was now <a href="https://www.govstack.global/news/unlocking-the-power-of-cloud-infrastructure-govstacks-new-building-block-specifications-for-cloud-infrastructure/">published</a> in a  first version of recommendations for building digital sovereign cloud infrastructure. With this blueprint, governments and their technical teams have a framework for their own clouds. With this framework, they can build a secure and and reliable cloud using the model that integrates with their digital strategy – a lot of governments tend to use private clouds, but for scalability or as an offering for regional businesses they can use the same technology for public or hybrid clouds.</p>
+
+<p>Both projects share the same mindset on digital sovereignty which made collaboration very effective. Both want to empower their cloud and software users to be sovereign in their decisions on their digital transformation, in their choices of technology, and in their ability to control and design this technology. With the GovStack building block framework, governments can offer their citizens various digital services, based on sovereign cloud infrastructure. This is an important step for each country (including Germany). Many aspects of daily life are digital or digitally supported, and to be able to control their digital space themselves, to shape, and to develop it without unintended lock-in helps countries to strengthen their confidence, to be on par with larger nations.</p>
+
+<p>SCS is completing the picture of GovStack on the practical level – the SCS software covers almost all requirements and recommendations of the specifications (two requirements marked as “recommendation” are not fulfilled, which can be clearly seen <a href="https://testing.govstack.global/requirements/details/Sovereign%20Cloud%20Stack%20(Reference%20Implementation)/reportDetails/66faa70972ad686099693fd3">here</a>) and thus becomes a <a href="https://www.govstack.global/software/">reference implementation</a> of the specs. So, the SCS community and partners are able to support countries to implement their cloud infrastructure – as they want to shape it, in the countries or with trusted hosters. So, SCS is used like it was intended: digitally sovereign, open source, mature cloud infrastructure. For government clouds, for regional OSPOs, as base for a global network, developed by a global, diverse community.</p>
+
+<p>The first collaborations with countries already started in Mauretania, Jordan, Djibuti, Kenia, Somalia. In these countries GovStack supports the governments with their digital transformation, with the opportunity for the countries to host their applications and services in their own sovereign cloud.</p>
+
+<p><strong>About the Sovereign Cloud Stack Project</strong>
+SCS has been funded by the German Federal Ministry of Economics and Climate Action (BMWK) since July 2021 and is carried out by the Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.. An international ecosystem of now over 25 companies contributes to the success of the Sovereign Cloud Stack with over 50 software developers. Together, open standards for a modern, federatable open source cloud and container platform are defined and implemented in an open development process using proven open source components. At the same time, operational knowledge and practice is being made transparently available to minimize the difficulty of delivering high-quality and secure cloud services. Already seven providers are using SCS technology productively to operate truly sovereign and GDPR-compliant public cloud offerings. Additional SCS-based cloud infrastructure (public and private clouds) is under construction. SCS is a Lighthouse Project of Gaia-X and provides the development platform for the Gaia-X Federation Services / Cross-Federation Service Components (GXFS/XFSC), and contributes to the German Administrative Cloud of the federal and state governments (Deutsche Verwaltungscloud DVC).</p>
+
+<p><strong>About the Open Source Business Alliance (OSBA) e.V.</strong>
+The <a href="https://osb-alliance.de/">Open Source Business Alliance (OSBA)</a> is the association of the open source industry in Germany. It represents over 200 member companies that generate more than EUR 126 billion annually in total. Together with scientific institutions and user organizations, it works to sustainably anchor the central importance of open source software and open standards for a successful digital transformation in the public awareness. In addition, innovations in the field of open source are to be promoted. The goal of the OSBA is to establish open source as a standard in public procure­ment and in research and business development. After all, open source and open standards are compelling foundations for digital sovereignty, innovation capability and security in the digital transformation and thus the answer to one of the greatest challenges of our time.</p>
+
+<p><strong>About GovStack</strong>
+GovStack is a global partnership that enables countries and organisations to create cost-effective, efficient and locally tailored digital public services that provide seamless access to critical tools such as health data, identity documents or digital payments. For the use of reusable and interoperable building blocks - such as digital identity, registries, consent, payment and cloud infrastructure - GovStack provides technical specifications, tools and guidance that form the basis for various digital services. GovStack is committed to product neutrality, providing open, customizable frameworks instead of offering ready-made software or promoting specific product solutions over others. By adopting this approach, GovStack ensures governments receive flexible support tailored to every phase of their digital transformation.</p>
+
+<p>Related Links:</p>
+<ul>
+  <li>GovStack: <a href="https://govstack.global/">https://govstack.global/</a></li>
+  <li>Sovereign Cloud Stack: <a href="https://scs.community/">https://scs.community/</a></li>
+  <li>Technical Documentation SCS: <a href="https://docs.scs.community/docs">https://docs.scs.community/docs</a></li>
+  <li>SCS’s notion of digital sovereignty: <a href="https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/">https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/</a></li>
+  <li>Cloud Infrastructure Specifications: <a href="https://govstack.gitbook.io/bb-cloud-infrastructure">https://govstack.gitbook.io/bb-cloud-infrastructure</a></li>
+</ul>]]></content><author><name>[&quot;Sovereign Cloud Stack&quot;]</name></author><category term="release" /><summary type="html"><![CDATA[Unlocking the Power of Cloud Infrastructure: GovStack’s New Building Block Specifications for Cloud Infrastructure The perfect match: GovStack collaborates with Sovereign Cloud Stack]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/UpdatedVersion.png" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/UpdatedVersion.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sovereign Cloud Stack R7 released</title><link href="https://sovereigncloudstack.github.io/website/release/2024/09/11/release7/" rel="alternate" type="text/html" title="Sovereign Cloud Stack R7 released" /><published>2024-09-11T00:00:00+00:00</published><updated>2025-09-30T08:38:05+00:00</updated><id>https://sovereigncloudstack.github.io/website/release/2024/09/11/release7</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/release/2024/09/11/release7/"><![CDATA[<h1 id="turnkey-solution-for-cloud-computing---sovereign-cloud-stack-publishes-release-7">Turnkey Solution for Cloud Computing - Sovereign Cloud Stack Publishes Release 7</h1>
+
+<p><strong>Berlin, 2024-09-11</strong>: Turnkey solution for Cloud Computing – Sovereign Cloud Stack publishes release 7</p>
+
+<p>The Sovereign Cloud Stack (SCS) provides a complete set of base technology
+for the realization of digital sovereignty and open source strategy. SCS
+offers a digitally sovereign, secure, comprehensive, standardized,
+and open solution for the virtualization and container layers as base for
+containerized applications. The software implements the certifiable SCS
+standards that have been prepared with the users and operators of SCS.
+After some years of real-world usage, there is quite some experience and
+knowledge available, especially around operational topics.</p>
+
+<h2 id="scs-turnkey-solution">SCS Turnkey Solution</h2>
+
+<p>An important focus of the release 7 (R7) development cycle was to more
+closely interlink the various components of our modular software stack,
+aiming to make it easier for operators to use the complete SCS stack.
+Beyond some improvements in the installation automation, the end-to-end
+installation manual is worth mentioning, encompassing all significant
+components. One part of the integration work was the Central API project,
+which is meant to expose the functionality of user, virtualization,
+and container management behind one API and which is available as technical
+preview.</p>
+
+<h2 id="strengthening-of-upstream-technology">Strengthening of Upstream Technology</h2>
+
+<p>Without open source technologies such as Linux, Ceph, OpenStack, or
+Kubernetes, SCS would be unthinkable. The members of the SCS community
+(both OSBA employees in the SCS project team as well as contractors and
+users) are active members of the respective upstream communities and
+contribute to the technology there. SCS’ strategic direction is to
+avoid doing improvements exclusively in our own downstream implementation
+but puts focus on aligning with the upstream technology communities.
+This is sometimes slower, but results in a more sustainable development
+process. Current examples are contributions from the SCS
+community to the domain-manager role in OpenStack, the work on
+the Cluster-API-Provider for OpenStack to ensure that several control
+plane nodes of a Kubernetes cluster do not (accidentally) end up on the
+same underlying hardware node (hypervisor) or the work on comprehensive
+encryption of internal connections in kolla-ansible. The first two
+examples will be part of the next release of SCS and have not yet trickled
+back to R7.</p>
+
+<h2 id="current-software">Current Software</h2>
+
+<p>SCS R7 is shipped with current OpenStack (2024.1 Caracal) which can be operated
+on several Linux distributions: Ubuntu 22.04 LTS continues to be supported;
+Ubuntu 24.04 LTS, Debian 12 and CentOS Stream 9 (and thus RHEL9) have been added. VPN-as-a-Service
+is now also supported and validated with the modern software-defined-networking
+technology OVN that we have used by default for some years now. The latest version
+of Ceph (Reef) and Deployment of Ceph via rook are available as Technical
+Previews and can evaluated already as replacement for the proven Ceph Quincy
+deployed with ceph-ansible.</p>
+
+<p>A lot of improvements went into Cluster Stacks. They are using the current
+version of Cluster API (v1.8) and the current Cluster-API-Provider for OpenStack
+(v0.10) which finally promises a stable API. Recent versions of Kubernetes
+(v1.30/1.31) have been validated. Cluster Stacks can now also use any OCI registry
+for their resources, facilitating the usage of own versions without requiring github
+releases. Own Node-Images can easily be provided via your own object storage.
+Using infrastructure with a private TLS certificate authority for the API is
+now supported.</p>
+
+<p>Usage of Cluster Stacks outside of SCS-conforming infrastructure is growing,
+e.g. on Hetzer Cloud. This strengthens the technology and is proof that the
+framework is as flexible as we designed it to be. On SCS infra, we have
+successfully enabled Kamaji (as a technical preview) as an option, where the
+control planes of several workload clusters can be in a shared cluster in order
+to reduce the overhead of creating many clusters.</p>
+
+<p>The most important improvement under the hood of Cluster Stacks are the
+so-called multi-stage-addons. With their help, we can correctly deal
+with version dependencies between components, e.g. in case of cluster
+version upgrades. This helps to ensure a seamless availability of the
+cluster during upgrades. The old Kubernetes-as-a-Service v1 technology
+was deprecated before and will now no longer be actively maintained.
+Any users still using it should move to cluster stacks urgently now.</p>
+
+<h2 id="operational-aspects-and-security">Operational Aspects and Security</h2>
+
+<p>The OpenStack Health Monitor has proven really useful to monitor the
+virtualization layer in SCS. The code has aged though and a new implementation
+was created. It uses modern technology and can easily be extended with
+container scenario tests. Maintenance and further development has been
+simplified by this transition significantly.</p>
+
+<p>Another significant investment in securing the technology happened with
+the support from specialized penetration testers. We also automated the
+penetration tests in a CI pipeline, so they are run regularly or to validate
+changes. This continuous security assessment is an important contribution
+to defend against growing cybersecurity threats.</p>
+
+<h2 id="scs-compliant-with-open-standards">SCS-compliant with Open Standards</h2>
+
+<p>Next to the work on the reference implementation, there was progress in the
+area of standards and certification.
+back in May, <a href="https://scs.community/2024/05/13/cost-of-making-an-openstack-cluster-scs-compliant/">it was shown</a>
+that SCS-compatible IaaS-v4 compliance can be achieved with moderate effort
+using Yaook, an implementation that is completely independent of the SCS
+reference implementation.
+New partnes have been added to the
+<a href="https://docs.scs.community/standards/certification/overview/#compliant-cloud-environments">list of SCS-Clouds</a>:
+AOV, SysEleven, and with Proof-of-Concept environments the KDO Service
+GmbH as well as Cloud&amp;Heat Technologies GmbH. SysEleven is not using
+the SCS reference implementation either. Next to the automated daily
+SCS standards compliance checks, the new SCS Compliance Monitor (currently
+still in test operation) gives a more detailed view on single passed or
+failed tests and also prepares for transparency on future optional
+requirements.</p>
+
+<h3 id="further-links">Further Links</h3>
+
+<ul>
+  <li><a href="https://scs.community/">Sovereign Cloud Stack</a></li>
+  <li><a href="https://docs.scs.community/docs">Technical documentation SCS</a></li>
+  <li><a href="https://github.com/SovereignCloudStack">SCS repositories</a></li>
+  <li><a href="https://docs.scs.community/docs/category/releases">Release notes</a></li>
+  <li><a href="https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/">SCS notion of digital Sovereignty</a></li>
+</ul>
+
+<h3 id="about-the-sovereign-cloud-stack-project">About the Sovereign Cloud Stack Project</h3>
+
+<p>SCS has been funded by the German Federal Ministry of Economics and Climate
+Protection (BMWK) since July 2021 and is run by the Open Source Business
+Alliance - Bundesverband für digitale Souveränität e.V.. A growing,
+international ecosystem of now over 25 companies contributes to the success of
+the Sovereign Cloud Stack with over 50 software developers.
+The SCS project provides a fully open reference implementation for a complete
+and production-ready cloud stack. In addition, open
+standards for a modern, federatable open source cloud and container platform
+are defined together and implemented in an open development process using proven open
+source components. At the same time, operational knowledge and practice is
+being made transparently available to minimize the difficulty of delivering
+high-quality and secure cloud services. Already six providers are using SCS
+technology productively to operate truly sovereign and GDPR-compliant public
+cloud offerings. Additional SCS-based cloud infrastructure (public and private
+clouds) is under construction. SCS also contributes to
+<a href="https://gaia-x.eu/">Gaia-X</a> and provides the
+development platform for the Gaia-X Federation Services / Cross-Federation
+Service Components (<a href="https://www.gxfs.eu/">GXFS</a>/XFSC).</p>]]></content><author><name>[&quot;Sovereign Cloud Stack&quot;]</name></author><category term="release" /><summary type="html"><![CDATA[Turnkey Solution for Cloud Computing - Sovereign Cloud Stack Publishes Release 7]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/scs7-948-648.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/scs7-948-648.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS Release 6 published</title><link href="https://sovereigncloudstack.github.io/website/release/2024/03/20/release6/" rel="alternate" type="text/html" title="SCS Release 6 published" /><published>2024-03-20T00:00:00+00:00</published><updated>2025-09-30T08:38:05+00:00</updated><id>https://sovereigncloudstack.github.io/website/release/2024/03/20/release6</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/release/2024/03/20/release6/"><![CDATA[<h1 id="sovereign-full-stack-cloud-solution">Sovereign full-stack cloud solution</h1>
+<h2 id="sovereign-cloud-stack-publishes-release-6">Sovereign Cloud Stack publishes Release 6</h2>
+
+<p><strong>Berlin, 20.03.2024</strong>: The Sovereign Cloud Stack project publishes its sixth release.</p>
+
+<p>Release 6 focuses on the SCS Kubernetes Distribution Cluster Stacks, which can
+be rolled out directly on the IaaS reference implementation via the Cluster
+Stack Operator. The reference implementation now also includes the
+Observability Platform and enhanced Identity and Access Management. The
+collaboration with ALASCA e.V. has resulted in enhanced speed and scope in the
+development of comprehensive open standards, in line with the requirements of
+the German Administrative Cloud Strategy. Overall, SCS Release 6 offers an
+easy-to-operate, sovereign full-stack cloud solution.</p>
+
+<p>SCS provides all the cloud technology foundations for realizing digital
+sovereignty and implementing open source strategies. Many users of cloud
+services from the public sector, but also from the private sector and science,
+expect “cloud” to be container-based technology that can ideally be hosted and
+operated in a digitally sovereign manner. This is now even easier to achieve:
+SCS offers a digitally sovereign, secure, complete, standardized open source
+container layer as the basis for all containerized applications.</p>
+
+<h3 id="scs-full-stack-unification-of-iaas-and-kaas-reference-implementation-completed">SCS Full Stack: Unification of IaaS and KaaS reference implementation completed</h3>
+
+<p>Release 6 introduces the Cluster Stacks, the second version of the Kubernetes
+as a Service reference implementation from SCS, which can now be seamlessly
+rolled out on the Infrastructure as a Service layer from SCS thanks to the
+implementation of the Cluster Stack Operator. The cluster stacks are fully
+implemented with Kubernetes on-board tools such as operators and thus replace
+the old implementation, which still integrated and automated the cluster API
+with the help of scripts. The cluster stacks are complemented with identity and
+access management and an observability platform which ensure that the stack is
+more secure and easier to operate.</p>
+
+<p>SCS thus offers an integrated full-stack cloud solution that combines a
+scalable, secure cloud infrastructure and a container platform that can be
+developed and tested according to the latest requirements. SCS continues to
+offer a fully open standards-based software solution developed openly by many
+contributors, which can be influenced and shaped by operators and users and
+offers a high degree of transparency - the perfect basis for driving digitally
+sovereign innovation at all levels in Germany and Europe.</p>
+
+<h3 id="cooperation-on-standardization">Cooperation on standardization</h3>
+
+<p>In the fall of last year, the cooperation between the SCS project and ALASCA
+e.V. was intensified once again. The further development of open standards, as
+called for in the German Administrative Cloud Strategy, for example, is at the
+forefront of this cooperation. Release 6 shows how fruitful this cooperation
+already is, with examples of SCS standards including</p>
+
+<ul>
+  <li>New stable version 4 for the SCS-compatible IaaS certification.</li>
+  <li>New draft version 1 for the new SCS-compatible KaaS certification.</li>
+</ul>
+
+<p>For the operators of SCS cloud environments, it is an advantage that the
+implementation of the standards and the resulting certification provides them
+with a simple quality criterion (in the best sense of the word) that relates
+not only to interoperability and openness, but also to robustness, security and
+up-to-dateness. In this way, they not only assure their customers of the
+quality of their offering, but also themselves. Of course, interoperability is
+of particular interest to users: they can roll out their workloads on the
+clouds of multiple operators without any major surprises, which gives them a
+high degree of flexibility and in some cases may be a prerequisite to open up
+an alternative to the large hyperscalers (AWS, Google, Azure).</p>
+
+<h3 id="simple-operation-of-cloud-environments">Simple operation of cloud environments</h3>
+
+<p>Overall, Release 6 makes it clear that SCS cloud infrastructure can be operated
+efficiently: this was and is one of the central value propositions of the SCS
+project, alongside control and simple provisioning for end users. The operating
+tools have been consistently expanded to simplify everyday work steps for the
+operating staff. The continuous standardization of further aspects and
+especially the implementation of the standards by providers who do not use the
+IaaS reference implementation underline the relevance of the standardization
+work. With the latest developments and the release of Cluster Stacks for
+OpenStack, deployment environments for Kubernetes clusters are easier and more
+efficient to manage.</p>
+
+<p>In the reference environment, a standardized Kubernetes environment is now also
+available at the infrastructure level, into which operators can integrate their
+own tools (e.g. for billing or capacity management); with the Identity and
+Access Management (IAM) from the SCS reference implementation, a supplied
+service also makes use of this integration option. The expansion of the SCS
+documentation also contributes directly to the efficient operation of SCS cloud
+environments; examples, instructions and links to the repositories make the
+structure of SCS clear, comprehensible and efficient.</p>
+
+<h3 id="about-the-sovereign-cloud-stack-project">About the Sovereign Cloud Stack Project</h3>
+
+<p>SCS has been funded by the German Federal Ministry of Economics and Climate
+Protection (BMWK) since July 2021 and is run by the Open Source Business
+Alliance - Bundesverband für digitale Souveränität e.V.. A growing,
+international ecosystem of now over 25 companies contributes to the success of
+the Sovereign Cloud Stack with over 50 software developers. Together, open
+standards for a modern, federatable open source cloud and container platform
+are defined and implemented in an open development process using proven open
+source components. At the same time, operational knowledge and practice is
+being made transparently available to minimize the difficulty of delivering
+high-quality and secure cloud services. Already six providers are using SCS
+technology productively to operate truly sovereign and GDPR-compliant public
+cloud offerings. Additional SCS-based cloud infrastructure (public and private
+clouds) is under construction. SCS also contributes to Gaia-X and provides the
+development platform for the Gaia-X Federation Services / Cross-Federation
+Service Components (GXFS/XFSC).</p>
+
+<h3 id="about-the-open-source-business-alliance-osb-alliance-ev">About the Open Source Business Alliance (OSB Alliance) e.V.</h3>
+
+<p>The Open Source Business Alliance (OSB Alliance) is the association of the open
+source industry in Germany. It represents over 200 member companies that
+generate more than EUR 126 billion annually in total. Together with scientific
+institutions and user organizations, it works to sustainably anchor the central
+importance of open source software and open standards for a successful digital
+transformation in the public awareness. In addition, innovations in the field
+of open source are to be promoted. The goal of the OSB Alliance is to establish
+open source as a standard in public procure­ment and in research and business
+development. After all, open source and open standards are compelling
+foundations for digital sovereignty, innovation capability and security in the
+digital transformation and thus the answer to one of the greatest challenges of
+our time.</p>
+
+<h3 id="related-links">Related links:</h3>
+
+<p>Sovereign Cloud Stack: <a href="https://scs.community/">https://scs.community/</a></p>
+
+<p>Technical Documentation SCS: <a href="https://docs.scs.community/docs">https://docs.scs.community/docs</a></p>
+
+<p>SCS Repositories (github): <a href="https://github.com/SovereignCloudStack">https://github.com/SovereignCloudStack</a></p>
+
+<p>Release notes: <a href="https://github.com/SovereignCloudStack/release-notes">https://github.com/SovereignCloudStack/release-notes</a></p>
+
+<p>SCS’s notion of digital sovereignty: <a href="https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/">https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/</a>
+ and <a href="https://link.springer.com/epdf/10.1007/s11623-022-1669-5?sharing_token=ie7xTVzv_afod07w5Y2lJfe4RwlQNchNByi7wbcMAY4yFyxh9Qw2iCtygUYjun7MI5leBYqiHZBlIeTPv8Sm1Wv8c1dEUf6ebSwnRfo99_nAYh2FgwUyIHjFyZFWv_EIOEIetr2eBSiAPrI68ptBgKxMVkNlS4udZRAhx1X-WB8=">https://link.springer.com/epdf/10.1007/s11623-022-1669-5?sharing_token=ie7xTVzv_afod07w5Y2lJfe4RwlQNchNByi7wbcMAY4yFyxh9Qw2iCtygUYjun7MI5leBYqiHZBlIeTPv8Sm1Wv8c1dEUf6ebSwnRfo99_nAYh2FgwUyIHjFyZFWv_EIOEIetr2eBSiAPrI68ptBgKxMVkNlS4udZRAhx1X-WB8=</a></p>
+
+<p>Release Blog Posts: <a href="https://scs.community/de/2023/12/27/scs-r6-enables/">https://scs.community/de/2023/12/27/scs-r6-enables/</a>
+ and <a href="https://scs.community/de/2024/02/01/road-ro-r6/">https://scs.community/de/2024/02/01/road-ro-r6/</a></p>
+
+<p>Copyright picture: Engin Akyurd</p>
+
+<p><strong>Contact:</strong></p>
+
+<p>OSB Alliance – Bundesverband für digitale Souveränität e.V., Pariser Platz 6a, 10117 Berlin, Germany</p>]]></content><author><name>[&quot;Sovereign Cloud Stack&quot;]</name></author><category term="release" /><summary type="html"><![CDATA[Sovereign full-stack cloud solution Sovereign Cloud Stack publishes Release 6]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/six.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/six.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS R5 released</title><link href="https://sovereigncloudstack.github.io/website/release/2023/09/20/release5/" rel="alternate" type="text/html" title="SCS R5 released" /><published>2023-09-20T00:00:00+00:00</published><updated>2025-09-30T08:38:05+00:00</updated><id>https://sovereigncloudstack.github.io/website/release/2023/09/20/release5</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/release/2023/09/20/release5/"><![CDATA[<h1 id="kubernetes---digitally-sovereign">Kubernetes - digitally sovereign</h1>
+<h2 id="sovereign-cloud-stack-publishes-releases-5">Sovereign Cloud Stack publishes Releases 5</h2>
+<p>The Sovereign Cloud Stack project publishes its fifth release. Release 5 focuses on the expansion of quality assurance, further standardization of the technology building blocks, and the expansion and further development of the container layer based on Kubernetes Cluster API and Cluster Stacks.</p>
+
+<p>As in every release of open source projects, bugs have been fixed and new functionalities added. More important than the individual pieces of the puzzle, however, is the overall picture, which is becoming more and more complete:</p>
+
+<p>Felix Kronlage-Dammers, Product Owner IaaS Reference Implementation &amp; Operations: “SCS delivers building blocks for a digital, sovereign cloud infrastructure.  But we are also changing the way infrastructure is operated.”</p>
+
+<p>Michael Bayr, CEO of artcodix UG, says on the occasion of the launch of his SCS Cloud: “We are grateful for all the support we have received from the SCS team and the community. We are very happy with our decision to rely on the SCS implementation and look forward to working intensively with the community in the future.”</p>
+
+<p>SCS provides all cloud technology foundations for the realization of digital sovereignty and the implementation of an open source strategy. Many users of cloud services from the public sector, but also from the private sector and academia, expect “cloud” to be container-based technology that can be hosted and operated in a digitally-sovereign manner in the best case. This is possible: SCS offers a digitally-sovereign, secure, full open-source container layer as the basis for all containerized applications. And not only that.</p>
+<h3 id="automated-quality-assurance-guarantees-high-reliability">Automated quality assurance guarantees high reliability</h3>
+<p>“As a fast-growing project, we need to invest increasingly into automated testing to guarantee quality even at fast development speeds. My personal highlight in the R5 cycle is therefore the successful integration of Kubernetes CNCF E2E tests into our zuul test infrastructure. This ensures consistently high quality for the container platform as well,” says Kurt Garloff, CTO of the Sovereign Cloud Stack project at OSB Alliance.</p>
+
+<p>An important element of quality assurance is to regularly update the technologies used. Thus, in R5 for infrastructure, the core services of OpenStack 2023.1 (Antelope), ceph Quincy and OVN 2023.06 were implemented. The container platform now officially supports Kubernetes v1.25 through v1.27; older versions still work. (The new version v1.28 is also available and has been successfully tested, but is currently still marked as Technical Preview due to lack of official capi support).</p>
+
+<p>The previously existing support for IPv6 was taken into regular operation at one of the partners and is now an officially supported feature backed up by testing.</p>
+<h3 id="expansion-of-the-container-layer">Expansion of the container layer</h3>
+<p>The solution for managing container clusters continues to be built on the CNCF project Cluster API and has been improved with regard to user requirements. For example, it can now be used on OpenStack infrastructure with a private Certificate Authority and provides new controls on network addresses and access. The container registry built with harbor technology has been integrated into cluster management, so that with a few settings a registry can optionally be rolled out with each cluster. This registry – or the registry.scs.community operated by the SCS project - can now also be used as a cache for upstream container registries.</p>
+
+<p>For container network integration, the default has been changed from Calico to Cilium after all E2E tests can finally be passed successfully. As before, both solutions are officially supported. With the help of Cilium, the future gateway API can also be used, although this currently still has the status of Technical Preview.</p>
+
+<p>A new tool, the Cluster Stack Operator, will in future make it possible (planned in R6) to use the container layer (KaaS) independently of the underlying infrastructure layer (IaaS). The Cluster Stack Operator uses predefined Cluster Stacks, which are based on the Cluster API feature ClusterClass, and is able to create and manage Kubernetes clusters on various providers.
+In R5, initial work has been done for this. This brings SCS’s vision of developing a complete, easy-to-use cloud and container stack, whose modules can also be used individually as required, a significant step closer. The Cluster Stacks can be testet in a Technical Preview, which can be found on GitHub: https://github.com/SovereignCloudStack/cluster-stacks-demo.</p>
+
+<p>User federation with the help of keycloak was further improved - improvements for the upstream projects (especially Keystone) were also worked out here and successfully introduced. SCS thus realizes its claim of not contributing to further fragmentation, but to the integration of open source projects.</p>
+<h3 id="standardization-progresses-interoperability-of-building-blocks-and-federability-of-services-further-expanded">Standardization progresses: interoperability of building blocks and federability of services further expanded</h3>
+<p>Standards ensure the interoperability of all building blocks and enable the federation of services. This allows applications to be ported from one platform to another (or from one service provider to another) with minimal effort. Standardization also allows resources to be easily scaled across providers through federation.</p>
+
+<p>A certification program for SCS-Standards will be available soon to provide assurance of interoperabilty to customers of the procured or self-built services. Now already, the service providers are tested against the existing SCS standards nightly, using an automated compliace test. The results are transparent for every customer at (https://docs.scs.community/standards/).</p>
+
+<p>After a significant one-time change became necessary moving from v1 SCS Flavors to v2, no such painful change happened again during the R5 development cycle nor is one expected in the future. The new SSD flavors are slated to become mandatory in December 2023 with the new version of the certification suite. (More on the more flexible recommended diskless flavors in a <a href="https://scs.community/de/2023/08/21/diskless-flavors/">Blog-article</a></p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" src="/website/assets/images/Release5-e2a4e8b5588d69e70a200707171981b28710057db91a27da4b46a2d0a01f5e51edb6d280778abdc6581d85b05c4d8d3eff4a20585e06d0b55e7384ddabbb8475.png" />
+</figure>
+
+<h3 id="release-summary">Release Summary</h3>
+<p><strong>SCS is standardized</strong>
+Standardization of flavors has been completed: (https://scs.community/2023/08/21/diskless-flavors/)  Extensive testing has been implemented to verifiably check the standards of SCS-based CSPs on a regular basis. All current and also planned standards are documented on this page: (https://docs.scs.community/standards)</p>
+
+<p><strong>SCS is understandable</strong>
+The new, complete documentation of SCS is now accessible: (https://docs.scs.community/docs)  There, in addition to the project documentation, feedback from SCS integrators and from people and organizations coming into contact with SCS for the first time is reflected to ensure that SCS becomes even more understandable.</p>
+
+<p><strong>SCS enables</strong>
+SCS enables - on a variety of levels and not only operators, but also integrators, developers and especially users of infrastructure built on SCS to use and operate a fully digital, sovereign cloud infrastructure and platform. With the new release, the cloud stack has been extended with essential building blocks of the container layer, so that SCS can also be used as an application platform and is available for all containerized applications.</p>
+
+<p><strong>SCS is transparent</strong>
+Transparency is one of the core values of the project - and the community wants to ensure that all development efforts are actively focused on transparency. This ranges from the development culture to the open operations movement to technical elements like <a href="https://en.wikipedia.org/wiki/Software_supply_chain">SBOMs</a> for the entire stack. But not only is all development transparent, all deliverables, all logs, all documentation is open and accessible. Every decision is documented and is traceable. Every bug is transparently fixed.</p>
+
+<p><strong>SCS is continuously built and tested</strong>
+As part of the development work, work began <a href="https://github.com/SovereignCloudStack/issues/issues/157">on the custom Zuul instance</a> in the R4 cycle. This has since become the backbone of the test infrastructure - from running CI for various components in the SCS stack to end-to-end testing for the CAPI provider.</p>
+
+<p><strong>SCS is opinionated</strong>
+While the SCS project provides a modular stack and focuses on clear standards that ensure  interoperability, the community in our reference implementation is opinionated. Forming opinions at this level leads to focus and prevents the project from getting tangled in an arbitrary “both/and.” This forces informed decisions to be made. These decisions need to be well documented - which is why an ADR framework was started early on. This in turn pays into SCS is understandable. Focusing on a specific tool set and dedicated open source projects ensures deep integration, focused development, and a stable, production-ready cloud stack that delivers the desired benefits to all users.</p>
+
+<p><strong>Release notes</strong>
+There are <a href="https://docs.scs.community/docs/releases/Release5/">detailed release notes</a> available.</p>
+
+<p><strong>Further links</strong></p>
+<ul>
+  <li>Sovereign Cloud Stack: <a href="https://scs.community/">https://scs.community/</a></li>
+  <li>Technical Documentation SCS: <a href="https://docs.scs.community/docs">https://docs.scs.community/docs</a></li>
+  <li>SCS Repositories: <a href="https://github.com/SovereignCloudStack">https://github.com/SovereignCloudStack</a></li>
+  <li>Release notes: <a href="https://github.com/SovereignCloudStack/release-notes">https://github.com/SovereignCloudStack/release-notes</a></li>
+  <li>SCS’s notion of digital sovereignty: <a href="https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/">https://the-report.cloud/why-digital-sovereignty-is-more-than-mere-legal-compliance/</a> and <a href="https://link.springer.com/epdf/10.1007/s11623-022-1669-5?sharing_token=ie7xTVzv_afod07w5Y2lJfe4RwlQNchNByi7wbcMAY4yFyxh9Qw2iCtygUYjun7MI5leBYqiHZBlIeTPv8Sm1Wv8c1dEUf6ebSwnRfo99_nAYh2FgwUyIHjFyZFWv_EIOEIetr2eBSiAPrI68ptBgKxMVkNlS4udZRAhx1X-WB8=">https://link.springer.com/epdf/10.1007/s11623-022-1669-5?sharing_token=ie7xTVzv_afod07w5Y2lJfe4RwlQNchNByi7wbcMAY4yFyxh9Qw2iCtygUYjun7MI5leBYqiHZBlIeTPv8Sm1Wv8c1dEUf6ebSwnRfo99_nAYh2FgwUyIHjFyZFWv_EIOEIetr2eBSiAPrI68ptBgKxMVkNlS4udZRAhx1X-WB8=</a></li>
+</ul>]]></content><author><name>[&quot;Sovereign Cloud Stack&quot;]</name></author><category term="release" /><summary type="html"><![CDATA[Kubernetes - digitally sovereign Sovereign Cloud Stack publishes Releases 5 The Sovereign Cloud Stack project publishes its fifth release. Release 5 focuses on the expansion of quality assurance, further standardization of the technology building blocks, and the expansion and further development of the container layer based on Kubernetes Cluster API and Cluster Stacks.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/release.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/release.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS R4 released</title><link href="https://sovereigncloudstack.github.io/website/release/2023/03/22/release4/" rel="alternate" type="text/html" title="SCS R4 released" /><published>2023-03-22T00:00:00+00:00</published><updated>2025-09-30T08:38:05+00:00</updated><id>https://sovereigncloudstack.github.io/website/release/2023/03/22/release4</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/release/2023/03/22/release4/"><![CDATA[<p>The Sovereign Cloud Stack (<a href="https://scs.community/">SCS</a>) project, funded by the <a href="https://www.bmwi.de/Navigation/EN/Home/home.html">German Federal Ministry for Economic Affairs and Climate Action</a> to realize digital sovereignty in cloud infrastructure, releases its fifth version of the SCS reference implementation R4 on March 22, 2023. SCS contributes to the European initiative <a href="https://gaia-x.eu/">Gaia-X</a>.</p>
+
+<p>Sovereign Cloud Stack combines the best of Cloud Computing in one unified standard. SCS is built, backed, and operated by an active open-source community worldwide. Together we put users in control of their data by enabling Cloud Operators through a decentralized and federated cloud stack - leveraging true digital sovereignty to foster trust in clouds.</p>
+
+<p>Defined and implemented by a growing community of over 20 companies in an open development process, based on the principles of the <a href="https://openinfra.dev/four-opens/">Four Opens</a>, the latest version of the SCS reference implementation has been developed alongside a set of <a href="https://scs.community/tech/2022/11/04/outcomes-for-r4/">associated outcomes</a>: SCS is standardized, federated, continuously built and tested, understandable state-of-the-art technology, and to provide operators with an excellent toolbox. Moreover, SCS helps to jumpstart the <a href="https://openoperations.org">Open Operations</a> movement, to significantly facilitate the operation of modern infrastructure.</p>
+
+<p>The implemented open source components have been updated to the latest stable versions. Among others, this includes OpenStack Zed, Kubernetes Cluster API 1.3.x, Cluster API Provider for OpenStack 0.7.x, Kubernetes 1.26.x, and Ubuntu 22.04 LTS. The full release notes including a reference to the full release notes of the consumed upstream projects are available at <a href="https://scs.community/release-notes-r4">https://scs.community/release-notes-r4</a>.</p>
+
+<p>The SCS community works closely together with downstream users in order to address their needs and requirements in the best possible way. For instance, our Kubernetes Cluster API implementation now allows to granularly filter access to the Kubernetes API based on IP ranges, a need that came out of the development work that the Gaia-X Federation Services (<a href="https://gxfs.de/">GXFS</a>) did on top of SCS.</p>
+
+<h2 id="the-year-of-scs-standardization">The year of SCS standardization</h2>
+
+<p>The last months saw intense work in the standardization area. The foundation for this was laid by jointly defining and describing the underlying standardization process itself, known as standard <a href="https://scs.community/scs-0001">SCS-0001</a>. All further standards that apply to <em>“SCS-compatible”</em> conformance for the IaaS and the Container (KaaS) layer are collected in a machine-readable file and corresponding tools are provided to test compliance.</p>
+
+<p>The public clouds based on the SCS reference implementation from <a href="https://www.plusserver.com/">plusserver</a> and <a href="https://wavecon.de/">Noris/Wavecon</a> are tested automatically by us and the live result is visible in the <a href="https://github.com/SovereignCloudStack/standards">standards page</a>.</p>
+
+<blockquote>
+  <p>The community has made great progress on the reference implementation with the R4 release again. This really is a good foundation for more Operators to join in. Inspired by it, we have also been able to define <a href="https://github.com/SovereignCloudStack/standards/">standards</a>, tests for them and a testing framework to create an SCS-compatible interoperability certification. The goal for 2023 is to make the SCS initiative much broader – last not least with existing Operators that adopt the standards without necessarily consuming many of the modules of our reference implementation.
+— Kurt Garloff, CTO of Sovereign Cloud Stack at the Open Source Business Alliance</p>
+</blockquote>
+
+<h2 id="information-architecture">Information architecture</h2>
+
+<p>The technology stack needed to run cloud and container infrastructure is complex. One important way to make it easier is to create a framework not just for integrating the code, but also making documentation available, composing documentation from the many contributing open source projects in a consistent way.</p>
+
+<p>While this effort has just started, the first results of the knowledge management work are already visible at <a href="https://docs.scs.community/">https://docs.scs.community/</a>, collecting important knowledge from the project and upstream communities to ease user’s, operator’s and contributor’s life alike. The accessibility of documentation around the OSISM testbed, the OpenStack Image Manager and the k8s cluster API provider solution have been significantly improved using this approach and more will follow.</p>
+
+<h2 id="collaboration-drives-success">Collaboration drives success</h2>
+
+<p>The SCS community has significantly grown since the previous release, both by procuring tenders as well as by stirring up intrinsic motivation. The project works closely together with related communities, such as <a href="https://scs.community/2023/01/16/collaboration-of-alasca-and-scs/">ALASCA – Alliance for Sovereign Cloud Infrastructure</a>, to foster standardization beyond the open reference implementation.</p>
+
+<p>With new contractors joining the project’s technical teams, such as <a href="https://dnation.cloud/">dNation</a> working on Container Registry, <a href="https://syself.com/">Syself</a> working on a Kubernetes as a Service integration, <a href="https://www.cloudandheat.com/">Cloud&amp;Heat</a> working on Metering of the IaaS layer, and a consortium consisting of <a href="https://www.cloudandheat.com/">Cloud&amp;Heat</a> and <a href="https://www.secustack.com/">SecuStack</a> working on the automation of SCS certification, the community is already preparing to set the path for upcoming releases.</p>
+
+<p>Likewise, more and more operators are contributing to open operational knowledge and sharing their learnings from running cloud environments.</p>
+
+<blockquote>
+  <p>The development of our digitally sovereign pluscloud open has been significantly advanced by the consistent support of the Sovereign Cloud Stack community. From our perspective, this is yet another success story of the open source movement and we look forward to sharing knowledge and insights on operating these open cloud environments with the community.
+– Christian Schmitz, Open Source Director at plusserver GmbH</p>
+</blockquote>
+
+<h2 id="fourth-scs-cloud-hits-the-floor">Fourth SCS cloud hits the floor</h2>
+
+<p>Just in time for Release 4 of the SCS project, <a href="http://regio.digital/">REGIO.cloud</a> is now the fourth provider to enter the market with its own SCS cloud infrastructure. Building on the standardized and fully open Sovereign Cloud Stack, REGIO.cloud – a project by OSISM GmbH – will offer further managed services, such as Kubernetes, for small and medium-sized enterprises.</p>
+
+<blockquote>
+  <p>With REGIO.cloud, we are creating a sustainable and regional managed service offering. We look forward to bringing our experience from operating the underlying cloud infrastructure back into the SCS community and thus strengthening the overall ecosystem.
+– Christian Berendt, CEO of OSISM GmbH</p>
+</blockquote>
+
+<h2 id="meet-sovereign-cloud-stack-in-berlin">Meet Sovereign Cloud Stack in Berlin</h2>
+
+<p><a href="https://scs.community/summit">
+    <img class="figure-img w-100" src="/website/assets/images/summit2023/banner-3b6d57bdaaacc4906e5e31baea4d1ca27f09c5396ed6af6af1356b277b781634207077e10e29a2a84de4c9ece7d8b8b3d3935c6641ba5c19df4561fa98664ca3.png" />
+</a></p>
+
+<p>After two successful Community Hackathons in Cologne and Nuremberg, the project invites users, developers, adopters and everybody who is affiliated to this project to gather, share knowledge, experience, and to network at our first Sovereign Cloud Stack Summit in Berlin in May. Please make sure to head over to <a href="https://scs.community/summit">https://scs.community/summit</a> and save your seat!</p>
+
+<h2 id="about-sovereign-cloud-stack">About Sovereign Cloud Stack</h2>
+
+<p>The Sovereign Cloud Stack (SCS) was launched in 2019 and a feasibility study was funded by the German Federal Agency for Disruptive Innovation - SPRIND. Since July 2021, SCS is a project of the Open Source Business Alliance and receives funding by the German Federal Ministry for Economic Affairs and Climate Action (BMWK). A growing community of more than 20 companies contribute to the success of Sovereign Cloud Stack. By joining forces, standards for a modern, federatable open source cloud and container platform are defined and implemented by using proven open source components. At the same time, operational knowledge and practices are transparently shared to minimize the difficulty of delivering high-quality and secure cloud offerings. Four public cloud providers use large pieces of the SCS reference implementation in action. Further setups (both public and private clouds) will soon enter production.</p>
+
+<h2 id="about-the-open-source-business-alliance-osb-alliance-ev">About the Open Source Business Alliance (OSB Alliance) e.V.</h2>
+
+<p>The Open Source Business Alliance (<a href="https://osb-alliance.com/">OSB Alliance</a>) is the association of the open source industry in Germany. It represents over 200 member companies that generate more than EUR 1.7 billion<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> annually in Germany. Together with scientific institutions and user organizations, the OSB Alliance is committed to sustainably anchoring the central importance of open source software and open standards for a successful digital transformation in the public awareness. This digital transformation should benefit companies, the state and society alike. In addition, innovations in the field of open source should be promoted. OSB Alliance’s goal is to establish open source as the standard in public procurement and in research and business promotion. After all, open source and open standards are essential foundations for digital sovereignty, innovative capacity and security in the digital transformation and thus the answer to one of the greatest challenges of our time.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Based on a survey from September 2018. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>[&quot;Sovereign Cloud Stack&quot;]</name></author><category term="release" /><summary type="html"><![CDATA[The Sovereign Cloud Stack (SCS) project, funded by the German Federal Ministry for Economic Affairs and Climate Action to realize digital sovereignty in cloud infrastructure, releases its fifth version of the SCS reference implementation R4 on March 22, 2023. SCS contributes to the European initiative Gaia-X.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/blog/r4.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/blog/r4.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS R3 released</title><link href="https://sovereigncloudstack.github.io/website/release/2022/09/21/release3/" rel="alternate" type="text/html" title="SCS R3 released" /><published>2022-09-21T00:00:00+00:00</published><updated>2025-09-30T08:38:05+00:00</updated><id>https://sovereigncloudstack.github.io/website/release/2022/09/21/release3</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/release/2022/09/21/release3/"><![CDATA[<p>The Sovereign Cloud Stack project, funded by the <a href="https://www.bmwi.de/Navigation/EN/Home/home.html">German Federal Ministry for Economic Affairs
+and Climate Action</a> releases
+its fourth version of the SCS reference implementation R3 on September 21, 2022.</p>
+
+<p>Defined and implemented in an open development process by a community of over 20
+companies, the latest version of the SCS reference implementation features among
+other new features – the possibility of network bound disk encryption, improved
+test coverage, and simplified management of Kubernetes clusters. All implemented
+open source components have been updated to the latest stable version.</p>
+
+<h2 id="sovereign-cloud-stack-as-a-secure-foundation-for-the-german-public-sector-cloud">Sovereign Cloud Stack as a secure foundation for the German Public Sector Cloud</h2>
+
+<p>By participating in the working groups of <a href="https://www.gaia-x.eu/">Gaia-X</a> and
+the <a href="https://www.cio.bund.de/Webs/CIO/DE/digitale-loesungen/digitale-souveraenitaet/deutsche-verwaltungscloud-strategie/deutsche-verwaltungscloud-strategie-node.html">Deutsche Verwaltungscloud-Strategie (DVS)</a>
+the Sovereign Cloud Stack project ensures that the project’s jointly developed
+standards and reference implementation also meet the requirements from these key
+initiatives. The Sovereign Cloud Stack thus forms not only a technical foundation
+for Gaia-X compliant infrastructure, but also for a resilient, federatable public
+sector cloud.</p>
+
+<p>The SCS reference implementation meets all criteria on the software and licensing side
+of the <a href="https://osb-alliance.de/verbands-news/mindestanforderungen-fuer-cloud-angebote-oeffentliche-hand">Mindestanforderungen an die Nutzung von Cloud-Angeboten durch die öffentliche
+Hand</a>
+which were published under the leadership of the Open Source Business Alliance e.V.
+beginning of September. At the same time, SCS is designed for high security
+requirements and supports platform operators in the public sector through appropriate
+architecture, open development processes as well as the provision of operational
+knowledge in the BSI certification according to IT-Grundschutz.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
+
+<blockquote><p>
+With the Sovereign Cloud Stack project, we offer a productively deployable solution
+that harnesses the potential of cloud computing. SCS meets the requirements for
+security, resilience, and the ability to shape the future of the project, thus
+contributing to a significant strengthening of digital sovereignty.
+</p><cite>Peter Ganten, Chairman of the Board of the Open Source Business Alliance e.V.</cite>
+</blockquote>
+
+<h2 id="technical-highlights-in-scs-release-3">Technical highlights in SCS Release 3</h2>
+
+<p>The components included in the architecture of the reference implementation have been
+updated to OpenStack Yoga, Ceph Quincy, OSISM 4.0.0, and Kubernetes Cluster API 1.2.x
+with support for Kubernetes 1.25. (See figure below).</p>
+
+<figure class="figure mx-auto d-block" style="width:90%">
+  <a href="/website/assets/images/201001-SCS-4c-06fe1d5ce5729b4e6bc3ac5190d4dafab09f0374f8e329baeab2b092983a3ea2bc11268e0c783f58f4e991e819375bcf5c6bdc95df977bdea22d145b04f6e934.png">
+    <img class="figure-img w-100" src="/website/assets/images/201001-SCS-4c-06fe1d5ce5729b4e6bc3ac5190d4dafab09f0374f8e329baeab2b092983a3ea2bc11268e0c783f58f4e991e819375bcf5c6bdc95df977bdea22d145b04f6e934.png" />
+  </a>
+  <figcaption class="figure-caption">
+    Sovereign Cloud Stack Architecture
+  </figcaption>
+</figure>
+
+<p>With Release 3 the Network Bound Disk Encryption (NBDE) is ready for productive use.
+NBDE enables cloud service providers to automatically encrypt and decrypt data carriers
+and thus prevents unauthorized access to customer data.</p>
+
+<p>In cooperation with T-Systems, the Special Interest Group Monitoring in the project
+is working intensively on a successor to the already proven
+<a href="https://github.com/SovereignCloudStack/openstack-health-monitor"><code class="language-plaintext highlighter-rouge">openstack-health-monitor</code></a>
+that now has been further improved by an informative dashboard. This asset allows
+cloud service providers that rely on OpenStack as the underlying infrastructure layer,
+to monitor the cloud environment in detail and to be able to localize problems at
+an early stage. More details on the progress of the SCS project in the area of
+observability can also be found in the
+<a href="https://www.linux-magazin.de/ausgaben/2022/10/observability-fuer-openstack/">current October issue of the German-language Linux Magazin</a>.</p>
+
+<p>Among others, the Kubernetes cluster management used within SCS is being tested
+on the development environments for the <a href="https://gxfs.eu/">GXFS project</a>
+and has been further improved by the lessons learned. Tools for analysis
+were added and each cluster gets its own private authorization to manage the
+underlying cloud resources now. The rolling update of clusters to a new Kubernetes
+version has been significantly simplified and upgrading, maintenance and debugging
+Kubernetes clusters in SCS has been documented. The implemented components of the
+CNCF ecosystem have been upgraded to the latest versions and validated through
+appropriate conformance tests.</p>
+
+<p>The full release notes including a reference to the consumed upstream projects
+are available at <a href="https://scs.community/release-notes-r3">https://scs.community/release-notes-r3</a>.</p>
+
+<h2 id="collaboration-over-competition">Collaboration over competition</h2>
+
+<blockquote><p>
+Next to all the technical achievements with R3, there is one thing that makes me
+even more happy with our progress. Witch SCS, we set out to prove that we can
+jointly develop standards, an open reference implementation and operational practices
+to create a viable federated Cloud- and Containerplatform, well knowing that
+collaborating on operations is still rather uncommon in the industry. When I
+learnt that two of our operators are actually spending a day together in a joint
+session to perform upgrades from SCS R2 to R3, I was very impressed with their
+openness and willingness to collaborate in new ways. With this mindset, more great
+things can be expected!
+</p><cite>Kurt Garloff, CTO of Sovereign Cloud Stack at the Open Source Business Alliance</cite>
+</blockquote>
+
+<h2 id="enhanced-test-automation-ensures-high-quality">Enhanced test automation ensures high quality</h2>
+
+<p>Together with <a href="https://osism.tech/">OSISM</a>, the test coverage of the deployment
+and lifecycle management framework <code class="language-plaintext highlighter-rouge">osism</code> used in the SCS reference implementation
+has been significantly extended and thus enables a faster upgrade of the deployed
+environments. The close cooperation between the cloud service providers as well
+as the enhanced test coverage allowed that a major part of the infrastructures
+could already be upgraded before the official release of SCS R3. One goal of the
+Sovereign Cloud Stack project is to enable infrastructure operators to upgrade
+their environments on a daily basis.</p>
+
+<h2 id="third-public-cloud-provider-uses-sovereign-cloud-stack">Third public cloud provider uses Sovereign Cloud Stack</h2>
+
+<p>With the public clouds from <a href="https://osism.tech/">OSISM</a> and <a href="https://www.plusserver.com/">plusserver</a>,
+there are already good SCS offerings primarily targeted at the private sector.
+Now also <a href="https://www.wavecon.de/">Wavecon</a> - a 100% subsidiary of the
+<a href="https://www.noris.de/">noris network AG</a> - relies on the SCS reference
+implementation for the setup and operation of a fully open, standardized sovereign
+public cloud, this way further strengthening the coverage and choice for companies.
+With <a href="https://www.noris.de/wavestack-cloud/">Wavestack</a>
+the third public cloud provider launches its new offering simultaneously to the
+release of SCS R3.</p>
+
+<blockquote><p>
+With Sovereign Cloud Stack, we are relying on a solution that significantly
+faciliates the setup and operation of a modern cloud and container platform,
+especially by fostering an active community. The open development process allows us to
+to have direct influence on the project and actively shape it. Collaboration based
+on partnership and the transparent sharing of operational knowledge are essential
+core of our company philosophy."
+</p><cite>Cemil Degirmenci, CEO of Wavecon GmbH</cite>.
+</blockquote>
+
+<h2 id="about-sovereign-cloud-stack">About Sovereign Cloud Stack</h2>
+
+<p>The Sovereign Cloud Stack (SCS) was launched in 2019 and initially funded by the
+Federal Agency for Disruptive Innovations - SPRIND. Since July 2021, SCS is a
+project of the Open Source Business Alliance and receives funding by the German
+Federal Ministry for Economic Affairs and Climate Action (BMWK).
+A growing community of more than 20 companies contribute to the success of Sovereign
+Cloud Stack. By joining forces, standards for a modern, federatable open source
+cloud and container platform are defined and implemented by using proven open source
+components. At the same time, operational knowledge and practices are
+transparently shared to minimize the difficulty of delivering high-quality and secure
+cloud offerings. Three providers are already using SCS in production
+environments to offer public cloud services. Further setups are in the development
+and testing phases.</p>
+
+<h2 id="about-the-open-source-business-alliance-osb-alliance">About the Open Source Business Alliance (OSB Alliance)</h2>
+
+<p>The Open Source Business Alliance (OSB Alliance) is the association of the open
+source industry in Germany. We represent over 190 member companies that employ
+approximately 10,000 people and generate more than 1.7 billion euros annually
+in Germany. Together with scientific institutions and user organizations, we
+are committed to sustainably anchoring the central importance of open source
+software and open standards for a successful digital transformation in the
+public awareness. This digital transformation should benefit companies, the
+state and society alike. In addition, innovations in the field of open source
+should be promoted. Our goal is to establish open source as the standard in
+public procurement and in research and business promotion. After all, open
+source and open standards are essential foundations for digital sovereignty,
+innovative capacity and security in the digital transformation and thus the
+answer to one of the greatest challenges of our time.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>see <a href="https://www.it-planungsrat.de/beschluss/beschluss-2021-46">Deutsche Verwaltungscloud-Strategie: Rahmenwerk der Zielarchitektur, Beschluss des IT-Planungsrats as of 2021-10-29</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>[&quot;Sovereign Cloud Stack&quot;]</name></author><category term="release" /><summary type="html"><![CDATA[The Sovereign Cloud Stack project, funded by the German Federal Ministry for Economic Affairs and Climate Action releases its fourth version of the SCS reference implementation R3 on September 21, 2022.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/blog/r3.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/blog/r3.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS R2 released</title><link href="https://sovereigncloudstack.github.io/website/release/2022/03/22/release2/" rel="alternate" type="text/html" title="SCS R2 released" /><published>2022-03-22T00:00:00+00:00</published><updated>2025-09-30T08:38:05+00:00</updated><id>https://sovereigncloudstack.github.io/website/release/2022/03/22/release2</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/release/2022/03/22/release2/"><![CDATA[<p>The Sovereign Cloud Stack project, funded by the <a href="https://www.bmwi.de/Navigation/EN/Home/home.html">German Federal Ministry for Economic Affairs
+and Climate Action</a> will release
+its third version of the SCS reference implementation R2 on March 23, 2022. 
+Highlights of Release 2, to whose success a community of over 20 companies have 
+contributed are updates of the integrated open source components, the simplified
+deployment on bare metal, significantly improved management of Kubernetes clusters,
+as well as the technical foundations for connecting to the <a href="https://www.gxfs.eu/">Gaia-X Federation Services (GXFS)</a>.</p>
+
+<p>Defined and implemented in an open development process, the technology of <a href="https://scs.community/de/">Sovereign
+Cloud Stack (SCS)</a> is being tested by a growing
+number of companies and public IT service providers. In addition, two (soon three)
+providers are already using SCS in production environments to offer public cloud
+services. The C5 certification of our partner <a href="https://www.plusserver.com/en/">plusserver</a>
+also proves that the Sovereign Cloud Stack meets the high security requirements
+of the <a href="https://www.bsi.bund.de/EN/Home">German Federal Office for Information Security (BSI)</a>.</p>
+
+<p>By participating in the working groups of <a href="https://www.gaia-x.eu/">Gaia-X</a> and
+the <a href="https://www.cio.bund.de/Webs/CIO/DE/digitale-loesungen/digitale-souveraenitaet/deutsche-verwaltungscloud-strategie/deutsche-verwaltungscloud-strategie-node.html">Deutsche Verwaltungscloud-Strategie (DVS)</a> 
+the Sovereign Cloud Stack project ensures that the project’s jointly developed
+standards and reference implementation also meet the requirements from these key
+initiatives. The Sovereign Cloud Stack thus forms not only a technical foundation
+for Gaia-X compliant infrastructure, but also for a resilient, federatable public
+sector cloud.</p>
+
+<p>The key points for Release 3, due in the fall of 2022, will be the completion of the
+disk encryption feature, the expansion of federation capabilities, and the development
+of fully automated SCS conformance tests. The latter are intended to enable already
+established cloud service providers to adapt and validate their own offerings to the
+established SCS standards.</p>
+
+<p>The goal of Sovereign Cloud Stack is to develop a fully open-source toolkit for
+sovereign, standardized cloud &amp; container infrastructure. Consumers of such
+infrastructure can thus painlessly manage services across multiple SCS-compliant
+offerings.</p>
+
+<blockquote><p>
+Through open source, open standards, and
+an open development process, Sovereign Cloud Stack makes an important contribution
+to minimize lock-in effects in the cloud business, creating freedom of choice and thus
+strengthening the progress of digitalization in Europe - with full control over
+technology and data.
+</p><cite>Peter Ganten, Chairman of the Board of the Open Source Business Alliance e.V.</cite>
+</blockquote>
+
+<h2 id="technical-highlights-in-scs-release-2">Technical highlights in SCS Release 2</h2>
+
+<p>In detail, the following technical highlights, among others, were realized with Release 2:</p>
+
+<ul>
+  <li>
+    <p>Update of core components to OpenStack Xena, OSISM 3.0.0, and Kubernetes Cluster
+API 1.0.x with added support for Kubernetes 1.22 and 1.23.</p>
+  </li>
+  <li>
+    <p>Automation of bare metal deployment has been massively extended. The configuration
+of the components is now managed by NetBox as central source of truth. This means
+that setups with a high number of machines can be deployed with a manageable
+operational effort.</p>
+  </li>
+  <li>
+    <p>The Kubernetes Cluster API-based automation for managing Kubernetes clusters is
+now designed to manage many differently configured clusters. Clusters can now be
+created in different projects and availability zones and are also independent of
+each other’s configuration. This allows for different Kubernetes versions, different
+network integration (CNI), different numbers and flavors of machines as well as an
+independent selection of standard services. The configuration can be maintained in a
+git repository.</p>
+  </li>
+  <li>
+    <p>Standard services within Kubernetes container management have been extended by
+flux (gitops) and cert-manager (certificate management), the ingress-nginx has
+been enhanced and cilium can now be used instead of calico for the
+cluster network integration.
+DevOps teams thus do not have to worry about integration of these components.</p>
+  </li>
+  <li>
+    <p>The quality of our stack is constantly assured by conformance tests
+of the Cloud Native Computing Foundation and the Open Infrastructure Foundation.</p>
+  </li>
+  <li>
+    <p>The SCS standards for image metadata and machine flavor naming published with
+Release 1 have been fully implemented. Thus, it is easier to develop automated
+installations (Infrastructure-as-Code) without having to deal with numerous
+little differences for different cloud offerings.</p>
+  </li>
+  <li>
+    <p>The required components to connect to the Gaia-X Federation Services (GXFS)
+have been completed. The Gaia-X Federation Services will allow to connect the
+various Gaia-X services. Thus, a very important milestone of SCS for Gaia-X has
+been reached.</p>
+  </li>
+</ul>
+
+<p>The <a href="https://github.com/SovereignCloudStack/release-notes/blob/main/Release2.md">full release notes</a>
+will be available on GitHub at <a href="https://github.com/SovereignCloudStack/Docs/">https://github.com/SovereignCloudStack/Docs/</a>
+as of Wednesday.</p>
+
+<h2 id="about-sovereign-cloud-stack">About Sovereign Cloud Stack</h2>
+
+<p>The Sovereign Cloud Stack (SCS) was launched in 2019 and initially funded by the
+Federal Agency for Disruptive Innovations - SPRIND. Since July 2021, SCS is a
+project of the Open Source Business Alliance and receives funding by the German
+Federal Ministry for Economic Affairs and Climate Action (BMWK, formerly BMWi).
+A growing community of more than 20 companies contribute to the success of Sovereign
+Cloud Stack. By joining forces, standards for a modern, federatable open source
+cloud and container platform are defined and implemented by using proven open source
+components. At the same time, operational knowledge and <nobr>practices</nobr> are
+transparently shared to minimize the difficulty of delivering high-quality and secure
+cloud offerings. Two (soon three) providers are already using SCS in production
+environments to offer public cloud services. Further setups are in the development
+and testing phases.</p>
+
+<h2 id="about-the-open-source-business-alliance-osb-alliance">About the Open Source Business Alliance (OSB Alliance)</h2>
+
+<p>The Open Source Business Alliance (OSB Alliance) is the association of the open
+source industry in Germany. We represent over 170 member companies that employ
+approximately 10,000 people and generate more than 1.7 billion euros annually
+in Germany. Together with scientific institutions and user organisations, we
+are committed to sustainably anchoring the central importance of open source
+software and open standards for a successful digital transformation in the
+public awareness. This digital transformation should benefit companies, the
+state and society alike. In addition, innovations in the field of open source
+should be promoted. Our goal is to establish open source as the standard in
+public procurement and in research and business promotion. After all, open
+source and open standards are essential foundations for digital sovereignty,
+innovative capacity and security in the digital transformation and thus the
+answer to one of the greatest challenges of our time.</p>]]></content><author><name>[&quot;Sovereign Cloud Stack&quot;]</name></author><category term="release" /><summary type="html"><![CDATA[The Sovereign Cloud Stack project, funded by the German Federal Ministry for Economic Affairs and Climate Action will release its third version of the SCS reference implementation R2 on March 23, 2022. Highlights of Release 2, to whose success a community of over 20 companies have contributed are updates of the integrated open source components, the simplified deployment on bare metal, significantly improved management of Kubernetes clusters, as well as the technical foundations for connecting to the Gaia-X Federation Services (GXFS).]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/blog/pile.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/blog/pile.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS R1 released</title><link href="https://sovereigncloudstack.github.io/website/release/2021/10/05/release1/" rel="alternate" type="text/html" title="SCS R1 released" /><published>2021-10-05T00:00:00+00:00</published><updated>2025-09-30T08:38:05+00:00</updated><id>https://sovereigncloudstack.github.io/website/release/2021/10/05/release1</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/release/2021/10/05/release1/"><![CDATA[<p>After R0 has been released in July and focused on the installation of a <a href="https://docs.osism.tech/testbed/">test environment</a>, the release R1 of Sovereign Cloud Stack was released last Wednesday, 2021-09-29.</p>
+
+<p>The newest release R1 includes the <a href="https://releases.openstack.org/wallaby/">OpenStack Wallaby Release</a>, <a href="https://github.com/kubernetes/kubernetes/releases">Kubernetes version v1.21.x</a>, and the <a href="https://github.com/kubernetes-sigs/cluster-api/releases">Kubernetes Cluster API version v0.4</a>.</p>
+
+<p>The <a href="https://github.com/SovereignCloudStack/release-notes/blob/main/Release1.md">full release notes</a> including technical details can be found in the <a href="https://github.com/SovereignCloudStack/Docs">central docs repository</a> of the SCS project on GitHub.</p>
+
+<h2 id="kubernetes-cluster-as-self-service-thanks-to-cluster-api">Kubernetes cluster as self-service thanks to cluster API</h2>
+
+<p>A special focus during this sprint was on the management of Kubernetes containers based on the k8s Cluster API, which was integrated in version Alpha 4. Both through the conformance tests of the <a href="https://www.cncf.io/">Cloud Native Computing Foundation</a> using <a href="https://sonobuoy.io/">sonobouy</a>, and in real-world use during the <a href="https://www.gaia-x.eu/news/gaia-x-hackathon-1-new-technology-develops-live-today-and-tomorrow">first Gaia-X Hackathon</a> on August 30 and 31, 2021, the maturity of SCS’s k8s cluster management was tested and determined for productive systems.</p>
+
+<figure class="figure mx-auto d-block" style="width:90%">
+  <a href="/website/assets/images/release1/screenshot-capi-provisioning-k9s-bf7a97d342b56a8e402b7b4bc40cfeac1ea2054acf1a752258fb0fa9a24d821806614411da9c3bc74d206e1413560d03be16e8c308bdf55c09570cc92c05fa77.png">
+    <img class="figure-img w-100" src="/website/assets/images/release1/screenshot-capi-provisioning-k9s-bf7a97d342b56a8e402b7b4bc40cfeac1ea2054acf1a752258fb0fa9a24d821806614411da9c3bc74d206e1413560d03be16e8c308bdf55c09570cc92c05fa77.png" />
+  </a>
+  <figcaption class="figure-caption">
+    Kubernetes cluster can be deployed on-the-fly through the k8s cluster API.
+  </figcaption>
+</figure>
+
+<p>With the Kubernetes Cluster API, DevOps teams can create and manage Kubernetes clusters for development, for test and staging, and for production environments on-thy-fly. Of course, the cloud operator can also offer a managed service to its users via the same technology. Detailed <a href="https://github.com/SovereignCloudStack/k8s-cluster-api-provider/blob/master/Release-Notes-R1.md">release information on SCS’s k8s-cluster-api-provider</a> can be found in the <a href="https://github.com/SovereignCloudStack/k8s-cluster-api-provider">corresponding repository</a>.</p>
+
+<h2 id="sovereign-operation-through-monitoring-and-logging">Sovereign operation through monitoring and logging</h2>
+
+<p>The Sovereign Cloud Stack project’s Monitoring Special Interest Group has collected <a href="https://github.com/osism/kolla-operations">various examples of monitoring SCS environments</a>. The blueprints for Prometheus exporter, rules and Grafana dashboards can be used by providers after appropriate customization to ensure low-threshold, high-quality operation of their own SCS platform.</p>
+
+<figure class="figure mx-auto d-block" style="width:90%">
+  <a href="/website/assets/images/release1/screenshot-ceph-dashboard-878f24073425740aae36ce6dcb62c36494b8170df2240f6e493e02d1b5e2acd583a756bac499ab1ff85d4145940646adf1abb022d5d8bef0515b035de9d180ef.png">
+    <img class="figure-img w-100" src="/website/assets/images/release1/screenshot-ceph-dashboard-878f24073425740aae36ce6dcb62c36494b8170df2240f6e493e02d1b5e2acd583a756bac499ab1ff85d4145940646adf1abb022d5d8bef0515b035de9d180ef.png" />
+  </a>
+  <figcaption class="figure-caption">
+    With R1, easy-to-use dashboards are available.
+  </figcaption>
+</figure>
+
+<p>For the upcoming release, we plan to integrate these blueprints directly into the testbed deployment and also make them available to the OpenStack upstream community. We particularly welcome feedback on the examples integrated in release R1 and, in addition, suggestions on other essential operational tools.</p>
+
+<p>With the current version of OSISM in release R1, centralized logging is now also enabled by default. The logging rules still have to be adapted by the provider according to his environment. Similar to monitoring, we also plan to publish already tested rules in the area of logging as a blueprint with the upcoming releases.</p>
+
+<h2 id="a-federated-and-secure-data-platform">A federated and secure data platform</h2>
+
+<p>Authentication against Horizon, the OpenStack standard web interface for using an SCS Cloud, can additionally be realized with <a href="https://openid.net/connect/">OpenID Connect</a> via the integrated identity and access management solution Keycloak. This enables federation across multiple cloud service providers, in line with the vision of Gaia-X.</p>
+
+<p>For the following release R2, we plan to work further on the high availability of the IAM service, which could not be fully tested at the time of the release in its current implementation based on Galera Cluster.</p>
+
+<h2 id="automated-distribution-on-bare-metal">Automated distribution on bare metal</h2>
+
+<p>For automated distribution of the Sovereign Cloud stack on physical hardware, the <a href="https://ironicbaremetal.org/">ironic</a> service can be installed using OSISM. To enable prior testing of the automated deployment, a virtual BMC service has been integrated, so that bare metal deployments can also be tested in the testbed. The main building blocks are already available upstream, but were not fully integrated into R1 due to the short timing of the release.</p>
+
+<h2 id="further-announcements-about-the-project">Further announcements about the project</h2>
+
+<p>Following the successful engagement of the SCS community in the first Gaia-X Hackathon, concrete plans are already being made for the second Hackathon on December 2 and 3, 2021. This will feature a dedicated two-day session in which a fully sovereign cloud will be built from scratch. Interested cloud architects are invited to join us in installing and running SCS hands-on on real hardware.</p>
+
+<p><img src="/assets/images/logo-greencis.png" class="float-left" alt="GREEN-CIS" style="width:300px;" /></p>
+
+<p>In addition, as part of the “Important Project of Common European Interest - Cloud Infrastructure and Services” (IPCEI-CIS), the SCS project is actively participating in the so-called GREEN-CIS consortium, short for “General Purpose Resilient and Secure Energy Efficient Computing Infrastructure Network”. This growing alliance of a total of 28 industry and research partners has set itself the goal of developing and building a virtual, sustainable cloud edge system operating as a single entity based on a decentralized, multi-provider ecosystem. In this regard, we are pleased to receive positive feedback from the German Federal Ministry for Economic Affairs and Energy, which will send the GREEN-CIS consortium together with 21 other projects to the European matchmaking event on October 06, 2021.</p>
+
+<p>The Sovereign Cloud Stack project will play a central role as an open and sovereign cloud technology and will serve as the basis for further platform services as well as for a modern edge cloud.</p>]]></content><author><name>[&quot;Sovereign Cloud Stack&quot;]</name></author><category term="release" /><summary type="html"><![CDATA[After R0 has been released in July and focused on the installation of a test environment, the release R1 of Sovereign Cloud Stack was released last Wednesday, 2021-09-29.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS R0 released</title><link href="https://sovereigncloudstack.github.io/website/release/2021/07/15/release0/" rel="alternate" type="text/html" title="SCS R0 released" /><published>2021-07-15T00:00:00+00:00</published><updated>2025-09-30T08:38:05+00:00</updated><id>https://sovereigncloudstack.github.io/website/release/2021/07/15/release0</id><content type="html" xml:base="https://sovereigncloudstack.github.io/website/release/2021/07/15/release0/"><![CDATA[<p>With great pleasure, we announce the Release 0 of Sovereign Cloud Stack.</p>
+
+<p>While we officially only got the funding for our project a few days ago, we
+have already been able to do very useful work with the community that we were
+able to set up and which engaged in collaboratively developing software.</p>
+
+<p>R0 is the culmination of more than a year of work, all of which can be found on
+github. <a href="https://github.com/SovereignCloudStack/">SCS</a> heavily relies on
+<a href="https://github.com/OSISM/">OSISM</a>, so we actually are building on top of
+many years of work there. A lot of the SCS work got integrated back into it.
+SCS and OSISM of course build on top of thousands of person years
+of upstream communities’ work. We are standing on the shoulders of giants.</p>
+
+<p>We are really proud with what we achieved with our volunteer community!  The
+automation for the lifecycle management of the (containerized) base
+infrastructure, the operations tooling, IAM and the IaaS layer is rock solid.
+The first two partners, <a href="https://betacloud.de">betacloud</a> and
+<a href="https://www.plusserver.com/en/products/pluscloud">plusserver</a> are already
+using this for their productive clouds and more are in the pipeline.
+We have been monitoring the demonstrator (gx-scs) environment from pluscloud open
+with <a href="https://github.com/SovereignCloudStack/openstack-health-monitor">openstack-health-monitor</a>
+and have seen only one slowliness warning in weeks and not a single alarm.
+This is no small feat.</p>
+
+<p>Thanks to anyone who contributed to this nice release!</p>
+
+<p>R0 focuses on <a href="https://docs.osism.tech/testbed/">testbed</a> deployments – we
+want to make it easy for anyone to use SCS for testing, inspection,
+contribution, comparison, inspiration, … at this stage. This in no way should
+discourage anyone from a production deployment on bare metal – as mentioned we
+have two cloud providers already using it. Exploring testbed is typically the
+first stage though. Get in touch with us if you have made yourself familiar
+with SCS via testbed already and want to move to the next stage.</p>
+
+<p>We have updated a lot of documents in the last days. Use our
+<a href="https://github.com/SovereignCloudStack/Docs/">github Docs</a> as entry point.
+There are specific
+<a href="https://github.com/SovereignCloudStack/release-notes/blob/main/Release0.md">release notes for R0</a>.
+You can of course also find this from the <a href="/website/get">“Get SCS”</a>
+page from our <a href="/website">web site</a>.</p>
+
+<p>The documents explain how to perform a testbed installation and also how to use
+the Technical Preview pieces such as the Kubernetes aaS pieces using the
+<a href="https://github.com/SovereignCloudStack/k8s-cluster-api-provider">k8s-cluster-api</a>.
+This will be one of the focus areas for R1 which we already
+plan for September. (Note: We’ll have a 6 month release cycle going forward,
+though the reality is more continuous than this sounds.)</p>
+
+<p>Let us know if you have questions or feedback. We like github issues and PRs,
+but will try to followup on <a href="mailto:project@scs.sovereignit.de">email</a> as well.</p>]]></content><author><name>[&quot;Sovereign Cloud Stack&quot;]</name></author><category term="release" /><summary type="html"><![CDATA[With great pleasure, we announce the Release 0 of Sovereign Cloud Stack.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sovereigncloudstack.github.io/website/default-card.jpg" /><media:content medium="image" url="https://sovereigncloudstack.github.io/website/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

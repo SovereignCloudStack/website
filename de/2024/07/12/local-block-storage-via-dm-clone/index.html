@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>Mechanism to provide node local storage in the OpenStack block storage service | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="Mechanism to provide node local storage in the OpenStack block storage service | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Motivation" />
+<meta property="og:description" content="Motivation" />
+<link rel="canonical" href="https://sovereigncloudstack.github.io/website/2024/07/12/local-block-storage-via-dm-clone/" />
+<meta property="og:url" content="https://sovereigncloudstack.github.io/website/2024/07/12/local-block-storage-via-dm-clone/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://sovereigncloudstack.github.io/website/website/assets/images/default-card-d32fdb798ca15ae927f00593ce64407f69c70d4011955dc94c7be76b99c474f4e673ee1a26ec53725dda80c2c331e5ad4300a43e702171cc014cd47ec6b2f94d.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-07-12T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://sovereigncloudstack.github.io/website/website/assets/images/default-card-d32fdb798ca15ae927f00593ce64407f69c70d4011955dc94c7be76b99c474f4e673ee1a26ec53725dda80c2c331e5ad4300a43e702171cc014cd47ec6b2f94d.jpg" />
+<meta property="twitter:title" content="Mechanism to provide node local storage in the OpenStack block storage service" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-30T08:38:05+00:00","datePublished":"2024-07-12T00:00:00+00:00","description":"Motivation","headline":"Mechanism to provide node local storage in the OpenStack block storage service","image":"default-card.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://sovereigncloudstack.github.io/website/2024/07/12/local-block-storage-via-dm-clone/"},"url":"https://sovereigncloudstack.github.io/website/2024/07/12/local-block-storage-via-dm-clone/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://sovereigncloudstack.github.io/website/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/website/assets/vendor/jquery/jquery-9890bc3f6e101de456f751d876e987f1f4b90f5ad9df054375f77306c1afa9aa5781536b68c7a14d9653b12f5f22e6f2b3b363f583e4b1a7f079be6dfa5854d1.js" type="text/javascript"></script>
+  <script src="/website/assets/vendor/bootstrap/js/bootstrap.bundle-60934d7b67216797538563fa77a226032bb2823e090abf271dd8f8772c72643f26033fb09fde7cf02e8520dee7b9b4d583e4ae0cf81c9a492f0695e3cf85eb30.js" type="text/javascript"></script>
+  <!-- Lighbox -->
+  <script src="/website/assets/vendor/lightbox-5dc80144ffe76fd27b40a8e12589c5d0d75b711ed7a7673347d8432a0d910ed4412e58da517985a7e84118687326c43f9ecadf23563007d27225b8688ab94ccc.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/lightbox-49997aacc14bff6792a1811e3616ecba8d58e0e4598c6f84c2800946d62462c8ed8fcfdf6f10088844e274b9482ffee4fbf6d37d67f85c0f1514e993ad3b9072.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/main-ed12d9c273c732a194d0f8e3ec09afcd4282bb2b71530e644874b2d51197007ff8f26efce55b40a901be813a91f54d6b02914d44316cfa360c4d45db632323cb.css">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/website/assets/css/pygments-css/zenburn-b9e6749823dd76c51d2a88eb53602d9218592303de1e7d1a4523c503894f18810ddd0f4062286c1dbd89a9405bfe9020d23afce2785ef82c5ea814129bd4327a.css">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/website/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/website/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/website/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/website/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<nav class="navbar navbar-light fixed-bottom" style="background-color: var(--bs-warning)">
+  <div class="container">
+    <span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Staging website – Based on commit <a href="https://github.com/SovereignCloudStack/website/commit/685a8141acabe7a4df24689815448ee259e39dda" target="_blank"><span class="badge rounded-pill bg-secondary">685a81</span></a></span>
+  </div>
+</nav>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Entdecke unsere neue Webseite</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/de/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                SCS entdecken
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/website/de/about/">Über SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/de/use/">SCS nutzen</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/de/contribute/">Zu SCS beitragen</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/de/partners/">Servicepartner</a></li>
+                  
+                    <li><a class="dropdown-item" href="/website/de/members/">Community Members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/de/news/">
+                Neuigkeiten
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/de/events/">
+                Veranstaltungen
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/de/jobs/">
+                Offene Stellen
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/website/de/tenders/">
+                Ausschreibungen
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Dokumentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  " href="/website/2024/07/12/local-block-storage-via-dm-clone/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold   text-decoration-underline " href="/website/de/2024/07/12/local-block-storage-via-dm-clone/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  " href="/website/2024/07/12/local-block-storage-via-dm-clone/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold   text-decoration-underline " href="/website/de/2024/07/12/local-block-storage-via-dm-clone/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" src="/website/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          Eine Plattform — standardisiert, entwickelt und betrieben von Vielen.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" src="/website/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" src="/website/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" src="/website/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>Mechanism to provide node local storage in the OpenStack block storage service</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  <svg height="80" width="80">
+    
+    
+    <mask id="f741d3184755">
+      <rect width="80" height="80" fill="white"/>
+    </mask>
+    <mask id="758543e6928e">
+        <circle cx="40" cy="40" r="40" fill="white"/>
+    </mask>
+    <image x="0" y="0" height="80" width="80" xlink:href="/website/assets/2036f5-94f039395cf186e3961e51894efff50b5db3bea02c1894c8784b0cc34278b07958d3fe61cf76610bf2d332eb1c946ad8c3a7e6e240470073ff9ce8edcac661a2.webp"
+       mask="url(#758543e6928e)" 
+    ></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Jan Horstmann</small>
+			<small>
+	12.
+	
+	Juli
+	  
+	2024
+
+</small>
+		</div>
+	</div>
+</div>
+
+<h1 id="motivation">Motivation</h1>
+
+<p>Currently there is node local storage in OpenStack in the form of nova ephemeral storage. As its name implies it is ephemeral in the sense that it is bound to the lifecycle of an instance. However, managing compute resources in a cloud native way usually requires storage to be decoupled from compute. Thus, there is a general benefit in making node local storage available in the block storage service.</p>
+
+<p>There are multiple circumstances where node local storage may be desired or required by cloud operators or users.</p>
+<ul>
+  <li>When built using open source software it would be a low-cost solution, thus facilitating adoption on small scales, where proprietary or even just dedicated storage solutions would be deemed to expensive.</li>
+  <li>While being inherently not highly available above node level, local storage could be useful where IO performance is required and high available storage incurs too much latency through inter-node connections.</li>
+  <li>Dedicated and especially highly available storage solutions can be very complex and increase failure domain, thus requiring special operational knowledge. In a risk-averse environment occasional small scale failures might be more tolerable than rare, but large-scale incidents.</li>
+</ul>
+
+<h1 id="architecture-of-an-openstack-cloud-with-node-local-storage-via-block-storage-service">Architecture of an OpenStack cloud with node local storage via block storage service</h1>
+
+<p>From a cloud architectural perspective offering node local storage via block storage service requires a volume service on every compute node to manage volumes, so that they may be accessed by local instances. Since many storage volumes may be mapped to one (or possibly more) instances and could be remapped to other instances, a mechanism is needed to transparently migrate storage volumes to the compute node of the instance they are going to be attached to.
+Live-migration of instances additionally requires storage volumes to be accessible on both the source and the destination node. However consistent writing from two nodes simultaneously is not a requirement.</p>
+
+<h1 id="proposal-for-a-migration-mechanism-using-the-device-mapper-clone-target">Proposal for a migration mechanism using the device-mapper clone target</h1>
+
+<p>One possible candidate for transparent storage volume migration is the Linux kernel’s device-mapper dm-clone<sup id="fnref:dm_clone"><a href="#fn:dm_clone" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> target. A device-mapper target which allows to create copies of block devices in the background, while being able to access and use the destination device transparently. The nature of the source device is irrelevant, i.e. it can be a local device or a device accessible via network by any means of transport, thus allowing to clone remote storage volumes.
+Setup of a clone target requires a meta data device to keep track of where individual data blocks reside. Initially everything will point to the source device, once a block is copied or written on the destination device the meta data will be updated to point to the new location. This way all writes on the destination device will be local, albeit incurring a slight performance penalty due to the update of the meta data table. The data transferal is kept rather simple, there is no prioritisation of often read blocks and copying will be retried indefinitely until completion. The page cache or other caches will usually alleviate the performance penalty of the former, while the latter allows to complete the migration even after connectivity to the source device was temporarily interrupted.
+The process of copying data is called <code class="language-plaintext highlighter-rouge">hydration</code> in the <code class="language-plaintext highlighter-rouge">dm-clone</code> targets terminology. The <code class="language-plaintext highlighter-rouge">clone</code> target may be created with hydration to be started immediately or stopped. Copying may be started and stopped at any time by sending a message to the device-mapper target.
+Once the migration is complete the clone target may be replaced by a linear target with a short suspend/resume cycle leading to a small spike in IO latency. Afterwards the meta data device may be discarded.</p>
+
+<p>The dm-clone target however lacks a means to specify device offsets. A feature needed to construct complex targets spanning multiple devices as the device-mapper’s <code class="language-plaintext highlighter-rouge">linear</code> target offers and is most prominently used by the <code class="language-plaintext highlighter-rouge">lvm2</code> project. Therefore, in order to provide the most flexibility, it is proposed to use the <code class="language-plaintext highlighter-rouge">dm-clone</code> target stacked on top of device-mapper targets provided by <code class="language-plaintext highlighter-rouge">lvm2</code>. This implies, that after migration a linear target will be stacked on top of the linear <code class="language-plaintext highlighter-rouge">lvm2</code> target.</p>
+
+<h2 id="notes-on-multi-attachments">Notes on multi-attachments</h2>
+
+<p>Since writes are always handled locally to the node they occur on, no actual multi-attachments can be supported using the device-mapper <code class="language-plaintext highlighter-rouge">clone</code> target. However, multi-attachments on two nodes for the same instance are a prerequisite for live migration of instances with attached volumes<sup id="fnref:live_migration"><a href="#fn:live_migration" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>. In this scenario writes only occur on either the source node or the destination node after successful live migration. With these preconditions it is possible to attach the volume in the described manner on the destination node. The hydration must however only be started once the device is detached on the source, since otherwise writes on the source might be masked on the destination node by blocks which have been transferred before. This implies that hydration may only start once there are no further attachments.
+In case of a failed live migration the detachment of the volume on the destination needs to include a clean-up of the created device-mapper targets.</p>
+
+<h1 id="failure-modes">Failure modes</h1>
+
+<p>By definition node local storage is not highly available above node level. Thus, any application making use of this driver needs to be able to either tolerate or mitigate outages. Proper processes need to be in place to restore lost nodes or recover their data if they cannot be restored and data has not been replicated on the application level.</p>
+
+<p>Additional to the common risk of failure while data is at rest on a single node (i.e. not in the process of being migrated), the proposed mechanism introduces failure modes while data is in transit (i.e. during the process of being migrated).
+Naturally for a given risk of failure of a single node, the risk is doubled during the time frame of data migration between two nodes. Additionally network partitions or failure may occur, thus increasing the risk further. The overall risk may be reduced by reducing the time frame of migration through increased network bandwidth.
+In case of the source being unreachable either by node or network failure, data may not be read leading to read IO errors on the destination node, which will be further handled by the filesystem in use. According to the <a href="https://docs.kernel.org/admin-guide/device-mapper/dm-clone.html">dm-clone documentation</a> it will try to transfer data indefinitely, so the situation can be fixed by re-exposing the source and remounting the filesystem on the user side.
+Failure of or on the destination node will naturally lead to immediate unavailability of the data and potentially also of its consuming workload. Recovery includes detection of volumes with in-progress migrations. This could be done by tracking migration state externally or simply by checking for the existence of meta data volumes. Reconstruction of the clone target could then be done by connecting the corresponding source and re-creating the device-mapper clone target. Once hydration is re-enabled the migration process will continue.</p>
+
+<h1 id="security-impact">Security impact</h1>
+
+<p>A cinder-volume service is required on each compute node. The service requires access to the cinder database, thus requiring database credentials to be stored on the compute node.</p>
+
+<h1 id="implementation-of-volume-driver-actions">Implementation of volume driver actions</h1>
+
+<p>The following is a proposal for a cinder driver leveraging the <code class="language-plaintext highlighter-rouge">dm-clone</code> target to transfer local storage volumes.</p>
+
+<h2 id="volume-state-diagram">Volume state diagram</h2>
+
+<p>The diagram shows how the <code class="language-plaintext highlighter-rouge">status</code> and <code class="language-plaintext highlighter-rouge">migration_status</code> of the volumes involved change when certain API Calls are made. Two parts may not be immediately obvious:</p>
+<ul>
+  <li>When <code class="language-plaintext highlighter-rouge">initialize_connection</code> is called for a <code class="language-plaintext highlighter-rouge">reserved</code> volume the IP address in the provided connector object needs to be resolved to a host running the volume-service with this driver as backend.
+For the special case that it is the volume-service holding the volume a connector object of type <code class="language-plaintext highlighter-rouge">local</code> is directly returned and the volume may be attached.
+For the general case of the volume being on a remote volume-service a new volume object is created and used to create a volume on the remote service, which from the <code class="language-plaintext highlighter-rouge">migration_status</code> can infer that a <code class="language-plaintext highlighter-rouge">dm-clone</code> target is required. Using the <code class="language-plaintext highlighter-rouge">_name_id</code> attribute the volume identities are immediately switched, so that the volume which is going to be attached resolves to the volume on the remote volume-service and vice versa (a concept already employed during volume migrations<sup id="fnref:vol_migration"><a href="#fn:vol_migration" class="footnote" rel="footnote" role="doc-noteref">3</a></sup>). The volume may then be attached. After hydration finishes, the source volume is deleted.</li>
+  <li>For live-migration scenarios the same instance is allowed to attach a volume a second time on a different host. The same mechanism as described above is used to setup a volume and a <code class="language-plaintext highlighter-rouge">dm-clone</code> target on the destination host, but the hydration will not be enabled immediately.
+When a connection is terminated and it is local to the volume-service it means that the volume on the destination host of the live-migration is detached. In this case everything is rolled back to the initial state.
+If the termination is from the remote host it means the source volume is disconnected and the instance is now running on the destination. In this case the hydration is enabled and the connection is terminated on the source host.</li>
+</ul>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/website/assets/images/blog/local-block-storage-via-dm-clone-volume-states-diagram-9f03d0883cb15de94edcaa795013e9e44698352c1a258f03ab31fd0ebcfa227a815e0f574e79dc1fcf38e5a1f0d3b1bc92e3e14881de1ed2817b63ec4687a4db.svg">
+    <img class="figure-img w-100" src="/website/assets/images/blog/local-block-storage-via-dm-clone-volume-states-diagram-9f03d0883cb15de94edcaa795013e9e44698352c1a258f03ab31fd0ebcfa227a815e0f574e79dc1fcf38e5a1f0d3b1bc92e3e14881de1ed2817b63ec4687a4db.svg" />
+  </a>
+</figure>
+
+<h2 id="driver-methods">Driver methods</h2>
+
+<p>This chapter outlines the necessary actions required in each driver method<sup id="fnref:driver_ref"><a href="#fn:driver_ref" class="footnote" rel="footnote" role="doc-noteref">4</a></sup>.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">create_volume</code>
+    <ul>
+      <li>Create a local <code class="language-plaintext highlighter-rouge">lvm2</code> logical volume.</li>
+      <li>If <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">maintenance</code> and <code class="language-plaintext highlighter-rouge">migration_status</code> is <code class="language-plaintext highlighter-rouge">starting</code>/<code class="language-plaintext highlighter-rouge">migrating</code>
+        <ul>
+          <li>Find the target volume with <code class="language-plaintext highlighter-rouge">migration_status</code> <code class="language-plaintext highlighter-rouge">target:UUID</code></li>
+          <li>Attach the source volume by initiating a connection to the target on the source</li>
+          <li>Create a metadata device using <code class="language-plaintext highlighter-rouge">lvm2</code> volumes on a configurable and preferably fast storage device</li>
+          <li>Create a <code class="language-plaintext highlighter-rouge">clone</code> target target for the new volume referencing the metadata, source and destination device with hydration disabled. (Disabling the hydration should allow a limited form of multi-attachment which is required for live migration. See notes on multi-attachments)</li>
+          <li>If <code class="language-plaintext highlighter-rouge">migration_status</code> is <code class="language-plaintext highlighter-rouge">migrating</code>
+            <ul>
+              <li>Enable hydration</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">validate_connector</code>
+    <ul>
+      <li>Map connector <code class="language-plaintext highlighter-rouge">ip</code> to a suitable volume host or fail</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">initialize_connection</code>
+    <ul>
+      <li>If connector IP is from the same host
+        <ul>
+          <li>Add a device-mapper <code class="language-plaintext highlighter-rouge">linear</code> target stacked on top of the <code class="language-plaintext highlighter-rouge">lvm2</code> volume. At this point this is just for consistency.</li>
+          <li>return <code class="language-plaintext highlighter-rouge">local</code> connector</li>
+        </ul>
+      </li>
+      <li>If connector IP is from a different host
+        <ul>
+          <li>If volume <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">reserved</code>
+            <ul>
+              <li>Create new volume object (<code class="language-plaintext highlighter-rouge">status</code>: <code class="language-plaintext highlighter-rouge">maintenance</code>, <code class="language-plaintext highlighter-rouge">migration_status</code>: <code class="language-plaintext highlighter-rouge">migrating</code>)</li>
+            </ul>
+          </li>
+          <li>If volume <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">in-use</code>
+            <ul>
+              <li>Create new volume object (<code class="language-plaintext highlighter-rouge">status</code>: <code class="language-plaintext highlighter-rouge">maintenance</code>, <code class="language-plaintext highlighter-rouge">migration_status</code>: <code class="language-plaintext highlighter-rouge">starting</code>)</li>
+            </ul>
+          </li>
+          <li>Set volume’s <code class="language-plaintext highlighter-rouge">migration_status</code> to <code class="language-plaintext highlighter-rouge">target:UUID</code>, where <code class="language-plaintext highlighter-rouge">UUID</code> is the UUID of the new volume</li>
+          <li>RPC to <code class="language-plaintext highlighter-rouge">create_volume</code> on destination with new volume object</li>
+          <li>Switch each volumes identity by setting <code class="language-plaintext highlighter-rouge">_name_id</code> to the other volume’s UUID</li>
+          <li>return <code class="language-plaintext highlighter-rouge">local</code> connector for volume</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">terminate_connection</code>
+    <ul>
+      <li>If volume <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">reserved</code> and <code class="language-plaintext highlighter-rouge">migration_status</code> is <code class="language-plaintext highlighter-rouge">target:UUID</code>
+        <ul>
+          <li>Revert volume identities of this and target volume by setting <code class="language-plaintext highlighter-rouge">_name_id</code> to the other volume’s UUID</li>
+          <li>Remove <code class="language-plaintext highlighter-rouge">clone</code> target on the local volume</li>
+          <li>Remove the metadata device if it exists</li>
+          <li>Close initiator to the source volume target</li>
+          <li>RPC to <code class="language-plaintext highlighter-rouge">remove_export</code> on source</li>
+          <li>Call <code class="language-plaintext highlighter-rouge">delete_volume</code> on the local volume</li>
+          <li>Reset <code class="language-plaintext highlighter-rouge">migration_status</code> to <code class="language-plaintext highlighter-rouge">None</code> on the other volume</li>
+        </ul>
+      </li>
+      <li>If volume <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">in-use</code> and <code class="language-plaintext highlighter-rouge">migration_status</code> is <code class="language-plaintext highlighter-rouge">target:UUID</code>
+        <ul>
+          <li>If <code class="language-plaintext highlighter-rouge">ip</code> in <code class="language-plaintext highlighter-rouge">connector</code> is of the local service, i.e. the volume on the destination of a live-migration is disconnected (live-migration aborted)
+            <ul>
+              <li>Revert volume identities of this and target volume by setting <code class="language-plaintext highlighter-rouge">_name_id</code> to the other volume’s UUID</li>
+              <li>Remove <code class="language-plaintext highlighter-rouge">clone</code> target on the local volume</li>
+              <li>Remove the metadata device if it exists</li>
+              <li>Close initiator to the source volume target</li>
+              <li>RPC to <code class="language-plaintext highlighter-rouge">remove_export</code> on source</li>
+              <li>Call <code class="language-plaintext highlighter-rouge">delete_volume</code> on the local volume</li>
+              <li>Call <code class="language-plaintext highlighter-rouge">delete_volume</code> on the local volume</li>
+              <li>Reset <code class="language-plaintext highlighter-rouge">migration_status</code> to <code class="language-plaintext highlighter-rouge">None</code> on the other volume</li>
+            </ul>
+          </li>
+          <li>If <code class="language-plaintext highlighter-rouge">ip</code> in <code class="language-plaintext highlighter-rouge">connector</code> is of a remote service, i.e. the volume on the source of a live-migration is disconnected (live-migration successful)
+            <ul>
+              <li>Find the source volume according to the UUID in <code class="language-plaintext highlighter-rouge">migration_status</code> <code class="language-plaintext highlighter-rouge">target:UUID</code></li>
+              <li>Set <code class="language-plaintext highlighter-rouge">migration_status</code> of the source volume to <code class="language-plaintext highlighter-rouge">migrating</code></li>
+              <li>enable hydration</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>If volume <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">detaching</code>
+        <ul>
+          <li>Remove the linear target on the volume</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">delete_volume</code>
+    <ul>
+      <li>Delete the <code class="language-plaintext highlighter-rouge">lvm2</code> volume itself</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="required-periodic-jobs-on-each-volume-service">Required periodic jobs on each volume service</h2>
+
+<p>A finished hydration does not trigger any actions, so a periodic check is required to clean up afterwards.</p>
+
+<ul>
+  <li>For volumes of this host in <code class="language-plaintext highlighter-rouge">migration_status</code> <code class="language-plaintext highlighter-rouge">target:UUID</code>, check the state of the <code class="language-plaintext highlighter-rouge">clone</code> target for completed hydration
+    <ul>
+      <li>Set <code class="language-plaintext highlighter-rouge">migration_status</code> to <code class="language-plaintext highlighter-rouge">completing</code></li>
+      <li>Load a <code class="language-plaintext highlighter-rouge">linear</code> target</li>
+      <li>Remove the metadata device</li>
+      <li>Close initiator to the source volume target</li>
+      <li>RPC to <code class="language-plaintext highlighter-rouge">remove_export</code> for the source volume</li>
+      <li>RPC to <code class="language-plaintext highlighter-rouge">delete_volume</code> for the source volume</li>
+      <li>Set <code class="language-plaintext highlighter-rouge">migration_status</code> to <code class="language-plaintext highlighter-rouge">success</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="tasks-required-on-startup-of-the-volume-service">Tasks required on startup of the volume service</h2>
+
+<p>This describes tasks which are required on startup of a volume-service.</p>
+
+<ul>
+  <li>For volumes with <code class="language-plaintext highlighter-rouge">status</code> <code class="language-plaintext highlighter-rouge">in-use</code> and <code class="language-plaintext highlighter-rouge">migration_status</code> <code class="language-plaintext highlighter-rouge">None</code>
+    <ul>
+      <li>Ensure there is  a linear device-mapper target on top of the <code class="language-plaintext highlighter-rouge">lvm2</code> volume</li>
+    </ul>
+  </li>
+  <li>For volumes with <code class="language-plaintext highlighter-rouge">migration_status</code> <code class="language-plaintext highlighter-rouge">target:UUID</code>
+    <ul>
+      <li>Find the source volume according to the UUID in <code class="language-plaintext highlighter-rouge">migration_status</code> <code class="language-plaintext highlighter-rouge">target:UUID</code></li>
+      <li>RPC to <code class="language-plaintext highlighter-rouge">create_export</code> on remote host for the source volume</li>
+      <li>Attach the source volume by initiating a connection to the target on the source</li>
+      <li>Create a <code class="language-plaintext highlighter-rouge">clone</code> target on top of the new volume referencing the metadata, source and destination device</li>
+      <li>If <code class="language-plaintext highlighter-rouge">migration_status</code> of the source volume is <code class="language-plaintext highlighter-rouge">migrating</code>
+        <ul>
+          <li>enable hydration</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>For volumes with <code class="language-plaintext highlighter-rouge">status</code> <code class="language-plaintext highlighter-rouge">maintenance</code> and <code class="language-plaintext highlighter-rouge">migrations_status</code> <code class="language-plaintext highlighter-rouge">starting</code> or <code class="language-plaintext highlighter-rouge">migrating</code>
+    <ul>
+      <li>Ensure the volume is exported</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="demo-setup">Demo setup</h1>
+
+<p>The following commands may be used to showcase the creation and transferal using the mechanisms described above.</p>
+
+<ul>
+  <li>Create two virtual machines with an additional disk</li>
+</ul>
+
+<p>On both nodes:</p>
+
+<ul>
+  <li>Create an <code class="language-plaintext highlighter-rouge">lvm</code> physical volume on the additional device, e.g.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pvcreate /dev/sdb
+</code></pre></div>    </div>
+  </li>
+  <li>Create a volume group on the physical volume, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vgcreate vg0 /dev/sdb
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>On the first node:</p>
+
+<ul>
+  <li>Create a demo volume on the volume group, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lvcreate --size 5G -n volume-1234 vg0
+</code></pre></div>    </div>
+  </li>
+  <li>Add a linear device-mapper target on top of the <code class="language-plaintext highlighter-rouge">lv</code>, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup create volume-1234-handle --table "0 10477568 linear /dev/vg0/volume-1234 0"
+</code></pre></div>    </div>
+  </li>
+  <li>Optionally: Add some random data, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkfs.xfs /dev/mapper/volume-1234-handle
+mount /dev/mapper/volume-1234-handle /mnt
+dd if=/dev/random of=/mnt/foo bs=1M count=1024
+sync
+sha256sum /mnt/foo
+umount /mnt
+</code></pre></div>    </div>
+  </li>
+  <li>Export the target via iSCSI, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tgtadm --lld iscsi --op new --mode target --tid 1 -T iqn.2024-04.tech.osism:volume-1234
+tgtadm --lld iscsi --mode logicalunit --op new --tid 1 --lun 1 -b /dev/mapper/volume-1234-handle
+tgtadm --lld iscsi --mode logicalunit --op update --tid 1 --lun 1 --params readonly=1
+tgtadm --lld iscsi --mode target --op bind --tid 1 -I ALL
+tgtadm --lld iscsi --mode target --op show
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>On the second node:</p>
+
+<ul>
+  <li>Create a volume to hold the data, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lvcreate --size 5G -n volume-1234 vg0
+</code></pre></div>    </div>
+  </li>
+  <li>Add a linear device-mapper target on top of the <code class="language-plaintext highlighter-rouge">lv</code>, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup create volume-1234-handle --table "0 10477568 linear /dev/vg0/volume-1234 0"
+</code></pre></div>    </div>
+  </li>
+  <li>Create a logical volume to hold the <code class="language-plaintext highlighter-rouge">dm-clone</code> metadata, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lvcreate --size 1G -n volume-1234-meta vg0
+</code></pre></div>    </div>
+  </li>
+  <li>Initiate the iSCSI connection, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iscsiadm -m discovery -t sendtargets -p 192.168.122.60
+iscsiadm -m node --login --targetname iqn.2024-04.tech.osism:volume-1234
+</code></pre></div>    </div>
+  </li>
+  <li>Load a <code class="language-plaintext highlighter-rouge">dm-clone</code> target instead of the linear target, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup suspend volume-1234-handle
+dmsetup load volume-1234-handle --table "0 10477568 clone /dev/vg0/volume-1234-meta /dev/vg0/volume-1234 /dev/sdc 8 1 no_hydration"
+dmsetup resume volume-1234-handle
+</code></pre></div>    </div>
+  </li>
+  <li>Start using the <code class="language-plaintext highlighter-rouge">dm-clone</code> target immediately, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mount /dev/mapper/volume-1234-handle /mnt
+dd if=/dev/random of=/mnt/bar bs=1M count=1024
+sha256sum /mnt/foo
+sha256sum /mnt/bar
+</code></pre></div>    </div>
+  </li>
+  <li>Enable hydration of the <code class="language-plaintext highlighter-rouge">dm-clone</code> target, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup message volume-1234-handle 0 enable_hydration
+</code></pre></div>    </div>
+  </li>
+  <li>Check the status of the <code class="language-plaintext highlighter-rouge">dm-clone</code> target:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup status
+</code></pre></div>    </div>
+  </li>
+  <li>Once all extends are local, load a linear target again, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup suspend volume-1234-handle
+dmsetup load volume-1234-handle --table "0 10477568 linear /dev/vg0/volume-1234 0"
+dmsetup resume volume-1234-handle
+</code></pre></div>    </div>
+  </li>
+  <li>Remove the metadata <code class="language-plaintext highlighter-rouge">lv</code>, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lvremove -y vg0/volume-1234-meta
+</code></pre></div>    </div>
+  </li>
+  <li>Terminate the iSCSI connection, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iscsiadm -m node --logout --targetname iqn.2024-04.tech.osism:volume-1234
+iscsiadm -m node --op=delete
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>On the first node:</p>
+
+<ul>
+  <li>
+    <p>Stop the iSCSI export, e.g.:
+```
+tgtadm –lld iscsi –mode target –op unbind –tid 1 -I ALL
+tgtadm –lld iscsi –mode logicalunit –op delete –tid 1 –lun 1</p>
+  </li>
+  <li>Remove the linear device mapper target, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dmsetup remove volume-1234-handle
+</code></pre></div>    </div>
+  </li>
+  <li>Remove the source <code class="language-plaintext highlighter-rouge">lv</code>, e.g.:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lvremove -y vg0/volume-1234
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="benchmarks-of-the-demo-setup">Benchmarks of the demo setup</h2>
+
+<p>The following benchmarks show the influence of the meta data device on the random 4k write speed. The test setup is a virtual machine with virtio-scsi disks backend by raw files. The clone is setup between local <code class="language-plaintext highlighter-rouge">lvm2</code> devices.
+The local benchmarks show a drop to about one third of the base line 4k random write IOPS when using an <code class="language-plaintext highlighter-rouge">lvm2</code> volume on the source disk as metadata device. For comparison, putting the metadata on a ZRAM device yields no measurable drop in 4k random write performance.
+The benchmarks on a remote node where the source is exported via ISCSI and the meta data is written to a ZRAM device shows no drop in random 4k write IOPS as it would be expected since only local storage is involved. The random 4k read IOPS show a sharp drop due to being remote over the ISCSI protocol.</p>
+
+<p>Note that due to its ephemeral nature a ZRAM device is not recommended for production use cases. It is used here to show case the influence of the meta data device speed. However, the results show that production setups would probably benefit from using dedicated NVMes for meta data storage.</p>
+
+<h3 id="baseline">Baseline</h3>
+
+<p>Benchmarks of the source volume locally</p>
+
+<h4 id="random-4k-writes">Random 4k writes</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com01:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randwrite -runtime=60 -filename=/dev/mapper/vg0-volume--1234
+test: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [w(1)][100.0%][w=5465KiB/s][w=1366 IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=3240: Sat Jun  1 15:58:06 2024
+  write: IOPS=1375, BW=5502KiB/s (5634kB/s)(322MiB/60001msec); 0 zone resets
+    slat (usec): min=4, max=259, avg=11.65, stdev= 7.09
+    clat (usec): min=312, max=8516, avg=714.14, stdev=164.99
+     lat (usec): min=317, max=8523, avg=725.93, stdev=167.56
+    clat percentiles (usec):
+     |  1.00th=[  359],  5.00th=[  424], 10.00th=[  644], 20.00th=[  668],
+     | 30.00th=[  685], 40.00th=[  701], 50.00th=[  717], 60.00th=[  725],
+     | 70.00th=[  742], 80.00th=[  766], 90.00th=[  799], 95.00th=[  832],
+     | 99.00th=[ 1106], 99.50th=[ 1450], 99.90th=[ 1795], 99.95th=[ 1958],
+     | 99.99th=[ 7570]
+   bw (  KiB/s): min= 5240, max= 5712, per=100.00%, avg=5505.12, stdev=100.03, samples=119
+   iops        : min= 1310, max= 1428, avg=1376.28, stdev=25.01, samples=119
+  lat (usec)   : 500=5.98%, 750=67.98%, 1000=24.66%
+  lat (msec)   : 2=1.33%, 4=0.02%, 10=0.03%
+  cpu          : usr=0.34%, sys=1.57%, ctx=165058, majf=0, minf=10
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=0,82529,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+  WRITE: bw=5502KiB/s (5634kB/s), 5502KiB/s-5502KiB/s (5634kB/s-5634kB/s), io=322MiB (338MB), run=60001-60001msec
+</code></pre></div></div>
+
+<h4 id="random-4k-reads">Random 4k reads</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com01:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randread -runtime=60 -filename=/dev/mapper/vg0-volume--1234
+test: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [r(1)][100.0%][r=111MiB/s][r=28.3k IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=13731: Sat Jun  1 16:29:11 2024
+  read: IOPS=27.3k, BW=107MiB/s (112MB/s)(5120MiB/47966msec)
+    slat (usec): min=2, max=110, avg= 3.68, stdev= 1.45
+    clat (nsec): min=301, max=1126.9k, avg=32586.49, stdev=12584.72
+     lat (usec): min=21, max=1130, avg=36.32, stdev=13.66
+    clat percentiles (usec):
+     |  1.00th=[   23],  5.00th=[   24], 10.00th=[   26], 20.00th=[   28],
+     | 30.00th=[   29], 40.00th=[   30], 50.00th=[   32], 60.00th=[   33],
+     | 70.00th=[   35], 80.00th=[   36], 90.00th=[   39], 95.00th=[   43],
+     | 99.00th=[   63], 99.50th=[   74], 99.90th=[  277], 99.95th=[  306],
+     | 99.99th=[  355]
+   bw (  KiB/s): min=95432, max=131840, per=100.00%, avg=109325.39, stdev=8206.01, samples=95
+   iops        : min=23858, max=32960, avg=27331.35, stdev=2051.50, samples=95
+  lat (nsec)   : 500=0.01%, 750=0.01%
+  lat (usec)   : 4=0.01%, 10=0.01%, 20=0.01%, 50=97.63%, 100=2.15%
+  lat (usec)   : 250=0.08%, 500=0.14%, 750=0.01%
+  lat (msec)   : 2=0.01%
+  cpu          : usr=3.58%, sys=16.91%, ctx=1310726, majf=0, minf=12
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=1310720,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=107MiB/s (112MB/s), 107MiB/s-107MiB/s (112MB/s-112MB/s), io=5120MiB (5369MB), run=47966-47966msec
+</code></pre></div></div>
+
+<h3 id="benchmark-of-a-local-clone-with-metadata-on-lvm2-volume">Benchmark of a local clone with metadata on <code class="language-plaintext highlighter-rouge">lvm2</code> volume</h3>
+
+<h4 id="random-4k-writes-1">Random 4k writes</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com01:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randwrite -runtime=60 -filename=/dev/mapper/volume-1234-clone-handle
+test: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [w(1)][100.0%][w=2094KiB/s][w=523 IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=3118: Sat Jun  1 15:54:49 2024
+  write: IOPS=519, BW=2080KiB/s (2130kB/s)(122MiB/60002msec); 0 zone resets
+    slat (usec): min=2, max=277, avg= 5.80, stdev= 6.91
+    clat (usec): min=1576, max=14149, avg=1915.57, stdev=279.42
+     lat (usec): min=1579, max=14269, avg=1921.53, stdev=280.86
+    clat percentiles (usec):
+     |  1.00th=[ 1696],  5.00th=[ 1745], 10.00th=[ 1762], 20.00th=[ 1795],
+     | 30.00th=[ 1827], 40.00th=[ 1844], 50.00th=[ 1876], 60.00th=[ 1909],
+     | 70.00th=[ 1926], 80.00th=[ 1975], 90.00th=[ 2040], 95.00th=[ 2147],
+     | 99.00th=[ 3064], 99.50th=[ 3326], 99.90th=[ 3916], 99.95th=[ 8586],
+     | 99.99th=[ 9634]
+   bw (  KiB/s): min= 2008, max= 2176, per=100.00%, avg=2080.94, stdev=33.12, samples=119
+   iops        : min=  502, max=  544, avg=520.24, stdev= 8.28, samples=119
+  lat (msec)   : 2=85.54%, 4=14.36%, 10=0.09%, 20=0.01%
+  cpu          : usr=0.08%, sys=0.51%, ctx=31572, majf=0, minf=9
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=0,31199,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+  WRITE: bw=2080KiB/s (2130kB/s), 2080KiB/s-2080KiB/s (2130kB/s-2130kB/s), io=122MiB (128MB), run=60002-60002msec
+</code></pre></div></div>
+
+<h4 id="random-4k-reads-1">Random 4k reads</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com01:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randread -runtime=60 -filename=/dev/mapper/volume-1234-handle
+test: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [r(1)][100.0%][r=104MiB/s][r=26.6k IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=15863: Mon Jun  3 05:57:42 2024
+  read: IOPS=27.2k, BW=106MiB/s (111MB/s)(5116MiB/48142msec)
+    slat (usec): min=2, max=123, avg= 3.73, stdev= 1.40
+    clat (nsec): min=271, max=882821, avg=32723.17, stdev=11044.33
+     lat (usec): min=20, max=886, avg=36.51, stdev=12.17
+    clat percentiles (usec):
+     |  1.00th=[   23],  5.00th=[   28], 10.00th=[   29], 20.00th=[   29],
+     | 30.00th=[   30], 40.00th=[   33], 50.00th=[   34], 60.00th=[   34],
+     | 70.00th=[   35], 80.00th=[   35], 90.00th=[   36], 95.00th=[   37],
+     | 99.00th=[   47], 99.50th=[   69], 99.90th=[  273], 99.95th=[  285],
+     | 99.99th=[  318]
+   bw (  KiB/s): min=104464, max=117576, per=100.00%, avg=108874.50, stdev=2902.41, samples=96
+   iops        : min=26116, max=29394, avg=27218.67, stdev=725.57, samples=96
+  lat (nsec)   : 500=0.01%
+  lat (usec)   : 10=0.01%, 20=0.01%, 50=99.18%, 100=0.62%, 250=0.05%
+  lat (usec)   : 500=0.14%, 1000=0.01%
+  cpu          : usr=3.01%, sys=18.29%, ctx=1309719, majf=0, minf=13
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=1309696,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=106MiB/s (111MB/s), 106MiB/s-106MiB/s (111MB/s-111MB/s), io=5116MiB (5365MB), run=48142-48142msec
+</code></pre></div></div>
+
+<h3 id="benchmark-of-a-local-clone-with-metadata-on-zram">Benchmark of a local clone with metadata on ZRAM</h3>
+
+<h4 id="random-4k-writes-2">Random 4k writes</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com01:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randwrite -runtime=60 -filename=/dev/mapper/volume-1234-handle
+test: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [w(1)][100.0%][w=4960KiB/s][w=1240 IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=13608: Sat Jun  1 16:14:04 2024
+  write: IOPS=1478, BW=5913KiB/s (6055kB/s)(346MiB/60001msec); 0 zone resets
+    slat (nsec): min=1923, max=208986, avg=3724.87, stdev=4766.17
+    clat (usec): min=344, max=10388, avg=671.61, stdev=237.71
+     lat (usec): min=347, max=10470, avg=675.43, stdev=239.08
+    clat percentiles (usec):
+     |  1.00th=[  375],  5.00th=[  392], 10.00th=[  396], 20.00th=[  412],
+     | 30.00th=[  441], 40.00th=[  717], 50.00th=[  750], 60.00th=[  775],
+     | 70.00th=[  799], 80.00th=[  824], 90.00th=[  865], 95.00th=[  906],
+     | 99.00th=[ 1156], 99.50th=[ 1500], 99.90th=[ 1926], 99.95th=[ 2024],
+     | 99.99th=[ 7832]
+   bw (  KiB/s): min= 4624, max= 9728, per=100.00%, avg=5924.30, stdev=1891.50, samples=119
+   iops        : min= 1156, max= 2432, avg=1481.08, stdev=472.87, samples=119
+  lat (usec)   : 500=34.29%, 750=16.58%, 1000=47.48%
+  lat (msec)   : 2=1.60%, 4=0.04%, 10=0.02%, 20=0.01%
+  cpu          : usr=0.35%, sys=0.72%, ctx=90151, majf=0, minf=10
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=0,88703,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+  WRITE: bw=5913KiB/s (6055kB/s), 5913KiB/s-5913KiB/s (6055kB/s-6055kB/s), io=346MiB (363MB), run=60001-60001msec
+</code></pre></div></div>
+
+<h4 id="random-4k-reads-2">Random 4k reads</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com01:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randread -runtime=60 -filename=/dev/mapper/volume-1234-handle
+test: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [r(1)][100.0%][r=119MiB/s][r=30.5k IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=13734: Sat Jun  1 16:30:16 2024
+  read: IOPS=31.1k, BW=122MiB/s (128MB/s)(5116MiB/42051msec)
+    slat (usec): min=2, max=156, avg= 3.76, stdev= 1.55
+    clat (nsec): min=271, max=2064.1k, avg=28045.10, stdev=10645.06
+     lat (usec): min=18, max=2068, avg=31.85, stdev=11.88
+    clat percentiles (usec):
+     |  1.00th=[   22],  5.00th=[   23], 10.00th=[   25], 20.00th=[   27],
+     | 30.00th=[   28], 40.00th=[   28], 50.00th=[   28], 60.00th=[   29],
+     | 70.00th=[   29], 80.00th=[   29], 90.00th=[   30], 95.00th=[   32],
+     | 99.00th=[   40], 99.50th=[   43], 99.90th=[  273], 99.95th=[  285],
+     | 99.99th=[  326]
+   bw (  KiB/s): min=119528, max=132216, per=100.00%, avg=124645.90, stdev=2967.37, samples=84
+   iops        : min=29882, max=33054, avg=31161.51, stdev=741.82, samples=84
+  lat (nsec)   : 500=0.01%
+  lat (usec)   : 10=0.01%, 20=0.01%, 50=99.66%, 100=0.16%, 250=0.05%
+  lat (usec)   : 500=0.13%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 4=0.01%
+  cpu          : usr=4.25%, sys=19.24%, ctx=1309700, majf=0, minf=13
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=1309696,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=122MiB/s (128MB/s), 122MiB/s-122MiB/s (128MB/s-128MB/s), io=5116MiB (5365MB), run=42051-42051msec
+</code></pre></div></div>
+
+<h3 id="benchmarks-of-a-clone-on-a-remote-node-with-source-disk-exported-via-iscsi-and-meta-data-on-zram">Benchmarks of a clone on a remote node with source disk exported via ISCSI and meta data on ZRAM</h3>
+
+<h4 id="random-4k-writes-3">Random 4k writes</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com02:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randwrite -runtime=60 -filename=/dev/mapper/volume-1234-handle
+test: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [w(1)][100.0%][w=4828KiB/s][w=1207 IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=13249: Mon Jun  3 06:22:28 2024
+  write: IOPS=1252, BW=5008KiB/s (5129kB/s)(293MiB/60001msec); 0 zone resets
+    slat (usec): min=2, max=156, avg= 4.12, stdev= 4.86
+    clat (usec): min=592, max=11421, avg=793.32, stdev=166.41
+     lat (usec): min=594, max=11551, avg=797.55, stdev=168.01
+    clat percentiles (usec):
+     |  1.00th=[  668],  5.00th=[  693], 10.00th=[  709], 20.00th=[  725],
+     | 30.00th=[  742], 40.00th=[  758], 50.00th=[  775], 60.00th=[  791],
+     | 70.00th=[  807], 80.00th=[  832], 90.00th=[  873], 95.00th=[  906],
+     | 99.00th=[ 1369], 99.50th=[ 1598], 99.90th=[ 1975], 99.95th=[ 2278],
+     | 99.99th=[ 7832]
+   bw (  KiB/s): min= 4784, max= 5360, per=100.00%, avg=5012.24, stdev=114.56, samples=119
+   iops        : min= 1196, max= 1340, avg=1253.06, stdev=28.64, samples=119
+  lat (usec)   : 750=34.40%, 1000=63.55%
+  lat (msec)   : 2=1.96%, 4=0.06%, 10=0.03%, 20=0.01%
+  cpu          : usr=0.30%, sys=0.71%, ctx=75869, majf=0, minf=10
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=0,75126,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+  WRITE: bw=5008KiB/s (5129kB/s), 5008KiB/s-5008KiB/s (5129kB/s-5129kB/s), io=293MiB (308MB), run=60001-60001msec
+</code></pre></div></div>
+
+<h4 id="random-4k-reads-3">Random 4k reads</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@com02:~# fio -ioengine=libaio -sync=1 -direct=1 -invalidate=1 -name=test -bs=4k -iodepth=1 -rw=randread -runtime=60 -filename=/dev/mapper/volume-1234-handle
+test: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+Jobs: 1 (f=1): [r(1)][100.0%][r=28.9MiB/s][r=7398 IOPS][eta 00m:00s]
+test: (groupid=0, jobs=1): err= 0: pid=13270: Mon Jun  3 06:24:09 2024
+  read: IOPS=8113, BW=31.7MiB/s (33.2MB/s)(1902MiB/60001msec)
+    slat (usec): min=2, max=118, avg= 4.32, stdev= 1.97
+    clat (usec): min=15, max=1580, avg=118.39, stdev=57.89
+     lat (usec): min=20, max=1626, avg=122.77, stdev=58.94
+    clat percentiles (usec):
+     |  1.00th=[   22],  5.00th=[   23], 10.00th=[   25], 20.00th=[  109],
+     | 30.00th=[  120], 40.00th=[  126], 50.00th=[  130], 60.00th=[  135],
+     | 70.00th=[  139], 80.00th=[  143], 90.00th=[  153], 95.00th=[  161],
+     | 99.00th=[  202], 99.50th=[  253], 99.90th=[  889], 99.95th=[ 1123],
+     | 99.99th=[ 1303]
+   bw (  KiB/s): min=22160, max=142592, per=100.00%, avg=32493.65, stdev=20557.03, samples=119
+   iops        : min= 5540, max=35648, avg=8123.41, stdev=5139.26, samples=119
+  lat (usec)   : 20=0.01%, 50=15.38%, 100=3.30%, 250=80.80%, 500=0.32%
+  lat (usec)   : 750=0.06%, 1000=0.05%
+  lat (msec)   : 2=0.08%
+  cpu          : usr=1.16%, sys=6.48%, ctx=486795, majf=0, minf=13
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, &gt;=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, &gt;=64=0.0%
+     issued rwts: total=486792,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=31.7MiB/s (33.2MB/s), 31.7MiB/s-31.7MiB/s (33.2MB/s-33.2MB/s), io=1902MiB (1994MB), run=60001-60001msec
+</code></pre></div></div>
+
+<h1 id="references">References</h1>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:dm_clone">
+      <p>https://docs.kernel.org/admin-guide/device-mapper/dm-clone.html <a href="#fnref:dm_clone" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:live_migration">
+      <p>https://specs.openstack.org/openstack/nova-specs/specs/pike/approved/cinder-new-attach-apis.html <a href="#fnref:live_migration" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:vol_migration">
+      <p>https://docs.openstack.org/cinder/latest/contributor/migration.html <a href="#fnref:vol_migration" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:driver_ref">
+      <p>https://docs.openstack.org/cinder/latest/contributor/drivers.html <a href="#fnref:driver_ref" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+
+<h2 id="about">
+  
+    Über den Autor
+  
+</h2>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="5f54ba7ef99d">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/website/assets/0850aa-0b39df6084655bd34ee2171fc953f08f1971c803ebc38aa859fb74d11befb4306a98a6826b0ec527c13d88895265a04ee4f3095208a8389ba159b011683d1837.webp" mask="url(#5f54ba7ef99d)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Jan Horstmann</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">Senior Cloud Engineer @ <a href="https://osism.tech/" target="_blank">OSISM GmbH</a></div>
+        <div class="mt-2">Jan is a Senior Cloud Engineer with an interest in IT infrastructure, Linux, OpenStack and its surrounding ecosystem.
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+<div class="me-2 mb-2">
+    <a class="btn btn-mail" href="mailto:horstmann@osism.tech"><i class="fa fa-envelope fa-lg"></i></a>
+</div>
+
+
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/janhorstmann"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-matrix" target="_blank" href="https://matrix.to/#/@horstmann.osism.tech:regio.chat"><i class="fa fa-matrix-org fa-lg"></i></a>
+</div>
+
+          <div class="ms-md-auto pe-3"><a href="/website/de/members/jhorstmann" class="btn btn-outline-primary" role="button">Community-Profil &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" src="/website/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS und das Logo sind geschützte Marken der Open Source Business Alliance e.V. — Sonstige Marken sind Eigentum ihrer jeweiligen Besitzer.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Impressum" href="/website/de/imprint/">Impressum</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Datenschutzerklärung" href="/website/de/dataprotection/">Datenschutzerklärung</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>
