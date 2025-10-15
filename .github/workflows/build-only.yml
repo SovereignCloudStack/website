@@ -11,10 +11,10 @@ jobs:
     name: "Build website"
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
       id: checkout
     # Use GitHub Node Action to install node_modules
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-node@v6
       with:
         node-version: 16
     - run: npm install
