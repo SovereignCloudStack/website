@@ -10,7 +10,7 @@ jobs:
     name: "Build and deploy website"
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     # Use GitHub Node Action to install node_modules
     - uses: actions/setup-node@v6
       with:
