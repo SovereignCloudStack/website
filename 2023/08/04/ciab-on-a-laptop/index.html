@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>Cloud in a Box (CiaB) – running on a laptop | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="Cloud in a Box (CiaB) – running on a laptop | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Preface" />
+<meta property="og:description" content="Preface" />
+<link rel="canonical" href="https://scs.community/2023/08/04/ciab-on-a-laptop/" />
+<meta property="og:url" content="https://scs.community/2023/08/04/ciab-on-a-laptop/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://scs.community/assets/images/blog/ciab/first-a800ca269a1ae06c12ddac96efe57cddb73447def2ce71cc219f3389237a25ed6e4ac35617f9f7e7d775a24e928378a846b820e2231bf59e233838c24167f224.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-08-04T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://scs.community/assets/images/blog/ciab/first-a800ca269a1ae06c12ddac96efe57cddb73447def2ce71cc219f3389237a25ed6e4ac35617f9f7e7d775a24e928378a846b820e2231bf59e233838c24167f224.jpg" />
+<meta property="twitter:title" content="Cloud in a Box (CiaB) – running on a laptop" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-23T22:57:45+00:00","datePublished":"2023-08-04T00:00:00+00:00","description":"Preface","headline":"Cloud in a Box (CiaB) – running on a laptop","image":"blog/ciab/first.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://scs.community/2023/08/04/ciab-on-a-laptop/"},"url":"https://scs.community/2023/08/04/ciab-on-a-laptop/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://scs.community/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Matomo -->
+  <script>
+    if (typeof(Storage) !== 'undefined') {
+    	if (localStorage.getItem('matomoTrackingEnabled') === null) {
+    		localStorage.setItem('matomoTrackingEnabled', 'true');
+    	}
+    }
+  </script>
+  <script>
+    if (localStorage.getItem('matomoTrackingEnabled') !== 'false') {
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['disableCookies']);
+      _paq.push(["setDoNotTrack", true]);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://matomo.scs.community/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    }
+  </script>
+  <!-- End Matomo Code -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" integrity="sha512-oLi5cq8OY/Co/5GZRWjRUMDnbeMMCa4e2EBWkvoxP6DVNEWGEqinHpp+Tc7VNJz/SB+9hj4ZuYttQftIgc1ivg==" crossorigin="anonymous" src="/assets/vendor/jquery/jquery-a0b8b972af0e63f0a8ff91994568d150c0e76de30c09ae1ed8405692fa313fa0d534458612a8a71e9a7e4dced5349cff481fbd863e19b98b6d41fb4881cd62be.js"></script>
+  <script type="text/javascript" integrity="sha512-2OEU5OYjrPJLs8PL9qkG+9N+DbHBqvWjEjlU76rnStYvZRzoY8k2i5/tcG1gjw/jwoGhuYkXm02Rc3f6HGU+tw==" crossorigin="anonymous" src="/assets/vendor/bootstrap/js/bootstrap.bundle-d8e114e4e623acf24bb3c3cbf6a906fbd37e0db1c1aaf5a3123954efaae74ad62f651ce863c9368b9fed706d608f0fe3c281a1b989179b4d917377fa1c653eb7.js"></script>
+  <!-- Lighbox -->
+  <script type="text/javascript" integrity="sha512-AsyFLM7qdMK2Gt1rVM/4wsSCeOPaCbE8KqQbSruCpez+OtU/5fEtpyjAtZkPBqKjpf6cnC6970DZNCHKwLJnzA==" crossorigin="anonymous" src="/assets/vendor/lightbox-02cc852cceea74c2b61add6b54cff8c2c48278e3da09b13c2aa41b4abb82a5ecfe3ad53fe5f12da728c0b5990f06a2a3a5fe9c9c2ebdef40d93421cac0b267cc.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/lightbox-0184be351f33358fce8415b3f8bdda50e58ee86ff1de0b37d00a26f602e14fc61896ad0bb90662299dea49767123bfe2c724163867b097f5f92cc1785e324cad.css" integrity="sha512-AYS+NR8zNY/OhBWz+L3aUOWO6G/x3gs30Aom9gLhT8YYlq0LuQZiKZ3qSXZxI7/ixyQWOGewl/X5LMF4XjJMrQ==" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/main-b8cf68a63f9b26ea819f67d4e3a173489daf6c6c7de17051d360d8e72b41c67279d732bd19f4a04210326db8595205b80d704f640296bb5f5f63bedc042df118.css" integrity="sha512-uM9opj+bJuqBn2fU46FzSJ2vbGx94XBR02DY5ytBxnJ51zK9GfSgQhAybbhZUgW4DXBPZAKWu19fY77cBC3xGA==" crossorigin="anonymous">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/pygments-css/zenburn-b9247179f996de88844d73acaa60564a48db30aa0fec022f80b7641b41d45140625b657433da3bd722f68ba2fed77bfaa94972b9eed09c77a427e04a1707917e.css" integrity="sha512-uSRxefmW3oiETXOsqmBWSkjbMKoP7AIvgLdkG0HUUUBiW2V0M9o71yL2i6L+13v6qUlyue7QnHekJ+BKFweRfg==" crossorigin="anonymous">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Discover our new web page</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Discover SCS
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/about/">About SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/use/">Use SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/contribute/">Contribute to SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/partners/">Service partners</a></li>
+                  
+                    <li><a class="dropdown-item" href="/members/">Community members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/news/">
+                News
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/events/">
+                Events
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/jobs/">
+                Open positions
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/tenders/">
+                Public tenders
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Documentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/2023/08/04/ciab-on-a-laptop/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/de/2023/08/04/ciab-on-a-laptop/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/2023/08/04/ciab-on-a-laptop/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/de/2023/08/04/ciab-on-a-laptop/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" integrity="sha512-dJ6jTJGSpX7cNvESuSrC7duEfT5HZD83SIs9FIybmKcgIVwMjhetDTg3yQVq5v6uPNyTHtNukRsrG2GiC0F95g==" crossorigin="anonymous" src="/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          One platform — standardized, built and operated by many.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" integrity="sha512-YV5ImgTZnx6tg6b6ZNdt/JbR9qhEjuVFcJnivI/dsjU3n2YH6Reg/PtRn/GQKsVZYhPXM5759IoJJarysSIe4A==" crossorigin="anonymous" src="/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" integrity="sha512-pLkpIB9zq0WFODZFm2htuY8LLjcYlABYjOmSpRxsWdNxg16TzQ1biR8F/Odda4c4PD/BLVLG1WDFYC6zK/WLkA==" crossorigin="anonymous" src="/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" integrity="sha512-+/oBMqq6OUbZcOlC/ZjvQDq7EvjzRMwwh/y0ZuI0JLDX3d2biyzkl531jkt45I8EGetyHg8Fmb2J32tGwoccQw==" crossorigin="anonymous" src="/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>Cloud in a Box (CiaB) – running on a laptop</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  <svg height="80" width="80">
+    
+    
+    <mask id="bcfa6943ae9b">
+      <rect width="80" height="80" fill="white"/>
+    </mask>
+    <mask id="dc2ec0e7082c">
+        <circle cx="40" cy="40" r="40" fill="white"/>
+    </mask>
+    <image x="0" y="0" height="80" width="80" xlink:href="/assets/39fba3-90122a82ddf7f51ea635738d5460fe49cd2176f78b236ec7fe6ed68e5606c84597f7538ad69497d04323e96d57dbe1c9af924043ad6efdf82d1d94f0643bdc2c.webp"
+       mask="url(#dc2ec0e7082c)" 
+    ></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Robert Holling</small>
+			<small>
+	August 04, 2023
+
+</small>
+		</div>
+	</div>
+</div>
+
+<h2 id="preface">Preface</h2>
+
+<p>First of all, a brief explanation why I’m doing this at all: In a project in my main job we are expanding our infrastructure from a pure OpenStack environment to a Sovereign Cloud Stack compatible and then hopefully certified environment. And also, this in advance: the errors and problems described are more or less based on the fact that I tried the CiaB deployment on a laptop with unsuitable hardware or configuration. But, I just wanted a proof of concept.</p>
+
+<p>So, now to the first question: is this possible? A complete cloud stack in one box? In short: Yes, it is possible. Thanks to the work of the [OSISM] (https://osism.tech/de) team, two ISOs are available for download on the <a href="https://docs.scs.community/docs">SCS documentation page</a>. One for SATA/SAS and one for NVMe drives.
+What interested me and made me curious while on vacation was another question: Does this also work on a single laptop? And again: Yes, it is possible! Well, the answer is a bit long, and if you want, you can take the shortcut directly to my successful <strong>attempt #4</strong>.</p>
+
+<h2 id="attempt-1">attempt #1</h2>
+
+<p>I made my first attempt with my work device, a Lenovo P16 Gen1 laptop. With this mobile workstation I essentially had the following hardware at my disposal:</p>
+
+<ul>
+  <li>an Intel Core i9 -12950HX processor with 16 cores</li>
+  <li>64GB DDR5 RAM</li>
+  <li>two internal NVMe drives, which I didn’t want to use, so:</li>
+  <li>1 x external SATA HDD, 1TB@7.2k rpm</li>
+  <li><strong>No</strong> RJ45 network connection (only WiFi or LAN via USB adapter)</li>
+</ul>
+
+<p>That last point seems worth mentioning, as I think it may have caused some deployment issues. Incidentally, this miracle weapon on a laptop has a monstrous resolution that drove me crazy at first… More on that in a moment.</p>
+
+<p>So, first download an ISO. You can find two ISOs for SAS/SATA or NVMe <a href="https://docs.scs.community/docs/testbed/cloud-in-a-box/doc/quickstart">here</a>. In my case, the SAS/SATA ISO was copied to a bootable USB stick, the external disk connected via USB, and… There was my first problem: one USB stick, one external disk via USB, and one network adapter via USB. This results in three required USB ports; however, the P16 only has two USB ports, So, I had to work with an external USB hub. To what extent this could have led to later problems, I can’t say at the moment because I don’t have the time to investigate.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-qADKJpoa4GwS3ayW7+V83bc0R97yznHMIZ8ziSN6Je1uSsNWF/n359d1ok6Sg3ioRrgg4iMb9Z4jODjCQWfyJA==" crossorigin="anonymous" src="/assets/images/blog/ciab/first-a800ca269a1ae06c12ddac96efe57cddb73447def2ce71cc219f3389237a25ed6e4ac35617f9f7e7d775a24e928378a846b820e2231bf59e233838c24167f224.jpg" />
+</figure>
+<p class="fw-semibold text-center">1st attempt in the caravan during vacation, sorry for my wife.</p>
+
+<p>It is perhaps also worth mentioning that I did my experiments in the caravan without a fixed internet connection. I.e. I have an LTE router through which all updates and images have to be downloaded. If you’ve ever been to Germany, you might have an idea of ​​what that means 🙁</p>
+
+<p>Now to the resolution of my laptop – that drove me crazy at the beginning. 3840 x 2400 pixels are basically really good and nice, if you want to watch videos at HD. But if the console of the installed system (Ubuntu) has entered a standard cursor resolution of 8×16 pixels in the config, then even with reading glasses I can hardly read it. It could have been displayed in Aramaic instead of English, I wouldn’t have been able to read it anyway 🙁</p>
+
+<p>So, during the deployment, I open a second terminal (Alt+F2), log in and quickly change the line FONT_SIZE=”8x16” to FONT_SIZE=”16x32” in the file /etc/default/console-setup. There is also an option to change the resolution of the screen, but this was faster for me. Run the sudo setupcon command, and lo and behold: I can now read what’s going on… thank god, I’m back on track.</p>
+
+<p>After the Ubuntu installation, the system shuts down, the boot USB stick must be removed and then the laptop can be switched on again (everything is described on the SCS documentation page). Now the actual deployment takes place, which in my configuration and via LTE can take up to two hours. This is certainly significantly faster with a server and wired internet. But I’m on vacation, So, what the heck? Time doesn’t matter.</p>
+
+<p>The deployment just flies across my screen – thanks to the larger font, I can finally read along. Heaps of system messages appear in different colors, all of which have a meaning. Green is ok, blue or purple means skipped, yellow means changed:</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-52QR8DcpLmjclzEOZa0YAG7z5y0SJ+7euehYj4bqRXkG95/55taSNC64eA/NEsDPGWvg3hC5Z1E/3Ai2U1wq5Q==" crossorigin="anonymous" src="/assets/images/blog/ciab/second-e76411f037292e68dc97310e65ad18006ef3e72d1227eedeb9e8588f86ea457906f79ff9e6d692342eb8780fcd12c0cf196be0de10b967513fdc08b6535c2ae5.jpg" />
+</figure>
+
+<p>And then this came:</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-HpMc3DoGJ/MqdeG0zi7yKZRc0ezZXE4qL88OqORdQH/+xIZk0d/3xppFjCB/FBw+nY4s/YDc3Xu6qlKpHlxfYA==" crossorigin="anonymous" src="/assets/images/blog/ciab/third-1e931cdc3a0627f32a75e1b4ce2ef229945cd1ecd95c4e2a2fcf0ea8e45d407ffec48664d1dff7c69a458c207f141c3e9d8e2cfd80dcdd7bbaaa52a91e5c5f60.jpg" />
+</figure>
+
+<p>Does red just mean important now, or is that what I think it is?! It is it. An error – what else.</p>
+
+<p>First of all: the deployment process went through completely, even if some red messages for failure appeared here and there. The first photo at the top of this post shows also my second laptop, which I now want to use to log into the freshly deployed system via SSH. So, take out the second laptop, switch it on and: nothing. […] in short: a laptop like this simply won’t boot without RAM. Damned, and here is no one but me to blame. When I removed it there and why is beyond my knowledge, but it annoys me tremendously. Since I’m neither at home nor in the lab, I’m stuck for a moment.</p>
+
+<p>Then it occurs to me that I still have my SmartPhone. Well, the display might not be designed for browsing large log files for hours, but I’m just too curious. So, I try with my smartphone (a Xiaomi T10Pro) what I would have done with my second laptop, open the console app and log in to the deployed system via SSH.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-JFQRRDYWfuii1WxL9/hz2k7Kwz5or4XTtkgsMW9G3/yqJnCEN7eA1102rIacXWBdQ6atidBz+6acF6nolC/LkQ==" crossorigin="anonymous" src="/assets/images/blog/ciab/fourth-2454114436167ee8a2d56c4bf7f873da4ecac33e68af85d3b6482c316f46dffcaa26708437b780d75d36ac869c5d605d43a6ad89d073fba69c17a9e8942fcb91.jpg" />
+</figure>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-e6TCBQjwmX28CyEUMBmVyHUmHkZDrAAp4ZkRZp4FZSmyqLfQ/xsMPB+STNIdrTdnc0YT7Hm9HLw41fX6NnrRlA==" crossorigin="anonymous" src="/assets/images/blog/ciab/fifth-7ba4c20508f0997dbc0b2114301995c875261e4643ac0029e19911669e056529b2a8b7d0ff1b0c3c1f924cd21dad3767734613ec79bd1cbc38d5f5fa367ad194.jpg" />
+</figure>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-ZTgYxn7ijG7e6JK7Peg3briipQKdo7JEXAHgNtXLPW3ufC5cRNEBtIIRk9zrJEPCDWkCNvhncjCncSx2fUHiNw==" crossorigin="anonymous" src="/assets/images/blog/ciab/sixth-653818c67ee28c6edee892bb3de8376eb8a2a5029da3b2445c01e036d5cb3d6dee7c2e5c44d101b4821193dceb2443c20d690236f8677230a7712c767d41e237.jpg" />
+</figure>
+
+<p>There is a config file for Wireguard in the /home/dragon/ directory. Using scp I copy and rename the file, so that I can download it to my smartphone via SFTP. It all works so far. I installed Wireguard as an app anyway, since we also use it in our data center. So, the config imported, VPN switched on and lo and behold: the tunnel is up!</p>
+
+<p>Up to this point, I’m pretty enthusiastic, knowing quite well that the disillusionment – due to the previous mistakes – will follow at some point. The SCS documentation page lists a number of URLs that direct me to my front-ends. So much for the theory, now comes (my flawed) practice. I click on the link to the Homer service and an overview page prepared by OSISM opens with further links. I added the OpenStack Horizon Login, also.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-H2CE0PxEHIDYrPzQmn3HfRIrs7JFc19or0JyGG7zLaGvcliX8uL3h/7CgfT51fzwFwS9yj2eFaK6/5kN6oKFjg==" crossorigin="anonymous" src="/assets/images/blog/ciab/seventh-1f6084d0fc441c80d8acfcd09a7dc77d122bb3b245735f68af4272186ef32da1af725897f2e2f787fec281f4f9d5fcf01704bdca3d9e15a2baff990dea82858e.jpg" />
+</figure>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-mDmNj54XP0PTeTwkwPkuf1hWGl/icC3bcRAdx61ttASCGT8PduDNotLEdbRHR7jFEpxIbsG29Hn5vLqKNXKt9A==" crossorigin="anonymous" src="/assets/images/blog/ciab/eighth-98398d8f9e173f43d3793c24c0f92e7f58561a5fe2702ddb71101dc7ad6db40482193f0f76e0cda2d2c475b44747b8c5129c486ec1b6f479f9bcba8a3572adf4.jpg" />
+</figure>
+
+<p>I can’t help but smile a little that I’ve come this far. What the individual services mean, more on that later. First of all, the Ara Web UI is important to me because I can view the Ansible log files here.</p>
+
+<p>Once again: I work with my smartphone, not with a laptop or anything else…!</p>
+
+<p>But back to the Ara front-end and Ansible log files. In this attempt, the first seven jobs ran through, the eighth threw up errors. Kolla-Ansible could not (correctly) deploy openvswitch. The container kolla_toolbox was not running. A total of 14 jobs failed, which caused me to start the whole thing again.</p>
+
+<h2 id="attempt-2">attempt #2</h2>
+
+<p>It’s already the next day, the bootstrap and deployment process takes a long time with the comparatively weak hardware (to the server).</p>
+
+<p>I haven’t changed anything on the actual setup, I’ll just run the whole process again to see if I get smarter this time. The process is basically the same as the first time. However, the symptoms of possible errors are different, which annoys me as a computer scientist. Incomprehensible, or even worse: irreproducible behavior is a nightmare. I don’t want to go into the details here. Overall, however, this made me come to the conclusion that another attempt in this hardware constellation makes no sense.</p>
+
+<p>In wise foresight, the moment I realized the lack of RAM in my second laptop, I ordered the appropriate RAM for the campsite. When it arrives the next day, I quickly install it in the laptop and start attempt number three.</p>
+
+<h2 id="attempt-3">attempt #3</h2>
+
+<p>Another day of my summer vacation 2023 has dawned. By the way, it’s still raining – or again – I’ve lost track. But still better than the hurricane two weeks ago, when the caravan was hit so hard by the gusts of wind that the walls shook. It would certainly not have been advisable to use conventional hard drives under this rugged conditions, despite SMART and other things. But whatever, that’s not what today is about.</p>
+
+<p>I have now made my third attempt with my second laptop. A Lenovo P52, also a mobile workstation with the following features:</p>
+
+<ul>
+  <li>an Intel Core i7-8850H @2.6GHz processor with six cores (12 threads)</li>
+  <li>64GB DDR4 RAM</li>
+  <li>one internal SATA 6G HDD 2TB Seagate Barracuda @5400 rpm</li>
+  <li>one RJ45 GbE connection onboard</li>
+</ul>
+
+<p>I immediately notice that the whole process is slower than before. But what is it? Well, it’s a Core i7, not an i9, it’s only six cores, not 16. RAM is 64GB in both cases, even if DDR5 RAM is used before and DDR4 RAM is now used. During the first step, the bootstrap and installation of Ubuntu, it doesn’t matter that much, but at the latest when the deployment starts in step 2, it becomes clear to me: The LED for hard disk access no longer goes out. That doesn’t change until I go to bed at 11:30 p.m. Sometime during the night after deployment is complete, the laptop turns off.</p>
+
+<p>I checked the syslog again and saw that the system shut down around 01:30 at night.</p>
+
+<p>The next day has dawned and for breakfast around 07:30 am I switch on my laptop with the fresh CiaB deployment. In the first few minutes, I noticed that the kernel was throwing several messages saying it couldn’t access resources and would be waiting… There it was again: the HDD LED was permanently lit. I let the laptop be, take care of other things and check the device at irregular intervals. However, the HDD LED doesn’t change anymore until such time as I unlock the system and hard press the power button for more than five seconds. That’s around 4:30 p.m. in the afternoon, and the HDD LED is on continuously until then – no joke.</p>
+
+<p>OK, I get it: don’t use a 5,400 rpm SATA disk. So, let’s see what else I have with me, here on the island. As an alternative, I dig out a 1TB SATA SSD and swap it for the 2TB HDD. And so, I arrive at my attempt number four. As you can here see a random test on three different HDDs/SSDs, I made during idle times.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-sLytHdSPrLb5mJ73cTlVVwloDTgpSuHNucnk/55gzbZqpItc+QJcR8F1YoxEoXodjaU+XGPjLtP6sQSKxn++fA==" crossorigin="anonymous" src="/assets/images/blog/ciab/ninth-b0bcad1dd48facb6f9989ef77139555709680d38294ae1cdb9c9e4ff9e60cdb66aa48b5cf9025c47c175628c44a17a1d8da53e5c63e32ed3fab1048ac67fbe7c.jpg" />
+</figure>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-RnjFQ6XXb6vi1px1eFY3fD9TnODk8UK5DUP3oGuM/jLH2cGIPR2TOC3U/Cc9vFltEDeRG0hwuNTQVJMPEUGQnA==" crossorigin="anonymous" src="/assets/images/blog/ciab/tenth-4678c543a5d76fabe2d69c757856377c3f539ce0e4f142b90d43f7a06b8cfe32c7d9c1883d1d93382dd4fc273dbc596d1037911b4870b8d4d054930f1141909c.jpg" />
+</figure>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-g4ncIsyGyQVaoEg8LZJeHgUaY7tGmxLC08j2189zmhmh7dSqFAlK8Fci190csotAYSj0eHu4xsaYmKPk40QIQA==" crossorigin="anonymous" src="/assets/images/blog/ciab/eleventh-8389dc22cc86c9055aa0483c2d925e1e051a63bb469b12c2d3c8f6d7cf739a19a1edd4aa14094af05722d7dd1cb28b406128f4787bb8c6c69898a3e4e3440840.jpg" />
+</figure>
+
+<h2 id="attempt-4--succeded">attempt #4 – succeded</h2>
+
+<p>Same setup as attempt number three; except for the HDD that was swapped for an SSD. Lo and behold: everything runs much more smoothly and significantly faster than before. Ergo: SATA HDDs are not an alternative for this project (not really a surprise).</p>
+
+<p>I reboot at 20:13:56 (first syslog entry) and boot from the USB stick. Since the SSD also has a SATA interface, I don’t need to change the ISO image either. Less than two hours later I get the system message Jul 27 22:04:26 manager systemd[1]: Reached target Cloud-init target.</p>
+
+<p>Excitement mounts because all I saw was one of those unloved red messages scrolling across the screen. So, let’s see what came out this time.</p>
+
+<p>From my work device I log into the machine via SSH: ssh dragon@192.168.8.131 is that in my case. In the $HOME directory of the user dragon is the file wireguard-client.conf, which I rename (strictly speaking, I use the scp command to copy the file within the $HOME directory and assign a new name (ciab.conf)) and transfer then via SFTP to the target directory /etc/wireguard/ on my computer. I close the SSH and SFTP connection because everything else runs via a VPN tunnel using Wireguard. Wireguard is already installed on my work device (take a look <a href="https://www.wireguard.com/install/">here</a>, if you have to install WG on your system), So, I set up my tunnel in the terminal with the command sudo wg-quick up ciab.</p>
+
+<p>Now it’s getting exciting: my first check is on the URL of the Homer service, the operatiosn dahsboard: https://homer.services.in-a-box.cloud – and… whoops the page is there. I won’t go into the special features of the certificates and some browsers here, that would be worth a separate entry.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-jhciK5E2TLS5uDijAHMgnTqb3mLCHNNVxkyRVOG2fPUNZqP8DA3AMa0oDugKW7kKUZZD9RdjhF6sVLMRQSqEAw==" crossorigin="anonymous" src="/assets/images/blog/ciab/twelveth-8e17222b91364cb4b9b838a30073209d3a9bde62c21cd355c64c9154e1b67cf50d66a3fc0c0dc031ad280ee80a5bb90a519643f51763845eac54b311412a8403.jpg" />
+</figure>
+
+<p>From this page I go to the various dashboards and front ends. An overview of the URLS, the default users and passwords can be found on the <a href="https://docs.scs.community/docs">Sovereign Cloud Stack documentation page</a>.</p>
+
+<p><a href="https://ara.readthedocs.io/en/stable-0.x/index.html">ARA</a>. In this web UI I can find the reports on the Ansible playbooks to get a first impression of how the deployment went. In my case of attempt number four, only one playbook was throwing an error.</p>
+
+<p>I opened an issue on <a href="https://github.com/osism/cloud-in-a-box/issues/109">Github</a> and received a prompt response. From this answer I could see that it is obviously not a real problem.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-f3vKx6wenpmA/5X/Nn2paDEn0szapSwc0SNyDr0lpQo3oI2JsQE9ZRzsDX37KBbRl3j2QP4/4MtD6/bMJfrf8w==" crossorigin="anonymous" src="/assets/images/blog/ciab/thirteenth-7f7bcac7ac1e9e9980ff95ff367da9683127d2ccdaa52c1cd123720ebd25a50a37a08d89b1013d651cec0d7dfb2816d19778f640fe3fe0cb43ebf6cc25fadff3.jpg" />
+</figure>
+
+<p>With this dashboard, you can drill down to the results of the respective playbooks. <a href="https://flower.readthedocs.io/en/latest/#">Flower</a>. Is a dashbord to visualize distributed task queues.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-EKv/6GldP1RcrcGQsY3cpkfr8sRyhfyGjqU26CaN9AyX1jblE4l4eJcAgmu2+vP04dMatmrdGsa+Iene/i6yeg==" crossorigin="anonymous" src="/assets/images/blog/ciab/fourteenth-10abffe8695d3f545cadc190b18ddca647ebf2c47285fc868ea536e8268df40c97d636e5138978789700826bb6faf3f4e1d31ab66add1ac6be21e9defe2eb27a.jpg" />
+</figure>
+
+<p><a href="https://grafana.com/">Grafana</a>. Visualization of (almost) any data (sources), the de facto standard in this area. No dashboards or graphics are defined, so your own creativity is required here. Everyone certainly has different ideas about what should be visualized and how.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-dYPHoFsr6x+kTlMq+gPmCJtliAcN3EiKuXH8RjaiHsKp3fBpGo3T6DWAemvt/OzI5VWkvO9Npu/SariRn2fslQ==" crossorigin="anonymous" src="/assets/images/blog/ciab/fifteenth-7583c7a05b2beb1fa44e532afa03e6089b6588070ddc488ab971fc4636a21ec2a9ddf0691a8dd3e835807a6bedfcecc8e555a4bcef4da6efd26ab8919f67ec95.jpg" />
+</figure>
+
+<p><a href="https://docs.openstack.org/horizon/latest/">Horizon</a>. The OpenStack web UI, and particularly interesting for me and our concerns (besides the OpenStack CLI client). Accordingly, I tested this front-end more intensively. That is, creating, changing and deleting networks, instances, routers, drives, etc. I was surprised by the speed at which everything happens. Well, starting an Ubuntu server instance takes a few seconds, after all there aren’t that many resources available (because of limitations by my laptop). But it works – I love it!</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-p3c2h4MDFx5T8pPoLEBoMXuaSdnZE9rnRFeHNx1Gk75xGxg+fsQaUTpGAEPcOxxslPvMjMY2VsZfOFeL5AZlBw==" crossorigin="anonymous" src="/assets/images/blog/ciab/sixteenth-a77736878303171e53f293e82c4068317b9a49d9d913dae7445787371d4693be711b183e7ec41a513a460043dc3b1c6c94fbcc8cc63656c65f38578be4066507.jpg" />
+</figure>
+
+<p><a href="https://opensearch.org/">OpenSearch</a>. Don’t get confused, in my version, the Homer dashboard still says Kibana on the button, but a page with OpenSearch opens. Kibana has been replaced by OpenSearch, but the name in Homer has not yet been adjusted.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-ApFH4y1ChjFjQ8Bmp45eaB9lNzDPf2V2jWyo7xdwhYXHOQq4mBZyYxspIppgIvtS9Rjh+Mmbx/LH51PmHgcoZg==" crossorigin="anonymous" src="/assets/images/blog/ciab/seventeenth-029147e32d4286316343c066a78e5e681f653730cf7f65768d6ca8ef17708585c7390ab8981672631b29229a6022fb52f518e1f8c99bc7f2c7e753e61e072866.jpg" />
+</figure>
+
+<p><a href="https://docs.netbox.dev/en/stable/">Netbox</a>. The solution for network management, IPAM, DCIM, etc.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-hjyhS33Ah3KTc+SdoCc7CVvK/nhtrGEc1S+3bd9LBwfxl94rQE9/lwwBdrSTJyqARSNK158mprFzoUuJI5kxaA==" crossorigin="anonymous" src="/assets/images/blog/ciab/eighteenth-863ca14b7dc087729373e49da0273b095bcafe786dac611cd52fb76ddf4b0707f197de2b404f7f970c0176b493272a8045234ad79f26a6b173a14b8923993168.jpg" />
+</figure>
+
+<p><a href="https://www.netdata.cloud/">Netdata</a>. Monitoring with a whole bunch of predefined graphics in the dashboard. Very extensive and great frontend.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-IsjqPSLYrve+Z7i+ZSQdSRaCUh1sobDk3Hy4IFEkay5BE+BmrftuFFAZeQxpiNrZK1nIISCFG3zisa6hvhwGgA==" crossorigin="anonymous" src="/assets/images/blog/ciab/nineteenth-22c8ea3d22d8aef7be67b8be65241d491682521d6ca1b0e4dc7cb82051246b2e4113e066adfb6e145019790c6988dad92b59c82120851b7ce2b1aea1be1c0680.jpg" />
+</figure>
+
+<p><a href="https://www.phpmyadmin.net/">phpMyAdmin</a>. I don’t know how far this needs to be explained. If you want to know more about it, click on the link.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-lOYgYzexyug9n0OqHb2eOT8duxhSkMojtEjoInDXPZ9t/v+c2no+PaQFVp30/XZnjhhbJVoM/LSw33Oc6L6O9w==" crossorigin="anonymous" src="/assets/images/blog/ciab/twentieth-94e6206337b1cae83d9f43aa1dbd9e393f1dbb185290ca23b448e82270d73d9f6dfeff9cda7a3e3da405569df4fd76678e185b255a0cfcb4b0df739ce8be8ef7.jpg" />
+</figure>
+
+<p><a href="https://www.rabbitmq.com/">RabbitMQ</a>. The most widely used open source message broker.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-dCbGcDwmMzhVNUG5jMgiNEkAaf9mqvFe136AqzaEuyA5AVj8loKUQQWjEIDzUh0C7OJZ9wK5TdEngrha/DZnYg==" crossorigin="anonymous" src="/assets/images/blog/ciab/twentifirst-7426c6703c263338553541b98cc82234490069ff66aaf15ed77e80ab3684bb20390158fc9682944105a31080f3521d02ece259f702b94dd12782b85afc366762.jpg" />
+</figure>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>So, what have I learned in the last few days, or what is my conclusion?</p>
+
+<ul>
+  <li>the CiaB deployment works, even on my laptop</li>
+  <li>it’s not enough to simply randomly plug hardware together</li>
+  <li>I was able to test the OpenStack layer; everything I tested, worked</li>
+  <li>I haven’t been able to fully test the container layer with kubernetes yet, due to a lack of personal skills (my homework is clear)</li>
+  <li>so, if you want to get a first impression of the Sovereign Cloud Stack (in a box) quickly, you have a good opportunity with CiaB – just do it!</li>
+</ul>
+
+<p class="lead fw-semibold">Thank you for reading this blog post!</p>
+
+
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" integrity="sha512-GzGAK+B6sTfSNz880uJokj1yfuHRm2tXff87cWEDRd4IjDuDyQ9miXoh5S6E+gPB700cpRk7hlm5yVNZRqoBVA==" crossorigin="anonymous" src="/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Imprint" href="/imprint/">Imprint</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Data Protection Statement" href="/dataprotection/">Data Protection Statement</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>

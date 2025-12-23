@@ -1,0 +1,1230 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://scs.community/feed/security.xml" rel="self" type="application/atom+xml" /><link href="https://scs.community/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-12-23T23:02:35+00:00</updated><id>https://scs.community/feed/security.xml</id><title type="html">Sovereign Cloud Stack | Security</title><subtitle>Sovereign Cloud Stack combines the best of cloud computing in one unified standard. SCS is built, backed, and operated by an active open-source community worldwide. Together we put users in control of their data by enabling cloud operators through a decentralized and federated cloud stack – leveraging true digital sovereignty to foster trust in clouds.</subtitle><entry><title type="html">Sovereign Cloud Stack Security Advisory Image Processing in Ironic (CVE-2024-44082)</title><link href="https://scs.community/security/2024/09/07/cve-2024-44082/" rel="alternate" type="text/html" title="Sovereign Cloud Stack Security Advisory Image Processing in Ironic (CVE-2024-44082)" /><published>2024-09-07T00:00:00+00:00</published><updated>2025-12-23T22:57:45+00:00</updated><id>https://scs.community/security/2024/09/07/cve-2024-44082</id><content type="html" xml:base="https://scs.community/security/2024/09/07/cve-2024-44082/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>Dan Smith and Julia Kreger of Red Hat and Jay Faulkner of G-Research
+noticed a vulnerability in image processing for Ironic, in which a
+specially crafted image could be used by an authenticated user to
+exploit undesired behaviors in qemu-img, including possible unauthorized
+access to potentially sensitive data.</p>
+
+<p>The vulnerability has been assigned <a href="https://cve.report/CVE-2024-44082">CVE-2024-44082</a>.</p>
+
+<p>Similar issues have been found and addressed in other projects of OpenStack before:</p>
+
+<ul>
+  <li><a href="https://scs.community/security/2024/07/02/cve-2024-32498/">SCS Security Advisory on arbitrary file access through QCOW2 external data file (CVE-2024-32498)</a></li>
+  <li><a href="https://scs.community/security/2024/07/23/cve-2024-40767/">SCS Security Advisory on incomplete QCOW2 and VMDK image handling protections (CVE-2024-40767)</a></li>
+</ul>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>In the reference implementation of <a href="https://scs.community/">Sovereign Cloud Stack</a>,
+Ironic is shipped and thus installations are advised to update the ironic images used.</p>
+
+<h3 id="updating-ironic-images">Updating ironic images</h3>
+
+<p>If the OpenStack Ironic service is not used, it is not necessary to execute these steps.</p>
+
+<ol>
+  <li>update the OSISM manager to version <code class="language-plaintext highlighter-rouge">7.1.3</code> as usual (detailed instructions in
+the <a href="https://osism.tech/docs/guides/upgrade-guide/manager">Upgrade Guide for the OSISM Manager</a>)</li>
+  <li>Pull all Ironic images in advance with <code class="language-plaintext highlighter-rouge">osism apply -a pull ironic</code></li>
+  <li>Upgrade the Ironic service with <code class="language-plaintext highlighter-rouge">osism apply -a upgrade ironic</code></li>
+</ol>
+
+<p>In release 7.1.3 of OSISM, only the images of the OpenStack Ironic services were rebuilt.
+It is not necessary to upgrade other OpenStack services after updating the manager.</p>
+
+<h2 id="scs-provider-status">SCS provider status</h2>
+
+<p>To our knowledge none of the providers that are using the SCS reference implementation
+are making use of Ironic and as such are not affected by this vulnerability.</p>
+
+<h2 id="embargo">Embargo</h2>
+
+<p>The issue has been reported by Dan Smith, Julia Kreger and Jay Faulkner in private to
+the OpenStack  Vulnerability Management Team.
+The reporters and upstream developers have worked together to address
+the issue with fixes and an embargo date
+has been set to Wednesday, 2024-09-04, 1600 UTC.
+At this point in time, the patches will get merged and an OpenStack Security Advisory
+(<a href="https://security.openstack.org/ossa/OSSA-2024-004.html">OSSA-2024-003</a>) will
+be published. The issue is tracked in OpenStack issue
+<a href="https://launchpad.net/bugs/2071740">#2071740</a>, which should be
+publically accessible after the advisory has been published.</p>
+
+<p>Under the used responsible disclosure approach, the information was shared with
+a select group of trustable users of OpenStack, so they can prepare updates and
+protect their user data in time for the publication.</p>
+
+<h2 id="mitigation-and-fixes">Mitigation and Fixes</h2>
+
+<p>The fixed code allows Ironic and the Ironic-Python-Agent (IPA) to pre-screen images
+before passing them to qemu-img. You should patch both of them because in some popular
+deployment configurations, it is possible for images to bypass the
+Ironic conductor for more efficient image downloads.
+OSISM will publish (SCS R6.1.3) with fixed Ironic components this week.</p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>The authors would like to thank the reporter, the upstream
+OpenStack developers and the OpenStack Vulnerability Management Team for the
+responsible reporting, careful analysis, fixing, testing and professional
+handling of the issue and the OSISM team for additional analysis.</p>
+
+<h2 id="sovereign-cloud-stack-security-contact">Sovereign Cloud Stack Security Contact</h2>
+
+<p>SCS security contact is <a href="mailto:security@scs.community">security@scs.community</a>, as published on
+<a href="https://scs.community/.well-known/security.txt">https://scs.community/.well-known/security.txt</a>.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.1, 2024-09-01, 08:15 CEST.</li>
+  <li>Add link to CVE-2024-40767 and mention updates, v0.2, 2024-09-03, 07:45 CEST.</li>
+  <li>Add instructions for updates to OSISM 7.1.3, v0.9, 2024-09-06, 22:45 CEST.</li>
+  <li>Publication, v1.0, 2024-09-07, 17:30 CEST.</li>
+</ul>]]></content><author><name>[&quot;Christian Berendt&quot;, &quot;Kurt Garloff&quot;, &quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://scs.community/default-card.jpg" /><media:content medium="image" url="https://scs.community/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS Security Advisory on incomplete QCOW2 and VMDK image handling protections (CVE-2024-40767)</title><link href="https://scs.community/security/2024/07/23/cve-2024-40767/" rel="alternate" type="text/html" title="SCS Security Advisory on incomplete QCOW2 and VMDK image handling protections (CVE-2024-40767)" /><published>2024-07-23T00:00:00+00:00</published><updated>2025-12-23T22:57:45+00:00</updated><id>https://scs.community/security/2024/07/23/cve-2024-40767</id><content type="html" xml:base="https://scs.community/security/2024/07/23/cve-2024-40767/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>OpenStack supports users to upload custom VM images in a number of formats
+to be used for creating Virtual Machines. The simplest is a raw copy of a harddisk,
+while other formats such as QCOW2 and VMDK are more advanced in being compressed
+and allowing for embedding additional information. They also support referencing
+other files. The latter feature needs to be controlled by OpenStack to avoid
+exposing sensitive files. OpenStack thus disallows such external references
+for customer images. The protections were found to be incomplete before which
+lead to 
+<a href="https://scs.community/de/security/2023/01/24/cve-2022-47951/">CVE-2022-47951</a>
+and
+<a href="https://scs.community/de/security/2024/07/02/cve-2024-32498/">CVE-2024-32498</a>.</p>
+
+<p>Unfortunately, the last fixes with CVE-2024-32498 still were incomplete:
+Arnaud Morin (OVH) reported a vulnerability in Nova. By supplying a raw format
+image which is actually a specially crafted QCOW2 image with a backing file
+path or VMDK flat image with a descriptor file path, an authenticated user may
+convince systems to return a copy of the referenced file’s contents from the
+server resulting in unauthorized access to potentially sensitive data. All Nova
+deployments are affected.</p>
+
+<p>The vulnerability has been assigned <a href="https://cve.report/CVE-2024-40767">CVE-2024-40767</a>.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>The <a href="https://scs.community/">Sovereign Cloud Stack</a> reference implementation
+(by <a href="https://osism.tech/">OSISM</a>) runs these services in containers and thus
+most files from the hypervisor’s file system are not directly accessible from
+inside the container via this vulnerability. However, this depends on the
+service inside the container. Some services have access to data from the
+hypervisor or they contain sensitive data themselves (e.g. credentials to
+connect to other services), and thus they are accessible by a potential
+attacker. They have also access to log files from the services which may
+expose sensitive data.</p>
+
+<p><em>To abuse this vulnerability, the attacker must be an authenticated
+user of the platform.</em></p>
+
+<p>We were <em>not</em> able to exploit this vulnerability in systems that included
+the hotfix patches for 
+<a href="https://scs.community/de/security/2024/07/02/cve-2024-32498/">CVE-2024-32498</a>
+in our testing.
+Nova did treat the VMDK and QCOW images declared as raw as raw (as did
+Cinder, but Cinder is not suspected of mistreating them).
+Boot disks created by Nova from the crafted VMDK and QCOW2 images contain
+the raw contents of the images, without their external references being
+resolved and thus without exposing any external content.
+This is probably caused by SCS <em>not</em> changing the default to
+<code class="language-plaintext highlighter-rouge">use_cow_images=False</code>. We currently are not aware of working exploits
+without that (non-default) setting.</p>
+
+<p>We would argue that mislabeled images should better be rejected early, as
+the investigation chain may otherwise be confused which has the potential
+to cause exploitable vulnerabilities. So we still highly recommend to patch
+the weakness soon.</p>
+
+<p>Operators that are using <code class="language-plaintext highlighter-rouge">use_cow_images=False</code> in their nova config are
+advised to apply the fixes urgently.</p>
+
+<h2 id="embargo">Embargo</h2>
+
+<p>The issue has been reported to the OpenStack Vulnerability Management Team in
+private. The reporters and upstream developers have worked together to address
+the issue with fixes and an embargo date
+has been set to Tuesday, 2024-07-23, 15:00 UTC (17:00 CEST). At this point in
+time, the patches will get merged and the OpenStack Security Advisory
+<!--TODO: Fix reference!-->
+(<a href="https://security.openstack.org/ossa/OSSA-2024-002.html">OSSA-2024-002</a>) will
+be published. The issue is tracked in OpenStack issue
+<a href="https://bugs.launchpad.net/nova/+bug/2071734">#2071734</a>, which should become
+publically accessible after the lift of the embargo and the publication
+of this advisory.</p>
+
+<p>Under the used responsible disclosure approach, the information was shared with
+a select group of trustable users of OpenStack, so they can prepare updates and
+protect their user data in time for the publication.</p>
+
+<h2 id="mitigation-and-fixes">Mitigation and Fixes</h2>
+
+<p>Temporary workarounds that would disable image uploads for QCOW2
+and VMDK formats are not desirable and incomplete, as images can also
+be created from volumes, which would also have to be blocked.
+The complexity of doing all the changes exceeds the complexity of
+deploying the fixes.
+A better workaround would be to <em>undo</em> the setting of <code class="language-plaintext highlighter-rouge">use_cow_images=False</code>
+in the nova configuration, as this stops all known exploitable code paths
+from being used.</p>
+
+<p>There are patches from the upstream OpenStack developers available. They work
+by rejecting images in Nova where contents and the claimed format do not match
+and require that a format inspector is available prior to further processing
+them. This provides effective protection against confusing Nova’s image
+handling.</p>
+
+<p>Note that the upstream changes also include improvements to the handling
+of ISO images from Jens Harbott (OSISM), which have further tighten the
+inspection and which have been merged and backported upstream already without
+having received a separate advisory (due to not having fixed known exploitable
+situations).</p>
+
+<p>The reference implementation for the IaaS layer of Sovereign Cloud Stack
+is provided by the OSISM project – the OSISM team normally builds the
+artifacts in a completely public process. To avoid waiting for a few
+hours to have all image builds (nova-compute containers)
+completed and tested after the disclosure date,
+the OSISM project has built private images beforehand which we have tested
+to protect against all known scenarios in which these image files are used.
+These images were handed to our SCS operators a few hours ahead of time
+(without a detailed description) to allow them to protect their infrastructure.</p>
+
+<p>Instructions to install the fixed containers (hotfix on top of
+<a href="https://osism.tech/de/docs/release-notes/">OSISM 7.0.x/OSISM 7.1.0</a>):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+# Override nova-compute image in your configuration repository:
+cat &gt;environments/kolla/images.yml &lt;&lt;EOT
+---
+my_registry_kolla: osism.harbor.regio.digital
+my_namespace2: osism-20240723
+nova_compute_tag: build-20240717-stable-2023.2
+nova_compute_image: "{{ my_registry_kolla }}/{{ my_namespace2 }}/nova-compute"
+EOT
+</code></pre></div></div>
+
+<p>Now, the nova compute image will be downloaded and rolled out on all nova compute nodes:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>osism apply <span class="nt">-a</span> pull nova <span class="nt">-l</span> compute     <span class="c"># optional</span>
+osism apply <span class="nt">-a</span> refresh-containers nova <span class="nt">-l</span> compute
+</code></pre></div></div>
+<p>If you are not yet on R6 (OSISM 7.0.x), replace <code class="language-plaintext highlighter-rouge">stable-2023.2</code> with the version you are on 
+(e.g. <code class="language-plaintext highlighter-rouge">stable-2023.1</code> if you are on R5 (OSISM 6.x).</p>
+
+<p>Note that the above instructions do NOT contain cinder and glance images; they should
+have been fixed already with the installation of fixes for CVE-2024-32498 or with
+the rollout of OSISM 7.1.0.</p>
+
+<p>The deployment will have the following user-visible effects:</p>
+<ul>
+  <li>VM (compute service) operations will not be available for some seconds.</li>
+</ul>
+
+<p>Most users won’t notice this. Please note that running workloads will not be
+affected at all.</p>
+
+<p>After the upstream patches have been merged in the hours after the disclosure
+date, OSISM will build, test and publish an official 7.1.1 release
+containing the updated containers (nova-compute, glance-api, cinder-volume)
+as well as a fix for octavia-api. Please refer to the
+<a href="https://osism.tech/docs/release-notes/osism-7/">OSISM release notes</a>.
+You can upgrade from this hotfix toiOSISM 7.1.1 using the regular upgrade mechanism.</p>
+
+<p>If your exposure is low (e.g. private cloud or <em>not</em> using <code class="language-plaintext highlighter-rouge">use_cow_images=False</code>)
+you may decide to wait for the regular 7.1.1 and go there directly from 7.x.</p>
+
+<p>Warning: If you are still on OSISM 7.0.x (not 7.1.x yet) and create the <code class="language-plaintext highlighter-rouge">images.yml</code> as
+described here, <code class="language-plaintext highlighter-rouge">osism apply -a pull</code> and <code class="language-plaintext highlighter-rouge">osism apply -a refresh-containers</code>
+will use the base 7.0.x containers with just the single <code class="language-plaintext highlighter-rouge">nova_compute</code>
+override which would make you vulnerable to the glance and cinder based
+attacks from CVE-2024-32498 again.
+We recommend to avoid this by using the latest 7.1.0 release.
+If you can’t, you can either ensure you avoid pulling and refreshing containers
+other than the <code class="language-plaintext highlighter-rouge">nova_compute</code> one or you construct a combined <code class="language-plaintext highlighter-rouge">images.yml</code> from the
+description in <a href="https://scs.community/de/security/2024/07/02/cve-2024-32498/">CVE-2024-32498</a>
+and the above section. The latter would ensure you have all needed image overrides for
+both CVEs.</p>
+
+<h2 id="have-my-systems-been-compromised">Have my systems been compromised?</h2>
+
+<p>Providers that are unable to patch this issue on the day of the release
+and use <code class="language-plaintext highlighter-rouge">use_cow_images=False</code> in their nova configuration
+need to consider the possibility of having been attacked. In this case,
+passwords/keys for internal communication should be considered to be
+leaked and will need to be rotated to reestablish the defense-in-depth
+lines. We recommend providers check for suspicious image operations
+(QCOW2 and VMDK image registrations, snapshots with QCOW2 signature) in
+their logs for the time after the embargo lift.
+In particular, every QCOW2 image that has been uploaded should be investigated
+for the datafile property; it should be assumed that images that have been
+registered and removed again contain the exploit.
+VMDK images with external Flatfile references (<code class="language-plaintext highlighter-rouge">createType="monolithicFlat"</code>)
+are suspicious as well. Evil images should also be pruned from the image cache.</p>
+
+<h2 id="patch-status-of-scs-clouds">Patch status of SCS clouds</h2>
+
+<p>Our publically known providers of SCS IaaS platforms have all been
+notified and have started to ensure that their <code class="language-plaintext highlighter-rouge">use_cow_images</code> setting
+does not expose them and have started the rollout of updated images which
+we were able to provide them privately a few hours ahead of time (without
+sharing all the details on the issue). We expect that none of them has
+any exploitable vulnerability left  open by the time this gets public.
+Please refer to their communication for precise information on the
+patch status.</p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>The authors would like to thank Arnaud Morin, Jens Harbott, the OpenStack
+developers and reviewers, testers and the OpenStack Vulnerability Management
+Team for the responsible reporting, careful analysis, fixing, testing and
+professional handling of the issue and the OSISM team for providing the fixed
+containers.</p>
+
+<h2 id="sovereign-cloud-stack-security-contact">Sovereign Cloud Stack Security Contact</h2>
+
+<p>SCS security contact is <a href="mailto:security@scs.community">security@scs.community</a>, as published on
+<a href="https://scs.community/.well-known/security.txt">https://scs.community/.well-known/security.txt</a>.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.1, 2024-07-20, 10:00 CEST.</li>
+  <li>More precise information on exploitability with <code class="language-plaintext highlighter-rouge">use_cow_images=False</code>, v0.2, 2024-07-20, 11:30 CEST.</li>
+  <li>Installation instructions, v0.3, 2024-07-20, 14:30 CEST.</li>
+  <li>Fix install instructions, v0.4, 2024-07-22, 17:45 CEST.</li>
+  <li>Escape jijna templates, v0.5, 2024-07-22, 18:30 CEST.</li>
+  <li>Move installation instructions into the fixes section, add combined install insns, v0.6, 2024-07-23, 15:15 CEST.</li>
+  <li>Replaced combined install instructions with a wraning, v0.7, 2024-07-23, 16:15 CEST.</li>
+  <li>Final review for pubication, v1.0, 2024-07-23, 17:00 CEST.</li>
+</ul>]]></content><author><name>[&quot;Kurt Garloff&quot;, &quot;Christian Berendt&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://scs.community/default-card.jpg" /><media:content medium="image" url="https://scs.community/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SCS Security Advisory on arbitrary file access through QCOW2 external data file (CVE-2024-32498)</title><link href="https://scs.community/security/2024/07/02/cve-2024-32498/" rel="alternate" type="text/html" title="SCS Security Advisory on arbitrary file access through QCOW2 external data file (CVE-2024-32498)" /><published>2024-07-02T00:00:00+00:00</published><updated>2025-12-23T22:57:45+00:00</updated><id>https://scs.community/security/2024/07/02/cve-2024-32498</id><content type="html" xml:base="https://scs.community/security/2024/07/02/cve-2024-32498/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>OpenStack supports users to upload custom VM images in a number of formats
+to be used for creating Virtual Machines. The simplest is a raw copy of a harddisk,
+while other formats such as QCOW2 and VMDK are more advanced in being compressed
+and allowing for embedding additional information. They also support referencing
+other files. The latter feature needs to be controlled by OpenStack to avoid
+exposing sensitive files. OpenStack thus disallows such external references
+for customer images. Or at least, it meant to.</p>
+
+<p>Martin Kaesberger has reported that the protection for QCOW2 was incomplete
+and allowed for an external datafile to slip through.</p>
+
+<p>By creating a QCOW2 file with this feature and registering it with the
+OpenStack image service, files from the host system within the Cinder, Nova and
+Glance containers can be exposed. This way, sensitive information can be
+exfiltrated (Information Disclosure).</p>
+
+<p>The vulnerability has been assigned <a href="https://cve.report/CVE-2024-32498">CVE-2024-32498</a>.</p>
+
+<p>This issue is similar in its effects to a VMDK specific vulnerability
+<a href="https://scs.community/de/security/2023/01/24/cve-2022-47951/">CVE-2022-47951</a>
+that was addressed 18 months ago.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>The <a href="https://scs.community/">Sovereign Cloud Stack</a> reference implementation
+(by <a href="https://osism.tech/">OSISM</a>) runs these services in containers and thus
+most files from the hypervisor’s file system are not directly accessible from
+inside the container via this vulnerability. However, this depends on the
+service inside the container. Some services have access to data from the
+hypervisor or they contain sensitive data themselves (e.g. credentials to
+connect to other services), and thus they are accessible by a potential
+attacker. They have also access to log files from the services which may
+expose sensitive data.</p>
+
+<p><em>To abuse this vulnerability, the attacker must be an authenticated
+user of the platform.</em></p>
+
+<p>We are able to reproduce this issue on unpatched platforms using the SCS
+reference implementation. The exploit consists in registering an offending
+QCOW2 file and then creating a volume from it which will leak information
+from a referenced file in the Cinder container on the host system.</p>
+
+<!--TODO: Search for ways to exploit this-->
+<p>Information that can be accessed this way are keys for database access or
+for talking to the storage system. While neither database nor storage are
+reachable by cloud users, the exposure of these secrets removes these
+protections for defense-in-depth. A single further exploit would now
+immediately lead to a massive privilege escalation.
+We have not found a way to use the exposed data to <em>directly</em> gain privileges
+(such as admin access to the IaaS cloud layer), but we can not exclude that
+highly skilled attackers can.</p>
+
+<p>In any case, this vulnerability is very severe and operators of OpenStack
+platforms are advised to deploy fixed versions as soon as possible.</p>
+
+<h2 id="embargo">Embargo</h2>
+
+<p>The issue has been reported to the OpenStack Vulnerability Management Team in
+private. The reporters and upstream developers have worked together to address
+the issue with fixes and an embargo date
+has been set to Tuesday, 2024-07-02, 15:00 UTC (17:00 CEST). At this point in
+time, the patches will get merged and the OpenStack Security Advisory
+<!--TODO: Fix reference!-->
+(<a href="https://security.openstack.org/ossa/OSSA-2024-001.html">OSSA-2024-001</a>) will
+be published. The issue is tracked in OpenStack issue
+<a href="https://bugs.launchpad.net/nova/+bug/2059809">#2059809</a>, which should become
+publically accessible after the lift of the embargo and the publication
+of this advisory.</p>
+
+<p>Under the used responsible disclosure approach, the information was shared with
+a select group of trustable users of OpenStack, so they can prepare updates and
+protect their user data in time for the publication.</p>
+
+<p>The reference implementation for the IaaS layer of Sovereign Cloud Stack
+is provided by the OSISM project – the OSISM team normally builds the
+artifacts in a completely public process. To avoid waiting for a few
+hours to have all image builds (nova-compute, glance-api and cinder-volume
+containers) completed and tested after the disclosure date,
+the OSISM project has built private images beforehand which we have tested
+to protect against all known scenarios in which these image files are used.
+These images were handed to our SCS operators a few hours ahead of time
+(without a detailed description) to allow them to protect their infrastructure.</p>
+
+<h2 id="mitigation-and-fixes">Mitigation and Fixes</h2>
+
+<p>A temporary workaround would be to disallow QCOW2 image registrations.
+Note however that images can also be created from volumes, not just via
+customer upload and volume snapshots with a QCOW2 signature might be
+misdetected as QCOW2 images prior to the fixes.</p>
+
+<p>There are patches from the upstream OpenStack developers available. They work
+by analyzing the QCOW2 images and refusing their usage if datafiles are being
+used. Such images will no longer be accepted and thus can no longer be used to
+exfiltrate sensitive files. The mitigation does <em>not</em> apply upon upload of
+such images (the Glance service just stores the image file without looking at
+it unless conversion is enabled), but upon usage. The mitigation thus applies
+to Glance, Cinder and Nova and protects against the conversion of offending
+images (Glance) and their use when creating VMs (Nova) or volumes (Cinder).</p>
+
+<p>We are able to confirm that the previously successful attacks are addressed
+by the fixes. QCOW2 files with datafile references are no longer converted
+by the image service (Glance) nor will existing images with such properties be
+used by the compute service (Nova) nor the Block Storage Service (Cinder).</p>
+
+<p>Instructions to install the fixed containers (hotfix on top of
+<a href="https://osism.tech/de/docs/release-notes/">OSISM 7.0.x</a>):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+# Override images in your configuration repository:
+cat &gt;environments/kolla/images.yml &lt;&lt;EOT
+---
+my_registry_kolla: osism.harbor.regio.digital
+my_namespace: osism-20240702
+
+cinder_tag: build-20240702-stable-20232
+cinder_volume_image: "{{ my_registry_kolla }}/{{ my_namespace }}/cinder-volume"
+cinder_scheduler_image: "{{ my_registry_kolla }}/{{ my_namespace }}/cinder-scheduler"
+cinder_backup_image: "{{ my_registry_kolla }}/{{ my_namespace }}/cinder-backup"
+cinder_api_image: "{{ my_registry_kolla }}/{{ my_namespace }}/cinder-api"
+
+glance_api_tag: build-20240702-stable-20232
+glance_api_image: "{{ my_registry_kolla }}/{{ my_namespace }}/glance-api"
+
+nova_tag: build-20240702-stable-20232
+nova_libvirt_tag: build-20240702-stable-20232
+nova_super_conductor_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-super-conductor"
+nova_libvirt_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-libvirt"
+nova_ssh_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-ssh"
+nova_novncproxy_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-novncproxy"
+nova_spicehtml5proxy_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-spicehtml5proxy"
+nova_serialproxy_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-serialproxy"
+nova_conductor_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-conductor"
+nova_compute_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-compute"
+nova_compute_ironic_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-compute-ironic"
+nova_scheduler_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-scheduler"
+nova_api_image: "{{ my_registry_kolla }}/{{ my_namespace }}/nova-api"
+EOT
+# Pull new containers, not used yet
+for cont in glance cinder nova; do
+  osism apply -a pull $cont
+done
+# Deploy and restart containers, the fixes will become effective now
+for cont in glance cinder nova; do
+  osism apply -a refresh-containers $cont
+done
+</code></pre></div></div>
+
+<p>If you are not on R6 (OSISM 7.0.x), replace <code class="language-plaintext highlighter-rouge">stable-20232</code> with the version you are on 
+(e.g. <code class="language-plaintext highlighter-rouge">stable-20231</code> if you are on R5 (OSISM 6.x).</p>
+
+<p>This will cause new images to be downloaded and started on the hosts.
+The deployment will have the following user-visible effects:</p>
+<ul>
+  <li>The glance-API will be unavailable for some seconds</li>
+  <li>Volume control operations (e.g. creating a new volume) and the cinder API will
+be unavailable for some seconds.</li>
+  <li>VM (compute service) operations and the nova API will not be available for
+some seconds.</li>
+</ul>
+
+<p>Most users won’t notice this. Please note that running workloads will not be
+affected at all.</p>
+
+<p>Soon after the disclosure date, OSISM will publish an official 7.0.6 release
+containing the updated containers (nova-compute, glance-api, cinder-volume)
+as well as a fix for octavia-api. Please refer to the the
+<a href="https://osism.tech/docs/release-notes/osism-7/">OSISM release notes</a>.
+You can upgrade from this hotfix to 7.0.6 using the regular upgrade mechanism.</p>
+
+<h2 id="have-my-systems-been-compromised">Have my systems been compromised?</h2>
+
+<p>Providers that are unable to patch this issue on the day of the release
+need to consider the possibility of having been attacked. In this case,
+passwords/keys for internal communication should be considered to be
+leaked and will need to be rotated to reestablish the defense-in-depth
+lines. We recommend providers check for suspicious image operations
+(QCOW2 image registrations, snapshots with QCOW2 signature) in their logs
+for the time after the embargo lift.
+In particular, every image that has been uploaded should be investigated
+for the datafile property; it should be assumed that images that have been
+registered and removed again contain the exploit.</p>
+
+<h2 id="patch-status-of-scs-clouds">Patch status of SCS clouds</h2>
+
+<p>Our publically known providers of SCS IaaS platforms have all been
+notified and started to deploy the updated images which we were able
+to provide them privately a few hours ahead of time (without sharing
+all the details on the issue). We expect them to have completed the
+rollout at the time this gets public.
+Please refer to their communication for precise information on the
+patch status.</p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>The authors would like to thank Martin Kaesberger, the OpenStack developers and
+reviewers, testers and the OpenStack Vulnerability Management Team for the
+responsible reporting, careful analysis, fixing, testing and professional
+handling of the issue and the OSISM team for providing the fixed containers.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.1, 2024-06-24, 08:45 CEST.</li>
+  <li>Adjusted approach to patch provisioning, v0.2, 2024-06-24, 11:45 CEST.</li>
+  <li>Wording fixes, update disclosure date and details on patch provisioning
+and its working, v0.3, 2024-07-01, 08:15 CEST.</li>
+  <li>Remove list of SCS providers, v0.4, 2024-07-02, 08:30 CEST.</li>
+  <li>Add detailed hotfix deployment instructions, v0.5, 2024-07-02, 14:30 CEST.</li>
+  <li>Added correct OSSA reference, v0.6, 2024-07-02, 16:00 CEST.</li>
+  <li>Ready for publication (no change), v1.0, 2024-07-02, 17:00 CEST.</li>
+  <li>Move install instructions into the right section, v1.1, 2024-07-02, 18:00 CEST</li>
+  <li>Escape jinja templates in markdown (images.yml), v1.2, 2024-07-02, 18:45 CEST</li>
+</ul>]]></content><author><name>[&quot;Kurt Garloff&quot;, &quot;Christian Berendt&quot;, &quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://scs.community/default-card.jpg" /><media:content medium="image" url="https://scs.community/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sovereign Cloud Stack Security Advisory OVN (CVE-2024-2182)</title><link href="https://scs.community/security/2024/03/15/cve-2024-2182/" rel="alternate" type="text/html" title="Sovereign Cloud Stack Security Advisory OVN (CVE-2024-2182)" /><published>2024-03-15T00:00:00+00:00</published><updated>2025-12-23T22:57:45+00:00</updated><id>https://scs.community/security/2024/03/15/cve-2024-2182</id><content type="html" xml:base="https://scs.community/security/2024/03/15/cve-2024-2182/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>Multiple versions of OVN (Open Virtual Network) are vulnerable to
+crafted BFD packets potentially causing denial of service.</p>
+
+<p>OVN supports configuration of gateway chassis and high-availability
+chassis groups (via the Gateway_Chassis and HA_Chassis_Group tables in
+the OVN_Northbound database).  These group cluster nodes (chassis)
+together and provide high availability to them.  OVN logical switch and
+router ports can be configured to reference such groups.  In this case
+the traffic forwarding decision is influenced by the liveness of the
+chassis listed in the group.</p>
+
+<p>In such scenarios OVN automatically enables the OVS Bidirectional
+Forwarding Detection (BFD) functionality to monitor the health of remote
+nodes and tunnels between them.</p>
+
+<p>BFD packets are transmitted in-band in tunnels that connect OVN chassis,
+along with other traffic.  And, by default, OVS will process any BFD
+packets received on a tunnel port with BFD enabled.  That makes it
+possible for a VM or container connected to an OVN logical switch port
+to send BFD packets that will be tunneled to another node and processed
+by OVS, potentially changing the BFD state and affecting the forwarding
+decisions.</p>
+
+<p>The vulnerability has been assigned <a href="https://www.cve.org/CVERecord?id=CVE-2024-2182">CVE-2024-2182</a>.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>The <a href="https://scs.community/">Sovereign Cloud Stack</a> reference
+implementation (by <a href="https://osism.tech/">OSISM</a>) comes with and utilizes 
+OVN. The upcoming Release 6 of the SCS reference implementation will
+not be vulnerable to this as Release 6 will contain the OVN <a href="https://www.ovn.org/en/releases/changelog_v24.03.1/">version 24.03.1</a>.</p>
+
+<p>A way to determine if BFD will be used is to issue the following
+commands on the node that runs the OVN central components:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker exec -it ovn_nb_db ovn-nbctl --columns name,gateway_chassis list logical_router_port
+</code></pre></div></div>
+
+<p>If the above command returns more than a single gateway chassis
+reference for a given port that means OVS BFD has been automatically
+enabled.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker exec -it ovn_nb_db ovn-nbctl --columns name,ha_chassis list ha_chassis_group
+</code></pre></div></div>
+
+<p>The same applies if the above command returns groups that contain more
+than one chassis.</p>
+
+<p>In any case, operators of OpenStack platforms are advised to deploy fixed versions.</p>
+
+<h2 id="mitigation-and-fixes">Mitigation and Fixes</h2>
+
+<p>For any version of OVN, in order to prevent the issue, an ACL (Access
+Control List) rule can be added to drop BFD packets originated from
+logical ports.</p>
+
+<p>For example, the following shell script would configure ACLs on all
+existing OVN logical switches:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  for sw in $(docker exec -it ovn_nb_db ovn-nbctl --bare --columns name list logical_switch); do
+      docker exec -it ovn_nb_db ovn-nbctl acl-add $sw from-lport 32767 'udp &amp;&amp; udp.dst == 3784' drop
+  done
+</code></pre></div></div>
+
+<p>We do not recommend attempting to mitigate the vulnerability this way
+because this will also drop legitimate BFD traffic originated by the
+workloads connected to logical switch ports, e.g., BFD sessions
+established with external entities.</p>
+
+<p>For the currently maintained version SCS R5 (OSISM 6.0.x), OVN has been updated to <a href="https://www.ovn.org/en/releases/changelog_v23.06.3/">23.06.3</a>.
+Updated images have been built by <a href="https://osism.tech/">OSISM</a> and are available to be installed.</p>
+
+<p>To install the fixed OVN images, set <code class="language-plaintext highlighter-rouge">ovn_tag: "2023.1"</code> in the configuration repository in <code class="language-plaintext highlighter-rouge">environments/kolla/configuration.yml</code>.
+Afterwards run <code class="language-plaintext highlighter-rouge">osism apply -a upgrade ovn</code>.</p>
+
+<p>This will deploy the latest OVN images for OSISM 6.0.x series (SCS R5, using OpenStack 2023.1 (Antelope)), pulling OVN 23.06.3.
+This only replaces the OVN image and no service interruption is to be expected.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.1, 2024-03-14, 23:45 CET.</li>
+</ul>]]></content><author><name>[&quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://scs.community/default-card.jpg" /><media:content medium="image" url="https://scs.community/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sovereign Cloud Stack Security Advisory Open vSwitch (CVE-2023-3966)</title><link href="https://scs.community/security/2024/02/20/cve-2023-3966/" rel="alternate" type="text/html" title="Sovereign Cloud Stack Security Advisory Open vSwitch (CVE-2023-3966)" /><published>2024-02-20T00:00:00+00:00</published><updated>2025-12-23T22:57:45+00:00</updated><id>https://scs.community/security/2024/02/20/cve-2023-3966</id><content type="html" xml:base="https://scs.community/security/2024/02/20/cve-2023-3966/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>Multiple versions of Open vSwitch are vulnerable to crafted Geneve
+packets causing invalid memory accesses and potential denial of service.
+Triggering the vulnerability requires that Open vSwitch has flow hardware
+offload with Linux TC flower enabled (other_config:hw-offload=true).
+It is not enabled by default.</p>
+
+<p>The issue is caused by insufficient validation of Geneve metadata
+fields in the offload path.  Open vSwitch versions 2.12 and newer are
+affected.</p>
+
+<p>The vulnerability has been assigned <a href="https://www.cve.org/CVERecord?id=CVE-2023-3966">CVE-2023-3966</a>.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>The <a href="https://scs.community/">Sovereign Cloud Stack</a> reference
+implementation (by <a href="https://osism.tech/">OSISM</a>) comes with and utilizes 
+Open vSwitch. While hardware offloading is not enabled by default most
+environments will have it enabled.</p>
+
+<p>The current state of configuration can be checked with this command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dragon@manager:~$ docker exec -it openvswitch_vswitchd ovs-vsctl get Open_vSwitch . other_config:hw-offload
+ovs-vsctl: no key "hw-offload" in Open_vSwitch record "." column other_config
+</code></pre></div></div>
+
+<p>If hardware offloading is enabled the output differs:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dragon@manager:~$ docker exec -it openvswitch_vswitchd ovs-vsctl get Open_vSwitch . other_config:hw-offload
+"true"
+</code></pre></div></div>
+
+<p>This is typically enabled through <code class="language-plaintext highlighter-rouge">openvswitch_hw_offload: "yes"</code> in the host vars or <code class="language-plaintext highlighter-rouge">configuration.yml</code>.</p>
+
+<p>In any case, operators of OpenStack platforms are advised to deploy fixed versions.</p>
+
+<h2 id="mitigation-and-fixes">Mitigation and Fixes</h2>
+
+<p>For any version of Open vSwitch, disabling flow hardware offload will
+prevent the issue (setting other_config:hw-offload=false and reboot
+the system).  We do not recommend attempting to mitigate the vulnerability
+this way because it may impact the overall system throughput.</p>
+
+<p>By default, flow hardware offload support is not enabled.</p>
+
+<p>Open vSwitch has been updated to <a href="https://www.openvswitch.org/releases/NEWS-3.1.4.txt">version 3.1.4</a>.
+Updated images have been built by <a href="https://osism.tech/">OSISM</a> and are available to be installed.</p>
+
+<p>Set <code class="language-plaintext highlighter-rouge">openvswitch_tag: "2023.1"</code> in the configuration repository in <code class="language-plaintext highlighter-rouge">environments/kolla/configuration.yml</code>.
+Afterwards run <code class="language-plaintext highlighter-rouge">osism apply -a upgrade openvswitch</code>.</p>
+
+<p>This will deploy the latest openvswitch images for OSISM 6.0.x series (SCS R5, using OpenStack Antelope), pulling openvswitch 3.1.4.
+This only replaces the Open vSwitch image. Open vSwitch only runs on the data and network plane.
+Connections may be interrupted when restarting openvswitch-vswitchd. If this is to be avoided workloads should
+be live migrated and the update should by done node by node.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.1, 2024-02-15, 23:45 CET.</li>
+  <li>Initial published version, v0.2, 2024-02-20, 12:00 CET.</li>
+</ul>]]></content><author><name>[&quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://scs.community/default-card.jpg" /><media:content medium="image" url="https://scs.community/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sovereign Cloud Stack Security Advisory Cinder Volume detaching (CVE-2023-2088)</title><link href="https://scs.community/security/2023/05/10/cve-2023-2088/" rel="alternate" type="text/html" title="Sovereign Cloud Stack Security Advisory Cinder Volume detaching (CVE-2023-2088)" /><published>2023-05-10T00:00:00+00:00</published><updated>2025-12-23T22:57:45+00:00</updated><id>https://scs.community/security/2023/05/10/cve-2023-2088</id><content type="html" xml:base="https://scs.community/security/2023/05/10/cve-2023-2088/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>OpenStack allows to attach and detach volumes from running instances.
+When a volume is detached from a VM (using the appropriate API call to the
+compute service), the compute service (Nova) removes the access to the
+volume for the VM and then calls the storage service (Cinder) on the user’s
+behalf to force access to be stopped. However, the storage service API
+can also be invoked directly by the user. Even if the volume is still
+attached, this can be forced and Cinder will not talk to Nova, so it results
+in a surprise removal on the compute side. The VM on the compute mode in
+this case thus continues to be entitled to access the storage volume,
+though this will result in I/O errors due to being rejected by the
+storage service.</p>
+
+<p>Due to the way the SCSI and multipath stacks work in Linux, the devices used to
+access the storage can be reused. It is thus possible that a newly created
+storage volume uses the device that was incompletely revoked before, resulting
+in the old VM getting access to the new volume despite not owning it.</p>
+
+<p>In OpenStack setups, this affects storage access via iSCSI and
+via FibreChannel.</p>
+
+<p>Authenticated users of the OpenStack IaaS service thus might accidentially
+get access to storage volumes that they should not be authorized to.
+This can also be provoked by doing lots of force detachments.</p>
+
+<p>The vulnerability has been assigned <a href="https://cve.report/CVE-2023-2088">CVE-2023-2088</a>.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>In the reference implementation of <a href="https://scs.community/">Sovereign Cloud Stack</a>,
+the storage service is provided by <a href="https://ceph.io/">ceph</a>
+and access to the storage is handled through rados block devices, not the
+SCSI layer. No problematic reuse of connections/devices/identifiers has been
+found for this and the storage isolation is maintained.</p>
+
+<p>The <a href="https://github.com/osism/cloud-in-a-box">cloud-in-a-box</a> configurations
+before ~R4 this year used iSCSI to access local storage volumes – this has
+meanwhile been replaced by a single-node ceph setup. So it is not affected any
+more. Note that we don’t consider the cloud-in-a-box setup to be meant for
+production, so we would not necessarily provide patches with the same urgency
+for it even it it was still affected.</p>
+
+<h2 id="scs-provider-status">SCS provider status</h2>
+
+<p>It is possible for providers to diverge from SCS default setup with ceph storage
+and connect other block storage backends that use SCSI and are thus affected
+by this. We have double-checked with the four productive public clouds (Betacloud,
+pluscloud open, Wavestack, regio.digital cloud) that use SCS currently
+and they are not affected.</p>
+
+<h2 id="embargo">Embargo</h2>
+
+<p>The issue has been reported by Jan Wasilewski in private to the OpenStack 
+Vulnerability Management Team.
+The reporters and upstream developers have worked together to address
+the issue with fixes and an embargo date
+has been set to Wednesday, 2023-05-10, 15:00 UTC. At this point in time, the
+patches will get merged and an OpenStack Security Advisory
+(<a href="https://security.openstack.org/ossa/OSSA-2023-003.html">OSSA-2023-003</a>) will
+be published. The issue is tracked in OpenStack issue
+<a href="https://bugs.launchpad.net/nova/+bug/2004555">#2004555</a>, which should be
+publically accessible after the advisory has been published.</p>
+
+<p>Under the used responsible disclosure approach, the information was shared with
+a select group of trustable users of OpenStack, so they can prepare updates and
+protect their user data in time for the publication.</p>
+
+<p>The <a href="https://scs.community/">SCS</a> and <a href="https://osism.tech/">OSISM</a> teams have
+analyzed the information carefully and determined that the SCS IaaS reference
+implementation from OSISM is not affected in the default configuration.</p>
+
+<h2 id="mitigation-and-fixes">Mitigation and Fixes</h2>
+
+<p>To avoid Cinder removing devices that Nova still assumes to have access to,
+Cinder should reject force removals of still-attached volumes unless the
+removal request comes from Nova. There are patches from the upstream
+maintainers that help Cinder to make that distinction. The OpenStack
+os-brick library gets support for a <code class="language-plaintext highlighter-rouge">force</code> parameter that Nova and
+Glance can then use. In addition, 
+<a href="https://docs.openstack.org/cinder/latest/configuration/block-storage/service-token.html">config changes</a>
+need to be applied to enable Nova to send service tokens along with
+the user tokens and which is then used by Cinder to validate the
+provenance of the request.</p>
+
+<p>The next minor release of OSISM (expected end of May / early June) will include
+the necessary changes for the <code class="language-plaintext highlighter-rouge">force</code> parameter. It is still under investigation
+whether the changes to enable service tokens can be safely applied as part of
+the automated upgrade process or whether that will be documented as an important
+hint for cloud operators that diverge in their storage implementation from
+the default setup with ceph (where this is all not needed).</p>
+
+<p>A workaround until the next minor release can be implemented by providers.
+It would entail a config change that ensures that Nova uses a user with a
+service role to send tokens to Cinder on behalf of users and a policy
+on the Cinder API that enforces this role. This is described in more detail
+in the <a href="https://security.openstack.org/ossa/OSSA-2023-003.html">OpenStack Security Advisory</a>.
+We suggest providers that use OSISM in modes which may require such
+protection to get in touch with us.</p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>The authors would like to thank the reporter, the upstream
+OpenStack developers and the OpenStack Vulnerability Management Team for the
+responsible reporting, careful analysis, fixing, testing and professional
+handling of the issue and the OSISM team for additional analysis.</p>
+
+<h2 id="sovereign-cloud-stack-security-contact">Sovereign Cloud Stack Security Contact</h2>
+
+<p>SCS security contact is <a href="mailto:security@scs.community">security@scs.community</a>, as published on
+<a href="https://scs.community/.well-known/security.txt">https://scs.community/.well-known/security.txt</a>.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.1, 2023-05-10, 10:00 CEST.</li>
+  <li>Typos, Security Contact, v0.2, 2023-05-10, 12:30 CEST.</li>
+  <li>Add OSSA Link, v1.0, 2023-05-10, 17:00 CEST.</li>
+</ul>]]></content><author><name>[&quot;Christian Berendt&quot;, &quot;Kurt Garloff&quot;, &quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://scs.community/blog/hole-in-fence.jpg" /><media:content medium="image" url="https://scs.community/blog/hole-in-fence.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sovereign Cloud Stack Security Advisory OvS proto 0 DoS (CVE-2023-1668)</title><link href="https://scs.community/security/2023/04/21/cve-2023-1668/" rel="alternate" type="text/html" title="Sovereign Cloud Stack Security Advisory OvS proto 0 DoS (CVE-2023-1668)" /><published>2023-04-21T00:00:00+00:00</published><updated>2025-12-23T22:57:45+00:00</updated><id>https://scs.community/security/2023/04/21/cve-2023-1668</id><content type="html" xml:base="https://scs.community/security/2023/04/21/cve-2023-1668/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>David Marchand (RedHat) reported an issue with Open vSwitch (OvS) where
+the failure to properly execute ‘set’ actions for specifically crafted
+network packets with IP protocol number 0 could lead to a succesful remote
+Denial-of-Service (DoS) attack.</p>
+
+<p>The vulnerability is long-standing and affects Open vSwitch going back until
+at least 1.5.0. (Current is 3.1.1, which has this issue fixed.)</p>
+
+<p>The vulnerability has been assigned <a href="https://cve.report/CVE-2023-1668">CVE-2023-1668</a>;
+a more detailed description can be found in the 
+<a href="https://www.openwall.com/lists/oss-security/2023/04/06/1">Openwall OSS security advisory</a>.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>Open vSwitch is used in almost all OpenStack setups – specifically all SCS
+setups known to us use OvS. This includes both the OVN configurations
+(the SCS default) as well as those that rely on OvS alone.</p>
+
+<h2 id="mitigation">Mitigation</h2>
+
+<p>It is possible to set flow rules that block IP protocol 0 packets by adding
+3 flow rules as highest priority rules to every OvS bridge. Care is needed to
+ensure this happens automatically on every single bridge, which is a non-trivial
+endeavor.</p>
+
+<p>There are patches available to fix the issue. These patches are included in the
+current OvS version 3.1.1. They have also been backported into older versions
+3.0.4, 2.17.6, 2.16.7, 2.15.8, 2.14.9, 2.13.11.</p>
+
+<h2 id="scs-releases">SCS releases</h2>
+
+<p>Due to ongoing work on improving the network stack, <a href="https://osism.tech/">OSISM</a>
+had released version <a href="http://release.osism.tech/notes/5.1.0.html">5.1.0</a> on Apr 7,
+which includes OvS version 3.1.1 that includes the fix. Due to the networking
+improvements, the SCS project had advised all SCS partners to move from OSISM-4.x
+(SCS Release 3) or from 5.0.0 (SCS Release 4) to 5.1.0 even without being aware
+of CVE-2023-1668.</p>
+
+<p>SCS release 3 (OSISM-4.x) is only officially supported until the end of April
+2023 – we advise all our partners to move to R4 with OSISM-5.1.0 or later as
+soon as possible.</p>
+
+<p>OSISM has worked on preparing a version 4.3.0 that includes a patched OvS version
+for those partners that can not yet move to R4/OSISM-5.x. A release of this is
+planned for next week. No further updates are planned after this final release
+of R3/OSISM-4.x., users should move to R4/OSISM-5.x.</p>
+
+<h2 id="patch-status-of-scs-clouds">Patch status of SCS clouds</h2>
+
+<p>The networking improvements for OSISM-5.1.0 were done in close alignement between
+plusserver and OSISM – unsurprisingly, all regions of the 
+<a href="https://www.plusserver.com/en/products/pluscloud-open">pluscloud open</a>
+had been upgraded to OSISM-5.1.0 in calendar week 15 already.</p>
+
+<p>The <a href="https://betacloud.de/">Betacloud</a> runs the rolling tag (latest) images
+and thus has picked up the fixes the day after they became available.</p>
+
+<p>The <a href="https://www.noris.de/wavestack-cloud/">WaveStack</a> operators are planning
+to do the upgrade to R4/OSISM-5.1+ next week. For now, their inbound firewalls
+protect them from remote attacks with evil proto 0 packets.</p>
+
+<p>The <a href="https://regio.digital/">regio tech</a> cloud has deployed OSISM-5.1.0 last
+week already.</p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>The authors would like to thank David Marchand who reported the vulnerability,
+the upstream OvS community and Jens Harbott at OSISM for working on addressing
+the issue.</p>
+
+<h2 id="sovereign-cloud-stack-security-contact">Sovereign Cloud Stack Security Contact</h2>
+
+<p>SCS security contact is <a href="mailto:security@scs.community">security@scs.community</a>, as published on
+<a href="https://scs.community/.well-known/security.txt">https://scs.community/.well-known/security.txt</a>.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.9, 2023-04-21, 08:30 CEST.</li>
+  <li>Patch status for beta, wave, regio included, updated OSISM-4.3.0 plans, v1.0, 2023-04-21, 15:45 CEST.</li>
+</ul>]]></content><author><name>[&quot;Christian Berendt&quot;, &quot;Kurt Garloff&quot;, &quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://scs.community/default-card.jpg" /><media:content medium="image" url="https://scs.community/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sovereign Cloud Stack Security Note on bind9 DoS (CVE-2022-3094, -3736, -3924)</title><link href="https://scs.community/security/2023/01/27/bind9-DoS/" rel="alternate" type="text/html" title="Sovereign Cloud Stack Security Note on bind9 DoS (CVE-2022-3094, -3736, -3924)" /><published>2023-01-27T00:00:00+00:00</published><updated>2025-12-23T22:57:45+00:00</updated><id>https://scs.community/security/2023/01/27/bind9-DoS</id><content type="html" xml:base="https://scs.community/security/2023/01/27/bind9-DoS/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>On 2023-01-25, three vulnerabilities in bind9, a popular DNS server implementation,
+were reported. Summarizing the <a href="https://ubuntu.com/security/notices/USN-5827-1">Ubuntu Security Notice</a>:</p>
+
+<ul>
+  <li>
+    <p><a href="https://ubuntu.com/security/CVE-2022-3094">CVE-2022-3094</a>:
+A large number of UPDATE messages can lead to resource exhaustion.
+The impact of unauthenticated messages is comparable to normal queries
+and thus uncritical; authenticated messages however have a higher
+impact.</p>
+  </li>
+  <li>
+    <p><a href="https://ubuntu.com/security/CVE-2022-3736">CVE-2022-3736</a>:
+Specially crafted RRSIG queries can cause bind9 to crash.</p>
+  </li>
+  <li>
+    <p><a href="https://ubuntu.com/security/CVE-2022-3924">CVE-2022-3924</a>:
+bind9 servers that are configured to respond to queries from stale
+cache entries may be caused to crash.</p>
+  </li>
+</ul>
+
+<p>All three vulnerabilities thus allow remote Denial of Service (DoS)
+attacks; the first one though only for trusted parties that can send
+authenticated UPDATE messages. No information disclosure or privilege
+escalation was found.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>The Designate service (DNS as a Service in OpenStack) is an optional feature of
+the <a href="https://scs.community/">Sovereign Cloud Stack</a> IaaS reference
+implementation (by <a href="https://osism.tech/">OSISM</a>). Operators can choose to
+expose the used bind9 DNS server to the VMs and the internet directly or
+use it to feed a dedicated DNS service.</p>
+
+<p>If the bind9 service is exposed, it could be vulnerable to the DoS attacks.</p>
+
+<p>The operators we work closely with are mostly using the stable version (currently
+R3, aka v4.x) of the reference implementation, which comes with OpenStack
+Yoga and container images built with Ubuntu 20.04 LTS (focal). They
+recently had to upgrade to v4.2.0 to address
+<a href="https://scs.community/security/2023/01/24/cve-2022-47951/">CVE-2022-47951</a>.</p>
+
+<p>For Ubuntu 20.04, only CVE-2022-3094 applies. Authenticated UPDATE messages
+to bind9 can be generated from a user by manipulating the zone records
+in Designate via API calls. In our assessement, we deem it unlikely that
+it can be done at a rate that results in a successful DoS. The attacker
+would obviously also be identifiable.</p>
+
+<p>Operators using the main development branch of OSISM (which includes
+container images with OpenStack Zed based on Ubuntu 22.04) are affected
+by all three vulnerabilities if they expose bind9 directly. They
+thus may experience successful DoS attacks until they address the issue.</p>
+
+<h2 id="fixes-and-recommendations">Fixes and recommendations</h2>
+
+<p>Package updates from Ubuntu have been released.
+Users using it to operate their own DNS service obviously should install
+the updates.</p>
+
+<p>SCS operators that use v4.2 don’t need to worry as explained before.
+A future build of the images will pick up the fixed bind9 version;
+currently no plans exist to trigger a minor release just for the
+CVE-2022-3094 fix.</p>
+
+<p>SCS operators that use the main branch should ensure that their update
+process works to pick up and deploy the regularly rebuilt container
+images from OSISM’s main branch. Update: The currently (as of Fri 2023-01-27
+afternoon European time) published images with the rolling tag already
+contain the fixed bind9.</p>
+
+<h2 id="sovereign-cloud-stack-security-contact">Sovereign Cloud Stack Security Contact</h2>
+
+<p>SCS security contact is <a href="mailto:security@scs.community">security@scs.community</a>, as published on
+<a href="https://scs.community/.well-known/security.txt">https://scs.community/.well-known/security.txt</a>.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Quick security note, v0.5, 2022-01-27, 11:45 CET.</li>
+  <li>Minor clarifications, no point release, v1.0, 2022-01-27, 17:00 CET.</li>
+  <li>Rolling images already fixed, v1.1, 2022-01-27, 17:15 CET.</li>
+</ul>]]></content><author><name>[&quot;Christian Berendt&quot;, &quot;Kurt Garloff&quot;, &quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://scs.community/default-card.jpg" /><media:content medium="image" url="https://scs.community/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sovereign Cloud Stack Security Advisory VMDK image processing (CVE-2022-47951)</title><link href="https://scs.community/security/2023/01/24/cve-2022-47951/" rel="alternate" type="text/html" title="Sovereign Cloud Stack Security Advisory VMDK image processing (CVE-2022-47951)" /><published>2023-01-24T00:00:00+00:00</published><updated>2025-12-23T22:57:45+00:00</updated><id>https://scs.community/security/2023/01/24/cve-2022-47951</id><content type="html" xml:base="https://scs.community/security/2023/01/24/cve-2022-47951/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>Guillaume Espanel, Pierre Libeau, Arnaud Morin and Damien Rannou (OVH) found a
+vulnerability in the VMDK image processing code in
+<a href="https://openstack.org/">OpenStack</a> Cinder (OpenStack’s block storage service),
+Glance (image service) and Nova (compute service), which they reported to the
+OpenStack security team. The vulnerability allows for crafted flat image files
+to reference crafted backing file paths which can result in the
+server returning file content with potentially sensitive data. This affects all
+Nova and Cinder deployments; it also affects Glance deployments if image
+conversion (from VMDK) is enabled.</p>
+
+<p>The vulnerability has been assigned <a href="https://cve.report/CVE-2022-47951">CVE-2022-47951</a>.</p>
+
+<h2 id="impact-on-the-scs-reference-implementation">Impact on the SCS reference implementation</h2>
+
+<p>While the <a href="https://scs.community/">Sovereign Cloud Stack</a> reference
+implementation (by <a href="https://osism.tech/">OSISM</a>) runs these services in
+containers and thus protects most files on the Hypervisor from being accessed
+using this vulnerability, the containers do have access to sensitive data and
+thus has a potential attacker. <em>To abuse this vulnerability, the attacker must
+be an authenticated user of the platform.</em></p>
+
+<p>We are able to reproduce this issue on unpatched platforms using the SCS
+reference implementation.
+We are still determining whether the damage in our setup goes beyond the
+disclosure of sensitive information by potentially leaking credentials that
+allow for further privilege escalation up to getting admin access to the IaaS
+cloud layer and thus access to all unencrypted data of customers of the
+affected platform.</p>
+
+<p>In any case, this vulnerability is very severe and operators of OpenStack
+platforms are advised to deploy fixed versions as soon as possible.</p>
+
+<p>While disabling image conversion in Glance does protect Glance, there is no
+straight-forward mitigation to effectively protect Cinder and Nova, see
+below (Mitigation and Fixes).</p>
+
+<h2 id="embargo">Embargo</h2>
+
+<p>The issue has been reported to the OpenStack Vulnerability Management Team in
+private. The reporters and upstream developers have worked together to address
+the issue with fixes and an embargo date
+has been set to Tuesday, 2023-01-24, 15:00 UTC. At this point in time, the
+patches will get merged and the OpenStack Security Advisory
+(<a href="https://security.openstack.org/ossa/OSSA-2023-002.html">OSSA-2023-002</a>) will
+be published. The issue is tracked in OpenStack issue
+<a href="https://bugs.launchpad.net/nova/+bug/1996188">#1996188</a>, which should be
+publically accessible now, after the advisory has been published.</p>
+
+<p>Under the used responsible disclosure approach, the information was shared with
+a select group of trustable users of OpenStack, so they can prepare updates and
+protect their user data in time for the publication.</p>
+
+<p>The reference implementation for the IaaS layer of Sovereign Cloud Stack
+is provided by the OSISM project – the OSISM team builds the artifacts in a
+completely public process. The fixes will thus be applied right after the 
+embargo is lifted; this will result in new artifacts within a few hours;
+the resulting artifacts (kolla-ansible container images) will be thoroughly
+tested using the CI tests and then published with the tag v4.2.0. This is
+expected to happen during the day of Wed, 2023-01-25.
+Update: The release of <a href="https://github.com/osism/release/tree/main/4.2.0">OSISM v4.2.0</a>
+has happened in the evening (european time) of 2023-01-25.</p>
+
+<p>Given the severity of the issue, the SCS and OSISM teams have agreed to
+temporarily build patched images for the Cinder, Nova and Glance services in
+private and provide them privately to our public cloud providers with an NDA
+that disallows to disclose any information prior to the embargo lift time.</p>
+
+<h2 id="mitigation-and-fixes">Mitigation and Fixes</h2>
+
+<p>The disablement of conversions of VMDK images does protect the Glance service;
+unfortunately both Cinder and Nova also support many different image formats
+and they don’t provide a config option to disable handling VMDKs. No
+simple mitigation is known to us here.</p>
+
+<p>There are patches from the upstream OpenStack developers available. They work
+by analyzing the VMDK images and raising an exception if any options are used
+that allow extents that reference other files. Such images will no longer be
+accepted and thus can no longer be used to exfiltrate sensitive files.</p>
+
+<p>We are able to confirm that the previously successful attacks are addressed
+by the fixes. While offending VMDK images can still be uploaded and stored
+in Glance, they will be rejected before they can be converted to raw in
+Glance or for usage by Cinder or Nova.</p>
+
+<h2 id="patch-status-of-scs-clouds">Patch status of SCS clouds</h2>
+
+<p>We have been working (under NDA) with operators using the SCS reference
+implementation from OSISM to ensure they are prepared for this vulnerability.
+We can report that the three publically known providers of SCS IaaS
+platforms, <a href="https://betacloud.de/">Betacloud</a> (from OSISM),
+<a href="https://www.plusserver.com/en/products/pluscloud-open">pluscloud open</a>
+(from plusserver) and <a href="https://www.noris.de/wavestack-cloud/">WaveStack</a>
+(from Wavecon/Noris) have all deployed the privately provided fixed
+containers and are thus protected from the reported vulnerability. They
+will all move to the published v4.2.0 release in the next few days to
+again use the officially supported public code as opposed to the private
+hotfixes.</p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>The authors would like to thank the abovementioned OVH engineers, the upstream
+OpenStack developers and the OpenStack Vulnerability Management Team for the
+responsible reporting, careful analysis, fixing, testing and professional
+handling of the issue and the OSISM team for providing the fixed containers.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial Draft, v0.1, 2023-01-22, 23:45 CET.</li>
+  <li>Links and wording improvements, v0.2, 2023-01-23, 16:00 CET.</li>
+  <li>CVS and OSSA links, v0.3, 2023-01-23, 19:00 CET.</li>
+  <li>Thanks and reproduction notes, v0.4, 2022-01-24, 08:45 CET.</li>
+  <li>Note on rejection point, v0.5, 2022-01-24, 12:15 CET.</li>
+  <li>Official release (unchanged), v1.0, 2022-01-24, 16:00 CET.</li>
+  <li>v4.2.0 release out, v1.1, 2022-01-27, 08:30 CET.</li>
+</ul>]]></content><author><name>[&quot;Christian Berendt&quot;, &quot;Kurt Garloff&quot;, &quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://scs.community/default-card.jpg" /><media:content medium="image" url="https://scs.community/default-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sovereign Cloud Stack Security Advisory Spooky SSL</title><link href="https://scs.community/security/2022/11/01/advisory-spookyssl/" rel="alternate" type="text/html" title="Sovereign Cloud Stack Security Advisory Spooky SSL" /><published>2022-11-01T00:00:00+00:00</published><updated>2025-12-23T22:57:45+00:00</updated><id>https://scs.community/security/2022/11/01/advisory-spookyssl</id><content type="html" xml:base="https://scs.community/security/2022/11/01/advisory-spookyssl/"><![CDATA[<h2 id="the-vulnerability">The vulnerability</h2>
+
+<p>On Tue, 2022-11-01, two vulnerabilities in the popular OpenSSL library
+became publicly known. They affect OpenSSL-3.0.x versions prior
+to the fixed version 3.0.7; older versions of OpenSSL (1.1.x
+and earlier) are not affected.</p>
+
+<p>There are two vulnerabilities in the X.509 certificate parsing code
+for email addresses, CVE-2022-3602 and CVE-2022-3786. Both are described
+in the <a href="https://www.openssl.org/news/secadv/20221101.txt">OpenSSL Security Advisory</a>.
+Both can result in buffer overflows which can crash the application,
+resulting in a denial-of-service. The possibility to put 4 attacker-controlled
+bytes on the stack in CVE-2022-3602 might even result in remote code execution
+scenarios, though commonly used stack overflow protections prevent this.
+The effectiveness of the stack overflow protections has lead the severity
+classification to be downgraded from CRITICAL to HIGH.</p>
+
+<p>A good collection of information on these vulnerabilities can be found on
+<a href="https://github.com/NCSC-NL/OpenSSL-2022">Netherlands Cyber Security Centrum</a>.</p>
+
+<h2 id="scs-reference-implementation">SCS reference implementation</h2>
+
+<p>The host images in the SCS reference implementation come from the
+<a href="https://osism.tech">OSISM</a> project and are all built on top of Ubuntu 20.04
+LTS (focal). Ubuntu 20.04 uses OpenSSL-1.1.1 and is unaffected by the
+vulnerability. The switch to Ubuntu 22.04 (jammy) which does use OpenSSL-3.0.x
+is planned for SCS R4 (v5.0.0, due in Mar 2023) and has not happened yet,
+neither in the OSISM image build system nor in the one from the upstream kolla
+project.</p>
+
+<p>The deployment of SCS happens via deploying numerous infrastructure
+and OpenStack services in containers. The OpenStack containers come from
+the upstream kolla project which uses Ubuntu 20.04. We are in progress
+of reviewing all non-kolla containers to ensure that none of them pull-in
+dependencies on OpenSSL-3.</p>
+
+<!--TODO: OSISM to check all containers ...-->
+<!--TODO: Add link to SBOM -->
+
+<p>The SCS reference implementation for Kubernetes container management deploys a
+management host using Ubuntu 20.04 for bootstrapping and managing the
+workload clusters. The workload clusters use node images that are built
+by OSISM using Ubuntu 20.04. The contained Kubernetes services do not
+pull in OpenSSL-3 either.</p>
+
+<p>The container management solution allows to deploy a number of standard
+services. Many of the services are built using the golang programming
+language and are thus not using OpenSSL.</p>
+
+<p>Here is the list of services that can be deployed with the SCS cluster-API
+container management solution and the openSSL status of these:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Service</th>
+      <th>OpenSSL version</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OCCM</td>
+      <td>1.1.1n</td>
+      <td>Alpine 3.15.4</td>
+    </tr>
+    <tr>
+      <td>cindercsi</td>
+      <td>none</td>
+      <td>golang</td>
+    </tr>
+    <tr>
+      <td>calico</td>
+      <td>1.1.1k</td>
+      <td>RHEL 8.6</td>
+    </tr>
+    <tr>
+      <td>cilium</td>
+      <td>1.1.1f</td>
+      <td>Ubuntu 20.04.5</td>
+    </tr>
+    <tr>
+      <td>nginx-ingress</td>
+      <td>1.1.1q</td>
+      <td>Alpine 3.16</td>
+    </tr>
+    <tr>
+      <td>metrics</td>
+      <td>none</td>
+      <td>golang</td>
+    </tr>
+    <tr>
+      <td>cert-manager</td>
+      <td>none</td>
+      <td>golang</td>
+    </tr>
+    <tr>
+      <td>flux</td>
+      <td>1.1.1q</td>
+      <td>Alpine 3.16.2</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- TODO: harbor -->
+
+<h2 id="rebuilt-containers">Rebuilt containers</h2>
+
+<p>The SCS community is prepared to publish security updates.
+For the containerized OSISM base-deployment, this means preparing updated
+containers that can be deployed, replacing the old containers.</p>
+
+<p>Preparing for the OpenSSL-3 vulnerability, the OSISM team has prepared
+to publish a version v4.1.0 containing all security and important bug fixes
+that have been collected since R3 (v4.0.0 on 2022-09-21).</p>
+
+<p>The OpenSSL-3 vulnerability currently does not seem to require such a
+point release. However, there is also a go security update currently
+happening, suggesting that a point release may well be good idea.
+This is currently under investigation – future updates of this
+advisory will contain updated information on this.</p>
+
+<h2 id="public-vm-images-on-scs-clouds">Public VM images on SCS clouds</h2>
+
+<p>Most clouds provide public images for popular Linux distributions
+as a convenience to their users. Ubuntu 22.04 is one of the images that
+SCS recommends providing; <a href="https://ubuntu.com/security/CVE-2022-3602">it is affected by the OpenSSL-3 issue</a>.
+Other modern distributions (e.g. those based on RedHat Enterprise
+Linux 9) are also affected; we recommend to use the list at
+<a href="https://github.com/NCSC-NL/OpenSSL-2022/blob/main/software/README.md">https://github.com/NCSC-NL/OpenSSL-2022/blob/main/software/README.md</a>
+to get a quick overview and to investigate yourself for the more
+critical parts of applications. The command <code class="language-plaintext highlighter-rouge">openssl version</code>
+can be used to learn about the installed OpenSSL version.</p>
+
+<p>We recommend to SCS operators to quickly replace the affected public images
+as soon as the Linux distributors have provided updated base images.
+Note that SCS has defined
+<a href="https://github.com/SovereignCloudStack/standards/blob/main/Standards/scs-0102-v1-image-metadata.md">metadata</a>
+for images that allow users to see the build date. Any image that is older than
+2022-11-01 and includes OpenSSL-3.0.x will very likely be vulnerable.</p>
+
+<h2 id="fixing-applications">Fixing applications</h2>
+
+<p>Affected VM-based applications that are dynamically linked against OpenSSL and
+use automation for bootstrapping may best just redeploy against the latest
+images to use the fixed OpenSSL version. Otherwise an online update of the
+OpenSSL-3 library is recommended. Note that applications need to be restarted
+to use the updated fixed shared library. Applications that statically linked
+the vulnerable OpenSSL-3.0.x (x&lt;7) library need to be rebuilt using the fixed
+library (3.0.7 or later).</p>
+
+<p>For container-based applications that built containers using affected
+OpenSSL-3 libraries, rebuilding the containers with the fixed version
+and redeploying them is recommended.</p>
+
+<p>Sidenote:
+We also remind users to review the workstations and laptops that are
+used by their staff and to install available updates short-term.</p>
+
+<h2 id="sovereign-cloud-stack-security-contact">Sovereign Cloud Stack Security Contact</h2>
+
+<p>SCS security contact is <a href="mailto:security@scs.community">security@scs.community</a>, as published on
+<a href="https://scs.community/.well-known/security.txt">https://scs.community/.well-known/security.txt</a>.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Initial release on 2022-11-01, 18:45 CET.</li>
+</ul>]]></content><author><name>[&quot;Kurt Garloff&quot;, &quot;Christian Berendt&quot;, &quot;Felix Kronlage-Dammers&quot;]</name></author><category term="security" /><summary type="html"><![CDATA[The vulnerability]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://scs.community/blog/spooky.png" /><media:content medium="image" url="https://scs.community/blog/spooky.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>SCS Health Monitor Tech Preview: What's inside and how to use it | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="SCS Health Monitor Tech Preview: What's inside and how to use it | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Coming closer to SCS release R7, more and more projects are finalized and ready to be tested by a broader audience. This also includes the newly developed SCS Health Monitor (SCSHM), which we present to you in this blog post!" />
+<meta property="og:description" content="Coming closer to SCS release R7, more and more projects are finalized and ready to be tested by a broader audience. This also includes the newly developed SCS Health Monitor (SCSHM), which we present to you in this blog post!" />
+<link rel="canonical" href="https://scs.community/tech/2024/09/06/vp12-scs-health-monitor-tech-preview/" />
+<meta property="og:url" content="https://scs.community/tech/2024/09/06/vp12-scs-health-monitor-tech-preview/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://scs.community/assets/images/default-card-d32fdb798ca15ae927f00593ce64407f69c70d4011955dc94c7be76b99c474f4e673ee1a26ec53725dda80c2c331e5ad4300a43e702171cc014cd47ec6b2f94d.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-09-06T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://scs.community/assets/images/default-card-d32fdb798ca15ae927f00593ce64407f69c70d4011955dc94c7be76b99c474f4e673ee1a26ec53725dda80c2c331e5ad4300a43e702171cc014cd47ec6b2f94d.jpg" />
+<meta property="twitter:title" content="SCS Health Monitor Tech Preview: What’s inside and how to use it" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-23T22:57:45+00:00","datePublished":"2024-09-06T00:00:00+00:00","description":"Coming closer to SCS release R7, more and more projects are finalized and ready to be tested by a broader audience. This also includes the newly developed SCS Health Monitor (SCSHM), which we present to you in this blog post!","headline":"SCS Health Monitor Tech Preview: What’s inside and how to use it","image":"default-card.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://scs.community/tech/2024/09/06/vp12-scs-health-monitor-tech-preview/"},"url":"https://scs.community/tech/2024/09/06/vp12-scs-health-monitor-tech-preview/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://scs.community/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Matomo -->
+  <script>
+    if (typeof(Storage) !== 'undefined') {
+    	if (localStorage.getItem('matomoTrackingEnabled') === null) {
+    		localStorage.setItem('matomoTrackingEnabled', 'true');
+    	}
+    }
+  </script>
+  <script>
+    if (localStorage.getItem('matomoTrackingEnabled') !== 'false') {
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['disableCookies']);
+      _paq.push(["setDoNotTrack", true]);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://matomo.scs.community/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    }
+  </script>
+  <!-- End Matomo Code -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" integrity="sha512-oLi5cq8OY/Co/5GZRWjRUMDnbeMMCa4e2EBWkvoxP6DVNEWGEqinHpp+Tc7VNJz/SB+9hj4ZuYttQftIgc1ivg==" crossorigin="anonymous" src="/assets/vendor/jquery/jquery-a0b8b972af0e63f0a8ff91994568d150c0e76de30c09ae1ed8405692fa313fa0d534458612a8a71e9a7e4dced5349cff481fbd863e19b98b6d41fb4881cd62be.js"></script>
+  <script type="text/javascript" integrity="sha512-2OEU5OYjrPJLs8PL9qkG+9N+DbHBqvWjEjlU76rnStYvZRzoY8k2i5/tcG1gjw/jwoGhuYkXm02Rc3f6HGU+tw==" crossorigin="anonymous" src="/assets/vendor/bootstrap/js/bootstrap.bundle-d8e114e4e623acf24bb3c3cbf6a906fbd37e0db1c1aaf5a3123954efaae74ad62f651ce863c9368b9fed706d608f0fe3c281a1b989179b4d917377fa1c653eb7.js"></script>
+  <!-- Lighbox -->
+  <script type="text/javascript" integrity="sha512-AsyFLM7qdMK2Gt1rVM/4wsSCeOPaCbE8KqQbSruCpez+OtU/5fEtpyjAtZkPBqKjpf6cnC6970DZNCHKwLJnzA==" crossorigin="anonymous" src="/assets/vendor/lightbox-02cc852cceea74c2b61add6b54cff8c2c48278e3da09b13c2aa41b4abb82a5ecfe3ad53fe5f12da728c0b5990f06a2a3a5fe9c9c2ebdef40d93421cac0b267cc.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/lightbox-0184be351f33358fce8415b3f8bdda50e58ee86ff1de0b37d00a26f602e14fc61896ad0bb90662299dea49767123bfe2c724163867b097f5f92cc1785e324cad.css" integrity="sha512-AYS+NR8zNY/OhBWz+L3aUOWO6G/x3gs30Aom9gLhT8YYlq0LuQZiKZ3qSXZxI7/ixyQWOGewl/X5LMF4XjJMrQ==" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/main-b8cf68a63f9b26ea819f67d4e3a173489daf6c6c7de17051d360d8e72b41c67279d732bd19f4a04210326db8595205b80d704f640296bb5f5f63bedc042df118.css" integrity="sha512-uM9opj+bJuqBn2fU46FzSJ2vbGx94XBR02DY5ytBxnJ51zK9GfSgQhAybbhZUgW4DXBPZAKWu19fY77cBC3xGA==" crossorigin="anonymous">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/pygments-css/zenburn-b9247179f996de88844d73acaa60564a48db30aa0fec022f80b7641b41d45140625b657433da3bd722f68ba2fed77bfaa94972b9eed09c77a427e04a1707917e.css" integrity="sha512-uSRxefmW3oiETXOsqmBWSkjbMKoP7AIvgLdkG0HUUUBiW2V0M9o71yL2i6L+13v6qUlyue7QnHekJ+BKFweRfg==" crossorigin="anonymous">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Entdecke unsere neue Webseite</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                SCS entdecken
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/de/about/">Über SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/use/">SCS nutzen</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/contribute/">Zu SCS beitragen</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/partners/">Servicepartner</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/members/">Community Members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/news/">
+                Neuigkeiten
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/events/">
+                Veranstaltungen
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/jobs/">
+                Offene Stellen
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/tenders/">
+                Ausschreibungen
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Dokumentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  " href="/tech/2024/09/06/vp12-scs-health-monitor-tech-preview/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold   text-decoration-underline " href="/de/tech/2024/09/06/vp12-scs-health-monitor-tech-preview/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  " href="/tech/2024/09/06/vp12-scs-health-monitor-tech-preview/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold   text-decoration-underline " href="/de/tech/2024/09/06/vp12-scs-health-monitor-tech-preview/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" integrity="sha512-dJ6jTJGSpX7cNvESuSrC7duEfT5HZD83SIs9FIybmKcgIVwMjhetDTg3yQVq5v6uPNyTHtNukRsrG2GiC0F95g==" crossorigin="anonymous" src="/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          Eine Plattform — standardisiert, entwickelt und betrieben von Vielen.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" integrity="sha512-YV5ImgTZnx6tg6b6ZNdt/JbR9qhEjuVFcJnivI/dsjU3n2YH6Reg/PtRn/GQKsVZYhPXM5759IoJJarysSIe4A==" crossorigin="anonymous" src="/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" integrity="sha512-pLkpIB9zq0WFODZFm2htuY8LLjcYlABYjOmSpRxsWdNxg16TzQ1biR8F/Odda4c4PD/BLVLG1WDFYC6zK/WLkA==" crossorigin="anonymous" src="/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" integrity="sha512-+/oBMqq6OUbZcOlC/ZjvQDq7EvjzRMwwh/y0ZuI0JLDX3d2biyzkl531jkt45I8EGetyHg8Fmb2J32tGwoccQw==" crossorigin="anonymous" src="/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>SCS Health Monitor Tech Preview: What's inside and how to use it</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  
+  
+  
+  <svg>
+    <mask id="396b68f57cb0">
+      <circle cx="40" cy="40" r="40" fill="white"/>
+      <polygon points="40,0 80,0 80,80 0,80 0,60 40,40" fill="black" stroke="black" stroke-width="2"/>
+    </mask>
+    <mask id="d2e849f89b04">
+      <circle cx="40" cy="40" r="40" fill="white"/>
+      <polygon points="0,0 40,0 40,40 80,60 80,80 0,80" fill="black" stroke="black" stroke-width="2"/>
+    </mask>
+    <mask id="0bb2ff881ae8">
+      <circle cx="40" cy="40" r="40" fill="white"/>
+      <polygon points="0,0 80,0 80,60 40,40 0,60" fill="black" stroke="black" stroke-width="2"/>
+    </mask>
+    <image x="-10" y="-5" height="65" width="65" xlink:href="/assets/b2eb97-e9f79f5480b705a25198bceb56a989e1ed6264dc3a0aa1d316ea24e267ebdfb78b64d7f7700f5a14ffa8aae6d27e37fde260b6d661d25d0143dd1818d7756c18.webp" mask="url(#396b68f57cb0)"></image>
+    <image x="30" y="-5" height="65" width="65" xlink:href="/assets/441699-5b40204ce7ae16a449c8328d52636e949e5c343ba38b11883ceeecd2ad98d95a2ff6a641fcfe54ecd8448fd9fe65e18d0fc4043671460a819cbf2a9b0774b3fb.webp" mask="url(#d2e849f89b04)"></image>
+    <image x="5" y="30" height="70" width="70" xlink:href="/assets/14f224-4cd435892c72d176baef5bf6759831bc5a1e70480d080e6ec6eff4308914ce6c51b718cd83463414dd44a59ccb3357c50e278fa414fea1ad16f68755921ed754.webp" mask="url(#0bb2ff881ae8)"></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Piotr Bigos, Katharina Trentau, Tomáš Smädo, Dominik Pataky</small>
+			<small>
+	6.
+	
+	September
+	  
+	2024
+
+</small>
+		</div>
+	</div>
+</div>
+
+<p>Coming closer to SCS release R7, more and more projects are finalized and ready to be tested by a broader audience. This also includes the newly developed SCS Health Monitor (SCSHM), which we present to you in this blog post!</p>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>To start, what exactly do we mean by “health monitoring”? Aren’t metrics, monitoring dashboards and alerts good indicators of healthy platforms? – While this might be enough in general, SCS also takes another aspect of “health” into account: actively testing behaviour of the platform.</p>
+
+<p>This means automated systems execute predefined actions, using the same credentials and privileges as users would, against SCS-based systems. Running these scenario tests covers many paths and workflows end-customers or operators would also take in their daily doing, so that tests are very much aligned with real-world use cases. Errors in the platform can be caught early on. Some might know this pattern as “Behavior Driven Development” (BDD), BDD testing or Behavior Driven Monitoring.</p>
+
+<h2 id="previous-work">Previous work</h2>
+
+<p>Even though we are talking about a “tech preview”, the concept for BDD testing in SCS is not new. For some time now, the <a href="https://github.com/SovereignCloudStack/openstack-health-monitor/">OpenStack Health Monitor</a> (OSHM) runs and tests our partner’s SCS installations and builds reports on Grafana dashboards. The OSHM has a long history and was once created for the OpenTelekomCloud, modeling a CloudFoundry deployment that was reported to not work reliably there. The <a href="https://github.com/SovereignCloudStack/openstack-health-monitor/commit/1de625b9b5534235a92e925226adea5a3c2d7507">initial commit</a> into SCS was made in November 2019 by SCS CTO <a href="https://github.com/garloff">Kurt Garloff</a>. The OSHM went through multiple iterations of patches, mainly submitted by Kurt, but also by others from the community. The broad deployment of the OSHM in CSP sites offers insights that everyone benefits from. And they are openly available to the SCS community via the dashboards, which are linked on the <a href="https://docs.scs.community/standards/certification/overview">overview of “Compliant cloud environments”</a> page, column <em>HealthMon</em>.</p>
+
+<p>Up until now, the OSHM enriched the SCS development and testing workflows in many ways. But, with the advancement of Kubernetes-as-a-Service (KaaS) and the tooling for operations and security in SCS, the sole focus on OpenStack made us re-evaluating the extendability of the OSHM.</p>
+
+<p>The OSHM is a very big shell script (nearly 5000 LoC) that is called with a lot of parameters on the CLI. It is able to export metrics to Grafana, via Telegraf and InfluxDB. As for the deployment, see <a href="https://github.com/SovereignCloudStack/openstack-health-monitor/blob/07b1f4ad0390382b3bf569139ad07dae186f5c33/run_gx_scs.sh">the run script for OSHM on gx-scs</a>, our main testing environment, as an example. While this works in SCS instances which employ OpenStack as the IaaS implementation, opening up the scope of the OSHM and bringing in entirely new platforms like Kubernetes and tools like Keycloak and Zuul were deemed to be difficult and time-consuming.</p>
+
+<p>Therefore, other projects that might help to extend health monitoring for SCS were evaluated. The main goals to reach were:</p>
+<ol>
+  <li>Allowing the community (multiple people who might not know each other) being able to maintain the code,</li>
+  <li>using a framework that is extensible towards every component of SCS and</li>
+  <li>having an open-source code base (an established framework) to build upon.</li>
+</ol>
+
+<p>We arrived at <a href="https://stackmon.org/">the StackMon (CloudMon)</a> project, in which our collegue <a href="https://github.com/gtema">Artem</a> is involved in. After an in-depth exchange workshop over the setup, possibilities and scope of StackMon, the SCSHM team got to work on a PoC for StackMon in SCS. Having gone through exploration and testing of StackMon as a candidate for an OSHM replacement, the team decided to switch to another approach.</p>
+
+<h2 id="concept">Concept</h2>
+
+<p>The new approach should lay a ground for testing not only OpenStack (a limiting disadvantage of both the OSHM and StackMon), but Kubernetes and applications on top as well. Originally, the team for the SCSHM work package (tender VP12) brought in their own technical proposal for a new implementation of a health monitoring stack. It was decided that this design was then used as a blueprint for all SCS components and layers, including OpenStack.</p>
+
+<p>At the time of writing, the implementation of the SCS Health Monitor makes use of:</p>
+<ul>
+  <li>the <a href="https://cucumber.io/docs/gherkin/reference/">Gherkin DSL</a> in which test cases are written in a non-technical human-readable language,</li>
+  <li>the <a href="https://behave.readthedocs.io/en/latest/">Behave</a>/<a href="https://github.com/hrcorval/behavex">BehaveX</a> libraries, which are written in Python and translate Gherkin into code,</li>
+  <li>API clients for <a href="https://docs.openstack.org/openstacksdk/latest/user/index.html">OpenStack</a>, <a href="https://kubernetes.readthedocs.io/en/latest/">Kubernetes</a> and any other application, and</li>
+  <li>a Prometheus-based setup for exporting metrics.</li>
+</ul>
+
+<p>Given that the implementation of API clients is done in Python, the framework is extensible to other tools as well (IAM, security, secrets, CI/CD, system monitoring). Most APIs in the SCS ecosystem are REST APIs exposed via HTTPS. Where there’s no Python SDK or client library, we can fall back to plain HTTPS requests.</p>
+
+<p>During test runs that are coordinated by Behave, metrics are collected. In the end, these are then pushed via a <a href="https://prometheus.io/docs/practices/pushing/">Prometheus push gateway</a> towards a <a href="https://prometheus.io/">Prometheus instance</a> and displayed in a <a href="https://grafana.com/">Grafana dashboard</a>. The code bases for test runs and the Prometheus stack are decoupled, any Prometheus installation can be used as export target.</p>
+
+<p>So far the theory, let’s dive into how to use the framework!</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>The repo with the SCSHM’s code is at <a href="https://github.com/SovereignCloudStack/scs-health-monitor">SovereignCloudStack/scs-health-monitor</a>. Let’s start with a simple use case: Testing the creation and deletion of a network in OpenStack.</p>
+
+<h3 id="setup-the-test-environment">Setup the test environment</h3>
+
+<p>This setup is simple and straight forward and shall lead you to have a quick, yet complete experience of running a test with the SCSHM. There’s also a container-based approach in review in <a href="https://github.com/SovereignCloudStack/scs-health-monitor/pull/137">PR #137</a>. It uses podman to build a “runner” container and automates the deployment of the Prometheus stack.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. Clone the repository</span>
+git clone https://github.com/SovereignCloudStack/scs-health-monitor
+<span class="nb">cd </span>scs-health-monitor
+
+<span class="c"># 2. Set up a virtual Python environment</span>
+<span class="c"># It's recommended to use a virtual environment to avoid conflicts with other Python packages.</span>
+python3 <span class="nt">-m</span> venv venv
+<span class="nb">source </span>venv/bin/activate  <span class="c"># On Windows: venv\Scripts\activate</span>
+
+<span class="c"># 3. Install Required Python Packages using pip.</span>
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<p>In this repository (under main directory) you have to create the two files:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">env.yaml</code> with SCSHM-related configuration (<a href="https://github.com/SovereignCloudStack/scs-health-monitor/blob/0f4f8a1d1c3bddadddc77e999167c939e1164320/env.example.yaml">example code</a>) and</li>
+  <li><code class="language-plaintext highlighter-rouge">clouds.yaml</code> containing your clouds.yaml credentials for OpenStack (<a href="https://github.com/SovereignCloudStack/scs-health-monitor/blob/0f4f8a1d1c3bddadddc77e999167c939e1164320/clouds.example.yaml">example code</a>).</li>
+</ul>
+
+<h3 id="running-a-test">Running a test</h3>
+
+<p>Now that you have installed Behave and the necessary Python libraries, and configured your environment, it’s time to run a test!</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>behave cloud_level_testing/features/openstack_create_network.feature cloud_level_testing/features/openstack_delete_network.feature
+</code></pre></div></div>
+
+<p>This test will, as mentioned before, create and delete a network in your OpenStack environment. Any results and errors will be catched and displayed. If everything works as expected, you should see an output similar to the following:</p>
+
+<div class="language-gherkin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">@network</span> <span class="nt">@create</span>
+<span class="kd">Feature</span><span class="p">:</span> <span class="err">OpenStack Network Creation # cloud_level_testing/features/openstack_create_network.feature</span><span class="p">:</span><span class="err">3</span>
+
+  <span class="kn">Scenario Outline</span><span class="p">:</span> <span class="err">Connect to OpenStack and create a network -- @1.1 Test networks  # cloud_level_testing/features/openstack_create_network.feature</span><span class="p">:</span><span class="err">12</span>
+    <span class="err">Given I connect to OpenStack                                                     # cloud_level_testing/features/steps/definitions.py</span><span class="p">:</span><span class="err">18</span> <span class="err">0.003s</span>
+    <span class="err">Then I should be able to create 2 networks                                       # cloud_level_testing/features/steps/definitions.py</span><span class="p">:</span><span class="err">153</span> <span class="err">2.498s</span>
+    <span class="err">Then I should be able to list networks                                           # cloud_level_testing/features/steps/definitions.py</span><span class="p">:</span><span class="err">14</span><span class="nf">7 </span>0.147s
+
+<span class="nt">@network</span> <span class="nt">@cleanup</span>
+<span class="kd">Feature</span><span class="p">:</span> <span class="err">Delete openstack network # cloud_level_testing/features/openstack_delete_network.feature</span><span class="p">:</span><span class="err">3</span>
+
+  <span class="kn">Scenario</span><span class="p">:</span> <span class="err">Connect to OpenStack and delete a network  # cloud_level_testing/features/openstack_delete_network.feature</span><span class="p">:</span><span class="err">5</span>
+    <span class="err">Given I connect to OpenStack                       # cloud_level_testing/features/steps/definitions.py</span><span class="p">:</span><span class="err">18</span> <span class="err">0.003s</span>
+    <span class="err">Then I should be able to delete a networks         # cloud_level_testing/features/steps/definitions.py</span><span class="p">:</span><span class="err">245</span> <span class="err">1.823s</span>
+
+<span class="err">2</span> <span class="err">features</span> <span class="err">passed,</span> <span class="err">0</span> <span class="err">failed,</span> <span class="err">0</span> <span class="err">skipped</span>
+<span class="err">2</span> <span class="err">scenarios</span> <span class="err">passed,</span> <span class="err">0</span> <span class="err">failed,</span> <span class="err">0</span> <span class="err">skipped</span>
+<span class="err">5</span> <span class="err">steps</span> <span class="err">passed,</span> <span class="err">0</span> <span class="err">failed,</span> <span class="err">0</span> <span class="err">skipped,</span> <span class="err">0</span> <span class="err">undefined</span>
+<span class="err">Took</span> <span class="err">0m4.474s</span>
+</code></pre></div></div>
+
+<h3 id="further-usage-and-development">Further usage and development</h3>
+
+<p>To add new behavior or extend existing features, first define new steps in the Python files located in <code class="language-plaintext highlighter-rouge">container_level_testing/features/steps</code> or <code class="language-plaintext highlighter-rouge">container_level_testing/features/steps</code>. These files map Gherkin steps to Python code. For example, see the following implementation of a <code class="language-plaintext highlighter-rouge">Given</code> and a <code class="language-plaintext highlighter-rouge">Then</code> step:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@given</span><span class="p">(</span><span class="sh">'</span><span class="s">I have resource X with name {name} available</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">given_resource_x</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">resource</span> <span class="o">=</span> <span class="nf">check_resource_exists</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">resource</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="nf">create_resource</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+
+<span class="nd">@when</span><span class="p">(</span><span class="sh">'</span><span class="s">I use resource with name {name} to do things</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">do_things_with_resource</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">resource</span> <span class="o">=</span> <span class="nf">get_resource_by_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">resource</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+    <span class="n">resource</span><span class="p">.</span><span class="nf">run_function_that_does_something</span><span class="p">()</span>
+
+<span class="nd">@then</span><span class="p">(</span><span class="sh">'</span><span class="s">Resource X with name {name} should be in working state</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">check_resource</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">resource</span> <span class="o">=</span> <span class="nf">get_resource_by_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">resource</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">resource</span><span class="p">.</span><span class="nf">get_state</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">state</span> <span class="o">==</span> <span class="sh">"</span><span class="s">Running</span><span class="sh">"</span>
+</code></pre></div></div>
+
+<p>Then, create a new feature file by adding a new <code class="language-plaintext highlighter-rouge">.feature</code> file in the <code class="language-plaintext highlighter-rouge">features</code> directory. In it, write scenarios in the Gherkin syntax, defining the behavior you want to test using Given-When-Then steps:</p>
+
+<div class="language-gherkin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">Feature</span><span class="p">:</span> New Kubernetes Feature
+
+  <span class="kn">Scenario Outline</span><span class="p">:</span> Using resource X to do things
+    <span class="nf">Given </span>I have resource X with name {name} available
+    <span class="nf">When </span>I use resource with name {name} to do things
+    <span class="nf">Then </span>Resource X with name {name} should be in working state
+
+    <span class="nn">Examples</span><span class="p">:</span>
+      <span class="p">|</span> <span class="nv">name</span>     <span class="p">|</span>
+      <span class="p">|</span> <span class="n">testname</span> <span class="p">|</span>
+</code></pre></div></div>
+
+<p>And done – you have successfully created a Given-When-Then scenario in both the code and Gherkin (even with a variable!).</p>
+
+<p>Please also have a look <a href="https://github.com/SovereignCloudStack/scs-health-monitor/tree/main/docs">at the docs folder in the repo</a> as well as the <a href="https://docs.scs.community/docs/category/scs-health-monitor/">documentation on docs.scs.community</a>.</p>
+
+<h2 id="outlook-and-future">Outlook and future</h2>
+
+<p>For R7 the team has implemented much of the tests from the OSHM in the new SCSHM. During the work in the previous months, the coverage was tracked closely to ensure that the implementation is on track to be a serious replacement for the OSHM. If you wish to deploy the SCSHM, please reach out to us!</p>
+
+<p>In regard to Kubernetes and applications there’s some groundwork done. Given the stability of the framework itself, further extension of functionality and tests is pretty straight forward. We’ll focus on Kubernetes and Cluster Stacks next, as to have a possibility to do health monitoring of KaaS deployments.</p>
+
+<p>Feel free to open <a href="https://github.com/SovereignCloudStack/scs-health-monitor/issues">a new feature request issue</a> in the repo and to try the tool yourself – be it on OpenStack or in Kubernetes!</p>
+
+
+
+<h2 id="about">
+  
+    Über die Autoren
+  
+</h2>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="6c1b2ee6f4f0">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/assets/0cd373-4902fd5b549d506b8631e830a31a7fd0c837ad97331967b70ef4df1fe591fad2ebe63be7b64f1612c0bd5078730aec60bd06a2d583dbd72fdc2705ab5e1b7ebb.webp" mask="url(#6c1b2ee6f4f0)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Piotr Bigos</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">Software Engineer @ <a href="https://dnation.cloud/" target="_blank">dNation</a></div>
+        <div class="mt-2">Piotr is a Software Developer working on a Cloud/Container platform health monitoring. He has a background in tests, development and performance tuning. Always focused on the speed, precision of measurements and details about crafting modern software from a boarder perspective.</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+<div class="me-2 mb-2">
+    <a class="btn btn-mail" href="mailto:piotrbigos@protonmail.com"><i class="fa fa-envelope fa-lg"></i></a>
+</div>
+
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="https://www.linkedin.com/in/piotr-bigos-5a690b148/"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/piobig2871"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+          <div class="ms-md-auto pe-3"><a href="/de/members/piobig2871" class="btn btn-outline-primary" role="button">Community-Profil &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="e7504dccea36">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/assets/fef935-23303575e33466198a945adf8da2a9bec4090a5df7a6fcaf85843262649272061d0e352036e31d2bb0cd6fed5cd4aa711d375e244b3448fd6fcaf99ada897f87.webp" mask="url(#e7504dccea36)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Dominik Pataky</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">PO Security and Operations Sovereign Cloud Stack @ <a href="https://osb-alliance.com" target="_blank">Open Source Business Alliance</a></div>
+        <div class="mt-2">Dominik has a background in computer science, with a specialization in networks, APIs, Linux and security. He has experience programming in Python, Go, some Rust and Java. Apart from that he is also an advocate for FOSS and open source infrastructures. His professional experience includes working in the finance sector as an information security specialist, researching a tenant-aware pod-to-pod traffic encryption layer in OpenShift and handling the implementation of regulatory compliance requirements in security-sensitive IT systems. The time as an IT freelancer provided him with a lot of insight into running a small enterprise from scratch. In the Sovereign Cloud Stack project he fills the role as the Product Owner for security and operations.
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+<div class="me-2 mb-2">
+    <a class="btn btn-mail" href="mailto:pataky@osb-alliance.com"><i class="fa fa-envelope fa-lg"></i></a>
+</div>
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-mastodon" target="_blank" href="https://infosec.exchange/@bitkeks"><i class="fa fa-mastodon fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="https://www.linkedin.com/in/dpataky"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/bitkeks"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-matrix" target="_blank" href="https://matrix.to/#/@bitkeks:matrix.kptt.net"><i class="fa fa-matrix-org fa-lg"></i></a>
+</div>
+
+          <div class="ms-md-auto pe-3"><a href="/de/members/bitkeks" class="btn btn-outline-primary" role="button">Community-Profil &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="fbc8a505c5a2">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/assets/e5dba3-800ee5d603d7e0ed7a6f45a597825d76fcf290b62cc36ef2eb1a9abc226a90ec40cf9dc2ca884da27467330746b01f4fd60e49c046deb51caac70db0ed6a9b21.webp" mask="url(#fbc8a505c5a2)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Katharina Trentau</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">Software Engineer @ <a href="https://www.cloudandheat.com" target="_blank">Cloud & Heat Technologies GmbH</a></div>
+        <div class="mt-2">Former Digital Artist from Berlin. BA in Mechatronics and MA in Electrotechnic / Process Informatic. Open for open source.
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="https://www.linkedin.com/in/katharina-trentau-01a1a4297/"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/fraugabel"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+          <div class="ms-md-auto pe-3"><a href="/de/members/fraugabel" class="btn btn-outline-primary" role="button">Community-Profil &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" integrity="sha512-GzGAK+B6sTfSNz880uJokj1yfuHRm2tXff87cWEDRd4IjDuDyQ9miXoh5S6E+gPB700cpRk7hlm5yVNZRqoBVA==" crossorigin="anonymous" src="/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS und das Logo sind geschützte Marken der Open Source Business Alliance e.V. — Sonstige Marken sind Eigentum ihrer jeweiligen Besitzer.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Impressum" href="/de/imprint/">Impressum</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Datenschutzerklärung" href="/de/dataprotection/">Datenschutzerklärung</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>Confidential Computing in digital sovereign environments | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="Confidential Computing in digital sovereign environments | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Confidential Computing in digital sovereign environments" />
+<meta property="og:description" content="Confidential Computing in digital sovereign environments" />
+<link rel="canonical" href="https://scs.community/tech/2023/11/21/confidential-computing-in-digital-sovereign-environments/" />
+<meta property="og:url" content="https://scs.community/tech/2023/11/21/confidential-computing-in-digital-sovereign-environments/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://scs.community/assets/images/default-card-d32fdb798ca15ae927f00593ce64407f69c70d4011955dc94c7be76b99c474f4e673ee1a26ec53725dda80c2c331e5ad4300a43e702171cc014cd47ec6b2f94d.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-11-21T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://scs.community/assets/images/default-card-d32fdb798ca15ae927f00593ce64407f69c70d4011955dc94c7be76b99c474f4e673ee1a26ec53725dda80c2c331e5ad4300a43e702171cc014cd47ec6b2f94d.jpg" />
+<meta property="twitter:title" content="Confidential Computing in digital sovereign environments" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-23T22:57:45+00:00","datePublished":"2023-11-21T00:00:00+00:00","description":"Confidential Computing in digital sovereign environments","headline":"Confidential Computing in digital sovereign environments","image":"default-card.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://scs.community/tech/2023/11/21/confidential-computing-in-digital-sovereign-environments/"},"url":"https://scs.community/tech/2023/11/21/confidential-computing-in-digital-sovereign-environments/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://scs.community/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Matomo -->
+  <script>
+    if (typeof(Storage) !== 'undefined') {
+    	if (localStorage.getItem('matomoTrackingEnabled') === null) {
+    		localStorage.setItem('matomoTrackingEnabled', 'true');
+    	}
+    }
+  </script>
+  <script>
+    if (localStorage.getItem('matomoTrackingEnabled') !== 'false') {
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['disableCookies']);
+      _paq.push(["setDoNotTrack", true]);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://matomo.scs.community/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    }
+  </script>
+  <!-- End Matomo Code -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" integrity="sha512-oLi5cq8OY/Co/5GZRWjRUMDnbeMMCa4e2EBWkvoxP6DVNEWGEqinHpp+Tc7VNJz/SB+9hj4ZuYttQftIgc1ivg==" crossorigin="anonymous" src="/assets/vendor/jquery/jquery-a0b8b972af0e63f0a8ff91994568d150c0e76de30c09ae1ed8405692fa313fa0d534458612a8a71e9a7e4dced5349cff481fbd863e19b98b6d41fb4881cd62be.js"></script>
+  <script type="text/javascript" integrity="sha512-2OEU5OYjrPJLs8PL9qkG+9N+DbHBqvWjEjlU76rnStYvZRzoY8k2i5/tcG1gjw/jwoGhuYkXm02Rc3f6HGU+tw==" crossorigin="anonymous" src="/assets/vendor/bootstrap/js/bootstrap.bundle-d8e114e4e623acf24bb3c3cbf6a906fbd37e0db1c1aaf5a3123954efaae74ad62f651ce863c9368b9fed706d608f0fe3c281a1b989179b4d917377fa1c653eb7.js"></script>
+  <!-- Lighbox -->
+  <script type="text/javascript" integrity="sha512-AsyFLM7qdMK2Gt1rVM/4wsSCeOPaCbE8KqQbSruCpez+OtU/5fEtpyjAtZkPBqKjpf6cnC6970DZNCHKwLJnzA==" crossorigin="anonymous" src="/assets/vendor/lightbox-02cc852cceea74c2b61add6b54cff8c2c48278e3da09b13c2aa41b4abb82a5ecfe3ad53fe5f12da728c0b5990f06a2a3a5fe9c9c2ebdef40d93421cac0b267cc.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/lightbox-0184be351f33358fce8415b3f8bdda50e58ee86ff1de0b37d00a26f602e14fc61896ad0bb90662299dea49767123bfe2c724163867b097f5f92cc1785e324cad.css" integrity="sha512-AYS+NR8zNY/OhBWz+L3aUOWO6G/x3gs30Aom9gLhT8YYlq0LuQZiKZ3qSXZxI7/ixyQWOGewl/X5LMF4XjJMrQ==" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/main-b8cf68a63f9b26ea819f67d4e3a173489daf6c6c7de17051d360d8e72b41c67279d732bd19f4a04210326db8595205b80d704f640296bb5f5f63bedc042df118.css" integrity="sha512-uM9opj+bJuqBn2fU46FzSJ2vbGx94XBR02DY5ytBxnJ51zK9GfSgQhAybbhZUgW4DXBPZAKWu19fY77cBC3xGA==" crossorigin="anonymous">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/pygments-css/zenburn-b9247179f996de88844d73acaa60564a48db30aa0fec022f80b7641b41d45140625b657433da3bd722f68ba2fed77bfaa94972b9eed09c77a427e04a1707917e.css" integrity="sha512-uSRxefmW3oiETXOsqmBWSkjbMKoP7AIvgLdkG0HUUUBiW2V0M9o71yL2i6L+13v6qUlyue7QnHekJ+BKFweRfg==" crossorigin="anonymous">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Entdecke unsere neue Webseite</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                SCS entdecken
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/de/about/">Über SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/use/">SCS nutzen</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/contribute/">Zu SCS beitragen</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/partners/">Servicepartner</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/members/">Community Members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/news/">
+                Neuigkeiten
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/events/">
+                Veranstaltungen
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/jobs/">
+                Offene Stellen
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/tenders/">
+                Ausschreibungen
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Dokumentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  " href="/tech/2023/11/21/confidential-computing-in-digital-sovereign-environments/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold   text-decoration-underline " href="/de/tech/2023/11/21/confidential-computing-in-digital-sovereign-environments/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  " href="/tech/2023/11/21/confidential-computing-in-digital-sovereign-environments/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold   text-decoration-underline " href="/de/tech/2023/11/21/confidential-computing-in-digital-sovereign-environments/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" integrity="sha512-dJ6jTJGSpX7cNvESuSrC7duEfT5HZD83SIs9FIybmKcgIVwMjhetDTg3yQVq5v6uPNyTHtNukRsrG2GiC0F95g==" crossorigin="anonymous" src="/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          Eine Plattform — standardisiert, entwickelt und betrieben von Vielen.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" integrity="sha512-YV5ImgTZnx6tg6b6ZNdt/JbR9qhEjuVFcJnivI/dsjU3n2YH6Reg/PtRn/GQKsVZYhPXM5759IoJJarysSIe4A==" crossorigin="anonymous" src="/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" integrity="sha512-pLkpIB9zq0WFODZFm2htuY8LLjcYlABYjOmSpRxsWdNxg16TzQ1biR8F/Odda4c4PD/BLVLG1WDFYC6zK/WLkA==" crossorigin="anonymous" src="/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" integrity="sha512-+/oBMqq6OUbZcOlC/ZjvQDq7EvjzRMwwh/y0ZuI0JLDX3d2biyzkl531jkt45I8EGetyHg8Fmb2J32tGwoccQw==" crossorigin="anonymous" src="/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>Confidential Computing in digital sovereign environments</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  
+  
+  <svg height="80" width="80">
+    <mask id="4591357147d9">
+      <circle cx="40" cy="40" r="40" fill="white"/>
+      <rect x="40" y="0" width="40" height="80" fill="black" stroke="black" stroke-width="2"/>
+    </mask>
+    <mask id="33a2c2139a3e">
+      <circle cx="40" cy="40" r="40" fill="white"/>
+      <rect x="0" y="0" width="40" height="80" fill="black" stroke="black" stroke-width="2"/>
+    </mask>
+    <image x="-20" y="0" height="80" width="80" xlink:href="/assets/676d83-98d1dc7f8d847e6def81a0333798ce53a5e64a706ed7b5d3596a3fff3199c2aba67c5991498feb8dc8b78c1c47e3ba2371adf06e1abb9b1d3fe3bc9f2e5f7683.webp" mask="url(#4591357147d9)"></image>
+    <image x="20" y="0" height="80" width="80" xlink:href="/assets/cf7853-9c5426cb1890d013e39c97cc61a84fd7c4b5f229c7e2cbf3e83bae00d415fe53e0de14bf1a15e212e5eb44354f96648fbddf57cc2b60bc19078acf4e60575b22.webp" mask="url(#33a2c2139a3e)"></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Markus Leberecht, Felix Kronlage-Dammers</small>
+			<small>
+	21.
+	
+	November
+	  
+	2023
+
+</small>
+		</div>
+	</div>
+</div>
+
+<h1 id="confidential-computing-in-digital-sovereign-environments">Confidential Computing in digital sovereign environments</h1>
+
+<h2 id="why-is-confidential-computing-anticipated">Why is confidential computing anticipated</h2>
+
+<p>Protecting data is at the heart of any digital sovereignty discussion. Traditional controls to achieve this rely on the encryption of data assets with keys managed such that sovereignty goals can be achieved. This bases data protection on proper key management based on a consistent role understanding and access management. So far, so common…</p>
+
+<p>Throughout a data asset’s life cycle, multiple and well-understood methods exist for protecting data at rest, i.e. when stored, such as drive, file, and object encryption, and for protecting data in transit on the wire via e.g. IPsec or TLS. Up to recently, however, when data is being processed, it was required to be in cleartext, as was the code being executed to process it. Confidential Computing sets out to solve this: a Trusted Execution Environment (TEE) in the CPU gets established that protects and isolates code and data at runtime. Implemented as part of a processor’s memory map, encryption is again used to keep code and data within such as TEE confidential. Only after reading the encrypted memory lines into the processor package does such data get decrypted so that it can be processed. Processor business logic ensures that encryption keys are only managed by the tenant and cannot be utilized by other tenants nor by system software or platform administrators.</p>
+
+<p>This execution model helps to separate duties between a tenant and a platform owner that do not belong to the same organization - a model all too common in public cloud computing. Going one step further, typical Confidential Computing implementations also allow any external party to get a cryptographic proof of a TEE’s content at runtime via a remote attestation mechanism. In such a case a challenged TEE’s CPU would reply with a signed current measurement (hash) of the TEE’s memory map as well as a patch level indicator for the underlying server platform’s critical firmware, allowing the relying party to validate these values against expectations before sharing secrets with the TEE.</p>
+
+<p>Overall, Confidential Computing, when implemented well, can be utilized to enforce compliance needs and, as such, helps to amplify the sovereignty posture of digital services based on it.</p>
+
+<h2 id="technology-explained">Technology explained</h2>
+
+<p>Current x86 Confidential Computing technologies differ in the way they support the common spectrum of deployment artifacts used in cloud stacks.</p>
+
+<p>a) Process-based TEEs: Intel Software Guard Extensions (SGX)</p>
+
+<p>Intel SGX was the first Confidential Computing technology on the market. It appeared with support for size-limited TEEs (up to 256 MB), so called Secure Enclaves, in Intel’s client architectures of the Skylake microarchitecture and following, and supported an attestation method based on the Enhanced Privacy ID (EPID). This initial version of SGX was since discontinued.</p>
+
+<p>Today’s version of Intel SGX has improved performance, supports Enclave sizes of up to 1 TB in 2 socket system, and features a scalable attestation protocol based on ECDSA signatures. It has been on the market since the Xeon Scalable Processor of the 3rd generation, codename Icelake.</p>
+
+<p>An SGX Enclave effectively encapsulates code and data that make up a process. Code entry and exit from such an enclave are done explicitly through call gates, while neither operating system calls nor devices are directly supported within the enclave and thus have to be proxied through call gates. In order to utilize existing applications within such an Enclave, library operating systems such as Gramine (https://gramineproject.io) are utilized to implement a largely Linux-compliant ABI to an application and can help to even run container processes within the TEE (Gramine Shielded Containers, https://gramine.readthedocs.io/en/stable/gsc-installation.html).</p>
+
+<p>Attestation of such an SGX Enclave will measure the Enclave’s current memory content and provide back the security version of the platform’s firmware setup in addition. A simplified sequence for SGX ECDSA-based attestation is shown in the following animation:</p>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+    <img class="figure-img w-100" alt="Intel SGX ECDSA Attestation" integrity="sha512-q6nli5zDRKL6RopnZVG27D1EhB4sLaSSQX7C/jsnncvO3eZ0VwbhHJ/DL2qE38RBnsqfMk4AjSOD4MXVw90Elg==" crossorigin="anonymous" src="/assets/images/blog/cc/JM-ecdsa-attestation-sequence-aba9e58b9cc344a2fa468a676551b6ec3d44841e2c2da492417ec2fe3b279dcbcedde6745706e11c9fc32f6a84dfc4419eca9f324e008d2383e0c5d5c3dd0496.gif" />
+    <figcaption>Intel SGX ECDSA Attestation</figcaption>
+</figure>
+
+<p>Since Linux kernel 5.13, a system with SGX enabled will be supported by the mainstream kernel without additional configuration in all Linux distributions. On bare metal and within KVM/Qemu-based VMs, SGX memory - the so-called Enclave Page Cache - will be accessible to code utilizing SGX instructions. Up to date versions of qemu (&gt;=6.2) and libvirt (&gt;=8.10) support using SGX within virtual machines.</p>
+
+<p>Being on the market for this extended time, SGX has been researched well and <a href="https://en.wikipedia.org/wiki/Software_Guard_Extensions#List_of_SGX_vulnerabilities">vulnerabilities found</a> have been <a href="https://www.intel.com/content/www/us/en/security-center/default.html">fixed</a> either through microcode updates or microarchitectural changes that were applied along with SGX’ Trusted Compute Base Recovery (TCB-R) process which allows to gracefully handle enclave version and patch level changes in its attestation framework. For more information on both SGX attestation and TCB Recovery please see this page on <a href="https://www.intel.com/content/www/us/en/security-center/technical-details/sgx-attestation-technical-details.html">SGX attestation technical details</a>.</p>
+
+<p>b) VM-based TEEs: Intel TDX And AMD SEV</p>
+
+<p>While application-based TEEs like SGX enclaves minimize the trust boundary around confidential data and thus help to keep attack surfaces small, it requires explicit effort to convert existing artifacts, whether through re-linking or through application refactoring. Technologies such as Intel Trust Domain Extensions (Intel TDX) and AMD Secure Encrypted Virtualization (AMD SEV) in their respective variants directly support virtual machines to be deployed as TEEs.</p>
+
+<p>The simplicity of the deployment model comes at some costs, though: this model relies on hypervisor support and, by definition, cannot be implemented as a bare-metal deployment method. Also, attestation of such a VM-based TEE will only be able to reasonably measure the static portions of a deployed VM image as typical memory sizes might be a barrier for timely hashing, and because of a VM’s operating system dynamics will hardly find a single definable state to compare against a golden value. For these reasons, remote attestation of VM TEEs typically only focuses on the static boot stack and will rely on, e.g., Linux’s Integrity Measurement Architecture to protect an application-defined set of critical files against unwanted changes.</p>
+
+<p>c) When to use what?</p>
+
+<p>Based on the previous characteristics, application isolation via process-based TEEs leans itself more to highly critical applications and code that can be
+easily standardized on. Due to projects like Gramine Shielded Containers, a dockerized version of standard open-source components can be made to be run with
+SGX support and deployed through Kubernetes with limited effort. Kubernetes Node Feature Discovery will recognize SGX and can be used in a cluster to identify and orchestrate towards SGX-supporting nodes. There also exist libraries of pre-tested docker images for SGX-enabled versions of typical open-
+source components, such as NGINX, Vault, and others. (See e.g. https://github.com/enclaive or https://github.com/gramineproject/examples.) Projects like Marblerun (https://github.com/edgelesssys/marblerun) can then help to tie together a multi-container deployment with a single attestation process.</p>
+
+<p>If a complex application stack exists as a virtual-machine deployment, it naturally leans itself more towards VM-based TEEs. Note that here the application stack should be redeployed on top of an image base that contains paravirtualized TDX or SEV guest support (e.g. adjusted VM firmware) as simply re-launching an existing qcow image within a TEE would not yield the desired outcome.</p>
+
+<p>An easy way to compare the security posture of different Confidential Computing deployment variants is shown in the following diagram.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%">
+    <img class="figure-img w-100" alt="Trusted Boundary Elements" integrity="sha512-Q+fjck6lOARtyBpoJdJYwNLhLfLckD+0XWt2CEX2nDpuimKMUEdI98UsRcEnH8vcOhhDatNYKNSsMaO7Ttd+mQ==" crossorigin="anonymous" src="/assets/images/blog/cc/trusted-boundary-elements-43e7e3724ea538046dc81a6825d258c0d2e12df2dc903fb45d6b760845f69c3a6e8a628c504748f7c52c45c1271fcbdc3a18436ad35828d4ac31a3bb4ed77e99.png" />
+    <figcaption>Trusted Boundary Elements</figcaption>
+</figure>
+
+<p>A limiting factor for Confidential Computing in both cases is the use of I/O-based accelerators as the combined execution environment of CPU TEE, I/O communication over PCIexpress, and the accelerator’s own TEE cannot be secured at I/O line speed at the time of writing and as such will only form a rather slow combined TEE.</p>
+
+<h2 id="from-theory-to-trusted-execution-environments-in-scs">From theory to Trusted Execution Environments in SCS</h2>
+
+<p>For SCS to embark on the support for Confidential Computing, SGX presents itself as the most mature and deployment-proven due to its length of availability. In order for the SCS IaaS reference implementation to be able to support SGX Enclaves the support for SGX must therfore be present in OpenStack.</p>
+
+<p>With the <a href="https://github.com/intel/secured-cloud-management-stack/">Secured Cloud Management Stack</a> (SCM) a lot of work has been done by Intel to bring Trusted Execution Environments to OpenStack. In order to make this accessable on top of SCS it must become part of upstream OpenStack. Through the various tenders run by the Sovereign Cloud Stack project, bringing technology upstream is being funded, and a while ago, it was concluded to tackle the upstreaming of the Intel patchset as part of our <a href="https://scs.community/tenders/lot1">tender package 01</a>.</p>
+
+<p>The work is aligned in the Team IaaS and is outlined in <a href="https://github.com/SovereignCloudStack/issues/issues/39">a corresponding epic</a>. The epic contains the theoretical aspects as well as the technical aspects such as the userstory <a href="https://github.com/SovereignCloudStack/issues/issues/246">Forwarding-porting and retesting of upstream intel patchset for SGX and OpenStack</a> which contains the references to the necessary work on the codebase. Once the patchsets are updated to match the current OpenStack codebase the next steps will be to have SGX-enabled kolla images available. With those present it will be much easier to test SGX on top of OpenStack in the SCS-community and work from upstreaming the changes from there.
+Once support has landed in upstream OpenStack proper automated testing needs to be added in order to assure that the code paths properly keep working each time changes are done to the relevant codebase.</p>
+
+<p>Aside from the funding through the tender 01 the effort is supported by Intel providing the corresponding hardware.</p>
+
+<h2 id="moving-upwards-from-the-metal">Moving upwards from the metal</h2>
+
+<p>Looking forward a lot of the interesting parts are happening upwards from the IaaS - cloud-native workloads such as the <a href="https://projects.eclipse.org/projects/technology.xfsc">Eclipse XFSC - Cross Federation Services Components</a> could greatly benefit from confidential computing.</p>
+
+<h2 id="what-are-the-xfsc-and-how-do-they-benefit-from-confidential-computing">What are the XFSC and how do they benefit from confidential computing</h2>
+
+<p>Eclipse XFSC (Cross Federation Services Components) develops the software components necessary to set up a federated system that interconnects several participants in a data and service infrastructure with each other, aiming to develop new data-driven services and innovative products. Such ecosystems consist of joined interconnected data and infrastructure ecosystems, aggregated in so-called Federations that are individually orchestrated and operated with the help of Federation Services, part of Gaia-X.</p>
+
+<p>The XFSC serves as the essential toolbox, comprising the minimal technical services necessary for establishing a cloud-based data infrastructure within Federations. It serves the critical purpose of enabling operational functionality.</p>
+
+<p>In facilitating the construction of trust and interoperability, XFSC guarantees data sovereignty and compliance across federated catalogs and within each individual Federation. Notably, XFSC is crafted as open-source code, diverging from a centralized distribution model. This design allows for customization, empowering the development of applications and services tailored to the unique requirements of each Federation.</p>
+
+<p>This diagram illustrates the federation’s architecture and its fundamental components. Currently, the setup serves a dual purpose for both providers and federators. However, it has the flexibility to be divided into separate Argo CD environments if needed.</p>
+
+<ul>
+  <li>Authentication &amp; Authorization Service (AAS)</li>
+  <li>Personal Credential Manager (PCM)</li>
+  <li>Organization Credential Manager (OCM)</li>
+  <li>Trust Services (TSA)</li>
+  <li>Notarization Service (NOT)</li>
+  <li>Federated Catalogue (CAT)</li>
+  <li>Compliance Service</li>
+  <li>Self Description Wizard</li>
+  <li>Portal (POR)</li>
+</ul>
+
+<figure class="figure mx-auto d-block" style="width:100%">
+    <img class="figure-img w-100" alt="XFSC Architecture Overview" integrity="sha512-KIHekhz3cWoOpreb/yt6D+ylRXrdsi0yyUsvMT5AoYGIM1+Gq/7tzTlN2AdOgaddB3bXcFrUkIJrQFK4Ca2FCg==" crossorigin="anonymous" src="/assets/images/blog/cc/xfsc-architecture-2881de921cf7716a0ea6b79bff2b7a0feca5457addb22d32c94b2f313e40a18188335f86abfeedcd394dd8074e81a75d0776d7705ad490826b4052b809ad850a.png" />
+    <figcaption>XFSC Architecture Overview</figcaption>
+</figure>
+
+<p>The architectural overview illustrates the diverse microservices comprising the XFSC. Leveraging Confidential Computing could enhance the security of both the execution environment and credential storage.</p>
+
+<p>In a follow up blogpost, and once we have the SGX-enabled OpenStack up and running, we will be diving into the depth of actually moving the OCM and other services to a SGX-backed system.</p>
+
+<h2 id="version-history">Version history</h2>
+
+<ul>
+  <li>Minor update on 2023-12-10:
+    <ul>
+      <li>Paragraph on the XFSC was rephrased and updated with feedback from the XFSC team.</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+<h2 id="about">
+  
+    Über die Autoren
+  
+</h2>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="a5db36d8b561">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/assets/beb3e0-a155c3cae86324639b03873107baa88cd99f08d28a7b64f57701f356426c0d4118c8a89c74b20819433dba067c7f89ee40801cfbe354a7feee9288522fb18b25.webp" mask="url(#a5db36d8b561)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Felix Kronlage-Dammers</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">Product Owner IaaS & OPS Sovereign Cloud Stack @ <a href="https://osb-alliance.com" target="_blank">Open Source Business Alliance - Bundesverband für digitale Souveränität e.V.</a></div>
+        <div class="mt-2">Felix has been building (open source) IT Infrastructure since the late 90s - during high school he helped build and run an ISP specialized in providing UUCP over ssh. Between then and now felix has always been active in various open source development communities (from DarwinPorts, OpenDarwin to OpenBSD and nowadays the Sovereign Cloud Stack). His interests range from monitoring and observability over infrastructure-as-code to building and scaling communities and companies. A technician at heart he enjoys enabling others to do awesome stuff. He is part of the extended board of the OSBA and describes himself as an unix/open source nerd. If not working, doing OSS for fun and (non-)profit or spending time with his family, he is usually found on a road bike.
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+<div class="me-2 mb-2">
+    <a class="btn btn-mail" href="mailto:fkr@osb-alliance.com"><i class="fa fa-envelope fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-web" target="_blank" href="https://hazardous.org/"><i class="fa fa-globe fa-lg"></i></a>
+</div>
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-mastodon" target="_blank" href="https://digitalcourage.social/@fkr"><i class="fa fa-mastodon fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="https://www.linkedin.com/in/felix-kronlage-dammers/"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/fkr"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-matrix" target="_blank" href="https://matrix.to/#/@fkronlage:matrix.org"><i class="fa fa-matrix-org fa-lg"></i></a>
+</div>
+
+          <div class="ms-md-auto pe-3"><a href="/de/members/fkr" class="btn btn-outline-primary" role="button">Community-Profil &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="e7c2bbae3e2a">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/assets/75144f-1dbcfbb2bb0db27c8440b0a14da6aa6587538bce4da38a63adb25580f1de99e2c6b68fdcbb0140089924909da76dc85764871ee92e89d111abfaae3481e8fef7.webp" mask="url(#e7c2bbae3e2a)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Markus Leberecht</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">Solution Architect @ <a href="https://www.intel.com/" target="_blank">Intel</a></div>
+        <div class="mt-2">Markus is a solution architect at Intel, focusing on security technologies and their hardware support. 
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+<div class="me-2 mb-2">
+    <a class="btn btn-mail" href="mailto:markus.leberecht@intel.com"><i class="fa fa-envelope fa-lg"></i></a>
+</div>
+
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="www.linkedin.com/in/dr-markus-leberecht-7b4374"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/mleberec"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-matrix" target="_blank" href="https://matrix.to/#/@markusleb_intel:matrix.org"><i class="fa fa-matrix-org fa-lg"></i></a>
+</div>
+
+          <div class="ms-md-auto pe-3"><a href="/de/members/mleberec" class="btn btn-outline-primary" role="button">Community-Profil &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" integrity="sha512-GzGAK+B6sTfSNz880uJokj1yfuHRm2tXff87cWEDRd4IjDuDyQ9miXoh5S6E+gPB700cpRk7hlm5yVNZRqoBVA==" crossorigin="anonymous" src="/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS und das Logo sind geschützte Marken der Open Source Business Alliance e.V. — Sonstige Marken sind Eigentum ihrer jeweiligen Besitzer.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Impressum" href="/de/imprint/">Impressum</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Datenschutzerklärung" href="/de/dataprotection/">Datenschutzerklärung</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>

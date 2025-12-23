@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>Performance impact of disk encryption using LUKS | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="Performance impact of disk encryption using LUKS | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="Preface" />
+<meta property="og:description" content="Preface" />
+<link rel="canonical" href="https://scs.community/2023/02/24/impact-of-disk-encryption/" />
+<meta property="og:url" content="https://scs.community/2023/02/24/impact-of-disk-encryption/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://scs.community/assets/images/blog/luks-performance-impact-2142b917e939b60105cf561953fe32d5f1051372be960edb001e041fbdce6bc401bd44caa0646686cd1903426fc95dda9c8f8dda659562cbd974a78455b61aad.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-24T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://scs.community/assets/images/blog/luks-performance-impact-2142b917e939b60105cf561953fe32d5f1051372be960edb001e041fbdce6bc401bd44caa0646686cd1903426fc95dda9c8f8dda659562cbd974a78455b61aad.png" />
+<meta property="twitter:title" content="Performance impact of disk encryption using LUKS" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-23T22:57:45+00:00","datePublished":"2023-02-24T00:00:00+00:00","description":"Preface","headline":"Performance impact of disk encryption using LUKS","image":"blog/luks-performance-impact.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://scs.community/2023/02/24/impact-of-disk-encryption/"},"url":"https://scs.community/2023/02/24/impact-of-disk-encryption/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://scs.community/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Matomo -->
+  <script>
+    if (typeof(Storage) !== 'undefined') {
+    	if (localStorage.getItem('matomoTrackingEnabled') === null) {
+    		localStorage.setItem('matomoTrackingEnabled', 'true');
+    	}
+    }
+  </script>
+  <script>
+    if (localStorage.getItem('matomoTrackingEnabled') !== 'false') {
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['disableCookies']);
+      _paq.push(["setDoNotTrack", true]);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://matomo.scs.community/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    }
+  </script>
+  <!-- End Matomo Code -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" integrity="sha512-oLi5cq8OY/Co/5GZRWjRUMDnbeMMCa4e2EBWkvoxP6DVNEWGEqinHpp+Tc7VNJz/SB+9hj4ZuYttQftIgc1ivg==" crossorigin="anonymous" src="/assets/vendor/jquery/jquery-a0b8b972af0e63f0a8ff91994568d150c0e76de30c09ae1ed8405692fa313fa0d534458612a8a71e9a7e4dced5349cff481fbd863e19b98b6d41fb4881cd62be.js"></script>
+  <script type="text/javascript" integrity="sha512-2OEU5OYjrPJLs8PL9qkG+9N+DbHBqvWjEjlU76rnStYvZRzoY8k2i5/tcG1gjw/jwoGhuYkXm02Rc3f6HGU+tw==" crossorigin="anonymous" src="/assets/vendor/bootstrap/js/bootstrap.bundle-d8e114e4e623acf24bb3c3cbf6a906fbd37e0db1c1aaf5a3123954efaae74ad62f651ce863c9368b9fed706d608f0fe3c281a1b989179b4d917377fa1c653eb7.js"></script>
+  <!-- Lighbox -->
+  <script type="text/javascript" integrity="sha512-AsyFLM7qdMK2Gt1rVM/4wsSCeOPaCbE8KqQbSruCpez+OtU/5fEtpyjAtZkPBqKjpf6cnC6970DZNCHKwLJnzA==" crossorigin="anonymous" src="/assets/vendor/lightbox-02cc852cceea74c2b61add6b54cff8c2c48278e3da09b13c2aa41b4abb82a5ecfe3ad53fe5f12da728c0b5990f06a2a3a5fe9c9c2ebdef40d93421cac0b267cc.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/lightbox-0184be351f33358fce8415b3f8bdda50e58ee86ff1de0b37d00a26f602e14fc61896ad0bb90662299dea49767123bfe2c724163867b097f5f92cc1785e324cad.css" integrity="sha512-AYS+NR8zNY/OhBWz+L3aUOWO6G/x3gs30Aom9gLhT8YYlq0LuQZiKZ3qSXZxI7/ixyQWOGewl/X5LMF4XjJMrQ==" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/main-b8cf68a63f9b26ea819f67d4e3a173489daf6c6c7de17051d360d8e72b41c67279d732bd19f4a04210326db8595205b80d704f640296bb5f5f63bedc042df118.css" integrity="sha512-uM9opj+bJuqBn2fU46FzSJ2vbGx94XBR02DY5ytBxnJ51zK9GfSgQhAybbhZUgW4DXBPZAKWu19fY77cBC3xGA==" crossorigin="anonymous">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/pygments-css/zenburn-b9247179f996de88844d73acaa60564a48db30aa0fec022f80b7641b41d45140625b657433da3bd722f68ba2fed77bfaa94972b9eed09c77a427e04a1707917e.css" integrity="sha512-uSRxefmW3oiETXOsqmBWSkjbMKoP7AIvgLdkG0HUUUBiW2V0M9o71yL2i6L+13v6qUlyue7QnHekJ+BKFweRfg==" crossorigin="anonymous">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Entdecke unsere neue Webseite</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                SCS entdecken
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/de/about/">Über SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/use/">SCS nutzen</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/contribute/">Zu SCS beitragen</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/partners/">Servicepartner</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/members/">Community Members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/news/">
+                Neuigkeiten
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/events/">
+                Veranstaltungen
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/jobs/">
+                Offene Stellen
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/tenders/">
+                Ausschreibungen
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Dokumentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  " href="/2023/02/24/impact-of-disk-encryption/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold   text-decoration-underline " href="/de/2023/02/24/impact-of-disk-encryption/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  " href="/2023/02/24/impact-of-disk-encryption/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold   text-decoration-underline " href="/de/2023/02/24/impact-of-disk-encryption/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" integrity="sha512-dJ6jTJGSpX7cNvESuSrC7duEfT5HZD83SIs9FIybmKcgIVwMjhetDTg3yQVq5v6uPNyTHtNukRsrG2GiC0F95g==" crossorigin="anonymous" src="/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          Eine Plattform — standardisiert, entwickelt und betrieben von Vielen.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" integrity="sha512-YV5ImgTZnx6tg6b6ZNdt/JbR9qhEjuVFcJnivI/dsjU3n2YH6Reg/PtRn/GQKsVZYhPXM5759IoJJarysSIe4A==" crossorigin="anonymous" src="/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" integrity="sha512-pLkpIB9zq0WFODZFm2htuY8LLjcYlABYjOmSpRxsWdNxg16TzQ1biR8F/Odda4c4PD/BLVLG1WDFYC6zK/WLkA==" crossorigin="anonymous" src="/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" integrity="sha512-+/oBMqq6OUbZcOlC/ZjvQDq7EvjzRMwwh/y0ZuI0JLDX3d2biyzkl531jkt45I8EGetyHg8Fmb2J32tGwoccQw==" crossorigin="anonymous" src="/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>Performance impact of disk encryption using LUKS</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  <svg height="80" width="80">
+    
+    
+    <mask id="37bf6ac35528">
+      <rect width="80" height="80" fill="white"/>
+    </mask>
+    <mask id="28a25701e2f4">
+        <circle cx="40" cy="40" r="40" fill="white"/>
+    </mask>
+    <image x="0" y="0" height="80" width="80" xlink:href="/assets/655938-749bf3d1d835309c6beb21a5132bf0ce9a61833600d6e76f693a4c2e7750febec91fc04fc3249795448d00f0d45aab6d04c5ce4f82edacf826cb2e3a28fb5c83.webp"
+       mask="url(#28a25701e2f4)" 
+    ></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Paul-Philipp Kuschy</small>
+			<small>
+	24.
+	
+	Februar
+	  
+	2023
+
+</small>
+		</div>
+	</div>
+</div>
+
+<h2 id="preface">Preface</h2>
+
+<p>During some weekly meetings of SCS Team Container and also 
+SCS Team IaaS the question emerged whether or not generally 
+enabling full disk encryption on servers - especially related 
+to software defined storage like Ceph - should be the default.</p>
+
+<p>While in general enabling disk encryption can be considered a good 
+thing that many people would agree with, there is a difference between 
+enabling <abbr title="Full Disk Encryption">FDE</abbr> on your personal 
+computing devices versus servers in a 
+datacenter environment, especially when a lot of drives need to be 
+encrypted.</p>
+
+<p>The concerns voiced were that the performance impact would be 
+tremendous. But since no actual data was available at hand to showcase 
+how big that impact could become, I voluntered to dig into 
+the matter at hand and do benchmarks.</p>
+
+<p>Also with the availability of self encrypting drives, the practical 
+application of that technology had to be evaluated.</p>
+
+<h2 id="almost-tldr">“Almost” TL;DR</h2>
+
+<h3 id="impact-on-spinning-disks">Impact on spinning disks</h3>
+
+<p>The benchmarks show that the additional overhead for encryption on 
+spinning disks is not that big regarding CPU load (at least compared to NVME), 
+mainly because the drives and controllers are the limiting factor there.</p>
+
+<p>So SAS HDDs (even across 24 of them) aren’t that big of a deal CPU-wise. 
+It’s still measurable, but even for <abbr title="Hyper converged infrastructure">HCI</abbr> 
+nodes the impact is not so big that enabling encryption would possibly wreak havoc.</p>
+
+<p>However bandwidth and IOPS losses are quite big and can 
+lead - depending on the I/O pattern - to about <strong>79 %</strong> performance penalty. 
+Worst performance losses were seen with sequential write (<strong>up to 79 %</strong>) 
+followed by sequential read (<strong>up to 53 %</strong>). 
+Random I/O losses were worst with random writes (<strong>up to 43 %</strong>) 
+followed by random read (<strong>up to 26 %</strong>). In some single benchmarks 
+performance was better than without encryption, up to <strong>5 times faster</strong> 
+across a RAID-0 at 4 KiB sequential writes. 
+This possibly can be attributed to optimized I/O queueing.</p>
+
+<p class="lead">
+<strong>Recommendation:</strong> You can usually safely turn on disk encryption with HDDs, 
+as it likely won't cause many problems regarding CPU load even within 
+<abbr title="Hyper converged infrastructure">HCI</abbr>. 
+However the performance penalty in throughput and IOPS can be quite tremendous 
+compared to non-encrypted operation.
+</p>
+
+<h3 id="impact-on-all-flash">Impact on all flash</h3>
+
+<p>On NVME all flash systems the load impact can be <strong>gigantic</strong>.
+A RAID 0 across just three LUKS encrypted NVME SSDs was enough 
+to fully saturate the CPU on test system B.</p>
+
+<p>It shows in the fio data when adding up usr_cpu and sys_cpu values.<br />
+During the benchmark runs I monitored the system additionally 
+with <code class="language-plaintext highlighter-rouge">iostat</code> and <code class="language-plaintext highlighter-rouge">htop</code> and the following <code class="language-plaintext highlighter-rouge">htop</code> screenshot shows 
+how big that impact can be.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%; max-width: 986px;">
+    <img class="figure-img w-100 mx-auto" integrity="sha512-IUK5F+k5tgEFz1YZU/4y1fEFE3K+lg7bAB4EH73Oa8QBvUTKoGRmhs0ZA0JvyV3anI+N2mWVYsvZdKeEVbYarQ==" crossorigin="anonymous" src="/assets/images/blog/luks-performance-impact-2142b917e939b60105cf561953fe32d5f1051372be960edb001e041fbdce6bc401bd44caa0646686cd1903426fc95dda9c8f8dda659562cbd974a78455b61aad.png" />
+</figure>
+<p class="fw-semibold text-center">That's an AMD EPYC 7402P with 100% CPU load across all threads/cores!</p>
+
+<p>This significantly increases power consumption and for 
+<abbr title="Hyper converged infrastructure">HCI</abbr> nodes 
+would be bad for other workloads running on it.</p>
+
+<p>Heat dissipation could then also be challenging when whole racks suddenly 
+dissipate way more heat than before. At least cost for cooling on top of 
+the increased power consumption of the nodes would be really bad.</p>
+
+<p>Bandwidth and IOPS losses are also quite big and can 
+lead - depending on the I/O pattern - up to a <strong>83 %</strong> performance penalty. 
+An I/O depth of 32 reduces the losses significantly. Worst performance losses 
+with encryption were measured with the RAID-0 in most cases.<br />
+Performance losses sorted by I/O type worst to best were random writes (<strong>up to 83 %</strong>), 
+sequential write (<strong>up to 83 %</strong>), sequential read (<strong>up to 81 %</strong>) 
+and finally random read (<strong>up to 80 %</strong>).<br />
+All these worst values were with I/O size 1 and 4 MiB 
+across the RAID-0 without I/O depth 32. One can clearly see however that 
+all these worst values are within 5 %, so its rather the I/O size combined 
+with the use of LUKS and MD RAID and not the drives.</p>
+
+<p><strong>Caution:</strong> It’s difficult to compare the performance of MD RAID with Ceph OSDs!<br />
+The performance impact when using Ceph could be totally different and will probably 
+be more oriented towards the losses of individual drives. 
+However the CPU load issue still remains.</p>
+
+<p><strong>Regarding the CPU load:</strong> There are crypto accelerator cards available which 
+claim around 200 Gbps AES throughput and can integrate with dmcrypt 
+through kernel modules.</p>
+
+<p>These cards weren’t available for testing, but judging from prices 
+on the used market (I didn’t find official price listings) 
+for such cards and their power consumption specs they could provide 
+a solution to offload the crypto operations from the CPU at a reasonable 
+price point.</p>
+
+<p class="lead">
+<strong>Recommendation:</strong> Further measurements regarding power consumption and crypto 
+accelerators could be done. Also testing with an actual Ceph cluster on all flash 
+is necessary to get a comparison of the losses compared to linux MD RAID. <br />
+Every provider needs to evaluate that separately depending on their own configurations 
+and hardware choices. <br />
+<strong>As of now the performance impact without accelerators is too big to recommend 
+generally enabling LUKS on NVME.</strong>
+</p>
+
+<h3 id="regarding-the-use-of-self-encrypting-drives">Regarding the use of self encrypting drives:</h3>
+
+<p>It was possible to activate the encryption with a passphrase utilizing<br />
+<code class="language-plaintext highlighter-rouge">sedutil</code> under linux. Performance impact was within measurement error,
+so basically non-existent. That’s why in the section below I didn’t bother 
+creating charts - the results are too similar to plain operation (as expected).</p>
+
+<p>Unfortunately the tooling in its current state is cumbersome to use, 
+also there would be a need to write scripts for integrating it into 
+<abbr title="Network Bound Disk Encryption">NBDE</abbr> setups.<br />
+(But it would be possible without too much hacking!)</p>
+
+<p>However even though it <strong>technically</strong> works and performance impact is near zero, 
+I encountered a severe showstopper for using that technology in servers, 
+especially in cloud environments:</p>
+
+<p>After powering down the system or manually locking the drive and rebooting, 
+the system firmware stopped during POST to ask for the passphrase for each drive.</p>
+
+<p>On the Supermicro server test system I found no way to disable that in BIOS/UEFI, 
+which makes that technology not reboot-safe and thus unusable in server environments. 
+<strong>Even worse</strong> was that even when trying to type in the passphrase, 
+it wasn’t accepted. So somehow the way <code class="language-plaintext highlighter-rouge">sedutil</code> stores the passphrase differs 
+from what the firmware does?</p>
+
+<p class="lead">
+<strong>Recommendation:</strong> The tooling needs to be polished and documentation 
+significantly improved. Documentation on the tools is very confusing for the 
+general system administrator and can easily lead to operator errors. <br />
+Also due to the current BIOS/UEFI issues the technology cannot be recommended as of yet.
+</p>
+
+<p class="lead">
+If vendors would provide a way to disable asking for the passphrase of certain drives 
+it would be possible to use SEDs in a DC environment without the need of 
+manual operator intervention when rebooting.
+</p>
+
+<p>This concludes the TL;DR section.</p>
+
+<p>So without further ado, let’s dig into the details.</p>
+
+<h2 id="the-test-setups">The test setups</h2>
+
+<p>Two different test systems were used. Since no dedicated systems could be 
+built/procured for the tests I used two readily available machines.<br />
+The specs of these are:</p>
+
+<h3 id="test-system-a-sas-hdd-only">Test system A: SAS HDD only</h3>
+
+<dl class="row">
+<dt class="col-sm-1">CPU</dt><dd class="col-sm-11">2 x Intel(R) Xeon(R) Gold 6151 CPU @ 3.00GHz</dd>
+<dt class="col-sm-1">RAM</dt><dd class="col-sm-11">512 GB</dd>
+<dt class="col-sm-1">Drives</dt><dd class="col-sm-11">24 x HGST HUC101818CS4200 10k RPM 1.8 TB</dd>
+</dl>
+
+<h3 id="test-system-b-nvme-all-flash-only">Test system B: NVME all flash only</h3>
+
+<dl class="row">
+<dt class="col-sm-1">CPU</dt><dd class="col-sm-11">1 x AMD EPYC 7402P</dd>
+<dt class="col-sm-1">RAM</dt><dd class="col-sm-11">512 GB (16 x 32 GB Samsung RDIMM DDR4-3200 CL22-22-22 reg ECC)</dd>
+<dt class="col-sm-1">Drives</dt><dd class="col-sm-11">3 x Samsung MZQLB3T8HALS-00007 SSD PM983 3.84TB U.2</dd>
+</dl>
+
+<h3 id="benchmark-specifications">Benchmark specifications</h3>
+
+<p>On both systems I performed a series of benchmarks with <code class="language-plaintext highlighter-rouge">fio</code> using some custom 
+scripts.<br />
+I chose to test the following block sizes, since they can offer some insight 
+into which I/O might cause what kind of load:</p>
+
+<ul>
+  <li>4 KiB</li>
+  <li>64 KiB</li>
+  <li>1 MiB</li>
+  <li>4 MiB (default object/”stripe” size for Ceph RBDs)</li>
+  <li>16 MiB</li>
+  <li>64 MiB</li>
+</ul>
+
+<p>The following fio tests were performed:</p>
+
+<ul>
+  <li>sequential read</li>
+  <li>sequential write</li>
+  <li>random read</li>
+  <li>random write</li>
+</ul>
+
+<p>All with option <code class="language-plaintext highlighter-rouge">--direct</code> and also repeated with <code class="language-plaintext highlighter-rouge">--iodepth=32</code> option 
+and using libaio.</p>
+
+<p>Those benchmarks were performed for:</p>
+
+<ul>
+  <li>The raw storage devices direct without encryption (e.g. one SAS disk, all NVME SSD)</li>
+  <li>The raw storage devices with encryption</li>
+  <li>A linux MD RAID 0 across all the devices without encryption</li>
+  <li>A linux MD RAID 0 across all the devices with encryption on the base devices</li>
+  <li>For the SED capable drives (only test system B) with SED turned on, 
+although no difference was expected there due to the fact that SED capable 
+drives usually always encrypt all their data with an internal key.<br />
+So enabling SED only encrypts that master key, requiring decryption after 
+locking the drive either through software or because of a power loss.<br />
+(Simplified, details can be found in the specifications like OPAL 2.0)</li>
+</ul>
+
+<p>Benchmarking Ceph itself was skipped, because no suitable test setup was 
+available that offered both NVME and SAS OSDs. But since enabling Ceph 
+encryption is using LUKS encrypted OSDs, 
+the results should be useful nonetheless.</p>
+
+<h2 id="fio-benchmark-script">fio benchmark script</h2>
+<p>In case you want to run your own benchmarks, here is the script that was used to generate the data:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nv">LOGPATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="nv">BENCH_DEVICE</span><span class="o">=</span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$LOGPATH</span>
+<span class="nv">IOENGINE</span><span class="o">=</span><span class="s2">"libaio"</span>
+<span class="nv">DATE</span><span class="o">=</span><span class="sb">`</span><span class="nb">date</span> +%s<span class="sb">`</span>
+<span class="k">for </span>RW <span class="k">in</span> <span class="s2">"write"</span> <span class="s2">"randwrite"</span> <span class="s2">"read"</span> <span class="s2">"randread"</span>
+<span class="k">do
+  for </span>BS <span class="k">in</span> <span class="s2">"4K"</span> <span class="s2">"64K"</span> <span class="s2">"1M"</span> <span class="s2">"4M"</span> <span class="s2">"16M"</span> <span class="s2">"64M"</span>
+  <span class="k">do</span>
+    <span class="o">(</span>
+    <span class="nb">echo</span> <span class="s2">"==== </span><span class="nv">$RW</span><span class="s2"> - </span><span class="nv">$BS</span><span class="s2"> - DIRECT ===="</span>
+    <span class="nb">echo </span>3 <span class="o">&gt;</span> /proc/sys/vm/drop_caches
+    fio <span class="nt">--rw</span><span class="o">=</span><span class="nv">$RW</span> <span class="nt">--ioengine</span><span class="o">=</span><span class="k">${</span><span class="nv">IOENGINE</span><span class="k">}</span> <span class="nt">--size</span><span class="o">=</span>400G <span class="nt">--bs</span><span class="o">=</span><span class="nv">$BS</span> <span class="nt">--direct</span><span class="o">=</span>1 <span class="nt">--runtime</span><span class="o">=</span>60 <span class="nt">--time_based</span> <span class="nt">--name</span><span class="o">=</span>bench <span class="nt">--filename</span><span class="o">=</span><span class="nv">$BENCH_DEVICE</span> <span class="nt">--output</span><span class="o">=</span><span class="nv">$LOGPATH</span>/<span class="nv">$RW</span>.<span class="k">${</span><span class="nv">BS</span><span class="k">}</span><span class="nt">-direct-</span><span class="sb">`</span><span class="nb">basename</span> <span class="nv">$BENCH_DEVICE</span><span class="sb">`</span>.<span class="nv">$DATE</span>.log.json <span class="nt">--output-format</span><span class="o">=</span>json
+    <span class="nb">sync
+    echo </span>3 <span class="o">&gt;</span> /proc/sys/vm/drop_caches
+    <span class="nb">echo</span> <span class="s2">"==== </span><span class="nv">$RW</span><span class="s2"> - </span><span class="nv">$BS</span><span class="s2"> - DIRECT IODEPTH 32  ===="</span>
+    fio <span class="nt">--rw</span><span class="o">=</span><span class="nv">$RW</span> <span class="nt">--ioengine</span><span class="o">=</span><span class="k">${</span><span class="nv">IOENGINE</span><span class="k">}</span> <span class="nt">--size</span><span class="o">=</span>400G <span class="nt">--bs</span><span class="o">=</span><span class="nv">$BS</span> <span class="nt">--iodepth</span><span class="o">=</span>32 <span class="nt">--direct</span><span class="o">=</span>1 <span class="nt">--runtime</span><span class="o">=</span>60 <span class="nt">--time_based</span> <span class="nt">--name</span><span class="o">=</span>bench <span class="nt">--filename</span><span class="o">=</span><span class="nv">$BENCH_DEVICE</span> <span class="nt">--output</span><span class="o">=</span><span class="nv">$LOGPATH</span>/<span class="nv">$RW</span>.<span class="k">${</span><span class="nv">BS</span><span class="k">}</span><span class="nt">-direct-iod32-</span><span class="sb">`</span><span class="nb">basename</span> <span class="nv">$BENCH_DEVICE</span><span class="sb">`</span>.<span class="nv">$DATE</span>.log.json <span class="nt">--output-format</span><span class="o">=</span>json
+    <span class="nb">sync</span>
+    <span class="o">)</span> | <span class="nb">tee</span> <span class="nv">$LOGPATH</span>/<span class="nv">$RW</span>.<span class="nv">$BS</span>-<span class="sb">`</span><span class="nb">basename</span> <span class="nv">$BENCH_DEVICE</span><span class="sb">`</span>.<span class="nv">$DATE</span>.log
+    <span class="nb">echo
+  </span><span class="k">done
+done</span>
+</code></pre></div></div>
+
+<p>The script expects two parameters:</p>
+<ul>
+  <li>First the path where to store the log files (the path will be created if it does not exist)</li>
+  <li>Second argument is the device on which to run the benchmarks against</li>
+</ul>
+
+<p>The script will produce a sequence of log files in JSON format, which can then be analyzed with tooling of your choice.</p>
+
+<h2 id="baseline-luks-algorithm-performance">Baseline LUKS algorithm performance</h2>
+
+<p>On both systems I first ran <code class="language-plaintext highlighter-rouge">cryptsetup benchmark</code> which performs 
+some general benchmarking of algorithm throughput.
+This was done to obtain the best possible LUKS configuration regarding 
+throughput.</p>
+
+<p>These were the results on test system A:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PBKDF2-sha1      1370687 iterations per second for 256-bit key
+PBKDF2-sha256    1756408 iterations per second for 256-bit key
+PBKDF2-sha512    1281877 iterations per second for 256-bit key
+PBKDF2-ripemd160  717220 iterations per second for 256-bit key
+PBKDF2-whirlpool  543867 iterations per second for 256-bit key
+argon2i       5 iterations, 1048576 memory, 4 parallel threads (CPUs) for 256-bit key (requested 2000 ms time)
+argon2id      5 iterations, 1048576 memory, 4 parallel threads (CPUs) for 256-bit key (requested 2000 ms time)
+#     Algorithm |       Key |      Encryption |      Decryption
+        aes-cbc        128b       904.3 MiB/s      2485.1 MiB/s
+    serpent-cbc        128b        78.8 MiB/s       577.4 MiB/s
+    twofish-cbc        128b       175.9 MiB/s       319.7 MiB/s
+        aes-cbc        256b       695.8 MiB/s      2059.4 MiB/s
+    serpent-cbc        256b        78.8 MiB/s       577.4 MiB/s
+    twofish-cbc        256b       175.9 MiB/s       319.6 MiB/s
+        aes-xts        256b      2351.5 MiB/s      2348.7 MiB/s
+    serpent-xts        256b       560.1 MiB/s       571.4 MiB/s
+    twofish-xts        256b       316.7 MiB/s       316.1 MiB/s
+        aes-xts        512b      1983.0 MiB/s      1979.6 MiB/s
+    serpent-xts        512b       560.5 MiB/s       571.3 MiB/s
+    twofish-xts        512b       316.5 MiB/s       315.7 MiB/s
+</code></pre></div></div>
+
+<p>As you can see aes-xts 256 Bit performed the best, so when creating LUKS formatted devices 
+I chose <code class="language-plaintext highlighter-rouge">-c aes-xts-plain64 -s 256</code> as parameters, which are also the defaults 
+in many modern distributions. But just to be on the safe side I specified them explicitly.</p>
+
+<p>Now let’s have a look at the fio results for single disks and RAID-0, 
+both encrypted and non-encrypted.</p>
+
+<h2 id="comparing-read-bandwidth">Comparing read bandwidth</h2>
+
+<style type="text/css">
+#carousel-bw-read .carousel-indicators button {
+color: #fff;
+background-color: #fff;
+}
+#carousel-bw-read .carousel-indicators button.active {
+color: #e9c53c;
+background-color: #e9c53c;	
+}	
+</style>
+
+<div id="carousel-bw-read" class="carousel carousel-dark slide" data-bs-ride="false">
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="1" aria-current="true" aria-label="Slide 1"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="2" aria-current="true" aria-label="Slide 2"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="3" aria-current="true" aria-label="Slide 3"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="4" aria-current="true" aria-label="Slide 4"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="5" aria-current="true" aria-label="Slide 5"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="6" aria-current="true" aria-label="Slide 6"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="7" aria-current="true" aria-label="Slide 7"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="8" aria-current="true" aria-label="Slide 8"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="9" aria-current="true" aria-label="Slide 9"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="10" aria-current="true" aria-label="Slide 10"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="11" aria-current="true" aria-label="Slide 11"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="12" aria-current="true" aria-label="Slide 12"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="13" aria-current="true" aria-label="Slide 13"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="14" aria-current="true" aria-label="Slide 14"></button>
+<button type="button" data-bs-target="#carousel-bw-read" data-bs-slide-to="15" aria-current="true" aria-label="Slide 15"></button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-9mRIkPqxC8Tk2adiK+mXHpPWN4g5ekcLtz912O9sIiAy1qZUssKrAXnkWsjQoawjZ3p579pRw9mUJfTupXwKkg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-sas-raid0-non-encrypt-f6644890fab10bc4e4d9a7622be9971e93d63788397a470bb73f75d8ef6c222032d6a654b2c2ab0179e45ac8d0a1ac23677a79efda51c3d99425f4eea57c0a92.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-vat+25X+NxwBkkIZnDTJtY2+gpEJNXNbv26dVKQVXCeJp2QqCKpsZSQUoDt1DNuzmv+pZuoheM7BpMyzmfD9wA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-sas-raid0-encrypted-bdab7edb95fe371c019242199c34c9b58dbe82910935735bbf6e9d54a4155c2789a7642a08aa6c652414a03b750cdbb39affa966ea2178cec1a4ccb399f0fdc0.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-7G1NOFwQifkTGD7OqrWTEYFVar1CfSj5LJzy212JO0MaAtvlbHh6nDNPLaTkw6rjvAkWIYXTnWeTCUAFgb+pdA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-sas-hdd-non-encrypt-ec6d4d385c1089f913183eceaab5931181556abd427d28f92c9cf2db5d893b431a02dbe56c787a9c334f2da4e4c3aae3bc09162185d39d679309400581bfa974.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-CnGzhXKdT/+vKJf4pS4FNny40eAY2Dhyd7Jsoy42vFSp6Cn2FRHdBA8FOb8tVTFZn1x9ja2DUWaUo027Nfc+ZQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-sas-hdd-encrypted-0a71b385729d4fffaf2897f8a52e05367cb8d1e018d8387277b26ca32e36bc54a9e829f61511dd040f0539bf2d5531599f5c7d8dad83516694a34dbb35f73e65.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-ztTRUqBqCoQRd1QXYID1HrqGuTsbx8l9kJHmtwNQ/bgyCh/Q9lUe+cVVZsvhYpBPZKTyJXp/mMMbQ9kcg2RJRw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-nvme-raid0-non-encrypt-ced4d152a06a0a84117754176080f51eba86b93b1bc7c97d9091e6b70350fdb8320a1fd0f6551ef9c55566cbe162904f64a4f2257a7f98c31b43d91c83644947.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-FEniyxpokW/U1aY23ohBfoeSjugnJakZJwJagtDd0NALOZgQvIThjZM7ucfwL0Uz48s22qjcDTFQ5JlgsZMAvA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-nvme-raid0-encrypted-1449e2cb1a68916fd4d5a636de88417e87928ee82725a91927025a82d0ddd0d00b399810bc84e18d933bb9c7f02f4533e3cb36daa8dc0d3150e49960b19300bc.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-HuNyHmIozCZM7WaJgdBE0DxPsBHDXUisLBNi5It0MRIPn6KxdRZ8gT5zHtTw6Zz+5aYQQPnOT0+UTaevMgyeSA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-nvme-non-encrypt-1ee3721e6228cc264ced668981d044d03c4fb011c35d48ac2c1362e48b7431120f9fa2b175167c813e731ed4f0e99cfee5a61040f9ce4f4f944da7af320c9e48.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-NnfFml7MLrJvBX4i7TnpHtgMNwM29CQUe7ydZKnGx5Hku1ybAIFSCiuogXRaDRouz0c5QahjJlbE84Bpem9uNQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-nvme-encrypted-3677c59a5ecc2eb26f057e22ed39e91ed80c370336f424147bbc9d64a9c6c791e4bb5c9b0081520a2ba881745a0d1a2ecf473941a8632656c4f380697a6f6e35.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-F4zGTAEhzinnn5fRGSlsMS1Xzsj2XjwZdFSFVT47+rheeTwJo+HUhq5G29RcX6hRjPlaIBwCc4EagPtXs+9b1w==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-iod32-sas-raid0-non-encrypt-178cc64c0121ce29e79f97d119296c312d57cec8f65e3c19745485553e3bfab85e793c09a3e1d486ae46dbd45c5fa8518cf95a201c0273811a80fb57b3ef5bd7.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-A374d0MHQRtCUNlxsbwBO82TWCCLPC9ocG6+x6QlKAxElBMCX12hAm7DEdJWxlnAMif3BuQPTKw0Dq0f0JpdjA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-iod32-sas-raid0-encrypted-037ef8774307411b4250d971b1bc013bcd9358208b3c2f68706ebec7a425280c449413025f5da1026ec311d256c659c03227f706e40f4cac340ead1fd09a5d8c.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-oVVTltg4Euz1D9m1c4nHpkj5bqQVhnKg7FK9N8E0CI9IThf1A6uRpDfDvU0hMX63mGezYSnn/0vIWWMrPwDmnQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-iod32-sas-hdd-non-encrypt-a1555396d83812ecf50fd9b57389c7a648f96ea4158672a0ec52bd37c134088f484e17f503ab91a437c3bd4d21317eb79867b36129e7ff4bc859632b3f00e69d.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-TTZgHkeyuZEKb31cRHBgG0BhmlDRru0pLx/K3SkrRsHrSrIHExLWgbzdCPBEeI2p/ceyPEBl3xWMSZZ3p7VkxQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-iod32-sas-hdd-encrypted-4d36601e47b2b9910a6f7d5c4470601b40619a50d1aeed292f1fcadd292b46c1eb4ab2071312d681bcdd08f044788da9fdc7b23c4065df158c499677a7b564c5.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-1WFt4aVrOfFZWjUA4XoJE+leFv22jLzQOqzg9/h4uUuBdTCocgrOwy37QGlzQHwHceqQv0oo9uu59j55tpvDiQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-iod32-nvme-raid0-non-encrypt-d5616de1a56b39f1595a3500e17a0913e95e16fdb68cbcd03aace0f7f878b94b817530a8720acec32dfb406973407c0771ea90bf4a28f6ebb9f63e79b69bc389.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-ZY0I+Y6WaxiDjw3IlhS6bVQxhq89oRDsq1nHDpYY79OQfVcTkXiscsPQqklCiWEwEBlEGZ++F8jIcKSILqoP2A==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-iod32-nvme-raid0-encrypted-658d08f98e966b18838f0dc89614ba6d543186af3da110ecab59c70e9618efd3907d57139178ac72c3d0aa4942896130101944199fbe17c8c870a4882eaa0fd8.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-ytuZNW0kL99x684n8+zJoog47bXpLgZtfNlR08br9kzfp4vovPO6ZdfXSBHi7XT1cAD6uZIF7EA1ItVVFVwNug==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-iod32-nvme-non-encrypt-cadb99356d242fdf71ebce27f3ecc9a28838edb5e92e066d7cd951d3c6ebf64cdfa78be8bcf3ba65d7d74811e2ed74f57000fab99205ec403522d555155c0dba.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-bEIn8kxyTQ28tIeGQwqj5SrrMqtILfvRySDJU/NDhrBsaDkSypE6UlB5NDev1OEUWAJYtredwTdYckWgR6HkqA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-read-iod32-nvme-encrypted-6c4227f24c724d0dbcb48786430aa3e52aeb32ab482dfbd1c920c953f34386b06c683912ca913a5250793437afd4e114580258b6b79dc137587245a047a1e4a8.png" /></div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carousel-bw-read" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carousel-bw-read" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+<p class="text-center fw-semibold">Caution: Scales are logarithmic!</p>
+
+<h3 id="performance-losses-read-bandwidth">Performance losses read bandwidth</h3>
+
+<table class="table table-striped table-hover table-bordered">
+<thead>
+<tr>
+<th scope="col">Device</th>
+<th scope="col">4 KiB % loss</th>
+<th scope="col">64 KiB % loss</th>
+<th scope="col">1 MiB % loss</th>
+<th scope="col">4 MiB % loss</th>
+<th scope="col">16 MiB % loss</th>
+<th scope="col">64 MiB % loss</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row">SAS RAID-0</th>            <td>10,82 %</td><td>32,48 %</td><td>47,36 %</td><td>52,95 %</td><td>36,26 %</td><td>3,86 %</td></tr>
+<tr><th scope="row">SAS HDD</th>               <td>23,86 %</td><td>-0,06 %</td><td>-0,02 %</td><td>0,01 %</td><td>-0,05 %</td><td>-0,08 %</td></tr>
+<tr><th scope="row">NVME RAID-0</th>           <td>45,53 %</td><td>70,13 %</td><td>77,05 %</td><td>80,61 %</td><td>67,65 %</td><td>55,88 %</td></tr>
+<tr><th scope="row">NVME</th>                  <td>44,42 %</td><td>71,76 %</td><td>67,46 %</td><td>70,75 %</td><td>63,21 %</td><td>53,24 %</td></tr>
+<tr><th scope="row">SAS RAID-0 iodepth=32</th> <td>6,81 %</td><td>13,71 %</td><td>4,92 %</td><td>2,66 %</td><td>9,81 %</td><td>23,52 %</td></tr>
+<tr><th scope="row">SAS HDD iodepth=32</th>    <td>14,75 %</td><td>-0,65 %</td><td>-0,03 %</td><td>-0,03 %</td><td>0,21 %</td><td>0,13 %</td></tr>
+<tr><th scope="row">NVME RAID-0 iodepth=32</th><td>40,99 %</td><td>60,02 %</td><td>51,61 %</td><td>49,68 %</td><td>48,62 %</td><td>48,62 %</td></tr>
+<tr><th scope="row">NVME iodepth=32</th>       <td>40,64 %</td><td>21,57 %</td><td>1,89 %</td><td>1,89 %</td><td>1,98 %</td><td>2,43 %</td></tr>
+</tbody>
+</table>
+
+<h2 id="comparing-write-bandwidth">Comparing write bandwidth</h2>
+
+<style type="text/css">
+#carousel-bw-write .carousel-indicators button {
+color: #fff;
+background-color: #fff;
+}
+#carousel-bw-write .carousel-indicators button.active {
+color: #e9c53c;
+background-color: #e9c53c;	
+}	
+</style>
+
+<div id="carousel-bw-write" class="carousel carousel-dark slide" data-bs-ride="false">
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="1" aria-current="true" aria-label="Slide 1"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="2" aria-current="true" aria-label="Slide 2"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="3" aria-current="true" aria-label="Slide 3"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="4" aria-current="true" aria-label="Slide 4"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="5" aria-current="true" aria-label="Slide 5"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="6" aria-current="true" aria-label="Slide 6"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="7" aria-current="true" aria-label="Slide 7"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="8" aria-current="true" aria-label="Slide 8"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="9" aria-current="true" aria-label="Slide 9"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="10" aria-current="true" aria-label="Slide 10"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="11" aria-current="true" aria-label="Slide 11"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="12" aria-current="true" aria-label="Slide 12"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="13" aria-current="true" aria-label="Slide 13"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="14" aria-current="true" aria-label="Slide 14"></button>
+<button type="button" data-bs-target="#carousel-bw-write" data-bs-slide-to="15" aria-current="true" aria-label="Slide 15"></button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-vCNqI0vjTWrUttdt8d3ZlcfvISq/RKzzcgdWxmMqSOxJLB4scNK8W0+kp02DKFoDQ2ORHrV84V98dr/++mBsPw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-sas-raid0-non-encrypt-bc236a234be34d6ad4b6d76df1ddd995c7ef212abf44acf3720756c6632a48ec492c1e2c70d2bc5b4fa4a74d83285a034363911eb57ce15f7c76bffefa606c3f.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-HrU6o2UxST9m+0bxb5o1Bf1+A5pNmBh+oTfge7DSqwpVkkWiKu20whTa/tmsKkbQximjWMOiBkLRaIto6+98xw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-sas-raid0-encrypted-1eb53aa36531493f66fb46f16f9a3505fd7e039a4d98187ea137e07bb0d2ab0a559245a22aedb4c214dafed9ac2a46d0c629a358c3a20642d1688b68ebef7cc7.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-uWZSVCneNvfxbD9fyRqV1C+lndz6T2ll4dnti9tPuh53n7eeFr0D1IubPM2JvttPiZ6NpYSqNhl6OrMu3agIOw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-sas-hdd-non-encrypt-b966525429de36f7f16c3f5fc91a95d42fa59ddcfa4f6965e1d9ed8bdb4fba1e779fb79e16bd03d48b9b3ccd89bedb4f899e8da584aa36197a3ab32edda8083b.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-8y1Z0Wywdf6aUXF0PCbvNUO3Mt8G33ew/1RaTQPk1T/J4qEwD/3KUs6rh/4BK2//tMOtfJ0vExoXfenpr/Zblg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-sas-hdd-encrypted-f32d59d16cb075fe9a5171743c26ef3543b732df06df77b0ff545a4d03e4d53fc9e2a1300ffdca52ceab87fe012b6fffb4c3ad7c9d2f131a177de9e9aff65b96.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-hEvTjZo69aalKwmLrkXaDnqXArbUvTP+D5eYaGQfdlofo1N7xDkixQf19Y0jGM6Zv61TSMG1WyMb+nNuVgrzfA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-nvme-raid0-non-encrypt-844bd38d9a3af5a6a52b098bae45da0e7a9702b6d4bd33fe0f979868641f765a1fa3537bc43922c507f5f58d2318ce99bfad5348c1b55b231bfa736e560af37c.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-2k7aa+WZ4vccrLwnk49j5aCqmi8u2ARK5wXNyDicGNovg0MzGprvsZiaV6/dFhuq4mJztS5sUV+vXwybPJOwWQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-nvme-raid0-encrypted-da4eda6be599e2f71cacbc27938f63e5a0aa9a2f2ed8044ae705cdc8389c18da2f8343331a9aefb1989a57afdd161baae26273b52e6c515faf5f0c9b3c93b059.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-rrvYYFsaIy0RlBYHJct8WSRTPpsfT3qT2XFqEaPkre2aY5souzHAWoa12MDSIjGMp+h2n+/IvI7UcAa4gry8sw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-nvme-non-encrypt-aebbd8605b1a232d1194160725cb7c5924533e9b1f4f7a93d9716a11a3e4aded9a639b28bb31c05a86b5d8c0d222318ca7e8769fefc8bc8ed47006b882bcbcb3.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-iIRZwOLuIMlcrKZIY87ezUD2tZPrOvKiiOz4ykHDo2egqepmNWUDt7mWO7rxH+J6QW7GzkkiODFkzSRvZ05I7A==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-nvme-encrypted-888459c0e2ee20c95caca64863cedecd40f6b593eb3af2a288ecf8ca41c3a367a0a9ea66356503b7b9963bbaf11fe27a416ec6ce4922383164cd246f674e48ec.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-rBGKgN7EdF2ZYG6ZwzQVScNRaK8GpBL2x3bVlffJhHk46W12ukjjzxol5JNTA6PkpB0d1pr4aGHP/MY5TsrwAA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-iod32-sas-raid0-non-encrypt-ac118a80dec4745d99606e99c3341549c35168af06a412f6c776d595f7c9847938e96d76ba48e3cf1a25e4935303a3e4a41d1dd69af86861cffcc6394ecaf000.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-23OCGLSQRWhCX0iEZWWsa5LtVB2cBzWXaRHLVTsyoAkW+n33yKi5nAeK8oJBr45Zl5+umz+7N10UkhWJzAkylg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-iod32-sas-raid0-encrypted-db738218b4904568425f48846565ac6b92ed541d9c0735976911cb553b32a00916fa7df7c8a8b99c078af28241af8e59979fae9b3fbb375d14921589cc093296.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-si2ZW6j7WEBuxHCxHvgmcfDVLqNPs5fwlNDDbXRts6zTkF2VsxJOYE7/mAdlDqKt/aa3yRpeveghFAldd5+GxA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-iod32-sas-hdd-non-encrypt-b22d995ba8fb58406ec470b11ef82671f0d52ea34fb397f094d0c36d746db3acd3905d95b3124e604eff9807650ea2adfda6b7c91a5ebde82114095d779f86c4.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-XZHdU3RA+P8aGbhsgC+AdBL/hGOwVCGf7tA+tJHBYjo6dSwSjNjcM21tbxCtSJjBqVUCCr9WV+QgLI+JvCUt2w==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-iod32-sas-hdd-encrypted-5d91dd537440f8ff1a19b86c802f807412ff8463b054219feed03eb491c1623a3a752c128cd8dc336d6d6f10ad4898c1a955020abf5657e4202c8f89bc252ddb.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-mr+vIONfq8Ar0RK6M6eWShKkIf+EWMrXGU8UsedXri/+0GLtccJOiMMelJzDxVgLKKeH+CHgIJa96x7nYPEb2A==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-iod32-nvme-raid0-non-encrypt-9abfaf20e35fabc02bd112ba33a7964a12a421ff8458cad7194f14b1e757ae2ffed062ed71c24e88c31e949cc3c5580b28a787f821e02096bdeb1ee760f11bd8.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-1PkRu/XiyuG5VcPX7hXk2EazIuEr9GJ0njaRVOIbslPzSmfDem9dqQGTZ1t9yrUzC+c2NkqCa+G266U1aU0OsQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-iod32-nvme-raid0-encrypted-d4f911bbf5e2cae1b955c3d7ee15e4d846b322e12bf462749e369154e21bb253f34a67c37a6f5da90193675b7dcab5330be736364a826be1b6eba535694d0eb1.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-J239ycxbIUTkiYEn+eCc/XqT9RIFm6a8NbRugMgF0LorNWbk6kwG0whCx64mN3hVxn38zxXQGKRhj6hmKQg8PQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-iod32-nvme-non-encrypt-276dfdc9cc5b2144e4898127f9e09cfd7a93f512059ba6bc35b46e80c805d0ba2b3566e4ea4c06d30842c7ae26377855c67dfccf15d018a4618fa86629083c3d.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-uUTHabCkdzpptu211nA0RO2aYkox9aohA9jIDhMo7S9BucwlkbrvDOxan82XaDPDAc0BOx2KN5Uq3ztP8wL9Jg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-write-iod32-nvme-encrypted-b944c769b0a4773a69b6edb5d6703444ed9a624a31f5aa2103d8c80e1328ed2f41b9cc2591baef0cec5a9fcd976833c301cd013b1d8a37952adf3b4ff302fd26.png" /></div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carousel-bw-write" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carousel-bw-write" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+<p class="text-center fw-semibold">Caution: Scales are logarithmic!</p>
+
+<h3 id="performance-losses-write-bandwidth">Performance losses write bandwidth</h3>
+
+<table class="table table-striped table-hover table-bordered">
+<thead>
+<tr>
+<th scope="col">Device</th>
+<th scope="col">4 KiB % loss</th>
+<th scope="col">64 KiB % loss</th>
+<th scope="col">1 MiB % loss</th>
+<th scope="col">4 MiB % loss</th>
+<th scope="col">16 MiB % loss</th>
+<th scope="col">64 MiB % loss</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row">SAS RAID-0</th>            <td>-499,50 %</td><td>11,31 %</td><td>31,52 %</td><td>34,98 %</td><td>28,53 %</td><td>49,55 %</td></tr>
+<tr><th scope="row">SAS HDD</th>               <td>-59,93 %</td><td>-1,32 %</td><td>0,05 %</td><td>10,11 %</td><td>12,43 %</td><td>10,18 %</td></tr>
+<tr><th scope="row">NVME RAID-0</th>           <td>51,45 %</td><td>71,81 %</td><td>82,63 %</td><td>82,36 %</td><td>69,05 %</td><td>44,83 %</td></tr>
+<tr><th scope="row">NVME</th>                  <td>56,11 %</td><td>70,36 %</td><td>76,52 %</td><td>66,25 %</td><td>47,66 %</td><td>27,29 %</td></tr>
+<tr><th scope="row">SAS RAID-0 iodepth=32</th> <td>-96,72 %</td><td>6,58 %</td><td>74,51 %</td><td>78,72 %</td><td>55,36 %</td><td>28,17 %</td></tr>
+<tr><th scope="row">SAS HDD iodepth=32</th>    <td>21,05 %</td><td>0,04 %</td><td>0,10 %</td><td>2,43 %</td><td>1,13 %</td><td>0,59 %</td></tr>
+<tr><th scope="row">NVME RAID-0 iodepth=32</th><td>28,16 %</td><td>45,96 %</td><td>24,97 %</td><td>15,79 %</td><td>14,24 %</td><td>14,08 %</td></tr>
+<tr><th scope="row">NVME iodepth=32</th>       <td>25,36 %</td><td>5,14 %</td><td>0,10 %</td><td>0,28 %</td><td>1,34 %</td><td>1,09 %</td></tr>
+</tbody>
+</table>
+
+<h2 id="comparing-random-read-bandwidth">Comparing random read bandwidth</h2>
+
+<style type="text/css">
+#carousel-bw-randread .carousel-indicators button {
+color: #fff;
+background-color: #fff;
+}
+#carousel-bw-randread .carousel-indicators button.active {
+color: #e9c53c;
+background-color: #e9c53c;	
+}	
+</style>
+
+<div id="carousel-bw-randread" class="carousel carousel-dark slide" data-bs-ride="false">
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="1" aria-current="true" aria-label="Slide 1"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="2" aria-current="true" aria-label="Slide 2"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="3" aria-current="true" aria-label="Slide 3"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="4" aria-current="true" aria-label="Slide 4"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="5" aria-current="true" aria-label="Slide 5"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="6" aria-current="true" aria-label="Slide 6"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="7" aria-current="true" aria-label="Slide 7"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="8" aria-current="true" aria-label="Slide 8"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="9" aria-current="true" aria-label="Slide 9"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="10" aria-current="true" aria-label="Slide 10"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="11" aria-current="true" aria-label="Slide 11"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="12" aria-current="true" aria-label="Slide 12"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="13" aria-current="true" aria-label="Slide 13"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="14" aria-current="true" aria-label="Slide 14"></button>
+<button type="button" data-bs-target="#carousel-bw-randread" data-bs-slide-to="15" aria-current="true" aria-label="Slide 15"></button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-s+/qwbTlVEy74vkaewvjQt6nHfol79GxjtkOPV4GP8y72kEAHisOwwJPCLJVh/TRlf9Hfa+g1jady7uc8CEMOQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-sas-raid0-non-encrypt-b3efeac1b4e5544cbbe2f91a7b0be342dea71dfa25efd1b18ed90e3d5e063fccbbda41001e2b0ec3024f08b25587f4d195ff477dafa0d6369dcbbb9cf0210c39.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-lIBlohJLeRP01jjGFA3DibosMnbo4Pfuh+/UHbQrx55fCl7mj501NTzMNXNOUyx+UrAatJeb6KnJwk/SOOh7WA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-sas-raid0-encrypted-948065a2124b7913f4d638c6140dc389ba2c3276e8e0f7ee87efd41db42bc79e5f0a5ee68f9d35353ccc35734e532c7e52b01ab4979be8a9c9c24fd238e87b58.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-7x5pZ5xCxEEPGCCG4bAEjKtS6Eja2/ZxmyJQV3JGOkWGLSi04bC9OiuUSu03FSYVrH55mCbPgudS25E7BLQJtw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-sas-hdd-non-encrypt-ef1e69679c42c4410f182086e1b0048cab52e848dadbf6719b22505772463a45862d28b4e1b0bd3a2b944aed37152615ac7e799826cf82e752db913b04b409b7.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-fUJufG/2SHV44E+oWI6vQWgS8ZwM88aAtHrcIwjuZw2aufHOvEl/UpDYXitG6qP+eH6do8PG06X/xv9bBArutw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-sas-hdd-encrypted-7d426e7c6ff6487578e04fa8588eaf416812f19c0cf3c680b47adc2308ee670d9ab9f1cebc497f5290d85e2b46eaa3fe787e9da3c3c6d3a5ffc6ff5b040aeeb7.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-22o5FVOAR3lC3Oc2J5WhWRO0gODkbs5DZvdA9uGtZhx4lidxJKqdU0SB72Ew5LdVd161YscdI/Dcl1J90pElHQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-nvme-raid0-non-encrypt-db6a39155380477942dce7362795a15913b480e0e46ece4366f740f6e1ad661c7896277124aa9d534481ef6130e4b755775eb562c71d23f0dc97527dd291251d.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-yYx6Y8RgXv6XDdkDyflH1R07QZPYoQ6Grnwvgy2ZPWjKWE90TBHWHbFPBFHOp24svUdT+z33NvDVsVkkSxP3zg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-nvme-raid0-encrypted-c98c7a63c4605efe970dd903c9f947d51d3b4193d8a10e86ae7c2f832d993d68ca584f744c11d61db14f0451cea76e2cbd4753fb3df736f0d5b159244b13f7ce.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-85DGr4+HqmKnGoRY7zFnMkefSOLLgtRynwaYn/77T54VDq60fQEz6AruWfUuLscAE93lcOfstKEOhUxpbcToEg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-nvme-non-encrypt-f390c6af8f87aa62a71a8458ef316732479f48e2cb82d4729f06989ffefb4f9e150eaeb47d0133e80aee59f52e2ec70013dde570e7ecb4a10e854c696dc4e812.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-M6YyPkMw46Sd1xEFHlONQ7zf2i8JgJu3JHPd/ft6CUhRBlJq5j631cQRcUV+pQFjO7puWemVJJUzJrENjqWLmQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-nvme-encrypted-33a6323e4330e3a49dd711051e538d43bcdfda2f09809bb72473ddfdfb7a09485106526ae63eb7d5c41171457ea501633bba6e59e99524953326b10d8ea58b99.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-e9Opw7Qp1XepU0N8K9zAQdj2C5daBKfHAURSd3yN/Ppkih6yhfdtH7vbl+jpunN3pzSI6JUZrLfO96MBmK5VTw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-iod32-sas-raid0-non-encrypt-7bd3a9c3b429d577a953437c2bdcc041d8f60b975a04a7c7014452777c8dfcfa648a1eb285f76d1fbbdb97e8e9ba7377a73488e89519acb7cef7a30198ae554f.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-Iwg53OEMIkhouGKhs6PVojsqwBNbGgAhprt3cv3gVqE1etpddhW1HgKcfK8WQNOw90s2Q8O9Eidk9HtMTm3HoQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-iod32-sas-raid0-encrypted-230839dce10c224868b862a1b3a3d5a23b2ac0135b1a0021a6bb7772fde056a1357ada5d7615b51e029c7caf1640d3b0f74b3643c3bd122764f47b4c4e6dc7a1.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-jdQeKJxiYMfrY2T0QEyqPsWrIQ3+ASBUlpesa/p+hroWVaQrTTyF/gvLaBPdmgPgLEL1lJ6X/VA8+H3P9rTDvw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-iod32-sas-hdd-non-encrypt-8dd41e289c6260c7eb6364f4404caa3ec5ab210dfe0120549697ac6bfa7e86ba1655a42b4d3c85fe0bcb6813dd9a03e02c42f5949e97fd503cf87dcff6b4c3bf.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-OFt/HjC+X+5AaABO8spso0G8+cIP215QBWF/HeuWj8ZZ18iwoVLFXfbf/Oj22zmEiY4b143i4QEJHkMJ36UEJg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-iod32-sas-hdd-encrypted-385b7f1e30be5fee4068004ef2ca6ca341bcf9c20fdb5e5005617f1deb968fc659d7c8b0a152c55df6dffce8f6db3984898e1bd78de2e101091e4309dfa50426.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-5iQN8/+9hKn0EdDfaT4G5UMzTecOfSoiwOSs7j39EuZbBTWlNCSnTDZO++LUXxfpX5gL+h7YDr0/ZOHqAOHRjQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-iod32-nvme-raid0-non-encrypt-e6240df3ffbd84a9f411d0df693e06e543334de70e7d2a22c0e4acee3dfd12e65b0535a53424a74c364efbe2d45f17e95f980bfa1ed80ebd3f64e1ea00e1d18d.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-/M3VASv6Qa3ZWBSuDrzJC+R14HTRKDIiQmOLpTtfDdBhXONfWB3jiyBzm3oAYk7496J1cZueFDqomzAfRFDUww==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-iod32-nvme-raid0-encrypted-fccdd5012bfa41add95814ae0ebcc90be475e074d128322242638ba53b5f0dd0615ce35f581de38b20739b7a00624ef8f7a275719b9e143aa89b301f4450d4c3.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-M7/PSwJoKDgUh0YvgwwW2MpIwBACFfvRs5qgDrhpUQHcn5PIJrKnkCTDHFuO516wp+H/oA5Q71A3z8gUryifGw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-iod32-nvme-non-encrypt-33bfcf4b026828381487462f830c16d8ca48c0100215fbd1b39aa00eb8695101dc9f93c826b2a79024c31c5b8ee75eb0a7e1ffa00e50ef5037cfc814af289f1b.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-HcsFGIxpV9KRS9Vd9oRBUC6F0uRGdjWDlT1cGvnLyZmRa1N4lxoPwUzLcY1JUlEyH14J9h07xyi9JuJM9VCD4A==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randread-iod32-nvme-encrypted-1dcb05188c6957d2914bd55df68441502e85d2e446763583953d5c1af9cbc999916b5378971a0fc14ccb718d495251321f5e09f61d3bc728bd26e24cf55083e0.png" /></div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carousel-bw-randread" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carousel-bw-randread" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+<p class="text-center fw-semibold">Caution: Scales are logarithmic!</p>
+
+<h3 id="performance-losses-random-read-bandwidth">Performance losses random read bandwidth</h3>
+
+<table class="table table-striped table-hover table-bordered">
+<thead>
+<tr>
+<th scope="col">Device</th>
+<th scope="col">4 KiB % loss</th>
+<th scope="col">64 KiB % loss</th>
+<th scope="col">1 MiB % loss</th>
+<th scope="col">4 MiB % loss</th>
+<th scope="col">16 MiB % loss</th>
+<th scope="col">64 MiB % loss</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row">SAS RAID-0</th>            <td>25,82 %</td><td>0,68 %</td><td>5,07 %</td><td>5,01 %</td><td>1,41 %</td><td>6,52 %</td></tr>
+<tr><th scope="row">SAS HDD</th>               <td>-0,13 %</td><td>1,14 %</td><td>8,37 %</td><td>6,49 %</td><td>2,09 %</td><td>2,27 %</td></tr>
+<tr><th scope="row">NVME RAID-0</th>           <td>16,07 %</td><td>28,12 %</td><td>75,55 %</td><td>79,59 %</td><td>68,01 %</td><td>57,02 %</td></tr>
+<tr><th scope="row">NVME</th>                  <td>17,70 %</td><td>17,95 %</td><td>74,13 %</td><td>70,29 %</td><td>65,40 %</td><td>55,81 %</td></tr>
+<tr><th scope="row">SAS RAID-0 iodepth=32</th> <td>0,30 %</td><td>-2,29 %</td><td>-3,12 %</td><td>-10,31 %</td><td>-0,86 %</td><td>4,27 %</td></tr>
+<tr><th scope="row">SAS HDD iodepth=32</th>    <td>1,94 %</td><td>-0,09 %</td><td>-1,43 %</td><td>-0,37 %</td><td>0,41 %</td><td>0,33 %</td></tr>
+<tr><th scope="row">NVME RAID-0 iodepth=32</th><td>39,76 %</td><td>50,71 %</td><td>50,76 %</td><td>48,91 %</td><td>48,58 %</td><td>48,48 %</td></tr>
+<tr><th scope="row">NVME iodepth=32</th>       <td>44,52 %</td><td>13,26 %</td><td>2,84 %</td><td>2,23 %</td><td>2,38 %</td><td>3,05 %</td></tr>
+</tbody>
+</table>
+
+<h2 id="comparing-random-write-bandwidth">Comparing random write bandwidth</h2>
+
+<style type="text/css">
+#carousel-bw-randwrite .carousel-indicators button {
+color: #fff;
+background-color: #fff;
+}
+#carousel-bw-randwrite .carousel-indicators button.active {
+color: #e9c53c;
+background-color: #e9c53c;	
+}	
+</style>
+
+<div id="carousel-bw-randwrite" class="carousel carousel-dark slide" data-bs-ride="false">
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="1" aria-current="true" aria-label="Slide 1"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="2" aria-current="true" aria-label="Slide 2"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="3" aria-current="true" aria-label="Slide 3"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="4" aria-current="true" aria-label="Slide 4"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="5" aria-current="true" aria-label="Slide 5"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="6" aria-current="true" aria-label="Slide 6"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="7" aria-current="true" aria-label="Slide 7"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="8" aria-current="true" aria-label="Slide 8"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="9" aria-current="true" aria-label="Slide 9"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="10" aria-current="true" aria-label="Slide 10"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="11" aria-current="true" aria-label="Slide 11"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="12" aria-current="true" aria-label="Slide 12"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="13" aria-current="true" aria-label="Slide 13"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="14" aria-current="true" aria-label="Slide 14"></button>
+<button type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide-to="15" aria-current="true" aria-label="Slide 15"></button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-0SvM/hmNMafhSs/gpx3t3oH+pHvb/Jo/Q6HQc8jDVf5C6Ut6afqp76KWWXLxlF5YKT6vAGvMGT7KO/y4NN9TQQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-sas-raid0-non-encrypt-d12bccfe198d31a7e14acfe0a71dedde81fea47bdbfc9a3f43a1d073c8c355fe42e94b7a69faa9efa2965972f1945e58293eaf006bcc193eca3bfcb834df5341.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-VqLJjfxzk/tuZG+rpiz1E77vUb/8VUSc2/cugsOW+JWgIe2xpSqfll2KmxBt/ApespC9L1jmIXjDyW0FIkKkLA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-sas-raid0-encrypted-56a2c98dfc7393fb6e646faba62cf513beef51bffc55449cdbf72e82c396f895a021edb1a52a9f965d8a9b106dfc0a5eb290bd2f58e62178c3c96d052242a42c.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-0mMt+atX7phooYsKfuXBzk6+oRqu+XvWF4fZoXewc9zzbneR55Scxz32RfpKYPt8LGtwwxJuO2jn2VuaVUUTOw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-sas-hdd-non-encrypt-d2632df9ab57ee9868a18b0a7ee5c1ce4ebea11aaef97bd61787d9a177b073dcf36e7791e7949cc73df645fa4a60fb7c2c6b70c3126e3b68e7d95b9a5545133b.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-/64wCeoUH3jzoCVPtbyzeflJ//IBmh+03dIVXXbxWwJ4ddfyU7+p43Tc2zEMrTiWwDUBTjBZn1vW2BnYS/ok7w==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-sas-hdd-encrypted-ffae3009ea141f78f3a0254fb5bcb379f949fff2019a1fb4ddd2155d76f15b027875d7f253bfa9e374dcdb310cad3896c035014e30599f5bd6d819d84bfa24ef.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-3LbEi3MiZ0T2C2Y9zXLIFKEIw1bDMNdCa0usmsBspAh5YlPSUg55oY89JB1KTnD3n/V2Cyy2Dbjr+e7p4sWcgw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-nvme-raid0-non-encrypt-dcb6c48b73226744f60b663dcd72c814a108c356c330d7426b4bac9ac06ca408796253d2520e79a18f3d241d4a4e70f79ff5760b2cb60db8ebf9eee9e2c59c83.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-iWHBRBx90w3a41nahA7k027GYN3Q8if88fVY8ZsBW/a46WOMb2mZXSaBd2LyXejaot32ntFfTaYiIjx2HpIX3w==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-nvme-raid0-encrypted-8961c1441c7dd30ddae359da840ee4d36ec660ddd0f227fcf1f558f19b015bf6b8e9638c6f69995d26817762f25de8daa2ddf69ed15f4da622223c761e9217df.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-X+I+t+WXDOE8Z3oa9Cgxt3TLBTgqmzXSN3LK8fvNobQzroIl3lw6fFUoNEpApfdU7r2X3Ju9UzJYuD2So0Nmcg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-nvme-non-encrypt-5fe23eb7e5970ce13c677a1af42831b774cb05382a9b35d23772caf1fbcda1b433ae8225de5c3a7c5528344a40a5f754eebd97dc9bbd533258b83d92a3436672.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-tZZEzCaiY4qBrFlLuHQgqnDjKQynBiGTBfLDyo/wZE/iHCpEuVudBIAMm43hi3/aGSUPCdVgAKl2DfnYxPaLrw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-nvme-encrypted-b59644cc26a2638a81ac594bb87420aa70e3290ca706219305f2c3ca8ff0644fe21c2a44b95b9d04800c9b8de18b7fda19250f09d56000a9760df9d8c4f68baf.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-TIdxEmKQTcCiVgl00oU5vx8Z1UPdrSeBxj1v76nZSHdPdVjMyK2DYyiKvXaR+k97gL8cGBSEEtSLf8XCcc9vYA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-iod32-sas-raid0-non-encrypt-4c87711262904dc0a2560974d28539bf1f19d543ddad2781c63d6fefa9d948774f7558ccc8ad8363288abd7691fa4f7b80bf1c18148412d48b7fc5c271cf6f60.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-T96gZQ7BYZAgfrp4mkvguNxiHGPkuIppw7egXmXKZQMBY3hoa1CxSdIWkMr10uBFmmOsQElcX8nvfw4Kq2EY5Q==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-iod32-sas-raid0-encrypted-4fdea0650ec16190207eba789a4be0b8dc621c63e4b88a69c3b7a05e65ca6503016378686b50b149d21690caf5d2e0459a63ac40495c5fc9ef7f0e0aab6118e5.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-q09B9xSbB5vRnEQE3uGWXE18DblFb9EF6bVWz0+L5Y+DAAUCuxQ09buYJD1NKoRIjRqPuRiKtGithMDkkDbMNg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-iod32-sas-hdd-non-encrypt-ab4f41f7149b079bd19c4404dee1965c4d7c0db9456fd105e9b556cf4f8be58f83000502bb1434f5bb98243d4d2a84488d1a8fb9188ab468ad84c0e49036cc36.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-wr5WQ5d2ouom7qzw3CragYuVOsJLJrgAbogHB/i5MWcXWYvdNfM4VOrNPtw9Uxjtrx6SsDeZGli2LkB1YME+eA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-iod32-sas-hdd-encrypted-c2be56439776a2ea26eeacf0dc2ada818b953ac24b26b8006e880707f8b9316717598bdd35f33854eacd3edc3d5318edaf1e92b037991a58b62e407560c13e78.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-r6N7+k3qL6Gk5hMRaUVfMViGxXdStXu7xeWIxQdPIdLeMneUNyzQx4qSs26+ZWVYdNs8yJeIFUke2AGmvISqcQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-iod32-nvme-raid0-non-encrypt-afa37bfa4dea2fa1a4e6131169455f315886c57752b57bbbc5e588c5074f21d2de327794372cd0c78a92b36ebe65655874db3cc8978815491ed801a6bc84aa71.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-m2m6ZH/+TBoWa0pVXTeNKFm56s98sjHUH8DWCwU4+JmfN+bQMYyZ0slQlb4szUvh3U694YmoFqUE/hBhiLOPQw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-iod32-nvme-raid0-encrypted-9b69ba647ffe4c1a166b4a555d378d2859b9eacf7cb231d41fc0d60b0538f8999f37e6d0318c99d2c95095be2ccd4be1dd4ebde189a816a504fe106188b38f43.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-ZYcp175kzfJUVW7OryHCqAHTBB5DjmKfDRm41ax9mcU+hwUaSjc8Bl4ktNe7O6zuc+ZiRcD6g/GiydH3V5GGqw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-iod32-nvme-non-encrypt-658729d7be64cdf254556eceaf21c2a801d3041e438e629f0d19b8d5ac7d99c53e87051a4a373c065e24b4d7bb3bacee73e66245c0fa83f1a2c9d1f7579186ab.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-xGloZVFXaY8u8MKxk+OWjs80kIa94Mg1KwYL83njxNOf+t6oYnyuXgCeOPguFdMJgJkqbXEw3wdHNvAMDUxXWA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/bw-randwrite-iod32-nvme-encrypted-c46968655157698f2ef0c2b193e3968ecf349086bde0c8352b060bf379e3c4d39ffadea8627cae5e009e38f82e15d30980992a6d7130df074736f00c0d4c5758.png" /></div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carousel-bw-randwrite" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+<p class="text-center fw-semibold">Caution: Scales are logarithmic!</p>
+
+<h3 id="performance-losses-random-write-bandwidth">Performance losses random write bandwidth</h3>
+
+<table class="table table-striped table-hover table-bordered">
+<thead>
+<tr>
+<th scope="col">Device</th>
+<th scope="col">4 KiB % loss</th>
+<th scope="col">64 KiB % loss</th>
+<th scope="col">1 MiB % loss</th>
+<th scope="col">4 MiB % loss</th>
+<th scope="col">16 MiB % loss</th>
+<th scope="col">64 MiB % loss</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row">SAS RAID-0</th>            <td>-21,21 %</td><td>0,45 %</td><td>27,20 %</td><td>25,34 %</td><td>34,89 %</td><td>43,14 %</td></tr>
+<tr><th scope="row">SAS HDD</th>               <td>-6,72 %</td><td>6,91 %</td><td>11,24 %</td><td>19,57 %</td><td>12,97 %</td><td>9,49 %</td></tr>
+<tr><th scope="row">NVME RAID-0</th>           <td>54,45 %</td><td>72,75 %</td><td>83,56 %</td><td>81,83 %</td><td>60,73 %</td><td>32,43 %</td></tr>
+<tr><th scope="row">NVME</th>                  <td>53,20 %</td><td>73,91 %</td><td>76,44 %</td><td>61,98 %</td><td>50,27 %</td><td>27,10 %</td></tr>
+<tr><th scope="row">SAS RAID-0 iodepth=32</th> <td>-0,23 %</td><td>0,38 %</td><td>20,77 %</td><td>18,22 %</td><td>15,83 %</td><td>19,05 %</td></tr>
+<tr><th scope="row">SAS HDD iodepth=32</th>    <td>2,17 %</td><td>-9,64 %</td><td>4,78 %</td><td>4,98 %</td><td>2,51 %</td><td>2,56 %</td></tr>
+<tr><th scope="row">NVME RAID-0 iodepth=32</th><td>21,03 %</td><td>37,76 %</td><td>21,16 %</td><td>12,26 %</td><td>13,00 %</td><td>13,06 %</td></tr>
+<tr><th scope="row">NVME iodepth=32</th>       <td>22,75 %</td><td>8,13 %</td><td>5,57 %</td><td>2,78 %</td><td>4,58 %</td><td>3,51 %</td></tr>
+</tbody>
+</table>
+
+<h2 id="comparing-read-iops">Comparing read IOPS</h2>
+
+<style type="text/css">
+#carousel-iops-read .carousel-indicators button {
+color: #fff;
+background-color: #fff;
+}
+#carousel-iops-read .carousel-indicators button.active {
+color: #e9c53c;
+background-color: #e9c53c;	
+}	
+</style>
+
+<div id="carousel-iops-read" class="carousel carousel-dark slide" data-bs-ride="false">
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="1" aria-current="true" aria-label="Slide 1"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="2" aria-current="true" aria-label="Slide 2"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="3" aria-current="true" aria-label="Slide 3"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="4" aria-current="true" aria-label="Slide 4"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="5" aria-current="true" aria-label="Slide 5"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="6" aria-current="true" aria-label="Slide 6"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="7" aria-current="true" aria-label="Slide 7"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="8" aria-current="true" aria-label="Slide 8"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="9" aria-current="true" aria-label="Slide 9"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="10" aria-current="true" aria-label="Slide 10"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="11" aria-current="true" aria-label="Slide 11"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="12" aria-current="true" aria-label="Slide 12"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="13" aria-current="true" aria-label="Slide 13"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="14" aria-current="true" aria-label="Slide 14"></button>
+<button type="button" data-bs-target="#carousel-iops-read" data-bs-slide-to="15" aria-current="true" aria-label="Slide 15"></button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-3q3KZPQ4xDDzthT87jwgprOYQcXjB3+pp75O9krVOY1H9j6THqo+1/78yEROYrRK+/nc41/yDEY8JZ1NT7yVhw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-sas-raid0-non-encrypt-deadca64f438c430f3b614fcee3c20a6b39841c5e3077fa9a7be4ef64ad5398d47f63e931eaa3ed7fefcc8444e62b44afbf9dce35ff20c463c259d4d4fbc9587.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-SDZ0weEgYigb4jsi9WcswFE9iH9MW9Y0CUHQkO0wVDbksCLvK0pKJL4iLRZu4ZD6OWmxTr0st/3CXVzKwz7oZg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-sas-raid0-encrypted-483674c1e12062281be23b22f5672cc0513d887f4c5bd6340941d090ed305436e4b022ef2b4a4a24be222d166ee190fa3969b14ebd2cb7fdc25d5ccac33ee866.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-dP2WhbhbnHGxYtNOEfTd8ReNmxJj5Pe6LcXuZa5N3dAvcyvtm78iPWj9E+hcRTVbwxia1i35WPAaxfrz1HTzcQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-sas-hdd-non-encrypt-74fd9685b85b9c71b162d34e11f4ddf1178d9b1263e4f7ba2dc5ee65ae4dddd02f732bed9bbf223d68fd13e85c45355bc3189ad62df958f01ac5faf3d474f371.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-Z/W/f+iWU3t2Uqi3P/gAH6Qtu+5NKsxuojqtWiVtnQdR1jOYmKOcJQpflK6DqkO/bZ3WxUfD0iuBnaUCyE5ShA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-sas-hdd-encrypted-67f5bf7fe896537b7652a8b73ff8001fa42dbbee4d2acc6ea23aad5a256d9d0751d6339898a39c250a5f94ae83aa43bf6d9dd6c547c3d22b819da502c84e5284.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-mnJ5owx8KtaVgL37xpKcf0WVQUlcwATPlshGkZDTHmZzT6/Z5R2GXHfdgDhnhbVFxQJ8cCJ9q9yHqDLSCaL8eQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-nvme-raid0-non-encrypt-9a7279a30c7c2ad69580bdfbc6929c7f459541495cc004cf96c8469190d31e66734fafd9e51d865c77dd80386785b545c5027c70227dabdc87a832d209a2fc79.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-cbBYkSMGii9+WkTeWCsJvSAS39jtMamDLcbtCmBfkQ4lRrGQCEAJPjCrxlFDnhh2rvZ/z/Xu9FH07+ORHqtDpA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-nvme-raid0-encrypted-71b0589123068a2f7e5a44de582b09bd2012dfd8ed31a9832dc6ed0a605f910e2546b1900840093e30abc651439e1876aef67fcff5eef451f4efe3911eab43a4.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-Pj3NZxMNb58GSOt1OqISRLFcK+YsC7ixkjBZ7mKc1QbL30xfBQnGKKK5uI/1cRHb9GrR028MT3Ewp542wOeVDw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-nvme-non-encrypt-3e3dcd67130d6f9f0648eb753aa21244b15c2be62c0bb8b1923059ee629cd506cbdf4c5f0509c628a2b9b88ff57111dbf46ad1d36f0c4f7130a79e36c0e7950f.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-q7QQSVDVsYTJ4FpLiBkTo+dVhOACS2n6y8uPoTnjeN+F0myqSjFQu4FvgGMxHsAk9DvBnhFY99N+gkFWCQnp8w==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-nvme-encrypted-abb4104950d5b184c9e05a4b881913a3e75584e0024b69facbcb8fa139e378df85d26caa4a3150bb816f8063311ec024f43bc19e1158f7d37e8241560909e9f3.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-6ru4x72rZESNXYYB5k8QvQ4pIEtEixAbiyZUBV280qHGyIKlkwIqSMdQD6ykGSKopmWfgt6WmMxeIEw+X1kRkA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-iod32-sas-raid0-non-encrypt-eabbb8c7bdab64448d5d8601e64f10bd0e29204b448b101b8b2654055dbcd2a1c6c882a593022a48c7500faca41922a8a6659f82de9698cc5e204c3e5f591190.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-xjXnmzFqnREwnX31XNag5Bj20qC+60qyHR3y3abXPXW8dyut+vHLDid1O62a5UyX+69Pu4quCHnx5iYtydtA5w==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-iod32-sas-raid0-encrypted-c635e79b316a9d11309d7df55cd6a0e418f6d2a0beeb4ab21d1df2dda6d73d75bc772badfaf1cb0e27753bad9ae54c97fbaf4fbb8aae0879f1e6262dc9db40e7.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-Nkup8wHUuyEIdVKqO7+YYuLcn3nOlwgp/YA0mHy2Ziufx9caJTyupMkkBGXWqMI02raByN6M86E0WMMCg6kyag==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-iod32-sas-hdd-non-encrypt-364ba9f301d4bb21087552aa3bbf9862e2dc9f79ce970829fd8034987cb6662b9fc7d71a253caea4c9240465d6a8c234dab681c8de8cf3a13458c30283a9326a.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-bP31BNtXq3EcEpAEpQXfHz1x6xdE+6Wl0gg+8Kyd2y0Y9hDrnXuqlYVU32ZwfVui/aMEsBqsPe4/PGfGTVAltQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-iod32-sas-hdd-encrypted-6cfdf504db57ab711c129004a505df1f3d71eb1744fba5a5d2083ef0ac9ddb2d18f610eb9d7baa958554df66707d5ba2fda304b01aac3dee3f3c67c64d5025b5.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-zH7Ma6N6nO9PaBaIc/a+751rt59yTmxoxYV+Ij+u5jrpHk9Vsf+pceWXolC4t66JghW+zoMX27nSDYSalmds8g==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-iod32-nvme-raid0-non-encrypt-cc7ecc6ba37a9cef4f68168873f6beef9d6bb79f724e6c68c5857e223faee63ae91e4f55b1ffa971e597a250b8b7ae898215bece8317dbb9d20d849a96676cf2.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-s7mhkOebc438qqWqTw+aMWsG14cRHvD9oGXgFq9/9Qw6pqH4ZJ9qYDkMgz9LZDpqOvFB4CqZhsx4LZSv/NXrAw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-iod32-nvme-raid0-encrypted-b3b9a190e79b738dfcaaa5aa4f0f9a316b06d787111ef0fda065e016af7ff50c3aa6a1f8649f6a60390c833f4b643a6a3af141e02a9986cc782d94affcd5eb03.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-NRdqz6aajp6hDMLPhdtAmjlDlP1Jszh9uep/UGUAnpWp7831vzlFxrSgqkbsszSwbN4RdUZ2YpqAR1X2bsci4w==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-iod32-nvme-non-encrypt-35176acfa69a8e9ea10cc2cf85db409a394394fd49b3387db9ea7f5065009e95a9efcdf5bf3945c6b4a0aa46ecb334b06cde11754676629a804755f66ec722e3.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-qA9n1+mHW/rpIzuCOaL9I08n95NdxoP+k2sau0LwqlsUR2gD8G7e0ifTtmJ1pz2WNFLNWJf9hjNsrxkLNeBl1Q==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-read-iod32-nvme-encrypted-a80f67d7e9875bfae9233b8239a2fd234f27f7935dc683fe936b1abb42f0aa5b14476803f06eded227d3b66275a73d963452cd5897fd86336caf190b35e065d5.png" /></div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carousel-iops-read" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carousel-iops-read" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+<p class="text-center fw-semibold">Caution: Scales are logarithmic!</p>
+
+<h3 id="performance-losses-read-iops">Performance losses read IOPS</h3>
+
+<table class="table table-striped table-hover table-bordered">
+<thead>
+<tr>
+<th scope="col">Device</th>
+<th scope="col">4 KiB % loss</th>
+<th scope="col">64 KiB % loss</th>
+<th scope="col">1 MiB % loss</th>
+<th scope="col">4 MiB % loss</th>
+<th scope="col">16 MiB % loss</th>
+<th scope="col">64 MiB % loss</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row">SAS RAID-0</th>            <td>10,82 %</td><td>32,48 %</td><td>47,36 %</td><td>52,95 %</td><td>36,26 %</td><td>3,86 %</td></tr>
+<tr><th scope="row">SAS HDD</th>               <td>23,86 %</td><td>-0,06 %</td><td>-0,02 %</td><td>0,01 %</td><td>-0,05 %</td><td>-0,08 %</td></tr>
+<tr><th scope="row">NVME RAID-0</th>           <td>45,53 %</td><td>70,13 %</td><td>77,05 %</td><td>80,61 %</td><td>67,65 %</td><td>55,88 %</td></tr>
+<tr><th scope="row">NVME</th>                  <td>44,42 %</td><td>71,76 %</td><td>67,46 %</td><td>70,75 %</td><td>63,21 %</td><td>53,24 %</td></tr>
+<tr><th scope="row">SAS RAID-0 iodepth=32</th> <td>6,81 %</td><td>13,71 %</td><td>4,92 %</td><td>2,66 %</td><td>9,81 %</td><td>23,52 %</td></tr>
+<tr><th scope="row">SAS HDD iodepth=32</th>    <td>14,75 %</td><td>-0,65 %</td><td>-0,03 %</td><td>-0,03 %</td><td>0,21 %</td><td>0,13 %</td></tr>
+<tr><th scope="row">NVME RAID-0 iodepth=32</th><td>40,99 %</td><td>60,02 %</td><td>51,61 %</td><td>49,68 %</td><td>48,62 %</td><td>48,62 %</td></tr>
+<tr><th scope="row">NVME iodepth=32</th>       <td>40,64 %</td><td>21,57 %</td><td>1,89 %</td><td>1,89 %</td><td>1,98 %</td><td>2,43 %</td></tr>
+</tbody>
+</table>
+
+<h2 id="comparing-write-iops">Comparing write IOPS</h2>
+
+<style type="text/css">
+#carousel-iops-write .carousel-indicators button {
+color: #fff;
+background-color: #fff;
+}
+#carousel-iops-write .carousel-indicators button.active {
+color: #e9c53c;
+background-color: #e9c53c;	
+}	
+</style>
+
+<div id="carousel-iops-write" class="carousel carousel-dark slide" data-bs-ride="false">
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="1" aria-current="true" aria-label="Slide 1"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="2" aria-current="true" aria-label="Slide 2"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="3" aria-current="true" aria-label="Slide 3"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="4" aria-current="true" aria-label="Slide 4"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="5" aria-current="true" aria-label="Slide 5"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="6" aria-current="true" aria-label="Slide 6"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="7" aria-current="true" aria-label="Slide 7"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="8" aria-current="true" aria-label="Slide 8"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="9" aria-current="true" aria-label="Slide 9"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="10" aria-current="true" aria-label="Slide 10"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="11" aria-current="true" aria-label="Slide 11"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="12" aria-current="true" aria-label="Slide 12"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="13" aria-current="true" aria-label="Slide 13"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="14" aria-current="true" aria-label="Slide 14"></button>
+<button type="button" data-bs-target="#carousel-iops-write" data-bs-slide-to="15" aria-current="true" aria-label="Slide 15"></button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-CjWT78NhH4LBrVPdXLGvE4Z/q5AYluCJc+nAymWeTdn/2tZ/43qBPo2GhezDWTD/HCx7B0G2gsA5TveZnKDb+A==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-sas-raid0-non-encrypt-0a3593efc3611f82c1ad53dd5cb1af13867fab901896e08973e9c0ca659e4dd9ffdad67fe37a813e8d8685ecc35930ff1c2c7b0741b682c0394ef7999ca0dbf8.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-KS+xkjBuIdO1rt5Tjzfq83zk8cZPDraMNmm5HDeIr2VOky+lRB33Rp1UZmdultT/rqzFO5Rl7pt1hPHOcNp7Nw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-sas-raid0-encrypted-292fb192306e21d3b5aede538f37eaf37ce4f1c64f0eb68c3669b91c3788af654e932fa5441df7469d5466676e96d4ffaeacc53b9465ee9b7584f1ce70da7b37.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-FqCzOKZ2JOY8A8j4JhOgm2IkIUEmtf/z9d1n83fvRhdVBXbK0YOWk31GrnqRib6jQsEheAkOenIFhuq4T/eQTg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-sas-hdd-non-encrypt-16a0b338a67624e63c03c8f82613a09b6224214126b5fff3f5dd67f377ef4617550576cad18396937d46ae7a9189bea342c12178090e7a720586eab84ff7904e.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-3DZuOJxqenrzzXQT9HKKkSMpbT5LnErSI+QlXGCg9RmpgeWk7UTFIU+xnKY+TbdWDpvTtJRlu7P6+ESIZPWn4A==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-sas-hdd-encrypted-dc366e389c6a7a7af3cd7413f4728a9123296d3e4b9c4ad223e4255c60a0f519a981e5a4ed44c5214fb19ca63e4db7560e9bd3b49465bbb3faf8448864f5a7e0.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-9yC8tdnUOLbTKip9UIRknnv/zO6xvBHHsaZsruyJL4mvf1YhXUl3BTmTjDe7U5vAuTl6XLOYGEg2EoIkAsLRsA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-nvme-raid0-non-encrypt-f720bcb5d9d438b6d32a2a7d5084649e7bffcceeb1bc11c7b1a66caeec892f89af7f56215d49770539938c37bb539bc0b9397a5cb39818483612822402c2d1b0.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-GiNT3CDVMzEOzR5LT2hibkJelR+SxTgEY7S+bkyCtXUBzzJG4jzb1Dggfv7nr2HDTC0CcDQ2QrON/L1NPJj+TQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-nvme-raid0-encrypted-1a2353dc20d533310ecd1e4b4f68626e425e951f92c5380463b4be6e4c82b57501cf3246e23cdbd438207efee7af61c34c2d0270343642b38dfcbd4d3c98fe4d.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-D+2xe1NZlSGjxmiuuHBdNC3SWlsm0yCvXMQWowxsXkm0faZ7t6iIalTem/Wrco15bC8UMMFdWf63zf+ULRkOVQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-nvme-non-encrypt-0fedb17b53599521a3c668aeb8705d342dd25a5b26d320af5cc416a30c6c5e49b47da67bb7a8886a54de9bf5ab728d796c2f1430c15d59feb7cdff942d190e55.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-ZsZr/6kDRhOVHdx65U+JHGH8ZHYvmSKJQgQmrQ7ZsJ6Pip6rwUDa54cgV0F2XmvmCyhx57oEqfvCEPEScAp+fA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-nvme-encrypted-66c66bffa9034613951ddc7ae54f891c61fc64762f992289420426ad0ed9b09e8f8a9eabc140dae787205741765e6be60b2871e7ba04a9fbc210f112700a7e7c.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-/T7IF3peF2voFkdvTtgo/qTCOT7P8bPPaQFoNCUfIHlTKGfk0GSzxjwg9xXqKXaccknHtlA4g99VBAdhE2ExwQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-iod32-sas-raid0-non-encrypt-fd3ec8177a5e176be816476f4ed828fea4c2393ecff1b3cf69016834251f2079532867e4d064b3c63c20f715ea29769c7249c7b6503883df55040761136131c1.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-ODFEFx0v7fSrxDL3d/yOhuOHeeDKlU6LBIce6h0p4tdfcAGO6LQdjVSPEgoTVI0xjvd07QfnbCb5CI9efldrqw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-iod32-sas-raid0-encrypted-383144171d2fedf4abc432f777fc8e86e38779e0ca954e8b04871eea1d29e2d75f70018ee8b41d8d548f120a13548d318ef774ed07e76c26f9088f5e7e576bab.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-I/EbLXlTHyinPbnYN5CruFO9yqqZ3NfaIGxRlvKAHu+qsJu6M5gx4LnPVXgHpfsehU402k17IXKGUQoVaM2XAw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-iod32-sas-hdd-non-encrypt-23f11b2d79531f28a73db9d83790abb853bdcaaa99dcd7da206c5196f2801eefaab09bba339831e0b9cf557807a5fb1e854e34da4d7b217286510a1568cd9703.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-t/OhN8GljUzfHCSQnfDtBchHArTef6oTkqfymRAh5ZmZJo6tBThseCuUvwBEpnK8+C/47poQQdGfJFswlyRURw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-iod32-sas-hdd-encrypted-b7f3a137c1a58d4cdf1c24909df0ed05c84702b4de7faa1392a7f2991021e59999268ead05386c782b94bf0044a672bcf82ff8ee9a1041d19f245b3097245447.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-Ap+UIj8uXTQW0KZQWXALV9aqdpdmhCP/ZWnNTEqmQs8tynL5mrK/p6Esjd3JUitNZKF2v/wlRdZOyqkkaCQRHg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-iod32-nvme-raid0-non-encrypt-029f94223f2e5d3416d0a65059700b57d6aa7697668423ff6569cd4c4aa642cf2dca72f99ab2bfa7a12c8dddc9522b4d64a176bffc2545d64ecaa9246824111e.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-hmHbCMDE6u68ogHmXgeXTys4uGk5j+y+09F214MX0ezlE7cmuiQNkH509Dh95+s3865a+aCaWgnUdIWbV/8Tbg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-iod32-nvme-raid0-encrypted-8661db08c0c4eaeebca201e65e07974f2b38b869398fecbed3d176d78317d1ece513b726ba240d907e74f4387de7eb37f3ae5af9a09a5a09d474859b57ff136e.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-XCknRMGUoJNogpt70WWPHcOUEoW8zctspedbzrOQfQThknIssbOkRVAwYzNvSdqKlijTw0H28eFlxhaiHWPccQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-iod32-nvme-non-encrypt-5c292744c194a09368829b7bd1658f1dc3941285bccdcb6ca5e75bceb3907d04e192722cb1b3a445503063336f49da8a9628d3c341f6f1e165c616a21d63dc71.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-NiPtzTZRaAavtaMRf4Fx9I3rC9b39MDFA8frnlAmz9gYTimaVlycB/H8RR3EyqpokRGYtkOWyUYiqGvsabl9lA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-write-iod32-nvme-encrypted-3623edcd36516806afb5a3117f8171f48deb0bd6f7f4c0c503c7eb9e5026cfd8184e299a565c9c07f1fc451dc4caaa68911198b64396c94622a86bec69b97d94.png" /></div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carousel-iops-write" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carousel-iops-write" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+<p class="text-center fw-semibold">Caution: Scales are logarithmic!</p>
+
+<h3 id="performance-losses-write-iops">Performance losses write IOPS</h3>
+
+<table class="table table-striped table-hover table-bordered">
+<thead>
+<tr>
+<th scope="col">Device</th>
+<th scope="col">4 KiB % loss</th>
+<th scope="col">64 KiB % loss</th>
+<th scope="col">1 MiB % loss</th>
+<th scope="col">4 MiB % loss</th>
+<th scope="col">16 MiB % loss</th>
+<th scope="col">64 MiB % loss</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row">SAS RAID-0</th>            <td>-499,50 %</td><td>11,31 %</td><td>31,52 %</td><td>34,98 %</td><td>28,53 %</td><td>49,55 %</td></tr>
+<tr><th scope="row">SAS HDD</th>               <td>-59,93 %</td><td>-1,32 %</td><td>0,05 %</td><td>10,11 %</td><td>12,43 %</td><td>10,18 %</td></tr>
+<tr><th scope="row">NVME RAID-0</th>           <td>51,45 %</td><td>71,81 %</td><td>82,63 %</td><td>82,36 %</td><td>69,05 %</td><td>44,83 %</td></tr>
+<tr><th scope="row">NVME</th>                  <td>56,11 %</td><td>70,36 %</td><td>76,52 %</td><td>66,25 %</td><td>47,66 %</td><td>27,29 %</td></tr>
+<tr><th scope="row">SAS RAID-0 iodepth=32</th> <td>-96,72 %</td><td>6,58 %</td><td>74,51 %</td><td>78,72 %</td><td>55,36 %</td><td>28,17 %</td></tr>
+<tr><th scope="row">SAS HDD iodepth=32</th>    <td>21,05 %</td><td>0,04 %</td><td>0,10 %</td><td>2,43 %</td><td>1,13 %</td><td>0,59 %</td></tr>
+<tr><th scope="row">NVME RAID-0 iodepth=32</th><td>28,16 %</td><td>45,96 %</td><td>24,97 %</td><td>15,79 %</td><td>14,24 %</td><td>14,08 %</td></tr>
+<tr><th scope="row">NVME iodepth=32</th>       <td>25,36 %</td><td>5,14 %</td><td>0,10 %</td><td>0,28 %</td><td>1,34 %</td><td>1,09 %</td></tr>
+</tbody>
+</table>
+
+<h2 id="comparing-random-read-iops">Comparing random read IOPS</h2>
+
+<style type="text/css">
+#carousel-iops-randread .carousel-indicators button {
+color: #fff;
+background-color: #fff;
+}
+#carousel-iops-randread .carousel-indicators button.active {
+color: #e9c53c;
+background-color: #e9c53c;	
+}	
+</style>
+
+<div id="carousel-iops-randread" class="carousel carousel-dark slide" data-bs-ride="false">
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="1" aria-current="true" aria-label="Slide 1"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="2" aria-current="true" aria-label="Slide 2"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="3" aria-current="true" aria-label="Slide 3"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="4" aria-current="true" aria-label="Slide 4"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="5" aria-current="true" aria-label="Slide 5"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="6" aria-current="true" aria-label="Slide 6"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="7" aria-current="true" aria-label="Slide 7"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="8" aria-current="true" aria-label="Slide 8"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="9" aria-current="true" aria-label="Slide 9"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="10" aria-current="true" aria-label="Slide 10"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="11" aria-current="true" aria-label="Slide 11"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="12" aria-current="true" aria-label="Slide 12"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="13" aria-current="true" aria-label="Slide 13"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="14" aria-current="true" aria-label="Slide 14"></button>
+<button type="button" data-bs-target="#carousel-iops-randread" data-bs-slide-to="15" aria-current="true" aria-label="Slide 15"></button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-+l3YEeF+VE6vVOj4HNpK3bki/35dPkSbXUwwY+YvUyC5t1orI0hV4JHCH2UeQLPIdT6g/Fb4R+m9vPQiTTKoLg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-sas-raid0-non-encrypt-fa5dd811e17e544eaf54e8f81cda4addb922ff7e5d3e449b5d4c3063e62f5320b9b75a2b234855e091c21f651e40b3c8753ea0fc56f847e9bdbcf4224d32a82e.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-+2Kq0lStn/xnZOYYRc+Z/asQrj6x3ZgpfrNeztVDXs8wlDAgbTpueUF7L6M19TACbxIgHEZ5TyrXqXUf9rhh+Q==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-sas-raid0-encrypted-fb62aad254ad9ffc6764e61845cf99fdab10ae3eb1dd98297eb35eced5435ecf309430206d3a6e79417b2fa335f530026f12201c46794f2ad7a9751ff6b861f9.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-hZXbyZXf5O34DVGqboopiK0Bpjq460cSS2stCSRN70VEI88DKlfmhqbp8Dkj0FlUeSBz/MvzRFo3ovlXRTsYIQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-sas-hdd-non-encrypt-8595dbc995dfe4edf80d51aa6e8a2988ad01a63ab8eb47124b6b2d09244def454423cf032a57e686a6e9f03923d05954792073fccbf3445a37a2f957453b1821.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-sXL4Pekt0xLWDqQS7uXh6SM2nS56wtId/pO0KyRIIYzlEKC6jOnOz263AU0isaYYVnH+GFUk+AAP7u1Pg0qJvA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-sas-hdd-encrypted-b172f83de92dd312d60ea412eee5e1e923369d2e7ac2d21dfe93b42b2448218ce510a0ba8ce9cecf6eb7014d22b1a6185671fe185524f8000feeed4f834a89bc.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-i7ZP+oW62wRjHC2BYRuLagfgo8DkOVicA1LWr0vqu3/0nb+80hYUyVlklV7NTB4R4dXjrpFvdA/uRFNgM9o0Jw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-nvme-raid0-non-encrypt-8bb64ffa85badb04631c2d81611b8b6a07e0a3c0e439589c0352d6af4beabb7ff49dbfbcd21614c95964955ecd4c1e11e1d5e3ae916f740fee44536033da3427.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-N9HiJH7cEuJmDX4XvsHMKRaxQ7J54W407iasBiGaF8Jf2I3BBJ3u8nMHIRNfaRpIPWRzXPmEk1wcu8nl9us+7g==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-nvme-raid0-encrypted-37d1e2247edc12e2660d7e17bec1cc2916b143b279e16e34ee26ac06219a17c25fd88dc1049deef2730721135f691a483d64735cf984935c1cbbc9e5f6eb3eee.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-NnFmsa6NJj7Nv6tiiI46hqJLiv3ZqTG7uJVf4OCdMEKJTXa2R+0l/W0NwS+VFUfEbmVP14R8DsFo0QXiyH2v4w==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-nvme-non-encrypt-367166b1ae8d263ecdbfab62888e3a86a24b8afdd9a931bbb8955fe0e09d3042894d76b647ed25fd6d0dc12f951547c46e654fd7847c0ec168d105e2c87dafe3.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-1rvVb4Qjqrzr7XsH4liDvp5H2cSbbLSwc6v/V55HoZhm3VEVN9c609IASQuNwjCFI2vGIMoHY+RIdJR5Bnmb6Q==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-nvme-encrypted-d6bbd56f8423aabcebed7b07e25883be9e47d9c49b6cb4b073abff579e47a19866dd511537d73ad3d200490b8dc23085236bc620ca0763e44874947906799be9.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-XUtZSpAU7Canf028zJQtQwbzGbx3SbE2JQP88mt6GNwl7p8x4Y1mcoK0vwJst1ZE3n1IXYIV2ATXCHMm8V0TXQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-iod32-sas-raid0-non-encrypt-5d4b594a9014ec26a77f4dbccc942d4306f319bc7749b1362503fcf26b7a18dc25ee9f31e18d667282b4bf026cb75644de7d485d8215d804d7087326f15d135d.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-DQpJ0KMU4d35O7wpoJMoCokLoPX8adKx+CfzGP9iMdqW6wADMWBltLQwTUkdOsgqqhD5GFsHhfI6QwZBkuzlRQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-iod32-sas-raid0-encrypted-0d0a49d0a314e1ddf93bbc29a093280a890ba0f5fc69d2b1f827f318ff6231da96eb0003316065b4b4304d491d3ac82aaa10f9185b0785f23a43064192ece545.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-G/mXW+fJ6DthlE8I4zpHR2aP6L8HEkUlm1zE+719lHrYnnFYpcBK9ext/hqcXQmrm9qIxaF7KIKrfOeU6vCekw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-iod32-sas-hdd-non-encrypt-1bf9975be7c9e83b61944f08e33a4747668fe8bf071245259b5cc4fbbd7d947ad89e7158a5c04af5ec6dfe1a9c5d09ab9bda88c5a17b2882ab7ce794eaf09e93.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-DAnVL26iAX9fYAu421ucQpCy0G3PnE8NDPd/tMCqqtV8fS8zAmGqtfFW3tpX581+4stbBhHjNFVycJayUrAvYQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-iod32-sas-hdd-encrypted-0c09d52f6ea2017f5f600bb8db5b9c4290b2d06dcf9c4f0d0cf77fb4c0aaaad57c7d2f330261aab5f156deda57e7cd7ee2cb5b0611e33455727096b252b02f61.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-ad0GKKnY2c9oVdbhZk9CMJ1Sfw/KW/hTJdLcTAZ8o905iHp6WePTbrCC4/wixqDWO8QsLPwOV5HPNcy3V0yl6g==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-iod32-nvme-raid0-non-encrypt-69dd0628a9d8d9cf6855d6e1664f42309d527f0fca5bf85325d2dc4c067ca3dd39887a7a59e3d36eb082e3fc22c6a0d63bc42c2cfc0e5791cf35ccb7574ca5ea.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-5gNigy2ZhUZY/25436opi4Vj5tMd7OIvUYXesKG/D2knfiSWHiYL2kNxgCTfSYB3cKabBhpvUiyTKIHxIWNK6A==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-iod32-nvme-raid0-encrypted-e60362832d99854658ff6e78dfaa298b8563e6d31dece22f5185deb0a1bf0f69277e24961e260bda43718024df49807770a69b061a6f522c932881f121634ae8.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-appl25aImqI+U1U6wt4PCzFb1QdSiqACjPf5KWhQOSwbteAbIyOxW2wHuNCaUzzbh1dIxkRpi8QlMJ66STvsjA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-iod32-nvme-non-encrypt-6a9a65db96889aa23e53553ac2de0f0b315bd507528aa0028cf7f9296850392c1bb5e01b2323b15b6c07b8d09a533cdb875748c644698bc425309eba493bec8c.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-sL6OYlfP6r9o0RcROdcgx/XK98x6WksW8VLnJi2k4ogwCMEkbRNnJUhra0mvRj3z18HAKwhToEEoYXnbSzL2Lw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randread-iod32-nvme-encrypted-b0be8e6257cfeabf68d1171139d720c7f5caf7cc7a5a4b16f152e7262da4e2883008c1246d136725486b6b49af463df3d7c1c02b0853a041286179db4b32f62f.png" /></div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carousel-iops-randread" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carousel-iops-randread" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+<p class="text-center fw-semibold">Caution: Scales are logarithmic!</p>
+
+<h3 id="performance-losses-random-read-iops">Performance losses random read IOPS</h3>
+
+<table class="table table-striped table-hover table-bordered">
+<thead>
+<tr>
+<th scope="col">Device</th>
+<th scope="col">4 KiB % loss</th>
+<th scope="col">64 KiB % loss</th>
+<th scope="col">1 MiB % loss</th>
+<th scope="col">4 MiB % loss</th>
+<th scope="col">16 MiB % loss</th>
+<th scope="col">64 MiB % loss</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row">SAS RAID-0</th>            <td>25,82 %</td><td>0,68 %</td><td>5,07 %</td><td>5,01 %</td><td>1,41 %</td><td>6,52 %</td></tr>
+<tr><th scope="row">SAS HDD</th>               <td>-0,13 %</td><td>1,14 %</td><td>8,37 %</td><td>6,49 %</td><td>2,09 %</td><td>2,27 %</td></tr>
+<tr><th scope="row">NVME RAID-0</th>           <td>16,07 %</td><td>28,12 %</td><td>75,55 %</td><td>79,59 %</td><td>68,01 %</td><td>57,02 %</td></tr>
+<tr><th scope="row">NVME</th>                  <td>17,70 %</td><td>17,95 %</td><td>74,13 %</td><td>70,29 %</td><td>65,40 %</td><td>55,81 %</td></tr>
+<tr><th scope="row">SAS RAID-0 iodepth=32</th> <td>0,30 %</td><td>-2,29 %</td><td>-3,12 %</td><td>-10,31 %</td><td>-0,86 %</td><td>4,27 %</td></tr>
+<tr><th scope="row">SAS HDD iodepth=32</th>    <td>1,94 %</td><td>-0,09 %</td><td>-1,43 %</td><td>-0,37 %</td><td>0,41 %</td><td>0,33 %</td></tr>
+<tr><th scope="row">NVME RAID-0 iodepth=32</th><td>39,76 %</td><td>50,71 %</td><td>50,76 %</td><td>48,91 %</td><td>48,58 %</td><td>48,48 %</td></tr>
+<tr><th scope="row">NVME iodepth=32</th>       <td>44,52 %</td><td>13,26 %</td><td>2,84 %</td><td>2,23 %</td><td>2,38 %</td><td>3,05 %</td></tr>
+</tbody>
+</table>
+
+<h2 id="comparing-random-write-iops">Comparing random write IOPS</h2>
+
+<style type="text/css">
+#carousel-iops-randwrite .carousel-indicators button {
+color: #fff;
+background-color: #fff;
+}
+#carousel-iops-randwrite .carousel-indicators button.active {
+color: #e9c53c;
+background-color: #e9c53c;	
+}	
+</style>
+
+<div id="carousel-iops-randwrite" class="carousel carousel-dark slide" data-bs-ride="false">
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="1" aria-current="true" aria-label="Slide 1"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="2" aria-current="true" aria-label="Slide 2"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="3" aria-current="true" aria-label="Slide 3"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="4" aria-current="true" aria-label="Slide 4"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="5" aria-current="true" aria-label="Slide 5"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="6" aria-current="true" aria-label="Slide 6"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="7" aria-current="true" aria-label="Slide 7"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="8" aria-current="true" aria-label="Slide 8"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="9" aria-current="true" aria-label="Slide 9"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="10" aria-current="true" aria-label="Slide 10"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="11" aria-current="true" aria-label="Slide 11"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="12" aria-current="true" aria-label="Slide 12"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="13" aria-current="true" aria-label="Slide 13"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="14" aria-current="true" aria-label="Slide 14"></button>
+<button type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide-to="15" aria-current="true" aria-label="Slide 15"></button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-Jx05v7UdgtEGi0WWz54gBPbH06+tSQYqVRWn+HKPwctZSsmDu/WjTTxkJEyPj3EpgQb6pyrkjkFaGe0T5GYDNQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-sas-raid0-non-encrypt-271d39bfb51d82d1068b4596cf9e2004f6c7d3afad49062a5515a7f8728fc1cb594ac983bbf5a34d3c64244c8f8f71298106faa72ae48e415a19ed13e4660335.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-d5ch7jrCl314kBtOojtBdO7z94vv4++MUBdM4QknEshAyZVj/jBSLTK9onYylyNcfq3aGkb7Do3Kj93gPARNSA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-sas-raid0-encrypted-779721ee3ac2977d78901b4ea23b4174eef3f78befe3ef8c50174ce1092712c840c99563fe30522d32bda2763297235c7eadda1a46fb0e8dca8fdde03c044d48.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-aPhgesZ19oziwfTdAKI1wCzCOKh78bNeNqn90bfZS8fUtuAlUFbA33B0IMyAzmcF9YNFfoVg1xcYIFwlFyLZTA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-sas-hdd-non-encrypt-68f8607ac675f68ce2c1f4dd00a235c02cc238a87bf1b35e36a9fdd1b7d94bc7d4b6e0255056c0df707420cc80ce6705f583457e8560d71718205c251722d94c.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-d10EwatcqI6SbFUfAuccUg7E86FiJam96niO2vTcxg+kACsH2QnaDU1LJZ9jmRPaZAuHPGKPVoTdr90lsgFO5A==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-sas-hdd-encrypted-775d04c1ab5ca88e926c551f02e71c520ec4f3a16225a9bdea788edaf4dcc60fa4002b07d909da0d4d4b259f639913da640b873c628f5684ddafdd25b2014ee4.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-D1mLSOvkrdQ8W90oCSV49n8IvGyaiCrpho9SNofwgm1dbkEHCM27dekK2K1J4Ddyu5ip0YUH2hkdMcG+Hfcf2Q==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-nvme-raid0-non-encrypt-0f598b48ebe4add43c5bdd28092578f67f08bc6c9a882ae9868f523687f0826d5d6e410708cdbb75e90ad8ad49e03772bb98a9d18507da191d31c1be1df71fd9.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-BLbUHoPeX99woN/nF1VqjDuO0L97JGTOr3uQH45FxFxDIweDub4x7wZcSjQVlzZDuGYyiBZxsFF6rbFhOPoySA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-nvme-raid0-encrypted-04b6d41e83de5fdf70a0dfe717556a8c3b8ed0bf7b2464ceaf7b901f8e45c45c43230783b9be31ef065c4a3415973643b86632881671b0517aadb16138fa3248.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-77ubuJSo5/S1Nu4igv+qonicZe/fSdK61as6Je1M04ymtU6DpBohJTl2CIfp2rMapqfM6UW+Zf3rFbzSuweHCQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-nvme-non-encrypt-efbb9bb894a8e7f4b536ee2282ffaaa2789c65efdf49d2bad5ab3a25ed4cd38ca6b54e83a41a212539760887e9dab31aa6a7cce945be65fdeb15bcd2bb078709.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-WpFZqed0RC0fFnXjDdmx9Gm3/E24Z++AJ9iqH9hQyAXRsjgMK34Z8ZLtQ0O/N3f3co+OG+1blZhaCGYcP5ncEg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-nvme-encrypted-5a9159a9e774442d1f1675e30dd9b1f469b7fc4db867ef8027d8aa1fd850c805d1b2380c2b7e19f192ed4343bf3777f7728f8e1bed5b95985a08661c3f99dc12.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-yHIlDNwd6QOsOZ6ca/ZnHXvdqKwFv2Oj86mmKzYwa5A+gekEXRXpMYh6gGY2p2nz0WqrMGKiS0YVeLHINkS8OA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-iod32-sas-raid0-non-encrypt-c872250cdc1de903ac399e9c6bf6671d7bdda8ac05bf63a3f3a9a62b36306b903e81e9045d15e931887a806636a769f3d16aab3062a24b461578b1c83644bc38.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-fPtRsLkRzuFLbH+IiNzZIqnl2kkZAwNFwjawSu4P5qWnkZKlgUHwqqVs9yIfUcE852+7JRdskUoAY84U7HUYnQ==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-iod32-sas-raid0-encrypted-7cfb51b0b911cee14b6c7f8888dcd922a9e5da4919030345c236b04aee0fe6a5a79192a58141f0aaa56cf7221f51c13ce76fbb25176c914a0063ce14ec75189d.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-n2IsL+spTH4QdtyeI6YWFqCo2zewTZR7ODcqMnhb3GXN35AIhIenW907rx+WOm9ppxZfScyUud8cC/663bfE4Q==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-iod32-sas-hdd-non-encrypt-9f622c2feb294c7e1076dc9e23a61616a0a8db37b04d947b38372a32785bdc65cddf90088487a75bdd3baf1f963a6f69a7165f49cc94b9df1c0bfebaddb7c4e1.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-HLnF7Mr0/RHXh0mrlVZ1iBFDs2SXMui3lQ2oNBDJpB343/jIk5JKtEUrHwmOQnNPMfi+7eb0RYJ7enZTz3gmMg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-iod32-sas-hdd-encrypted-1cb9c5eccaf4fd11d78749ab955675881143b3649732e8b7950da83410c9a41df8dff8c893924ab4452b1f098e42734f31f8beede6f445827b7a7653cf782632.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-eofZvOn3mxmPtT5LgHHA3587T3V7BsDgjCJGl7dUWDkLCEOjHimN7MfdY7tCxPpZl0lHIecJno/SKD6aVjqPrg==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-iod32-nvme-raid0-non-encrypt-7a87d9bce9f79b198fb53e4b8071c0df9f3b4f757b06c0e08c224697b75458390b0843a31e298decc7dd63bb42c4fa5997494721e7099e8fd2283e9a563a8fae.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-WlZy51NsTGgupS4uhh3see4x+o28H+nIe5oYpzn6lRLNmGWumGiWQ4QiQc6oU4LDufsBqStmNvJEPGb7IA5dEw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-iod32-nvme-raid0-encrypted-5a5672e7536c4c682ea52e2e861dec79ee31fa8dbc1fe9c87b9a18a739fa9512cd9865ae98689643842241cea85382c3b9fb01a92b6636f2443c66fb200e5d13.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-AkduwoUgqbVr44/8XHt+SYcBls9+ndZHyTlevMmiOXwvTcXE2yWOpaBenoZ3TP46+5BuGP5VK8vXNaaHralfFA==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-iod32-nvme-non-encrypt-02476ec28520a9b56be38ffc5c7b7e49870196cf7e9dd647c9395ebcc9a2397c2f4dc5c4db258ea5a05e9e86774cfe3afb906e18fe552bcbd735a687ada95f14.png" /></div>
+<div class="carousel-item"><img class="d-block w-100 mx-auto" style="max-width: 654px;" integrity="sha512-2uL3bDc6kZn/PiqB1mH/cbsrRm6JDVhLfUNTbJ1V4/h0kLnG7dDYt+8fY6dT8o59FhCjavIjh4DtBglZyt4ZCw==" crossorigin="anonymous" src="/assets/images/blog/luks-perf/iops-randwrite-iod32-nvme-encrypted-dae2f76c373a9199ff3e2a81d661ff71bb2b466e890d584b7d43536c9d55e3f87490b9c6edd0d8b7ef1f63a753f28e7d1610a36af2238780ed060959cade190b.png" /></div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carousel-iops-randwrite" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+<p class="text-center fw-semibold">Caution: Scales are logarithmic!</p>
+
+<h3 id="performance-losses-random-write-iops">Performance losses random write IOPS</h3>
+
+<table class="table table-striped table-hover table-bordered">
+<thead>
+<tr>
+<th scope="col">Device</th>
+<th scope="col">4 KiB % loss</th>
+<th scope="col">64 KiB % loss</th>
+<th scope="col">1 MiB % loss</th>
+<th scope="col">4 MiB % loss</th>
+<th scope="col">16 MiB % loss</th>
+<th scope="col">64 MiB % loss</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row">SAS RAID-0</th>            <td>-21,21 %</td><td>0,45 %</td><td>27,20 %</td><td>25,34 %</td><td>34,89 %</td><td>43,14 %</td></tr>
+<tr><th scope="row">SAS HDD</th>               <td>-6,72 %</td><td>6,91 %</td><td>11,24 %</td><td>19,57 %</td><td>12,97 %</td><td>9,49 %</td></tr>
+<tr><th scope="row">NVME RAID-0</th>           <td>54,45 %</td><td>72,75 %</td><td>83,56 %</td><td>81,83 %</td><td>60,73 %</td><td>32,43 %</td></tr>
+<tr><th scope="row">NVME</th>                  <td>53,20 %</td><td>73,91 %</td><td>76,44 %</td><td>61,98 %</td><td>50,27 %</td><td>27,10 %</td></tr>
+<tr><th scope="row">SAS RAID-0 iodepth=32</th> <td>-0,23 %</td><td>0,38 %</td><td>20,77 %</td><td>18,22 %</td><td>15,83 %</td><td>19,05 %</td></tr>
+<tr><th scope="row">SAS HDD iodepth=32</th>    <td>2,17 %</td><td>-9,64 %</td><td>4,78 %</td><td>4,98 %</td><td>2,51 %</td><td>2,56 %</td></tr>
+<tr><th scope="row">NVME RAID-0 iodepth=32</th><td>21,03 %</td><td>37,76 %</td><td>21,16 %</td><td>12,26 %</td><td>13,00 %</td><td>13,06 %</td></tr>
+<tr><th scope="row">NVME iodepth=32</th>       <td>22,75 %</td><td>8,13 %</td><td>5,57 %</td><td>2,78 %</td><td>4,58 %</td><td>3,51 %</td></tr>
+</tbody>
+</table>
+
+<h2 id="conclusion">Conclusion</h2>
+<p class="lead">
+Although modern CPUs provide AES acceleration through AES-NI instructions, the overall performance penalty especially when using NVME drives is too big to recommend turning it on everywhere.
+</p>
+
+<p>Self encrypting drives technically work but the tooling around them is still in its infancy and as of yet not suitable for use in a DC environment until server manufacturers incorporate the necessary options in their firmware and the tools for managing SEDs under linux significantly improve in documentation and user friendliness.</p>
+
+<p>SEDs also suffer in the aspect of having to trust that the drive manufacturer implemented the cryptography correctly and didn’t add backdoors into it. Recent history has shown that this isn’t always the case as some (albeit consumer grade) SSDs didn’t encrypt data at all and even allowed access without knowing the passphrase.<br />
+(This was a problem with e.g. Microsoft’s BitLocker relying on the drive to perform the cryptography and afaik subsequently was fixed by Microsoft.)</p>
+
+<p>Crypto accelerators could be a solution here, however it’d be nice to see that technology embedded into servers directly since cryptography nowadays is a must-have.</p>
+
+<p class="lead fw-semibold">Thank you for reading this blog post!</p>
+
+
+
+<h2 id="about">
+  
+    Über den Autor
+  
+</h2>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="17beb6afc740">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/assets/e5f598-1ad5a3a1fb776125919916a6ac46330221d6a12c31a9879f9c78829b04e746f91f3157e302fe513b87f83ed6ede11bed3c4c9f165b397c6522f5a1094b568e10.webp" mask="url(#17beb6afc740)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Paul-Philipp Kuschy</b></div>
+        
+        <div class="mt-2">Paul is a Senior DevOps Engineer specialized in software defined storage solutions with primary focus on Ceph and ZFS. After working as system manager and software developer in a small business oriented around digital media and media production he worked as systems engineer for ISPs like STRATO AG and noris network AG. When he's not working on Ceph, OpenStack and HPC cluster solutions he spends his spare time playing guitar, refining his audio recording and mixing skills, designing light shows for bands and/or events, working as gaffer for video and photo shootings and tinkering around with all kinds of electronics.
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="https://www.linkedin.com/in/paul-philipp-kuschy-21316925a"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/ppkuschy"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+          <div class="ms-md-auto pe-3"><a href="/de/members/ppkuschy" class="btn btn-outline-primary" role="button">Community-Profil &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" integrity="sha512-GzGAK+B6sTfSNz880uJokj1yfuHRm2tXff87cWEDRd4IjDuDyQ9miXoh5S6E+gPB700cpRk7hlm5yVNZRqoBVA==" crossorigin="anonymous" src="/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS und das Logo sind geschützte Marken der Open Source Business Alliance e.V. — Sonstige Marken sind Eigentum ihrer jeweiligen Besitzer.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Impressum" href="/de/imprint/">Impressum</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Datenschutzerklärung" href="/de/dataprotection/">Datenschutzerklärung</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>

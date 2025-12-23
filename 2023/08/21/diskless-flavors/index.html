@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>Preferring diskless flavors in SCS | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="Preferring diskless flavors in SCS | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="TL;DR" />
+<meta property="og:description" content="TL;DR" />
+<link rel="canonical" href="https://scs.community/2023/08/21/diskless-flavors/" />
+<meta property="og:url" content="https://scs.community/2023/08/21/diskless-flavors/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://scs.community/assets/images/blog/diskless/diskless-3407e54252bb6e2b176f5a0a5c33a52e273fb62d12bc436bcf3bc79c2b50db7ba4e91f4e6791aad0f203f2468867fa635af987443c5c078959d2fb026cde0efc.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-08-21T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://scs.community/assets/images/blog/diskless/diskless-3407e54252bb6e2b176f5a0a5c33a52e273fb62d12bc436bcf3bc79c2b50db7ba4e91f4e6791aad0f203f2468867fa635af987443c5c078959d2fb026cde0efc.jpg" />
+<meta property="twitter:title" content="Preferring diskless flavors in SCS" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-23T22:57:45+00:00","datePublished":"2023-08-21T00:00:00+00:00","description":"TL;DR","headline":"Preferring diskless flavors in SCS","image":"blog/diskless/diskless.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://scs.community/2023/08/21/diskless-flavors/"},"url":"https://scs.community/2023/08/21/diskless-flavors/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://scs.community/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Matomo -->
+  <script>
+    if (typeof(Storage) !== 'undefined') {
+    	if (localStorage.getItem('matomoTrackingEnabled') === null) {
+    		localStorage.setItem('matomoTrackingEnabled', 'true');
+    	}
+    }
+  </script>
+  <script>
+    if (localStorage.getItem('matomoTrackingEnabled') !== 'false') {
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['disableCookies']);
+      _paq.push(["setDoNotTrack", true]);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://matomo.scs.community/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    }
+  </script>
+  <!-- End Matomo Code -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" integrity="sha512-oLi5cq8OY/Co/5GZRWjRUMDnbeMMCa4e2EBWkvoxP6DVNEWGEqinHpp+Tc7VNJz/SB+9hj4ZuYttQftIgc1ivg==" crossorigin="anonymous" src="/assets/vendor/jquery/jquery-a0b8b972af0e63f0a8ff91994568d150c0e76de30c09ae1ed8405692fa313fa0d534458612a8a71e9a7e4dced5349cff481fbd863e19b98b6d41fb4881cd62be.js"></script>
+  <script type="text/javascript" integrity="sha512-2OEU5OYjrPJLs8PL9qkG+9N+DbHBqvWjEjlU76rnStYvZRzoY8k2i5/tcG1gjw/jwoGhuYkXm02Rc3f6HGU+tw==" crossorigin="anonymous" src="/assets/vendor/bootstrap/js/bootstrap.bundle-d8e114e4e623acf24bb3c3cbf6a906fbd37e0db1c1aaf5a3123954efaae74ad62f651ce863c9368b9fed706d608f0fe3c281a1b989179b4d917377fa1c653eb7.js"></script>
+  <!-- Lighbox -->
+  <script type="text/javascript" integrity="sha512-AsyFLM7qdMK2Gt1rVM/4wsSCeOPaCbE8KqQbSruCpez+OtU/5fEtpyjAtZkPBqKjpf6cnC6970DZNCHKwLJnzA==" crossorigin="anonymous" src="/assets/vendor/lightbox-02cc852cceea74c2b61add6b54cff8c2c48278e3da09b13c2aa41b4abb82a5ecfe3ad53fe5f12da728c0b5990f06a2a3a5fe9c9c2ebdef40d93421cac0b267cc.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/lightbox-0184be351f33358fce8415b3f8bdda50e58ee86ff1de0b37d00a26f602e14fc61896ad0bb90662299dea49767123bfe2c724163867b097f5f92cc1785e324cad.css" integrity="sha512-AYS+NR8zNY/OhBWz+L3aUOWO6G/x3gs30Aom9gLhT8YYlq0LuQZiKZ3qSXZxI7/ixyQWOGewl/X5LMF4XjJMrQ==" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/main-b8cf68a63f9b26ea819f67d4e3a173489daf6c6c7de17051d360d8e72b41c67279d732bd19f4a04210326db8595205b80d704f640296bb5f5f63bedc042df118.css" integrity="sha512-uM9opj+bJuqBn2fU46FzSJ2vbGx94XBR02DY5ytBxnJ51zK9GfSgQhAybbhZUgW4DXBPZAKWu19fY77cBC3xGA==" crossorigin="anonymous">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/pygments-css/zenburn-b9247179f996de88844d73acaa60564a48db30aa0fec022f80b7641b41d45140625b657433da3bd722f68ba2fed77bfaa94972b9eed09c77a427e04a1707917e.css" integrity="sha512-uSRxefmW3oiETXOsqmBWSkjbMKoP7AIvgLdkG0HUUUBiW2V0M9o71yL2i6L+13v6qUlyue7QnHekJ+BKFweRfg==" crossorigin="anonymous">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Discover our new web page</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Discover SCS
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/about/">About SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/use/">Use SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/contribute/">Contribute to SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/partners/">Service partners</a></li>
+                  
+                    <li><a class="dropdown-item" href="/members/">Community members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/news/">
+                News
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/events/">
+                Events
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/jobs/">
+                Open positions
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/tenders/">
+                Public tenders
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Documentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/2023/08/21/diskless-flavors/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/de/2023/08/21/diskless-flavors/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/2023/08/21/diskless-flavors/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/de/2023/08/21/diskless-flavors/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" integrity="sha512-dJ6jTJGSpX7cNvESuSrC7duEfT5HZD83SIs9FIybmKcgIVwMjhetDTg3yQVq5v6uPNyTHtNukRsrG2GiC0F95g==" crossorigin="anonymous" src="/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          One platform — standardized, built and operated by many.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" integrity="sha512-YV5ImgTZnx6tg6b6ZNdt/JbR9qhEjuVFcJnivI/dsjU3n2YH6Reg/PtRn/GQKsVZYhPXM5759IoJJarysSIe4A==" crossorigin="anonymous" src="/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" integrity="sha512-pLkpIB9zq0WFODZFm2htuY8LLjcYlABYjOmSpRxsWdNxg16TzQ1biR8F/Odda4c4PD/BLVLG1WDFYC6zK/WLkA==" crossorigin="anonymous" src="/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" integrity="sha512-+/oBMqq6OUbZcOlC/ZjvQDq7EvjzRMwwh/y0ZuI0JLDX3d2biyzkl531jkt45I8EGetyHg8Fmb2J32tGwoccQw==" crossorigin="anonymous" src="/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>Preferring diskless flavors in SCS</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  <svg height="80" width="80">
+    
+    
+    <mask id="e1c4b4002a3c">
+      <rect width="80" height="80" fill="white"/>
+    </mask>
+    <mask id="146f6bd875f2">
+        <circle cx="40" cy="40" r="40" fill="white"/>
+    </mask>
+    <image x="0" y="0" height="80" width="80" xlink:href="/assets/a75ac3-9f8be8cc33736f60cef97b709a096937121338e312e9e3ee13933b9a583c30435edcd60f7154a6d23891a4c62230e2f40cdbe49f20b0da944423849e9f37c883.webp"
+       mask="url(#146f6bd875f2)" 
+    ></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Kurt Garloff</small>
+			<small>
+	August 21, 2023
+
+</small>
+		</div>
+	</div>
+</div>
+
+<h2 id="tldr">TL;DR</h2>
+
+<p>Sovereign Cloud Stack (SCS) has downgraded the formerly mandatory flavors with
+root disks to recommended ones in the next flavor naming standard version 3.
+Thus, every SCS IaaS user should preferably use the diskless flavors.
+This blog post describes the motivation for this change and also explains
+how the diskless flavors can be used with common automation (Infra-as-Code)
+tooling.</p>
+
+<h2 id="flavor-standardization">Flavor standardization</h2>
+
+<p>SCS offers the promise to make it easy for Cloud users (typically DevOps teams
+that develop and operate services/workloads on top of SCS IaaS and/or
+Container infrastructure) to move between different SCS environments and vendors
+or to use several of them in a federated way. One of the early accomplishments
+in standardizing SCS has been to standardize IaaS flavor properties and flavor
+naming.</p>
+
+<p>On OpenStack (like on many other IaaS environments), when you create a virtual
+machine (VM), you can not choose an arbitrary amount of (virtual) CPUs or memory
+(RAM). Instead, you have a discrete set of choices, so-called flavors. They
+combine a number of vCPUs with a certain amount of RAM and often also a
+virtual disk to boot from. On a typical VM creation, an operating system image
+is being copied to the disk (of a size defined by the chosen flavor) on the
+compute host, vCPUs and RAM are allocated (according to the numbers defined in
+the chosen flavor) and the virtual machine can then start booting.</p>
+
+<p>While this is not as flexible as some users might like, this is how most clouds
+do it. In SCS environments, several standard flavors exist, e.g., flavors
+with 4vCPUs, 8GiB of RAM and a 20GB root disk (<code class="language-plaintext highlighter-rouge">SCS-4V-8-20</code>) or one
+with 4vCPUs, 16GiB of RAM and a 50GB root disk (<code class="language-plaintext highlighter-rouge">SCS-4V-16-50</code>).</p>
+
+<h2 id="diskless-flavors">Diskless flavors</h2>
+
+<p>Creating a set of flavors that caters to the needs of most users results in
+a non-trivial amount of flavors. Some workloads require more computing power
+(thus more vCPUs), some require more RAM. So, many combinations of these
+will be needed. The mandatory flavors in SCS cover 1 through 16 vCPUs and
+2 through 32GiB of RAM, with ratios of 1:2, 1:4 and 1:8 between vCPUs and
+RAM (in GiB). This results in 12 flavors. (There is one additional flavor
+for tiny machines, <code class="language-plaintext highlighter-rouge">SCS-1L-1</code>, resulting in 13 flavors actually.)
+Of course, providers can implement many more based on the needs of their
+users – these are just not guaranteed to be available on all SCS
+environments.</p>
+
+<p>Adding a variety of root disk sizes now multiplies these flavors.
+In versions <a href="https://docs.scs.community/standards/scs-0100-v1-flavor-naming">1</a>
+and <a href="https://docs.scs.community/standards/scs-0100-v2-flavor-naming">2</a>
+of the flavor standard, the SCS community has tried to
+prevent flavor explosion by just mandating one disk size per flavor, scaling
+it with the size of the RAM and choosing discrete values of 5, 10, 20,
+50 and 100 GB for them. (By extension, providers that want to provide
+larger disks have been advised to choose 200, 500, 1000, … GB for these.)</p>
+
+<p>Note that these root disks are not proper cinder volumes (that you could
+enlarge or create snapshots or backups from), but – like the so called
+ephemeral disks – are managed on the compute node by nova and get deleted
+as soon as the VM gets deleted. They are stored on the local compute node
+and unless the provider uses ceph storage (via rbd) for these, it makes
+live-migration slow (if the provider enabled block migration) or completely
+prevents live-migration (if the provider has not enabled block migration,
+for example because he uses LVM).</p>
+
+<p>Next to each flavor with a root disk size (e.g. <code class="language-plaintext highlighter-rouge">SCS-4V-16-50</code>), SCS
+also mandates a flavor without a root disk (e.g. <code class="language-plaintext highlighter-rouge">SCS-4V-16</code>). This is useful,
+as OpenStack also allows users to boot from a preexisting disk (“volume”)
+or to allocate block storage (a virtual disk) with
+arbitrary size upon VM creation, although it is a bit more complicated (see
+below). So we have one disk size per vCPU-RAM combination for simplicity
+and the flexibility to have an arbitrary disk size with a bit more effort.
+This is what we had for the SCS flavor standards v1 and v2.</p>
+
+<p>With <a href="https://docs.scs.community/standards/scs-0100-v3-flavor-naming">v3</a>,
+we also <a href="https://docs.scs.community/standards/scs-0110-v1-ssd-flavors">added</a>
+two flavors with (at least) local SSD type root disk storage.
+Adding all combinations here would have again resulted in many new flavors.
+Yet the cloud operators in the SCS community really wanted to avoid a
+proliferation of many new flavors mandated by the standards. The SCS community
+agreed on avoiding more mandatory flavors and instead agreed on reducing the
+number of mandatory flavors by stopping to require the flavors with disks
+(except for the two new ones with local SSDs, more on this later).</p>
+
+<p>With the <a href="https://docs.scs.community/standards/scs-0100-v3-flavor-naming">version 3 of the SCS flavor standard</a>,
+the formerly mandatory flavors with disks
+have been downgraded to recommended. Operators still should provide them for
+the best portability of apps written against older SCS standards, but they are no
+longer required to in order to be able to achieve the SCS-compatible certification
+on the IaaS layer. We recommend that developers use the diskless flavors and
+allocate root disks dynamically. Using proper cinder volumes also has the
+additional advantage of supporting live-migration and of course to use the
+volume management capabilities to e.g. create snapshots or backups.</p>
+
+<p>The next section explains how this can be done and uses examples from SCS’
+own projects.</p>
+
+<h2 id="creating-vms-with-diskless-flavors">Creating VMs with diskless flavors</h2>
+
+<h3 id="horizon">Horizon</h3>
+<p>On the second page of the create instance dialogues, you can choose to
+create a new volume, chose any size you want (though you better make it large
+enough to accommodate the needs of the used image) and you can also
+choose that the disk should be destroyed upon the destruction of the VM
+as it would if you had used a flavor with a disk. This second page
+can be seen on the horizon screenshot. On the third page,
+choose a diskless flavor.</p>
+<figure class="figure mx-auto d-block" style="width:100%">
+    <img class="figure-img w-100" alt="Horizon Instance Create p2" integrity="sha512-IqCXLWndPkaUsMlGB7odtXhP5R9C5DBWSnUEJy7dz5sfE2z24A5+tXVXrFRq5ngz+Tmw1Z680fDyKuOwLoDH6A==" crossorigin="anonymous" src="/assets/images/blog/diskless/Horizon-VM-Create-22a0972d69dd3e4694b0c94607ba1db5784fe51f42e430564a7504272eddcf9b1f136cf6e00e7eb57557ac546ae67833f939b0d59ebcd1f0f22ae3b02e80c7e8.png" />
+    <figcaption>Horizon's VM instance creation dialog page 2</figcaption>
+</figure>
+
+<p>The VM instance will boot normally. You can see the volume in the
+volume list; it has no name, but you can see it being attached to your
+freshly booted VM. If you have activated the “Delete Volume on Instance Delete”
+setting, it will vanish as soon as you destroy the VM instance.</p>
+
+<p>The fact that no name can be assigned to the volume is a limitation
+of the OpenStack nova API. (But of course, you could assign a name
+manually after it has been created.)</p>
+
+<h3 id="openstack-api">OpenStack API</h3>
+<p>Horizon, of course, uses an API call to create the VM instance with
+a volume allocated on the fly. This is a <code class="language-plaintext highlighter-rouge">POST</code> REST call to the
+compute (nova) endpoint of your cloud and the settings are described
+in the <a href="https://docs.openstack.org/api-ref/compute/?expanded=create-server-detail#create-server">nova API documentation</a>.</p>
+
+<p>To allocate a disk (volume), the (optional) <code class="language-plaintext highlighter-rouge">block_device_mapping_v2</code>
+parameter is passed with settings like</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="nl">"block_device_mapping_v2"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+   </span><span class="nl">"boot_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$IMAGE_UUID"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"source_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"volume_size"</span><span class="p">:</span><span class="w"> </span><span class="err">$WANTED_SIZE</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"destination_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"volume"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"delete_on_termination"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"volume_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"__DEFAULT__"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"disk_bus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"scsi"</span><span class="w"> </span><span class="p">}]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Obviously, you would replace <code class="language-plaintext highlighter-rouge">$IMAGE_UUID</code> and <code class="language-plaintext highlighter-rouge">$WANTED_SIZE</code> with the wanted settings.
+(The size is specified in GiB.)
+You may leave out <code class="language-plaintext highlighter-rouge">volume_type</code> and <code class="language-plaintext highlighter-rouge">disk_bus</code>. If you leave out <code class="language-plaintext highlighter-rouge">delete_on_termination</code>,
+it will default to <code class="language-plaintext highlighter-rouge">false</code>, resulting in a volume that remains allocated after the VM
+instance has been removed and thus behaving differently from the root volumes that come
+with a flavor with a root disk.
+You can also add a <code class="language-plaintext highlighter-rouge">tag</code> property to place a tag on the created volume, but you
+unfortunately can not add a name here.</p>
+
+<p>When using the openstack SDK, the API call would be invoked with</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vm</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="n">compute</span><span class="p">.</span><span class="nf">create_server</span><span class="p">(</span>
+	<span class="n">name</span><span class="o">=</span><span class="sh">"</span><span class="s">test-diskless</span><span class="sh">"</span><span class="p">,</span>
+	<span class="n">networks</span><span class="o">=</span><span class="p">[{</span><span class="sh">"</span><span class="s">uuid</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">2bc6b86c-77e2-4cfb-a2d1-7d7210b1e215</span><span class="sh">"</span><span class="p">}],</span>
+	<span class="n">flavor_id</span><span class="o">=</span><span class="sh">"</span><span class="s">82889eb7-99d0-4025-a0a3-95b3b47f792a</span><span class="sh">"</span><span class="p">,</span>
+	<span class="n">key_name</span><span class="o">=</span><span class="sh">"</span><span class="s">SSHkey-gxscscapi</span><span class="sh">"</span><span class="p">,</span>
+	<span class="n">block_device_mapping_v2</span><span class="o">=</span><span class="p">[{</span><span class="sh">'</span><span class="s">boot_index</span><span class="sh">'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+		<span class="sh">'</span><span class="s">uuid</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">09337995-b91b-4763-8f6b-5e77f1d9d262</span><span class="sh">'</span><span class="p">,</span>
+		<span class="sh">'</span><span class="s">source_type</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">image</span><span class="sh">'</span><span class="p">,</span>
+		<span class="sh">'</span><span class="s">volume_size</span><span class="sh">'</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+		<span class="sh">'</span><span class="s">destination_type</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">volume</span><span class="sh">'</span><span class="p">,</span>
+		<span class="sh">'</span><span class="s">delete_on_termination</span><span class="sh">'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+	<span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div></div>
+<p>with the fields <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">uuid</code> in <code class="language-plaintext highlighter-rouge">networks</code>, <code class="language-plaintext highlighter-rouge">flavor_id</code>, <code class="language-plaintext highlighter-rouge">key_name</code>,
+<code class="language-plaintext highlighter-rouge">uuid</code> in <code class="language-plaintext highlighter-rouge">block_device_mapping_v2</code>, <code class="language-plaintext highlighter-rouge">volume_size</code> according to your
+needs. Note that the <code class="language-plaintext highlighter-rouge">block_device_mapping_v2</code>’s <code class="language-plaintext highlighter-rouge">uuid</code> is the <code class="language-plaintext highlighter-rouge">uuid</code>
+of the wanted image.</p>
+
+<p>A more complete example can be found at
+<a href="/assets/scripts/create_vm-9ff63ae76f387de89cd766a542c119b5462a3cb1ae84f2537f56ee34373941c59a69421da6e401e77c4157df5589ca7e9bc4bb88e0df2137e4197e85972b60d8.py">create_vm.py</a>.</p>
+
+<h3 id="openstack-cli">openstack-cli</h3>
+
+<p>If you are using the OpenStack command line client, you can pass the desire to create
+a volume on the fly via the command line parameter <code class="language-plaintext highlighter-rouge">--block-device</code>.
+This does not work for old versions (&lt;5.5 / Wallaby) of the openstack CLI.
+(You can work around this using the nova client rather than the openstack client
+if you really need to stick to such an old version.)
+Versions prior to 6.0 (Zed) also need an additional patch: These versions refuse to
+issue the API call to nova because they think you have passed neither a volume
+nor an image when you pass the <code class="language-plaintext highlighter-rouge">--block-device</code> option. This 
+<a href="/assets/scripts/openstackclient-diskless-boot-c797cafafe6a2027dc127303f720953a0a32ff7c2de9d311400940f923afa6310044e0cc81af860ccae378894956a0506b2e59a59dbea246e3d55b6c9c8f266d.diff">trivial patch</a> fixes this:</p>
+<div class="language-patch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">--- openstackclient/compute/v2/server.py.orig   2021-03-20 10:17:40.000000000 +0100
+</span><span class="gi">+++ openstackclient/compute/v2/server.py        2023-07-03 15:59:27.301268807 +0200
+</span><span class="p">@@ -802,7 +802,7 @@</span> class CreateServer(command.ShowOne):
+             help=_('Create server with this flavor (name or ID)'),
+         )
+         disk_group = parser.add_mutually_exclusive_group(
+<span class="gd">-            required=True,
+</span><span class="gi">+            required=False,
+</span>         )
+         disk_group.add_argument(
+             '--image',
+</code></pre></div></div>
+
+<p>With a working openstack command line client, things are pretty straight-forward:
+<code class="language-plaintext highlighter-rouge">openstack server create --block-device boot_index=0,uuid=$IMGID,source_type=image,volume_size=$SIZE,destination_type=volume,delete_on_termination=true ...</code>
+will do what you need.</p>
+
+<h4 id="example-openstack-health-monitor">Example: openstack-health-monitor</h4>
+
+<p>The <a href="https://github.com/SovereignCloudStack/openstack-health-monitor/">openstack-health-monitor</a>
+is a large shell script using the openstackclient CLI tooling to implement a scenario test
+against an OpenStack environment, creating routers, networks, security groups, keypairs,
+volumes, virtual machines, loadbalancers, etc. testing them all for correct function and
+then carefully cleaning up everything again. It measures the success rate as well as the
+timing (API performance) and stores it into an influxDB and visualizes it via grafana dashboards.</p>
+
+<p>It traditionally used the SCS flavors <code class="language-plaintext highlighter-rouge">SCS-1V-2-5</code> and <code class="language-plaintext highlighter-rouge">SCS-1L-1-5</code> with disks by default and
+would not cope with diskless flavors unless told to create and manage the root disks separately.
+But this is not what was wanted, thus
+<a href="https://github.com/SovereignCloudStack/openstack-health-monitor/pull/133">PR #133</a>
+addressed this and implemented booting from diskless flavors by passing <code class="language-plaintext highlighter-rouge">--block-device</code>
+to the nova resp. openstack client tool. Now, the flavors <code class="language-plaintext highlighter-rouge">SCS-1V-2</code> and <code class="language-plaintext highlighter-rouge">SCS-1L-1</code> can be used.</p>
+
+<h3 id="terraform">terraform</h3>
+
+<p>Hashicorp’s terraform is a flexible and popular tool to manage infrastructure and has support for
+many different infrastructure platforms. While it may become much less popular now after
+Hashicorp’s decision to stop providing it under an open source license, it is currently
+still in wide use, as the old free versions can still be used.</p>
+
+<p>Creating a VM instance for OpenStack with terraform looks like this with a flavor with a disk:</p>
+<div class="language-hcl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">resource</span> <span class="s2">"openstack_compute_instance_v2"</span> <span class="s2">"mgmtcluster_server"</span> <span class="p">{</span>
+   <span class="nx">name</span>              <span class="o">=</span> <span class="s2">"${var.prefix}-mgmtcluster"</span>
+   <span class="nx">flavor_name</span>       <span class="o">=</span> <span class="nx">var</span><span class="p">.</span><span class="nx">kind_flavor</span>
+   <span class="nx">availability_zone</span> <span class="o">=</span> <span class="nx">var</span><span class="p">.</span><span class="nx">availability_zone</span>
+   <span class="nx">key_pair</span>          <span class="o">=</span> <span class="nx">openstack_compute_keypair_v2</span><span class="p">.</span><span class="nx">keypair</span><span class="p">.</span><span class="nx">name</span>
+   <span class="nx">network</span>     <span class="p">{</span> <span class="nx">port</span> <span class="o">=</span> <span class="nx">openstack_networking_port_v2</span><span class="p">.</span><span class="nx">mgmtcluster_port</span><span class="p">.</span><span class="nx">id</span> <span class="p">}</span>
+   <span class="nx">image_name</span>        <span class="o">=</span> <span class="nx">var</span><span class="p">.</span><span class="nx">image</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In order to support a diskless flavor here (for <code class="language-plaintext highlighter-rouge">var.kind_flavor</code>), we’ll have to
+pass a block device again. As we need the image by UUID then, we need to do a bit
+of additional work to determine the UUID. Here’s the complete code …</p>
+<div class="language-hcl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">data</span> <span class="s2">"openstack_images_image_ids_v2"</span> <span class="s2">"images"</span> <span class="p">{</span>
+  <span class="nx">name</span> <span class="o">=</span> <span class="nx">var</span><span class="p">.</span><span class="nx">image</span>
+  <span class="nx">sort</span> <span class="o">=</span> <span class="s2">"updated_at:desc"</span>
+<span class="p">}</span>
+
+<span class="nx">resource</span> <span class="s2">"openstack_compute_instance_v2"</span> <span class="s2">"mgmtcluster_server"</span> <span class="p">{</span>
+   <span class="nx">name</span>              <span class="o">=</span> <span class="s2">"${var.prefix}-mgmtcluster"</span>
+   <span class="nx">flavor_name</span>       <span class="o">=</span> <span class="nx">var</span><span class="p">.</span><span class="nx">kind_flavor</span>
+   <span class="nx">availability_zone</span> <span class="o">=</span> <span class="nx">var</span><span class="p">.</span><span class="nx">availability_zone</span>
+   <span class="nx">key_pair</span>          <span class="o">=</span> <span class="nx">openstack_compute_keypair_v2</span><span class="p">.</span><span class="nx">keypair</span><span class="p">.</span><span class="nx">name</span>
+   <span class="nx">network</span>     <span class="p">{</span> <span class="nx">port</span> <span class="o">=</span> <span class="nx">openstack_networking_port_v2</span><span class="p">.</span><span class="nx">mgmtcluster_port</span><span class="p">.</span><span class="nx">id</span> <span class="p">}</span>
+   <span class="c1"># image_name      = var.image</span>
+   <span class="nx">block_device</span> <span class="p">{</span>
+     <span class="nx">uuid</span>                  <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">openstack_images_image_ids_v2</span><span class="p">.</span><span class="nx">images</span><span class="p">.</span><span class="nx">ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+     <span class="nx">source_type</span>           <span class="o">=</span> <span class="s2">"image"</span>
+     <span class="nx">volume_size</span>           <span class="o">=</span> <span class="mi">30</span>
+     <span class="nx">boot_index</span>            <span class="o">=</span> <span class="mi">0</span>
+     <span class="nx">destination_type</span>      <span class="o">=</span> <span class="s2">"volume"</span>
+     <span class="nx">delete_on_termination</span> <span class="o">=</span> <span class="kc">true</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>As you can see, the <code class="language-plaintext highlighter-rouge">image_name</code> setting has been commented out and is replaced
+by the to-be-created block device, where we again instruct OpenStack’s
+compute service (nova) to create a volume from the image on the fly.</p>
+
+<p>The code here is even prepared to handle cases with multiple images with the same
+name and use the latest one (the one with the most recent <code class="language-plaintext highlighter-rouge">updated_at</code> value).
+The <code class="language-plaintext highlighter-rouge">volume_size</code> here was chosen to be 30GB, though any value large enough to
+fulfill the image’s needs can be chosen.</p>
+
+<p>Of course, the root volume could also have been managed as a separate resource
+in terraform, allowing for a name to be used, but not allowing to have
+it automatically deleted on termination of the VM. Terraform does a good job
+at tracking resources and their dependencies, so this is not a bad option.</p>
+
+<h3 id="cluster-api-provider-for-openstack-capo">Cluster API provider for OpenStack (capo)</h3>
+
+<p>When creating Kubernetes (k8s) clusters on SCS, we use the K8s Cluster-API (capi) to
+do so. The OpenStack provider (capo) does the hard work of talking to the OpenStack
+API to create resources on the infrastructure, such as the virtual machines that become
+our control plane and worker nodes (using kubeadm to bootstrap and kubernetize them).</p>
+
+<p>The OpenStack VM instances are custom resources in capo. Here is the 
+<code class="language-plaintext highlighter-rouge">OpenStackMachineTemplate</code> representation of a worker node as capo custom resource
+in YAML:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">infrastructure.cluster.x-k8s.io/v1alpha6</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">OpenStackMachineTemplate</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">${PREFIX}-${CLUSTER_NAME}-md-0-${WORKER_MACHINE_GEN}</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">cloudName</span><span class="pi">:</span> <span class="s">${OPENSTACK_CLOUD}</span>
+      <span class="na">identityRef</span><span class="pi">:</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s">${CLUSTER_NAME}-cloud-config</span>
+        <span class="na">kind</span><span class="pi">:</span> <span class="s">Secret</span>
+      <span class="na">flavor</span><span class="pi">:</span> <span class="s">${OPENSTACK_NODE_MACHINE_FLAVOR}</span>
+      <span class="na">serverGroupID</span><span class="pi">:</span> <span class="s">${OPENSTACK_SRVGRP_WORKER}</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">${OPENSTACK_IMAGE_NAME}</span>
+      <span class="na">sshKeyName</span><span class="pi">:</span> <span class="s">${OPENSTACK_SSH_KEY_NAME}</span>
+      <span class="na">securityGroups</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">${PREFIX}-allow-ssh</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">${PREFIX}-allow-icmp</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">${PREFIX}-${CLUSTER_NAME}-cilium</span>
+</code></pre></div></div>
+
+<p>If the flavor <code class="language-plaintext highlighter-rouge">$OPENSTACK_NODE_MACHINE_FLAVOR</code> is diskless, the <code class="language-plaintext highlighter-rouge">OpenStackMachineTemplate</code>
+needs to be changed a bit:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">infrastructure.cluster.x-k8s.io/v1alpha6</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">OpenStackMachineTemplate</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">${PREFIX}-${CLUSTER_NAME}-md-0-${WORKER_MACHINE_GEN}</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">cloudName</span><span class="pi">:</span> <span class="s">${OPENSTACK_CLOUD}</span>
+      <span class="na">identityRef</span><span class="pi">:</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s">${CLUSTER_NAME}-cloud-config</span>
+        <span class="na">kind</span><span class="pi">:</span> <span class="s">Secret</span>
+      <span class="na">flavor</span><span class="pi">:</span> <span class="s">${OPENSTACK_NODE_MACHINE_FLAVOR}</span>
+      <span class="na">serverGroupID</span><span class="pi">:</span> <span class="s">${OPENSTACK_SRVGRP_WORKER}</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">${OPENSTACK_IMAGE_NAME}</span>
+      <span class="na">rootVolume</span><span class="pi">:</span>
+        <span class="na">diskSize</span><span class="pi">:</span> <span class="s">${WORKER_ROOT_DISKSIZE}</span>
+      <span class="na">sshKeyName</span><span class="pi">:</span> <span class="s">${OPENSTACK_SSH_KEY_NAME}</span>
+      <span class="na">securityGroups</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">${PREFIX}-allow-ssh</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">${PREFIX}-allow-icmp</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">${PREFIX}-${CLUSTER_NAME}-cilium</span>
+</code></pre></div></div>
+
+<p>This is fairly painless: Adding the <code class="language-plaintext highlighter-rouge">rootVolume</code> with a <code class="language-plaintext highlighter-rouge">rootVolume.diskSize</code> to the
+template spec and all magically works. With these instructions, the capo driver just
+creates a rootVolume from the image and boots from it. Capo also keeps track of it, so
+it will be removed again when the VM instance is no longer needed. So while not using
+nova <code class="language-plaintext highlighter-rouge">block_device_mapping_v2</code> API and it’s <code class="language-plaintext highlighter-rouge">delete_on_termination</code> property, the
+handling is working well, as we have the capo operator taking care of the volume’s
+lifecycle.</p>
+
+<h4 id="example-k8s-cluster-api-provider">Example: k8s-cluster-api-provider</h4>
+
+<p>The <a href="https://github.com/SovereignCloudStack/k8s-cluster-api-provider/">SCS k8s-cluster-api-provider</a>
+implementation is designed to work out of the box on all SCS-compatible IaaS environments.
+It should thus not rely on flavors that are no longer mandatory. With
+<a href="https://github.com/SovereignCloudStack/k8s-cluster-api-provider/pull/424">PR #424</a>, the
+implementation was changed to create the root volume in terraform for the kind management
+host and to patch the cluster-template dynamically (using kustomize for robust YAML patching)
+for worker and control nodes if (and only if) they use a diskless flavor. There is also some
+heuristic to determine a reasonable volume size.</p>
+
+<p>This feature is available for the SCS Release 5 (to be released in Sept. 2023) in line with
+the v3 flavor spec. The control plane nodes, by default, use the new local SSD
+flavor <code class="language-plaintext highlighter-rouge">SCS-2V-4-20s</code> to ensure robust etcd operation. The feature was also backported to
+the <a href="https://github.com/SovereignCloudStack/k8s-cluster-api-provider/tree/maintained/v5.x">maintained/v5.x</a>
+tree, though it needs a bit of work there still to avoid
+<a href="https://github.com/SovereignCloudStack/k8s-cluster-api-provider/issues/500">errors</a>
+because of missing <code class="language-plaintext highlighter-rouge">jq</code> binary for people that upgraded by <code class="language-plaintext highlighter-rouge">git pull</code>.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3 id="what-happens-if-a-root-volume-is-allocated-but-a-flavor-with-a-disk-is-used">What happens if a root volume is allocated but a flavor with a disk is used?</h3>
+<p>Using the <code class="language-plaintext highlighter-rouge">block_device_mapping_v2</code> in the OpenStack API or the corresponding options
+in the python SDK, the openstack client CLI or terraform while using a flavor that
+comes with a root disk does not create any harm. The cinder volume is still created
+and used, while the disk that comes with the flavor is not accessible to the VM then.
+You still want to avoid this, as you are allocating resources (local storage) that
+you can’t use, but potentially have to pay for, especially on the SSD flavors. So
+remember to not pass <code class="language-plaintext highlighter-rouge">--block-device boot_index=0,...</code> or to uncheck “Create new volume”
+in horizon if you use flavors with a disk.</p>
+
+<h3 id="why-create-the-two-new-ssd-flavors">Why create the two (new) SSD flavors?</h3>
+<p>So when moving from flavor standard v2 to v3, we have downgraded all flavors
+with disks from mandatory to recommended. Yet we have added two new flavors with
+local SSD (or better) storage as mandatory. This looks puzzling at first.</p>
+
+<p>The reason why offering local SSD storage is highly desirable is documented in the
+<a href="https://docs.scs.community/standards/scs-0110-v1-ssd-flavors">scs-0110-v1-ssd-flavors.md</a>
+standard. But couldn’t we use the mechanisms
+described above to allocate arbitrary SSD storage when booting?</p>
+
+<p>The unfortunate truth is: We can’t.
+This is for two reasons:</p>
+<ol>
+  <li>The <a href="https://docs.openstack.org/api-ref/compute/?expanded=create-server-detail#create-server">OpenStack server creation API</a>
+does allow us to define a volume type when deploying an image to
+a volume only with recent API micro-versions (2.67 and newer).
+Not all tools support this yet.
+Or we could revert to a two step process and create the volume in a
+separate step where we choose an appropriate <code class="language-plaintext highlighter-rouge">volume_type</code> in volume
+creation and then tell nova to boot from it. The downside is that
+we can not set the <code class="language-plaintext highlighter-rouge">delete_on_termination</code> flag directly this way,
+creating one more resource that needs to be tracked separately.</li>
+  <li>The SCS project has not yet standardized on a cinder storage type that
+makes a networked SSD type storage available across all IaaS layer
+SCS-compatible clouds. So even the inconvenient two step process
+does not work across all SCS-compatible clouds in a portable way.
+Looking at the use cases of the SSD flavors, a local SSD (or better)
+type storage without the redundancy of a storage cluster is actually
+the desired property for these flavors. In the etcd case, the
+clustering is done by etcd; the same is true for big data use cases,
+where hadoop would take care of data replication and not expect the
+storage layer to do so. Local storage has the additional advantage
+of allowing for lower latency than you can get from networked storage.</li>
+</ol>
+
+<p>So we need those two local SSD flavors <code class="language-plaintext highlighter-rouge">SCS-2V-4-20s</code> and <code class="language-plaintext highlighter-rouge">SCS-4V-16-100s</code>
+to serve our customers well.</p>
+
+<h3 id="how-do-i-know-whether-the-instances-will-be-live-migrated-upon-host-maintenance">How do I know whether the instances will be live-migrated upon host maintenance?</h3>
+<p>Instances with a flavor without a root disk are using proper cinder
+volumes which can be accessed from the network. Live-migration for these
+is straight-forward and we expect providers to live-migrate these
+upon planned host maintance.
+(Note that we have no policy yet that would mandate this, however.)
+Expect VM instances on a flavor with root disk not to be live-migrated;
+some providers may use rbd-backed “local” storage for these though
+(which you could see from the upcoming <code class="language-plaintext highlighter-rouge">scs:disk0-type:network</code> extra_spec)
+or enable block-migration, so you can not rely on them not being live-migrated
+either. Transparency and control of live-migration will be part of future
+SCS standardization work.</p>
+
+
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" integrity="sha512-GzGAK+B6sTfSNz880uJokj1yfuHRm2tXff87cWEDRd4IjDuDyQ9miXoh5S6E+gPB700cpRk7hlm5yVNZRqoBVA==" crossorigin="anonymous" src="/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Imprint" href="/imprint/">Imprint</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Data Protection Statement" href="/dataprotection/">Data Protection Statement</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>

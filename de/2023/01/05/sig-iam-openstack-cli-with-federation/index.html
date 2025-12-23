@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>OpenStack API access with federation to external customer Identity Providers in Sovereign Cloud Stack | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="OpenStack API access with federation to external customer Identity Providers in Sovereign Cloud Stack | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="de" />
+<meta name="description" content="The mission of the Sovereign Cloud Stack (SCS) is to define standards that enable to build and operate fully federated, state-of-the-art open source solutions that enables cloud service providers to deploy Infrastructure-as-a-Service and Container-as-a-Service in a sovereign manner, i.e. independent of other vendors. As such SCS is comprised of a set of standards as well as a reference implementation of these standards." />
+<meta property="og:description" content="The mission of the Sovereign Cloud Stack (SCS) is to define standards that enable to build and operate fully federated, state-of-the-art open source solutions that enables cloud service providers to deploy Infrastructure-as-a-Service and Container-as-a-Service in a sovereign manner, i.e. independent of other vendors. As such SCS is comprised of a set of standards as well as a reference implementation of these standards." />
+<link rel="canonical" href="https://scs.community/2023/01/05/sig-iam-openstack-cli-with-federation/" />
+<meta property="og:url" content="https://scs.community/2023/01/05/sig-iam-openstack-cli-with-federation/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://scs.community/assets/images/default-card-d32fdb798ca15ae927f00593ce64407f69c70d4011955dc94c7be76b99c474f4e673ee1a26ec53725dda80c2c331e5ad4300a43e702171cc014cd47ec6b2f94d.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-05T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://scs.community/assets/images/default-card-d32fdb798ca15ae927f00593ce64407f69c70d4011955dc94c7be76b99c474f4e673ee1a26ec53725dda80c2c331e5ad4300a43e702171cc014cd47ec6b2f94d.jpg" />
+<meta property="twitter:title" content="OpenStack API access with federation to external customer Identity Providers in Sovereign Cloud Stack" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-23T22:57:45+00:00","datePublished":"2023-01-05T00:00:00+00:00","description":"The mission of the Sovereign Cloud Stack (SCS) is to define standards that enable to build and operate fully federated, state-of-the-art open source solutions that enables cloud service providers to deploy Infrastructure-as-a-Service and Container-as-a-Service in a sovereign manner, i.e. independent of other vendors. As such SCS is comprised of a set of standards as well as a reference implementation of these standards.","headline":"OpenStack API access with federation to external customer Identity Providers in Sovereign Cloud Stack","image":"default-card.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://scs.community/2023/01/05/sig-iam-openstack-cli-with-federation/"},"url":"https://scs.community/2023/01/05/sig-iam-openstack-cli-with-federation/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://scs.community/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Matomo -->
+  <script>
+    if (typeof(Storage) !== 'undefined') {
+    	if (localStorage.getItem('matomoTrackingEnabled') === null) {
+    		localStorage.setItem('matomoTrackingEnabled', 'true');
+    	}
+    }
+  </script>
+  <script>
+    if (localStorage.getItem('matomoTrackingEnabled') !== 'false') {
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['disableCookies']);
+      _paq.push(["setDoNotTrack", true]);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://matomo.scs.community/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    }
+  </script>
+  <!-- End Matomo Code -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" integrity="sha512-oLi5cq8OY/Co/5GZRWjRUMDnbeMMCa4e2EBWkvoxP6DVNEWGEqinHpp+Tc7VNJz/SB+9hj4ZuYttQftIgc1ivg==" crossorigin="anonymous" src="/assets/vendor/jquery/jquery-a0b8b972af0e63f0a8ff91994568d150c0e76de30c09ae1ed8405692fa313fa0d534458612a8a71e9a7e4dced5349cff481fbd863e19b98b6d41fb4881cd62be.js"></script>
+  <script type="text/javascript" integrity="sha512-2OEU5OYjrPJLs8PL9qkG+9N+DbHBqvWjEjlU76rnStYvZRzoY8k2i5/tcG1gjw/jwoGhuYkXm02Rc3f6HGU+tw==" crossorigin="anonymous" src="/assets/vendor/bootstrap/js/bootstrap.bundle-d8e114e4e623acf24bb3c3cbf6a906fbd37e0db1c1aaf5a3123954efaae74ad62f651ce863c9368b9fed706d608f0fe3c281a1b989179b4d917377fa1c653eb7.js"></script>
+  <!-- Lighbox -->
+  <script type="text/javascript" integrity="sha512-AsyFLM7qdMK2Gt1rVM/4wsSCeOPaCbE8KqQbSruCpez+OtU/5fEtpyjAtZkPBqKjpf6cnC6970DZNCHKwLJnzA==" crossorigin="anonymous" src="/assets/vendor/lightbox-02cc852cceea74c2b61add6b54cff8c2c48278e3da09b13c2aa41b4abb82a5ecfe3ad53fe5f12da728c0b5990f06a2a3a5fe9c9c2ebdef40d93421cac0b267cc.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/lightbox-0184be351f33358fce8415b3f8bdda50e58ee86ff1de0b37d00a26f602e14fc61896ad0bb90662299dea49767123bfe2c724163867b097f5f92cc1785e324cad.css" integrity="sha512-AYS+NR8zNY/OhBWz+L3aUOWO6G/x3gs30Aom9gLhT8YYlq0LuQZiKZ3qSXZxI7/ixyQWOGewl/X5LMF4XjJMrQ==" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/main-b8cf68a63f9b26ea819f67d4e3a173489daf6c6c7de17051d360d8e72b41c67279d732bd19f4a04210326db8595205b80d704f640296bb5f5f63bedc042df118.css" integrity="sha512-uM9opj+bJuqBn2fU46FzSJ2vbGx94XBR02DY5ytBxnJ51zK9GfSgQhAybbhZUgW4DXBPZAKWu19fY77cBC3xGA==" crossorigin="anonymous">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/pygments-css/zenburn-b9247179f996de88844d73acaa60564a48db30aa0fec022f80b7641b41d45140625b657433da3bd722f68ba2fed77bfaa94972b9eed09c77a427e04a1707917e.css" integrity="sha512-uSRxefmW3oiETXOsqmBWSkjbMKoP7AIvgLdkG0HUUUBiW2V0M9o71yL2i6L+13v6qUlyue7QnHekJ+BKFweRfg==" crossorigin="anonymous">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Entdecke unsere neue Webseite</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                SCS entdecken
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/de/about/">Über SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/use/">SCS nutzen</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/contribute/">Zu SCS beitragen</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/partners/">Servicepartner</a></li>
+                  
+                    <li><a class="dropdown-item" href="/de/members/">Community Members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/news/">
+                Neuigkeiten
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/events/">
+                Veranstaltungen
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/jobs/">
+                Offene Stellen
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/de/tenders/">
+                Ausschreibungen
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Dokumentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  " href="/2023/01/05/sig-iam-openstack-cli-with-federation/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold   text-decoration-underline " href="/de/2023/01/05/sig-iam-openstack-cli-with-federation/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  " href="/2023/01/05/sig-iam-openstack-cli-with-federation/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold   text-decoration-underline " href="/de/2023/01/05/sig-iam-openstack-cli-with-federation/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" integrity="sha512-dJ6jTJGSpX7cNvESuSrC7duEfT5HZD83SIs9FIybmKcgIVwMjhetDTg3yQVq5v6uPNyTHtNukRsrG2GiC0F95g==" crossorigin="anonymous" src="/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          Eine Plattform — standardisiert, entwickelt und betrieben von Vielen.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" integrity="sha512-YV5ImgTZnx6tg6b6ZNdt/JbR9qhEjuVFcJnivI/dsjU3n2YH6Reg/PtRn/GQKsVZYhPXM5759IoJJarysSIe4A==" crossorigin="anonymous" src="/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" integrity="sha512-pLkpIB9zq0WFODZFm2htuY8LLjcYlABYjOmSpRxsWdNxg16TzQ1biR8F/Odda4c4PD/BLVLG1WDFYC6zK/WLkA==" crossorigin="anonymous" src="/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" integrity="sha512-+/oBMqq6OUbZcOlC/ZjvQDq7EvjzRMwwh/y0ZuI0JLDX3d2biyzkl531jkt45I8EGetyHg8Fmb2J32tGwoccQw==" crossorigin="anonymous" src="/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>OpenStack API access with federation to external customer Identity Providers in Sovereign Cloud Stack</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  <svg height="80" width="80">
+    
+    
+    <mask id="e997dc514709">
+      <rect width="80" height="80" fill="white"/>
+    </mask>
+    <mask id="07ec3e4e6219">
+        <circle cx="40" cy="40" r="40" fill="white"/>
+    </mask>
+    <image x="0" y="0" height="80" width="80" xlink:href="/assets/92f8bc-9771cf9624f61cb3c5e31d3e5202a6843ad9a9d58e73e7ebd3e7ac4002ff20d7c7f4d6e311c2c2a221d149acad81d11cbeae66074e901107b7a58bfb8f77bd1c.webp"
+       mask="url(#07ec3e4e6219)" 
+    ></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Arvid Requate</small>
+			<small>
+	5.
+	
+	Januar
+	  
+	2023
+
+</small>
+		</div>
+	</div>
+</div>
+
+<p>The mission of the Sovereign Cloud Stack (SCS) is to define standards that enable to build and operate fully federated,  state-of-the-art open source solutions that enables cloud service providers to deploy Infrastructure-as-a-Service and Container-as-a-Service in a sovereign manner, i.e. independent of other vendors. As such SCS is comprised of a set of standards as well as a reference implementation of these standards.</p>
+
+<p>The word “Stack” already implies that there are several technical components layered upon each other to build the solution and they need to interact with each other with open standard protocols to construct a solution that is both lean and efficient towards delivering the advertised services, yet robust with respect to security and interoperability in the context of heterogenous existing IT infrastructures. The latter is important to stand a chance to be considered as a real new alternative to pre-existing alternative solutions, without the need to create an entirely new compound infrastructure from scratch, which would reduce attractiveness significantly for any operative cloud service provider (CSP).</p>
+
+<p>One of the ingredients of a secure solution is identity and access management (IAM). Trivially you need identities for that and you don’t want to grow a new pool of identities for each new software solution. The preferred solution is to delegate the identity management to a central service, which offers open standard protocols for authentication and authorization, like OAuth 2.0 (and OpenID Connect on top), SAML or even plain LDAP. And there is a high probability that an operative cloud service provider already has a solution like that, just as well as the customer organizations that use its service may already are using an IAM solution of their choice, either on-premise or maybe hosted by yet some other CSP. This is the context where a solution like Sovereign Cloud Stack needs to be able to integrate into as seamlessly as possible.</p>
+
+<blockquote>
+  <p>That is the scenario, which the SCS SIG IAM (Sovereign Cloud Stack Special Interest Group for Identity and Access Management) had to consider when thinking about which software components, layers and protocols to make use of to get a implement a sane architecture for IAM aspects woven into the SCS fabric.</p>
+</blockquote>
+
+<p>One of the central components of Sovereign Cloud Stack on the other hand is OpenStack. OpenStack has a component named <em><a href="https://docs.openstack.org/keystone/latest/">Keystone</a></em> that can issue OpenStack specific tokens (so called fernet tokens) in exchange for successful authentication. These tokens can then be used in the OpenStack cosmos of services to access APIs to manage cloud resources. Keystone can delegate the task of authentication to specialized IAM services, like LDAP in general or originally proprietary solutions like Active Directory. Keystone can also federate with other, external Keystone instances (“K2K”) and it can federate out towards Single-Sign-On (SSO) Identity Provider (IdP) solutions that speak one of the established SSO protocols like SAML, <a href="https://openid.net/connect/">OIDC</a> (OpenID Connect based on Oauth 2.0) or <a href="https://www.shibboleth.net/">Shibboleth</a>.</p>
+
+<h2 id="a-plan-is-born">A plan is born</h2>
+
+<p>Quite early in the journey, the SCS “Operations and IAM” Team nourished the idea to use the latter option, i.e. to make Keystone federate out to an independent IdP solution that speaks these SSO protocols natively and supports corresponding flows for login, token renewal and logout. IdP solutions usually are also capable to do “Identity Brokering” – a term that is not very precisely defined and its interpretation is often specific to the software solution – which generally means that IdPs can be configured to again federate out to any number of external IdPs, forming a daisy chain. There are caveats and common misunderstandings connected to this term (and maybe I’m suffering from misunderstanding something too), so it may we worth to point out that the purpose of this daisy chained federation is that a user is guided towards the IAM solution that is authoritative for checking their identity. In this process the user is only expected to trust that final IAM authority to properly handle his or her password. The user is not expected to enter the password to some intermediary IdP which could be compromised and run around with the collected user credentials. That’s a common misunderstanding, frequently observable e.g. in a number of online payment service solutions which expect you to hand over the PIN for your bank account to them. With SCS we don’t want to offer inherently compromisable solutions like this to users. Anyway, there are several IdP solutions and a number of them is open source. The SCS project initially chose <a href="https://www.keycloak.org/">Keycloak</a> as this IdP component for our first rounds of integration, but since we rely on open standard protocols, we may switch to a different solution here, if there are reasons to reconsider the initial choice. Solutions like these offer additional possibly desirable optional features, like 2nd factor authentication for specific usage contexts (specific clients or user groups) and some offer hooking up to an LDAP compliant backend directory, if desired. One of the core tasks of these solutions is to allow mapping attributes/claims from incoming tokens to other attributes/claims. This mapping can happen during federation or when issuing tokens towards clients. Btw, Keycloak uses the generic term “Client” for both, SAML Service Providers (SP) and OIDC Relying Parties (RP).</p>
+
+<p>In summary from the perspective of an OpenStack API, it consumes a Keystone token to make access decisions and Keystone in turn consumes OIDC access tokens (<a href="https://en.wikipedia.org/wiki/JSON_Web_Token">JWT, Json Web Tokens</a>) to decide if it should issue an OpenStack specific token. While Keystone supports hosting users locally (or in an LDAP backend), it can also federate out the request for and OIDC access token to an external IdP solution that supports protocols like OIDC or SAML. That secondary IdP is then external to Sovereign Cloud Stack and controlled by the respective customer. And it may be in turn backed by a customer specific IAM solution, like a directory service. The only thing that Sovereign Cloud Stack needs to offer, is a means to hook up OpenStack to a component that speaks one of the well established SSO protocols and that can in turn federate out towards whatever the customer sues to manage his user accounts. In this process SCS doesn’t see the user passwords, neither in plain text nor in hashed form. It only consumes derived credentials in the form of SSO tokens.</p>
+
+<p>Sounds nice, and OpenStack also supports this kind of federation to “log in” and use Web-Services like Horizon. But, to make SCS usable for CSP business, it also needs to be able to use this kind of mechanism, or login flow when a customer wants to access the OpenStack APIs via non-web interfaces, like the openstack CLI client.</p>
+
+<figure class="figure mx-auto d-block" style="width:70%">
+  <a href="/assets/images/blog/openstack-v3oidcpassword.drawio-4c6c561d46ced91ac8894501c76dd23475fd08af58afc36f0765a19015f3eb7b89fc11f356e28d7aa159b5db11e9a42789e3ac2394137a1ec15ff634fe887f5b.png">
+    <img class="figure-img w-100" integrity="sha512-TGxWHUbO2RrIiUUBx23SNHX9CK9Yr8NvB2WhkBXz63uJ/BHzVuKNeqFZtdsR6aQnieOsI5QTeh7BX/Y0/oh/Ww==" crossorigin="anonymous" src="/assets/images/blog/openstack-v3oidcpassword.drawio-4c6c561d46ced91ac8894501c76dd23475fd08af58afc36f0765a19015f3eb7b89fc11f356e28d7aa159b5db11e9a42789e3ac2394137a1ec15ff634fe887f5b.png" />
+  </a>
+</figure>
+
+<h2 id="deep-dive-into-the-nitty-gritty-details">Deep dive into the nitty gritty details</h2>
+
+<p>So the SCS SIG IAM started to dive into the nitty gritty details of authentication and authorization flows as well as attribute mappings. As a first step we started out with the triangle between OpenStack CLI, Keystone and Keycloak, without any “identity brokering” towards an external IdP. OpenStack (or rather the keystoneauth library of python modules) offers a range of authentication plugins and one of them, the <code class="language-plaintext highlighter-rouge">v3oidcpassword</code> was instrumental to make this triangle work. The goal was to be able to run <code class="language-plaintext highlighter-rouge">openstack --os-auth-type v3oidcpassword token issue</code> (and using some additional options to point it towards the SCS Keycloak IdP service), passing the name of a Keycloak local test user account “alice” and its plain text password to Keycloak, receive an access token in exchange and hand that over to Keystone to obtain an OpenStack specific token. To be clear again, this was the first step, and the second step would be to make something similar work with federation (and without handing over the clear text password to the SCS local Keycloak during the process). To cut a longer series of technical debugging sessions short, we managed to do this, by configuring the Keystone internal web proxy to allow using <code class="language-plaintext highlighter-rouge">mod_oauth2</code> at and an alternative endpoint instead of the <code class="language-plaintext highlighter-rouge">mod_auth_openidc</code> that is used to serve Web-SSO requests. After succeeding with this minimal proof on concept and including the required configuration changes into the SCS repositories, we also contacted the Debian mainlines of <code class="language-plaintext highlighter-rouge">mod_auth_openidc</code> to propose also consider picking up <code class="language-plaintext highlighter-rouge">mod_oauth2</code> for maintenance. Both modules are originally developed by the same author, Hans Zandbelt. These modules are now used in the SCS configuration for the Keystone container in the apache reverse proxy WSGI configuration.</p>
+
+<blockquote>
+  <p>During this journey the SCS SIG IAM repeatedly touched topics in the meetings of whether the limitations of apache WSGI handling would justify the effort to take the initiative to replace it by nginx. Discussions like these are easily possible with openstack components and they take time and carful consideration of pros and cons and the question of maintenance and if the upstream OpenStack project would also be interested and benefit from such a change. – I digress, but this also reflects how hard it is to maintain focus and use the invested developer resources wisely and for the benefit of all stakeholders of the project.</p>
+</blockquote>
+
+<p>As the next, and currently latest step the SCS SIG IAM considered how openstack CLI could be used in the context of federated IdPs. At first we got stuck with the fact, that the <code class="language-plaintext highlighter-rouge">v3oidcpassword</code> auth plugin makes use of the “Resource Owner Password Flow” (summarized as “Direct Access Grant” in Keycloak) and Keycloak natively doesn’t support federation with this flow. We found a request in the Keycloak issue tracker (yeah, you guessed it, right, via StackOverflow) requesting implementation of this, but upstream developers were only moderately interested in investing into the implementation of this option. And, in hindsight, it makes sense to be skeptical regarding the sanity of this approach. As already mentioned above, that’s not really the idea of federation, to hand over your plain test password via “Resource Owner Password Flow” to the local Keycloak to let it in turn pass that on to the remote IdP. As a user, I want to be directed towards my “home” IdP and then return only the obtained token back to the SovereignCloudStack. So, implementing that option in Keycloak looked like a bad investment, which would also have the possible drawback that we would invest into this specific IdP solution rather than finding a solution that would leave it open to switch out this component in the future in case valid reasons come up for that.</p>
+
+<p>When using OIDC for Web-SSO, technically the Authorization Code Flow is used. It’s called like that, because in exchange for successful authentication you (or rather your browser) receives an authorization code that is then handed over to a validated “redirect URI”, which can then exchange that for an access token. The details are off topic here, but the point is that there is no commonly established way to transfer the authorization code from the browser to a command line tool (running possibly in an entirely different context than the user browser).</p>
+
+<figure class="figure mx-auto d-block" style="width:70%">
+  <a href="/assets/images/blog/Keycloak-Keystone-diagram-3913d4e0632db946a39d52298330846c9bc4ea6a0907044d3a4374f262e85647b4639d10d57c58c56523144363c6535f53058e9eaa9a6caa0f71701027141a2b.png">
+    <img class="figure-img w-100" integrity="sha512-ORPU4GMtuUajnVIpgzCEbJvE6moJBwRNOkN08mLoVke0Y50Q1XxYxWUjFENjxlNfUwWOnqqabKoPcXAQJxQaKw==" crossorigin="anonymous" src="/assets/images/blog/Keycloak-Keystone-diagram-3913d4e0632db946a39d52298330846c9bc4ea6a0907044d3a4374f262e85647b4639d10d57c58c56523144363c6535f53058e9eaa9a6caa0f71701027141a2b.png" />
+  </a>
+</figure>
+
+<h2 id="collaboration-is-key">Collaboration is key</h2>
+
+<p>With these puzzles in my head I traveled to Cologne to attend the <a href="https://scs.community/de/2022/11/25/hackathon-wrapup/">SCS Hackathon hosted by plusserver</a>. Not only did we get to have a guided tour through the elaborate technical details of professionally running a CSP infrastructure at high standards of technical security, but also we made proper use of the welcome “post”-COVID opportunity to have casual, spontaneous face to face exchange between the project participants. In one of these exchanges Joshua Mühlfort from Gonicus asked me for feedback for the architecture diagram that showed his plans for the <a href="https://github.com/SovereignCloudStack/issues/issues/123">Status Page application</a> he was designing and implementing. Specifically he pointed out, that he considered to make use of the OAuth 2.0 “Device Authorization Flow”. This exchange alone made the effort of traveling to Cologne a time well spent (in the end it was a lot of time, thanks, Deutsche Bahn, it gave me ample of time to write down notes and start investigating). In the following sessions of the SCS SIG IAM meetings we intensified the frequency to weekly meetings and quickly were able to hack together a first implementation of the OAuth 2.0 “Device Authorization Flow” in keystoneauth. First tests without federation were successful (primarily in finding stupid bugs in my few lines of python code) and so we went on for the final PoC test which took place shortly before end of the year (actually it was the 31. of December), where we configured a kind of short cut federation between the standard “OSISM” realm in the testbed Keycloak and some fake “remote” realm, both served my the same Keycloak instance. This time we created the test user “bob” not in the primary <code class="language-plaintext highlighter-rouge">OSISM</code> realm, but in the “remote” realm. And instead of <code class="language-plaintext highlighter-rouge">v3oidcpassword</code> we now used <code class="language-plaintext highlighter-rouge">openstack --os-auth-type v3oidcdeviceauthz token issue</code>, where <code class="language-plaintext highlighter-rouge">v3oidcdeviceauthz</code> is the preliminary name of the new keystoneauth plugin implementation of the OAuth 2.0 “Device Authorization Flow”. Once you hit return, the openstack client context the appropriate endpoint 
+served by Keycloak and receives a device auth code in turn and a URL which the user shall visit. The plugin prints the URL including the code on the terminal and the user can right-click open it and is shown a login form and can choose to be redirected to the “remote” IdP instead. Once he does this and successfully authenticated there, the browser redirection dance takes place and the SCS local Keycloak obtains the token. All the while the openstack CLI auth plugin polls Keycloak at a Keycloak-specified frequency for the token, which is finally handed out to the openstack client. Finally the openstack client just does the final mile and contacts Keystone to exchange the access token for an OpenStack native token.</p>
+
+<h2 id="outlook">Outlook</h2>
+
+<p>As next step we will propose our extension to keystoneauth for inclusion in the upstream project. That would be a win-win scenario, as other users may also find this new auth plugin useful and on the other hand we don’t have to maintain the patches locally in the SCS codebase.</p>
+
+<p>And then, we will need get back to the topic of mapping attributes/claims and documenting how to configure Keycloak properly for this use case and make recommendations how to coordinate this from the external IAM to SCS to achieve the desired results. The general idea is to allow customers to self service configure the federation according to their needs. This in turn plays into the greater topic of what the desired role model would be and how to match that with the current OpenStack policy model. But that will be the topic of a future post.</p>
+
+<p>Enjoy,
+Arvid Requate (Member SCS “Operations and IAM” Team)</p>
+
+
+
+<h2 id="about">
+  
+    Über den Autor
+  
+</h2>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="2ed48c2e19b4">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/assets/7b1191-b47cf610d381e43cfd5fd1f1c6a1a28c212a136927b7b3205a41254f5a0c1b2932f879849f83d95d8d25a6283ae2390487a8d05211e2ba4eea388c13e934a4f0.webp" mask="url(#2ed48c2e19b4)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Arvid Requate</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">SCS IAM Team Lead @ <a href="https://www.univention.de/ueber-uns/karriere/rolle-software-engineering/" target="_blank">Univention GmbH</a></div>
+        <div class="mt-2">Arvid is an open source developer working on topics of identity and access management for Univention and currently for the Sovereign Cloud Stack in particular. Theoretical physicist by education he converted from administration of a Unix based University faculty to helping develop, debug and maintain an enterprise Linux distribution for identity management that builds bridges between the open and the closed source world thanks to open standards. Now helping to get aspects of IAM addressed and integrated into the Sovereign Cloud Stack.
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-twitter" target="_blank" href="https://twitter.com/vidareq"><i class="fa fa-twitter fa-lg"></i></a>
+</div>
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/reqa"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-matrix" target="_blank" href="https://matrix.to/#/@reqa:matrix.org"><i class="fa fa-matrix-org fa-lg"></i></a>
+</div>
+
+          <div class="ms-md-auto pe-3"><a href="/de/members/arequate" class="btn btn-outline-primary" role="button">Community-Profil &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" integrity="sha512-GzGAK+B6sTfSNz880uJokj1yfuHRm2tXff87cWEDRd4IjDuDyQ9miXoh5S6E+gPB700cpRk7hlm5yVNZRqoBVA==" crossorigin="anonymous" src="/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS und das Logo sind geschützte Marken der Open Source Business Alliance e.V. — Sonstige Marken sind Eigentum ihrer jeweiligen Besitzer.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Impressum" href="/de/imprint/">Impressum</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Datenschutzerklärung" href="/de/dataprotection/">Datenschutzerklärung</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>

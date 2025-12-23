@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>Air gapped installation | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="Air gapped installation | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="In this post we will introduce you to our latest feature of SCS: Air-gapped installations. You will learn why this is benificial for the consumers of SCS but also for the development and testing process in general." />
+<meta property="og:description" content="In this post we will introduce you to our latest feature of SCS: Air-gapped installations. You will learn why this is benificial for the consumers of SCS but also for the development and testing process in general." />
+<link rel="canonical" href="https://scs.community/tech/2023/04/12/airgapped-scs/" />
+<meta property="og:url" content="https://scs.community/tech/2023/04/12/airgapped-scs/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://scs.community/assets/images/blog/airgap-takeoff-202c7f4a41040fadb1118dfc243b46cd5f5e2b1d9620cb9b6ac664b2bf2b6969add32849e975327a51b136d29993a84f6e2f308c16bdc10bec1807c556d2812d.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-12T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://scs.community/assets/images/blog/airgap-takeoff-202c7f4a41040fadb1118dfc243b46cd5f5e2b1d9620cb9b6ac664b2bf2b6969add32849e975327a51b136d29993a84f6e2f308c16bdc10bec1807c556d2812d.jpg" />
+<meta property="twitter:title" content="Air gapped installation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-23T22:57:45+00:00","datePublished":"2023-04-12T00:00:00+00:00","description":"In this post we will introduce you to our latest feature of SCS: Air-gapped installations. You will learn why this is benificial for the consumers of SCS but also for the development and testing process in general.","headline":"Air gapped installation","image":"blog/airgap-takeoff.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://scs.community/tech/2023/04/12/airgapped-scs/"},"url":"https://scs.community/tech/2023/04/12/airgapped-scs/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://scs.community/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Matomo -->
+  <script>
+    if (typeof(Storage) !== 'undefined') {
+    	if (localStorage.getItem('matomoTrackingEnabled') === null) {
+    		localStorage.setItem('matomoTrackingEnabled', 'true');
+    	}
+    }
+  </script>
+  <script>
+    if (localStorage.getItem('matomoTrackingEnabled') !== 'false') {
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['disableCookies']);
+      _paq.push(["setDoNotTrack", true]);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://matomo.scs.community/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    }
+  </script>
+  <!-- End Matomo Code -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" integrity="sha512-oLi5cq8OY/Co/5GZRWjRUMDnbeMMCa4e2EBWkvoxP6DVNEWGEqinHpp+Tc7VNJz/SB+9hj4ZuYttQftIgc1ivg==" crossorigin="anonymous" src="/assets/vendor/jquery/jquery-a0b8b972af0e63f0a8ff91994568d150c0e76de30c09ae1ed8405692fa313fa0d534458612a8a71e9a7e4dced5349cff481fbd863e19b98b6d41fb4881cd62be.js"></script>
+  <script type="text/javascript" integrity="sha512-2OEU5OYjrPJLs8PL9qkG+9N+DbHBqvWjEjlU76rnStYvZRzoY8k2i5/tcG1gjw/jwoGhuYkXm02Rc3f6HGU+tw==" crossorigin="anonymous" src="/assets/vendor/bootstrap/js/bootstrap.bundle-d8e114e4e623acf24bb3c3cbf6a906fbd37e0db1c1aaf5a3123954efaae74ad62f651ce863c9368b9fed706d608f0fe3c281a1b989179b4d917377fa1c653eb7.js"></script>
+  <!-- Lighbox -->
+  <script type="text/javascript" integrity="sha512-AsyFLM7qdMK2Gt1rVM/4wsSCeOPaCbE8KqQbSruCpez+OtU/5fEtpyjAtZkPBqKjpf6cnC6970DZNCHKwLJnzA==" crossorigin="anonymous" src="/assets/vendor/lightbox-02cc852cceea74c2b61add6b54cff8c2c48278e3da09b13c2aa41b4abb82a5ecfe3ad53fe5f12da728c0b5990f06a2a3a5fe9c9c2ebdef40d93421cac0b267cc.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/lightbox-0184be351f33358fce8415b3f8bdda50e58ee86ff1de0b37d00a26f602e14fc61896ad0bb90662299dea49767123bfe2c724163867b097f5f92cc1785e324cad.css" integrity="sha512-AYS+NR8zNY/OhBWz+L3aUOWO6G/x3gs30Aom9gLhT8YYlq0LuQZiKZ3qSXZxI7/ixyQWOGewl/X5LMF4XjJMrQ==" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/main-b8cf68a63f9b26ea819f67d4e3a173489daf6c6c7de17051d360d8e72b41c67279d732bd19f4a04210326db8595205b80d704f640296bb5f5f63bedc042df118.css" integrity="sha512-uM9opj+bJuqBn2fU46FzSJ2vbGx94XBR02DY5ytBxnJ51zK9GfSgQhAybbhZUgW4DXBPZAKWu19fY77cBC3xGA==" crossorigin="anonymous">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/pygments-css/zenburn-b9247179f996de88844d73acaa60564a48db30aa0fec022f80b7641b41d45140625b657433da3bd722f68ba2fed77bfaa94972b9eed09c77a427e04a1707917e.css" integrity="sha512-uSRxefmW3oiETXOsqmBWSkjbMKoP7AIvgLdkG0HUUUBiW2V0M9o71yL2i6L+13v6qUlyue7QnHekJ+BKFweRfg==" crossorigin="anonymous">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Discover our new web page</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Discover SCS
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/about/">About SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/use/">Use SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/contribute/">Contribute to SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/partners/">Service partners</a></li>
+                  
+                    <li><a class="dropdown-item" href="/members/">Community members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/news/">
+                News
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/events/">
+                Events
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/jobs/">
+                Open positions
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/tenders/">
+                Public tenders
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Documentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/tech/2023/04/12/airgapped-scs/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/de/tech/2023/04/12/airgapped-scs/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/tech/2023/04/12/airgapped-scs/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/de/tech/2023/04/12/airgapped-scs/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" integrity="sha512-dJ6jTJGSpX7cNvESuSrC7duEfT5HZD83SIs9FIybmKcgIVwMjhetDTg3yQVq5v6uPNyTHtNukRsrG2GiC0F95g==" crossorigin="anonymous" src="/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          One platform — standardized, built and operated by many.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" integrity="sha512-YV5ImgTZnx6tg6b6ZNdt/JbR9qhEjuVFcJnivI/dsjU3n2YH6Reg/PtRn/GQKsVZYhPXM5759IoJJarysSIe4A==" crossorigin="anonymous" src="/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" integrity="sha512-pLkpIB9zq0WFODZFm2htuY8LLjcYlABYjOmSpRxsWdNxg16TzQ1biR8F/Odda4c4PD/BLVLG1WDFYC6zK/WLkA==" crossorigin="anonymous" src="/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" integrity="sha512-+/oBMqq6OUbZcOlC/ZjvQDq7EvjzRMwwh/y0ZuI0JLDX3d2biyzkl531jkt45I8EGetyHg8Fmb2J32tGwoccQw==" crossorigin="anonymous" src="/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>Air gapped installation</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  <svg height="80" width="80">
+    
+    
+    <mask id="eb5ab32d4caa">
+      <rect width="80" height="80" fill="white"/>
+    </mask>
+    <mask id="16abdad32348">
+        <circle cx="40" cy="40" r="40" fill="white"/>
+    </mask>
+    <image x="0" y="0" height="80" width="80" xlink:href="/assets/094f4d-a9c6d33cbf63577936fabce08ee8d4abcfc2455e81c4f1b03ceb49d45ef74a84c5e3040ab6877e6595de50a98d58c48986cd2e761b174ed854b6d12cf103f30a.webp"
+       mask="url(#16abdad32348)" 
+    ></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Tim Beermann</small>
+			<small>
+	April 12, 2023
+
+</small>
+		</div>
+	</div>
+</div>
+
+<p>In this post we will introduce you to our latest feature of SCS: Air-gapped installations.
+You will learn why this is benificial for the consumers of SCS but also for the development and testing process in general.</p>
+
+<p>Table of contents:</p>
+
+<ul>
+  <li><a href="#current-situation">Current situation</a></li>
+  <li><a href="#pain-points">Pain points</a></li>
+  <li><a href="#requirements-for-air-gaps">Requirements for air gaps</a></li>
+  <li><a href="#architecture">Architecture</a></li>
+  <li><a href="#spin-off-standalone-software">Spin-off standalone software</a></li>
+  <li><a href="#things-to-come">Things to come</a></li>
+</ul>
+
+<h2 id="current-situation">Current situation</h2>
+
+<p>Every installation of SCS requires an internet connection, not only for the workload on SCS, but rather for installation and
+updating. If you start from scratch, you need to have access to several repositories and upstream mirrors
+(e.g. <a href="https://pypi.org">https://pypi.org</a>). Without them, the underlay reference implementation <a href="https://github.com/osism">osism</a> cannot provision
+the hardware machines with the required software components.</p>
+
+<h2 id="pain-points">Pain points</h2>
+
+<p>The main reason for having an air gapped method is of course based on customer requirements: Allowing industrial partners to host SCS as
+a private cloud is a major game changer when it comes to adoption of SCS in general. It allows consumers to avoid enourmous
+firewall configurations and therefore leads to clear visibility, traceability and the ability to audit, what is happening (or
+what is blocked) on your connections.</p>
+
+<p>As initially mentioned, this is not the only benefit we gain by this improvement. Especially when it comes to development and
+testing of this huge stack of software, we often face several issues which harm us. These slow down the development process in
+general:</p>
+
+<ol>
+  <li>
+    <p>🛑 API rate limits :stop</p>
+
+    <p>Our testing infrastructure deploys multiple <a href="https://github.com/osism/testbed">Testbeds</a> per day, presumably using the same
+ public IP address for these tasks. Official mirrors like <a href="https://hub.docker.com">dockerhub</a> or <a href="https://quay.io">quay</a> for container images
+ or <a href="https://pypi.org">pypi</a> for python packages employ rate limits on their APIs to reduce traffic. The flipside of this measure is,
+ that our test-deployments break. Because of the high frequency and the bulk load of downloads, our IP addresses get blocked
+ for a certain amount of time.</p>
+  </li>
+  <li>
+    <p>🪢 Bandwidth</p>
+
+    <p>Debian-packages, so called deb-packages, in particular are sometimes very slow while downloading. They consume a lot of time
+ and therefore a lot of resources over time.</p>
+  </li>
+  <li>
+    <p>⏸️ Availability</p>
+
+    <p>Sometimes upstream mirrors are in maintanance. Especially <a href="https://quay.io">quay.io</a> is very unreliable when it comes to
+ availability. Nearly every week they have downtimes of several minutes or even hours. As we do not know when these downtimes
+ will happen, we cannot schedule our deployments around these timeframes. Sometimes deployments get disrupted during operation
+ which leads to all kinds of errors that involve manual debugging. Finding an unavailable upstream mirror as the reason for a
+ failed deployment / test is tedious work and wasted worktime.</p>
+  </li>
+  <li>
+    <p>📖 SBOM generation</p>
+
+    <p>As we work with a humongous stack of software components, nobody is really able to trace which components are used.
+ Generating and keeping a software bill of materials update to date is nearly impossible trough just the code repositories
+ (which reside in multiple locations).</p>
+  </li>
+  <li>
+    <p>🔉 Auditing</p>
+
+    <p>Running so many services and software components leads to the problem, that you loose track which component needs to talk to
+ the internet. Of course you can hook up a firewall in between to track and block them, but this is too much effort and
+ requires engineering outside of the main product. The benefit in contrast to the work labor needed to keep this working is
+ not justifiable.</p>
+  </li>
+  <li>
+    <p>🔒 Security</p>
+
+    <p>This point is partly also auditing. As there are too many components in the stack, we cannot keep track of the connections
+ that are required and (hopefully not) the ones are not required. Meaning that we would not know instantly, if there is some
+ malicious activity. We might not even notice it at all; morelikely by accident.</p>
+  </li>
+</ol>
+
+<h2 id="requirements-for-air-gaps">Requirements for air gaps</h2>
+
+<p>For the first iteration of air-gapped installations we set our goal to create mirrors for the following components: <em>ansible</em>
+collections and roles, <em>deb</em> packages, <em>container</em> images and <em>pypi</em> packages. Depending on the -let’s call them- asset to be
+mirrored, different software has be improved or even developed from the ground up.</p>
+
+<ol>
+  <li>
+    <p><strong>wormhole</strong> for <em>ansible</em> collections and roles</p>
+
+    <p>Starting with more or less the most complex component: Wormhole is a completely new software that is able to mirror
+ collections and roles from the ansible galaxy. Actually, there is other software available which should be able to mirror
+ assets from the ansible galaxy: <a href="https://pulpproject.org/">Pulp</a>. Pulp would have been actually really nice, because it can
+ also mirror other stuff like pypi packages, etc. Eventually we decided that pulp will not be the solution for us due to a variety of reasons: It
+ is still under heavy development; it offers only OpenShift deployments or an all in one container or a bare metal
+ installation. They will not provide (even with contribution from our side) helm charts. Additionally, the handling of pulp
+ itself is quite aweful in general. KISS is the way we want it! Enter <a href="https://github.com/osism/python-ansible-wormhole"><em>wormhole</em></a> -
+ the mirror software for the ansible-galaxy. It might not be pretty, but it does the job. However it did require
+ reverse-engineering and even debugging the galaxy api. By the way: this might be the reason, why ansible itself wants to
+ migrate to pulp. The current implementation of the galaxy is scary.</p>
+  </li>
+  <li>
+    <p><del><strong>aptly</strong></del> for <em>deb</em> packages</p>
+
+    <p><a href="https://www.aptly.info/">Aptly</a> is a project with a long history and is still being maintained. There are several
+ implementations available, all good enough to just use them. It has a good track record as a reliable deb package mirror
+ software. Aptly provides some sort of API functionality, but not everything we need. For the moment, we decided that this is
+ good enough, even if it involves some manual steps. In the current version, aptly is not used in the testbed as this is under
+ active implementation development.</p>
+  </li>
+  <li>
+    <p><strong>registry</strong> for <em>container</em> images</p>
+
+    <p>As this is the official implementation provided from docker, we’ll just use this for container mirroring.</p>
+  </li>
+  <li>
+    <p><strong>bandersnatch</strong> for <em>pypi</em> packages</p>
+
+    <p><a href="https://pypi.org/project/bandersnatch/">Bandersnatch</a> itself is “just” a client, but an official one. Sadly, it uses a
+ config file which needs to contain the packages that are about to be mirrored. So no API. Therefore
+ <a href="https://github.com/osism/python-banderctl"><em>banderctl</em></a> was developed. It mounts the config file and puts an API in front of it.
+ The client itself is executed periodically to perform mirroring. Pretty neat!
+ Bandersnatch and banderctl only act as supporting services outside of a testbed, as there is no need for python package
+ installations during a testbed deployment. But for CI-CD activity, this is a big step towards more frequent and faster
+ build times.</p>
+  </li>
+</ol>
+
+<p>There is still one big problem: They all require an internet connection, but only these services require the connection. Their
+datastores can be pre-filled and be “manually migrated” to the air gapped installation. This however is something you still need
+to do on your own. We aim to prepare more information on this in the next featureset for air gapped installations.</p>
+
+<h2 id="architecture">Architecture</h2>
+
+<p>As you might have noticed, there are some pieces to the puzzle, so let’s put it into one big image:</p>
+
+<figure class="figure mx-auto d-block" style="width:50%">
+  <a href="/assets/images/blog/airgap-architecture-9b5f6de04d7248fa7a5e4c1497244e97cea0311a7eede2fe8e995799bba4456a372cb07936bbae49d3641ac030c82f5cb84eb5ffaa0e959fd7711a48ea360459.png">
+    <img class="figure-img w-100" integrity="sha512-m19t4E1ySPp6XkwUlyROl86gMRp+7eL+jplXmbukRWo3LLB5NruuSdNkGsAwyC9cuE61/6oOlZ/XcRpI6jYEWQ==" crossorigin="anonymous" src="/assets/images/blog/airgap-architecture-9b5f6de04d7248fa7a5e4c1497244e97cea0311a7eede2fe8e995799bba4456a372cb07936bbae49d3641ac030c82f5cb84eb5ffaa0e959fd7711a48ea360459.png" />
+  </a>
+</figure>
+
+<p>The graphic is devided into two major parts, let’s start with the upper one: This is the mirror infrastructure of OSISM GmbH.
+We’ll use this for our CI-CD tests and maybe also for public SCS installations in the future. The mirrors itself pull the assets
+from the upstream sources. You might have noticed, that there is also a component called “harbor”. <a href="https://goharbor.io/">Harbor</a>
+deals with container images. We use it for our own build containers, therefore we’ll split container images into just “pure”
+mirrors and the ones we build our own.</p>
+
+<p>The bottom half represents any installation of SCS, may it be a testbed, a
+<a href="https://github.com/osism/cloud-in-a-box">cloud-in-a-box</a> or similar. With a squid proxy in front requests get blocked if they
+want to access something else than the mirrors OSISM provides. Additionally, each deployment should also bring their own mirror
+stack. This will allow SCS integrators to provide these mirrors to their users resepctively.</p>
+
+<p>In the middle is still something that is not clear yet: Github and SBOM. These two points still need clarification and will be
+refined in the future.</p>
+
+<h2 id="spin-off-standalone-software">Spin-off standalone software</h2>
+
+<p><a href="https://github.com/osism/python-ansible-wormhole"><strong>Wormhole</strong></a> can be used by you to mirror collections and roles from the official
+ansible galaxy. That being said, it fakes some values in the API responses (like IDs or timestamps). It would just make no
+sense to also store this data. Its only purpose is to mirror the assets with the versions in the correct order. Oh, by the way:
+There is a nasty bug inside the official galaxy client tool (and probably also the galaxy API). When querying for a latest
+version of a collection, the client just scrapes <em>ALL</em> versions and picks the highest one. Even though, the API provides a link to
+the latest version. Details can be found <a href="https://github.com/ansible/ansible/issues/79467">here</a>.</p>
+
+<p><a href="https://github.com/osism/python-banderctl"><strong>Banderctl</strong></a> creates an API endpoint in front of the bandersnatch clients config.
+Bandersnatch itself is capable of a lot more things than just mirroring. But as we just require mirroring, this is still fine for
+us. What’s missing is an API to edit this file and append new packages or even remove packages from it. That’s where banderctl
+jumps right in. It translates your API request and applies the desired addition or deletion into bandersnatch’s config.
+Bandersnatch itself runs in parallel and is periodically executed. You do not want to trigger it on every change, as its runtime
+takes quite long and would throw errors, if there are parallel executions happening on the index files.</p>
+
+<h2 id="things-to-come">Things to come</h2>
+
+<p>Beside the already mentioned points, we still need to implement signing for deb packages. While doing this, we might also need to
+consider, how we abuse the proxy to redirecting official requests (e.g. against the official quay.io from clients) to our
+internal mirror. Once this is done, we can continue to create a guide to preload the internal mirrors before cutting the
+installation from the internet. This way, we will have a fully air gapped installation finally.</p>
+
+
+
+<h2 id="about">
+  
+    About the author
+  
+</h2>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="c4c2ea7dedd6">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/assets/e718de-9937c9ff172baee2f2fc1606af39850764745c6d800fe3ab7af2602ea96584859ba05de50bcc83f493b1e50629b40bc4a40172abc757d03e4b0790312f2832d2.webp" mask="url(#c4c2ea7dedd6)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Tim Beermann</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">Technical Product Owner @ <a href="https://osism.tech" target="_blank">OSISM GmbH</a></div>
+        <div class="mt-2">Tim is an automation loving DevOps Engineer. During his career he co-developed an ERP system and operated large server and cloud landscapes. Today he is more focused on automation, super computers, cloud- and container technologies. He also shares his knowledge in trainings about Terraform, Ansible, Elastic-Stack and SUSE-Linux.
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="https://www.linkedin.com/in/tim-beermann-tb/"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/tibeer"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+          <div class="ms-md-auto pe-3"><a href="/members/tibeer" class="btn btn-outline-primary" role="button">Community profile &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" integrity="sha512-GzGAK+B6sTfSNz880uJokj1yfuHRm2tXff87cWEDRd4IjDuDyQ9miXoh5S6E+gPB700cpRk7hlm5yVNZRqoBVA==" crossorigin="anonymous" src="/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Imprint" href="/imprint/">Imprint</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Data Protection Statement" href="/dataprotection/">Data Protection Statement</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>

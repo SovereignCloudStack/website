@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  <title>Let's put the cloud in a box #2 | Sovereign Cloud Stack</title>
+  <meta property="og:title" content="Let's put the cloud in a box #2 | Sovereign Cloud Stack">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="This blog post is part of a multi-series publication. Read more about how to initially set up the cloud-in-a-box system in the first part of this blog post: Let’s put the cloud in a box" />
+<meta property="og:description" content="This blog post is part of a multi-series publication. Read more about how to initially set up the cloud-in-a-box system in the first part of this blog post: Let’s put the cloud in a box" />
+<link rel="canonical" href="https://scs.community/2023/03/15/ciab-2/" />
+<meta property="og:url" content="https://scs.community/2023/03/15/ciab-2/" />
+<meta property="og:site_name" content="Sovereign Cloud Stack" />
+<meta property="og:image" content="https://scs.community/assets/images/blog/ciab-07f41bfd1d8f2cd6377c07dc4bdd7f0928ffc494a4ca67c81eb0e95b70d75b758e9afa6ad1125eab9bdbca67ac3c3c8be0c0eec643bdc9c8fd24e1d35d953e10.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://scs.community/assets/images/blog/ciab-07f41bfd1d8f2cd6377c07dc4bdd7f0928ffc494a4ca67c81eb0e95b70d75b758e9afa6ad1125eab9bdbca67ac3c3c8be0c0eec643bdc9c8fd24e1d35d953e10.jpg" />
+<meta property="twitter:title" content="Let’s put the cloud in a box #2" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-23T22:57:45+00:00","datePublished":"2023-03-15T00:00:00+00:00","description":"This blog post is part of a multi-series publication. Read more about how to initially set up the cloud-in-a-box system in the first part of this blog post: Let’s put the cloud in a box","headline":"Let’s put the cloud in a box #2","image":"blog/ciab.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://scs.community/2023/03/15/ciab-2/"},"url":"https://scs.community/2023/03/15/ciab-2/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="https://scs.community/feed.xml" title="Sovereign Cloud Stack" />
+
+
+  <!-- Matomo -->
+  <script>
+    if (typeof(Storage) !== 'undefined') {
+    	if (localStorage.getItem('matomoTrackingEnabled') === null) {
+    		localStorage.setItem('matomoTrackingEnabled', 'true');
+    	}
+    }
+  </script>
+  <script>
+    if (localStorage.getItem('matomoTrackingEnabled') !== 'false') {
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['disableCookies']);
+      _paq.push(["setDoNotTrack", true]);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://matomo.scs.community/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    }
+  </script>
+  <!-- End Matomo Code -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" integrity="sha512-oLi5cq8OY/Co/5GZRWjRUMDnbeMMCa4e2EBWkvoxP6DVNEWGEqinHpp+Tc7VNJz/SB+9hj4ZuYttQftIgc1ivg==" crossorigin="anonymous" src="/assets/vendor/jquery/jquery-a0b8b972af0e63f0a8ff91994568d150c0e76de30c09ae1ed8405692fa313fa0d534458612a8a71e9a7e4dced5349cff481fbd863e19b98b6d41fb4881cd62be.js"></script>
+  <script type="text/javascript" integrity="sha512-2OEU5OYjrPJLs8PL9qkG+9N+DbHBqvWjEjlU76rnStYvZRzoY8k2i5/tcG1gjw/jwoGhuYkXm02Rc3f6HGU+tw==" crossorigin="anonymous" src="/assets/vendor/bootstrap/js/bootstrap.bundle-d8e114e4e623acf24bb3c3cbf6a906fbd37e0db1c1aaf5a3123954efaae74ad62f651ce863c9368b9fed706d608f0fe3c281a1b989179b4d917377fa1c653eb7.js"></script>
+  <!-- Lighbox -->
+  <script type="text/javascript" integrity="sha512-AsyFLM7qdMK2Gt1rVM/4wsSCeOPaCbE8KqQbSruCpez+OtU/5fEtpyjAtZkPBqKjpf6cnC6970DZNCHKwLJnzA==" crossorigin="anonymous" src="/assets/vendor/lightbox-02cc852cceea74c2b61add6b54cff8c2c48278e3da09b13c2aa41b4abb82a5ecfe3ad53fe5f12da728c0b5990f06a2a3a5fe9c9c2ebdef40d93421cac0b267cc.js"></script>
+  <link rel="stylesheet" type="text/css" href="/assets/css/lightbox-0184be351f33358fce8415b3f8bdda50e58ee86ff1de0b37d00a26f602e14fc61896ad0bb90662299dea49767123bfe2c724163867b097f5f92cc1785e324cad.css" integrity="sha512-AYS+NR8zNY/OhBWz+L3aUOWO6G/x3gs30Aom9gLhT8YYlq0LuQZiKZ3qSXZxI7/ixyQWOGewl/X5LMF4XjJMrQ==" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/main-b8cf68a63f9b26ea819f67d4e3a173489daf6c6c7de17051d360d8e72b41c67279d732bd19f4a04210326db8595205b80d704f640296bb5f5f63bedc042df118.css" integrity="sha512-uM9opj+bJuqBn2fU46FzSJ2vbGx94XBR02DY5ytBxnJ51zK9GfSgQhAybbhZUgW4DXBPZAKWu19fY77cBC3xGA==" crossorigin="anonymous">
+  <!-- Pygments CSS -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/pygments-css/zenburn-b9247179f996de88844d73acaa60564a48db30aa0fec022f80b7641b41d45140625b657433da3bd722f68ba2fed77bfaa94972b9eed09c77a427e04a1707917e.css" integrity="sha512-uSRxefmW3oiETXOsqmBWSkjbMKoP7AIvgLdkG0HUUUBiW2V0M9o71yL2i6L+13v6qUlyue7QnHekJ+BKFweRfg==" crossorigin="anonymous">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-50d41dce7bb6498cab01cffd5f46e59a664056fd725ecf84d9c8e5ad9ac8ca1470a0b82fe79789d09136c4a7999658948394d89d9764e4174dfeec26fa7636ae.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32-c5b260bd36bab2cb0496cec647907efc38ca4ac5cb5c978603405fe682da762b16d3b21e997fc85c1c76db4e4bae08787a9a9cbfeb38c7b796ea6de38011953b.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-01a7499e8495e00e13117aca0a759d19faeca0c8fe23c003bf5aabef7b7b5abbbb1ad3d149d0630d9997f941fb53e13d85a950be0104d76283df37fbaba34717.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" color="#50c3a5" href="/assets/images/safari-pinned-tab-3194c271a2bc561b5707fb2998d39947f8feeabebcc64dfb41004e04f7ae120a6ae7157839c91b2b6f0920545a23959142d86e565ba6250800bafb99a2237583.svg" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#50c3a5">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+<nav class="navbar navbar-dark bg-gold sticky-top" style="height: 55px;">
+  <div class="container d-flex justify-content-center">
+	  <a class="lh-1 fw-bolder link-unstyled text-center stretched-link" href="https://sovereigncloudstack.org/">Discover our new web page</a>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+  <div class="container align-items-start">
+    <div class="d-lg-flex flex-row flex-fill align-items-end">
+      <button
+        class="navbar-toggler me-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/">
+                Home
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Discover SCS
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                    <li><a class="dropdown-item" href="/about/">About SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/use/">Use SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/contribute/">Contribute to SCS</a></li>
+                  
+                    <li><a class="dropdown-item" href="/partners/">Service partners</a></li>
+                  
+                    <li><a class="dropdown-item" href="/members/">Community members</a></li>
+                  
+              </ul>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/news/">
+                News
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/events/">
+                Events
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/jobs/">
+                Open positions
+              </a>
+            
+          
+          <li class="nav-item">
+            
+              <a class="nav-link" href="/tenders/">
+                Public tenders
+              </a>
+            
+          
+          </li>
+          <li><a class="nav-link" href="https://docs.scs.community">Documentation</a></li>
+        </ul>
+        <ul class="navbar-nav flex-row align-content-end">
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://social.osb-alliance.de/@SCS">
+              <i class="fa fa-mastodon fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="fa fa-linkedin-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="fa fa-youtube-square fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://github.com/SovereignCloudStack">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="fa fa-matrix-org fa-lg"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="fa fa-bullhorn"></i>
+            </a>
+          </li>
+          
+          <li class="nav-item my-auto me-3 mx-lg-0">
+            <a class="nav-link" target="_blank" rel="me" href="/feed.xml">
+              <i class="fa fa-rss"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="d-none d-lg-block">
+        <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/2023/03/15/ciab-2/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/de/2023/03/15/ciab-2/">DE</a>
+  </li>
+</ul>
+      </div>
+    </div>
+    <div class="d-lg-none">
+      <ul class="navbar-nav flex-row">
+  <li class="nav-item my-auto ms-4 ms-lg-2">
+    <a class="nav-link fw-bold  text-decoration-underline  " href="/2023/03/15/ciab-2/">EN</a>
+  </li>
+  <li class="nav-item my-auto mx-2 mx-lg-0">
+    <span class="nav-link px-0">/</span>
+  </li>
+  <li clas="nav-item my-auto">
+    <a class="nav-link fw-bold  " href="/de/2023/03/15/ciab-2/">DE</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+ <!-- Header -->
+<header class="bg-white py-2 mb-2">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-6 pe-lg-4">
+        <div class="mt-5 mb-3">
+          <img alt="Sovereign Cloud Stack" width="50%" class="img-fluid" integrity="sha512-dJ6jTJGSpX7cNvESuSrC7duEfT5HZD83SIs9FIybmKcgIVwMjhetDTg3yQVq5v6uPNyTHtNukRsrG2GiC0F95g==" crossorigin="anonymous" src="/assets/images/SCS_horizontal-749ea34c9192a57edc36f112b92ac2eddb847d3e47643f37488b3d148c9b98a720215c0c8e17ad0d3837c9056ae6feae3cdc931ed36e911b2b1b61a20b417de6.svg">
+        </div>
+        <p class="lead text-black-50 mb-lg-3">
+          One platform — standardized, built and operated by many.
+        </p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-nowrap my-auto">
+        <a href="https://osb-alliance.com" target="_blank" class="text-decoration-none">
+          <img alt="Open Source Business Alliance" width="25%" class="img-fluid" integrity="sha512-YV5ImgTZnx6tg6b6ZNdt/JbR9qhEjuVFcJnivI/dsjU3n2YH6Reg/PtRn/GQKsVZYhPXM5759IoJJarysSIe4A==" crossorigin="anonymous" src="/assets/images/logo-osba-615e489a04d99f1ead83a6fa64d76dfc96d1f6a8448ee5457099e2bc8fddb235379f6607e917a0fcfb519ff1902ac5596213d7339ef9f48a0925aaf2b1221ee0.svg">
+        </a>
+        <a href="https://bmwk.de" target="_blank" class="text-decoration-none">
+          <img alt="Bundesministerium für Wirtschaft und Klimaschutz" width="25%" class="img-fluid ms-5" integrity="sha512-pLkpIB9zq0WFODZFm2htuY8LLjcYlABYjOmSpRxsWdNxg16TzQ1biR8F/Odda4c4PD/BLVLG1WDFYC6zK/WLkA==" crossorigin="anonymous" src="/assets/images/logo-bmwk-funded-a4b929201f73ab45853836459b686db98f0b2e37189400588ce992a51c6c59d371835e93cd0d5b891f05fce75d6b87383c3fc12d52c6d560c5602eb32bf58b90.svg">
+        </a>
+        <a href="https://gaia-x.eu" target="_blank" class="text-decoration-none">
+          <img alt="Gaia-X" width="30%" class="img-fluid ms-3" integrity="sha512-+/oBMqq6OUbZcOlC/ZjvQDq7EvjzRMwwh/y0ZuI0JLDX3d2biyzkl531jkt45I8EGetyHg8Fmb2J32tGwoccQw==" crossorigin="anonymous" src="/assets/images/logo-gaiax-fbfa0132aaba3946d970e942fd98ef403abb12f8f344cc3087fcb466e23424b0d7dddd9b8b2ce4979df58e4b78e48f0419eb721e0f0599bd89df6b46c2871c43.svg">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Content -->
+  <div class="container mb-5">
+    
+<div class="d-flex w-100 flex-column mb-3">
+	<h1 class="pb-1 mb-0"><small>Let's put the cloud in a box #2</small></h1>
+	<div class="d-flex w-100 flex-row">
+		<div style="max-width: 80px; max-height: 80px;" class="rounded-3 overflow-hidden ratio ratio-1x1">
+			<div style="max-width: 80px; max-height: 80px;" class="overflow-hidden ratio ratio-1x1">
+
+  <svg height="80" width="80">
+    
+    
+    <mask id="99ca86555f21">
+      <rect width="80" height="80" fill="white"/>
+    </mask>
+    <mask id="0eab6144570c">
+        <circle cx="40" cy="40" r="40" fill="white"/>
+    </mask>
+    <image x="0" y="0" height="80" width="80" xlink:href="/assets/a75ac3-9f8be8cc33736f60cef97b709a096937121338e312e9e3ee13933b9a583c30435edcd60f7154a6d23891a4c62230e2f40cdbe49f20b0da944423849e9f37c883.webp"
+       mask="url(#0eab6144570c)" 
+    ></image>
+  </svg>
+
+</div>
+
+		</div>
+		<div class="d-flex w-100 flex-column ms-3 my-auto">
+			<small class="mb-1 fw-bolder">Kurt Garloff</small>
+			<small>
+	March 15, 2023
+
+</small>
+		</div>
+	</div>
+</div>
+
+<p><strong>This blog post is part of a multi-series publication. Read more about how to initially set up
+the cloud-in-a-box system in the first part of this blog post:
+<a href="/2023/03/15/ciab/">Let’s put the cloud in a box</a></strong></p>
+
+<h2 id="usage-of-the-system">Usage of the system</h2>
+
+<p>There are a number of web interfaces available for exploration of your cloud;
+they are listed in the <a href="https://github.com/osism/cloud-in-a-box/blob/main/README.md">documentation</a>
+of the cloud-in-a-box on the OSISM repo on github. If you just want to bookmark one page, you should
+use the <a href="https://homer.services.in-a-box.cloud/">Homer dashboard</a> which has links to all the other
+web interfaces.</p>
+
+<figure class="figure mx-auto d-block" style="width:100%">
+  <a href="/assets/images/blog/ciab-homer-fd584b47e2cba738a084057ed46adc4a5bd23cd88ab5d8c154b6c174db7019d0c5bd66c409e1a0417b886c9e867c55ca8ef93388b041af712b6af54f2368f71d.png" alt="Homer Screenshot">
+    <img class="figure-img w-100" integrity="sha512-/VhLR+LLpzighAV+1GrcSlvSPNiKtdjBVLbBdNtwGdDFvWbECeGgQXuIbJ6GfFXKjvkziLBBr3EravVPI2j3HQ==" crossorigin="anonymous" src="/assets/images/blog/ciab-homer-fd584b47e2cba738a084057ed46adc4a5bd23cd88ab5d8c154b6c174db7019d0c5bd66c409e1a0417b886c9e867c55ca8ef93388b041af712b6af54f2368f71d.png" />
+  </a>
+</figure>
+
+<p>The cloud comes preconfigured with a <code class="language-plaintext highlighter-rouge">test</code> project, the smaller half of the standard SCS flavors,
+a CirrOS and an Ubuntu image. It also has a public network created that allows created VMs
+to talk to the network that your CiaB host is connected to (and to the internet if outgoing
+connections to the internet are available on the CiaB host) and allocate floating IPs from.
+The OpenStack core service are deployed as well as Octavia and Designate.</p>
+
+<h2 id="openstack-api--command-line-access">OpenStack API / command line access</h2>
+
+<p>The documentation describes the easiest way to access use the command line interface:
+When you connect to the Cloud-in-a-Box manager system via SSH, you can use the container there
+with the installed OpenStack CLI tools and the configuration is already done
+for you. Just <code class="language-plaintext highlighter-rouge">export OS_CLOUD=test</code> or <code class="language-plaintext highlighter-rouge">export OS_CLOUD=admin</code> to access the
+OpenStack API with normal user or admin privileges respectively via the
+command line interface tool <code class="language-plaintext highlighter-rouge">openstack</code>.</p>
+
+<p>You can also do it from the wireguard-connected client directly. Install the
+<code class="language-plaintext highlighter-rouge">python3-openstackclient</code> client tools there (from your distribution or via <code class="language-plaintext highlighter-rouge">pip</code>)
+and configure the cloud in your <code class="language-plaintext highlighter-rouge">~/.config/openstack/clouds.yaml</code> and <code class="language-plaintext highlighter-rouge">secure.yaml</code>.</p>
+
+<p>You can do by copying over <code class="language-plaintext highlighter-rouge">clouds.yml</code> and <code class="language-plaintext highlighter-rouge">secure.yml</code> from <code class="language-plaintext highlighter-rouge">/opt/configuration/environments/openstack/</code>
+on the CiaB manager and also <code class="language-plaintext highlighter-rouge">/etc/ssl/certs/ca-certificates.crt</code> to avoid
+SSL errors. You can move the latter into a directory that you have write access
+to and adjust the references in <code class="language-plaintext highlighter-rouge">clouds.yaml</code>. You may drop the <code class="language-plaintext highlighter-rouge">octavia</code> and <code class="language-plaintext highlighter-rouge">system</code>
+entries from <code class="language-plaintext highlighter-rouge">clouds.yaml</code> and <code class="language-plaintext highlighter-rouge">secure.yaml</code> and you also might rename the two remaining
+entries in <code class="language-plaintext highlighter-rouge">ciab-admin</code> and <code class="language-plaintext highlighter-rouge">ciab-test</code> to avoid creating naming conflicts with other
+entries that you may already have in your collection of clouds.</p>
+
+<p>Here is how it look like on my system:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">clouds.yaml</code>:
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">clouds</span><span class="pi">:</span>
+<span class="na">ciab-admin</span><span class="pi">:</span>
+  <span class="na">auth</span><span class="pi">:</span>
+    <span class="na">project_name</span><span class="pi">:</span> <span class="s">admin</span>
+    <span class="na">auth_url</span><span class="pi">:</span> <span class="s">https://api.in-a-box.cloud:5000/v3</span>
+    <span class="na">project_domain_name</span><span class="pi">:</span> <span class="s">default</span>
+    <span class="na">user_domain_name</span><span class="pi">:</span> <span class="s">default</span>
+  <span class="na">cacert</span><span class="pi">:</span> <span class="s">~/.config/openstack/ciab-certificates.crt</span>
+  <span class="na">identity_api_version</span><span class="pi">:</span> <span class="m">3</span>
+<span class="na">ciab-test</span><span class="pi">:</span>
+  <span class="na">auth</span><span class="pi">:</span>
+    <span class="na">project_name</span><span class="pi">:</span> <span class="s">test</span>
+    <span class="na">auth_url</span><span class="pi">:</span> <span class="s">https://api.in-a-box.cloud:5000/v3</span>
+    <span class="na">project_domain_name</span><span class="pi">:</span> <span class="s">default</span>
+    <span class="na">user_domain_name</span><span class="pi">:</span> <span class="s">default</span>
+  <span class="na">cacert</span><span class="pi">:</span> <span class="s">~/.config/openstack/ciab-certificates.crt</span>
+  <span class="na">identity_api_version</span><span class="pi">:</span> <span class="m">3</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">secure.yaml</code>:
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">ciab-admin</span><span class="pi">:</span>
+  <span class="na">auth</span><span class="pi">:</span>
+    <span class="na">username</span><span class="pi">:</span> <span class="s2">"</span><span class="s">admin"</span>
+    <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">password"</span>
+<span class="na">ciab-test</span><span class="pi">:</span>
+  <span class="na">auth</span><span class="pi">:</span>
+    <span class="na">username</span><span class="pi">:</span> <span class="s2">"</span><span class="s">test"</span>
+    <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">test"</span>
+</code></pre></div>    </div>
+    <p>with <code class="language-plaintext highlighter-rouge">ciab-certificates.crt</code> in the same directory copied over from the
+CiaB manager host’s <code class="language-plaintext highlighter-rouge">/etc/ssl/certs/ca-certificates.crt</code>.</p>
+  </li>
+</ul>
+
+<p>You can of course also use Terraform and other Infrastructure-as-Code tools
+with these credentials.</p>
+
+<h2 id="so-what-to-use-this-for">So what to use this for?</h2>
+
+<p>With the <code class="language-plaintext highlighter-rouge">test</code> user, you have a situation similar to the one you had when you signed
+up with an SCS IaaS cloud provider. So you can look at the horizon dashboard and
+create resources there. The same is of course possible using API calls using the
+<code class="language-plaintext highlighter-rouge">openstack</code> client command line tooling, the python SDK or IaC tools. One
+difference though is that your cloud is a lot smaller, so you will run out
+of resources (typically RAM and disk) if you start too many large VMs.</p>
+
+<p>It is thus a really useful demo system. Be aware however that with preconfigured
+documented passwords, this system is easy prey for any hacker when connected to
+the internet.</p>
+
+<p>You can start the openstack-health-monitor to monitor performance and availability
+of your system. If you use the optimization <code class="language-plaintext highlighter-rouge">-O</code> to
+cause it to talk directly to the service endpoints with the issued token, you need
+to pass <code class="language-plaintext highlighter-rouge">export OS_EXTRA_PARAMS="--cacert ~/.config/openstack/ciab-certificates.crt"</code>,
+as these direct calls don’t use the settings from the <code class="language-plaintext highlighter-rouge">clouds.yaml</code> file. Note that
+in my CiaB setup, no amphora image was available, so testing the load balancer
+with the standard amphora provider is not possible. You can test the OVN provider
+using <code class="language-plaintext highlighter-rouge">-LP ovn</code>, but expect errors due to <a href="https://bugs.launchpad.net/neutron/+bug/1956035">https://bugs.launchpad.net/neutron/+bug/1956035</a>.</p>
+
+<p>Here’s an example run:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>garloff@xps13kurt<span class="o">(</span>//<span class="o">)</span>:/casa/src/SCS/openstack-health-monitor <span class="o">[</span>0]<span class="nv">$ </span><span class="nb">export </span><span class="nv">OS_CLOUD</span><span class="o">=</span>ciab-test
+garloff@xps13kurt<span class="o">(</span>ciab-test<span class="o">)</span>:/casa/src/SCS/openstack-health-monitor <span class="o">[</span>0]<span class="nv">$ </span><span class="nb">export </span><span class="nv">IMG</span><span class="o">=</span><span class="s2">"openSUSE 15.4"</span>
+garloff@xps13kurt<span class="o">(</span>ciab-test<span class="o">)</span>:/casa/src/SCS/openstack-health-monitor <span class="o">[</span>0]<span class="nv">$ </span><span class="nb">export </span><span class="nv">JHIMG</span><span class="o">=</span><span class="s2">"openSUSE 15.4"</span>
+garloff@xps13kurt<span class="o">(</span>ciab-test<span class="o">)</span>:/casa/src/SCS/openstack-health-monitor <span class="o">[</span>0]<span class="nv">$ </span><span class="nb">export </span><span class="nv">FLAVOR</span><span class="o">=</span><span class="s2">"SCS-1V:2:5"</span>
+garloff@xps13kurt<span class="o">(</span>ciab-test<span class="o">)</span>:/casa/src/SCS/openstack-health-monitor <span class="o">[</span>0]<span class="nv">$ </span><span class="nb">export </span><span class="nv">JHFLAVOR</span><span class="o">=</span><span class="s2">"SCS-1L:1:5"</span>
+garloff@xps13kurt<span class="o">(</span>ciab-test<span class="o">)</span>:/casa/src/SCS/openstack-health-monitor <span class="o">[</span>0]<span class="nv">$ </span><span class="nb">export </span><span class="nv">OS_EXTRA_PARAMS</span><span class="o">=</span><span class="s2">"--os-cacert ~/.config/openstack/ciab-certificates.crt"</span>
+garloff@xps13kurt<span class="o">(</span>ciab-test<span class="o">)</span>:/casa/src/SovereignCloudStack/openstack-health-monitor <span class="o">[</span>1]<span class="nv">$ </span>./api_monitor.sh <span class="nt">-O</span> <span class="nt">-C</span> <span class="nt">-D</span> <span class="nt">-N</span> 2 <span class="nt">-n</span> 6 <span class="nt">-s</span> <span class="nt">-LP</span> ovn <span class="nt">-b</span> <span class="nt">-B</span> <span class="nt">-T</span> <span class="nt">-i</span> 2
+Running api_monitor.sh v1.88 on host xps13kurt.garloff.de
+Using APIMonitor_1678961257_ prefix <span class="k">for </span>resrcs on ciab-test <span class="o">(</span>nova<span class="o">)</span>
+ Send alarms to  
+ Send  notes to  
+ <span class="k">***</span> Start deployment 1/2 <span class="k">for </span>1 SNAT JumpHosts + 6 VMs <span class="k">***</span>  <span class="o">(</span>ciab-test<span class="o">)</span> <span class="nt">--tag</span> APIMonitor_1678961257
+<span class="o">[</span>...]
+</code></pre></div></div>
+<p>This will run two iterations with benchmarks creating 6 VMs plus 1 JumpHost
+in 2+1 Networks, running benchmarks, booting directly from the images,
+talking directly to the service endpoints (to save keystone roundtrips)
+and testing OVN loadbalancer. Again, expect errors for the OVN LB connections
+(after some backend members have been killed). If the health-mon fails
+to connect to your Jump Host, your neutron-metadata-agent has failed.
+(This happened sometimes on some older version of Cloud-in-a-Box.)</p>
+
+<p>This was with my favorite openSUSE images, which are available from
+<a href="https://kfg.images.obs-website.eu-de.otc.t-systems.com/">this OTC bucket</a></p>
+
+<p>You can also run the <a href="https://github.com/SovereignCloudStack/standards/tree/main/Tests">SCS compliance checker</a>
+and it will correctly report that you are lacking some of the
+<a href="https://github.com/SovereignCloudStack/standards/blob/main/Tests/iaas/SCS-Spec.MandatoryFlavors.verbose.yaml">mandatory SCS flavors</a>.</p>
+
+<p>In addition you have OpenStack admin access. So you can do things like creating flavors,
+register public images, or look at the hypervisor(s).</p>
+
+<p>On the management host, you can maintain the system. You analyze log files or you
+update the kolla containers.</p>
+
+<p>You can also access the Docker containers to test changes. Obviously, if you do this,
+you have created a state that is no longer clean from a manager perspective; in the
+best case, the next container refresh will undo your custom changes. In the worst case,
+you’ll manage to cause serious breakage.</p>
+
+<p>Here are some things we have used the Cloud-in-a-Box system for:</p>
+<ul>
+  <li>We reproduced the <a href="https://scs.community/security/2023/01/24/cve-2022-47951/">VMDK security issue</a>,
+without having to test exploits against the production systems of our partners.
+After reproducing and then validating that the fixed containers address the issue,
+we tested against the fixed production systems though in close collaboration with our partners to
+double check that the fix also works in the production environments.</li>
+  <li>Doing a PoC for handling flavor name aliases when these evolve, see
+<a href="https://github.com/SovereignCloudStack/standards/issues/228">https://github.com/SovereignCloudStack/standards/issues/228</a></li>
+  <li>Analyzing how we can possibly contribute a patch that resolves the OVN loadbalancer’s
+health monitor only rerouting the traffic away from failed hosts via the internal VIP
+address but not the public FIP address (add link). No result yet though.
+See <a href="https://bugs.launchpad.net/neutron/+bug/1956035">https://bugs.launchpad.net/neutron/+bug/1956035</a>.</li>
+</ul>
+
+<h2 id="k8s-cluster-api">k8s cluster-API</h2>
+
+<p>Getting the Kubernetes Cluster Management to work with our
+<a href="https://github.com/SovereignCloudStack/k8s-cluster-api-provider">k8s-cluster-api-provider</a>
+reference implementation is a bit complicated, as the current logic to set up
+the capi management server does not propagate the custom CA. The custom CA
+then also subsequently needs to be pushed to the OpenStack cluster API provider (capo)
+and to the OpenStack Cloud Controller Manager (occm). While this can be done manually,
+it does involve quite some steps.
+<a href="https://github.com/SovereignCloudStack/k8s-cluster-api-provider/issues/372">We are working to handle this</a>,
+but this will
+only happen after R4 is out. We plan to publish third blog article then.</p>
+
+<p>For now, we would advice anyone setting up SCS environments to avoid using custom CAs
+but instead go for properly signed TLS certificates, for example via Let’s Encrypt.</p>
+
+<hr />
+<p>Version history:</p>
+<ul>
+  <li>2023-03-15: Initial posting</li>
+  <li>2023-03-16: Fixed wording in the last paragraph and produced new api-mon output</li>
+</ul>
+
+
+
+<h2 id="about">
+  
+    About the author
+  
+</h2>
+
+
+
+
+<div class="d-flex flex-md-row flex-column align-items-center mb-5">
+    <div class="me-4 d-flex align-items-center">
+      <svg height="120" width="120">
+        
+        <mask id="03eb62a99f18">
+          <circle cx="60" cy="60" r="60" fill="white"/>
+        </mask>
+        <image x="0" y="0" height="120" width="120" xlink:href="/assets/b92e17-681b5ce9a49552a823aa099e6235efe9d24827d7bdccd9f20cc1617ff256bf665859e77b12d20a486bfc8f9ae5b70db8771e626a5b23d6c4d3ab7d8652c95745.webp" mask="url(#03eb62a99f18)"></image>
+      </svg>
+    </div>
+    <div class="d-flex flex-column pe-3">
+        <div class="mb-0 text-center text-md-start"><b>Kurt Garloff</b></div>
+        <div class="small text-muted mt-0 text-center text-md-start">CTO Sovereign Cloud Stack @ <a href="https://osb-alliance.com" target="_blank">Open Source Business Alliance</a></div>
+        <div class="mt-2">While working on Physics as student and researcher in Dortmund, Wuppertal and Eindhoven, Kurt started to work with and on Linux, with first patches to the SCSI layer in the mid 90s. He has spent his post-university life in Open Source, as kernel engineer, leader of SUSE Labs (kernel, compiler, X11, security), and engineering and business leadership at SUSE. Since 2011 he has been working on Open Source cloud software, at Deutsche Telekom, as Freelancer, at T-Systems (as chief architect for the OTC) and also has been serving on the Open Infra Foundation's board. Since 2019 he has been pushing the Sovereign Cloud Stack idea which resulted in a publically funded project that he now technically leads. He still loves to occasionally write code (mostly python these days) or at least test out code from the colleagues and project. He spends his free time with his family or with running and playing table tennis.
+</div>
+        <div class="mt-2 d-flex flex-row flex-wrap">
+          
+<div class="me-2 mb-2">
+    <a class="btn btn-mail" href="mailto:garloff@osb-alliance.com"><i class="fa fa-envelope fa-lg"></i></a>
+</div>
+
+
+
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-linkedin" target="_blank" href="https://www.linkedin.com/in/kurt-garloff/"><i class="fa fa-linkedin fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-github" target="_blank" href="https://github.com/garloff"><i class="fa fa-github fa-lg"></i></a>
+</div>
+
+
+<div class="me-2 mb-2">
+    <a class="btn btn-matrix" target="_blank" href="https://matrix.to/#/@garloff:matrix.org"><i class="fa fa-matrix-org fa-lg"></i></a>
+</div>
+
+          <div class="ms-md-auto pe-3"><a href="/members/garloff" class="btn btn-outline-primary" role="button">Community profile &raquo;</a></div>
+      </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container text-light bg-dark">
+    <div class="row">
+      <div class="col-lg-5">
+        <a href="#" class="footer-site-logo">
+          <img alt="Sovereign Cloud Stack" class="img-fluid mb-2" integrity="sha512-GzGAK+B6sTfSNz880uJokj1yfuHRm2tXff87cWEDRd4IjDuDyQ9miXoh5S6E+gPB700cpRk7hlm5yVNZRqoBVA==" crossorigin="anonymous" src="/assets/images/SCS_short-1b31802be07ab137d2373f3cd2e268923d727ee1d19b6b577dff3b71610345de088c3b83c90f66897a21e52e84fa03c1ef4d1ca5193b8659b9c9535946aa0154.svg">
+        </a>
+        <p class="small my-1">Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners.</p>
+        <ul class="list-inline mt-2 mb-1">
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-phone me-1"></i> <a class="text-light text-decoration-none" href="tel:+49-30-300149-3377" title="+49-30-300149-3377">+49-30-300149-3377</a>
+          </li>
+          
+          <li class="list-inline-item small me-sm-4 me-3">
+            <i class="text-light fa fa-envelope me-1"></i> <a class="text-light text-decoration-none" href="mailto:scs@osb-alliance.com" title="scs[at]osb-alliance[dot]com">scs[at]osb-alliance[dot]com</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <ul class="list-inline text-lg-end mt-1 mb-1">
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://social.osb-alliance.de/@SCS">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-mastodon fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.linkedin.com/company/sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-linkedin-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://www.youtube.com/@sovereigncloudstack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-youtube-square fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://github.com/SovereignCloudStack">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-github fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://matrix.to/#/!TiDqlLmEUaXqTemaLc:matrix.org?via=matrix.org">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-matrix-org fa-lg fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="https://scs.sovereignit.de/mailman3/postorius/lists/announce.lists.scs.community/">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-bullhorn fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+          <li class="list-inline-item me-2">
+            <span class="fa-stack fa-lg">
+            <a target="_blank" href="/feed.xml">
+              <i class="text-gray fa fa-square fa-stack-2x"></i>
+              <i class="text-white fa fa-rss fa-stack-1x"></i>
+            </a>
+            </span>
+          </li>
+          
+        </ul>
+        <ul class="list-inline text-lg-end mt-2">
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Imprint" href="/imprint/">Imprint</a>
+          </li>
+          
+          <li class="list-inline-item me-2 ms-lg-2">
+            <a class="text-light text-decoration-none" title="Data Protection Statement" href="/dataprotection/">Data Protection Statement</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</footer>
+
+</body>
+
+</html>
