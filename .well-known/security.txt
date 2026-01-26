@@ -1,0 +1,6 @@
+Contact: mailto:security@scs.community
+Expires: 2024-12-23T11:00:00.000Z
+Encryption: https://scs.community/security.asc
+Preferred-Languages: en, de
+Canonical: https://scs.community/.well-known/security.txt
+Hiring: https://scs.community/jobs/

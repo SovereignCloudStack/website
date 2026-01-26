@@ -1,0 +1,27 @@
+# This file is an alternative to Containerfile.jekyll-action and uses
+# the jekyll/builder image directly.
+
+# ruby 2.7.1 - in use by Github action, as of 2024-08-27
+FROM docker.io/jekyll/builder:4.2.0
+
+# ruby 3.1.1
+#FROM docker.io/jekyll/builder:4.2.2
+
+RUN apk add --update vips uglify-js musl git build-base tzdata curl bash
+
+RUN addgroup -Sg 1000 jekyll && adduser -Su 1000 -G jekyll jekyll
+
+#COPY --chown=jekyll:jekyll ./ /srv/jekyll
+
+COPY --chmod=755 entrypoint.sh /usr/local/bin/entrypoint.sh
+
+RUN gem install bundler -v 2.4.22  && \
+       bundle config set force_ruby_platform true
+
+RUN bundle version
+
+USER jekyll
+WORKDIR /srv
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
