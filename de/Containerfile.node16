@@ -1,0 +1,12 @@
+# Loads and runs npm/node from a specific version. Depends on the working
+# directory to be mounted at /data.
+
+# As of 2024-08-27 this is the version used in the repo
+FROM node:16.20.2-alpine3.18
+
+WORKDIR /data
+
+RUN npm install
+
+# Result: building this container creates/updates the node_modules folder
+# in the work directory.
