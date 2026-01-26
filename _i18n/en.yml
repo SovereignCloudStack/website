@@ -22,7 +22,7 @@ nav:
   contribute: "Contribute to SCS"
   summit: "Join us for our SCS Summit on 14th of May 2024 in Berlin."
   summitPage: "/summit2024/"
-  newpage: "Discover our new web page"
+  newpage: "This is the archived web page from SCS. Visit our new page!"
 footer:
   trademark: "Sovereign Cloud Stack, SCS and the logo are registered trademarks of the Open Source Business Alliance e.V. — Other trademarks are property of their respective owners."
   imprint: "Imprint"
@@ -79,6 +79,7 @@ news:
   read_more: "Read more..."
   events_link: "See also our events page."
   youtube_link: "Many videos are also on our Youtube channel."
+  newpage_link: "This page on the new web site."
 tenders:
   name: "Name"
   description: "Description"
